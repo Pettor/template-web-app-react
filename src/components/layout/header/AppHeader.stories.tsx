@@ -1,0 +1,16 @@
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import AppHeader from "./AppHeader";
+
+export default {
+  component: AppHeader,
+  title: "Layout/Header",
+} as ComponentMeta<typeof AppHeader>;
+
+const Template: ComponentStory<typeof AppHeader> = (args) => {
+  return <AppHeader {...args} />;
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  label: "This is a Header",
+};
