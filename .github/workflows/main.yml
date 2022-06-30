@@ -23,8 +23,13 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Lint
+      - name: Lint application
         run: yarn lint
 
-      - name: Build
+      - name: Build application
         run: yarn build
+
+      - name: Deploy storybook
+        run: yarn deploy-storybook -- --ci
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
