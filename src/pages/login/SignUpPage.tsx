@@ -21,10 +21,10 @@ export default function SignIn() {
   const handleSubmit: SubmitHandler<IFormSignUp> = async (data) => {
     setError("");
 
-    const { email, password, displayName } = data;
+    const { email, password, confirmPassword, firstName, lastName, phoneNumber, userName } = data;
     try {
       setLoading(true);
-      await signUp({ username: email, password, displayName });
+      await signUp({ email, password, confirmPassword, firstName, lastName, phoneNumber, userName });
       navigate("/");
     } catch (error) {
       setError((error as Error).message);

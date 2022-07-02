@@ -23,7 +23,7 @@ export default function SignIn() {
     const { email, password } = data;
     try {
       setLoading(true);
-      await login({ username: email, password });
+      await login({ email, password });
       navigate("/");
     } catch (error) {
       setError((error as Error).message);

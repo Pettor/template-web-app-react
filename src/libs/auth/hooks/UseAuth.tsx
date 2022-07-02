@@ -2,7 +2,7 @@ import { useContext } from "react";
 import useApi from "../../api/hooks/UseApi";
 import { AuthContext } from "../context/AuthContext";
 import { AuthLogin } from "../types/AuthLogin";
-import { AuthResetPassword } from "../types/AuthResetPassword";
+import { AuthForgotPassword } from "../types/AuthResetPassword";
 import { AuthSignUp } from "../types/AuthSignUp";
 
 const useAuth = () => {
@@ -14,7 +14,7 @@ const useAuth = () => {
     dispatch({
       type: "auth/login",
       payload: {
-        user: data.username,
+        user: data.email,
       },
     });
   }
@@ -26,7 +26,7 @@ const useAuth = () => {
     });
   }
 
-  async function resetPassword(data: AuthResetPassword) {
+  async function resetPassword(data: AuthForgotPassword) {
     await api.resetPassword(data);
     dispatch({
       type: "auth/reset-password",

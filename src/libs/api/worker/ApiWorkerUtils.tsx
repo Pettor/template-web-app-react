@@ -1,19 +1,22 @@
-import { ApiMessages, ApiResponse } from "./ApiWorker";
+import { ApiMessages } from "./ApiWorker";
+import { ApiResponse, ApiSuccess, isApiError } from "./ApiWorkerReponse";
 
-export const sendMessage = (message: ApiMessages, to: Worker) =>
-  new Promise<ApiResponse>(function (resolve, reject) {
+export function sendMessage<T = ApiSuccess>(message: ApiMessages, to: Worker): Promise<T> {
+  return new Promise<T>(function (resolve, reject) {
     const messageChannel = new MessageChannel();
 
     messageChannel.port1.onmessage = function (event: MessageEvent<ApiResponse>) {
       // Only for fetch errors, as these get retried
       const { data } = event;
 
-      if (data.type === "error") {
-        reject(new Error(data.payload.error));
-      } else {
-        resolve(data);
+      if (isApiError(data)) {
+        reject(data.error);
+        return;
       }
+
+      resolve(data as ApiSuccess as T);
     };
 
     to.postMessage(message, [messageChannel.port2]);
   });
+}

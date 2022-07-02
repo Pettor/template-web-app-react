@@ -7,10 +7,13 @@ import TextField from "@mui/material/TextField";
 import * as yup from "yup";
 
 export interface IFormSignUp {
-  displayName: string;
+  firstName: string;
+  lastName: string;
   email: string;
+  userName: string;
   password: string;
-  passwordConfirmation: string;
+  confirmPassword: string;
+  phoneNumber: string;
 }
 
 export interface SignUpFormProps {
@@ -46,13 +49,36 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         autoFocus
         margin="normal"
         fullWidth
-        id="displayName"
+        id="userName"
         label="What should we call you?"
-        autoComplete="password"
         type="displayName"
-        error={!!errors?.displayName}
-        helperText={errors?.displayName?.message}
-        {...register("displayName")}
+        error={!!errors?.userName}
+        helperText={errors?.userName?.message}
+        {...register("userName")}
+      />
+      <TextField
+        autoFocus
+        margin="normal"
+        fullWidth
+        id="firstName"
+        label="What is your first name?"
+        autoComplete="firstName"
+        type="displayName"
+        error={!!errors?.firstName}
+        helperText={errors?.firstName?.message}
+        {...register("firstName")}
+      />
+      <TextField
+        autoFocus
+        margin="normal"
+        fullWidth
+        id="lastName"
+        label="What is your last name?"
+        autoComplete="lastName"
+        type="displayName"
+        error={!!errors?.lastName}
+        helperText={errors?.lastName?.message}
+        {...register("lastName")}
       />
       <TextField
         margin="normal"
@@ -64,6 +90,17 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         error={!!errors?.email}
         helperText={errors?.email?.message}
         {...register("email")}
+      />
+      <TextField
+        margin="normal"
+        type="tel"
+        fullWidth
+        id="phoneNumber"
+        label="What's your phone number?"
+        autoComplete="phoneNumber"
+        error={!!errors?.phoneNumber}
+        helperText={errors?.phoneNumber?.message}
+        {...register("phoneNumber")}
       />
       <TextField
         type="password"
@@ -80,12 +117,12 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         type="password"
         margin="normal"
         fullWidth
-        id="passwordConfirmation"
+        id="confirmPassword"
         label="Confirm password"
-        autoComplete="passwordConfirmation"
-        error={!!errors?.passwordConfirmation}
-        helperText={errors?.passwordConfirmation?.message}
-        {...register("passwordConfirmation")}
+        autoComplete="confirmPassword"
+        error={!!errors?.confirmPassword}
+        helperText={errors?.confirmPassword?.message}
+        {...register("confirmPassword")}
       />
       <LoadingButton type="submit" fullWidth loading={loading} variant="contained" sx={{ mt: 3, mb: 2 }}>
         Sign Up

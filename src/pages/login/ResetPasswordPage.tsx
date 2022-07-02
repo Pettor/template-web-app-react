@@ -24,7 +24,7 @@ export default function SignIn() {
     const { email } = data;
     try {
       setLoading(true);
-      await resetPassword({ username: email });
+      await resetPassword({ email });
       navigate("/");
     } catch (error) {
       setError((error as Error).message);

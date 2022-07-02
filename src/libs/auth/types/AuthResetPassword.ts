@@ -1,3 +1,3 @@
-export type AuthResetPassword = {
-  username: string;
+export type AuthForgotPassword = {
+  email: string;
 };
