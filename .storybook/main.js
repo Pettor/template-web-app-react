@@ -2,8 +2,15 @@ const path = require("path");
 const toPath = (filePath) => path.join(process.cwd(), filePath);
 
 module.exports = {
+  features: {
+    storyStoreV7: true,
+  },
   core: {
     builder: "webpack5",
+    options: {
+      lazyCompilation: true,
+      fsCache: true,
+    },
   },
   framework: "@storybook/react",
   stories: ["../src/**/*.stories.@(ts|tsx)"],
