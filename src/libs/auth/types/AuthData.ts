@@ -1,3 +1,5 @@
+import { RefreshToken } from "./RefreshToken";
+
 export type AuthData = {
-  user: string;
+  refreshToken: RefreshToken;
 };

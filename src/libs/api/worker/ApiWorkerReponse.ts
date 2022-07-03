@@ -1,45 +1,43 @@
-import { AuthToken } from "../../auth/types/AuthToken";
-
-export interface ApiSuccess {
-  status?: number;
-}
+import { RefreshToken } from "../../auth/types/RefreshToken";
 
 export interface ApiError {
   __typename: "ApiError";
   error: Error;
 }
 
-export interface ApiLoginResponse extends ApiSuccess {
-  __typename: "ApiLoginResponse";
-  token: AuthToken;
+// Token
+export interface TokenRequestReponse {
+  __typename: "TokenRequestReponse";
+  refreshToken: RefreshToken;
 }
 
-export interface ApiTokenExistsResponse extends ApiSuccess {
-  __typename: "ApiTokenExistsResponse";
+export interface TokenRefreshResponse {
+  __typename: "TokenRefreshResponse";
+  refreshToken?: RefreshToken;
+}
+
+export interface TokenExistsResponse {
+  __typename: "TokenExistsResponse";
   exists: boolean;
 }
 
-export interface ApiLogoutResponse extends ApiSuccess {
-  __typename: "ApiLogoutResponse";
-  success: boolean;
+// User
+export interface UserLogoutResponse {
+  __typename: "UserLogoutResponse";
 }
 
-export interface ApiForgotPasswordResponse extends ApiSuccess {
-  __typename: "ApiForgotPasswordResponse";
-  success: boolean;
-}
-
-export interface ApiSignUpResponse extends ApiSuccess {
-  __typename: "ApiSignUpResponse";
-  success: boolean;
+export interface GenericResponse<T = unknown> {
+  __typename: "GenericResponse";
+  data: T;
+  status: number;
 }
 
 export type ApiResponse =
   | ApiError
-  | ApiLoginResponse
-  | ApiTokenExistsResponse
-  | ApiLogoutResponse
-  | ApiForgotPasswordResponse
-  | ApiSignUpResponse;
+  | TokenRequestReponse
+  | TokenRefreshResponse
+  | TokenExistsResponse
+  | UserLogoutResponse
+  | GenericResponse;
 
 export const isApiError = (response: ApiResponse): response is ApiError => response.__typename === "ApiError";

@@ -1,4 +1,4 @@
-export type AuthLogin = {
+export type TokenRequestRequest = {
   email: string;
   password: string;
 };

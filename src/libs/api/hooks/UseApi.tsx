@@ -1,13 +1,12 @@
 import ApiWorker from "../../api/worker/ApiWorker?worker";
-import { AuthLogin } from "../../auth/types/AuthLogin";
-import { AuthForgotPassword } from "../../auth/types/AuthResetPassword";
-import { AuthSignUp } from "../../auth/types/AuthSignUp";
+import { RefreshToken } from "../../auth/types/RefreshToken";
+import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
 import {
-  ApiForgotPasswordResponse,
-  ApiLoginResponse,
-  ApiLogoutResponse,
-  ApiSignUpResponse,
-  ApiTokenExistsResponse,
+  ApiResponse,
+  TokenExistsResponse,
+  TokenRefreshResponse,
+  TokenRequestReponse,
+  UserLogoutResponse,
 } from "../worker/ApiWorkerReponse";
 import { sendMessage } from "../worker/ApiWorkerUtils";
 
@@ -16,35 +15,41 @@ const apiWorker = new ApiWorker();
 const useApi = () => {
   async function checkAuth(): Promise<boolean> {
     try {
-      const { exists } = await sendMessage<ApiTokenExistsResponse>({ type: "auth/exist" }, apiWorker);
+      const { exists } = await sendMessage<TokenExistsResponse>({ type: "token/exist" }, apiWorker);
       return exists;
     } catch (error) {
       return false;
     }
   }
 
-  async function login(data: AuthLogin) {
-    await sendMessage<ApiLoginResponse>({ type: "auth/login", payload: data }, apiWorker);
+  async function requestToken(data: TokenRequestRequest): Promise<RefreshToken> {
+    const { refreshToken } = await sendMessage<TokenRequestReponse>(
+      { type: "token/request", payload: data },
+      apiWorker
+    );
+
+    return refreshToken;
+  }
+
+  async function refreshToken(data: RefreshToken): Promise<TokenRefreshResponse> {
+    return await sendMessage<TokenRefreshResponse>({ type: "token/refresh", payload: data }, apiWorker);
   }
 
   async function logout() {
-    await sendMessage<ApiLogoutResponse>({ type: "auth/logout" }, apiWorker);
+    await sendMessage<UserLogoutResponse>({ type: "user/logout" }, apiWorker);
   }
 
-  async function resetPassword(data: AuthForgotPassword) {
-    await sendMessage<ApiForgotPasswordResponse>({ type: "auth/reset-password", payload: data }, apiWorker);
-  }
-
-  async function signUp(data: AuthSignUp) {
-    await sendMessage<ApiSignUpResponse>({ type: "auth/sign-up", payload: data }, apiWorker);
+  // Generic request
+  async function makeRequest<T, P extends ApiResponse>(data: T): Promise<P> {
+    return await sendMessage<P>({ type: "api/request", payload: data }, apiWorker);
   }
 
   return {
     checkAuth,
-    login,
+    requestToken,
+    refreshToken,
     logout,
-    resetPassword,
-    signUp,
+    makeRequest,
   };
 };
 

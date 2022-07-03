@@ -5,12 +5,7 @@ type AuthState = {
   data: AuthData | null;
 };
 
-type AuthActions =
-  | { type: "auth/loading" }
-  | { type: "auth/login"; payload: AuthData }
-  | { type: "auth/reset-password" }
-  | { type: "auth/sign-up" }
-  | { type: "auth/logout" };
+type AuthActions = { type: "auth/loading" } | { type: "auth/login"; payload: AuthData } | { type: "auth/logout" };
 
 const AuthReducer = (prev: AuthState, action: AuthActions): AuthState => {
   switch (action.type) {

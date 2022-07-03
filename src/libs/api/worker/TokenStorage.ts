@@ -1,15 +1,14 @@
-import { AuthToken } from "../../auth/types/AuthToken";
-import { IndexDbStorage } from "../../storage/index-db/IndexDbStorage";
+import { JwtToken } from "../../auth/types/JwtToken";
 
 // Token caching (token should always be hidden from main thread i.e. stay in worker)
-const storage = new IndexDbStorage<AuthToken>("authToken");
+let authToken: JwtToken = null;
 
-export const getToken = async (): Promise<AuthToken | null> => storage.get();
+export const getToken = (): JwtToken => authToken;
 
-export const setToken = async (token: AuthToken): Promise<void> => {
-  await storage.set(token);
+export const setToken = (token: JwtToken): void => {
+  authToken = token;
 };
 
-export const clearToken = async (): Promise<void> => {
-  await storage.set(null);
+export const clearToken = (): void => {
+  authToken = null;
 };

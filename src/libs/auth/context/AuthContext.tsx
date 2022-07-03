@@ -1,6 +1,8 @@
 import { ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
 import useApi from "../../api/hooks/UseApi";
+import { useLocalStorage } from "../../storage/local-storage/hooks/UseLocalStorage";
 import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
+import { RefreshToken } from "../types/RefreshToken";
 
 type IAuthContext = {
   state: AuthState;
@@ -22,27 +24,35 @@ const AuthProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
   const api = useApi();
 
+  const { data } = state;
+  const [refreshToken, setRefreshToken] = useLocalStorage<RefreshToken | null>("refresh-token", null);
+
   useEffect(() => {
     // On refresh check if auth exist or not
-    const checkAuth = async (): Promise<void> => {
-      if (await api.checkAuth()) {
-        dispatch({
-          type: "auth/login",
-          payload: {
-            user: "",
-          },
-        });
-
+    const tryRefreshToken = async (): Promise<void> => {
+      if (!refreshToken) {
         return;
       }
 
-      dispatch({
-        type: "auth/logout",
-      });
+      const { refreshToken: newRefreshToken } = await api.refreshToken(refreshToken);
+      if (!newRefreshToken) {
+        return;
+      }
+
+      setRefreshToken(newRefreshToken);
+      dispatch({ type: "auth/login", payload: { refreshToken: newRefreshToken } });
     };
 
-    checkAuth();
+    tryRefreshToken();
   }, []);
+
+  useEffect(() => {
+    if (!data?.refreshToken) {
+      return;
+    }
+
+    setRefreshToken(data.refreshToken);
+  }, [data?.refreshToken]);
 
   const value = useMemo(() => {
     return {

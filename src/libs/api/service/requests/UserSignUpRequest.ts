@@ -1,4 +1,4 @@
-export type AuthSignUp = {
+export type UserSignUpRequest = {
   firstName: string;
   lastName: string;
   email: string;

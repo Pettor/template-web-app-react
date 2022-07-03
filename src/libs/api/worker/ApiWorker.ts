@@ -1,110 +1,123 @@
-import { AxiosInstance } from "axios";
-import { AuthLogin } from "../../auth/types/AuthLogin";
-import { AuthForgotPassword } from "../../auth/types/AuthResetPassword";
-import { AuthSignUp } from "../../auth/types/AuthSignUp";
-import { AuthToken } from "../../auth/types/AuthToken";
+import { RefreshToken } from "../../auth/types/RefreshToken";
 import client from "../../client/AxiosClient";
+import { createRequest, tokenRefresh, tokenRequest } from "../service/ApiService";
+import { TokenRefreshRequest } from "../service/requests/TokenRefreshRequest";
+import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
+import { UserForgotPasswordRequest } from "../service/requests/UserForgotPasswordRequest";
+import { UserSignUpRequest } from "../service/requests/UserSignUpRequest";
 import { ApiResponse } from "./ApiWorkerReponse";
 import { clearToken, getToken, setToken } from "./TokenStorage";
 
 // Request and Response types
 type ApiMessages =
-  | { type: "auth/exist" }
-  | { type: "auth/login"; payload: AuthLogin }
-  | { type: "auth/logout" }
-  | { type: "auth/reset-password"; payload: AuthForgotPassword }
-  | { type: "auth/sign-up"; payload: AuthSignUp };
-
-async function Login(client: AxiosInstance, data: AuthLogin): Promise<AuthToken> {
-  try {
-    const response = await client.post("/api/tokens", data);
-
-    if (response.status !== 200) {
-      throw new Error("Authentication failed");
-    }
-
-    return response.data.token;
-  } catch (error) {
-    throw new Error("Login failed");
-  }
-}
-
-async function ResetPassword(client: AxiosInstance, data: AuthForgotPassword): Promise<void> {
-  try {
-    const response = await client.post("/api/users/forgot-password", data);
-
-    if (response.status !== 200) {
-      throw new Error("Authentication failed");
-    }
-  } catch (error) {
-    throw new Error("Login failed");
-  }
-}
-
-async function SignUp(client: AxiosInstance, signUp: AuthSignUp): Promise<void> {
-  try {
-    const response = await client.post("/api/users/self-register", signUp);
-
-    if (response.status !== 200) {
-      throw new Error("Authentication failed");
-    }
-  } catch (error) {
-    throw new Error("Login failed");
-  }
-}
+  | { type: "token/request"; payload: TokenRequestRequest }
+  | { type: "token/refresh"; payload: RefreshToken }
+  | { type: "token/exist" }
+  | { type: "user/logout" }
+  | { type: "user/forgot-password"; payload: UserForgotPasswordRequest }
+  | { type: "user/sign-up"; payload: UserSignUpRequest }
+  | { type: "api/request"; payload: unknown };
 
 const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>) => {
   let apiResponse: ApiResponse;
 
   try {
     switch (data.type) {
-      case "auth/exist": {
-        const token = await getToken();
+      // Login
+      case "token/request":
+        {
+          const { payload } = data;
+          const { token, refreshToken, refreshTokenExpiryTime } = await tokenRequest(client, payload);
+          setToken(token);
 
-        apiResponse = {
-          __typename: "ApiTokenExistsResponse",
-          exists: !!token,
-        };
+          apiResponse = {
+            __typename: "TokenRequestReponse",
+            refreshToken: {
+              refreshToken: refreshToken,
+              refreshTokenExpiryTime: new Date(refreshTokenExpiryTime),
+            },
+          };
+        }
         break;
-      }
-      case "auth/login": {
-        const { payload } = data;
-        const authToken = await Login(client, payload);
-        await setToken(authToken);
 
-        apiResponse = {
-          __typename: "ApiLoginResponse",
-          token: authToken,
-        };
+      // Refresh Token
+      case "token/refresh":
+        {
+          const existingToken = getToken();
+          const { payload } = data;
+          const { refreshToken } = payload;
+
+          if (!existingToken || !refreshToken) {
+            apiResponse = {
+              __typename: "TokenRefreshResponse",
+            };
+            break;
+          }
+
+          const request: TokenRefreshRequest = {
+            token: existingToken,
+            refreshToken: refreshToken,
+          };
+
+          const {
+            token,
+            refreshToken: newRefreshToken,
+            refreshTokenExpiryTime: newRefreshTokenExpiryTime,
+          } = await tokenRefresh(client, request);
+          setToken(token);
+
+          apiResponse = {
+            __typename: "TokenRefreshResponse",
+            refreshToken: {
+              refreshToken: newRefreshToken,
+              refreshTokenExpiryTime: new Date(newRefreshTokenExpiryTime),
+            },
+          };
+        }
         break;
-      }
-      case "auth/logout":
-        await clearToken();
 
-        apiResponse = {
-          __typename: "ApiLogoutResponse",
-          success: true,
-        };
+      // Token exists
+      case "token/exist":
+        {
+          const token = getToken();
+
+          apiResponse = {
+            __typename: "TokenExistsResponse",
+            exists: !!token,
+          };
+        }
         break;
-      case "auth/reset-password": {
-        const { payload } = data;
-        await ResetPassword(client, payload);
+      // Logout
+      case "user/logout":
+        {
+          clearToken();
 
-        apiResponse = {
-          __typename: "ApiForgotPasswordResponse",
-          success: true,
-        };
+          apiResponse = {
+            __typename: "UserLogoutResponse",
+          };
+        }
+
         break;
-      }
-      case "auth/sign-up": {
-        const { payload } = data;
-        await SignUp(client, payload);
 
+      // Generic request
+      case "api/request":
+        {
+          const { payload } = data;
+          const token = getToken();
+          const { data: requestData, status } = await createRequest(client, token, payload);
+          apiResponse = {
+            __typename: "GenericResponse",
+            data: requestData,
+            status,
+          };
+        }
+        break;
+
+      default: {
         apiResponse = {
-          __typename: "ApiSignUpResponse",
-          success: true,
+          __typename: "ApiError",
+          error: new Error("Internal error"),
         };
-        return;
       }
     }
   } catch (e) {
@@ -120,4 +133,4 @@ const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>
 
 addEventListener("message", messageHandler);
 
-export type { ApiMessages, ApiResponse };
+export type { ApiMessages };

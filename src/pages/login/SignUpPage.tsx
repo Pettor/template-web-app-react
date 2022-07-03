@@ -4,11 +4,13 @@ import { SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { IFormSignUp } from "../../components/forms/sign-up/SignUpForm";
 import SignUpView from "../../components/views/login/SignUpView";
-import useAuth from "../../libs/auth/hooks/UseAuth";
+import useApi from "../../libs/api/hooks/UseApi";
+import { UserSignUpRequest } from "../../libs/api/service/requests/UserSignUpRequest";
+import { GenericResponse } from "../../libs/api/worker/ApiWorkerReponse";
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const { signUp } = useAuth();
+  const { makeRequest } = useApi();
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -21,10 +23,10 @@ export default function SignIn() {
   const handleSubmit: SubmitHandler<IFormSignUp> = async (data) => {
     setError("");
 
-    const { email, password, confirmPassword, firstName, lastName, phoneNumber, userName } = data;
     try {
       setLoading(true);
-      await signUp({ email, password, confirmPassword, firstName, lastName, phoneNumber, userName });
+      await makeRequest<UserSignUpRequest, GenericResponse>(data);
+
       navigate("/");
     } catch (error) {
       setError((error as Error).message);

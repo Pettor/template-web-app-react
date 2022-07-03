@@ -1,20 +1,18 @@
 import { useContext } from "react";
 import useApi from "../../api/hooks/UseApi";
+import { TokenRequestRequest } from "../../api/service/requests/TokenRequestRequest";
 import { AuthContext } from "../context/AuthContext";
-import { AuthLogin } from "../types/AuthLogin";
-import { AuthForgotPassword } from "../types/AuthResetPassword";
-import { AuthSignUp } from "../types/AuthSignUp";
 
 const useAuth = () => {
   const { state, dispatch } = useContext(AuthContext);
   const api = useApi();
 
-  async function login(data: AuthLogin) {
-    await api.login(data);
+  async function login(data: TokenRequestRequest) {
+    const refreshToken = await api.requestToken(data);
     dispatch({
       type: "auth/login",
       payload: {
-        user: data.email,
+        refreshToken,
       },
     });
   }
@@ -26,26 +24,10 @@ const useAuth = () => {
     });
   }
 
-  async function resetPassword(data: AuthForgotPassword) {
-    await api.resetPassword(data);
-    dispatch({
-      type: "auth/reset-password",
-    });
-  }
-
-  async function signUp(data: AuthSignUp) {
-    await api.signUp(data);
-    dispatch({
-      type: "auth/sign-up",
-    });
-  }
-
   return {
     ...state,
     login,
     logout,
-    resetPassword,
-    signUp,
   };
 };
 

@@ -4,11 +4,13 @@ import { SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { IFormResetPassword } from "../../components/forms/reset-password/ResetPasswordForm";
 import ResetPasswordView from "../../components/views/login/ResetPasswordView";
-import useAuth from "../../libs/auth/hooks/UseAuth";
+import useApi from "../../libs/api/hooks/UseApi";
+import { UserForgotPasswordRequest } from "../../libs/api/service/requests/UserForgotPasswordRequest";
+import { GenericResponse } from "../../libs/api/worker/ApiWorkerReponse";
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const { resetPassword } = useAuth();
+  const { makeRequest } = useApi();
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -24,7 +26,8 @@ export default function SignIn() {
     const { email } = data;
     try {
       setLoading(true);
-      await resetPassword({ email });
+      await makeRequest<UserForgotPasswordRequest, GenericResponse>({ email });
+
       navigate("/");
     } catch (error) {
       setError((error as Error).message);
