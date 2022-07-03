@@ -8,8 +8,7 @@
     "preview": "vite preview",
     "lint": "eslint ./src",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@fontsource/rubik": "^4.5.6",
