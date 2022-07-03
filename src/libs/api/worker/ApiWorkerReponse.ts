@@ -16,11 +16,6 @@ export interface TokenRefreshResponse {
   refreshToken?: RefreshToken;
 }
 
-export interface TokenExistsResponse {
-  __typename: "TokenExistsResponse";
-  exists: boolean;
-}
-
 // User
 export interface UserLogoutResponse {
   __typename: "UserLogoutResponse";
@@ -32,12 +27,6 @@ export interface GenericResponse<T = unknown> {
   status: number;
 }
 
-export type ApiResponse =
-  | ApiError
-  | TokenRequestReponse
-  | TokenRefreshResponse
-  | TokenExistsResponse
-  | UserLogoutResponse
-  | GenericResponse;
+export type ApiResponse = ApiError | TokenRequestReponse | TokenRefreshResponse | UserLogoutResponse | GenericResponse;
 
 export const isApiError = (response: ApiResponse): response is ApiError => response.__typename === "ApiError";

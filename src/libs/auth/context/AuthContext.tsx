@@ -30,17 +30,26 @@ const AuthProvider = ({ children }: Props) => {
   useEffect(() => {
     // On refresh check if auth exist or not
     const tryRefreshToken = async (): Promise<void> => {
+      console.log(JSON.stringify(refreshToken));
+
       if (!refreshToken) {
+        dispatch({ type: "auth/logout" });
         return;
       }
+      try {
+        const { refreshToken: newRefreshToken } = await api.refreshToken(refreshToken);
+        console.log(JSON.stringify(newRefreshToken));
+        if (!newRefreshToken) {
+          console.log("Logout");
+          dispatch({ type: "auth/logout" });
+          return;
+        }
 
-      const { refreshToken: newRefreshToken } = await api.refreshToken(refreshToken);
-      if (!newRefreshToken) {
-        return;
+        setRefreshToken(newRefreshToken);
+        dispatch({ type: "auth/login", payload: { refreshToken: newRefreshToken } });
+      } catch (errro) {
+        dispatch({ type: "auth/logout" });
       }
-
-      setRefreshToken(newRefreshToken);
-      dispatch({ type: "auth/login", payload: { refreshToken: newRefreshToken } });
     };
 
     tryRefreshToken();

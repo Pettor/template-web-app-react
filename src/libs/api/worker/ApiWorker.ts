@@ -1,3 +1,4 @@
+import axios from "axios";
 import { RefreshToken } from "../../auth/types/RefreshToken";
 import client from "../../client/AxiosClient";
 import { createRequest, tokenRefresh, tokenRequest } from "../service/ApiService";
@@ -12,7 +13,6 @@ import { clearToken, getToken, setToken } from "./TokenStorage";
 type ApiMessages =
   | { type: "token/request"; payload: TokenRequestRequest }
   | { type: "token/refresh"; payload: RefreshToken }
-  | { type: "token/exist" }
   | { type: "user/logout" }
   | { type: "user/forgot-password"; payload: UserForgotPasswordRequest }
   | { type: "user/sign-up"; payload: UserSignUpRequest }
@@ -43,11 +43,10 @@ const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>
       // Refresh Token
       case "token/refresh":
         {
-          const existingToken = getToken();
           const { payload } = data;
           const { refreshToken } = payload;
 
-          if (!existingToken || !refreshToken) {
+          if (!refreshToken) {
             apiResponse = {
               __typename: "TokenRefreshResponse",
             };
@@ -55,7 +54,6 @@ const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>
           }
 
           const request: TokenRefreshRequest = {
-            token: existingToken,
             refreshToken: refreshToken,
           };
 
@@ -76,17 +74,6 @@ const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>
         }
         break;
 
-      // Token exists
-      case "token/exist":
-        {
-          const token = getToken();
-
-          apiResponse = {
-            __typename: "TokenExistsResponse",
-            exists: !!token,
-          };
-        }
-        break;
       // Logout
       case "user/logout":
         {
@@ -120,11 +107,18 @@ const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>
         };
       }
     }
-  } catch (e) {
-    apiResponse = {
-      __typename: "ApiError",
-      error: e as Error,
-    };
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      apiResponse = {
+        __typename: "ApiError",
+        error: error,
+      };
+    } else {
+      apiResponse = {
+        __typename: "ApiError",
+        error: error as Error,
+      };
+    }
   }
 
   // Send response back from Worker
