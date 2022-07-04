@@ -8,7 +8,9 @@
     "preview": "vite preview",
     "lint": "eslint ./src",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test-storybook": "test-storybook",
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\""
   },
   "dependencies": {
     "@fontsource/rubik": "^4.5.6",
@@ -37,12 +39,14 @@
     "@storybook/manager-webpack5": "^6.5.9",
     "@storybook/react": "^6.5.9",
     "@storybook/storybook-deployer": "^2.8.11",
+    "@storybook/test-runner": "^0.3.0",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "concurrently": "^7.2.2",
     "emotion-theming": "^11.0.0",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.4.0",
@@ -50,10 +54,13 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.2",
+    "http-server": "^14.1.1",
+    "jest": "27",
     "prettier": "^2.5.1",
     "storybook-dark-mode": "^1.0.9",
     "typescript": "^4.5.4",
     "vite": "^2.8.6",
+    "wait-on": "^6.0.1",
     "webpack": "^5.64.4"
   }
 }

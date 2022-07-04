@@ -29,7 +29,18 @@ jobs:
       - name: Build application
         run: yarn build
 
+      - name: Build Storybook
+        run: yarn build-storybook --quiet
+
       - name: Deploy storybook
-        run: yarn storybook-to-ghpages -- --ci --branch=deploy/storybook/main --source-branch=main
+        run: >
+          yarn storybook-to-ghpages
+          --ci
+          --source-branch=main
+          --branch=deploy/storybook/main
+          --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+
+      - name: Serve Storybook and run tests
+        run: yarn test-storybook:ci
