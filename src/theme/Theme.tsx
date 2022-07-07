@@ -22,7 +22,7 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
                 main: "#0F110C",
               },
               background: {
-                default: "#efeff0",
+                default: "#ffffff",
               },
             }
           : {

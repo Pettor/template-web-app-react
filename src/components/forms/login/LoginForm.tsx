@@ -1,10 +1,14 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CloseIcon from "@mui/icons-material/Close";
-import { LoadingButton } from "@mui/lab";
-import { Alert, Collapse, IconButton } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
+import Alert from "@mui/material/Alert";
+import Box from "@mui/material/Box";
 import Checkbox from "@mui/material/Checkbox";
+import Collapse from "@mui/material/Collapse";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import * as yup from "yup";
 
@@ -66,10 +70,14 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
         helperText={errors?.password?.message}
         {...register("password")}
       />
-      <FormControlLabel control={<Checkbox color="primary" />} label="Remember me" {...register("remember")} />
-      <LoadingButton type="submit" fullWidth loading={loading} variant="contained" sx={{ mt: 3, mb: 2 }}>
-        Sign In
-      </LoadingButton>
+      <Stack direction="row">
+        <FormControlLabel control={<Checkbox color="primary" />} label="Remember me" {...register("remember")} />
+        <Box sx={{ width: "100%", display: "flex", flex: 1, justifyContent: "flex-end" }}>
+          <LoadingButton type="submit" loading={loading} variant="contained" sx={{ mt: 3, mb: 2, width: 150 }}>
+            Sign In
+          </LoadingButton>
+        </Box>
+      </Stack>
       <Collapse in={open && !!error}>
         <Alert
           severity="error"

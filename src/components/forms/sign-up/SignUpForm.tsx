@@ -124,7 +124,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         helperText={errors?.confirmPassword?.message}
         {...register("confirmPassword")}
       />
-      <LoadingButton type="submit" fullWidth loading={loading} variant="contained" sx={{ mt: 3, mb: 2 }}>
+      <LoadingButton type="submit" loading={loading} variant="contained" sx={{ mt: 3, mb: 2, width: 200 }}>
         Sign Up
       </LoadingButton>
       <Collapse in={open && !!error}>

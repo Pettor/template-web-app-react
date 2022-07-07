@@ -1,10 +1,9 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import { styled } from "@mui/material/styles";
-import LogoFull, { LogoFullSize } from "../../common/logo/LogoFull";
+import { SxProps, styled } from "@mui/material/styles";
 
 type Props = {
-  logoSize?: LogoFullSize;
+  sx?: SxProps;
   children: JSX.Element | JSX.Element[];
 };
 
@@ -13,10 +12,10 @@ const StyledBox = styled(Box)(({ theme }) => ({
   background: theme.palette.background.default,
 }));
 
-const ContainerLayout = ({ logoSize = "large", children }: Props) => {
+const ContainerLayout = ({ sx, children }: Props) => {
   return (
     <StyledBox>
-      <Container maxWidth="xs">
+      <Container maxWidth="xs" sx={sx}>
         <Box
           sx={{
             marginTop: 8,
@@ -25,7 +24,6 @@ const ContainerLayout = ({ logoSize = "large", children }: Props) => {
             alignItems: "center",
           }}
         >
-          <LogoFull size={logoSize} />
           <Box component="main" sx={{ mt: 4, width: "100%" }}>
             {children}
           </Box>
