@@ -16,10 +16,11 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
           ? {
               // palette values for light mode
               primary: {
-                main: "#CECCCC",
+                main: "#50A8EA",
+                contrastText: "#FFFFFF",
               },
               secondary: {
-                main: "#0F110C",
+                main: "#2C3246",
               },
               background: {
                 default: "#ffffff",
@@ -45,7 +46,13 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
         MuiButton: {
           styleOverrides: {
             root: {
-              borderRadius: "30px",
+              minHeight: "42px",
+              borderRadius: "18px",
+              boxShadow: "rgba(95, 169, 236, 0.6) 0px 8px 24px",
+
+              "&:hover": {
+                boxShadow: "rgba(95, 169, 236, 1.0) 0px 8px 24px",
+              },
             },
           },
         },
