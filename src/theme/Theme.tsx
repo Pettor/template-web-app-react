@@ -56,6 +56,24 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
             },
           },
         },
+        MuiTextField: {
+          styleOverrides: {
+            root: {
+              backgroundColor: "white",
+              borderRadius: "4px",
+              boxShadow: "rgba(95, 169, 236, 0.3) 0px 4px 18px",
+              transition: "all 5s ease-out",
+
+              "&:hover": {
+                boxShadow: "rgba(95, 169, 236, 0.6) 0px 4px 24px",
+              },
+
+              "& .MuiOutlinedInput-notchedOutline": {
+                transition: "all 0.1s ease-out",
+              },
+            },
+          },
+        },
       },
     })
   );
