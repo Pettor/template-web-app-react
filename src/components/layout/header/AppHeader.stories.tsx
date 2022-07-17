@@ -15,3 +15,9 @@ export const Default = Template.bind({});
 Default.args = {
   label: "This is a Header",
 };
+
+export const SubHeader = Template.bind({});
+SubHeader.args = {
+  subheader: true,
+  label: "This is a SubHeader",
+};

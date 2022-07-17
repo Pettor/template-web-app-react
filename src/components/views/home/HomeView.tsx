@@ -2,8 +2,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
-import { IInjectedMenu } from "../../layout/menu/IInjectedMenu";
-import HeaderLayout from "../../layout/templates/HeaderLayout";
+import HeaderLayout, { IHeaderLayout } from "../../layout/templates/HeaderLayout";
 
 const GridItem = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -12,13 +11,11 @@ const GridItem = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-type Props = {
-  injectedMenu: IInjectedMenu;
-};
+type Props = IHeaderLayout;
 
-const HomeView = ({ injectedMenu }: Props) => {
+const HomeView = (headerLayoutProps: Props) => {
   return (
-    <HeaderLayout label="Home" injectedMenu={injectedMenu}>
+    <HeaderLayout headerOptions={{ label: "Home" }} {...headerLayoutProps}>
       <Box>
         This is content
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>

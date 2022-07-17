@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import BackArrow from "@mui/icons-material/ArrowBack";
 import MenuIcon from "@mui/icons-material/MoreVert";
 import AvatarIcon from "@mui/icons-material/Person";
 import MuiAppBar from "@mui/material/AppBar";
@@ -14,17 +15,24 @@ import Logo from "../../common/logo/Logo";
 import Search from "../../common/search/Search";
 import { IInjectedMenu } from "../menu/IInjectedMenu";
 
+export interface AppHeaderOptions {
+  subheader?: boolean;
+  label?: string;
+  onBack?(): void;
+}
+
 export interface AppHeaderProps {
-  label: string;
   menu: IInjectedMenu;
 }
 
+type Props = AppHeaderOptions & AppHeaderProps;
+
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
-  background: theme.palette.background.paper,
+  background: theme.palette.common.white,
   zIndex: theme.zIndex.drawer + 1,
 }));
 
-const AppHeader = ({ label, menu }: AppHeaderProps) => {
+const AppHeader = ({ subheader, label, menu, onBack }: Props) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -47,7 +55,7 @@ const AppHeader = ({ label, menu }: AppHeaderProps) => {
     const { menu: Menu, menuContent } = menu;
 
     return (
-      <Menu open={open} anchorEl={anchorEl} handleClose={handleClose}>
+      <Menu key="app-header-menu" open={open} anchorEl={anchorEl} handleClose={handleClose}>
         {menuContent}
       </Menu>
     );
@@ -57,7 +65,12 @@ const AppHeader = ({ label, menu }: AppHeaderProps) => {
     <AppBar position="fixed" elevation={1}>
       <Toolbar disableGutters>
         <Container maxWidth="lg" sx={{ display: "flex", alignItems: "center" }}>
-          {isSmUp && <Logo size="small" />}
+          {!subheader && isSmUp && <Logo size="small" />}
+          {subheader && (
+            <IconButton onClick={onBack}>
+              <BackArrow />
+            </IconButton>
+          )}
           <Divider sx={{ mx: 1 }} />
           <Typography component="h1" variant="h6" color="secondary" noWrap sx={{ flexGrow: 1 }}>
             {label}

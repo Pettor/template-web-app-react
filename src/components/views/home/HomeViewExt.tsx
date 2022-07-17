@@ -1,5 +1,5 @@
 import AppMenu from "../../layout/menu/AppMenu";
-import AppMenuContent from "../../layout/menu/content/AppMenuContentExt";
+import AppMenuContent from "../../layout/menu/content/AppMenuContent";
 import HomeView from "./HomeView";
 
 const HomeViewExt = () => {

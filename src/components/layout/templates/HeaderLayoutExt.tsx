@@ -1,8 +1,8 @@
 import AppMenu from "../menu/AppMenu";
 import AppMenuContent from "../menu/content/AppMenuContentExt";
-import HeaderLayout, { MainLayoutProps } from "./HeaderLayout";
+import HeaderLayout, { HeaderLayoutProps } from "./HeaderLayout";
 
-const HeaderLayoutExt = (props: MainLayoutProps) => {
+const HeaderLayoutExt = (props: HeaderLayoutProps) => {
   return (
     <HeaderLayout
       {...props}
