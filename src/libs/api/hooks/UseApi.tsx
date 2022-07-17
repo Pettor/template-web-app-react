@@ -1,7 +1,12 @@
 import ApiWorker from "../../api/worker/ApiWorker?worker";
 import { RefreshToken } from "../../auth/types/RefreshToken";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
-import { ApiResponse, TokenRefreshResponse, TokenRequestReponse, UserLogoutResponse } from "../worker/ApiWorkerReponse";
+import {
+  RequestResponse,
+  TokenRefreshResponse,
+  TokenRequestReponse,
+  UserLogoutResponse,
+} from "../worker/ApiWorkerReponse";
 import { sendMessage } from "../worker/ApiWorkerUtils";
 
 const apiWorker = new ApiWorker();
@@ -25,15 +30,20 @@ const useApi = () => {
   }
 
   // Generic request
-  async function makeRequest<T, P extends ApiResponse>(data: T): Promise<P> {
-    return await sendMessage<P>({ type: "api/request", payload: data }, apiWorker);
+  async function post<T, P extends RequestResponse>(url: string, data: T): Promise<P> {
+    return await sendMessage<P>({ type: "request/post", url, payload: data }, apiWorker);
+  }
+
+  async function get<P extends RequestResponse>(url: string): Promise<P> {
+    return await sendMessage<P>({ type: "request/get", url }, apiWorker);
   }
 
   return {
     requestToken,
     refreshToken,
     logout,
-    makeRequest,
+    post,
+    get,
   };
 };
 

@@ -21,12 +21,12 @@ export interface UserLogoutResponse {
   __typename: "UserLogoutResponse";
 }
 
-export interface GenericResponse<T = unknown> {
-  __typename: "GenericResponse";
+export interface RequestResponse<T = unknown> {
+  __typename: "RequestResponse";
   data: T;
   status: number;
 }
 
-export type ApiResponse = ApiError | TokenRequestReponse | TokenRefreshResponse | UserLogoutResponse | GenericResponse;
+export type ApiResponse = ApiError | TokenRequestReponse | TokenRefreshResponse | UserLogoutResponse | RequestResponse;
 
 export const isApiError = (response: ApiResponse): response is ApiError => response.__typename === "ApiError";

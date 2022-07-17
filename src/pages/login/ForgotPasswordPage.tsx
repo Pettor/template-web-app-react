@@ -6,11 +6,11 @@ import { IFormResetPassword } from "../../components/forms/reset-password/ResetP
 import ResetPasswordView from "../../components/views/login/ResetPasswordView";
 import useApi from "../../libs/api/hooks/UseApi";
 import { UserForgotPasswordRequest } from "../../libs/api/service/requests/UserForgotPasswordRequest";
-import { GenericResponse } from "../../libs/api/worker/ApiWorkerReponse";
+import { RequestResponse } from "../../libs/api/worker/ApiWorkerReponse";
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const { makeRequest } = useApi();
+  const { post } = useApi();
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -26,7 +26,7 @@ export default function SignIn() {
     const { email } = data;
     try {
       setLoading(true);
-      await makeRequest<UserForgotPasswordRequest, GenericResponse>({ email });
+      await post<UserForgotPasswordRequest, RequestResponse<string>>("/api/users/forgot-password", { email });
 
       navigate("/");
     } catch (error) {

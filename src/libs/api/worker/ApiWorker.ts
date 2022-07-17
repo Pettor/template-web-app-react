@@ -1,11 +1,9 @@
 import axios from "axios";
 import { RefreshToken } from "../../auth/types/RefreshToken";
 import client from "../../client/AxiosClient";
-import { createRequest, tokenRefresh, tokenRequest } from "../service/ApiService";
+import { createGetRequest, createPostRequest, tokenRefresh, tokenRequest } from "../service/ApiService";
 import { TokenRefreshRequest } from "../service/requests/TokenRefreshRequest";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
-import { UserForgotPasswordRequest } from "../service/requests/UserForgotPasswordRequest";
-import { UserSignUpRequest } from "../service/requests/UserSignUpRequest";
 import { ApiResponse } from "./ApiWorkerReponse";
 import { clearToken, getToken, setToken } from "./TokenStorage";
 
@@ -14,9 +12,8 @@ type ApiMessages =
   | { type: "token/request"; payload: TokenRequestRequest }
   | { type: "token/refresh"; payload: RefreshToken }
   | { type: "user/logout" }
-  | { type: "user/forgot-password"; payload: UserForgotPasswordRequest }
-  | { type: "user/sign-up"; payload: UserSignUpRequest }
-  | { type: "api/request"; payload: unknown };
+  | { type: "request/post"; url: string; payload: unknown }
+  | { type: "request/get"; url: string };
 
 const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>) => {
   let apiResponse: ApiResponse;
@@ -86,14 +83,28 @@ const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>
 
         break;
 
-      // Generic request
-      case "api/request":
+      // Post request
+      case "request/post":
         {
-          const { payload } = data;
-          const token = getToken();
-          const { data: requestData, status } = await createRequest(client, token, payload);
+          const { payload, url } = data;
+          const token = await getToken();
+          const { data: requestData, status } = await createPostRequest(client, url, token, payload);
           apiResponse = {
-            __typename: "GenericResponse",
+            __typename: "RequestResponse",
+            data: requestData,
+            status,
+          };
+        }
+        break;
+
+      // Get request
+      case "request/get":
+        {
+          const { url } = data;
+          const token = await getToken();
+          const { data: requestData, status } = await createGetRequest(client, url, token);
+          apiResponse = {
+            __typename: "RequestResponse",
             data: requestData,
             status,
           };

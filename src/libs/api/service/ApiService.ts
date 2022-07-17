@@ -29,11 +29,20 @@ export async function tokenRefresh(client: AxiosInstance, data: TokenRefreshRequ
   return response.data;
 }
 
-export async function createRequest(client: AxiosInstance, token: JwtToken, data: unknown) {
+export async function createPostRequest(client: AxiosInstance, url: string, token: JwtToken, data: unknown) {
   const config: AxiosRequestConfig = {
     ...defaultConfig,
     headers: { ...defaultConfig.headers, Authorization: `Bearer ${token}` },
   };
 
-  return await client.post("/api/tokens/refresh", data, config);
+  return await client.post(url, data, config);
+}
+
+export async function createGetRequest(client: AxiosInstance, url: string, token: JwtToken) {
+  const config: AxiosRequestConfig = {
+    ...defaultConfig,
+    headers: { ...defaultConfig.headers, Authorization: `Bearer ${token}` },
+  };
+
+  return await client.get(url, config);
 }

@@ -6,11 +6,11 @@ import { IFormSignUp } from "../../components/forms/sign-up/SignUpForm";
 import SignUpView from "../../components/views/login/SignUpView";
 import useApi from "../../libs/api/hooks/UseApi";
 import { UserSignUpRequest } from "../../libs/api/service/requests/UserSignUpRequest";
-import { GenericResponse } from "../../libs/api/worker/ApiWorkerReponse";
+import { RequestResponse } from "../../libs/api/worker/ApiWorkerReponse";
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const { makeRequest } = useApi();
+  const { post } = useApi();
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -25,7 +25,7 @@ export default function SignIn() {
 
     try {
       setLoading(true);
-      await makeRequest<UserSignUpRequest, GenericResponse>(data);
+      await post<UserSignUpRequest, RequestResponse<string>>("/api/users/self-register", data);
 
       navigate("/");
     } catch (error) {

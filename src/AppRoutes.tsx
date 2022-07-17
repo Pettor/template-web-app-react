@@ -3,8 +3,8 @@ import PrivateRoutes from "./libs/routes/PrivateRoutes";
 import PublicRoutes from "./libs/routes/PublicRoutes";
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/home/HomePage";
+import ForgotPasswordPage from "./pages/login/ForgotPasswordPage";
 import LoginPage from "./pages/login/LoginPage";
-import ResetPasswordPage from "./pages/login/ResetPasswordPage";
 import SignUpPage from "./pages/login/SignUpPage";
 
 function AppRoutes() {
@@ -16,7 +16,7 @@ function AppRoutes() {
             // Place routes that doesn't require authentication here
           }
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/forgot-password" element={<ResetPasswordPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
         </Route>
         <Route element={<PrivateRoutes />}>
