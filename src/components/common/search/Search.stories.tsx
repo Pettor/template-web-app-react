@@ -1,3 +1,4 @@
+import * as React from "react";
 import Box from "@mui/material/Box";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { CommonDecorator } from "../../../stories/decorators/CommonDecorator";
@@ -9,10 +10,10 @@ export default {
   decorators: [CommonDecorator],
 } as ComponentMeta<typeof Search>;
 
-const Template: ComponentStory<typeof Search> = (args) => {
+const Template: ComponentStory<typeof Search> = () => {
   return (
     <Box sx={{ maxWidth: 300 }}>
-      <Search {...args} />
+      <Search />
     </Box>
   );
 };

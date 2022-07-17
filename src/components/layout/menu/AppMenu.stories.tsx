@@ -1,3 +1,4 @@
+import * as React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import AppMenu from "./AppMenu";
 import AppMenuContent from "./content/AppMenuContent";

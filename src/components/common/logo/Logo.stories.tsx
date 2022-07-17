@@ -1,3 +1,4 @@
+import * as React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Logo from "./Logo";
 import LogoFull from "./LogoFull";

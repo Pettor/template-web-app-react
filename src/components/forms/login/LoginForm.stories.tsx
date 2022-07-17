@@ -1,3 +1,4 @@
+import * as React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ContainerDecorator } from "../../../stories/decorators/ContainerDecorator";
 import LoginForm from "./LoginForm";
