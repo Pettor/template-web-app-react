@@ -1,8 +1,10 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CloseIcon from "@mui/icons-material/Close";
-import { LoadingButton } from "@mui/lab";
-import { Alert, Collapse, IconButton } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
+import Alert from "@mui/material/Alert";
+import Collapse from "@mui/material/Collapse";
+import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 import * as yup from "yup";
 
@@ -49,6 +51,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         autoFocus
         margin="normal"
         fullWidth
+        size="small"
         id="userName"
         label="What should we call you?"
         type="displayName"
@@ -60,6 +63,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         autoFocus
         margin="normal"
         fullWidth
+        size="small"
         id="firstName"
         label="What is your first name?"
         autoComplete="firstName"
@@ -72,6 +76,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         autoFocus
         margin="normal"
         fullWidth
+        size="small"
         id="lastName"
         label="What is your last name?"
         autoComplete="lastName"
@@ -84,6 +89,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         margin="normal"
         type="email"
         fullWidth
+        size="small"
         id="email"
         label="What's your email?"
         autoComplete="email"
@@ -95,6 +101,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         margin="normal"
         type="tel"
         fullWidth
+        size="small"
         id="phoneNumber"
         label="What's your phone number?"
         autoComplete="phoneNumber"
@@ -106,6 +113,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         type="password"
         margin="normal"
         fullWidth
+        size="small"
         id="password"
         label="Create a password"
         autoComplete="password"
@@ -117,6 +125,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         type="password"
         margin="normal"
         fullWidth
+        size="small"
         id="confirmPassword"
         label="Confirm password"
         autoComplete="confirmPassword"
@@ -124,7 +133,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         helperText={errors?.confirmPassword?.message}
         {...register("confirmPassword")}
       />
-      <LoadingButton type="submit" loading={loading} variant="contained" sx={{ mt: 3, mb: 2, width: 200 }}>
+      <LoadingButton type="submit" loading={loading} variant="contained" fullWidth sx={{ mt: 3, mb: 2 }}>
         Sign Up
       </LoadingButton>
       <Collapse in={open && !!error}>
