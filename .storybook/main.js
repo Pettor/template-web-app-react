@@ -14,7 +14,7 @@ module.exports = {
   },
   framework: "@storybook/react",
   stories: ["../src/**/*.stories.@(ts|tsx)"],
-  addons: ["@storybook/addon-essentials", "storybook-dark-mode"],
+  addons: ["@storybook/addon-essentials", "@storybook/addon-a11y", "storybook-dark-mode"],
   webpackFinal: async (config) => {
     return {
       ...config,
