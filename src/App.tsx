@@ -1,3 +1,4 @@
+import { IntlProvider } from "react-intl";
 import AppRoutes from "./AppRoutes";
 import { AuthProvider } from "./libs/auth/context/AuthContext";
 import { validateCrypto } from "./libs/crypto/GetCrypto";
@@ -8,9 +9,11 @@ function App() {
 
   return (
     <AppTheme>
-      <AuthProvider>
-        <AppRoutes />
-      </AuthProvider>
+      <IntlProvider locale="en">
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </IntlProvider>
     </AppTheme>
   );
 }

@@ -1,4 +1,5 @@
 import CssBaseline from "@mui/material/CssBaseline";
+import { IntlProvider } from "react-intl";
 import { ThemeProvider } from "@mui/material/styles";
 import { ThemeProvider as Emotion10ThemeProvider } from "emotion-theming";
 import { useDarkMode } from "storybook-dark-mode";
@@ -20,10 +21,12 @@ const withThemeProvider = (Story, context) => {
 
   return (
     <Emotion10ThemeProvider theme={theme}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Story {...context} />
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <IntlProvider locale="en">
+              <CssBaseline />
+              <Story {...context} />
+          </IntlProvider>
+        </ThemeProvider>
     </Emotion10ThemeProvider>
   );
 };

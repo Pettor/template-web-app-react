@@ -9,6 +9,7 @@
     "lint": "eslint ./src",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook",
+    "i18n-extract": "formatjs extract",
     "test-storybook": "test-storybook",
     "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\""
   },
@@ -24,6 +25,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.29.0",
+    "react-intl": "^6.1.1",
     "react-router-dom": "^6.2.1",
     "yup": "^0.32.11"
   },
@@ -31,6 +33,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@formatjs/cli": "^5.1.0",
     "@storybook/addon-a11y": "^6.5.12",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-docs": "^6.5.12",
