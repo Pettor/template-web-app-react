@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useIntl } from "react-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CloseIcon from "@mui/icons-material/Close";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -26,17 +27,54 @@ export interface SignUpFormProps {
   onSubmit: SubmitHandler<IFormSignUp>;
 }
 
-const schema = yup
-  .object()
-  .shape({
-    displayName: yup.string().required("We need to call you something"),
-    email: yup.string().required("Email is required"),
-    password: yup.string().min(8, "Password is too short - should be 8 chars minimum").required("Password is required"),
-    passwordConfirmation: yup.string().oneOf([yup.ref("password"), null], "Passwords must match"),
-  })
-  .required();
-
 const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps) => {
+  const intl = useIntl();
+
+  const schema = yup
+    .object()
+    .shape({
+      displayName: yup.string().required(
+        intl.formatMessage({
+          description: "Yup: Display name incorrect",
+          defaultMessage: "We need to call you something",
+          id: "1wWFJn",
+        })
+      ),
+      email: yup.string().required(
+        intl.formatMessage({
+          description: "Yup: Email incorrect",
+          defaultMessage: "Email is required",
+          id: "HWQm37",
+        })
+      ),
+      password: yup
+        .string()
+        .min(
+          8,
+          intl.formatMessage({
+            description: "Yup: Password too short",
+            defaultMessage: "Password is too short - should be 8 chars minimum",
+            id: "DsyGiS",
+          })
+        )
+        .required(
+          intl.formatMessage({
+            description: "Yup: Password required",
+            defaultMessage: "Password is required",
+            id: "4wlNZm",
+          })
+        ),
+      passwordConfirmation: yup.string().oneOf(
+        [yup.ref("password"), null],
+        intl.formatMessage({
+          description: "Yup: Password must match",
+          defaultMessage: "Passwords must match",
+          id: "3djSb9",
+        })
+      ),
+    })
+    .required();
+
   const {
     handleSubmit: handleFormSubmit,
     register,
@@ -53,7 +91,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="userName"
-        label="What should we call you?"
+        label={intl.formatMessage({
+          description: "SignUp: Username label",
+          defaultMessage: "What should we call you?",
+          id: "UI/Wi5",
+        })}
         type="displayName"
         error={!!errors?.userName}
         helperText={errors?.userName?.message}
@@ -64,7 +106,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="firstName"
-        label="What is your first name?"
+        label={intl.formatMessage({
+          description: "SignUp: First name label",
+          defaultMessage: "What is your first name?",
+          id: "MlHPw2",
+        })}
         autoComplete="firstName"
         type="displayName"
         error={!!errors?.firstName}
@@ -76,7 +122,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="lastName"
-        label="What is your last name?"
+        label={intl.formatMessage({
+          description: "SignUp: Last name label",
+          defaultMessage: "What is your last name?",
+          id: "s0Yh5W",
+        })}
         autoComplete="lastName"
         type="displayName"
         error={!!errors?.lastName}
@@ -89,7 +139,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="email"
-        label="What's your email?"
+        label={intl.formatMessage({
+          description: "SignUp: Email label",
+          defaultMessage: "What's your email?",
+          id: "ghyHG0",
+        })}
         autoComplete="email"
         error={!!errors?.email}
         helperText={errors?.email?.message}
@@ -101,7 +155,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="phoneNumber"
-        label="What's your phone number?"
+        label={intl.formatMessage({
+          description: "SignUp: Phone number label",
+          defaultMessage: "What's your phone number?",
+          id: "i9wpfb",
+        })}
         autoComplete="phoneNumber"
         error={!!errors?.phoneNumber}
         helperText={errors?.phoneNumber?.message}
@@ -113,7 +171,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="password"
-        label="Create a password"
+        label={intl.formatMessage({
+          description: "SignUp: Password label",
+          defaultMessage: "Create a password",
+          id: "+Q1hl8",
+        })}
         autoComplete="password"
         error={!!errors?.password}
         helperText={errors?.password?.message}
@@ -125,14 +187,22 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="confirmPassword"
-        label="Confirm password"
+        label={intl.formatMessage({
+          description: "SignUp: Confirm password label",
+          defaultMessage: "Confirm password",
+          id: "/kPKgf",
+        })}
         autoComplete="confirmPassword"
         error={!!errors?.confirmPassword}
         helperText={errors?.confirmPassword?.message}
         {...register("confirmPassword")}
       />
       <LoadingButton type="submit" loading={loading} variant="contained" fullWidth sx={{ mt: 3, mb: 2 }}>
-        Sign Up
+        {intl.formatMessage({
+          description: "SignUp: Sign up button",
+          defaultMessage: "Sign Up",
+          id: "Y8xWGf",
+        })}
       </LoadingButton>
       <Collapse in={open && !!error}>
         <Alert
