@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useIntl } from "react-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CloseIcon from "@mui/icons-material/Close";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -36,6 +37,8 @@ const schema = yup
   .required();
 
 const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) => {
+  const intl = useIntl();
+
   const {
     handleSubmit: handleFormSubmit,
     register,
@@ -50,7 +53,11 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
         margin="normal"
         fullWidth
         id="email"
-        label="Email Address"
+        label={intl.formatMessage({
+          description: "Login: Email label",
+          defaultMessage: "Email Address",
+          id: "UyAY+T",
+        })}
         autoComplete="email"
         autoFocus
         error={!!errors?.email}
@@ -62,7 +69,11 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
         margin="normal"
         fullWidth
         id="password"
-        label="Password"
+        label={intl.formatMessage({
+          description: "Login: Password label",
+          defaultMessage: "Password",
+          id: "dPQCQO",
+        })}
         autoComplete="current-password"
         autoFocus
         type="password"
@@ -71,10 +82,22 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
         {...register("password")}
       />
       <Stack direction="row">
-        <FormControlLabel control={<Checkbox color="primary" />} label="Remember me" {...register("remember")} />
+        <FormControlLabel
+          control={<Checkbox color="primary" />}
+          label={intl.formatMessage({
+            description: "Login: Remember me button",
+            defaultMessage: "Remember me",
+            id: "Q0ozip",
+          })}
+          {...register("remember")}
+        />
         <Box sx={{ width: "100%", display: "flex", flex: 1, justifyContent: "flex-end" }}>
           <LoadingButton type="submit" loading={loading} variant="contained" sx={{ mt: 3, mb: 2, width: 150 }}>
-            Sign In
+            {intl.formatMessage({
+              description: "Login: Sign in button",
+              defaultMessage: "Sign in",
+              id: "ehhtmv",
+            })}
           </LoadingButton>
         </Box>
       </Stack>
