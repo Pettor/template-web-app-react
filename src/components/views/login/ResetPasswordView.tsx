@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import Typography from "@mui/material/Typography";
 import useAppInfo from "../../../libs/app/hooks/AppInfo";
 import LogoFull from "../../common/logo/LogoFull";
@@ -9,6 +10,7 @@ type Props = {
 };
 
 const ResetPasswordView = ({ resetForm }: Props) => {
+  const intl = useIntl();
   const { appName } = useAppInfo();
 
   return (
@@ -16,8 +18,22 @@ const ResetPasswordView = ({ resetForm }: Props) => {
       <LogoFull size="medium" />
       <br />
       <Typography textAlign="center">
-        Enter your <b>{appName}</b> email adress that you used to register. We&apos;ll send you an email with your
-        username and a link to reset your password.
+        <div
+          dangerouslySetInnerHTML={{
+            __html: intl.formatMessage(
+              {
+                description: "Reset Password: Description text",
+                defaultMessage:
+                  "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
+                id: "pb69JS",
+              },
+              {
+                appName: appName,
+                b: (...chunks) => `<b>${chunks}</b>`,
+              }
+            ),
+          }}
+        />
       </Typography>
       <ResetPasswordForm {...resetForm} />
     </ContainerLayout>
