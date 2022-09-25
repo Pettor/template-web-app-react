@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -14,10 +15,15 @@ const GridItem = styled(Paper)(({ theme }) => ({
 type Props = IHeaderLayout;
 
 const HomeView = (headerLayoutProps: Props) => {
+  const intl = useIntl();
   return (
     <HeaderLayout headerOptions={{ label: "Home" }} {...headerLayoutProps}>
       <Box>
-        This is content
+        {intl.formatMessage({
+          description: "Homne: Content text",
+          defaultMessage: "This is content",
+          id: "ib9CVb",
+        })}
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {Array.from(Array(6)).map((_, index) => (
             <Grid item xs={2} sm={4} md={4} key={index}>
