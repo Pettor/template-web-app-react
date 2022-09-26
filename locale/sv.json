@@ -1,10 +1,10 @@
 {
   "+Q1hl8": {
-    "defaultMessage": "Create a password",
+    "defaultMessage": "Skapa ett lösenord",
     "description": "SignUp: Password label"
   },
   "/kPKgf": {
-    "defaultMessage": "Confirm password",
+    "defaultMessage": "Bekräfta lösenord",
     "description": "SignUp: Confirm password label"
   },
   "0GaXrw": {
@@ -48,7 +48,7 @@
     "description": "Home: Content text"
   },
   "Q0ozip": {
-    "defaultMessage": "Remember me",
+    "defaultMessage": "Kom ihåg",
     "description": "Login: Remember me button"
   },
   "UI/Wi5": {
@@ -56,23 +56,23 @@
     "description": "SignUp: Username label"
   },
   "UyAY+T": {
-    "defaultMessage": "Email Address",
+    "defaultMessage": "Email",
     "description": "Login: Email label"
   },
   "Y8xWGf": {
-    "defaultMessage": "Sign Up",
+    "defaultMessage": "Registrera",
     "description": "SignUp: Sign up button"
   },
   "dPQCQO": {
-    "defaultMessage": "Password",
+    "defaultMessage": "Lösenord",
     "description": "Login: Password label"
   },
   "ehhtmv": {
-    "defaultMessage": "Sign in",
+    "defaultMessage": "Logga in",
     "description": "Login: Sign in button"
   },
   "fVVMAQ": {
-    "defaultMessage": "Forgot password?",
+    "defaultMessage": "Återställ lösenord?",
     "description": "Login: Forgot password text"
   },
   "ghyHG0": {
@@ -84,7 +84,7 @@
     "description": "SignUp: Phone number label"
   },
   "pb69JS": {
-    "defaultMessage": "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
+    "defaultMessage": "Skriv in din <b>{appName}</b> email som du använt vid registrering. Vi kommer skicka ett email med ditt användarnamn och en länk för att återställa ditt lösenord.",
     "description": "Reset Password: Description text"
   },
   "s0Yh5W": {

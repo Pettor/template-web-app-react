@@ -1,8 +1,8 @@
-const locales = ['en'];
+const locales = ['en', 'sv'];
 
 const messages = locales.reduce((acc, lang) => ({
   ...acc,
-  [lang]: require(`../locale/${lang}.json`),
+  [lang]: require(`../compiled-locale/${lang}.json`),
 }), {});
 
 const formats = {}; // optional, if you have any formats

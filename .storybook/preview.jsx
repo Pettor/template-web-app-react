@@ -19,7 +19,8 @@ export const parameters = {
   reactIntl,
   locale: reactIntl.defaultLocale,
   locales: {
-    en: "English"
+    en: "English",
+    sv: "Swedish"
   },
 };
 

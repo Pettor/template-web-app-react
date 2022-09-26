@@ -1,0 +1,154 @@
+{
+  "+Q1hl8": [
+    {
+      "type": 0,
+      "value": "Create a password"
+    }
+  ],
+  "/kPKgf": [
+    {
+      "type": 0,
+      "value": "Confirm password"
+    }
+  ],
+  "0GaXrw": [
+    {
+      "type": 0,
+      "value": "Sign up with your email address"
+    }
+  ],
+  "1wWFJn": [
+    {
+      "type": 0,
+      "value": "We need to call you something"
+    }
+  ],
+  "3djSb9": [
+    {
+      "type": 0,
+      "value": "Passwords must match"
+    }
+  ],
+  "4wlNZm": [
+    {
+      "type": 0,
+      "value": "Password is required"
+    }
+  ],
+  "DT/hPY": [
+    {
+      "type": 0,
+      "value": "Don't have an account? Sign up"
+    }
+  ],
+  "DsyGiS": [
+    {
+      "type": 0,
+      "value": "Password is too short - should be 8 chars minimum"
+    }
+  ],
+  "HWQm37": [
+    {
+      "type": 0,
+      "value": "Email is required"
+    }
+  ],
+  "JkTZtG": [
+    {
+      "type": 0,
+      "value": "Search…"
+    }
+  ],
+  "MlHPw2": [
+    {
+      "type": 0,
+      "value": "What is your first name?"
+    }
+  ],
+  "OAQGvK": [
+    {
+      "type": 0,
+      "value": "This is content"
+    }
+  ],
+  "Q0ozip": [
+    {
+      "type": 0,
+      "value": "Remember me"
+    }
+  ],
+  "UI/Wi5": [
+    {
+      "type": 0,
+      "value": "What should we call you?"
+    }
+  ],
+  "UyAY+T": [
+    {
+      "type": 0,
+      "value": "Email Address"
+    }
+  ],
+  "Y8xWGf": [
+    {
+      "type": 0,
+      "value": "Sign Up"
+    }
+  ],
+  "dPQCQO": [
+    {
+      "type": 0,
+      "value": "Password"
+    }
+  ],
+  "ehhtmv": [
+    {
+      "type": 0,
+      "value": "Sign in"
+    }
+  ],
+  "fVVMAQ": [
+    {
+      "type": 0,
+      "value": "Forgot password?"
+    }
+  ],
+  "ghyHG0": [
+    {
+      "type": 0,
+      "value": "What's your email?"
+    }
+  ],
+  "i9wpfb": [
+    {
+      "type": 0,
+      "value": "What's your phone number?"
+    }
+  ],
+  "pb69JS": [
+    {
+      "type": 0,
+      "value": "Enter your "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "appName"
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    },
+    {
+      "type": 0,
+      "value": " email adress that you used to register. We'll send you an email with your username and a link to reset your password."
+    }
+  ],
+  "s0Yh5W": [
+    {
+      "type": 0,
+      "value": "What is your last name?"
+    }
+  ]
+}

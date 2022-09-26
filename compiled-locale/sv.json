@@ -1,0 +1,154 @@
+{
+  "+Q1hl8": [
+    {
+      "type": 0,
+      "value": "Skapa ett lösenord"
+    }
+  ],
+  "/kPKgf": [
+    {
+      "type": 0,
+      "value": "Bekräfta lösenord"
+    }
+  ],
+  "0GaXrw": [
+    {
+      "type": 0,
+      "value": "Sign up with your email address"
+    }
+  ],
+  "1wWFJn": [
+    {
+      "type": 0,
+      "value": "We need to call you something"
+    }
+  ],
+  "3djSb9": [
+    {
+      "type": 0,
+      "value": "Passwords must match"
+    }
+  ],
+  "4wlNZm": [
+    {
+      "type": 0,
+      "value": "Password is required"
+    }
+  ],
+  "DT/hPY": [
+    {
+      "type": 0,
+      "value": "Don't have an account? Sign up"
+    }
+  ],
+  "DsyGiS": [
+    {
+      "type": 0,
+      "value": "Password is too short - should be 8 chars minimum"
+    }
+  ],
+  "HWQm37": [
+    {
+      "type": 0,
+      "value": "Email is required"
+    }
+  ],
+  "JkTZtG": [
+    {
+      "type": 0,
+      "value": "Search…"
+    }
+  ],
+  "MlHPw2": [
+    {
+      "type": 0,
+      "value": "What is your first name?"
+    }
+  ],
+  "OAQGvK": [
+    {
+      "type": 0,
+      "value": "This is content"
+    }
+  ],
+  "Q0ozip": [
+    {
+      "type": 0,
+      "value": "Kom ihåg"
+    }
+  ],
+  "UI/Wi5": [
+    {
+      "type": 0,
+      "value": "What should we call you?"
+    }
+  ],
+  "UyAY+T": [
+    {
+      "type": 0,
+      "value": "Email"
+    }
+  ],
+  "Y8xWGf": [
+    {
+      "type": 0,
+      "value": "Registrera"
+    }
+  ],
+  "dPQCQO": [
+    {
+      "type": 0,
+      "value": "Lösenord"
+    }
+  ],
+  "ehhtmv": [
+    {
+      "type": 0,
+      "value": "Logga in"
+    }
+  ],
+  "fVVMAQ": [
+    {
+      "type": 0,
+      "value": "Återställ lösenord?"
+    }
+  ],
+  "ghyHG0": [
+    {
+      "type": 0,
+      "value": "What's your email?"
+    }
+  ],
+  "i9wpfb": [
+    {
+      "type": 0,
+      "value": "What's your phone number?"
+    }
+  ],
+  "pb69JS": [
+    {
+      "type": 0,
+      "value": "Skriv in din "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "appName"
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    },
+    {
+      "type": 0,
+      "value": " email som du använt vid registrering. Vi kommer skicka ett email med ditt användarnamn och en länk för att återställa ditt lösenord."
+    }
+  ],
+  "s0Yh5W": [
+    {
+      "type": 0,
+      "value": "What is your last name?"
+    }
+  ]
+}
