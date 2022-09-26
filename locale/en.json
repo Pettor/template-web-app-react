@@ -1,0 +1,94 @@
+{
+  "+Q1hl8": {
+    "defaultMessage": "Create a password",
+    "description": "SignUp: Password label"
+  },
+  "/kPKgf": {
+    "defaultMessage": "Confirm password",
+    "description": "SignUp: Confirm password label"
+  },
+  "0GaXrw": {
+    "defaultMessage": "Sign up with your email address",
+    "description": "SignUp: Description text"
+  },
+  "1wWFJn": {
+    "defaultMessage": "We need to call you something",
+    "description": "Yup: Display name incorrect"
+  },
+  "3djSb9": {
+    "defaultMessage": "Passwords must match",
+    "description": "Yup: Password must match"
+  },
+  "4wlNZm": {
+    "defaultMessage": "Password is required",
+    "description": "Yup: Password required"
+  },
+  "DT/hPY": {
+    "defaultMessage": "Don't have an account? Sign up",
+    "description": "Login: Sign Up text"
+  },
+  "DsyGiS": {
+    "defaultMessage": "Password is too short - should be 8 chars minimum",
+    "description": "Yup: Password too short"
+  },
+  "HWQm37": {
+    "defaultMessage": "Email is required",
+    "description": "Yup: Email incorrect"
+  },
+  "JkTZtG": {
+    "defaultMessage": "Search…",
+    "description": "Search: Placeholder"
+  },
+  "MlHPw2": {
+    "defaultMessage": "What is your first name?",
+    "description": "SignUp: First name label"
+  },
+  "Q0ozip": {
+    "defaultMessage": "Remember me",
+    "description": "Login: Remember me button"
+  },
+  "UI/Wi5": {
+    "defaultMessage": "What should we call you?",
+    "description": "SignUp: Username label"
+  },
+  "UyAY+T": {
+    "defaultMessage": "Email Address",
+    "description": "Login: Email label"
+  },
+  "Y8xWGf": {
+    "defaultMessage": "Sign Up",
+    "description": "SignUp: Sign up button"
+  },
+  "dPQCQO": {
+    "defaultMessage": "Password",
+    "description": "Login: Password label"
+  },
+  "ehhtmv": {
+    "defaultMessage": "Sign in",
+    "description": "Login: Sign in button"
+  },
+  "fVVMAQ": {
+    "defaultMessage": "Forgot password?",
+    "description": "Login: Forgot password text"
+  },
+  "ghyHG0": {
+    "defaultMessage": "What's your email?",
+    "description": "SignUp: Email label"
+  },
+  "i9wpfb": {
+    "defaultMessage": "What's your phone number?",
+    "description": "SignUp: Phone number label"
+  },
+  "ib9CVb": {
+    "defaultMessage": "This is content",
+    "description": "Homne: Content text"
+  },
+  "pb69JS": {
+    "defaultMessage": "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
+    "description": "Reset Password: Description text"
+  },
+  "s0Yh5W": {
+    "defaultMessage": "What is your last name?",
+    "description": "SignUp: Last name label"
+  }
+}
