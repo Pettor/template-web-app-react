@@ -60,7 +60,6 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         {...register("userName")}
       />
       <TextField
-        autoFocus
         margin="normal"
         fullWidth
         size="small"
@@ -73,7 +72,6 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         {...register("firstName")}
       />
       <TextField
-        autoFocus
         margin="normal"
         fullWidth
         size="small"
