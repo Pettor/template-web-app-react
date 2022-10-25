@@ -8,43 +8,43 @@
     "description": "SignUp: Confirm password label"
   },
   "0GaXrw": {
-    "defaultMessage": "Sign up with your email address",
+    "defaultMessage": "Registrera med email",
     "description": "SignUp: Description text"
   },
   "1wWFJn": {
-    "defaultMessage": "We need to call you something",
+    "defaultMessage": "Vad ska vi kalla dig",
     "description": "Yup: Display name incorrect"
   },
   "3djSb9": {
-    "defaultMessage": "Passwords must match",
+    "defaultMessage": "Lösenord måste matcha",
     "description": "Yup: Password must match"
   },
   "4wlNZm": {
-    "defaultMessage": "Password is required",
+    "defaultMessage": "Lösenord saknas",
     "description": "Yup: Password required"
   },
   "DT/hPY": {
-    "defaultMessage": "Don't have an account? Sign up",
+    "defaultMessage": "Saknar konto? Registera dig",
     "description": "Login: Sign Up text"
   },
   "DsyGiS": {
-    "defaultMessage": "Password is too short - should be 8 chars minimum",
+    "defaultMessage": "Lösenord är för kort - det måste vara minst 8 tecken",
     "description": "Yup: Password too short"
   },
   "HWQm37": {
-    "defaultMessage": "Email is required",
+    "defaultMessage": "Email är obligatoriskt",
     "description": "Yup: Email incorrect"
   },
   "JkTZtG": {
-    "defaultMessage": "Search…",
+    "defaultMessage": "Sök...",
     "description": "Search: Placeholder"
   },
   "MlHPw2": {
-    "defaultMessage": "What is your first name?",
+    "defaultMessage": "Vad är ditt förnamn?",
     "description": "SignUp: First name label"
   },
   "OAQGvK": {
-    "defaultMessage": "This is content",
+    "defaultMessage": "Det här är content",
     "description": "Home: Content text"
   },
   "Q0ozip": {
@@ -52,7 +52,7 @@
     "description": "Login: Remember me button"
   },
   "UI/Wi5": {
-    "defaultMessage": "What should we call you?",
+    "defaultMessage": "Vad ska vi kalla dig?",
     "description": "SignUp: Username label"
   },
   "UyAY+T": {
@@ -76,11 +76,11 @@
     "description": "Login: Forgot password text"
   },
   "ghyHG0": {
-    "defaultMessage": "What's your email?",
+    "defaultMessage": "Skriv in din email",
     "description": "SignUp: Email label"
   },
   "i9wpfb": {
-    "defaultMessage": "What's your phone number?",
+    "defaultMessage": "Skriv in ditt telefonnummer",
     "description": "SignUp: Phone number label"
   },
   "pb69JS": {
@@ -88,7 +88,7 @@
     "description": "Reset Password: Description text"
   },
   "s0Yh5W": {
-    "defaultMessage": "What is your last name?",
+    "defaultMessage": "Vad är ditt efternamn?",
     "description": "SignUp: Last name label"
   }
 }
