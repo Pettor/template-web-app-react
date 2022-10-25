@@ -31,7 +31,8 @@
       "error",
       {
         "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
-      },
+      }
+    ],
     "formatjs/enforce-id": [
       "error",
       {
