@@ -1,134 +1,50 @@
 {
-  "+Q1hl8": [
+  "+ADOR2": [
     {
       "type": 0,
-      "value": "Skapa ett lösenord"
+      "value": "Fyll i lösenord"
     }
   ],
-  "/kPKgf": [
-    {
-      "type": 0,
-      "value": "Bekräfta lösenord"
-    }
-  ],
-  "0GaXrw": [
-    {
-      "type": 0,
-      "value": "Sign up with your email address"
-    }
-  ],
-  "1wWFJn": [
-    {
-      "type": 0,
-      "value": "We need to call you something"
-    }
-  ],
-  "3djSb9": [
-    {
-      "type": 0,
-      "value": "Passwords must match"
-    }
-  ],
-  "4wlNZm": [
-    {
-      "type": 0,
-      "value": "Password is required"
-    }
-  ],
-  "DT/hPY": [
-    {
-      "type": 0,
-      "value": "Don't have an account? Sign up"
-    }
-  ],
-  "DsyGiS": [
-    {
-      "type": 0,
-      "value": "Password is too short - should be 8 chars minimum"
-    }
-  ],
-  "HWQm37": [
-    {
-      "type": 0,
-      "value": "Email is required"
-    }
-  ],
-  "JkTZtG": [
-    {
-      "type": 0,
-      "value": "Search…"
-    }
-  ],
-  "MlHPw2": [
-    {
-      "type": 0,
-      "value": "What is your first name?"
-    }
-  ],
-  "OAQGvK": [
-    {
-      "type": 0,
-      "value": "This is content"
-    }
-  ],
-  "Q0ozip": [
+  "2qmW3a": [
     {
       "type": 0,
       "value": "Kom ihåg"
     }
   ],
-  "UI/Wi5": [
+  "3YTbxI": [
     {
       "type": 0,
-      "value": "What should we call you?"
+      "value": "Efternamn"
     }
   ],
-  "UyAY+T": [
+  "3pA647": [
     {
       "type": 0,
       "value": "Email"
     }
   ],
-  "Y8xWGf": [
-    {
-      "type": 0,
-      "value": "Registrera"
-    }
-  ],
-  "dPQCQO": [
+  "7VjY8Y": [
     {
       "type": 0,
       "value": "Lösenord"
     }
   ],
-  "ehhtmv": [
+  "Erb2yF": [
     {
       "type": 0,
-      "value": "Logga in"
+      "value": "Saknar konto? Registrera dig"
     }
   ],
-  "fVVMAQ": [
+  "IOLTJ0": [
     {
       "type": 0,
-      "value": "Återställ lösenord?"
+      "value": "Lösenorden matchar inte"
     }
   ],
-  "ghyHG0": [
+  "LSY7eb": [
     {
       "type": 0,
-      "value": "What's your email?"
-    }
-  ],
-  "i9wpfb": [
-    {
-      "type": 0,
-      "value": "What's your phone number?"
-    }
-  ],
-  "pb69JS": [
-    {
-      "type": 0,
-      "value": "Skriv in din "
+      "value": "Skriv in den email du använt vid registrering av "
     },
     {
       "children": [
@@ -142,13 +58,121 @@
     },
     {
       "type": 0,
-      "value": " email som du använt vid registrering. Vi kommer skicka ett email med ditt användarnamn och en länk för att återställa ditt lösenord."
+      "value": ". Vi kommer skicka ett email med ditt användarnamn och en länk för att återställa ditt lösenord."
     }
   ],
-  "s0Yh5W": [
+  "NFDCUF": [
     {
       "type": 0,
-      "value": "What is your last name?"
+      "value": "Förnamn"
+    }
+  ],
+  "NG06ZV": [
+    {
+      "type": 0,
+      "value": "Registera med din email"
+    }
+  ],
+  "SRtN9p": [
+    {
+      "type": 0,
+      "value": "Email"
+    }
+  ],
+  "UjAA8C": [
+    {
+      "type": 0,
+      "value": "Telefonnummer"
+    }
+  ],
+  "YzHSuh": [
+    {
+      "type": 0,
+      "value": "Lösenord är för kort - minst 8 tecken"
+    }
+  ],
+  "aNSSLX": [
+    {
+      "type": 0,
+      "value": "Glömt lösenord?"
+    }
+  ],
+  "dU9xzq": [
+    {
+      "type": 0,
+      "value": "Bekräfta lösenord"
+    }
+  ],
+  "f2xRFX": [
+    {
+      "type": 0,
+      "value": "Användarnamn"
+    }
+  ],
+  "m5YIDx": [
+    {
+      "type": 0,
+      "value": "Email saknas"
+    }
+  ],
+  "o5TvN6": [
+    {
+      "type": 0,
+      "value": "Email saknas"
+    }
+  ],
+  "oigOyc": [
+    {
+      "type": 0,
+      "value": "Registera konto"
+    }
+  ],
+  "p9y0Zh": [
+    {
+      "type": 0,
+      "value": "Lösenord saknas"
+    }
+  ],
+  "piUPAg": [
+    {
+      "type": 0,
+      "value": "Användarnamn saknas"
+    }
+  ],
+  "ppqAda": [
+    {
+      "type": 0,
+      "value": "Lösenord"
+    }
+  ],
+  "sJG6e/": [
+    {
+      "type": 0,
+      "value": "Email saknas"
+    }
+  ],
+  "tZBQgk": [
+    {
+      "type": 0,
+      "value": "Email"
+    }
+  ],
+  "uSbNv6": [
+    {
+      "type": 0,
+      "value": "Sök…"
+    }
+  ],
+  "vlRwrH": [
+    {
+      "type": 0,
+      "value": "Välkommen"
+    }
+  ],
+  "zXsz1H": [
+    {
+      "type": 0,
+      "value": "Logga in"
     }
   ]
 }

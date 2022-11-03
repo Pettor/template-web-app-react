@@ -1,131 +1,47 @@
 {
-  "+Q1hl8": [
-    {
-      "type": 0,
-      "value": "Create a password"
-    }
-  ],
-  "/kPKgf": [
-    {
-      "type": 0,
-      "value": "Confirm password"
-    }
-  ],
-  "0GaXrw": [
-    {
-      "type": 0,
-      "value": "Sign up with your email address"
-    }
-  ],
-  "1wWFJn": [
-    {
-      "type": 0,
-      "value": "We need to call you something"
-    }
-  ],
-  "3djSb9": [
-    {
-      "type": 0,
-      "value": "Passwords must match"
-    }
-  ],
-  "4wlNZm": [
+  "+ADOR2": [
     {
       "type": 0,
       "value": "Password is required"
     }
   ],
-  "DT/hPY": [
-    {
-      "type": 0,
-      "value": "Don't have an account? Sign up"
-    }
-  ],
-  "DsyGiS": [
-    {
-      "type": 0,
-      "value": "Password is too short - should be 8 chars minimum"
-    }
-  ],
-  "HWQm37": [
-    {
-      "type": 0,
-      "value": "Email is required"
-    }
-  ],
-  "JkTZtG": [
-    {
-      "type": 0,
-      "value": "Search…"
-    }
-  ],
-  "MlHPw2": [
-    {
-      "type": 0,
-      "value": "What is your first name?"
-    }
-  ],
-  "OAQGvK": [
-    {
-      "type": 0,
-      "value": "This is content"
-    }
-  ],
-  "Q0ozip": [
+  "2qmW3a": [
     {
       "type": 0,
       "value": "Remember me"
     }
   ],
-  "UI/Wi5": [
+  "3YTbxI": [
     {
       "type": 0,
-      "value": "What should we call you?"
+      "value": "What is your last name?"
     }
   ],
-  "UyAY+T": [
+  "3pA647": [
     {
       "type": 0,
       "value": "Email Address"
     }
   ],
-  "Y8xWGf": [
-    {
-      "type": 0,
-      "value": "Sign Up"
-    }
-  ],
-  "dPQCQO": [
+  "7VjY8Y": [
     {
       "type": 0,
       "value": "Password"
     }
   ],
-  "ehhtmv": [
+  "Erb2yF": [
     {
       "type": 0,
-      "value": "Sign in"
+      "value": "Don't have an account? Sign up"
     }
   ],
-  "fVVMAQ": [
+  "IOLTJ0": [
     {
       "type": 0,
-      "value": "Forgot password?"
+      "value": "Passwords must match"
     }
   ],
-  "ghyHG0": [
-    {
-      "type": 0,
-      "value": "What's your email?"
-    }
-  ],
-  "i9wpfb": [
-    {
-      "type": 0,
-      "value": "What's your phone number?"
-    }
-  ],
-  "pb69JS": [
+  "LSY7eb": [
     {
       "type": 0,
       "value": "Enter your "
@@ -145,10 +61,118 @@
       "value": " email adress that you used to register. We'll send you an email with your username and a link to reset your password."
     }
   ],
-  "s0Yh5W": [
+  "NFDCUF": [
     {
       "type": 0,
-      "value": "What is your last name?"
+      "value": "What is your first name?"
+    }
+  ],
+  "NG06ZV": [
+    {
+      "type": 0,
+      "value": "Sign up with your email address"
+    }
+  ],
+  "SRtN9p": [
+    {
+      "type": 0,
+      "value": "Email Address"
+    }
+  ],
+  "UjAA8C": [
+    {
+      "type": 0,
+      "value": "What's your phone number?"
+    }
+  ],
+  "YzHSuh": [
+    {
+      "type": 0,
+      "value": "Password is too short - should be 8 chars minimum"
+    }
+  ],
+  "aNSSLX": [
+    {
+      "type": 0,
+      "value": "Forgot password?"
+    }
+  ],
+  "dU9xzq": [
+    {
+      "type": 0,
+      "value": "Confirm password"
+    }
+  ],
+  "f2xRFX": [
+    {
+      "type": 0,
+      "value": "What should we call you?"
+    }
+  ],
+  "m5YIDx": [
+    {
+      "type": 0,
+      "value": "Email is required"
+    }
+  ],
+  "o5TvN6": [
+    {
+      "type": 0,
+      "value": "Email is required"
+    }
+  ],
+  "oigOyc": [
+    {
+      "type": 0,
+      "value": "Sign Up"
+    }
+  ],
+  "p9y0Zh": [
+    {
+      "type": 0,
+      "value": "Password is required"
+    }
+  ],
+  "piUPAg": [
+    {
+      "type": 0,
+      "value": "We need to call you something"
+    }
+  ],
+  "ppqAda": [
+    {
+      "type": 0,
+      "value": "Create a password"
+    }
+  ],
+  "sJG6e/": [
+    {
+      "type": 0,
+      "value": "Email is required"
+    }
+  ],
+  "tZBQgk": [
+    {
+      "type": 0,
+      "value": "What's your email?"
+    }
+  ],
+  "uSbNv6": [
+    {
+      "type": 0,
+      "value": "Search…"
+    }
+  ],
+  "vlRwrH": [
+    {
+      "type": 0,
+      "value": "Welcome"
+    }
+  ],
+  "zXsz1H": [
+    {
+      "type": 0,
+      "value": "Sign in"
     }
   ]
 }
