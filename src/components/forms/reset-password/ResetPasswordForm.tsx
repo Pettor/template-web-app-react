@@ -25,13 +25,16 @@ const ResetPasswordForm = ({ error, open, loading, onAlert, onSubmit }: ResetPas
   const schema = yup
     .object()
     .shape({
-      email: yup.string().required(
-        intl.formatMessage({
-          description: "ResetPasswordFormValidation - Email is required",
-          defaultMessage: "Email is required",
-          id: "m5YIDx",
-        })
-      ),
+      email: yup
+        .string()
+        .email()
+        .required(
+          intl.formatMessage({
+            description: "ResetPasswordFormValidation - Email is required",
+            defaultMessage: "Email is required",
+            id: "m5YIDx",
+          })
+        ),
     })
     .required();
 

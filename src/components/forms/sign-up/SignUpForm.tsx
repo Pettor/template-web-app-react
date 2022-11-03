@@ -40,13 +40,16 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
           id: "piUPAg",
         })
       ),
-      email: yup.string().required(
-        intl.formatMessage({
-          description: "SignUpFormValidation - Email is required",
-          defaultMessage: "Email is required",
-          id: "o5TvN6",
-        })
-      ),
+      email: yup
+        .string()
+        .email()
+        .required(
+          intl.formatMessage({
+            description: "SignUpFormValidation - Email is required",
+            defaultMessage: "Email is required",
+            id: "o5TvN6",
+          })
+        ),
       password: yup
         .string()
         .min(
@@ -135,7 +138,6 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
       />
       <TextField
         margin="normal"
-        type="email"
         fullWidth
         size="small"
         id="email"

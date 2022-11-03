@@ -33,13 +33,16 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
   const schema = yup
     .object()
     .shape({
-      email: yup.string().required(
-        intl.formatMessage({
-          description: "LoginFormValidation - Email is required",
-          defaultMessage: "Email is required",
-          id: "sJG6e/",
-        })
-      ),
+      email: yup
+        .string()
+        .email()
+        .required(
+          intl.formatMessage({
+            description: "LoginFormValidation - Email is required",
+            defaultMessage: "Email is required",
+            id: "sJG6e/",
+          })
+        ),
       password: yup.string().required(
         intl.formatMessage({
           description: "LoginFormValidation - Password is required",
