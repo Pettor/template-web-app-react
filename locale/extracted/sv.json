@@ -1,94 +1,110 @@
 {
-  "+Q1hl8": {
-    "defaultMessage": "Skapa ett lösenord",
-    "description": "SignUp: Password label"
+  "+ADOR2": {
+    "defaultMessage": "Fyll i lösenord",
+    "description": "LoginFormValidation - Password is required"
   },
-  "/kPKgf": {
-    "defaultMessage": "Bekräfta lösenord",
-    "description": "SignUp: Confirm password label"
-  },
-  "0GaXrw": {
-    "defaultMessage": "Registrera med email",
-    "description": "SignUp: Description text"
-  },
-  "1wWFJn": {
-    "defaultMessage": "Vad ska vi kalla dig",
-    "description": "Yup: Display name incorrect"
-  },
-  "3djSb9": {
-    "defaultMessage": "Lösenord måste matcha",
-    "description": "Yup: Password must match"
-  },
-  "4wlNZm": {
-    "defaultMessage": "Lösenord saknas",
-    "description": "Yup: Password required"
-  },
-  "DT/hPY": {
-    "defaultMessage": "Saknar konto? Registera dig",
-    "description": "Login: Sign Up text"
-  },
-  "DsyGiS": {
-    "defaultMessage": "Lösenord är för kort - det måste vara minst 8 tecken",
-    "description": "Yup: Password too short"
-  },
-  "HWQm37": {
-    "defaultMessage": "Email är obligatoriskt",
-    "description": "Yup: Email incorrect"
-  },
-  "JkTZtG": {
-    "defaultMessage": "Sök...",
-    "description": "Search: Placeholder"
-  },
-  "MlHPw2": {
-    "defaultMessage": "Vad är ditt förnamn?",
-    "description": "SignUp: First name label"
-  },
-  "OAQGvK": {
-    "defaultMessage": "Det här är content",
-    "description": "Home: Content text"
-  },
-  "Q0ozip": {
+  "2qmW3a": {
     "defaultMessage": "Kom ihåg",
-    "description": "Login: Remember me button"
+    "description": "LoginFormLabel: Remember me"
   },
-  "UI/Wi5": {
-    "defaultMessage": "Vad ska vi kalla dig?",
-    "description": "SignUp: Username label"
+  "3YTbxI": {
+    "defaultMessage": "Efternamn",
+    "description": "SignUpFormLabel - Last Name"
   },
-  "UyAY+T": {
+  "3pA647": {
     "defaultMessage": "Email",
-    "description": "Login: Email label"
+    "description": "LoginFormLabel: Email"
   },
-  "Y8xWGf": {
-    "defaultMessage": "Registrera",
-    "description": "SignUp: Sign up button"
-  },
-  "dPQCQO": {
+  "7VjY8Y": {
     "defaultMessage": "Lösenord",
-    "description": "Login: Password label"
+    "description": "LoginFormLabel: Password"
   },
-  "ehhtmv": {
+  "Erb2yF": {
+    "defaultMessage": "Saknar konto? Registrera dig",
+    "description": "LoginViewLink - Don't have an account? Sign Up"
+  },
+  "IOLTJ0": {
+    "defaultMessage": "Lösenorden matchar inte",
+    "description": "SignUpFormValidation - Passwords must match"
+  },
+  "LSY7eb": {
+    "defaultMessage": "Skriv in den email du använt vid registrering av <b>{appName}</b>. Vi kommer skicka ett email med ditt användarnamn och en länk för att återställa ditt lösenord.",
+    "description": "ResetPasswordView - Reset password description"
+  },
+  "NFDCUF": {
+    "defaultMessage": "Förnamn",
+    "description": "SignUpFormLabel - First Name"
+  },
+  "NG06ZV": {
+    "defaultMessage": "Registera med din email",
+    "description": "SignUpView - Sign up description"
+  },
+  "SRtN9p": {
+    "defaultMessage": "Email",
+    "description": "ResetPasswordFormLabel - Email"
+  },
+  "UjAA8C": {
+    "defaultMessage": "Telefonnummer",
+    "description": "SignUpFormLabel - Phone Number"
+  },
+  "YzHSuh": {
+    "defaultMessage": "Lösenord är för kort - minst 8 tecken",
+    "description": "SignUpFormValidation - Password is too short - min 8 characters"
+  },
+  "aNSSLX": {
+    "defaultMessage": "Glömt lösenord?",
+    "description": "LoginViewLink - Forgot password"
+  },
+  "dU9xzq": {
+    "defaultMessage": "Bekräfta lösenord",
+    "description": "SignUpFormLabel - Confirm Password"
+  },
+  "f2xRFX": {
+    "defaultMessage": "Användarnamn",
+    "description": "SignUpFormLabel - User Name"
+  },
+  "m5YIDx": {
+    "defaultMessage": "Email saknas",
+    "description": "ResetPasswordFormValidation - Email is required"
+  },
+  "o5TvN6": {
+    "defaultMessage": "Email saknas",
+    "description": "SignUpFormValidation - Email is required"
+  },
+  "oigOyc": {
+    "defaultMessage": "Registera konto",
+    "description": "SignUpFormButton - Sign Up"
+  },
+  "p9y0Zh": {
+    "defaultMessage": "Lösenord saknas",
+    "description": "SignUpFormValidation - Password is required"
+  },
+  "piUPAg": {
+    "defaultMessage": "Användarnamn saknas",
+    "description": "SignUpFormValidation - Display Name is required"
+  },
+  "ppqAda": {
+    "defaultMessage": "Lösenord",
+    "description": "SignUpFormLabel - Password"
+  },
+  "sJG6e/": {
+    "defaultMessage": "Email saknas",
+    "description": "LoginFormValidation - Email is required"
+  },
+  "tZBQgk": {
+    "defaultMessage": "Email",
+    "description": "SignUpFormLabel - Email"
+  },
+  "uSbNv6": {
+    "defaultMessage": "Sök…",
+    "description": "SearchComponentInput - Search placeholder"
+  },
+  "vlRwrH": {
+    "defaultMessage": "Välkommen",
+    "description": "HomeView - Welcome"
+  },
+  "zXsz1H": {
     "defaultMessage": "Logga in",
-    "description": "Login: Sign in button"
-  },
-  "fVVMAQ": {
-    "defaultMessage": "Återställ lösenord?",
-    "description": "Login: Forgot password text"
-  },
-  "ghyHG0": {
-    "defaultMessage": "Skriv in din email",
-    "description": "SignUp: Email label"
-  },
-  "i9wpfb": {
-    "defaultMessage": "Skriv in ditt telefonnummer",
-    "description": "SignUp: Phone number label"
-  },
-  "pb69JS": {
-    "defaultMessage": "Skriv in din <b>{appName}</b> email som du använt vid registrering. Vi kommer skicka ett email med ditt användarnamn och en länk för att återställa ditt lösenord.",
-    "description": "Reset Password: Description text"
-  },
-  "s0Yh5W": {
-    "defaultMessage": "Vad är ditt efternamn?",
-    "description": "SignUp: Last name label"
+    "description": "LoginFormButton: Sign in"
   }
 }
