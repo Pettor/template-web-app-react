@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
@@ -19,6 +20,8 @@ type Props = {
 };
 
 const LoginView = ({ loginForm, handleForgotPassword, handleSignUp }: Props) => {
+  const intl = useIntl();
+
   return (
     <Box>
       <img src={meshUrl} style={{ position: "absolute", right: 0, zIndex: 0 }} />
@@ -30,12 +33,20 @@ const LoginView = ({ loginForm, handleForgotPassword, handleSignUp }: Props) => 
         <Grid container>
           <Grid item xs>
             <Link component="button" onClick={handleForgotPassword} variant="body2">
-              Forgot password?
+              {intl.formatMessage({
+                description: "LoginViewLink - Forgot password",
+                defaultMessage: "Forgot password?",
+                id: "aNSSLX",
+              })}
             </Link>
           </Grid>
           <Grid item>
             <Link component="button" onClick={handleSignUp} variant="body2">
-              {"Don't have an account? Sign Up"}
+              {intl.formatMessage({
+                description: "LoginViewLink - Don't have an account? Sign Up",
+                defaultMessage: "Don't have an account? Sign up",
+                id: "Erb2yF",
+              })}
             </Link>
           </Grid>
         </Grid>

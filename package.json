@@ -10,7 +10,9 @@
     "storybook": "start-storybook",
     "build-storybook": "build-storybook",
     "test-storybook": "test-storybook",
-    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\""
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\"",
+    "i18n-extract": "formatjs extract src/**/*.ts* --ignore=**/*.d.ts --out-file locale/extracted/en.json --id-interpolation-pattern [sha512:contenthash:base64:6] --flatten",
+    "i18n-compile": "formatjs compile-folder --ast locale/extracted locale/compiled"
   },
   "dependencies": {
     "@fontsource/rubik": "^4.5.6",
@@ -24,6 +26,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.29.0",
+    "react-intl": "^6.1.1",
     "react-router-dom": "^6.2.1",
     "yup": "^0.32.11"
   },
@@ -31,6 +34,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@formatjs/cli": "^5.1.0",
     "@storybook/addon-a11y": "^6.5.12",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-docs": "^6.5.12",
@@ -59,6 +63,7 @@
     "jest": "27",
     "prettier": "^2.5.1",
     "storybook-dark-mode": "^1.0.9",
+    "storybook-react-intl": "^1.1.1",
     "typescript": "^4.7.4",
     "vite": "^2.8.6",
     "wait-on": "^6.0.1",

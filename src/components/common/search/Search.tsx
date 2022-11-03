@@ -1,3 +1,4 @@
+import { useIntl } from "react-intl";
 import SearchIcon from "@mui/icons-material/Search";
 import Box from "@mui/material/Box";
 import InputBase from "@mui/material/InputBase";
@@ -48,12 +49,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Search = () => {
+  const intl = useIntl();
   return (
     <StyledSearch>
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
-      <StyledInputBase placeholder="Search…" inputProps={{ "aria-label": "search" }} />
+      <StyledInputBase
+        placeholder={intl.formatMessage({
+          description: "SearchComponentInput - Search placeholder",
+          defaultMessage: "Search…",
+          id: "uSbNv6",
+        })}
+        inputProps={{ "aria-label": "search" }}
+      />
     </StyledSearch>
   );
 };

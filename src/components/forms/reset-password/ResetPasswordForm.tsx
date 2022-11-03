@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useIntl } from "react-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CloseIcon from "@mui/icons-material/Close";
 import { LoadingButton } from "@mui/lab";
@@ -18,14 +19,25 @@ export interface ResetPasswordFormProps {
   onSubmit: SubmitHandler<IFormResetPassword>;
 }
 
-const schema = yup
-  .object()
-  .shape({
-    email: yup.string().required("Email is required"),
-  })
-  .required();
-
 const ResetPasswordForm = ({ error, open, loading, onAlert, onSubmit }: ResetPasswordFormProps) => {
+  const intl = useIntl();
+
+  const schema = yup
+    .object()
+    .shape({
+      email: yup
+        .string()
+        .email()
+        .required(
+          intl.formatMessage({
+            description: "ResetPasswordFormValidation - Email is required",
+            defaultMessage: "Email is required",
+            id: "m5YIDx",
+          })
+        ),
+    })
+    .required();
+
   const {
     handleSubmit: handleFormSubmit,
     register,
@@ -40,7 +52,11 @@ const ResetPasswordForm = ({ error, open, loading, onAlert, onSubmit }: ResetPas
         margin="normal"
         fullWidth
         id="email"
-        label="Email Address"
+        label={intl.formatMessage({
+          description: "ResetPasswordFormLabel - Email",
+          defaultMessage: "Email Address",
+          id: "SRtN9p",
+        })}
         autoComplete="email"
         autoFocus
         error={!!errors?.email}

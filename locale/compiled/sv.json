@@ -1,0 +1,178 @@
+{
+  "+ADOR2": [
+    {
+      "type": 0,
+      "value": "Fyll i lösenord"
+    }
+  ],
+  "2qmW3a": [
+    {
+      "type": 0,
+      "value": "Kom ihåg"
+    }
+  ],
+  "3YTbxI": [
+    {
+      "type": 0,
+      "value": "Efternamn"
+    }
+  ],
+  "3pA647": [
+    {
+      "type": 0,
+      "value": "Email"
+    }
+  ],
+  "7VjY8Y": [
+    {
+      "type": 0,
+      "value": "Lösenord"
+    }
+  ],
+  "Erb2yF": [
+    {
+      "type": 0,
+      "value": "Saknar konto? Registrera dig"
+    }
+  ],
+  "IOLTJ0": [
+    {
+      "type": 0,
+      "value": "Lösenorden matchar inte"
+    }
+  ],
+  "LSY7eb": [
+    {
+      "type": 0,
+      "value": "Skriv in den email du använt vid registrering av "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "appName"
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    },
+    {
+      "type": 0,
+      "value": ". Vi kommer skicka ett email med ditt användarnamn och en länk för att återställa ditt lösenord."
+    }
+  ],
+  "NFDCUF": [
+    {
+      "type": 0,
+      "value": "Förnamn"
+    }
+  ],
+  "NG06ZV": [
+    {
+      "type": 0,
+      "value": "Registera med din email"
+    }
+  ],
+  "SRtN9p": [
+    {
+      "type": 0,
+      "value": "Email"
+    }
+  ],
+  "UjAA8C": [
+    {
+      "type": 0,
+      "value": "Telefonnummer"
+    }
+  ],
+  "YzHSuh": [
+    {
+      "type": 0,
+      "value": "Lösenord är för kort - minst 8 tecken"
+    }
+  ],
+  "aNSSLX": [
+    {
+      "type": 0,
+      "value": "Glömt lösenord?"
+    }
+  ],
+  "dU9xzq": [
+    {
+      "type": 0,
+      "value": "Bekräfta lösenord"
+    }
+  ],
+  "f2xRFX": [
+    {
+      "type": 0,
+      "value": "Användarnamn"
+    }
+  ],
+  "m5YIDx": [
+    {
+      "type": 0,
+      "value": "Email saknas"
+    }
+  ],
+  "o5TvN6": [
+    {
+      "type": 0,
+      "value": "Email saknas"
+    }
+  ],
+  "oigOyc": [
+    {
+      "type": 0,
+      "value": "Registera konto"
+    }
+  ],
+  "p9y0Zh": [
+    {
+      "type": 0,
+      "value": "Lösenord saknas"
+    }
+  ],
+  "piUPAg": [
+    {
+      "type": 0,
+      "value": "Användarnamn saknas"
+    }
+  ],
+  "ppqAda": [
+    {
+      "type": 0,
+      "value": "Lösenord"
+    }
+  ],
+  "sJG6e/": [
+    {
+      "type": 0,
+      "value": "Email saknas"
+    }
+  ],
+  "tZBQgk": [
+    {
+      "type": 0,
+      "value": "Email"
+    }
+  ],
+  "uSbNv6": [
+    {
+      "type": 0,
+      "value": "Sök…"
+    }
+  ],
+  "vlRwrH": [
+    {
+      "type": 0,
+      "value": "Välkommen"
+    }
+  ],
+  "zXsz1H": [
+    {
+      "type": 0,
+      "value": "Logga in"
+    }
+  ]
+}

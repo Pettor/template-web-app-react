@@ -1,0 +1,110 @@
+{
+  "+ADOR2": {
+    "defaultMessage": "Password is required",
+    "description": "LoginFormValidation - Password is required"
+  },
+  "2qmW3a": {
+    "defaultMessage": "Remember me",
+    "description": "LoginFormLabel: Remember me"
+  },
+  "3YTbxI": {
+    "defaultMessage": "What is your last name?",
+    "description": "SignUpFormLabel - Last Name"
+  },
+  "3pA647": {
+    "defaultMessage": "Email Address",
+    "description": "LoginFormLabel: Email"
+  },
+  "7VjY8Y": {
+    "defaultMessage": "Password",
+    "description": "LoginFormLabel: Password"
+  },
+  "Erb2yF": {
+    "defaultMessage": "Don't have an account? Sign up",
+    "description": "LoginViewLink - Don't have an account? Sign Up"
+  },
+  "IOLTJ0": {
+    "defaultMessage": "Passwords must match",
+    "description": "SignUpFormValidation - Passwords must match"
+  },
+  "LSY7eb": {
+    "defaultMessage": "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
+    "description": "ResetPasswordView - Reset password description"
+  },
+  "NFDCUF": {
+    "defaultMessage": "What is your first name?",
+    "description": "SignUpFormLabel - First Name"
+  },
+  "NG06ZV": {
+    "defaultMessage": "Sign up with your email address",
+    "description": "SignUpView - Sign up description"
+  },
+  "SRtN9p": {
+    "defaultMessage": "Email Address",
+    "description": "ResetPasswordFormLabel - Email"
+  },
+  "UjAA8C": {
+    "defaultMessage": "What's your phone number?",
+    "description": "SignUpFormLabel - Phone Number"
+  },
+  "YzHSuh": {
+    "defaultMessage": "Password is too short - should be 8 chars minimum",
+    "description": "SignUpFormValidation - Password is too short - min 8 characters"
+  },
+  "aNSSLX": {
+    "defaultMessage": "Forgot password?",
+    "description": "LoginViewLink - Forgot password"
+  },
+  "dU9xzq": {
+    "defaultMessage": "Confirm password",
+    "description": "SignUpFormLabel - Confirm Password"
+  },
+  "f2xRFX": {
+    "defaultMessage": "What should we call you?",
+    "description": "SignUpFormLabel - User Name"
+  },
+  "m5YIDx": {
+    "defaultMessage": "Email is required",
+    "description": "ResetPasswordFormValidation - Email is required"
+  },
+  "o5TvN6": {
+    "defaultMessage": "Email is required",
+    "description": "SignUpFormValidation - Email is required"
+  },
+  "oigOyc": {
+    "defaultMessage": "Sign Up",
+    "description": "SignUpFormButton - Sign Up"
+  },
+  "p9y0Zh": {
+    "defaultMessage": "Password is required",
+    "description": "SignUpFormValidation - Password is required"
+  },
+  "piUPAg": {
+    "defaultMessage": "We need to call you something",
+    "description": "SignUpFormValidation - Display Name is required"
+  },
+  "ppqAda": {
+    "defaultMessage": "Create a password",
+    "description": "SignUpFormLabel - Password"
+  },
+  "sJG6e/": {
+    "defaultMessage": "Email is required",
+    "description": "LoginFormValidation - Email is required"
+  },
+  "tZBQgk": {
+    "defaultMessage": "What's your email?",
+    "description": "SignUpFormLabel - Email"
+  },
+  "uSbNv6": {
+    "defaultMessage": "Search…",
+    "description": "SearchComponentInput - Search placeholder"
+  },
+  "vlRwrH": {
+    "defaultMessage": "Welcome",
+    "description": "HomeView - Welcome"
+  },
+  "zXsz1H": {
+    "defaultMessage": "Sign in",
+    "description": "LoginFormButton: Sign in"
+  }
+}

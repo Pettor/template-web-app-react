@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useIntl } from "react-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CloseIcon from "@mui/icons-material/Close";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -26,17 +27,57 @@ export interface SignUpFormProps {
   onSubmit: SubmitHandler<IFormSignUp>;
 }
 
-const schema = yup
-  .object()
-  .shape({
-    displayName: yup.string().required("We need to call you something"),
-    email: yup.string().required("Email is required"),
-    password: yup.string().min(8, "Password is too short - should be 8 chars minimum").required("Password is required"),
-    passwordConfirmation: yup.string().oneOf([yup.ref("password"), null], "Passwords must match"),
-  })
-  .required();
-
 const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps) => {
+  const intl = useIntl();
+
+  const schema = yup
+    .object()
+    .shape({
+      displayName: yup.string().required(
+        intl.formatMessage({
+          description: "SignUpFormValidation - Display Name is required",
+          defaultMessage: "We need to call you something",
+          id: "piUPAg",
+        })
+      ),
+      email: yup
+        .string()
+        .email()
+        .required(
+          intl.formatMessage({
+            description: "SignUpFormValidation - Email is required",
+            defaultMessage: "Email is required",
+            id: "o5TvN6",
+          })
+        ),
+      password: yup
+        .string()
+        .min(
+          8,
+          intl.formatMessage({
+            description: "SignUpFormValidation - Password is too short - min 8 characters",
+            defaultMessage: "Password is too short - should be 8 chars minimum",
+            id: "YzHSuh",
+          })
+        )
+        .required(
+          intl.formatMessage({
+            description: "SignUpFormValidation - Password is required",
+            defaultMessage: "Password is required",
+            id: "p9y0Zh",
+          })
+        ),
+      passwordConfirmation: yup.string().oneOf(
+        [yup.ref("password"), null],
+        intl.formatMessage({
+          description: "SignUpFormValidation - Passwords must match",
+          defaultMessage: "Passwords must match",
+          id: "IOLTJ0",
+        })
+      ),
+    })
+    .required();
+
   const {
     handleSubmit: handleFormSubmit,
     register,
@@ -53,7 +94,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="userName"
-        label="What should we call you?"
+        label={intl.formatMessage({
+          description: "SignUpFormLabel - User Name",
+          defaultMessage: "What should we call you?",
+          id: "f2xRFX",
+        })}
         type="displayName"
         error={!!errors?.userName}
         helperText={errors?.userName?.message}
@@ -64,7 +109,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="firstName"
-        label="What is your first name?"
+        label={intl.formatMessage({
+          description: "SignUpFormLabel - First Name",
+          defaultMessage: "What is your first name?",
+          id: "NFDCUF",
+        })}
         autoComplete="firstName"
         type="displayName"
         error={!!errors?.firstName}
@@ -76,7 +125,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="lastName"
-        label="What is your last name?"
+        label={intl.formatMessage({
+          description: "SignUpFormLabel - Last Name",
+          defaultMessage: "What is your last name?",
+          id: "3YTbxI",
+        })}
         autoComplete="lastName"
         type="displayName"
         error={!!errors?.lastName}
@@ -85,11 +138,14 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
       />
       <TextField
         margin="normal"
-        type="email"
         fullWidth
         size="small"
         id="email"
-        label="What's your email?"
+        label={intl.formatMessage({
+          description: "SignUpFormLabel - Email",
+          defaultMessage: "What's your email?",
+          id: "tZBQgk",
+        })}
         autoComplete="email"
         error={!!errors?.email}
         helperText={errors?.email?.message}
@@ -101,7 +157,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="phoneNumber"
-        label="What's your phone number?"
+        label={intl.formatMessage({
+          description: "SignUpFormLabel - Phone Number",
+          defaultMessage: "What's your phone number?",
+          id: "UjAA8C",
+        })}
         autoComplete="phoneNumber"
         error={!!errors?.phoneNumber}
         helperText={errors?.phoneNumber?.message}
@@ -113,7 +173,11 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="password"
-        label="Create a password"
+        label={intl.formatMessage({
+          description: "SignUpFormLabel - Password",
+          defaultMessage: "Create a password",
+          id: "ppqAda",
+        })}
         autoComplete="password"
         error={!!errors?.password}
         helperText={errors?.password?.message}
@@ -125,14 +189,22 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         fullWidth
         size="small"
         id="confirmPassword"
-        label="Confirm password"
+        label={intl.formatMessage({
+          description: "SignUpFormLabel - Confirm Password",
+          defaultMessage: "Confirm password",
+          id: "dU9xzq",
+        })}
         autoComplete="confirmPassword"
         error={!!errors?.confirmPassword}
         helperText={errors?.confirmPassword?.message}
         {...register("confirmPassword")}
       />
       <LoadingButton type="submit" loading={loading} variant="contained" fullWidth sx={{ mt: 3, mb: 2 }}>
-        Sign Up
+        {intl.formatMessage({
+          description: "SignUpFormButton - Sign Up",
+          defaultMessage: "Sign Up",
+          id: "oigOyc",
+        })}
       </LoadingButton>
       <Collapse in={open && !!error}>
         <Alert
