@@ -17,9 +17,9 @@ const SignUpView = ({ signUpForm }: Props) => {
       <br />
       <Typography textAlign="center">
         {intl.formatMessage({
-          description: "SignUp: Description text",
+          description: "SignUpView - Sign up description",
           defaultMessage: "Sign up with your email address",
-          id: "0GaXrw",
+          id: "NG06ZV",
         })}
       </Typography>
       <SignUpForm {...signUpForm} />

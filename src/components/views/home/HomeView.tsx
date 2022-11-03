@@ -20,9 +20,9 @@ const HomeView = (headerLayoutProps: Props) => {
     <HeaderLayout headerOptions={{ label: "Home" }} {...headerLayoutProps}>
       <Box>
         {intl.formatMessage({
-          description: "Home: Content text",
-          defaultMessage: "This is content",
-          id: "OAQGvK",
+          description: "HomeView - Welcome",
+          defaultMessage: "Welcome",
+          id: "vlRwrH",
         })}
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {Array.from(Array(6)).map((_, index) => (

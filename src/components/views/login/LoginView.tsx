@@ -34,18 +34,18 @@ const LoginView = ({ loginForm, handleForgotPassword, handleSignUp }: Props) => 
           <Grid item xs>
             <Link component="button" onClick={handleForgotPassword} variant="body2">
               {intl.formatMessage({
-                description: "Login: Forgot password text",
+                description: "LoginViewLink - Forgot password",
                 defaultMessage: "Forgot password?",
-                id: "fVVMAQ",
+                id: "aNSSLX",
               })}
             </Link>
           </Grid>
           <Grid item>
             <Link component="button" onClick={handleSignUp} variant="body2">
               {intl.formatMessage({
-                description: "Login: Sign Up text",
+                description: "LoginViewLink - Don't have an account? Sign Up",
                 defaultMessage: "Don't have an account? Sign up",
-                id: "DT/hPY",
+                id: "Erb2yF",
               })}
             </Link>
           </Grid>

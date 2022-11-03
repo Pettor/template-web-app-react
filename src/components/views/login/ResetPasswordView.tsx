@@ -22,10 +22,10 @@ const ResetPasswordView = ({ resetForm }: Props) => {
           dangerouslySetInnerHTML={{
             __html: intl.formatMessage(
               {
-                description: "Reset Password: Description text",
+                description: "ResetPasswordView - Reset password description",
                 defaultMessage:
                   "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
-                id: "pb69JS",
+                id: "LSY7eb",
               },
               {
                 appName: appName,

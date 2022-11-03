@@ -27,17 +27,29 @@ export interface LoginFormProps {
   onSubmit: SubmitHandler<IFormLogin>;
 }
 
-const schema = yup
-  .object()
-  .shape({
-    email: yup.string().required("Email is required"),
-    password: yup.string().required("Password is required"),
-    remember: yup.boolean(),
-  })
-  .required();
-
 const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) => {
   const intl = useIntl();
+
+  const schema = yup
+    .object()
+    .shape({
+      email: yup.string().required(
+        intl.formatMessage({
+          description: "LoginFormValidation - Email is required",
+          defaultMessage: "Email is required",
+          id: "sJG6e/",
+        })
+      ),
+      password: yup.string().required(
+        intl.formatMessage({
+          description: "LoginFormValidation - Password is required",
+          defaultMessage: "Password is required",
+          id: "+ADOR2",
+        })
+      ),
+      remember: yup.boolean(),
+    })
+    .required();
 
   const {
     handleSubmit: handleFormSubmit,
@@ -54,9 +66,9 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
         fullWidth
         id="email"
         label={intl.formatMessage({
-          description: "Login: Email label",
+          description: "LoginFormLabel: Email",
           defaultMessage: "Email Address",
-          id: "UyAY+T",
+          id: "3pA647",
         })}
         autoComplete="email"
         autoFocus
@@ -70,9 +82,9 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
         fullWidth
         id="password"
         label={intl.formatMessage({
-          description: "Login: Password label",
+          description: "LoginFormLabel: Password",
           defaultMessage: "Password",
-          id: "dPQCQO",
+          id: "7VjY8Y",
         })}
         autoComplete="current-password"
         autoFocus
@@ -85,18 +97,18 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
         <FormControlLabel
           control={<Checkbox color="primary" />}
           label={intl.formatMessage({
-            description: "Login: Remember me button",
+            description: "LoginFormLabel: Remember me",
             defaultMessage: "Remember me",
-            id: "Q0ozip",
+            id: "2qmW3a",
           })}
           {...register("remember")}
         />
         <Box sx={{ width: "100%", display: "flex", flex: 1, justifyContent: "flex-end" }}>
           <LoadingButton type="submit" loading={loading} variant="contained" sx={{ mt: 3, mb: 2, width: 150 }}>
             {intl.formatMessage({
-              description: "Login: Sign in button",
+              description: "LoginFormButton: Sign in",
               defaultMessage: "Sign in",
-              id: "ehhtmv",
+              id: "zXsz1H",
             })}
           </LoadingButton>
         </Box>

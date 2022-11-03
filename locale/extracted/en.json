@@ -1,94 +1,110 @@
 {
-  "+Q1hl8": {
-    "defaultMessage": "Create a password",
-    "description": "SignUp: Password label"
-  },
-  "/kPKgf": {
-    "defaultMessage": "Confirm password",
-    "description": "SignUp: Confirm password label"
-  },
-  "0GaXrw": {
-    "defaultMessage": "Sign up with your email address",
-    "description": "SignUp: Description text"
-  },
-  "1wWFJn": {
-    "defaultMessage": "We need to call you something",
-    "description": "Yup: Display name incorrect"
-  },
-  "3djSb9": {
-    "defaultMessage": "Passwords must match",
-    "description": "Yup: Password must match"
-  },
-  "4wlNZm": {
-    "defaultMessage": "Password is required",
-    "description": "Yup: Password required"
-  },
-  "DT/hPY": {
-    "defaultMessage": "Don't have an account? Sign up",
-    "description": "Login: Sign Up text"
-  },
-  "DsyGiS": {
-    "defaultMessage": "Password is too short - should be 8 chars minimum",
-    "description": "Yup: Password too short"
-  },
-  "HWQm37": {
-    "defaultMessage": "Email is required",
-    "description": "Yup: Email incorrect"
-  },
-  "JkTZtG": {
+  "component.search.placeholder": {
     "defaultMessage": "Search…",
-    "description": "Search: Placeholder"
+    "description": "Placeholder"
   },
-  "MlHPw2": {
-    "defaultMessage": "What is your first name?",
-    "description": "SignUp: First name label"
-  },
-  "OAQGvK": {
-    "defaultMessage": "This is content",
-    "description": "Home: Content text"
-  },
-  "Q0ozip": {
-    "defaultMessage": "Remember me",
-    "description": "Login: Remember me button"
-  },
-  "UI/Wi5": {
-    "defaultMessage": "What should we call you?",
-    "description": "SignUp: Username label"
-  },
-  "UyAY+T": {
-    "defaultMessage": "Email Address",
-    "description": "Login: Email label"
-  },
-  "Y8xWGf": {
-    "defaultMessage": "Sign Up",
-    "description": "SignUp: Sign up button"
-  },
-  "dPQCQO": {
-    "defaultMessage": "Password",
-    "description": "Login: Password label"
-  },
-  "ehhtmv": {
+  "form.login.button.signin": {
     "defaultMessage": "Sign in",
-    "description": "Login: Sign in button"
+    "description": "Sign in button"
   },
-  "fVVMAQ": {
-    "defaultMessage": "Forgot password?",
-    "description": "Login: Forgot password text"
+  "form.login.label.email": {
+    "defaultMessage": "Email Address",
+    "description": "Email label"
   },
-  "ghyHG0": {
+  "form.login.label.password": {
+    "defaultMessage": "Password",
+    "description": "Password label"
+  },
+  "form.login.label.remember": {
+    "defaultMessage": "Remember me",
+    "description": "Remember me button"
+  },
+  "form.login.validation.email.required": {
+    "defaultMessage": "Email is required",
+    "description": "Email is required"
+  },
+  "form.login.validation.password.required": {
+    "defaultMessage": "Password is required",
+    "description": "Password is required"
+  },
+  "form.resetPassword.email.label": {
+    "defaultMessage": "Email Address",
+    "description": "Email label"
+  },
+  "form.resetPassword.validation.email.required": {
+    "defaultMessage": "Email is required",
+    "description": "Email is required"
+  },
+  "form.signUp.button.submit": {
+    "defaultMessage": "Sign Up",
+    "description": "Sign up button"
+  },
+  "form.signUp.label.confirmPassword": {
+    "defaultMessage": "Confirm password",
+    "description": "Confirm password label"
+  },
+  "form.signUp.label.email": {
     "defaultMessage": "What's your email?",
-    "description": "SignUp: Email label"
+    "description": "Email label"
   },
-  "i9wpfb": {
-    "defaultMessage": "What's your phone number?",
-    "description": "SignUp: Phone number label"
+  "form.signUp.label.firstName": {
+    "defaultMessage": "What is your first name?",
+    "description": "Label for first name"
   },
-  "pb69JS": {
-    "defaultMessage": "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
-    "description": "Reset Password: Description text"
-  },
-  "s0Yh5W": {
+  "form.signUp.label.lastName": {
     "defaultMessage": "What is your last name?",
-    "description": "SignUp: Last name label"
+    "description": "Last name label"
+  },
+  "form.signUp.label.password": {
+    "defaultMessage": "Create a password",
+    "description": "Password label"
+  },
+  "form.signUp.label.phoneNumber": {
+    "defaultMessage": "What's your phone number?",
+    "description": "Phone number label"
+  },
+  "form.signUp.label.userName": {
+    "defaultMessage": "What should we call you?",
+    "description": "Label for username"
+  },
+  "form.signUp.validation.displayName.invalid": {
+    "defaultMessage": "We need to call you something",
+    "description": "Display name incorrect"
+  },
+  "form.signUp.validation.email.required": {
+    "defaultMessage": "Email is required",
+    "description": "Email incorrect"
+  },
+  "form.signUp.validation.password.mustMatch": {
+    "defaultMessage": "Passwords must match",
+    "description": "Password must match"
+  },
+  "form.signUp.validation.password.required": {
+    "defaultMessage": "Password is required",
+    "description": "Password required"
+  },
+  "form.signUp.validation.password.tooShort": {
+    "defaultMessage": "Password is too short - should be 8 chars minimum",
+    "description": "Password too short"
+  },
+  "view.home.content": {
+    "defaultMessage": "This is content",
+    "description": "Content text"
+  },
+  "view.login.link.forgotPassword": {
+    "defaultMessage": "Forgot password?",
+    "description": "Forgot password text"
+  },
+  "view.login.link.signUp": {
+    "defaultMessage": "Don't have an account? Sign up",
+    "description": "Sign Up text"
+  },
+  "view.resetPassword.description": {
+    "defaultMessage": "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
+    "description": "Description text"
+  },
+  "view.signUp.description": {
+    "defaultMessage": "Sign up with your email address",
+    "description": "Description text"
   }
 }

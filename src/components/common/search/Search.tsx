@@ -57,9 +57,9 @@ const Search = () => {
       </SearchIconWrapper>
       <StyledInputBase
         placeholder={intl.formatMessage({
-          description: "Search: Placeholder",
+          description: "SearchComponentInput - Search placeholder",
           defaultMessage: "Search…",
-          id: "JkTZtG",
+          id: "uSbNv6",
         })}
         inputProps={{ "aria-label": "search" }}
       />
