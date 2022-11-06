@@ -17,9 +17,11 @@ export default {
 const { primary, secondary, info, success, warning, error } = theme.palette;
 
 const Item = styled(Box)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
+  ...theme.typography.subtitle2,
+  padding: theme.spacing(2),
   alignItems: "center",
+  height: "100%",
+  display: "flex",
 }));
 
 const StyledGrid = styled(Grid)(() => ({
@@ -55,7 +57,7 @@ export const Colors = () => (
   <Box>
     <Typography variant="h1">Colors</Typography>
     <br />
-    <StyledGrid container rowSpacing={2} columnSpacing={1}>
+    <StyledGrid container>
       <Grid item xs={3}>
         <Item>
           <Typography variant="h6">Name</Typography>
