@@ -28,6 +28,13 @@ const BackgroundBox = styled(Box)(() => ({
   },
 }));
 
+const ContainerBox = styled(Box)(({ theme }) => ({
+  position: "relative",
+  height: "100vh",
+  width: "100%",
+  overflow: "auto",
+}));
+
 const StyledBox = styled(Box)(({ theme }) => ({
   position: "relative",
   margin: theme.spacing(4),
@@ -36,6 +43,8 @@ const StyledBox = styled(Box)(({ theme }) => ({
 
 export const DocumentationDecorator = (story: any) => (
   <BackgroundBox>
-    <StyledBox>{story()}</StyledBox>
+    <ContainerBox>
+      <StyledBox>{story()}</StyledBox>
+    </ContainerBox>
   </BackgroundBox>
 );
