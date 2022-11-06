@@ -1,56 +1,121 @@
 import * as React from "react";
-import Paper from "@mui/material/Paper";
-import Stack from "@mui/material/Stack";
-import { styled } from "@mui/material/styles";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import { PaletteColor, styled } from "@mui/material/styles";
 import Box from "@mui/system/Box";
 import { Meta } from "@storybook/react";
+import CreateAppTheme from "../../theme/Theme";
 import { DocumentationDecorator } from "../decorators/DocumentationDecorator";
+
+const theme = CreateAppTheme();
 
 export default {
   title: "Design System/Colors",
   decorators: [DocumentationDecorator],
 } as Meta;
 
-const ColorItem = styled(Paper)(({ theme }) => ({
+const { primary, secondary, info, success, warning, error } = theme.palette;
+
+const Item = styled(Box)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  marginTop: theme.spacing(1),
-  textAlign: "center",
-  display: "flex",
   alignItems: "center",
-  justifyContent: "center",
-  color: theme.palette.text.secondary,
+}));
+
+const BackgroundBox = styled(Box)(() => ({
+  position: "fixed",
+  "&::before": {
+    content: "''",
+    position: "absolute",
+    top: "-200px",
+    left: "-200px",
+    width: "400px",
+    height: "400px",
+    background: "#c989e8",
+    opacity: 0.5,
+    filter: "blur(150px)",
+  },
+  "&::after": {
+    content: "''",
+    position: "absolute",
+    top: "-200px",
+    right: "-200px",
+    width: "400px",
+    height: "400px",
+    background: "#b3d4ff",
+    opacity: 0.5,
+    filter: "blur(150px)",
+  },
+}));
+
+const StyledBox = styled(Box)(({ theme }) => ({
+  position: "relative",
+  margin: theme.spacing(4),
+  zIndex: 1,
+}));
+
+const StyledGrid = styled(Grid)(() => ({
+  border: "1px solid",
   borderRadius: 10,
-  width: "100%",
-  height: 30,
+  background: "white",
+  padding: theme.spacing(2),
 }));
 
-const ColorStack = styled(Box)(({ theme }) => ({
-  flexGrow: 1,
-  marginLeft: theme.spacing(1),
-  marginRight: theme.spacing(1),
-}));
-
-const ColorGroup = (label: string, group: string) => (
-  <ColorStack>
-    {label}:
-    <Stack direction="column">
-      <ColorItem sx={{ color: `${group}.contrastText`, backgroundColor: `${group}.main` }}>Main</ColorItem>
-      <ColorItem sx={{ color: `${group}.contrastText`, backgroundColor: `${group}.light` }}>Light</ColorItem>
-      <ColorItem sx={{ color: `${group}.contrastText`, backgroundColor: `${group}.dark` }}>Dark</ColorItem>
-    </Stack>
-  </ColorStack>
-);
+const ColorRow = (label: string, color: PaletteColor) => {
+  const { contrastText, dark, light, main } = color;
+  return (
+    <>
+      <Grid item xs={3}>
+        <Item>
+          <Typography variant="subtitle1">{label}</Typography>
+        </Item>
+      </Grid>
+      <Grid item xs={3} sx={{ color: contrastText, background: main }}>
+        <Item>{main}</Item>
+      </Grid>
+      <Grid item xs={3} sx={{ color: contrastText, background: light }}>
+        <Item>{light}</Item>
+      </Grid>
+      <Grid item xs={3} sx={{ color: contrastText, background: dark }}>
+        <Item>{dark}</Item>
+      </Grid>
+    </>
+  );
+};
 
 export const Colors = () => (
-  <Box sx={{ width: "100%", p: 2 }}>
-    <Stack direction="row" sx={{ width: "100%" }}>
-      {ColorGroup("Primary", "primary")}
-      {ColorGroup("Secondary", "secondary")}
-      {ColorGroup("Info", "info")}
-      {ColorGroup("Success", "success")}
-      {ColorGroup("Warning", "warning")}
-      {ColorGroup("Error", "error")}
-    </Stack>
-  </Box>
+  <BackgroundBox>
+    <StyledBox>
+      <Typography variant="h1">Colors</Typography>
+      <br />
+      <StyledGrid container rowSpacing={2} columnSpacing={1}>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">Name</Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">Main</Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">Light</Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">Dark</Typography>
+          </Item>
+        </Grid>
+        {ColorRow("Primary", primary)}
+        {ColorRow("Secondary", secondary)}
+        {ColorRow("Info", info)}
+        {ColorRow("Success", success)}
+        {ColorRow("Warning", warning)}
+        {ColorRow("Error", error)}
+      </StyledGrid>
+    </StyledBox>
+  </BackgroundBox>
 );

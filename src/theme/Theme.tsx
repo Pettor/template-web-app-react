@@ -16,8 +16,8 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
           ? {
               // palette values for light mode
               primary: {
-                main: "#50A8EA",
-                contrastText: "#FFFFFF",
+                main: "#50a8ea",
+                contrastText: "#ffffff",
               },
               secondary: {
                 main: "#2C3246",
