@@ -6,6 +6,7 @@ import Box from "@mui/system/Box";
 import { Meta } from "@storybook/react";
 import CreateAppTheme from "../../theme/Theme";
 import { DocumentationDecorator } from "../decorators/DocumentationDecorator";
+import { DocumentationLayout } from "../layout/DocumentationLayout";
 
 const theme = CreateAppTheme();
 
@@ -22,13 +23,6 @@ const Item = styled(Box)(({ theme }) => ({
   alignItems: "center",
   height: "100%",
   display: "flex",
-}));
-
-const StyledGrid = styled(Grid)(() => ({
-  border: "1px solid",
-  borderRadius: 10,
-  background: "white",
-  padding: theme.spacing(2),
 }));
 
 const ColorRow = (label: string, color: PaletteColor) => {
@@ -54,10 +48,8 @@ const ColorRow = (label: string, color: PaletteColor) => {
 };
 
 export const Colors = () => (
-  <Box>
-    <Typography variant="h1">Colors</Typography>
-    <br />
-    <StyledGrid container>
+  <DocumentationLayout label="Colors">
+    <Grid container>
       <Grid item xs={3}>
         <Item>
           <Typography variant="h6">Name</Typography>
@@ -84,6 +76,6 @@ export const Colors = () => (
       {ColorRow("Success", success)}
       {ColorRow("Warning", warning)}
       {ColorRow("Error", error)}
-    </StyledGrid>
-  </Box>
+    </Grid>
+  </DocumentationLayout>
 );
