@@ -22,38 +22,6 @@ const Item = styled(Box)(({ theme }) => ({
   alignItems: "center",
 }));
 
-const BackgroundBox = styled(Box)(() => ({
-  position: "fixed",
-  "&::before": {
-    content: "''",
-    position: "absolute",
-    top: "-200px",
-    left: "-200px",
-    width: "400px",
-    height: "400px",
-    background: "#c989e8",
-    opacity: 0.5,
-    filter: "blur(150px)",
-  },
-  "&::after": {
-    content: "''",
-    position: "absolute",
-    top: "-200px",
-    right: "-200px",
-    width: "400px",
-    height: "400px",
-    background: "#b3d4ff",
-    opacity: 0.5,
-    filter: "blur(150px)",
-  },
-}));
-
-const StyledBox = styled(Box)(({ theme }) => ({
-  position: "relative",
-  margin: theme.spacing(4),
-  zIndex: 1,
-}));
-
 const StyledGrid = styled(Grid)(() => ({
   border: "1px solid",
   borderRadius: 10,
@@ -84,38 +52,36 @@ const ColorRow = (label: string, color: PaletteColor) => {
 };
 
 export const Colors = () => (
-  <BackgroundBox>
-    <StyledBox>
-      <Typography variant="h1">Colors</Typography>
-      <br />
-      <StyledGrid container rowSpacing={2} columnSpacing={1}>
-        <Grid item xs={3}>
-          <Item>
-            <Typography variant="h6">Name</Typography>
-          </Item>
-        </Grid>
-        <Grid item xs={3}>
-          <Item>
-            <Typography variant="h6">Main</Typography>
-          </Item>
-        </Grid>
-        <Grid item xs={3}>
-          <Item>
-            <Typography variant="h6">Light</Typography>
-          </Item>
-        </Grid>
-        <Grid item xs={3}>
-          <Item>
-            <Typography variant="h6">Dark</Typography>
-          </Item>
-        </Grid>
-        {ColorRow("Primary", primary)}
-        {ColorRow("Secondary", secondary)}
-        {ColorRow("Info", info)}
-        {ColorRow("Success", success)}
-        {ColorRow("Warning", warning)}
-        {ColorRow("Error", error)}
-      </StyledGrid>
-    </StyledBox>
-  </BackgroundBox>
+  <Box>
+    <Typography variant="h1">Colors</Typography>
+    <br />
+    <StyledGrid container rowSpacing={2} columnSpacing={1}>
+      <Grid item xs={3}>
+        <Item>
+          <Typography variant="h6">Name</Typography>
+        </Item>
+      </Grid>
+      <Grid item xs={3}>
+        <Item>
+          <Typography variant="h6">Main</Typography>
+        </Item>
+      </Grid>
+      <Grid item xs={3}>
+        <Item>
+          <Typography variant="h6">Light</Typography>
+        </Item>
+      </Grid>
+      <Grid item xs={3}>
+        <Item>
+          <Typography variant="h6">Dark</Typography>
+        </Item>
+      </Grid>
+      {ColorRow("Primary", primary)}
+      {ColorRow("Secondary", secondary)}
+      {ColorRow("Info", info)}
+      {ColorRow("Success", success)}
+      {ColorRow("Warning", warning)}
+      {ColorRow("Error", error)}
+    </StyledGrid>
+  </Box>
 );
