@@ -2,7 +2,7 @@ import { useIntl } from "react-intl";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import meshUrl from "../../../../public/mesh-background.png";
+import meshUrl from "../../../assets/background/mesh-background.png";
 import LogoFull from "../../common/logo/LogoFull";
 import LoginForm, { LoginFormProps } from "../../forms/login/LoginForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
