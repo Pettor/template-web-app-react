@@ -1,8 +1,8 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
+import { ThemeProvider as Emotion10ThemeProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import { ThemeProvider as Emotion10ThemeProvider } from "@emotion/react";
 import { useDarkMode } from "storybook-dark-mode";
 import createAppTheme from "../src/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
@@ -14,7 +14,7 @@ export const parameters = {
       method: "alphabetical",
       order: ["Design System", "Common", "Forms", "Layout", "Views"],
     },
-  }
+  },
 };
 
 export const globalTypes = {
@@ -27,7 +27,7 @@ export const globalTypes = {
       items: [
         { value: "en", title: "English" },
         { value: "sv", title: "Swedish" },
-      ]
+      ],
     },
   },
 };
