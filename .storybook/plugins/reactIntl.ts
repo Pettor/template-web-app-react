@@ -1,12 +1,15 @@
-const locales = ['en', 'sv'];
+import en from "../../locale/compiled/en.json";
+import sv from "../../locale/compiled/sv.json";
 
-const messages = locales.reduce((acc, lang) => ({
-  ...acc,
-  [lang]: require(`../../locale/compiled/${lang}.json`),
-}), {});
+const locales = ["en", "sv"];
+
+const messages = {
+  en: en,
+  sv: sv,
+};
 
 export const reactIntl = {
-  defaultLocale: 'en',
+  defaultLocale: "en",
   locales,
-  messages
+  messages,
 };

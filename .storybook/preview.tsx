@@ -2,7 +2,7 @@ import React from "react";
 import { IntlProvider } from "react-intl";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import { ThemeProvider as Emotion10ThemeProvider } from "emotion-theming";
+import { ThemeProvider as Emotion10ThemeProvider } from "@emotion/react";
 import { useDarkMode } from "storybook-dark-mode";
 import createAppTheme from "../src/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
@@ -21,6 +21,7 @@ export const globalTypes = {
   locale: {
     name: "Locale",
     description: "Formatjs locale",
+    defaultValue: "en",
     toolbar: {
       icon: "globe",
       items: [
