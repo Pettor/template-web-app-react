@@ -2,6 +2,7 @@
   "name": "template-web-app-react",
   "private": true,
   "version": "0.1.1",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
