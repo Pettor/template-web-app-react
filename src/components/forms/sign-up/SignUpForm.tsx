@@ -199,7 +199,7 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
         helperText={errors?.confirmPassword?.message}
         {...register("confirmPassword")}
       />
-      <LoadingButton type="submit" loading={loading} variant="contained" fullWidth sx={{ mt: 3, mb: 2 }}>
+      <LoadingButton type="submit" loading={loading} variant="outlined" fullWidth sx={{ mt: 3, mb: 2 }}>
         {intl.formatMessage({
           description: "SignUpFormButton - Sign Up",
           defaultMessage: "Sign Up",

@@ -28,7 +28,8 @@ export interface AppHeaderProps {
 type Props = AppHeaderOptions & AppHeaderProps;
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
-  background: theme.palette.common.white,
+  background: theme.palette.background.default,
+  backdropFilter: "saturate(50%) blur(8px);",
   zIndex: theme.zIndex.drawer + 1,
 }));
 
@@ -72,7 +73,7 @@ const AppHeader = ({ subheader, label, menu, onBack }: Props) => {
             </IconButton>
           )}
           <Divider sx={{ mx: 1 }} />
-          <Typography component="h1" variant="h6" color="secondary" noWrap sx={{ flexGrow: 1 }}>
+          <Typography component="h1" variant="h6" color="primary" noWrap sx={{ flexGrow: 1 }}>
             {label}
           </Typography>
           {isSmUp && <Search />}
