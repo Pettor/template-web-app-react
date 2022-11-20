@@ -28,7 +28,7 @@ export interface AppHeaderProps {
 type Props = AppHeaderOptions & AppHeaderProps;
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
-  background: "transparent",
+  background: `${theme.palette.background.default}b0`,
   zIndex: theme.zIndex.drawer + 1,
   backdropFilter: "saturate(50%) blur(8px)",
 }));
