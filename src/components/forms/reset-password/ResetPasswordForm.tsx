@@ -63,7 +63,7 @@ const ResetPasswordForm = ({ error, open, loading, onAlert, onSubmit }: ResetPas
         helperText={errors?.email?.message}
         {...register("email")}
       />
-      <LoadingButton type="submit" fullWidth loading={loading} variant="contained" sx={{ mt: 3, mb: 2 }}>
+      <LoadingButton type="submit" fullWidth loading={loading} variant="outlined" sx={{ mt: 3, mb: 2 }}>
         Send
       </LoadingButton>
       <Collapse in={open && !!error}>

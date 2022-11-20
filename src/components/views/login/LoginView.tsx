@@ -2,7 +2,8 @@ import { useIntl } from "react-intl";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import meshUrl from "../../../assets/background/mesh-background.png";
+import { styled } from "@mui/material/styles";
+import meshUrl from "../../../assets/background/wave-background.svg";
 import LogoFull from "../../common/logo/LogoFull";
 import LoginForm, { LoginFormProps } from "../../forms/login/LoginForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
@@ -19,12 +20,24 @@ type Props = {
   handleSignUp: () => void;
 };
 
+const WaveImg = styled("img")(({ theme }) => ({
+  position: "fixed",
+  bottom: -50,
+  left: 0,
+  zIndex: 0,
+
+  [theme.breakpoints.down("sm")]: {
+    bottom: 0,
+    width: "200%",
+  },
+}));
+
 const LoginView = ({ loginForm, handleForgotPassword, handleSignUp }: Props) => {
   const intl = useIntl();
 
   return (
     <Box>
-      <img src={meshUrl} style={{ position: "absolute", right: 0, zIndex: 0 }} />
+      <WaveImg src={meshUrl} />
       <ContainerLayout sx={{ zIndex: 20 }}>
         <LogoFull size="large" />
         <br />

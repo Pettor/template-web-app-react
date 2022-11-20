@@ -5,7 +5,7 @@ import { styled } from "@mui/material/styles";
 const StyledBox = styled(Box)(({ theme }) => ({
   border: "1px solid",
   borderRadius: 10,
-  background: "white",
+  background: theme.palette.background.default,
   padding: theme.spacing(2),
 }));
 

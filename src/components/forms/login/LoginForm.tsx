@@ -107,7 +107,13 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
           {...register("remember")}
         />
         <Box sx={{ width: "100%", display: "flex", flex: 1, justifyContent: "flex-end" }}>
-          <LoadingButton type="submit" loading={loading} variant="contained" sx={{ mt: 3, mb: 2, width: 150 }}>
+          <LoadingButton
+            type="submit"
+            loading={loading}
+            variant="outlined"
+            color="primary"
+            sx={{ mt: 3, mb: 2, width: 150 }}
+          >
             {intl.formatMessage({
               description: "LoginFormButton: Sign in",
               defaultMessage: "Sign in",

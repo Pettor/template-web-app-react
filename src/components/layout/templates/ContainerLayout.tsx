@@ -12,22 +12,30 @@ const StyledBox = styled(Box)(({ theme }) => ({
   background: theme.palette.background.default,
 }));
 
+const ContentBox = styled(Box)(({ theme }) => ({
+  marginTop: theme.spacing(8),
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+
+  [theme.breakpoints.down("md")]: {
+    marginTop: theme.spacing(2),
+  },
+
+  [theme.breakpoints.down("sm")]: {
+    marginTop: theme.spacing(0),
+  },
+}));
+
 const ContainerLayout = ({ sx, children }: Props) => {
   return (
     <StyledBox>
       <Container maxWidth="xs" sx={sx}>
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+        <ContentBox>
           <Box component="main" sx={{ mt: 4, width: "100%" }}>
             {children}
           </Box>
-        </Box>
+        </ContentBox>
       </Container>
     </StyledBox>
   );

@@ -16,57 +16,63 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
           ? {
               // palette values for light mode
               primary: {
-                main: "#50a8ea",
-                contrastText: "#ffffff",
+                main: "#ea005e",
               },
               secondary: {
-                main: "#2C3246",
+                main: "#1b2027",
               },
               background: {
                 default: "#ffffff",
+                paper: "#f9f9f9",
               },
             }
           : {
               // palette values for dark mode
               primary: {
-                main: "#CECCCC",
+                main: "#fc3384",
               },
               secondary: {
-                main: "#0F110C",
+                main: "#e3e5e9",
               },
               background: {
-                default: "#273238",
+                default: "#181c23",
+                paper: "#2f2f2f",
               },
             }),
       },
       typography: {
         fontFamily: "Rubik",
+
+        h1: {
+          fontWeight: "500",
+        },
       },
       components: {
         MuiButton: {
           styleOverrides: {
             root: {
               minHeight: "42px",
-              borderRadius: "18px",
-              boxShadow: "rgba(95, 169, 236, 0.6) 0px 8px 24px",
+              borderRadius: "4px",
+              boxShadow: "none",
 
               "&:hover": {
-                boxShadow: "rgba(95, 169, 236, 1.0) 0px 8px 24px",
+                boxShadow: "none",
               },
+            },
+          },
+        },
+        MuiAppBar: {
+          styleOverrides: {
+            root: {
+              boxShadow: "none",
             },
           },
         },
         MuiTextField: {
           styleOverrides: {
             root: {
-              backgroundColor: "white",
               borderRadius: "4px",
-              boxShadow: "rgba(95, 169, 236, 0.3) 0px 4px 18px",
               transition: "all 5s ease-out",
-
-              "&:hover": {
-                boxShadow: "rgba(95, 169, 236, 0.6) 0px 4px 24px",
-              },
 
               "& .MuiOutlinedInput-notchedOutline": {
                 transition: "all 0.1s ease-out",
