@@ -10,34 +10,33 @@ import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import HeaderLayout, { IHeaderLayout } from "../../layout/templates/HeaderLayout";
 
-const BoxContainer = styled(Box)(() => ({
-  "&::before": {
-    content: "''",
-    position: "absolute",
-    top: "-200px",
-    left: "-200px",
-    width: "400px",
-    height: "400px",
-    background: "#c989e8",
-    opacity: 0.5,
-    filter: "blur(150px)",
-  },
-  "&::after": {
-    content: "''",
-    position: "absolute",
-    top: "-200px",
-    right: "-200px",
-    width: "400px",
-    height: "400px",
-    background: "#b3d4ff",
-    opacity: 0.5,
-    filter: "blur(150px)",
-  },
+const LeftColorBox = styled(Box)(() => ({
+  content: "''",
+  position: "fixed",
+  top: "-200px",
+  left: "-200px",
+  width: "400px",
+  height: "400px",
+  background: "#c989e8",
+  opacity: 0.5,
+  filter: "blur(150px)",
+}));
+
+const RightColorBox = styled(Box)(() => ({
+  content: "''",
+  position: "fixed",
+  top: "-200px",
+  right: "-200px",
+  width: "400px",
+  height: "400px",
+  background: "#b3d4ff",
+  opacity: 0.5,
+  filter: "blur(150px)",
 }));
 
 const ContainerBox = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(2),
   position: "relative",
-  height: "100vh",
   width: "100%",
   overflow: "auto",
 }));
@@ -52,7 +51,7 @@ const GridItem = styled(Box)(({ theme }) => ({
   padding: theme.spacing(4),
   textAlign: "left",
   color: theme.palette.text.secondary,
-  background: theme.palette.background.paper,
+  background: `${theme.palette.background.paper}ba`,
   borderRadius: "12px",
 }));
 
@@ -73,7 +72,8 @@ const HomeView = (headerLayoutProps: Props) => {
 
   return (
     <HeaderLayout headerOptions={{ label: "Home" }} {...headerLayoutProps}>
-      <BoxContainer />
+      <LeftColorBox />
+      <RightColorBox />
       <ContainerBox>
         <Typography variant="h1" gutterBottom>
           {intl.formatMessage({

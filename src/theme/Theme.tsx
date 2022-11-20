@@ -64,8 +64,6 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
         MuiAppBar: {
           styleOverrides: {
             root: {
-              opacity: 0.7,
-              backdropFilter: "saturate(50%) blur(8px);",
               boxShadow: "none",
             },
           },

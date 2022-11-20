@@ -2,32 +2,31 @@
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
-const BackgroundBox = styled(Box)(() => ({
-  "&::before": {
-    content: "''",
-    position: "absolute",
-    top: "-200px",
-    left: "-200px",
-    width: "400px",
-    height: "400px",
-    background: "#c989e8",
-    opacity: 0.5,
-    filter: "blur(150px)",
-  },
-  "&::after": {
-    content: "''",
-    position: "absolute",
-    top: "-200px",
-    right: "-200px",
-    width: "400px",
-    height: "400px",
-    background: "#b3d4ff",
-    opacity: 0.5,
-    filter: "blur(150px)",
-  },
+const LeftColorBox = styled(Box)(() => ({
+  content: "''",
+  position: "fixed",
+  top: "-200px",
+  left: "-200px",
+  width: "400px",
+  height: "400px",
+  background: "#c989e8",
+  opacity: 0.5,
+  filter: "blur(150px)",
 }));
 
-const ContainerBox = styled(Box)(({ theme }) => ({
+const RightColorBox = styled(Box)(() => ({
+  content: "''",
+  position: "fixed",
+  top: "-200px",
+  right: "-200px",
+  width: "400px",
+  height: "400px",
+  background: "#b3d4ff",
+  opacity: 0.5,
+  filter: "blur(150px)",
+}));
+
+const ContainerBox = styled(Box)(() => ({
   position: "relative",
   height: "100vh",
   width: "100%",
@@ -42,7 +41,8 @@ const StyledBox = styled(Box)(({ theme }) => ({
 
 export const DocumentationDecorator = (story: any) => (
   <>
-    <BackgroundBox />
+    <LeftColorBox />
+    <RightColorBox />
     <ContainerBox>
       <StyledBox>{story()}</StyledBox>
     </ContainerBox>
