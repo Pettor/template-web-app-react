@@ -6,9 +6,13 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useDarkMode } from "storybook-dark-mode";
 import createAppTheme from "../src/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 export const parameters = {
   layout: "fullscreen",
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
   options: {
     storySort: {
       method: "alphabetical",
