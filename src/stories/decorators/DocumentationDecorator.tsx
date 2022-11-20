@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 
 const BackgroundBox = styled(Box)(() => ({
-  position: "fixed",
   "&::before": {
     content: "''",
     position: "absolute",
@@ -42,9 +41,10 @@ const StyledBox = styled(Box)(({ theme }) => ({
 }));
 
 export const DocumentationDecorator = (story: any) => (
-  <BackgroundBox>
+  <>
+    <BackgroundBox />
     <ContainerBox>
       <StyledBox>{story()}</StyledBox>
     </ContainerBox>
-  </BackgroundBox>
+  </>
 );
