@@ -55,6 +55,14 @@ const GridItem = styled(Box)(({ theme }) => ({
   borderRadius: "12px",
 }));
 
+const GradientTypography = styled("span")(({ theme }) => ({
+  ...theme.typography.h1,
+  background: theme.customBackgrounds.gradients.linear.variation1,
+  backgroundClip: "text",
+  WebkitBackgroundClip: "text",
+  color: "transparent",
+}));
+
 interface Props extends IHeaderLayout {}
 
 function HomeView(headerLayoutProps: Props) {
@@ -75,13 +83,13 @@ function HomeView(headerLayoutProps: Props) {
       <LeftColorBox />
       <RightColorBox />
       <ContainerBox>
-        <Typography variant="h1" gutterBottom>
+        <GradientTypography>
           {intl.formatMessage({
             description: "HomeView - Welcome",
             defaultMessage: "Welcome",
             id: "vlRwrH",
           })}
-        </Typography>
+        </GradientTypography>
         <Typography variant="h3" gutterBottom>
           {intl.formatMessage({
             description: "HomeView - Subheader",

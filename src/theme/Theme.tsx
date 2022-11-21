@@ -7,6 +7,28 @@ import "@fontsource/rubik/900.css";
 import { PaletteMode } from "@mui/material";
 import { Theme, createTheme, responsiveFontSizes } from "@mui/material/styles";
 
+declare module "@mui/material/styles" {
+  interface Theme {
+    customBackgrounds: {
+      gradients: {
+        linear: {
+          variation1: string;
+        };
+      };
+    };
+  }
+  // allow configuration using `createTheme`
+  interface ThemeOptions {
+    customBackgrounds?: {
+      gradients?: {
+        linear?: {
+          variation1?: string;
+        };
+      };
+    };
+  }
+}
+
 function createAppTheme(mode: PaletteMode = "light"): Theme {
   return responsiveFontSizes(
     createTheme({
@@ -45,6 +67,13 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
 
         h1: {
           fontWeight: "500",
+        },
+      },
+      customBackgrounds: {
+        gradients: {
+          linear: {
+            variation1: "linear-gradient(120deg, #bd34fe 30%, #41d1ff)",
+          },
         },
       },
       components: {
