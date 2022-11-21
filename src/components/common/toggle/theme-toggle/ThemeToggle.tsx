@@ -1,9 +1,8 @@
+import { PaletteMode } from "@mui/material";
 import Switch, { SwitchProps } from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
 import MoonSvg from "./svg/Moon.svg";
 import SunSvg from "./svg/Sun.svg";
-
-type Props = SwitchProps;
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -48,6 +47,15 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-export default function ThemeToggle(props: Props) {
-  return <MaterialUISwitch {...props} />;
+interface Props extends SwitchProps {
+  defaultMode: PaletteMode;
+  onToggle(mode: PaletteMode): void;
+}
+
+export default function ThemeToggle({ defaultMode, onToggle, ...rest }: Props) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    onToggle(event.target.checked ? "dark" : "light");
+  }
+
+  return <MaterialUISwitch {...rest} checked={defaultMode === "dark"} onChange={handleChange} />;
 }

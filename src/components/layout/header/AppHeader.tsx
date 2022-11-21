@@ -13,6 +13,7 @@ import { styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Logo from "../../common/logo/Logo";
 import Search from "../../common/search/Search";
+import { ThemeToggleExt } from "../../common/toggle/theme-toggle/ThemeToggleExt";
 import { IInjectedMenu } from "../menu/IInjectedMenu";
 
 export interface AppHeaderOptions {
@@ -78,6 +79,7 @@ function AppHeader({ subheader, label, menu, onBack }: Props) {
           </Typography>
           {isSmUp && <Search />}
           <Divider sx={{ mx: 2 }} />
+          <ThemeToggleExt />
           <IconButton>
             <Badge badgeContent={2} color="info">
               <AvatarIcon color="primary" />
