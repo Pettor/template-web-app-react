@@ -15,9 +15,17 @@
     "defaultMessage": "Email Address",
     "description": "LoginFormLabel: Email"
   },
+  "73ixSS": {
+    "defaultMessage": "Repo with .NET 7 template for backend development",
+    "description": "HomeViewGrid - .NET Description"
+  },
   "7VjY8Y": {
     "defaultMessage": "Password",
     "description": "LoginFormLabel: Password"
+  },
+  "Dv81pe": {
+    "defaultMessage": "Template is highly optimized for performance",
+    "description": "HomeViewGrid - Optimized Description"
   },
   "Erb2yF": {
     "defaultMessage": "Don't have an account? Sign up",
@@ -31,6 +39,14 @@
     "defaultMessage": "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
     "description": "ResetPasswordView - Reset password description"
   },
+  "MIobVx": {
+    "defaultMessage": "This is the home page",
+    "description": "HomeView - Subheader"
+  },
+  "MoQIaW": {
+    "defaultMessage": "Highly Optimized",
+    "description": "HomeViewGrid - Optimized Heading"
+  },
   "NFDCUF": {
     "defaultMessage": "What is your first name?",
     "description": "SignUpFormLabel - First Name"
@@ -39,9 +55,21 @@
     "defaultMessage": "Sign up with your email address",
     "description": "SignUpView - Sign up description"
   },
+  "Ns+2OJ": {
+    "defaultMessage": "Full Stack",
+    "description": "HomeViewGrid - FullStack Heading"
+  },
+  "OLZaJ+": {
+    "defaultMessage": "Web template with backend, E2E and UX / UI development tools",
+    "description": "HomeViewGrid - FullStack Description"
+  },
   "SRtN9p": {
     "defaultMessage": "Email Address",
     "description": "ResetPasswordFormLabel - Email"
+  },
+  "TBPCn7": {
+    "defaultMessage": "Storybook",
+    "description": "HomeViewGrid - Storybook Heading"
   },
   "UjAA8C": {
     "defaultMessage": "What's your phone number?",
@@ -63,6 +91,10 @@
     "defaultMessage": "What should we call you?",
     "description": "SignUpFormLabel - User Name"
   },
+  "hoSCLa": {
+    "defaultMessage": "Template use Storybook for UI development",
+    "description": "HomeViewGrid - Storybook Description"
+  },
   "m5YIDx": {
     "defaultMessage": "Email is required",
     "description": "ResetPasswordFormValidation - Email is required"
@@ -78,6 +110,10 @@
   "p9y0Zh": {
     "defaultMessage": "Password is required",
     "description": "SignUpFormValidation - Password is required"
+  },
+  "pJHoJN": {
+    "defaultMessage": ".NET Backend",
+    "description": "HomeViewGrid - .NET Heading"
   },
   "piUPAg": {
     "defaultMessage": "We need to call you something",
