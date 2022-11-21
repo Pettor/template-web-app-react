@@ -92,16 +92,64 @@ const HomeView = (headerLayoutProps: Props) => {
 
         <GridContent container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 8 }}>
           <Grid item xs={4} sm={4} md={4} key={0}>
-            {renderGridItem(LayersIcon, "Full Stack", "Web template with backend, E2E and UX / UI development tools")}
+            {renderGridItem(
+              LayersIcon,
+              intl.formatMessage({
+                description: "HomeViewGrid - FullStack Heading",
+                defaultMessage: "Full Stack",
+                id: "Ns+2OJ",
+              }),
+              intl.formatMessage({
+                description: "HomeViewGrid - FullStack Description",
+                defaultMessage: "Web template with backend, E2E and UX / UI development tools",
+                id: "OLZaJ+",
+              })
+            )}
           </Grid>
           <Grid item xs={4} sm={4} md={4} key={1}>
-            {renderGridItem(StorybookIcon, "Storybook", "Template use Storybook for UI development")}
+            {renderGridItem(
+              LayersIcon,
+              intl.formatMessage({
+                description: "HomeViewGrid - Storybook Heading",
+                defaultMessage: "Storybook",
+                id: "TBPCn7",
+              }),
+              intl.formatMessage({
+                description: "HomeViewGrid - Storybook Description",
+                defaultMessage: "Template use Storybook for UI development",
+                id: "hoSCLa",
+              })
+            )}
           </Grid>
           <Grid item xs={4} sm={4} md={4} key={2}>
-            {renderGridItem(BackendIcon, ".NET Backend", "Repo with .NET 7 template for backend development")}
+            {renderGridItem(
+              LayersIcon,
+              intl.formatMessage({
+                description: "HomeViewGrid - .NET Heading",
+                defaultMessage: ".NET Backend",
+                id: "pJHoJN",
+              }),
+              intl.formatMessage({
+                description: "HomeViewGrid - .NET Description",
+                defaultMessage: "Repo with .NET 7 template for backend development",
+                id: "73ixSS",
+              })
+            )}
           </Grid>
           <Grid item xs={4} sm={4} md={4} key={3}>
-            {renderGridItem(OptimizedIcon, "Highly Optimized", "Template is highly optimized for performance")}
+            {renderGridItem(
+              LayersIcon,
+              intl.formatMessage({
+                description: "HomeViewGrid - Optimized Heading",
+                defaultMessage: "Highly Optimized",
+                id: "MoQIaW",
+              }),
+              intl.formatMessage({
+                description: "HomeViewGrid - Optimized Description",
+                defaultMessage: "Template is highly optimized for performance",
+                id: "Dv81pe",
+              })
+            )}
           </Grid>
         </GridContent>
       </ContainerBox>

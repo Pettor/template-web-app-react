@@ -15,9 +15,17 @@
     "defaultMessage": "Email",
     "description": "LoginFormLabel: Email"
   },
+  "73ixSS": {
+    "defaultMessage": ".NET 7 template för backend utveckling",
+    "description": "HomeViewGrid - .NET Description"
+  },
   "7VjY8Y": {
     "defaultMessage": "Lösenord",
     "description": "LoginFormLabel: Password"
+  },
+  "Dv81pe": {
+    "defaultMessage": "Template är optimerad för snabb webutveckling",
+    "description": "HomeViewGrid - Optimized Description"
   },
   "Erb2yF": {
     "defaultMessage": "Saknar konto? Registrera dig",
@@ -31,6 +39,14 @@
     "defaultMessage": "Skriv in den email du använt vid registrering av <b>{appName}</b>. Vi kommer skicka ett email med ditt användarnamn och en länk för att återställa ditt lösenord.",
     "description": "ResetPasswordView - Reset password description"
   },
+  "MIobVx": {
+    "defaultMessage": "This is the home page",
+    "description": "HomeView - Subheader"
+  },
+  "MoQIaW": {
+    "defaultMessage": "Optimerad för Web",
+    "description": "HomeViewGrid - Optimized Heading"
+  },
   "NFDCUF": {
     "defaultMessage": "Förnamn",
     "description": "SignUpFormLabel - First Name"
@@ -39,9 +55,21 @@
     "defaultMessage": "Registera med din email",
     "description": "SignUpView - Sign up description"
   },
+  "Ns+2OJ": {
+    "defaultMessage": "Full Stack",
+    "description": "HomeViewGrid - FullStack Heading"
+  },
+  "OLZaJ+": {
+    "defaultMessage": "Web template med tillhörande backend, E2E och UX / UI utvecklingsverktyg",
+    "description": "HomeViewGrid - FullStack Description"
+  },
   "SRtN9p": {
     "defaultMessage": "Email",
     "description": "ResetPasswordFormLabel - Email"
+  },
+  "TBPCn7": {
+    "defaultMessage": "Storybook",
+    "description": "HomeViewGrid - Storybook Heading"
   },
   "UjAA8C": {
     "defaultMessage": "Telefonnummer",
@@ -63,6 +91,10 @@
     "defaultMessage": "Användarnamn",
     "description": "SignUpFormLabel - User Name"
   },
+  "hoSCLa": {
+    "defaultMessage": "Template användar Storybook för utveckling av UI-komponenter",
+    "description": "HomeViewGrid - Storybook Description"
+  },
   "m5YIDx": {
     "defaultMessage": "Email saknas",
     "description": "ResetPasswordFormValidation - Email is required"
@@ -78,6 +110,10 @@
   "p9y0Zh": {
     "defaultMessage": "Lösenord saknas",
     "description": "SignUpFormValidation - Password is required"
+  },
+  "pJHoJN": {
+    "defaultMessage": ".NET Backend",
+    "description": "HomeViewGrid - .NET Heading"
   },
   "piUPAg": {
     "defaultMessage": "Användarnamn saknas",

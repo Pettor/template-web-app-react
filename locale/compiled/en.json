@@ -23,10 +23,22 @@
       "value": "Email Address"
     }
   ],
+  "73ixSS": [
+    {
+      "type": 0,
+      "value": "Repo with .NET 7 template for backend development"
+    }
+  ],
   "7VjY8Y": [
     {
       "type": 0,
       "value": "Password"
+    }
+  ],
+  "Dv81pe": [
+    {
+      "type": 0,
+      "value": "Template is highly optimized for performance"
     }
   ],
   "Erb2yF": [
@@ -61,6 +73,18 @@
       "value": " email adress that you used to register. We'll send you an email with your username and a link to reset your password."
     }
   ],
+  "MIobVx": [
+    {
+      "type": 0,
+      "value": "This is the home page"
+    }
+  ],
+  "MoQIaW": [
+    {
+      "type": 0,
+      "value": "Highly Optimized"
+    }
+  ],
   "NFDCUF": [
     {
       "type": 0,
@@ -73,10 +97,28 @@
       "value": "Sign up with your email address"
     }
   ],
+  "Ns+2OJ": [
+    {
+      "type": 0,
+      "value": "Full Stack"
+    }
+  ],
+  "OLZaJ+": [
+    {
+      "type": 0,
+      "value": "Web template with backend, E2E and UX / UI development tools"
+    }
+  ],
   "SRtN9p": [
     {
       "type": 0,
       "value": "Email Address"
+    }
+  ],
+  "TBPCn7": [
+    {
+      "type": 0,
+      "value": "Storybook"
     }
   ],
   "UjAA8C": [
@@ -109,6 +151,12 @@
       "value": "What should we call you?"
     }
   ],
+  "hoSCLa": [
+    {
+      "type": 0,
+      "value": "Template use Storybook for UI development"
+    }
+  ],
   "m5YIDx": [
     {
       "type": 0,
@@ -131,6 +179,12 @@
     {
       "type": 0,
       "value": "Password is required"
+    }
+  ],
+  "pJHoJN": [
+    {
+      "type": 0,
+      "value": ".NET Backend"
     }
   ],
   "piUPAg": [
