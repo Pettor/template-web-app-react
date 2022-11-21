@@ -19,7 +19,7 @@ export interface ResetPasswordFormProps {
   onSubmit: SubmitHandler<IFormResetPassword>;
 }
 
-const ResetPasswordForm = ({ error, open, loading, onAlert, onSubmit }: ResetPasswordFormProps) => {
+function ResetPasswordForm({ error, open, loading, onAlert, onSubmit }: ResetPasswordFormProps) {
   const intl = useIntl();
 
   const schema = yup
@@ -81,6 +81,6 @@ const ResetPasswordForm = ({ error, open, loading, onAlert, onSubmit }: ResetPas
       </Collapse>
     </form>
   );
-};
+}
 
 export default ResetPasswordForm;

@@ -1,4 +1,4 @@
-const useAppInfo = () => {
+function useAppInfo() {
   const appName = "Web App";
   const appNameCapital = appName.toUpperCase();
 
@@ -6,6 +6,6 @@ const useAppInfo = () => {
     appName,
     appNameCapital,
   };
-};
+}
 
 export default useAppInfo;

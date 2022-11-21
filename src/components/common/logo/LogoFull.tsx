@@ -7,15 +7,15 @@ import Logo from "./Logo";
 
 export type LogoFullSize = "medium" | "large";
 
-type Props = {
+interface Props {
   size: LogoFullSize;
-};
+}
 
 const NameTypography = styled(Typography)(() => ({
   fontWeight: "normal",
 }));
 
-const LogoFull = ({ size = "large" }: Props) => {
+function LogoFull({ size = "large" }: Props) {
   const { appNameCapital } = useAppInfo();
 
   return (
@@ -28,6 +28,6 @@ const LogoFull = ({ size = "large" }: Props) => {
       </Box>
     </Stack>
   );
-};
+}
 
 export default LogoFull;

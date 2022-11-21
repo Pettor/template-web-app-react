@@ -33,7 +33,7 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
   backdropFilter: "saturate(50%) blur(8px)",
 }));
 
-const AppHeader = ({ subheader, label, menu, onBack }: Props) => {
+function AppHeader({ subheader, label, menu, onBack }: Props) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -91,6 +91,6 @@ const AppHeader = ({ subheader, label, menu, onBack }: Props) => {
       </Toolbar>
     </AppBar>
   );
-};
+}
 
 export default AppHeader;

@@ -32,7 +32,7 @@ const WaveImg = styled("img")(({ theme }) => ({
   },
 }));
 
-const LoginView = ({ loginForm, handleForgotPassword, handleSignUp }: Props) => {
+function LoginView({ loginForm, handleForgotPassword, handleSignUp }: Props) {
   const intl = useIntl();
 
   return (
@@ -66,6 +66,6 @@ const LoginView = ({ loginForm, handleForgotPassword, handleSignUp }: Props) => 
       </ContainerLayout>
     </Box>
   );
-};
+}
 
 export default LoginView;

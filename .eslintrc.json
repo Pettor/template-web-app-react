@@ -22,17 +22,35 @@
       "version": "detect"
     }
   },
+  "ignorePatterns": ["*.stories.tsx"],
   "plugins": ["react", "@typescript-eslint", "prettier", "formatjs"],
   "rules": {
-    "prettier/prettier": "error",
-    "react/react-in-jsx-scope": "off",
-    "import/no-unresolved": "off",
+    // Common
     "no-restricted-imports": [
       "error",
       {
         "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
       }
     ],
+
+    "import/no-unresolved": "off",
+    // React
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": ["function-declaration"]
+      }
+    ],
+    // Typescript
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ],
+    // Plugins
+    "prettier/prettier": "error",
     "formatjs/enforce-id": [
       "error",
       {

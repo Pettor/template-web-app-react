@@ -15,7 +15,7 @@ type ApiMessages =
   | { type: "request/post"; url: string; payload: unknown }
   | { type: "request/get"; url: string };
 
-const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>) => {
+async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>) {
   let apiResponse: ApiResponse;
 
   try {
@@ -134,7 +134,7 @@ const messageHandler = async ({ data, ports: [port] }: MessageEvent<ApiMessages>
 
   // Send response back from Worker
   port.postMessage(apiResponse);
-};
+}
 
 addEventListener("message", messageHandler);
 

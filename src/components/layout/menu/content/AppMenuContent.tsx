@@ -7,13 +7,15 @@ export interface AppMenuProps {
   handleLogout?: () => void;
 }
 
-const AppMenuContent = ({ handleLogout }: AppMenuProps): JSX.Element => (
-  <MenuItem onClick={handleLogout}>
-    <ListItemIcon>
-      <LogoutIcon fontSize="small" />
-    </ListItemIcon>
-    <ListItemText>Logout</ListItemText>
-  </MenuItem>
-);
+function AppMenuContent({ handleLogout }: AppMenuProps): JSX.Element {
+  return (
+    <MenuItem onClick={handleLogout}>
+      <ListItemIcon>
+        <LogoutIcon fontSize="small" />
+      </ListItemIcon>
+      <ListItemText>Logout</ListItemText>
+    </MenuItem>
+  );
+}
 
 export default AppMenuContent;

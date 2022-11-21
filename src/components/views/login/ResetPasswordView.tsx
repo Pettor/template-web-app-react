@@ -9,7 +9,7 @@ type Props = {
   resetForm: ResetPasswordFormProps;
 };
 
-const ResetPasswordView = ({ resetForm }: Props) => {
+function ResetPasswordView({ resetForm }: Props) {
   const intl = useIntl();
   const { appName } = useAppInfo();
 
@@ -37,6 +37,6 @@ const ResetPasswordView = ({ resetForm }: Props) => {
       <ResetPasswordForm {...resetForm} />
     </ContainerLayout>
   );
-};
+}
 
 export default ResetPasswordView;

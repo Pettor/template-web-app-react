@@ -29,4 +29,6 @@ export interface RequestResponse<T = unknown> {
 
 export type ApiResponse = ApiError | TokenRequestReponse | TokenRefreshResponse | UserLogoutResponse | RequestResponse;
 
-export const isApiError = (response: ApiResponse): response is ApiError => response.__typename === "ApiError";
+export function isApiError(response: ApiResponse): response is ApiError {
+  return response.__typename === "ApiError";
+}

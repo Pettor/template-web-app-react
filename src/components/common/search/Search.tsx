@@ -48,7 +48,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const Search = () => {
+function Search() {
   const intl = useIntl();
   return (
     <StyledSearch>
@@ -65,6 +65,6 @@ const Search = () => {
       />
     </StyledSearch>
   );
-};
+}
 
 export default Search;

@@ -8,7 +8,7 @@ type Props = {
   signUpForm: SignUpFormProps;
 };
 
-const SignUpView = ({ signUpForm }: Props) => {
+function SignUpView({ signUpForm }: Props) {
   const intl = useIntl();
 
   return (
@@ -25,6 +25,6 @@ const SignUpView = ({ signUpForm }: Props) => {
       <SignUpForm {...signUpForm} />
     </ContainerLayout>
   );
-};
+}
 
 export default SignUpView;

@@ -27,7 +27,7 @@ export interface LoginFormProps {
   onSubmit: SubmitHandler<IFormLogin>;
 }
 
-const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) => {
+function LoginForm({ error, open, loading, onAlert, onSubmit }: LoginFormProps) {
   const intl = useIntl();
 
   const schema = yup
@@ -137,6 +137,6 @@ const LoginForm = ({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
       </Collapse>
     </form>
   );
-};
+}
 
 export default LoginForm;

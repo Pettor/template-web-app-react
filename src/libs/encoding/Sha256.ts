@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { getCryptoSubtle } from "../crypto/GetCrypto";
 
-export const sha256 = async (s: string) => {
+export async function sha256(s: string) {
   const digestOp: any = getCryptoSubtle().digest({ name: "SHA-256" }, new TextEncoder().encode(s));
 
   // msCrypto (IE11) uses the old spec, which is not Promise based
@@ -28,4 +28,4 @@ export const sha256 = async (s: string) => {
   }
 
   return await digestOp;
-};
+}

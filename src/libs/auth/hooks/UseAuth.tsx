@@ -3,7 +3,7 @@ import useApi from "../../api/hooks/UseApi";
 import { TokenRequestRequest } from "../../api/service/requests/TokenRequestRequest";
 import { AuthContext } from "../context/AuthContext";
 
-const useAuth = () => {
+function useAuth() {
   const { state, dispatch } = useContext(AuthContext);
   const api = useApi();
 
@@ -29,6 +29,6 @@ const useAuth = () => {
     login,
     logout,
   };
-};
+}
 
 export default useAuth;

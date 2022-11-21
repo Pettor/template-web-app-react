@@ -39,12 +39,14 @@ const StyledBox = styled(Box)(({ theme }) => ({
   zIndex: 1,
 }));
 
-export const DocumentationDecorator = (story: any) => (
-  <>
-    <LeftColorBox />
-    <RightColorBox />
-    <ContainerBox>
-      <StyledBox>{story()}</StyledBox>
-    </ContainerBox>
-  </>
-);
+export function DocumentationDecorator(story: any) {
+  return (
+    <>
+      <LeftColorBox />
+      <RightColorBox />
+      <ContainerBox>
+        <StyledBox>{story()}</StyledBox>
+      </ContainerBox>
+    </>
+  );
+}

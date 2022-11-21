@@ -27,7 +27,7 @@ const ContentBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ContainerLayout = ({ sx, children }: Props) => {
+function ContainerLayout({ sx, children }: Props) {
   return (
     <StyledBox>
       <Container maxWidth="xs" sx={sx}>
@@ -39,6 +39,6 @@ const ContainerLayout = ({ sx, children }: Props) => {
       </Container>
     </StyledBox>
   );
-};
+}
 
 export default ContainerLayout;

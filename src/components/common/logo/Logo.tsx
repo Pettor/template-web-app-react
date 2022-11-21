@@ -5,7 +5,7 @@ export interface LogoProps {
   size: "small" | "medium" | "large";
 }
 
-type Props = LogoProps;
+interface Props extends LogoProps {}
 
 export default function Logo({ size = "large" }: Props): JSX.Element {
   const theme = useTheme();

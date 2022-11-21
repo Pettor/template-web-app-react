@@ -31,7 +31,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-const HeaderLayout = ({ headerOptions, maxWidth = "lg", sx, injectedMenu, children }: Props) => {
+function HeaderLayout({ headerOptions, maxWidth = "lg", sx, injectedMenu, children }: Props) {
   const theme = useTheme();
   const isLgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
@@ -52,6 +52,6 @@ const HeaderLayout = ({ headerOptions, maxWidth = "lg", sx, injectedMenu, childr
       </Box>
     </StyledBox>
   );
-};
+}
 
 export default HeaderLayout;
