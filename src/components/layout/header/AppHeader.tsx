@@ -25,13 +25,13 @@ export interface AppHeaderProps {
   menu: IInjectedMenu;
 }
 
-type Props = AppHeaderOptions & AppHeaderProps;
-
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
   background: `${theme.palette.background.default}b0`,
   zIndex: theme.zIndex.drawer + 1,
   backdropFilter: "saturate(50%) blur(8px)",
 }));
+
+interface Props extends AppHeaderOptions, AppHeaderProps {}
 
 function AppHeader({ subheader, label, menu, onBack }: Props) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

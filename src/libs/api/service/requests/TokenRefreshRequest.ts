@@ -1,3 +1,3 @@
-export type TokenRefreshRequest = {
+export interface TokenRefreshRequest {
   refreshToken: string;
-};
+}

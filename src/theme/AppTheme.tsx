@@ -4,9 +4,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import createAppTheme from "./Theme";
 
-type Props = {
+interface Props {
   children: JSX.Element | JSX.Element[];
-};
+}
 
 function AppTheme({ children }: Props): JSX.Element {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");

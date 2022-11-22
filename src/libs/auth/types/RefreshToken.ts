@@ -1,6 +1,6 @@
 import { JwtToken } from "./JwtToken";
 
-export type RefreshToken = {
+export interface RefreshToken {
   refreshToken: JwtToken;
   refreshTokenExpiryTime: Date;
-};
+}

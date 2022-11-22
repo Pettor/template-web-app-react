@@ -4,9 +4,9 @@ import LogoFull from "../../common/logo/LogoFull";
 import SignUpForm, { SignUpFormProps } from "../../forms/sign-up/SignUpForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
 
-type Props = {
+interface Props {
   signUpForm: SignUpFormProps;
-};
+}
 
 function SignUpView({ signUpForm }: Props) {
   const intl = useIntl();

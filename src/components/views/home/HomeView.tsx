@@ -55,7 +55,7 @@ const GridItem = styled(Box)(({ theme }) => ({
   borderRadius: "12px",
 }));
 
-type Props = IHeaderLayout;
+interface Props extends IHeaderLayout {}
 
 function HomeView(headerLayoutProps: Props) {
   const intl = useIntl();

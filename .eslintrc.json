@@ -32,7 +32,6 @@
         "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
       }
     ],
-
     "import/no-unresolved": "off",
     // React
     "react/react-in-jsx-scope": "off",

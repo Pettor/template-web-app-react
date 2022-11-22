@@ -5,15 +5,15 @@ import { styled } from "@mui/material/styles";
 import useAppInfo from "../../../libs/app/hooks/AppInfo";
 import Logo from "./Logo";
 
+const NameTypography = styled(Typography)(() => ({
+  fontWeight: "normal",
+}));
+
 export type LogoFullSize = "medium" | "large";
 
 interface Props {
   size: LogoFullSize;
 }
-
-const NameTypography = styled(Typography)(() => ({
-  fontWeight: "normal",
-}));
 
 function LogoFull({ size = "large" }: Props) {
   const { appNameCapital } = useAppInfo();

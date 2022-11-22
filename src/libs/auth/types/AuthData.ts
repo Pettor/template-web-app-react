@@ -1,5 +1,5 @@
 import { RefreshToken } from "./RefreshToken";
 
-export type AuthData = {
+export interface AuthData {
   refreshToken: RefreshToken;
-};
+}

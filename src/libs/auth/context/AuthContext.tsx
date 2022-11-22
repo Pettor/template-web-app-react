@@ -4,10 +4,6 @@ import { useLocalStorage } from "../../storage/local-storage/hooks/UseLocalStora
 import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
 import { RefreshToken } from "../types/RefreshToken";
 
-interface Props {
-  children: ReactNode;
-}
-
 interface IAuthContext {
   state: AuthState;
   dispatch: React.Dispatch<AuthActions>;
@@ -19,6 +15,10 @@ const initialState: AuthState = {
   status: "idle",
   data: null,
 };
+
+interface Props {
+  children: ReactNode;
+}
 
 function AuthProvider({ children }: Props) {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
