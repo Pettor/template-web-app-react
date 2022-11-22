@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import { useThemeMode } from "../components/common/toggle/theme-toggle/hook/useThemeMode";
 import createAppTheme from "./Theme";
 
 interface Props {
@@ -9,8 +9,7 @@ interface Props {
 }
 
 function AppTheme({ children }: Props): JSX.Element {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-  const mode = prefersDarkMode ? "dark" : "light";
+  const mode = useThemeMode();
   const theme = useMemo(() => createAppTheme(mode), [mode]);
 
   return (
