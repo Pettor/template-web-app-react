@@ -55,9 +55,9 @@ const GridItem = styled(Box)(({ theme }) => ({
   borderRadius: "12px",
 }));
 
-type Props = IHeaderLayout;
+interface Props extends IHeaderLayout {}
 
-const HomeView = (headerLayoutProps: Props) => {
+function HomeView(headerLayoutProps: Props) {
   const intl = useIntl();
 
   function renderGridItem(Icon: ComponentType, heading: string, description: string) {
@@ -108,7 +108,7 @@ const HomeView = (headerLayoutProps: Props) => {
           </Grid>
           <Grid item xs={4} sm={4} md={4} key={1}>
             {renderGridItem(
-              LayersIcon,
+              StorybookIcon,
               intl.formatMessage({
                 description: "HomeViewGrid - Storybook Heading",
                 defaultMessage: "Storybook",
@@ -123,7 +123,7 @@ const HomeView = (headerLayoutProps: Props) => {
           </Grid>
           <Grid item xs={4} sm={4} md={4} key={2}>
             {renderGridItem(
-              LayersIcon,
+              BackendIcon,
               intl.formatMessage({
                 description: "HomeViewGrid - .NET Heading",
                 defaultMessage: ".NET Backend",
@@ -138,7 +138,7 @@ const HomeView = (headerLayoutProps: Props) => {
           </Grid>
           <Grid item xs={4} sm={4} md={4} key={3}>
             {renderGridItem(
-              LayersIcon,
+              OptimizedIcon,
               intl.formatMessage({
                 description: "HomeViewGrid - Optimized Heading",
                 defaultMessage: "Highly Optimized",
@@ -155,6 +155,6 @@ const HomeView = (headerLayoutProps: Props) => {
       </ContainerBox>
     </HeaderLayout>
   );
-};
+}
 
 export default HomeView;

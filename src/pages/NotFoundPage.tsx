@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
-const IndexPage = () => {
+function IndexPage() {
   const navigate = useNavigate();
 
   return (
@@ -12,6 +12,6 @@ const IndexPage = () => {
       </Button>
     </div>
   );
-};
+}
 
 export default IndexPage;

@@ -4,10 +4,10 @@ import { useLocalStorage } from "../../storage/local-storage/hooks/UseLocalStora
 import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
 import { RefreshToken } from "../types/RefreshToken";
 
-type IAuthContext = {
+interface IAuthContext {
   state: AuthState;
   dispatch: React.Dispatch<AuthActions>;
-};
+}
 
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
@@ -16,11 +16,11 @@ const initialState: AuthState = {
   data: null,
 };
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
-const AuthProvider = ({ children }: Props) => {
+function AuthProvider({ children }: Props) {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
   const api = useApi();
 
@@ -30,17 +30,13 @@ const AuthProvider = ({ children }: Props) => {
   useEffect(() => {
     // On refresh check if auth exist or not
     const tryRefreshToken = async (): Promise<void> => {
-      console.log(JSON.stringify(refreshToken));
-
       if (!refreshToken) {
         dispatch({ type: "auth/logout" });
         return;
       }
       try {
         const { refreshToken: newRefreshToken } = await api.refreshToken(refreshToken);
-        console.log(JSON.stringify(newRefreshToken));
         if (!newRefreshToken) {
-          console.log("Logout");
           dispatch({ type: "auth/logout" });
           return;
         }
@@ -71,7 +67,7 @@ const AuthProvider = ({ children }: Props) => {
   }, [state]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-};
+}
 
 export type { IAuthContext };
 export { AuthProvider, AuthContext };

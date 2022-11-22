@@ -8,18 +8,6 @@ import LogoFull from "../../common/logo/LogoFull";
 import LoginForm, { LoginFormProps } from "../../forms/login/LoginForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
 
-export interface IFormCredentials {
-  email: string;
-  password: string;
-  remember: boolean;
-}
-
-type Props = {
-  loginForm: LoginFormProps;
-  handleForgotPassword: () => void;
-  handleSignUp: () => void;
-};
-
 const WaveImg = styled("img")(({ theme }) => ({
   position: "fixed",
   bottom: -50,
@@ -32,7 +20,19 @@ const WaveImg = styled("img")(({ theme }) => ({
   },
 }));
 
-const LoginView = ({ loginForm, handleForgotPassword, handleSignUp }: Props) => {
+export interface IFormCredentials {
+  email: string;
+  password: string;
+  remember: boolean;
+}
+
+interface Props {
+  loginForm: LoginFormProps;
+  handleForgotPassword: () => void;
+  handleSignUp: () => void;
+}
+
+function LoginView({ loginForm, handleForgotPassword, handleSignUp }: Props) {
   const intl = useIntl();
 
   return (
@@ -66,6 +66,6 @@ const LoginView = ({ loginForm, handleForgotPassword, handleSignUp }: Props) => 
       </ContainerLayout>
     </Box>
   );
-};
+}
 
 export default LoginView;

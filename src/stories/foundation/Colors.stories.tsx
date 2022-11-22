@@ -25,7 +25,7 @@ const Item = styled(Box)(({ theme }) => ({
   display: "flex",
 }));
 
-const ColorRow = (label: string, color: PaletteColor) => {
+function ColorRow(label: string, color: PaletteColor) {
   const { contrastText, dark, light, main } = color;
   return (
     <>
@@ -45,37 +45,39 @@ const ColorRow = (label: string, color: PaletteColor) => {
       </Grid>
     </>
   );
-};
+}
 
-export const Colors = () => (
-  <DocumentationLayout label="Colors">
-    <Grid container>
-      <Grid item xs={3}>
-        <Item>
-          <Typography variant="h6">Name</Typography>
-        </Item>
+export function Colors() {
+  return (
+    <DocumentationLayout label="Colors">
+      <Grid container>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">Name</Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">Main</Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">Light</Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">Dark</Typography>
+          </Item>
+        </Grid>
+        {ColorRow("Primary", primary)}
+        {ColorRow("Secondary", secondary)}
+        {ColorRow("Info", info)}
+        {ColorRow("Success", success)}
+        {ColorRow("Warning", warning)}
+        {ColorRow("Error", error)}
       </Grid>
-      <Grid item xs={3}>
-        <Item>
-          <Typography variant="h6">Main</Typography>
-        </Item>
-      </Grid>
-      <Grid item xs={3}>
-        <Item>
-          <Typography variant="h6">Light</Typography>
-        </Item>
-      </Grid>
-      <Grid item xs={3}>
-        <Item>
-          <Typography variant="h6">Dark</Typography>
-        </Item>
-      </Grid>
-      {ColorRow("Primary", primary)}
-      {ColorRow("Secondary", secondary)}
-      {ColorRow("Info", info)}
-      {ColorRow("Success", success)}
-      {ColorRow("Warning", warning)}
-      {ColorRow("Error", error)}
-    </Grid>
-  </DocumentationLayout>
-);
+    </DocumentationLayout>
+  );
+}

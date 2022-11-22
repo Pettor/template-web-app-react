@@ -1,4 +1,4 @@
-export type TokenRequestRequest = {
+export interface TokenRequestRequest {
   email: string;
   password: string;
-};
+}

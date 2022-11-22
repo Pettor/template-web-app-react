@@ -1,4 +1,4 @@
-export type UserSignUpRequest = {
+export interface UserSignUpRequest {
   firstName: string;
   lastName: string;
   email: string;
@@ -6,4 +6,4 @@ export type UserSignUpRequest = {
   password: string;
   confirmPassword: string;
   phoneNumber: string;
-};
+}

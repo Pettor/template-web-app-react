@@ -2,7 +2,7 @@ import AppMenu from "../../layout/menu/AppMenu";
 import AppMenuContent from "../../layout/menu/content/AppMenuContent";
 import HomeView from "./HomeView";
 
-const HomeViewExt = () => {
+function HomeViewExt() {
   return (
     <HomeView
       injectedMenu={{
@@ -11,6 +11,6 @@ const HomeViewExt = () => {
       }}
     />
   );
-};
+}
 
 export default HomeViewExt;

@@ -11,7 +11,7 @@ import { sendMessage } from "../worker/ApiWorkerUtils";
 
 const apiWorker = new ApiWorker();
 
-const useApi = () => {
+function useApi() {
   async function requestToken(data: TokenRequestRequest): Promise<RefreshToken> {
     const { refreshToken } = await sendMessage<TokenRequestReponse>(
       { type: "token/request", payload: data },
@@ -45,6 +45,6 @@ const useApi = () => {
     post,
     get,
   };
-};
+}
 
 export default useApi;

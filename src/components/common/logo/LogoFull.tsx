@@ -5,17 +5,17 @@ import { styled } from "@mui/material/styles";
 import useAppInfo from "../../../libs/app/hooks/AppInfo";
 import Logo from "./Logo";
 
-export type LogoFullSize = "medium" | "large";
-
-type Props = {
-  size: LogoFullSize;
-};
-
 const NameTypography = styled(Typography)(() => ({
   fontWeight: "normal",
 }));
 
-const LogoFull = ({ size = "large" }: Props) => {
+export type LogoFullSize = "medium" | "large";
+
+interface Props {
+  size: LogoFullSize;
+}
+
+function LogoFull({ size = "large" }: Props) {
   const { appNameCapital } = useAppInfo();
 
   return (
@@ -28,6 +28,6 @@ const LogoFull = ({ size = "large" }: Props) => {
       </Box>
     </Stack>
   );
-};
+}
 
 export default LogoFull;

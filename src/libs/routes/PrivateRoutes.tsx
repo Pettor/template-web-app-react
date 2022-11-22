@@ -1,7 +1,7 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../auth/hooks/UseAuth";
 
-const PrivateRoutes = (): JSX.Element => {
+function PrivateRoutes(): JSX.Element {
   const { status } = useAuth();
   const location = useLocation();
 
@@ -14,6 +14,6 @@ const PrivateRoutes = (): JSX.Element => {
     case "authenticated":
       return <Outlet />;
   }
-};
+}
 
 export default PrivateRoutes;

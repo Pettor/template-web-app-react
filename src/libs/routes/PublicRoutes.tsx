@@ -1,7 +1,7 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../auth/hooks/UseAuth";
 
-const PublicRoutes = (): JSX.Element => {
+function PublicRoutes(): JSX.Element {
   const { status } = useAuth();
   const location = useLocation();
 
@@ -14,6 +14,6 @@ const PublicRoutes = (): JSX.Element => {
     case "authenticated":
       return <Navigate to="/" state={{ from: location }} />;
   }
-};
+}
 
 export default PublicRoutes;

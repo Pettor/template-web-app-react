@@ -1,11 +1,11 @@
 import { AuthData } from "../types/AuthData";
 
-type AuthState = {
+type AuthActions = { type: "auth/loading" } | { type: "auth/login"; payload: AuthData } | { type: "auth/logout" };
+
+interface AuthState {
   status: "idle" | "authenticating" | "authenticated";
   data: AuthData | null;
-};
-
-type AuthActions = { type: "auth/loading" } | { type: "auth/login"; payload: AuthData } | { type: "auth/logout" };
+}
 
 const AuthReducer = (prev: AuthState, action: AuthActions): AuthState => {
   switch (action.type) {

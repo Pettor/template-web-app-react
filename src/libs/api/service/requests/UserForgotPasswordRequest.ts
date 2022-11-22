@@ -1,3 +1,3 @@
-export type UserForgotPasswordRequest = {
+export interface UserForgotPasswordRequest {
   email: string;
-};
+}

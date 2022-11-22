@@ -2,11 +2,6 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { SxProps, styled } from "@mui/material/styles";
 
-type Props = {
-  sx?: SxProps;
-  children: JSX.Element | JSX.Element[];
-};
-
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",
   background: theme.palette.background.default,
@@ -27,7 +22,12 @@ const ContentBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ContainerLayout = ({ sx, children }: Props) => {
+interface Props {
+  sx?: SxProps;
+  children: JSX.Element | JSX.Element[];
+}
+
+function ContainerLayout({ sx, children }: Props) {
   return (
     <StyledBox>
       <Container maxWidth="xs" sx={sx}>
@@ -39,6 +39,6 @@ const ContainerLayout = ({ sx, children }: Props) => {
       </Container>
     </StyledBox>
   );
-};
+}
 
 export default ContainerLayout;

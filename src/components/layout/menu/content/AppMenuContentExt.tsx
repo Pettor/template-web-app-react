@@ -1,7 +1,7 @@
 import useAuth from "../../../../libs/auth/hooks/UseAuth";
 import AppMenuContent from "./AppMenuContent";
 
-const AppMenuContextExt = () => {
+function AppMenuContextExt() {
   const { logout } = useAuth();
 
   const handleLogout = () => {
@@ -9,6 +9,6 @@ const AppMenuContextExt = () => {
   };
 
   return <AppMenuContent handleLogout={handleLogout} />;
-};
+}
 
 export default AppMenuContextExt;

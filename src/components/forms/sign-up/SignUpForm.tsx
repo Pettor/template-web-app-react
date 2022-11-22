@@ -27,7 +27,7 @@ export interface SignUpFormProps {
   onSubmit: SubmitHandler<IFormSignUp>;
 }
 
-const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps) => {
+function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps) {
   const intl = useIntl();
 
   const schema = yup
@@ -221,6 +221,6 @@ const SignUpForm = ({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
       </Collapse>
     </form>
   );
-};
+}
 
 export default SignUpForm;

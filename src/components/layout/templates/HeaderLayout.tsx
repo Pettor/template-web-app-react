@@ -6,19 +6,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import AppHeader, { AppHeaderOptions } from "../header/AppHeader";
 import { IInjectedMenu } from "../menu/IInjectedMenu";
 
-export interface HeaderLayoutProps {
-  headerOptions?: AppHeaderOptions;
-  maxWidth?: Breakpoint | false;
-  sx?: SxProps<Theme> | undefined;
-  children: JSX.Element | JSX.Element[];
-}
-
-export interface IHeaderLayout {
-  injectedMenu: IInjectedMenu;
-}
-
-type Props = HeaderLayoutProps & IHeaderLayout;
-
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",
   background: theme.palette.background.default,
@@ -31,7 +18,20 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-const HeaderLayout = ({ headerOptions, maxWidth = "lg", sx, injectedMenu, children }: Props) => {
+export interface HeaderLayoutProps {
+  headerOptions?: AppHeaderOptions;
+  maxWidth?: Breakpoint | false;
+  sx?: SxProps<Theme> | undefined;
+  children: JSX.Element | JSX.Element[];
+}
+
+export interface IHeaderLayout {
+  injectedMenu: IInjectedMenu;
+}
+
+interface Props extends HeaderLayoutProps, IHeaderLayout {}
+
+function HeaderLayout({ headerOptions, maxWidth = "lg", sx, injectedMenu, children }: Props) {
   const theme = useTheme();
   const isLgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
@@ -52,6 +52,6 @@ const HeaderLayout = ({ headerOptions, maxWidth = "lg", sx, injectedMenu, childr
       </Box>
     </StyledBox>
   );
-};
+}
 
 export default HeaderLayout;

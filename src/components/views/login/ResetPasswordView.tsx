@@ -5,11 +5,11 @@ import LogoFull from "../../common/logo/LogoFull";
 import ResetPasswordForm, { ResetPasswordFormProps } from "../../forms/reset-password/ResetPasswordForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
 
-type Props = {
+interface Props {
   resetForm: ResetPasswordFormProps;
-};
+}
 
-const ResetPasswordView = ({ resetForm }: Props) => {
+function ResetPasswordView({ resetForm }: Props) {
   const intl = useIntl();
   const { appName } = useAppInfo();
 
@@ -37,6 +37,6 @@ const ResetPasswordView = ({ resetForm }: Props) => {
       <ResetPasswordForm {...resetForm} />
     </ContainerLayout>
   );
-};
+}
 
 export default ResetPasswordView;
