@@ -11,7 +11,7 @@
     "storybook": "start-storybook",
     "build-storybook": "build-storybook",
     "test-storybook": "test-storybook",
-    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\"",
+    "test-storybook:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\"",
     "i18n-extract": "formatjs extract src/**/*.ts* --ignore=**/*.d.ts --out-file locale/extracted/sv.json --id-interpolation-pattern [sha512:contenthash:base64:6] --flatten",
     "i18n-compile": "formatjs compile-folder --ast locale/extracted locale/compiled"
   },
