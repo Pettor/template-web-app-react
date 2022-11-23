@@ -11,9 +11,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Logo from "../../common/logo/Logo";
-import Search from "../../common/search/Search";
-import { ThemeToggleExt } from "../../common/toggle/theme-toggle/ThemeToggleExt";
+import Logo from "../../library/logo/Logo";
+import Search from "../../library/search/Search";
+import { ThemeToggleExt } from "../../library/toggle/theme-toggle/ThemeToggleExt";
 import { IInjectedMenu } from "../menu/IInjectedMenu";
 
 export interface AppHeaderOptions {

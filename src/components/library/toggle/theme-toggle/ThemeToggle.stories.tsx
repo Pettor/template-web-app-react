@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default {
   component: ThemeToggle,
-  title: "Common/Toggle",
+  title: "Library/Toggle",
   decorators: [CommonDecorator],
 } as ComponentMeta<typeof ThemeToggle>;
 

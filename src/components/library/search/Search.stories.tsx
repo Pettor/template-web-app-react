@@ -6,7 +6,7 @@ import Search from "./Search";
 
 export default {
   component: Search,
-  title: "Common/Search",
+  title: "Library/Search",
   decorators: [CommonDecorator],
 } as ComponentMeta<typeof Search>;
 

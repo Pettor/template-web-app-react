@@ -1,11 +1,11 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { CommonDecorator } from "../decorators/CommonDecorator";
+import { CommonDecorator } from "../../stories/decorators/CommonDecorator";
 
 export default {
   component: Button,
-  title: "Common/Button",
+  title: "Library/Button",
   decorators: [CommonDecorator],
 } as ComponentMeta<typeof Button>;
 
