@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
+import { ReactNode, createContext, useEffect, useMemo, useReducer, useState } from "react";
+import { useQuery } from "react-query";
 import useApi from "../../api/hooks/UseApi";
 import { useLocalStorage } from "../../storage/local-storage/hooks/UseLocalStorage";
 import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
@@ -22,14 +23,12 @@ interface Props {
 
 function AuthProvider({ children }: Props) {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
+  const [refreshToken] = useLocalStorage<RefreshToken | null>("refresh-token", null);
   const api = useApi();
 
-  const { data } = state;
-  const [refreshToken, setRefreshToken] = useLocalStorage<RefreshToken | null>("refresh-token", null);
-
-  useEffect(() => {
-    // On refresh check if auth exist or not
-    const tryRefreshToken = async (): Promise<void> => {
+  useQuery({
+    queryKey: ["refresh-token-init"],
+    queryFn: async () => {
       if (!refreshToken) {
         dispatch({ type: "auth/logout" });
         return;
@@ -41,23 +40,13 @@ function AuthProvider({ children }: Props) {
           return;
         }
 
-        setRefreshToken(newRefreshToken);
         dispatch({ type: "auth/login", payload: { refreshToken: newRefreshToken } });
       } catch (errro) {
         dispatch({ type: "auth/logout" });
       }
-    };
-
-    tryRefreshToken();
-  }, []);
-
-  useEffect(() => {
-    if (!data?.refreshToken) {
-      return;
-    }
-
-    setRefreshToken(data.refreshToken);
-  }, [data?.refreshToken]);
+    },
+    refetchOnWindowFocus: false,
+  });
 
   const value = useMemo(() => {
     return {

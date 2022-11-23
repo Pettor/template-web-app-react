@@ -1,9 +1,12 @@
+import { QueryClient, QueryClientProvider } from "react-query";
 import AppLocales from "./AppLocales";
 import AppRoutes from "./AppRoutes";
 import ThemeModeProvider from "./components/library/toggle/theme-toggle/context/ThemeModeContext";
 import { AuthProvider } from "./libs/auth/context/AuthContext";
 import { validateCrypto } from "./libs/crypto/GetCrypto";
 import AppTheme from "./theme/AppTheme";
+
+const queryClient = new QueryClient();
 
 function App() {
   typeof window !== "undefined" && validateCrypto();
@@ -12,9 +15,11 @@ function App() {
     <ThemeModeProvider>
       <AppTheme>
         <AppLocales>
-          <AuthProvider>
-            <AppRoutes />
-          </AuthProvider>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
+              <AppRoutes />
+            </AuthProvider>
+          </QueryClientProvider>
         </AppLocales>
       </AppTheme>
     </ThemeModeProvider>
