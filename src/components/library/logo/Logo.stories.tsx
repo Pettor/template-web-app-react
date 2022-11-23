@@ -5,7 +5,7 @@ import LogoFull from "./LogoFull";
 
 export default {
   component: Logo,
-  title: "Common/Logo",
+  title: "Library/Logo",
 } as ComponentMeta<typeof Logo>;
 
 const Template: ComponentStory<typeof Logo> = (args) => {

@@ -4,9 +4,9 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
 import meshUrl from "../../../assets/background/wave-background.svg";
-import LogoFull from "../../common/logo/LogoFull";
 import LoginForm, { LoginFormProps } from "../../forms/login/LoginForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
+import LogoFull from "../../library/logo/LogoFull";
 
 const WaveImg = styled("img")(({ theme }) => ({
   position: "fixed",
