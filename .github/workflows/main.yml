@@ -34,7 +34,7 @@ jobs:
           restore-keys: ${{ runner.os }}-yarn-
 
       - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
+        name: List the state of node modules Ignore this
         continue-on-error: true
         run: yarn list
 
