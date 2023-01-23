@@ -1,9 +1,9 @@
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import client from "../../client/AxiosClient";
-import { createGetRequest, createPostRequest, tokenRefresh, tokenRequest } from "../service/ApiService";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
+import ApiClient from "./ApiClient";
 import { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
-import { clearToken, getToken, setToken } from "./TokenStorage";
+import { clearToken } from "./TokenStorage";
 
 // Request and Response types
 type ApiMessages =
@@ -13,37 +13,27 @@ type ApiMessages =
   | { type: "request/post"; url: string; payload: unknown }
   | { type: "request/get"; url: string };
 
-async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>) {
+const testClient = new ApiClient(client);
+
+async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<ApiMessages>) {
   let apiResponse: ApiResponseTypes;
 
   try {
-    switch (data.type) {
+    switch (sentData.type) {
       // Login
       case "token/request":
         {
-          const { payload } = data;
-          const response = await tokenRequest(client, payload);
-          const {
-            data: { token },
-          } = response;
-          setToken(token);
-
-          // Remove token from response
-          apiResponse = { ...response, data: null };
+          const { payload } = sentData;
+          const { status, statusText } = await testClient.tokenRequest(payload);
+          apiResponse = { data: null, status, statusText };
         }
         break;
 
       // Refresh Token
       case "token/refresh":
         {
-          const response = await tokenRefresh(client);
-          const {
-            data: { token },
-          } = response;
-          setToken(token);
-
-          // Remove token from response
-          apiResponse = { ...response, data: null };
+          const { status, statusText } = await testClient.refreshToken();
+          apiResponse = { data: null, status, statusText };
         }
         break;
 
@@ -64,18 +54,18 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
       // Post request
       case "request/post":
         {
-          const { payload, url } = data;
-          const token = getToken();
-          apiResponse = await createPostRequest(client, url, token, payload);
+          const { payload, url } = sentData;
+          const { data, status, statusText } = await testClient.createPostRequest(url, payload);
+          apiResponse = { data, status, statusText };
         }
         break;
 
       // Get request
       case "request/get":
         {
-          const { url } = data;
-          const token = getToken();
-          apiResponse = await createGetRequest(client, url, token);
+          const { url } = sentData;
+          const { data, status, statusText } = await testClient.createGetRequest(url);
+          apiResponse = { data, status, statusText };
         }
         break;
 
@@ -90,8 +80,13 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {
+      const { message, code, name, cause } = error;
       apiResponse = {
-        ...error,
+        message,
+        code,
+        name,
+        cause,
+        status: error.response?.status || 500,
       } as ApiError;
     } else {
       apiResponse = {

@@ -1,5 +1,6 @@
+import { useCallback } from "react";
 import AppMenu from "../../components/layout/menu/AppMenu";
-import AppMenuContent from "../../components/layout/menu/content/AppMenuContent";
+import AppMenuContent from "../../components/layout/menu/content/AppMenuContentExt";
 import HomeView from "../../components/views/home/HomeView";
 import useApi from "../../libs/api/hooks/UseApi";
 
@@ -10,10 +11,10 @@ interface DemoData {
 function HomePage() {
   const api = useApi();
 
-  async function handleDemoDataClick() {
+  const handleClick = useCallback(async () => {
     const { data } = await api.get<DemoData>("/api/v1/demo");
     console.log(data.data);
-  }
+  }, []);
 
   return (
     <HomeView
@@ -21,7 +22,7 @@ function HomePage() {
         menu: AppMenu,
         menuContent: <AppMenuContent />,
       }}
-      onDemoDataClick={handleDemoDataClick}
+      onDemoDataClick={handleClick}
     />
   );
 }

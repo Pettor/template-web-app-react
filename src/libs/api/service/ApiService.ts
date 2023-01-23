@@ -12,11 +12,7 @@ const defaultConfig: AxiosRequestConfig = {
 };
 
 export async function tokenRequest(client: AxiosInstance, data: TokenRequestRequest): Promise<AxiosResponse<DtoToken>> {
-  try {
-    return await client.post<DtoToken>("/api/tokens", data, defaultConfig);
-  } catch (error) {
-    throw new Error("Authentication failed");
-  }
+  return await client.post<DtoToken>("/api/tokens", data, defaultConfig);
 }
 
 export async function tokenRefresh(client: AxiosInstance): Promise<AxiosResponse<DtoToken>> {
