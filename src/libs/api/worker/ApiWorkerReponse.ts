@@ -1,14 +1,17 @@
-import { AxiosError, AxiosResponse } from "axios";
-
-export interface ApiError {
-  __typename: "ApiError";
-  error: Error;
-}
-
-export interface RequestResponse<T = unknown> {
-  __typename: "RequestResponse";
+export interface ApiResponse<T = unknown> {
   data: T;
   status: number;
+  statusText: string;
 }
 
-export type ApiResponse = AxiosError | AxiosResponse;
+export interface ApiError extends Error {
+  status: number;
+  code?: string;
+  cause?: Error;
+}
+
+export type ApiResponseTypes = ApiError | ApiResponse;
+
+export function isApiError(apiResponse: ApiResponseTypes): apiResponse is ApiError {
+  return (apiResponse as ApiError).message !== undefined;
+}

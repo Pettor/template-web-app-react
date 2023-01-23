@@ -1,7 +1,8 @@
-import axios, { AxiosError, AxiosResponse } from "axios";
+import axios, { AxiosError } from "axios";
 import client from "../../client/AxiosClient";
 import { createGetRequest, createPostRequest, tokenRefresh, tokenRequest } from "../service/ApiService";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
+import { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
 import { clearToken, getToken, setToken } from "./TokenStorage";
 
 // Request and Response types
@@ -13,7 +14,7 @@ type ApiMessages =
   | { type: "request/get"; url: string };
 
 async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>) {
-  let apiResponse: AxiosResponse | AxiosError | Error;
+  let apiResponse: ApiResponseTypes;
 
   try {
     switch (data.type) {
@@ -54,8 +55,6 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
           apiResponse = {
             data: null,
             statusText: "OK",
-            config: {},
-            headers: {},
             status: 200,
           };
         }
@@ -81,14 +80,24 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
         break;
 
       default: {
-        apiResponse = new Error("Internal error");
+        apiResponse = {
+          code: "UNKNOWN_REQUEST",
+          status: 400,
+          cause: new Error("Unknown request"),
+          message: "Unknown request",
+        } as ApiError;
       }
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      apiResponse = error;
+      apiResponse = {
+        ...error,
+      } as ApiError;
     } else {
-      apiResponse = error as Error;
+      apiResponse = {
+        ...(error as Error),
+        status: 500,
+      } as ApiError;
     }
   }
 

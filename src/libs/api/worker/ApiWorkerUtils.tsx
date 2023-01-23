@@ -1,20 +1,19 @@
-import { AxiosResponse, isAxiosError } from "axios";
 import { ApiMessages } from "./ApiWorker";
-import { ApiResponse } from "./ApiWorkerReponse";
+import { ApiResponse, ApiResponseTypes, isApiError } from "./ApiWorkerReponse";
 
-export function sendMessage<T>(message: ApiMessages, to: Worker): Promise<AxiosResponse<T>> {
-  return new Promise<AxiosResponse<T>>(function (resolve, reject) {
+export function sendMessage<T>(message: ApiMessages, to: Worker): Promise<ApiResponse<T>> {
+  return new Promise<ApiResponse<T>>(function (resolve, reject) {
     const messageChannel = new MessageChannel();
 
-    messageChannel.port1.onmessage = function (event: MessageEvent<ApiResponse>) {
+    messageChannel.port1.onmessage = function (event: MessageEvent<ApiResponseTypes>) {
       const { data } = event;
 
-      if (isAxiosError(data)) {
+      if (isApiError(data)) {
         reject(data);
         return;
       }
 
-      resolve(data);
+      resolve(data as ApiResponse<T>);
     };
 
     to.postMessage(message, [messageChannel.port2]);
