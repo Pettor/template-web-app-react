@@ -26,12 +26,7 @@ function AuthProvider({ children }: Props) {
     queryKey: ["refresh-token-init"],
     queryFn: async () => {
       try {
-        const success = await api.refreshToken();
-        if (!success) {
-          dispatch({ type: "auth/logout" });
-          return;
-        }
-
+        await api.refreshToken();
         dispatch({ type: "auth/login" });
       } catch (errro) {
         dispatch({ type: "auth/logout" });

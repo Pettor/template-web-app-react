@@ -1,8 +1,8 @@
 import { ApiMessages } from "./ApiWorker";
-import { ApiResponse, isApiError } from "./ApiWorkerReponse";
+import { ApiResponse, RequestResponse, isApiError } from "./ApiWorkerReponse";
 
-export function sendMessage<T extends ApiResponse>(message: ApiMessages, to: Worker): Promise<T> {
-  return new Promise<T>(function (resolve, reject) {
+export function sendMessage<T>(message: ApiMessages, to: Worker): Promise<RequestResponse<T>> {
+  return new Promise<RequestResponse<T>>(function (resolve, reject) {
     const messageChannel = new MessageChannel();
 
     messageChannel.port1.onmessage = function (event: MessageEvent<ApiResponse>) {
@@ -14,7 +14,13 @@ export function sendMessage<T extends ApiResponse>(message: ApiMessages, to: Wor
         return;
       }
 
-      resolve(data as ApiResponse as T);
+      const response: RequestResponse<T> = {
+        __typename: "RequestResponse",
+        data: data as T,
+        status: 200,
+      };
+
+      resolve(response);
     };
 
     to.postMessage(message, [messageChannel.port2]);

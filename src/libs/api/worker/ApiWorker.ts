@@ -26,8 +26,11 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
           setToken(token);
 
           apiResponse = {
-            __typename: "TokenRequestReponse",
-            success: true,
+            __typename: "RequestResponse",
+            data: {
+              success: true,
+            },
+            status: 200,
           };
         }
         break;
@@ -39,8 +42,11 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
           setToken(token);
 
           apiResponse = {
-            __typename: "TokenRefreshResponse",
-            success: true,
+            __typename: "RequestResponse",
+            data: {
+              success: true,
+            },
+            status: 200,
           };
         }
         break;
@@ -51,7 +57,11 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
           clearToken();
 
           apiResponse = {
-            __typename: "UserLogoutResponse",
+            __typename: "RequestResponse",
+            data: {
+              success: true,
+            },
+            status: 200,
           };
         }
 
