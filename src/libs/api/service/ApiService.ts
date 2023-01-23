@@ -1,6 +1,5 @@
 import { AxiosInstance, AxiosRequestConfig, RawAxiosRequestHeaders } from "axios";
 import { JwtToken } from "../../auth/types/JwtToken";
-import { TokenRefreshRequest } from "./requests/TokenRefreshRequest";
 import { TokenRequestRequest } from "./requests/TokenRequestRequest";
 import { DtoToken } from "./responses/TokenDto";
 
@@ -21,8 +20,8 @@ export async function tokenRequest(client: AxiosInstance, data: TokenRequestRequ
   }
 }
 
-export async function tokenRefresh(client: AxiosInstance, data: TokenRefreshRequest): Promise<DtoToken> {
-  const response = await client.post<DtoToken>("/api/tokens/refresh", data, defaultConfig);
+export async function tokenRefresh(client: AxiosInstance): Promise<DtoToken> {
+  const response = await client.get<DtoToken>("/api/tokens/refresh", defaultConfig);
 
   if (response.status !== 200) {
     throw new Error("Authentication failed");

@@ -1,5 +1,4 @@
 import ApiWorker from "../../api/worker/ApiWorker?worker";
-import { RefreshToken } from "../../auth/types/RefreshToken";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
 import {
   RequestResponse,
@@ -12,17 +11,18 @@ import { sendMessage } from "../worker/ApiWorkerUtils";
 const apiWorker = new ApiWorker();
 
 function useApi() {
-  async function requestToken(data: TokenRequestRequest): Promise<RefreshToken> {
-    const { refreshToken } = await sendMessage<TokenRequestReponse>(
-      { type: "token/request", payload: data },
-      apiWorker
-    );
-
-    return refreshToken;
+  async function requestToken(data: TokenRequestRequest): Promise<boolean> {
+    const { success } = await sendMessage<TokenRequestReponse>({ type: "token/request", payload: data }, apiWorker);
+    return success;
   }
 
-  async function refreshToken(data: RefreshToken): Promise<TokenRefreshResponse> {
-    return await sendMessage<TokenRefreshResponse>({ type: "token/refresh", payload: data }, apiWorker);
+  async function refreshToken(): Promise<boolean> {
+    try {
+      const response = await sendMessage<TokenRefreshResponse>({ type: "token/refresh" }, apiWorker);
+      return response.success;
+    } catch {
+      return false;
+    }
   }
 
   async function logout() {

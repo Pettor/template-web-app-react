@@ -1,8 +1,6 @@
 import axios from "axios";
-import { RefreshToken } from "../../auth/types/RefreshToken";
 import client from "../../client/AxiosClient";
 import { createGetRequest, createPostRequest, tokenRefresh, tokenRequest } from "../service/ApiService";
-import { TokenRefreshRequest } from "../service/requests/TokenRefreshRequest";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
 import { ApiResponse } from "./ApiWorkerReponse";
 import { clearToken, getToken, setToken } from "./TokenStorage";
@@ -10,7 +8,7 @@ import { clearToken, getToken, setToken } from "./TokenStorage";
 // Request and Response types
 type ApiMessages =
   | { type: "token/request"; payload: TokenRequestRequest }
-  | { type: "token/refresh"; payload: RefreshToken }
+  | { type: "token/refresh" }
   | { type: "user/logout" }
   | { type: "request/post"; url: string; payload: unknown }
   | { type: "request/get"; url: string };
@@ -24,15 +22,12 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
       case "token/request":
         {
           const { payload } = data;
-          const { token, refreshToken, refreshTokenExpiryTime } = await tokenRequest(client, payload);
+          const { token } = await tokenRequest(client, payload);
           setToken(token);
 
           apiResponse = {
             __typename: "TokenRequestReponse",
-            refreshToken: {
-              refreshToken: refreshToken,
-              refreshTokenExpiryTime: new Date(refreshTokenExpiryTime),
-            },
+            success: true,
           };
         }
         break;
@@ -40,33 +35,12 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
       // Refresh Token
       case "token/refresh":
         {
-          const { payload } = data;
-          const { refreshToken } = payload;
-
-          if (!refreshToken) {
-            apiResponse = {
-              __typename: "TokenRefreshResponse",
-            };
-            break;
-          }
-
-          const request: TokenRefreshRequest = {
-            refreshToken: refreshToken,
-          };
-
-          const {
-            token,
-            refreshToken: newRefreshToken,
-            refreshTokenExpiryTime: newRefreshTokenExpiryTime,
-          } = await tokenRefresh(client, request);
+          const { token } = await tokenRefresh(client);
           setToken(token);
 
           apiResponse = {
             __typename: "TokenRefreshResponse",
-            refreshToken: {
-              refreshToken: newRefreshToken,
-              refreshTokenExpiryTime: new Date(newRefreshTokenExpiryTime),
-            },
+            success: true,
           };
         }
         break;
@@ -122,7 +96,7 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
     if (axios.isAxiosError(error)) {
       apiResponse = {
         __typename: "ApiError",
-        error: error,
+        error: new Error(error.message),
       };
     } else {
       apiResponse = {

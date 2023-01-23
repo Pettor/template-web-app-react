@@ -1,5 +1,3 @@
-import { RefreshToken } from "../../auth/types/RefreshToken";
-
 export interface ApiError {
   __typename: "ApiError";
   error: Error;
@@ -8,12 +6,12 @@ export interface ApiError {
 // Token
 export interface TokenRequestReponse {
   __typename: "TokenRequestReponse";
-  refreshToken: RefreshToken;
+  success: boolean;
 }
 
 export interface TokenRefreshResponse {
   __typename: "TokenRefreshResponse";
-  refreshToken?: RefreshToken;
+  success: boolean;
 }
 
 // User
