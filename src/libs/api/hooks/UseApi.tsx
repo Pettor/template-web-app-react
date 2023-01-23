@@ -1,3 +1,4 @@
+import { AxiosResponse } from "axios";
 import ApiWorker from "../../api/worker/ApiWorker?worker";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
 import { RequestResponse } from "../worker/ApiWorkerReponse";
@@ -19,11 +20,11 @@ function useApi() {
   }
 
   // Generic request
-  async function post<T, P extends RequestResponse>(url: string, data: T): Promise<RequestResponse<P>> {
+  async function post<T, P extends RequestResponse>(url: string, data: T): Promise<AxiosResponse<P>> {
     return await sendMessage<P>({ type: "request/post", url, payload: data }, apiWorker);
   }
 
-  async function get<P>(url: string): Promise<RequestResponse<P>> {
+  async function get<P>(url: string): Promise<AxiosResponse<P>> {
     return await sendMessage<P>({ type: "request/get", url }, apiWorker);
   }
 
