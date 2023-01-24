@@ -1,4 +1,11 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
+import axios, {
+  AxiosError,
+  AxiosHeaders,
+  AxiosInstance,
+  AxiosRequestConfig,
+  AxiosResponse,
+  RawAxiosRequestHeaders,
+} from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
 import { DtoToken } from "../service/responses/TokenDto";
@@ -38,7 +45,7 @@ export default class ApiClient {
       }
 
       // Retry request with new token
-      failedResponse.response.config.headers = this.createConfig().headers;
+      failedResponse.response.config.headers = this.createHeaders();
       return Promise.resolve();
     });
   }
@@ -75,7 +82,14 @@ export default class ApiClient {
   private createConfig(): AxiosRequestConfig {
     return {
       ...this.defaultConfig,
-      headers: { Authorization: `Bearer ${getToken()}`, ...this.defaultHeaders },
+      headers: this.createHeaders(),
     };
+  }
+
+  private createHeaders(): AxiosHeaders {
+    return new AxiosHeaders({
+      Authorization: `Bearer ${getToken()}`,
+      ...this.defaultHeaders,
+    });
   }
 }
