@@ -23,18 +23,18 @@ export default class ApiClient {
     // Add refresh logic to axios client
     createAuthRefreshInterceptor(client, async (failedResponse: AxiosError) => {
       if (!failedResponse.response) {
-        return Promise.reject();
+        return Promise.reject(failedResponse);
       }
 
       if (failedResponse.request.responseURL?.includes("/api/tokens/refresh")) {
-        return Promise.reject();
+        return Promise.reject(failedResponse);
       }
 
       // Try to refresh token and retry request
       try {
         await this.refreshToken();
       } catch (error) {
-        return Promise.reject();
+        return Promise.reject(error);
       }
 
       // Retry request with new token

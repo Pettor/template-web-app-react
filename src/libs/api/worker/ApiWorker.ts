@@ -13,7 +13,7 @@ type ApiMessages =
   | { type: "request/post"; url: string; payload: unknown }
   | { type: "request/get"; url: string };
 
-const testClient = new ApiClient(client);
+const apiClient = new ApiClient(client);
 
 async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<ApiMessages>) {
   let apiResponse: ApiResponseTypes;
@@ -24,7 +24,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "token/request":
         {
           const { payload } = sentData;
-          const { status, statusText } = await testClient.tokenRequest(payload);
+          const { status, statusText } = await apiClient.tokenRequest(payload);
           apiResponse = { data: null, status, statusText };
         }
         break;
@@ -32,7 +32,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       // Refresh Token
       case "token/refresh":
         {
-          const { status, statusText } = await testClient.refreshToken();
+          const { status, statusText } = await apiClient.refreshToken();
           apiResponse = { data: null, status, statusText };
         }
         break;
@@ -40,7 +40,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       // Logout
       case "user/logout":
         {
-          await testClient.removeToken();
+          await apiClient.removeToken();
           clearToken();
 
           apiResponse = {
@@ -56,7 +56,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "request/post":
         {
           const { payload, url } = sentData;
-          const { data, status, statusText } = await testClient.createPostRequest(url, payload);
+          const { data, status, statusText } = await apiClient.createPostRequest(url, payload);
           apiResponse = { data, status, statusText };
         }
         break;
@@ -65,7 +65,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "request/get":
         {
           const { url } = sentData;
-          const { data, status, statusText } = await testClient.createGetRequest(url);
+          const { data, status, statusText } = await apiClient.createGetRequest(url);
           apiResponse = { data, status, statusText };
         }
         break;

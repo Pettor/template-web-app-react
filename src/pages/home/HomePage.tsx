@@ -12,8 +12,12 @@ function HomePage() {
   const api = useApi();
 
   const handleClick = useCallback(async () => {
-    const { data } = await api.get<DemoData>("/api/v1/demo");
-    console.log(data.data);
+    try {
+      const { data } = await api.get<DemoData>("/api/v1/demo");
+      console.log(data.data);
+    } catch {
+      // Ignore this
+    }
   }, []);
 
   return (
