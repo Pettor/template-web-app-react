@@ -1,4 +1,4 @@
-import { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
 import { DtoToken } from "../service/responses/TokenDto";
@@ -21,23 +21,26 @@ export default class ApiClient {
     };
 
     // Add refresh logic to axios client
-    createAuthRefreshInterceptor(client, this.authRefresh);
-  }
+    createAuthRefreshInterceptor(client, async (failedResponse: AxiosError) => {
+      if (!failedResponse.response) {
+        return Promise.reject();
+      }
 
-  private async authRefresh(failedResponse: AxiosError): Promise<void> {
-    const response = failedResponse.response as AxiosResponse;
+      if (failedResponse.request.responseURL?.includes("/api/tokens/refresh")) {
+        return Promise.reject();
+      }
 
-    // Try to refresh token and retry request
-    try {
-      await this.refreshToken();
-    } catch {
-      console.log("Failed to refresh token on 401");
-      return Promise.reject();
-    }
+      // Try to refresh token and retry request
+      try {
+        await this.refreshToken();
+      } catch (error) {
+        return Promise.reject();
+      }
 
-    // Retry request with new token
-    response.config = this.createConfig();
-    return Promise.resolve();
+      // Retry request with new token
+      failedResponse.response.config.headers = this.createConfig().headers;
+      return Promise.resolve();
+    });
   }
 
   public async tokenRequest(data: TokenRequestRequest): Promise<AxiosResponse> {
@@ -49,7 +52,8 @@ export default class ApiClient {
   }
 
   public async refreshToken(): Promise<AxiosResponse> {
-    const response = await this.client.get<DtoToken>("/api/tokens/refresh", this.defaultConfig);
+    // Refresh-Token API will use the standard AXIOS client to avoid issue where API is stuck
+    const response = await axios.get<DtoToken>("/api/tokens/refresh", this.defaultConfig);
     setToken(response.data.token);
 
     // Remove token from response

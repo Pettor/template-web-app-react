@@ -1,12 +1,12 @@
 import ApiWorker from "../../api/worker/ApiWorker?worker";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
 import ApiWorkerCommunication from "../worker/ApiWorkerCommunication";
-import { ApiResponse } from "../worker/ApiWorkerReponse";
+import { ApiError, ApiResponse } from "../worker/ApiWorkerReponse";
 
 const apiWorker = new ApiWorkerCommunication(new ApiWorker());
 
 function useApi() {
-  function subscribe(callback: (message: ApiResponse) => void) {
+  function subscribe(callback: (message: ApiError) => void) {
     apiWorker.registerFailedRequestCallback(callback);
   }
 
@@ -22,7 +22,6 @@ function useApi() {
     await apiWorker.send({ type: "user/logout" });
   }
 
-  // Generic request
   async function post<T>(url: string, data: T): Promise<ApiResponse<T>> {
     return await apiWorker.send<T>({ type: "request/post", url, payload: data });
   }

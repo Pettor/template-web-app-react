@@ -10,10 +10,8 @@ export default class ApiWorkerCommunication {
     this.subscribers = [];
   }
 
-  registerFailedRequestCallback(callback: (error: ApiResponse) => void) {
-    this.worker.addEventListener("messageerror", (event) => {
-      callback(event.data);
-    });
+  registerFailedRequestCallback(callback: (error: ApiError) => void) {
+    this.subscribers.push(callback);
   }
 
   public async send<T>(message: ApiMessages): Promise<ApiResponse<T>> {
@@ -22,6 +20,7 @@ export default class ApiWorkerCommunication {
     } catch (error) {
       if (isApiError(error)) {
         const apiError = error as ApiError;
+        console.log(this.subscribers);
         this.subscribers.forEach((sub) => sub(apiError));
         throw apiError;
       }

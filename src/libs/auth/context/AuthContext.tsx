@@ -44,7 +44,8 @@ function AuthProvider({ children }: Props) {
   }, [state]);
 
   useEffect(() => {
-    api.subscribe(() => {
+    api.subscribe((error) => {
+      console.log(error);
       dispatch({ type: "auth/logout" });
     });
   });
