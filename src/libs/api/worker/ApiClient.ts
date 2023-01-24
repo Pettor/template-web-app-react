@@ -51,6 +51,10 @@ export default class ApiClient {
     return { ...response, data: null };
   }
 
+  public async removeToken(): Promise<AxiosResponse> {
+    return await this.client.delete("/api/tokens", this.defaultConfig);
+  }
+
   public async refreshToken(): Promise<AxiosResponse> {
     // Refresh-Token API will use the standard AXIOS client to avoid issue where API is stuck
     const response = await axios.get<DtoToken>("/api/tokens/refresh", this.defaultConfig);

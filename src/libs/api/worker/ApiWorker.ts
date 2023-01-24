@@ -40,6 +40,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       // Logout
       case "user/logout":
         {
+          await testClient.removeToken();
           clearToken();
 
           apiResponse = {
