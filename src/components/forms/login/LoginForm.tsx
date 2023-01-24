@@ -5,9 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import LoadingButton from "@mui/lab/LoadingButton";
 import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
-import Checkbox from "@mui/material/Checkbox";
 import Collapse from "@mui/material/Collapse";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
@@ -16,7 +14,6 @@ import * as yup from "yup";
 export interface IFormLogin {
   email: string;
   password: string;
-  remember: boolean;
 }
 
 export interface LoginFormProps {
@@ -97,15 +94,6 @@ function LoginForm({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
         {...register("password")}
       />
       <Stack direction="row">
-        <FormControlLabel
-          control={<Checkbox color="primary" />}
-          label={intl.formatMessage({
-            description: "LoginFormLabel: Remember me",
-            defaultMessage: "Remember me",
-            id: "2qmW3a",
-          })}
-          {...register("remember")}
-        />
         <Box sx={{ width: "100%", display: "flex", flex: 1, justifyContent: "flex-end" }}>
           <LoadingButton
             type="submit"
