@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { IFormResetPassword } from "../../components/forms/reset-password/ResetPasswordForm";
 import ResetPasswordView from "../../components/views/login/ResetPasswordView";
 import useApi from "../../libs/api/hooks/UseApi";
-import { UserForgotPasswordRequest } from "../../libs/api/service/requests/UserForgotPasswordRequest";
-import { RequestResponse } from "../../libs/api/worker/ApiWorkerReponse";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -26,7 +24,7 @@ export default function SignIn() {
     const { email } = data;
     try {
       setLoading(true);
-      await post<UserForgotPasswordRequest, RequestResponse<string>>("/api/users/forgot-password", { email });
+      await post("/api/users/forgot-password", { email });
 
       navigate("/");
     } catch (error) {
