@@ -91,6 +91,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
     } else {
       apiResponse = {
         ...(error as Error),
+        message: "Unknown error",
         status: 500,
       } as ApiError;
     }

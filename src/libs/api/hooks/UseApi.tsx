@@ -1,33 +1,38 @@
 import ApiWorker from "../../api/worker/ApiWorker?worker";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
+import ApiWorkerCommunication from "../worker/ApiWorkerCommunication";
 import { ApiResponse } from "../worker/ApiWorkerReponse";
-import { sendMessage } from "../worker/ApiWorkerUtils";
 
-const apiWorker = new ApiWorker();
+const apiWorker = new ApiWorkerCommunication(new ApiWorker());
 
 function useApi() {
+  function subscribe(callback: (message: ApiResponse) => void) {
+    apiWorker.registerFailedRequestCallback(callback);
+  }
+
   async function requestToken(data: TokenRequestRequest): Promise<void> {
-    await sendMessage<ApiResponse>({ type: "token/request", payload: data }, apiWorker);
+    await apiWorker.send({ type: "token/request", payload: data });
   }
 
   async function refreshToken(): Promise<void> {
-    await sendMessage<ApiResponse>({ type: "token/refresh" }, apiWorker);
+    await apiWorker.send({ type: "token/refresh" });
   }
 
   async function logout() {
-    await sendMessage<ApiResponse>({ type: "user/logout" }, apiWorker);
+    await apiWorker.send({ type: "user/logout" });
   }
 
   // Generic request
   async function post<T>(url: string, data: T): Promise<ApiResponse<T>> {
-    return await sendMessage<T>({ type: "request/post", url, payload: data }, apiWorker);
+    return await apiWorker.send<T>({ type: "request/post", url, payload: data });
   }
 
   async function get<T>(url: string): Promise<ApiResponse<T>> {
-    return await sendMessage<T>({ type: "request/get", url }, apiWorker);
+    return await apiWorker.send<T>({ type: "request/get", url });
   }
 
   return {
+    subscribe,
     requestToken,
     refreshToken,
     logout,
