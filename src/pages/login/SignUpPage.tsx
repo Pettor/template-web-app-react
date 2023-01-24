@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { IFormSignUp } from "../../components/forms/sign-up/SignUpForm";
 import SignUpView from "../../components/views/login/SignUpView";
 import useApi from "../../libs/api/hooks/UseApi";
-import { UserSignUpRequest } from "../../libs/api/service/requests/UserSignUpRequest";
-import { RequestResponse } from "../../libs/api/worker/ApiWorkerReponse";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -25,7 +23,7 @@ export default function SignIn() {
 
     try {
       setLoading(true);
-      await post<UserSignUpRequest, RequestResponse<string>>("/api/users/self-register", data);
+      await post("/api/users/self-register", data);
 
       navigate("/");
     } catch (error) {

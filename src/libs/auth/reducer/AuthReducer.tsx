@@ -1,15 +1,8 @@
-import { LocalStorage } from "../../storage/local-storage/LocalStorage";
-import { AuthData } from "../types/AuthData";
-import { RefreshToken } from "../types/RefreshToken";
-
-type AuthActions = { type: "auth/loading" } | { type: "auth/login"; payload: AuthData } | { type: "auth/logout" };
+type AuthActions = { type: "auth/loading" } | { type: "auth/login" } | { type: "auth/logout" };
 
 interface AuthState {
   status: "idle" | "authenticating" | "authenticated";
-  data: AuthData | null;
 }
-
-const refreshTokenStorage = new LocalStorage<RefreshToken | null>("refresh-token");
 
 const AuthReducer = (prev: AuthState, action: AuthActions): AuthState => {
   switch (action.type) {
@@ -17,13 +10,10 @@ const AuthReducer = (prev: AuthState, action: AuthActions): AuthState => {
       return { ...prev, status: "idle" };
     }
     case "auth/login": {
-      const { refreshToken } = action.payload;
-      refreshTokenStorage.set(refreshToken);
-      return { ...prev, data: action.payload, status: "authenticated" };
+      return { ...prev, status: "authenticated" };
     }
     case "auth/logout":
-      refreshTokenStorage.set(null);
-      return { ...prev, data: null, status: "authenticating" };
+      return { ...prev, status: "authenticating" };
     default:
       return prev;
   }

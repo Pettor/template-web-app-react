@@ -1,83 +1,52 @@
 import axios from "axios";
-import { RefreshToken } from "../../auth/types/RefreshToken";
 import client from "../../client/AxiosClient";
-import { createGetRequest, createPostRequest, tokenRefresh, tokenRequest } from "../service/ApiService";
-import { TokenRefreshRequest } from "../service/requests/TokenRefreshRequest";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
-import { ApiResponse } from "./ApiWorkerReponse";
-import { clearToken, getToken, setToken } from "./TokenStorage";
+import ApiClient from "./ApiClient";
+import { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
+import { clearToken } from "./TokenStorage";
 
 // Request and Response types
 type ApiMessages =
   | { type: "token/request"; payload: TokenRequestRequest }
-  | { type: "token/refresh"; payload: RefreshToken }
+  | { type: "token/refresh" }
   | { type: "user/logout" }
   | { type: "request/post"; url: string; payload: unknown }
   | { type: "request/get"; url: string };
 
-async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>) {
-  let apiResponse: ApiResponse;
+const apiClient = new ApiClient(client);
+
+async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<ApiMessages>) {
+  let apiResponse: ApiResponseTypes;
 
   try {
-    switch (data.type) {
+    switch (sentData.type) {
       // Login
       case "token/request":
         {
-          const { payload } = data;
-          const { token, refreshToken, refreshTokenExpiryTime } = await tokenRequest(client, payload);
-          setToken(token);
-
-          apiResponse = {
-            __typename: "TokenRequestReponse",
-            refreshToken: {
-              refreshToken: refreshToken,
-              refreshTokenExpiryTime: new Date(refreshTokenExpiryTime),
-            },
-          };
+          const { payload } = sentData;
+          const { status, statusText } = await apiClient.tokenRequest(payload);
+          apiResponse = { data: null, status, statusText };
         }
         break;
 
       // Refresh Token
       case "token/refresh":
         {
-          const { payload } = data;
-          const { refreshToken } = payload;
-
-          if (!refreshToken) {
-            apiResponse = {
-              __typename: "TokenRefreshResponse",
-            };
-            break;
-          }
-
-          const request: TokenRefreshRequest = {
-            refreshToken: refreshToken,
-          };
-
-          const {
-            token,
-            refreshToken: newRefreshToken,
-            refreshTokenExpiryTime: newRefreshTokenExpiryTime,
-          } = await tokenRefresh(client, request);
-          setToken(token);
-
-          apiResponse = {
-            __typename: "TokenRefreshResponse",
-            refreshToken: {
-              refreshToken: newRefreshToken,
-              refreshTokenExpiryTime: new Date(newRefreshTokenExpiryTime),
-            },
-          };
+          const { status, statusText } = await apiClient.refreshToken();
+          apiResponse = { data: null, status, statusText };
         }
         break;
 
       // Logout
       case "user/logout":
         {
+          await apiClient.removeToken();
           clearToken();
 
           apiResponse = {
-            __typename: "UserLogoutResponse",
+            data: null,
+            statusText: "OK",
+            status: 200,
           };
         }
 
@@ -86,49 +55,46 @@ async function messageHandler({ data, ports: [port] }: MessageEvent<ApiMessages>
       // Post request
       case "request/post":
         {
-          const { payload, url } = data;
-          const token = await getToken();
-          const { data: requestData, status } = await createPostRequest(client, url, token, payload);
-          apiResponse = {
-            __typename: "RequestResponse",
-            data: requestData,
-            status,
-          };
+          const { payload, url } = sentData;
+          const { data, status, statusText } = await apiClient.createPostRequest(url, payload);
+          apiResponse = { data, status, statusText };
         }
         break;
 
       // Get request
       case "request/get":
         {
-          const { url } = data;
-          const token = await getToken();
-          const { data: requestData, status } = await createGetRequest(client, url, token);
-          apiResponse = {
-            __typename: "RequestResponse",
-            data: requestData,
-            status,
-          };
+          const { url } = sentData;
+          const { data, status, statusText } = await apiClient.createGetRequest(url);
+          apiResponse = { data, status, statusText };
         }
         break;
 
       default: {
         apiResponse = {
-          __typename: "ApiError",
-          error: new Error("Internal error"),
-        };
+          code: "UNKNOWN_REQUEST",
+          status: 400,
+          cause: new Error("Unknown request"),
+          message: "Unknown request",
+        } as ApiError;
       }
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {
+      const { message, code, name, cause } = error;
       apiResponse = {
-        __typename: "ApiError",
-        error: error,
-      };
+        message,
+        code,
+        name,
+        cause,
+        status: error.response?.status || 500,
+      } as ApiError;
     } else {
       apiResponse = {
-        __typename: "ApiError",
-        error: error as Error,
-      };
+        ...(error as Error),
+        message: "Unknown error",
+        status: 500,
+      } as ApiError;
     }
   }
 

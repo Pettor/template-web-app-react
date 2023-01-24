@@ -1,34 +1,17 @@
-import { RefreshToken } from "../../auth/types/RefreshToken";
-
-export interface ApiError {
-  __typename: "ApiError";
-  error: Error;
-}
-
-// Token
-export interface TokenRequestReponse {
-  __typename: "TokenRequestReponse";
-  refreshToken: RefreshToken;
-}
-
-export interface TokenRefreshResponse {
-  __typename: "TokenRefreshResponse";
-  refreshToken?: RefreshToken;
-}
-
-// User
-export interface UserLogoutResponse {
-  __typename: "UserLogoutResponse";
-}
-
-export interface RequestResponse<T = unknown> {
-  __typename: "RequestResponse";
+export interface ApiResponse<T = unknown> {
   data: T;
   status: number;
+  statusText: string;
 }
 
-export type ApiResponse = ApiError | TokenRequestReponse | TokenRefreshResponse | UserLogoutResponse | RequestResponse;
+export interface ApiError extends Error {
+  status: number;
+  code?: string;
+  cause?: Error;
+}
 
-export function isApiError(response: ApiResponse): response is ApiError {
-  return response.__typename === "ApiError";
+export type ApiResponseTypes = ApiError | ApiResponse;
+
+export function isApiError(error: unknown): error is ApiError {
+  return (error as ApiError).message !== undefined;
 }

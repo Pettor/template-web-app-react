@@ -8,12 +8,9 @@ function useAuth() {
   const api = useApi();
 
   async function login(data: TokenRequestRequest) {
-    const refreshToken = await api.requestToken(data);
+    await api.requestToken(data);
     dispatch({
       type: "auth/login",
-      payload: {
-        refreshToken,
-      },
     });
   }
 

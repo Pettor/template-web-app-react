@@ -1,9 +1,7 @@
-import { ReactNode, createContext, useMemo, useReducer } from "react";
+import { ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
 import { useQuery } from "react-query";
 import useApi from "../../api/hooks/UseApi";
-import { useLocalStorage } from "../../storage/local-storage/hooks/UseLocalStorage";
 import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
-import { RefreshToken } from "../types/RefreshToken";
 
 interface IAuthContext {
   state: AuthState;
@@ -14,7 +12,6 @@ const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const initialState: AuthState = {
   status: "idle",
-  data: null,
 };
 
 interface Props {
@@ -23,29 +20,20 @@ interface Props {
 
 function AuthProvider({ children }: Props) {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
-  const [refreshToken] = useLocalStorage<RefreshToken | null>("refresh-token", null);
   const api = useApi();
 
   useQuery({
     queryKey: ["refresh-token-init"],
     queryFn: async () => {
-      if (!refreshToken) {
-        dispatch({ type: "auth/logout" });
-        return;
-      }
       try {
-        const { refreshToken: newRefreshToken } = await api.refreshToken(refreshToken);
-        if (!newRefreshToken) {
-          dispatch({ type: "auth/logout" });
-          return;
-        }
-
-        dispatch({ type: "auth/login", payload: { refreshToken: newRefreshToken } });
+        await api.refreshToken();
+        dispatch({ type: "auth/login" });
       } catch (errro) {
         dispatch({ type: "auth/logout" });
       }
     },
     refetchOnWindowFocus: false,
+    staleTime: Infinity,
   });
 
   const value = useMemo(() => {
@@ -54,6 +42,15 @@ function AuthProvider({ children }: Props) {
       dispatch,
     };
   }, [state]);
+
+  useEffect(() => {
+    const sub = api.subscribe((error) => {
+      console.log(error);
+      dispatch({ type: "auth/logout" });
+    });
+
+    return () => sub.unsubscribe();
+  });
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
