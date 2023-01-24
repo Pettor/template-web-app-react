@@ -44,10 +44,12 @@ function AuthProvider({ children }: Props) {
   }, [state]);
 
   useEffect(() => {
-    api.subscribe((error) => {
+    const sub = api.subscribe((error) => {
       console.log(error);
       dispatch({ type: "auth/logout" });
     });
+
+    return () => sub.unsubscribe();
   });
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

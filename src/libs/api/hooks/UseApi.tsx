@@ -1,3 +1,4 @@
+import { Subscription } from "rxjs";
 import ApiWorker from "../../api/worker/ApiWorker?worker";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
 import ApiWorkerCommunication from "../worker/ApiWorkerCommunication";
@@ -6,8 +7,8 @@ import { ApiError, ApiResponse } from "../worker/ApiWorkerReponse";
 const apiWorker = new ApiWorkerCommunication(new ApiWorker());
 
 function useApi() {
-  function subscribe(callback: (message: ApiError) => void) {
-    apiWorker.registerFailedRequestCallback(callback);
+  function subscribe(callback: (message: ApiError) => void): Subscription {
+    return apiWorker.registerFailedRequestCallback(callback);
   }
 
   async function requestToken(data: TokenRequestRequest): Promise<void> {
