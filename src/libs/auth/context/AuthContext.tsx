@@ -1,7 +1,6 @@
 import { ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
 import { useQuery } from "react-query";
 import useApi from "../../api/hooks/UseApi";
-import { ApiError } from "../../api/worker/ApiWorkerReponse";
 import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
 
 interface IAuthContext {
@@ -46,7 +45,6 @@ function AuthProvider({ children }: Props) {
 
   useEffect(() => {
     api.subscribe(() => {
-      console.log("HEJ");
       dispatch({ type: "auth/logout" });
     });
   });
