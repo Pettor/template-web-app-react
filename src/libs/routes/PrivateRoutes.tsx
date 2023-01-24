@@ -6,13 +6,14 @@ function PrivateRoutes(): JSX.Element {
   const location = useLocation();
 
   switch (status) {
-    default:
     case "idle":
-      return <div>Loading...</div>;
+      return <></>;
     case "authenticating":
       return <Navigate to="/login" state={{ from: location }} />;
     case "authenticated":
       return <Outlet />;
+    default:
+      return <></>;
   }
 }
 

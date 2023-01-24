@@ -6,13 +6,14 @@ function PublicRoutes(): JSX.Element {
   const location = useLocation();
 
   switch (status) {
-    default:
     case "idle":
-      return <div>Loading...</div>;
+      return <></>;
     case "authenticating":
       return <Outlet />;
     case "authenticated":
       return <Navigate to="/" state={{ from: location }} />;
+    default:
+      return <></>;
   }
 }
 
