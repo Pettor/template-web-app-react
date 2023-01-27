@@ -1,0 +1,50 @@
+name: "deploy storybook"
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  deploy-storybook:
+    name: Deploy Storybook
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "yarn"
+
+      - name: Get yarn store directory
+        id: yarn-cache-dir-path
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+
+      - name: Setup yarn cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build Storybook
+        run: yarn build-storybook --quiet
+
+      - name: Deploy storybook
+        run: >
+          yarn storybook-to-ghpages
+          --ci
+          --source-branch=main
+          --branch=deploy/storybook/main
+          --existing-output-dir=storybook-static
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

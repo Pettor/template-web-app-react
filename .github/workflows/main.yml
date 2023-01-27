@@ -1,4 +1,4 @@
-name: main
+name: "main"
 
 on:
   push:
@@ -71,7 +71,7 @@ jobs:
       - name: Build application
         run: yarn build
 
-  storbook:
+  storybook:
     name: Storybook
     runs-on: ubuntu-latest
     steps:
@@ -105,13 +105,3 @@ jobs:
 
       - name: Serve Storybook and run tests
         run: yarn test-storybook:ci
-
-      - name: Deploy storybook
-        run: >
-          yarn storybook-to-ghpages
-          --ci
-          --source-branch=main
-          --branch=deploy/storybook/main
-          --existing-output-dir=storybook-static
-        env:
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
