@@ -2,7 +2,6 @@ import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Card, { CardProps } from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
@@ -13,7 +12,7 @@ interface Props extends CardProps {
 }
 
 const StyledCard = styled(Card)(() => ({
-  height: 200,
+  height: 150,
   width: 275,
 }));
 
@@ -49,7 +48,6 @@ export default function ProfileCard({ name, email, ...rest }: Props) {
             </Grid>
           </Grid>
         </Grid>
-        <Divider flexItem />
       </CardContent>
     </StyledCard>
   );
