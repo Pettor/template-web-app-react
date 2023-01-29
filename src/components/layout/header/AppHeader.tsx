@@ -4,7 +4,6 @@ import MenuIcon from "@mui/icons-material/MoreVert";
 import AvatarIcon from "@mui/icons-material/Person";
 import MuiAppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
-import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
@@ -47,12 +46,12 @@ function AppHeader({ subheader, label, Menu, MenuNode, ProfileNode, onBack }: Pr
   const theme = useTheme();
   const isSmUp = useMediaQuery(theme.breakpoints.up("sm"));
 
-  function handleClick(event: React.MouseEvent<HTMLElement>) {
-    setAnchorEl(event.currentTarget);
+  function handleMenuClick(event: React.MouseEvent<HTMLElement>) {
+    setMenuAnchorEl(event.currentTarget);
   }
 
-  function handleClose() {
-    setAnchorEl(null);
+  function handleMenuClose() {
+    setMenuAnchorEl(null);
   }
 
   const MenuComponent = useMemo(() => {
@@ -67,13 +66,13 @@ function AppHeader({ subheader, label, Menu, MenuNode, ProfileNode, onBack }: Pr
     );
   }, [Menu, openMenu]);
 
-  const handleProfileClick = (event: React.MouseEvent<HTMLElement>) => {
+  function handleProfileClick(event: React.MouseEvent<HTMLElement>) {
     setProfileAnchorEl(event.currentTarget);
-  };
+  }
 
-  const handleProfileClose = () => {
+  function handleProfileClose() {
     setProfileAnchorEl(null);
-  };
+  }
 
   const ProfileComponent = useMemo(() => {
     if (!ProfileNode) {

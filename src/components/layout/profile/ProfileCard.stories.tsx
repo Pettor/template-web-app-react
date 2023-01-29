@@ -5,7 +5,7 @@ import { CommonDecorator } from "../../../stories/decorators/CommonDecorator";
 
 export default {
   component: ProfileCard,
-  title: "Library/Profile/Card",
+  title: "Layout/Profile/Card",
   decorators: [CommonDecorator],
 } as ComponentMeta<typeof ProfileCard>;
 

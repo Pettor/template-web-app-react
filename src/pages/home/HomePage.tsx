@@ -1,6 +1,6 @@
 import AppMenu from "../../components/layout/menu/AppMenu";
 import AppMenuContent from "../../components/layout/menu/content/AppMenuContentExt";
-import ProfileCard from "../../components/library/profile/ProfileCard";
+import ProfileCard from "../../components/layout/profile/ProfileCardExt";
 import HomeView from "../../components/views/home/HomeView";
 import useApi from "../../libs/api/hooks/UseApi";
 
@@ -25,7 +25,7 @@ function HomePage() {
       headerComponents={{
         Menu: AppMenu,
         MenuNode: <AppMenuContent />,
-        ProfileNode: <ProfileCard name="test" email="pettor@gmail.com" />,
+        ProfileNode: <ProfileCard />,
       }}
       onDemoDataClick={handleClick}
     />

@@ -1,13 +1,13 @@
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
+import Card, { CardProps } from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 
-interface Props {
+interface Props extends CardProps {
   name: string;
   email: string;
 }
@@ -23,9 +23,9 @@ const AvatarBox = styled(Box)(() => ({
   alignItems: "center",
 }));
 
-export default function ProfileCard({ name, email }: Props) {
+export default function ProfileCard({ name, email, ...rest }: Props) {
   return (
-    <StyledCard>
+    <StyledCard {...rest}>
       <CardContent>
         <Typography variant="h6" gutterBottom>
           Personal
