@@ -12,24 +12,28 @@ export default defineConfig(({ mode, command }) => {
     plugins: [react()],
   };
 
-  if (command === "serve") {
-    return {
-      ...commonConfig,
-      plugins: [
-        ...commonConfig.plugins,
-        mkcert(),
-        proxy({
-          "^/api": {
-            target: `http://${process.env.VITE_CONNECT_HOST}:${process.env.VITE_CONNECT_PORT}`,
-            secure: false,
-          },
-        }),
-      ],
-      server: {
-        https: true,
-      },
-    } as UserConfig;
+  switch (command) {
+    case "build":
+      return {
+        ...commonConfig,
+        base: "./",
+      } as UserConfig;
+    case "serve":
+      return {
+        ...commonConfig,
+        plugins: [
+          ...commonConfig.plugins,
+          mkcert(),
+          proxy({
+            "^/api": {
+              target: `http://${process.env.VITE_CONNECT_HOST}:${process.env.VITE_CONNECT_PORT}`,
+              secure: false,
+            },
+          }),
+        ],
+        server: {
+          https: true,
+        },
+      } as UserConfig;
   }
-
-  return commonConfig;
 });
