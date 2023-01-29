@@ -4,7 +4,7 @@ interface AuthState {
   status: "idle" | "authenticating" | "authenticated";
 }
 
-const AuthReducer = (prev: AuthState, action: AuthActions): AuthState => {
+function AuthReducer(prev: AuthState, action: AuthActions): AuthState {
   switch (action.type) {
     case "auth/loading": {
       return { ...prev, status: "idle" };
@@ -17,7 +17,7 @@ const AuthReducer = (prev: AuthState, action: AuthActions): AuthState => {
     default:
       return prev;
   }
-};
+}
 
 export type { AuthState, AuthActions };
 export { AuthReducer };

@@ -4,9 +4,9 @@ import AppMenuContent from "./AppMenuContent";
 function AppMenuContextExt() {
   const { logout } = useAuth();
 
-  const handleLogout = () => {
+  function handleLogout() {
     logout();
-  };
+  }
 
   return <AppMenuContent handleLogout={handleLogout} />;
 }

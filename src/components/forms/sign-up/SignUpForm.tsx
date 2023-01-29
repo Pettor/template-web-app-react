@@ -9,7 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 import * as yup from "yup";
 
-export interface IFormSignUp {
+export interface FormSignUp {
   firstName: string;
   lastName: string;
   email: string;
@@ -24,7 +24,7 @@ export interface SignUpFormProps {
   open: boolean;
   loading: boolean;
   onAlert: () => void;
-  onSubmit: SubmitHandler<IFormSignUp>;
+  onSubmit: SubmitHandler<FormSignUp>;
 }
 
 function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps) {
@@ -82,7 +82,7 @@ function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
     handleSubmit: handleFormSubmit,
     register,
     formState: { errors },
-  } = useForm<IFormSignUp>({
+  } = useForm<FormSignUp>({
     resolver: yupResolver(schema),
   });
 
