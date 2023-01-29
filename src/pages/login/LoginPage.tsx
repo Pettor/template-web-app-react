@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { IFormLogin } from "../../components/forms/login/LoginForm";
+import { FormLogin } from "../../components/forms/login/LoginForm";
 import LoginView from "../../components/views/login/LoginView";
 import useAuth from "../../libs/auth/hooks/UseAuth";
 
@@ -13,11 +12,11 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [open, setOpen] = useState(false);
 
-  const handleAlert = () => {
+  function handleAlert() {
     setOpen(false);
-  };
+  }
 
-  const handleSubmit: SubmitHandler<IFormLogin> = async (data) => {
+  async function handleSubmit(data: FormLogin) {
     setError("");
 
     const { email, password } = data;
@@ -30,15 +29,15 @@ export default function SignIn() {
       setOpen(true);
       setLoading(false);
     }
-  };
+  }
 
-  const handleForgotPassword = () => {
+  function handleForgotPassword() {
     navigate("/forgot-password");
-  };
+  }
 
-  const handleSignUp = () => {
+  function handleSignUp() {
     navigate("/sign-up");
-  };
+  }
 
   return (
     <LoginView

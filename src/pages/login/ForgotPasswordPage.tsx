@@ -1,8 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
-import { SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { IFormResetPassword } from "../../components/forms/reset-password/ResetPasswordForm";
+import { FormResetPassword } from "../../components/forms/reset-password/ResetPasswordForm";
 import ResetPasswordView from "../../components/views/login/ResetPasswordView";
 import useApi from "../../libs/api/hooks/UseApi";
 
@@ -14,11 +13,11 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [open, setOpen] = React.useState(false);
 
-  const handleAlert = () => {
+  function handleAlert() {
     setOpen(false);
-  };
+  }
 
-  const handleSubmit: SubmitHandler<IFormResetPassword> = async (data) => {
+  async function handleSubmit(data: FormResetPassword) {
     setError("");
 
     const { email } = data;
@@ -32,7 +31,7 @@ export default function SignIn() {
       setOpen(true);
       setLoading(false);
     }
-  };
+  }
 
   return (
     <ResetPasswordView

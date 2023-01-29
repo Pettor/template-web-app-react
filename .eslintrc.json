@@ -33,6 +33,7 @@
       }
     ],
     "import/no-unresolved": "off",
+    "func-style": ["error", "declaration", { "allowArrowFunctions": false }],
     // React
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": [

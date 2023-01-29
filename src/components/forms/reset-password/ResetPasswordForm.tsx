@@ -7,7 +7,7 @@ import { Alert, Collapse, IconButton } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import * as yup from "yup";
 
-export interface IFormResetPassword {
+export interface FormResetPassword {
   email: string;
 }
 
@@ -16,7 +16,7 @@ export interface ResetPasswordFormProps {
   open: boolean;
   loading: boolean;
   onAlert: () => void;
-  onSubmit: SubmitHandler<IFormResetPassword>;
+  onSubmit: SubmitHandler<FormResetPassword>;
 }
 
 function ResetPasswordForm({ error, open, loading, onAlert, onSubmit }: ResetPasswordFormProps) {
@@ -42,7 +42,7 @@ function ResetPasswordForm({ error, open, loading, onAlert, onSubmit }: ResetPas
     handleSubmit: handleFormSubmit,
     register,
     formState: { errors },
-  } = useForm<IFormResetPassword>({
+  } = useForm<FormResetPassword>({
     resolver: yupResolver(schema),
   });
 

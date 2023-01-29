@@ -11,7 +11,7 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import * as yup from "yup";
 
-export interface IFormLogin {
+export interface FormLogin {
   email: string;
   password: string;
 }
@@ -21,7 +21,7 @@ export interface LoginFormProps {
   open: boolean;
   loading: boolean;
   onAlert: () => void;
-  onSubmit: SubmitHandler<IFormLogin>;
+  onSubmit: SubmitHandler<FormLogin>;
 }
 
 function LoginForm({ error, open, loading, onAlert, onSubmit }: LoginFormProps) {
@@ -55,7 +55,7 @@ function LoginForm({ error, open, loading, onAlert, onSubmit }: LoginFormProps) 
     handleSubmit: handleFormSubmit,
     register,
     formState: { errors },
-  } = useForm<IFormLogin>({
+  } = useForm<FormLogin>({
     resolver: yupResolver(schema),
   });
 

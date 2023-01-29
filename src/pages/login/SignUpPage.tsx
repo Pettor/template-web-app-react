@@ -1,8 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
-import { SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { IFormSignUp } from "../../components/forms/sign-up/SignUpForm";
+import { FormSignUp } from "../../components/forms/sign-up/SignUpForm";
 import SignUpView from "../../components/views/login/SignUpView";
 import useApi from "../../libs/api/hooks/UseApi";
 
@@ -14,11 +13,11 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [open, setOpen] = React.useState(false);
 
-  const handleAlert = () => {
+  function handleAlert() {
     setOpen(false);
-  };
+  }
 
-  const handleSubmit: SubmitHandler<IFormSignUp> = async (data) => {
+  async function handleSubmit(data: FormSignUp) {
     setError("");
 
     try {
@@ -31,7 +30,7 @@ export default function SignIn() {
       setOpen(true);
       setLoading(false);
     }
-  };
+  }
 
   return (
     <SignUpView
