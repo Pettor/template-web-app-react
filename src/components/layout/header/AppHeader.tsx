@@ -1,19 +1,19 @@
 import { ComponentType, ReactElement, useMemo, useState } from "react";
 import BackArrow from "@mui/icons-material/ArrowBack";
-import MenuIcon from "@mui/icons-material/MoreVert";
 import AvatarIcon from "@mui/icons-material/Person";
 import MuiAppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Logo from "../../library/logo/Logo";
 import Search from "../../library/search/Search";
-import { ThemeToggleExt } from "../../library/toggle/theme-toggle/ThemeToggleExt";
+import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggleExt";
 import { MenuOptions } from "../menu/MenuOptions";
 
 export interface AppHeaderOptions {
@@ -24,7 +24,6 @@ export interface AppHeaderOptions {
 
 export interface AppHeaderComponents {
   Menu: ComponentType<MenuOptions>;
-  MenuNode: ReactElement | ReactElement[];
   ProfileNode: ReactElement | ReactElement[];
 }
 
@@ -36,35 +35,11 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
 
 interface Props extends AppHeaderComponents, AppHeaderOptions {}
 
-function AppHeader({ subheader, label, Menu, MenuNode, ProfileNode, onBack }: Props) {
-  const [menuAnchorEl, setMenuAnchorEl] = useState<null | HTMLElement>(null);
+function AppHeader({ subheader, label, Menu, ProfileNode, onBack }: Props) {
   const [profileAnchorEl, setProfileAnchorEl] = useState<null | HTMLElement>(null);
-
-  const openMenu = Boolean(menuAnchorEl);
   const openProfile = Boolean(profileAnchorEl);
-
   const theme = useTheme();
   const isSmUp = useMediaQuery(theme.breakpoints.up("sm"));
-
-  function handleMenuClick(event: React.MouseEvent<HTMLElement>) {
-    setMenuAnchorEl(event.currentTarget);
-  }
-
-  function handleMenuClose() {
-    setMenuAnchorEl(null);
-  }
-
-  const MenuComponent = useMemo(() => {
-    if (!Menu) {
-      return <></>;
-    }
-
-    return (
-      <Menu key="app-header-menu" open={openMenu} anchorEl={menuAnchorEl} handleClose={handleMenuClose}>
-        {MenuNode}
-      </Menu>
-    );
-  }, [Menu, openMenu]);
 
   function handleProfileClick(event: React.MouseEvent<HTMLElement>) {
     setProfileAnchorEl(event.currentTarget);
@@ -100,19 +75,18 @@ function AppHeader({ subheader, label, Menu, MenuNode, ProfileNode, onBack }: Pr
           <Typography component="h1" variant="h6" color="primary" noWrap sx={{ flexGrow: 1 }}>
             {label}
           </Typography>
-          {isSmUp && <Search />}
-          <Divider sx={{ mx: 2 }} />
-          <ThemeToggleExt />
-          <IconButton onClick={handleProfileClick}>
-            <Badge color="info">
-              <AvatarIcon color="primary" />
-            </Badge>
-          </IconButton>
-          {ProfileComponent}
-          <IconButton onClick={handleMenuClick} color="primary">
-            <MenuIcon />
-          </IconButton>
-          {MenuComponent}
+          <Stack spacing={1} direction="row" alignItems="center">
+            {isSmUp && <Search sx={{ mr: 2 }} />}
+            <Divider light orientation="vertical" flexItem />
+            <ThemeToggle />
+            <Divider light orientation="vertical" flexItem />
+            <IconButton onClick={handleProfileClick}>
+              <Badge color="info">
+                <AvatarIcon color="primary" />
+              </Badge>
+            </IconButton>
+            {ProfileComponent}
+          </Stack>
         </Container>
       </Toolbar>
     </AppBar>

@@ -7,6 +7,7 @@ function AppMenu({ open, anchorEl, handleClose, children }: MenuOptions): JSX.El
       id="long-menu"
       MenuListProps={{
         "aria-labelledby": "long-button",
+        disablePadding: true,
       }}
       anchorEl={anchorEl}
       open={open}

@@ -1,7 +1,8 @@
 import * as React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import AppMenu from "./AppMenu";
-import AppMenuContent from "./content/AppMenuContent";
+import Box from "@mui/material/Box";
+import MenuItem from "@mui/material/MenuItem";
 
 export default {
   component: AppMenu,
@@ -11,7 +12,7 @@ export default {
 const Template: ComponentStory<typeof AppMenu> = (args) => {
   return (
     <AppMenu {...args}>
-      <AppMenuContent />
+      <MenuItem>Content</MenuItem>
     </AppMenu>
   );
 };

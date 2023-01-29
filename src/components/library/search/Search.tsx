@@ -1,6 +1,6 @@
 import { useIntl } from "react-intl";
 import SearchIcon from "@mui/icons-material/Search";
-import Box from "@mui/material/Box";
+import Box, { BoxProps } from "@mui/material/Box";
 import InputBase from "@mui/material/InputBase";
 import { alpha, styled } from "@mui/material/styles";
 
@@ -48,10 +48,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function Search() {
+interface Props extends BoxProps {}
+
+export default function Search({ ...boxProps }: Props) {
   const intl = useIntl();
   return (
-    <StyledSearch>
+    <StyledSearch {...boxProps}>
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
@@ -66,5 +68,3 @@ function Search() {
     </StyledSearch>
   );
 }
-
-export default Search;
