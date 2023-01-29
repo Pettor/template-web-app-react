@@ -3,13 +3,9 @@ import Box from "@mui/material/Box";
 import Card, { CardProps } from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
+import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-
-interface Props extends CardProps {
-  name: string;
-  email: string;
-}
 
 const StyledCard = styled(Card)(() => ({
   height: 150,
@@ -21,6 +17,11 @@ const AvatarBox = styled(Box)(() => ({
   height: "100%",
   alignItems: "center",
 }));
+
+interface Props extends CardProps {
+  name?: string;
+  email?: string;
+}
 
 export default function ProfileCard({ name, email, ...rest }: Props) {
   return (
@@ -39,10 +40,10 @@ export default function ProfileCard({ name, email, ...rest }: Props) {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1" component="div">
-                  {name}
+                  {name ? name : <Skeleton animation={false} />}
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  {email}
+                  {email ? email : <Skeleton animation={false} />}
                 </Typography>
               </Grid>
             </Grid>

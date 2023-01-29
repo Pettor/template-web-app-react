@@ -2,10 +2,10 @@ import useProfileInfo from "../../../libs/api/hooks/UseProfileInfo";
 import ProfileCard from "./ProfileCard";
 
 export default function ProfileCardExt() {
-  const { data, isLoading } = useProfileInfo();
+  const { data } = useProfileInfo();
 
-  if (!data || isLoading) {
-    return <></>;
+  if (!data) {
+    return <ProfileCard elevation={0} />;
   }
 
   const { email, firstName, lastName } = data;
