@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import HeaderLayout, { IHeaderLayout } from "../../layout/templates/HeaderLayout";
+import HeaderLayout, { HeaderLayoutComponents } from "../../layout/templates/HeaderLayout";
 
 const LeftColorBox = styled(Box)(() => ({
   content: "''",
@@ -65,7 +65,7 @@ const GradientTypography = styled("span")(({ theme }) => ({
   color: "transparent",
 }));
 
-interface Props extends IHeaderLayout {
+interface Props extends HeaderLayoutComponents {
   onDemoDataClick(): void;
 }
 

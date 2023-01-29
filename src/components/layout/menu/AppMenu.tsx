@@ -1,7 +1,7 @@
 import Menu from "@mui/material/Menu";
-import { IMenu } from "./IMenu";
+import { MenuOptions } from "./MenuOptions";
 
-function AppMenu({ open, anchorEl, handleClose, children }: IMenu): JSX.Element {
+function AppMenu({ open, anchorEl, handleClose, children }: MenuOptions): JSX.Element {
   return (
     <Menu
       id="long-menu"

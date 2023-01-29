@@ -1,5 +1,6 @@
 import AppMenu from "../../components/layout/menu/AppMenu";
 import AppMenuContent from "../../components/layout/menu/content/AppMenuContentExt";
+import ProfileCard from "../../components/library/profile/ProfileCard";
 import HomeView from "../../components/views/home/HomeView";
 import useApi from "../../libs/api/hooks/UseApi";
 
@@ -21,9 +22,10 @@ function HomePage() {
 
   return (
     <HomeView
-      injectedMenu={{
-        menu: AppMenu,
-        menuContent: <AppMenuContent />,
+      headerComponents={{
+        Menu: AppMenu,
+        MenuNode: <AppMenuContent />,
+        ProfileNode: <ProfileCard name="test" email="pettor@gmail.com" />,
       }}
       onDemoDataClick={handleClick}
     />
