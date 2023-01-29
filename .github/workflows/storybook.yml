@@ -38,6 +38,8 @@ jobs:
 
       - name: Build Storybook
         run: yarn build-storybook --quiet
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
 
       - name: Deploy storybook
         run: >
@@ -48,3 +50,4 @@ jobs:
           --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+          NODE_OPTIONS: "--max_old_space_size=4096"
