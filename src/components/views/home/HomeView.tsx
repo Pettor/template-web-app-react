@@ -65,11 +65,9 @@ const GradientTypography = styled("span")(({ theme }) => ({
   color: "transparent",
 }));
 
-interface Props extends HeaderLayoutComponents {
-  onDemoDataClick(): void;
-}
+interface Props extends HeaderLayoutComponents {}
 
-function HomeView({ onDemoDataClick, ...rest }: Props) {
+function HomeView({ ...rest }: Props) {
   const intl = useIntl();
 
   function renderGridItem(Icon: ComponentType, heading: string, description: string) {
@@ -164,11 +162,6 @@ function HomeView({ onDemoDataClick, ...rest }: Props) {
             )}
           </Grid>
         </GridContent>
-        <Container>
-          <Button variant="contained" onClick={onDemoDataClick}>
-            Demo Data
-          </Button>
-        </Container>
       </ContainerBox>
     </HeaderLayout>
   );

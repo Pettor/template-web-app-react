@@ -104,7 +104,7 @@ function AppHeader({ subheader, label, Menu, MenuNode, ProfileNode, onBack }: Pr
           <Divider sx={{ mx: 2 }} />
           <ThemeToggleExt />
           <IconButton onClick={handleProfileClick}>
-            <Badge badgeContent={2} color="info">
+            <Badge color="info">
               <AvatarIcon color="primary" />
             </Badge>
           </IconButton>
