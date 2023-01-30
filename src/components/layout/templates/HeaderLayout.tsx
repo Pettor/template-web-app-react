@@ -20,7 +20,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 export interface HeaderLayoutProps {
   headerOptions?: AppHeaderOptions;
   maxWidth?: Breakpoint | false;
-  sx?: SxProps<Theme> | undefined;
+  sx?: SxProps<Theme>;
   children: JSX.Element | JSX.Element[];
 }
 
