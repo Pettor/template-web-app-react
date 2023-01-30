@@ -1,6 +1,12 @@
+import React from "react";
+import Component from "@mui/material/Button";
+import { ComponentStoryObj } from "@storybook/react";
+import CommonDecorator from "../../../stories/decorators/CommonDecorator";
+
+type Story = ComponentStoryObj<typeof Component>;
 
 export default {
-  title: "Library/Button",
+  title: "Library/Component",
   decorators: [CommonDecorator],
 };
 
