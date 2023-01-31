@@ -3,8 +3,7 @@ import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
 import { Breakpoint, SxProps, Theme, styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import AppHeader, { AppHeaderOptions } from "../header/AppHeader";
-import { IInjectedMenu } from "../menu/IInjectedMenu";
+import AppHeader, { AppHeaderComponents, AppHeaderOptions } from "../header/AppHeader";
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -21,23 +20,23 @@ const StyledContainer = styled(Container)(({ theme }) => ({
 export interface HeaderLayoutProps {
   headerOptions?: AppHeaderOptions;
   maxWidth?: Breakpoint | false;
-  sx?: SxProps<Theme> | undefined;
+  sx?: SxProps<Theme>;
   children: JSX.Element | JSX.Element[];
 }
 
-export interface IHeaderLayout {
-  injectedMenu: IInjectedMenu;
+export interface HeaderLayoutComponents {
+  headerComponents: AppHeaderComponents;
 }
 
-interface Props extends HeaderLayoutProps, IHeaderLayout {}
+interface Props extends HeaderLayoutProps, HeaderLayoutComponents {}
 
-function HeaderLayout({ headerOptions, maxWidth = "lg", sx, injectedMenu, children }: Props) {
+function HeaderLayout({ headerOptions, maxWidth = "lg", sx, headerComponents, children }: Props) {
   const theme = useTheme();
   const isLgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <StyledBox sx={{ ...sx }}>
-      <AppHeader menu={injectedMenu} {...headerOptions} />
+      <AppHeader {...headerComponents} {...headerOptions} />
       <Box
         sx={{
           flexGrow: 1,

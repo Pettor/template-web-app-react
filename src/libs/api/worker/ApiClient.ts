@@ -8,7 +8,7 @@ import axios, {
 } from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { TokenRequestRequest } from "../service/requests/TokenRequestRequest";
-import { DtoToken } from "../service/responses/TokenDto";
+import { TokenDto } from "../service/responses/TokenDto";
 import { getToken, setToken } from "./TokenStorage";
 
 export default class ApiClient {
@@ -51,7 +51,7 @@ export default class ApiClient {
   }
 
   public async tokenRequest(data: TokenRequestRequest): Promise<AxiosResponse> {
-    const response = await this.client.post<DtoToken>("/api/tokens", data, this.defaultConfig);
+    const response = await this.client.post<TokenDto>("/api/tokens", data, this.defaultConfig);
     setToken(response.data.token);
 
     // Remove token from response
@@ -64,7 +64,7 @@ export default class ApiClient {
 
   public async refreshToken(): Promise<AxiosResponse> {
     // Refresh-Token API will use the standard AXIOS client to avoid issue where API is stuck
-    const response = await axios.get<DtoToken>("/api/tokens/refresh", this.defaultConfig);
+    const response = await axios.get<TokenDto>("/api/tokens/refresh", this.defaultConfig);
     setToken(response.data.token);
 
     // Remove token from response

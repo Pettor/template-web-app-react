@@ -1,7 +1,7 @@
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 import { JwtToken } from "../../auth/types/JwtToken";
 import { TokenRequestRequest } from "./requests/TokenRequestRequest";
-import { DtoToken } from "./responses/TokenDto";
+import { TokenDto } from "./responses/TokenDto";
 
 const defaultHeaders: RawAxiosRequestHeaders = {
   tenant: "root",
@@ -11,12 +11,12 @@ const defaultConfig: AxiosRequestConfig = {
   headers: defaultHeaders,
 };
 
-export async function tokenRequest(client: AxiosInstance, data: TokenRequestRequest): Promise<AxiosResponse<DtoToken>> {
-  return await client.post<DtoToken>("/api/tokens", data, defaultConfig);
+export async function tokenRequest(client: AxiosInstance, data: TokenRequestRequest): Promise<AxiosResponse<TokenDto>> {
+  return await client.post<TokenDto>("/api/tokens", data, defaultConfig);
 }
 
-export async function tokenRefresh(client: AxiosInstance): Promise<AxiosResponse<DtoToken>> {
-  return await client.get<DtoToken>("/api/tokens/refresh", defaultConfig);
+export async function tokenRefresh(client: AxiosInstance): Promise<AxiosResponse<TokenDto>> {
+  return await client.get<TokenDto>("/api/tokens/refresh", defaultConfig);
 }
 
 export async function createPostRequest(client: AxiosInstance, url: string, token: JwtToken, data: unknown) {

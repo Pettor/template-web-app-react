@@ -1,4 +1,4 @@
-export interface IMenu {
+export interface MenuOptions {
   open: boolean;
   anchorEl: HTMLElement | null;
   handleClose: () => void;

@@ -6,7 +6,7 @@ import { ApiError, ApiResponse } from "../worker/ApiWorkerReponse";
 
 const apiWorker = new ApiWorkerCommunication(new ApiWorker());
 
-function useApi() {
+export default function useApi() {
   function subscribe(callback: (message: ApiError) => void): Subscription {
     return apiWorker.registerFailedRequestCallback(callback);
   }
@@ -40,5 +40,3 @@ function useApi() {
     get,
   };
 }
-
-export default useApi;

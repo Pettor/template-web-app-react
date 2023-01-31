@@ -5,12 +5,10 @@ import OptimizedIcon from "@mui/icons-material/ElectricBolt";
 import LayersIcon from "@mui/icons-material/Layers";
 import StorybookIcon from "@mui/icons-material/Palette";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import HeaderLayout, { IHeaderLayout } from "../../layout/templates/HeaderLayout";
+import HeaderLayout, { HeaderLayoutComponents } from "../../layout/templates/HeaderLayout";
 
 const LeftColorBox = styled(Box)(() => ({
   content: "''",
@@ -65,11 +63,9 @@ const GradientTypography = styled("span")(({ theme }) => ({
   color: "transparent",
 }));
 
-interface Props extends IHeaderLayout {
-  onDemoDataClick(): void;
-}
+interface Props extends HeaderLayoutComponents {}
 
-function HomeView({ onDemoDataClick, ...rest }: Props) {
+function HomeView({ ...rest }: Props) {
   const intl = useIntl();
 
   function renderGridItem(Icon: ComponentType, heading: string, description: string) {
@@ -164,11 +160,6 @@ function HomeView({ onDemoDataClick, ...rest }: Props) {
             )}
           </Grid>
         </GridContent>
-        <Container>
-          <Button variant="contained" onClick={onDemoDataClick}>
-            Demo Data
-          </Button>
-        </Container>
       </ContainerBox>
     </HeaderLayout>
   );

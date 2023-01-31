@@ -3,7 +3,7 @@ import { PaletteMode } from "@mui/material";
 import ThemeToggle from "./ThemeToggle";
 import { ThemeModeContext } from "./context/ThemeModeContext";
 
-export function ThemeToggleExt() {
+export default function ThemeToggleExt() {
   const { mode, toggleMode } = useContext(ThemeModeContext);
 
   function handleToggle(mode: PaletteMode) {

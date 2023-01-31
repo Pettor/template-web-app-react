@@ -1,20 +1,20 @@
-import { useMemo, useState } from "react";
+import { ComponentType, ReactElement, useMemo, useState } from "react";
 import BackArrow from "@mui/icons-material/ArrowBack";
-import MenuIcon from "@mui/icons-material/MoreVert";
 import AvatarIcon from "@mui/icons-material/Person";
 import MuiAppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { styled, useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Logo from "../../library/logo/Logo";
 import Search from "../../library/search/Search";
-import { ThemeToggleExt } from "../../library/toggle/theme-toggle/ThemeToggleExt";
-import { IInjectedMenu } from "../menu/IInjectedMenu";
+import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggleExt";
+import { MenuOptions } from "../menu/MenuOptions";
 
 export interface AppHeaderOptions {
   subheader?: boolean;
@@ -22,8 +22,9 @@ export interface AppHeaderOptions {
   onBack?(): void;
 }
 
-export interface AppHeaderProps {
-  menu: IInjectedMenu;
+export interface AppHeaderComponents {
+  Menu: ComponentType<MenuOptions>;
+  ProfileNode: ReactElement | ReactElement[];
 }
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
@@ -32,36 +33,33 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
   backdropFilter: "saturate(50%) blur(8px)",
 }));
 
-interface Props extends AppHeaderOptions, AppHeaderProps {}
+interface Props extends AppHeaderComponents, AppHeaderOptions {}
 
-function AppHeader({ subheader, label, menu, onBack }: Props) {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-
+function AppHeader({ subheader, label, Menu, ProfileNode, onBack }: Props) {
+  const [profileAnchorEl, setProfileAnchorEl] = useState<null | HTMLElement>(null);
+  const openProfile = Boolean(profileAnchorEl);
   const theme = useTheme();
   const isSmUp = useMediaQuery(theme.breakpoints.up("sm"));
 
-  function handleClick(event: React.MouseEvent<HTMLElement>) {
-    setAnchorEl(event.currentTarget);
+  function handleProfileClick(event: React.MouseEvent<HTMLElement>) {
+    setProfileAnchorEl(event.currentTarget);
   }
 
-  function handleClose() {
-    setAnchorEl(null);
+  function handleProfileClose() {
+    setProfileAnchorEl(null);
   }
 
-  const MenuComponent = useMemo(() => {
-    if (!menu) {
+  const ProfileComponent = useMemo(() => {
+    if (!ProfileNode) {
       return <></>;
     }
 
-    const { menu: Menu, menuContent } = menu;
-
     return (
-      <Menu key="app-header-menu" open={open} anchorEl={anchorEl} handleClose={handleClose}>
-        {menuContent}
+      <Menu key="app-profile-menu" open={openProfile} anchorEl={profileAnchorEl} handleClose={handleProfileClose}>
+        {ProfileNode}
       </Menu>
     );
-  }, [menu, open]);
+  }, [ProfileNode, openProfile]);
 
   return (
     <AppBar position="fixed" elevation={1}>
@@ -77,18 +75,18 @@ function AppHeader({ subheader, label, menu, onBack }: Props) {
           <Typography component="h1" variant="h6" color="primary" noWrap sx={{ flexGrow: 1 }}>
             {label}
           </Typography>
-          {isSmUp && <Search />}
-          <Divider sx={{ mx: 2 }} />
-          <ThemeToggleExt />
-          <IconButton>
-            <Badge badgeContent={2} color="info">
-              <AvatarIcon color="primary" />
-            </Badge>
-          </IconButton>
-          <IconButton onClick={handleClick} color="primary">
-            <MenuIcon />
-          </IconButton>
-          {MenuComponent}
+          <Stack spacing={1} direction="row" alignItems="center">
+            {isSmUp && <Search sx={{ mr: 2 }} />}
+            <Divider light orientation="vertical" flexItem />
+            <ThemeToggle />
+            <Divider light orientation="vertical" flexItem />
+            <IconButton onClick={handleProfileClick}>
+              <Badge color="info">
+                <AvatarIcon color="primary" />
+              </Badge>
+            </IconButton>
+            {ProfileComponent}
+          </Stack>
         </Container>
       </Toolbar>
     </AppBar>

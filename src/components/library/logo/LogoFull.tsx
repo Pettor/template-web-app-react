@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import useAppInfo from "../../../libs/app/hooks/AppInfo";
+import useAppInfo from "../../../libs/app/hooks/UseAppInfo";
 import Logo from "./Logo";
 
 const NameTypography = styled(Typography)(() => ({

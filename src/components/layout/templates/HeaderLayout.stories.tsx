@@ -2,8 +2,8 @@ import * as React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ContentComponent } from "../../../stories/data/ContentData";
 import AppMenu from "../menu/AppMenu";
-import AppMenuContent from "../menu/content/AppMenuContent";
 import HeaderLayout from "./HeaderLayout";
+import { MenuItem } from "@mui/material";
 
 export default {
   component: HeaderLayout,
@@ -23,9 +23,9 @@ Header.args = {
 export const HeaderWithMenu = Template.bind({});
 HeaderWithMenu.args = {
   label: "With Menu",
-  injectedMenu: {
-    menu: AppMenu,
-    menuContent: <AppMenuContent />,
+  headerComponents: {
+    Menu: AppMenu,
+    ProfileNode: <MenuItem>Content</MenuItem>,
   },
   children: <ContentComponent />,
 };
