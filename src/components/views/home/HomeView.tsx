@@ -65,7 +65,7 @@ const GradientTypography = styled("span")(({ theme }) => ({
 
 interface Props extends HeaderLayoutComponents {}
 
-function HomeView({ ...rest }: Props) {
+export default function HomeView({ ...rest }: Props) {
   const intl = useIntl();
 
   function renderGridItem(Icon: ComponentType, heading: string, description: string) {
@@ -164,5 +164,3 @@ function HomeView({ ...rest }: Props) {
     </HeaderLayout>
   );
 }
-
-export default HomeView;

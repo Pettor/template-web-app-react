@@ -29,7 +29,7 @@ declare module "@mui/material/styles" {
   }
 }
 
-function createAppTheme(mode: PaletteMode = "light"): Theme {
+export default function createAppTheme(mode: PaletteMode = "light"): Theme {
   return responsiveFontSizes(
     createTheme({
       palette: {
@@ -113,5 +113,3 @@ function createAppTheme(mode: PaletteMode = "light"): Theme {
     })
   );
 }
-
-export default createAppTheme;

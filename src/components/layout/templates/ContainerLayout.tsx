@@ -27,7 +27,7 @@ interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
-function ContainerLayout({ sx, children }: Props) {
+export default function ContainerLayout({ sx, children }: Props) {
   return (
     <StyledBox>
       <Container maxWidth="xs" sx={sx}>
@@ -40,5 +40,3 @@ function ContainerLayout({ sx, children }: Props) {
     </StyledBox>
   );
 }
-
-export default ContainerLayout;

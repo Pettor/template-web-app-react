@@ -35,7 +35,7 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
 
 interface Props extends AppHeaderComponents, AppHeaderOptions {}
 
-function AppHeader({ subheader, label, Menu, ProfileNode, onBack }: Props) {
+export default function AppHeader({ subheader, label, Menu, ProfileNode, onBack }: Props) {
   const [profileAnchorEl, setProfileAnchorEl] = useState<null | HTMLElement>(null);
   const openProfile = Boolean(profileAnchorEl);
   const theme = useTheme();
@@ -92,5 +92,3 @@ function AppHeader({ subheader, label, Menu, ProfileNode, onBack }: Props) {
     </AppBar>
   );
 }
-
-export default AppHeader;

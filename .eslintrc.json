@@ -22,7 +22,6 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": ["*.stories.tsx"],
   "plugins": ["react", "@typescript-eslint", "prettier", "formatjs"],
   "rules": {
     // Common

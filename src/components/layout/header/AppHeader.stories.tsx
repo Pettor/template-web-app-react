@@ -1,23 +1,19 @@
-import * as React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import AppHeader from "./AppHeader";
+import Component from "./AppHeader";
 
 export default {
-  component: AppHeader,
+  component: Component,
   title: "Layout/Header",
-} as ComponentMeta<typeof AppHeader>;
-
-const Template: ComponentStory<typeof AppHeader> = (args) => {
-  return <AppHeader {...args} />;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  label: "This is a Header",
+export const AppHeader = {
+  args: {
+    label: "This is a Header",
+  },
 };
 
-export const SubHeader = Template.bind({});
-SubHeader.args = {
-  subheader: true,
-  label: "This is a SubHeader",
+export const SubHeader = {
+  args: {
+    subheader: true,
+    label: "This is a SubHeader",
+  },
 };

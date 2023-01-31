@@ -8,7 +8,7 @@ import AppTheme from "./theme/AppTheme";
 
 const queryClient = new QueryClient();
 
-function App() {
+export default function App() {
   typeof window !== "undefined" && validateCrypto();
 
   return (
@@ -25,5 +25,3 @@ function App() {
     </ThemeModeProvider>
   );
 }
-
-export default App;

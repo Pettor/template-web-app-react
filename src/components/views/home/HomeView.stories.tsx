@@ -1,15 +1,8 @@
-import * as React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import HomeView from "./HomeView";
+import Component from "./HomeView";
 
 export default {
-  component: HomeView,
+  component: Component,
   title: "Views/Home",
-} as ComponentMeta<typeof HomeView>;
-
-const Template: ComponentStory<typeof HomeView> = (args) => {
-  return <HomeView {...args} />;
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Home = {};

@@ -27,13 +27,13 @@ export interface SignUpFormProps {
   onSubmit: SubmitHandler<FormSignUp>;
 }
 
-function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps) {
+export default function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps) {
   const intl = useIntl();
 
   const schema = yup
     .object()
     .shape({
-      displayName: yup.string().required(
+      userName: yup.string().required(
         intl.formatMessage({
           description: "SignUpFormValidation - Display Name is required",
           defaultMessage: "We need to call you something",
@@ -85,6 +85,8 @@ function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
   } = useForm<FormSignUp>({
     resolver: yupResolver(schema),
   });
+
+  console.log({ errors });
 
   return (
     <form onSubmit={handleFormSubmit(onSubmit)}>
@@ -222,5 +224,3 @@ function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps
     </form>
   );
 }
-
-export default SignUpForm;

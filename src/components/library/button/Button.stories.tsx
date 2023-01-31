@@ -1,19 +1,30 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { CommonDecorator } from "../../../stories/decorators/CommonDecorator";
+import React from "react";
+import Component from "@mui/material/Button";
+import CommonDecorator from "../../../stories/decorators/CommonDecorator";
 
 export default {
-  component: Button,
+  component: Component,
   title: "Library/Button",
   decorators: [CommonDecorator],
-} as ComponentMeta<typeof Button>;
-
-const Template: ComponentStory<typeof Button> = (args) => {
-  return <Button {...args}>Button</Button>;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  variant: "contained",
+export const Contained = {
+  render: (args) => <Component {...args}>Button</Component>,
+  args: {
+    variant: "contained",
+  },
+};
+
+export const Outlined = {
+  render: (args) => <Component {...args}>Button</Component>,
+  args: {
+    variant: "outlined",
+  },
+};
+
+export const Text = {
+  render: (args) => <Component {...args}>Button</Component>,
+  args: {
+    variant: "text",
+  },
 };

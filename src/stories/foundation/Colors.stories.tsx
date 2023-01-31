@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { PaletteColor, styled } from "@mui/material/styles";
 import Box from "@mui/system/Box";
 import { Meta } from "@storybook/react";
 import CreateAppTheme from "../../theme/Theme";
-import { DocumentationDecorator } from "../decorators/DocumentationDecorator";
+import DocumentationDecorator from "../decorators/DocumentationDecorator";
 import { DocumentationLayout } from "../layout/DocumentationLayout";
 
 const theme = CreateAppTheme();
@@ -13,7 +13,7 @@ const theme = CreateAppTheme();
 export default {
   title: "Design System/Colors",
   decorators: [DocumentationDecorator],
-} as Meta;
+};
 
 const { primary, secondary, info, success, warning, error } = theme.palette;
 
