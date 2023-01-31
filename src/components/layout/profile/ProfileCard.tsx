@@ -23,6 +23,10 @@ const AvatarBox = styled(Box)(() => ({
   alignItems: "center",
 }));
 
+const MenuBox = styled(Box)(({ theme }) => ({
+  marginBottom: theme.spacing(2),
+}));
+
 interface Props extends CardProps {
   name?: string;
   email?: string;
@@ -55,14 +59,16 @@ export default function ProfileCard({ name, email, onLogout, ...cardProps }: Pro
             </Grid>
           </Grid>
         </Grid>
-        <Divider sx={{ mb: 2 }} />
+        <Divider />
+      </CardContent>
+      <MenuBox>
         <MenuItem onClick={onLogout}>
           <ListItemIcon>
             <LogoutIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText>Logout</ListItemText>
         </MenuItem>
-      </CardContent>
+      </MenuBox>
     </StyledCard>
   );
 }
