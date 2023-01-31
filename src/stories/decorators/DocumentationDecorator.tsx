@@ -39,7 +39,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   zIndex: 1,
 }));
 
-export function DocumentationDecorator(story: any) {
+export default function DocumentationDecorator(story: any) {
   return (
     <>
       <LeftColorBox />

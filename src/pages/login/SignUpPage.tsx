@@ -23,7 +23,6 @@ export default function SignIn() {
     try {
       setLoading(true);
       await post("/api/users/self-register", data);
-
       navigate("/");
     } catch (error) {
       setError((error as Error).message);

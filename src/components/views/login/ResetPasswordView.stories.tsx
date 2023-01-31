@@ -1,14 +1,8 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import ResetPasswordView from "./ResetPasswordView";
+import Component from "./ResetPasswordView";
 
 export default {
-  component: ResetPasswordView,
+  component: Component,
   title: "Views/Login",
-} as ComponentMeta<typeof ResetPasswordView>;
-
-const Template: ComponentStory<typeof ResetPasswordView> = (args) => {
-  return <ResetPasswordView {...args} />;
 };
 
-export const ResetPassword = Template.bind({});
-ResetPassword.args = {};
+export const ResetPassword = {};

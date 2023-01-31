@@ -15,7 +15,7 @@ interface Props {
   size: LogoFullSize;
 }
 
-function LogoFull({ size = "large" }: Props) {
+export default function LogoFull({ size = "large" }: Props) {
   const { appNameCapital } = useAppInfo();
 
   return (
@@ -29,5 +29,3 @@ function LogoFull({ size = "large" }: Props) {
     </Stack>
   );
 }
-
-export default LogoFull;

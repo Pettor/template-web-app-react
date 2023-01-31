@@ -30,7 +30,7 @@ export interface HeaderLayoutComponents {
 
 interface Props extends HeaderLayoutProps, HeaderLayoutComponents {}
 
-function HeaderLayout({ headerOptions, maxWidth = "lg", sx, headerComponents, children }: Props) {
+export default function HeaderLayout({ headerOptions, maxWidth = "lg", sx, headerComponents, children }: Props) {
   const theme = useTheme();
   const isLgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
@@ -52,5 +52,3 @@ function HeaderLayout({ headerOptions, maxWidth = "lg", sx, headerComponents, ch
     </StyledBox>
   );
 }
-
-export default HeaderLayout;

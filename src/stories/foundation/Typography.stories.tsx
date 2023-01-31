@@ -1,14 +1,13 @@
-import * as React from "react";
+import React from "react";
 import { Typography } from "@mui/material";
 import Box from "@mui/system/Box";
-import { ComponentMeta } from "@storybook/react";
-import { DocumentationDecorator } from "../decorators/DocumentationDecorator";
+import DocumentationDecorator from "../decorators/DocumentationDecorator";
 import { DocumentationLayout } from "../layout/DocumentationLayout";
 
 export default {
   title: "Design System/Typograhy",
   decorators: [DocumentationDecorator],
-} as ComponentMeta<typeof Typography>;
+};
 
 export function Typograhy() {
   return (

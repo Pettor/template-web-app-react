@@ -1,14 +1,8 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import SignUpView from "./SignUpView";
+import Component from "./SignUpView";
 
 export default {
-  component: SignUpView,
+  component: Component,
   title: "Views/Login",
-} as ComponentMeta<typeof SignUpView>;
-
-const Template: ComponentStory<typeof SignUpView> = (args) => {
-  return <SignUpView {...args} />;
 };
 
-export const SignUp = Template.bind({});
-SignUp.args = {};
+export const SignUp = {};

@@ -8,7 +8,7 @@ interface Props {
   signUpForm: SignUpFormProps;
 }
 
-function SignUpView({ signUpForm }: Props) {
+export default function SignUpView({ signUpForm }: Props) {
   const intl = useIntl();
 
   return (
@@ -26,5 +26,3 @@ function SignUpView({ signUpForm }: Props) {
     </ContainerLayout>
   );
 }
-
-export default SignUpView;

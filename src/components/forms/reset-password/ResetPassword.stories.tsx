@@ -1,17 +1,14 @@
-import * as React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ContainerDecorator } from "../../../stories/decorators/ContainerDecorator";
-import ResetPasswordForm from "./ResetPasswordForm";
+import ContainerDecorator from "../../../stories/decorators/ContainerDecorator";
+import Component from "./ResetPasswordForm";
 
 export default {
-  component: ResetPasswordForm,
-  title: "Forms/ResetPassword",
+  component: Component,
+  title: "Forms/Login",
   decorators: [ContainerDecorator],
-} as ComponentMeta<typeof ResetPasswordForm>;
+};
 
-const Template: ComponentStory<typeof ResetPasswordForm> = (args) => <ResetPasswordForm {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  open: true,
+export const ResetPassword = {
+  args: {
+    open: true,
+  },
 };

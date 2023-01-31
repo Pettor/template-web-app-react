@@ -8,7 +8,7 @@ interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
-function AppTheme({ children }: Props): JSX.Element {
+export default function AppTheme({ children }: Props): JSX.Element {
   const mode = useThemeMode();
   const theme = useMemo(() => createAppTheme(mode), [mode]);
 
@@ -19,5 +19,3 @@ function AppTheme({ children }: Props): JSX.Element {
     </ThemeProvider>
   );
 }
-
-export default AppTheme;

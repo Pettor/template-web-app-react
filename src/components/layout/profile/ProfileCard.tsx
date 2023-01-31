@@ -12,7 +12,7 @@ import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(() => ({
   height: "100%",
   width: 275,
 }));

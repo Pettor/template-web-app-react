@@ -7,7 +7,7 @@ import ForgotPasswordPage from "./pages/login/ForgotPasswordPage";
 import LoginPage from "./pages/login/LoginPage";
 import SignUpPage from "./pages/login/SignUpPage";
 
-function AppRoutes() {
+export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
@@ -30,5 +30,3 @@ function AppRoutes() {
     </BrowserRouter>
   );
 }
-
-export default AppRoutes;

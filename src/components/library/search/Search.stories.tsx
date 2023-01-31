@@ -1,22 +1,11 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { CommonDecorator } from "../../../stories/decorators/CommonDecorator";
-import Search from "./Search";
+import CommonDecorator from "../../../stories/decorators/CommonDecorator";
+import MaxWidthDecorator from "../../../stories/decorators/MaxWidthDecorator";
+import Component from "./Search";
 
 export default {
-  component: Search,
+  component: Component,
   title: "Library/Search",
-  decorators: [CommonDecorator],
-} as ComponentMeta<typeof Search>;
-
-const Template: ComponentStory<typeof Search> = () => {
-  return (
-    <Box sx={{ maxWidth: 300 }}>
-      <Search />
-    </Box>
-  );
+  decorators: [MaxWidthDecorator, CommonDecorator],
 };
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Search = {};

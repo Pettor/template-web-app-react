@@ -1,35 +1,33 @@
 import * as React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import Logo from "./Logo";
+import Component from "./Logo";
 import LogoFull from "./LogoFull";
 
 export default {
-  component: Logo,
+  component: Component,
   title: "Library/Logo",
-} as ComponentMeta<typeof Logo>;
-
-const Template: ComponentStory<typeof Logo> = (args) => {
-  return <Logo {...args} />;
 };
 
-const TemplateFull: ComponentStory<typeof LogoFull> = (args) => {
-  return <LogoFull {...args} />;
+export const Small = {
+  args: {
+    size: "small",
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
+export const Medium = {
+  args: {
+    size: "medium",
+  },
 };
 
-export const Medium = Template.bind({});
-Medium.args = {
-  size: "medium",
+export const Large = {
+  args: {
+    size: "large",
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: "large",
+export const Full = {
+  render: (args) => <LogoFull {...args} />,
+  args: {
+    size: "small",
+  },
 };
-
-export const Full = TemplateFull.bind({});
-Full.args = {};

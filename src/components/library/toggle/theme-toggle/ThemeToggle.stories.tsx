@@ -1,15 +1,20 @@
-import * as React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { CommonDecorator } from "../../../../stories/decorators/CommonDecorator";
-import ThemeToggle from "./ThemeToggle";
+import CommonDecorator from "../../../../stories/decorators/CommonDecorator";
+import Component from "./ThemeToggle";
 
 export default {
-  component: ThemeToggle,
-  title: "Library/Toggle",
+  component: Component,
+  title: "Library/Toggle/Theme",
   decorators: [CommonDecorator],
-} as ComponentMeta<typeof ThemeToggle>;
+};
 
-const Template: ComponentStory<typeof ThemeToggle> = (args) => <ThemeToggle {...args} />;
+export const Light = {
+  args: {
+    defaultMode: "light",
+  },
+};
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Dark = {
+  args: {
+    defaultMode: "dark",
+  },
+};
