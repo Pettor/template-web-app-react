@@ -1,8 +1,7 @@
 import { ComponentType, ReactElement, useMemo, useState } from "react";
 import BackArrow from "@mui/icons-material/ArrowBack";
-import AvatarIcon from "@mui/icons-material/Person";
+import { Avatar } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
-import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
@@ -81,9 +80,7 @@ export default function AppHeader({ subheader, label, Menu, ProfileNode, onBack 
             <ThemeToggle />
             <Divider light orientation="vertical" flexItem />
             <IconButton onClick={handleProfileClick}>
-              <Badge color="info">
-                <AvatarIcon color="primary" />
-              </Badge>
+              <Avatar sx={{ width: 32, height: 32 }} />
             </IconButton>
             {ProfileComponent}
           </Stack>
