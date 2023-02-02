@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
+import { StoryFn } from "@storybook/react";
 
 const LeftColorBox = styled(Box)(() => ({
   content: "''",
@@ -39,13 +40,15 @@ const StyledBox = styled(Box)(({ theme }) => ({
   zIndex: 1,
 }));
 
-export default function DocumentationDecorator(story: any) {
+export default function DocumentationDecorator(Story: StoryFn) {
   return (
     <>
       <LeftColorBox />
       <RightColorBox />
       <ContainerBox>
-        <StyledBox>{story()}</StyledBox>
+        <StyledBox>
+          <Story />
+        </StyledBox>
       </ContainerBox>
     </>
   );
