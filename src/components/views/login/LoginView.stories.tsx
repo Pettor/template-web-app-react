@@ -1,8 +1,11 @@
-import LoginView from "./LoginView";
+import { ComponentStoryObj } from "@storybook/react";
+import Component from "./LoginView";
+
+type Story = ComponentStoryObj<typeof Component>;
 
 export default {
-  component: LoginView,
+  component: Component,
   title: "Views/Login",
 };
 
-export const Login = {};
+export const Login: Story = {};

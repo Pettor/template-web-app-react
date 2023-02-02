@@ -1,5 +1,8 @@
+import { ComponentStoryObj } from "@storybook/react";
 import ContainerDecorator from "../../../stories/decorators/ContainerDecorator";
 import Component from "./ResetPasswordForm";
+
+type Story = ComponentStoryObj<typeof Component>;
 
 export default {
   component: Component,
@@ -7,7 +10,7 @@ export default {
   decorators: [ContainerDecorator],
 };
 
-export const ResetPassword = {
+export const ResetPassword: Story = {
   args: {
     open: true,
   },
