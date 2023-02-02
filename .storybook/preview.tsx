@@ -38,6 +38,7 @@ export const globalTypes = {
 function withThemeProvider(Story: StoryFn, context: StoryContext): ReactElement {
   const { locale } = context.globals;
   const { messages } = reactIntl;
+  const theme = createAppTheme("light");
 
   const darkMode = useDarkMode();
   const theme = createAppTheme(darkMode ? "dark" : "light");

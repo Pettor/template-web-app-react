@@ -2,10 +2,10 @@
 const { mergeConfig } = require("vite");
 const { default: tsconfigPaths } = require("vite-tsconfig-paths");
 
-module.exports = {
+const config = {
   framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(ts|tsx)"],
-  addons: ["@storybook/addon-essentials", "@storybook/addon-a11y", "@storybook/addon-viewport", "storybook-dark-mode"],
+  addons: ["@storybook/addon-essentials", "@storybook/addon-a11y", "@storybook/addon-viewport"],
   docs: {
     defaultName: 'Docs',
     autodocs: true,
@@ -16,8 +16,10 @@ module.exports = {
       plugins: [tsconfigPaths()],
       // Add storybook-specific dependencies to pre-optimization
       optimizeDeps: {
-        include: ["@storybook/addon-essentials", "@storybook/addon-a11y", "@storybook/addon-viewport", "storybook-dark-mode"],
+        include: ["@storybook/addon-essentials", "@storybook/addon-a11y", "@storybook/addon-viewport"],
       },
     });
   },
 };
+
+export default config;
