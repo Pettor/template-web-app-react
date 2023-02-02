@@ -1,8 +1,8 @@
 import React from "react";
-import { MenuItem } from "@mui/material";
 import { ComponentStoryObj } from "@storybook/react";
 import { ContentComponent } from "../../../stories/data/ContentData";
 import AppMenu from "../menu/AppMenu";
+import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./HeaderLayout";
 
 type Story = ComponentStoryObj<typeof Component>;
@@ -20,7 +20,7 @@ export const HeaderLayout: Story = {
     children: <ContentComponent />,
     headerComponents: {
       Menu: AppMenu,
-      ProfileNode: <MenuItem>Content</MenuItem>,
+      ProfileNode: <ProfileCardResponsive />,
     },
   },
 };

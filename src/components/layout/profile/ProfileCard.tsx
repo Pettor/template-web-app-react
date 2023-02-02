@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -13,9 +12,15 @@ import Skeleton from "@mui/material/Skeleton";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-const StyledCard = styled(Card)(() => ({
+interface StyledCardProps {
+  isMobile?: boolean;
+}
+
+const StyledCard = styled(Card, {
+  shouldForwardProp: (prop) => prop !== "isMobile",
+})<StyledCardProps>(({ isMobile }) => ({
   height: "100%",
-  width: 275,
+  width: isMobile ? "100vw" : 275,
 }));
 
 const AvatarBox = styled(Box)(() => ({
@@ -31,12 +36,13 @@ const MenuBox = styled(Box)(({ theme }) => ({
 interface Props extends CardProps {
   name?: string;
   email?: string;
+  isMobile: boolean;
   onLogout?(): void;
 }
 
-export default function ProfileCard({ name, email, onLogout, ...cardProps }: Props): ReactElement {
+export default function ProfileCard({ name, email, isMobile, onLogout, ...cardProps }: Props) {
   return (
-    <StyledCard {...cardProps}>
+    <StyledCard isMobile={isMobile} {...cardProps}>
       <CardContent>
         <Typography variant="h6" gutterBottom>
           Personal

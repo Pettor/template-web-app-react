@@ -1,5 +1,6 @@
 import { ComponentStoryObj } from "@storybook/react";
-import CommonDecorator from "../../../stories/decorators/CommonDecorator";
+import CenterDecorator from "../../../stories/decorators/CenterDecorator";
+import PaddingTopDectorator from "../../../stories/decorators/PaddingTopDectorator";
 import Component from "./ProfileCard";
 
 type Story = ComponentStoryObj<typeof Component>;
@@ -7,7 +8,7 @@ type Story = ComponentStoryObj<typeof Component>;
 export default {
   component: Component,
   title: "Layout/Profile/Card",
-  decorators: [CommonDecorator],
+  decorators: [CenterDecorator, PaddingTopDectorator],
 };
 
 export const WithData = {
@@ -21,5 +22,13 @@ export const Loading: Story = {
   args: {
     name: undefined,
     email: undefined,
+  },
+};
+
+export const Mobile: Story = {
+  args: {
+    name: "John Doe",
+    email: "john.doe@gmail.com",
+    isMobile: true,
   },
 };
