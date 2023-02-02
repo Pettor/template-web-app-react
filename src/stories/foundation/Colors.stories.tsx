@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { PaletteColor, styled } from "@mui/material/styles";
 import Box from "@mui/system/Box";
-import { Meta } from "@storybook/react";
 import CreateAppTheme from "../../theme/Theme";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";
 import { DocumentationLayout } from "../layout/DocumentationLayout";
