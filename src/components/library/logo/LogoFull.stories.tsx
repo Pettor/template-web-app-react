@@ -1,5 +1,5 @@
 import { ComponentStoryObj } from "@storybook/react";
-import Component from "./Logo";
+import Component from "./LogoFull";
 
 type Story = ComponentStoryObj<typeof Component>;
 
@@ -8,19 +8,13 @@ export default {
   title: "Library/Logo",
 };
 
-export const Small: Story = {
-  args: {
-    size: "small",
-  },
-};
-
-export const Medium: Story = {
+export const FullMedium: Story = {
   args: {
     size: "medium",
   },
 };
 
-export const Large: Story = {
+export const FullLarge: Story = {
   args: {
     size: "large",
   },

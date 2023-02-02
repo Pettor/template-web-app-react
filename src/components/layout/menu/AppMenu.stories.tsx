@@ -1,6 +1,9 @@
 import React from "react";
 import MenuItem from "@mui/material/MenuItem";
+import { ComponentStoryObj } from "@storybook/react";
 import Component from "./AppMenu";
+
+type Story = ComponentStoryObj<typeof Component>;
 
 export default {
   component: Component,
@@ -15,7 +18,7 @@ function Template(args) {
   );
 }
 
-export const AppMenu = {
+export const AppMenu: Story = {
   render: Template,
   args: {
     open: true,

@@ -1,8 +1,11 @@
+import { ComponentStoryObj } from "@storybook/react";
 import CommonDecorator from "../../../stories/decorators/CommonDecorator";
-import ProfileCard from "./ProfileCard";
+import Component from "./ProfileCard";
+
+type Story = ComponentStoryObj<typeof Component>;
 
 export default {
-  component: ProfileCard,
+  component: Component,
   title: "Layout/Profile/Card",
   decorators: [CommonDecorator],
 };
@@ -14,8 +17,9 @@ export const WithData = {
   },
 };
 
-export const Loading = {
+export const Loading: Story = {
   args: {
-    loading: true,
+    name: undefined,
+    email: undefined,
   },
 };
