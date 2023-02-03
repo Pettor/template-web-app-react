@@ -6,6 +6,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useDarkMode } from "storybook-dark-mode";
 import createAppTheme from "../src/libs/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { themes } from '@storybook/theming';
 
 export const parameters = {
   layout: "fullscreen",
@@ -18,6 +20,9 @@ export const parameters = {
       order: ["Design System", "Library", "Forms", "Layout", "Pwa", "Views"],
     },
   },
+  docs: {
+    theme: themes.dark,
+  }
 };
 
 export const globalTypes = {
