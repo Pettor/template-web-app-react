@@ -6,8 +6,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useDarkMode } from "storybook-dark-mode";
 import createAppTheme from "../src/libs/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { themes } from '@storybook/theming';
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { themes } from "@storybook/theming";
+import { StoryFn, StoryContext } from "@storybook/react";
 
 export const parameters = {
   layout: "fullscreen",
@@ -21,7 +22,7 @@ export const parameters = {
     },
   },
   docs: {
-    theme: themes.dark,
+    theme: themes.light,
   }
 };
 
@@ -38,12 +39,24 @@ export const globalTypes = {
       ],
     },
   },
+  theme: {
+    name: "Theme",
+    description: "Theme selector",
+    defaultValue: "light",
+    toolbar: {
+      icon: "photo",
+      items: [
+        { value: "light", title: "Light" },
+        { value: "dark", title: "Dark" },
+      ],
+    },
+  },
 };
 
 function withThemeProvider(Story: StoryFn, context: StoryContext): ReactElement {
   const { locale } = context.globals;
   const { messages } = reactIntl;
-  const theme = createAppTheme("light");
+  const theme = createAppTheme(selectedTheme);
 
   const darkMode = useDarkMode();
   const theme = createAppTheme(darkMode ? "dark" : "light");
