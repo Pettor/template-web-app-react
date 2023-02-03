@@ -7,6 +7,7 @@ import { useDarkMode } from "storybook-dark-mode";
 import createAppTheme from "../src/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { StoryFn, StoryContext } from "@storybook/react";
 
 export const parameters = {
   layout: "fullscreen",
@@ -36,7 +37,7 @@ export const globalTypes = {
   },
 };
 
-const withThemeProvider = (Story, context) => {
+const withThemeProvider = (Story: StoryFn, context: StoryContext) => {
   const { locale } = context.globals;
   const { messages } = reactIntl;
 
