@@ -16,6 +16,11 @@ declare module "@mui/material/styles" {
         };
       };
     };
+    borderRadius: {
+      default: string;
+      md: string;
+      lg: string;
+    };
   }
   // allow configuration using `createTheme`
   interface ThemeOptions {
@@ -26,8 +31,15 @@ declare module "@mui/material/styles" {
         };
       };
     };
+    borderRadius?: {
+      default: string;
+      md: string;
+      lg: string;
+    };
   }
 }
+
+const DEFAULT_BORDER_RADIUS = "4px";
 
 export default function createAppTheme(mode: PaletteMode = "light"): Theme {
   return responsiveFontSizes(
@@ -69,6 +81,11 @@ export default function createAppTheme(mode: PaletteMode = "light"): Theme {
           fontWeight: "500",
         },
       },
+      borderRadius: {
+        default: DEFAULT_BORDER_RADIUS,
+        md: "8px",
+        lg: "12px",
+      },
       customBackgrounds: {
         gradients: {
           linear: {
@@ -100,7 +117,7 @@ export default function createAppTheme(mode: PaletteMode = "light"): Theme {
         MuiTextField: {
           styleOverrides: {
             root: {
-              borderRadius: "4px",
+              borderRadius: DEFAULT_BORDER_RADIUS,
               transition: "all 5s ease-out",
 
               "& .MuiOutlinedInput-notchedOutline": {
