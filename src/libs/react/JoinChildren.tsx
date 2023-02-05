@@ -1,7 +1,6 @@
-import { Children, ReactNode, cloneElement } from "react";
+import { Children, cloneElement } from "react";
 
-// Join children with a seperator element between each child
-export function joinChildren(children: React.ReactNode, separator: JSX.Element): ReactNode {
+export function joinChildren(children: React.ReactNode, separator: JSX.Element) {
   const childrenArray = Children.toArray(children).filter(Boolean);
 
   return childrenArray.reduce((output, child, index) => {
