@@ -35,17 +35,17 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
 
 interface Props extends AppHeaderComponents, AppHeaderOptions {}
 
-export default function AppHeader({ subheader, label, Menu, ProfileNode, onBack }: Props) {
+export default function AppHeader({ subheader, label, Menu, ProfileNode, onBack }: Props): ReactElement {
   const [profileAnchorEl, setProfileAnchorEl] = useState<null | HTMLElement>(null);
   const openProfile = Boolean(profileAnchorEl);
   const theme = useTheme();
   const isSmUp = useMediaQuery(theme.breakpoints.up("sm"));
 
-  function handleProfileClick(event: React.MouseEvent<HTMLElement>) {
+  function handleProfileClick(event: React.MouseEvent<HTMLElement>): void {
     setProfileAnchorEl(event.currentTarget);
   }
 
-  function handleProfileClose() {
+  function handleProfileClose(): void {
     setProfileAnchorEl(null);
   }
 

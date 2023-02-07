@@ -1,7 +1,8 @@
+import { ReactElement } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../auth/hooks/UseAuth";
 
-function PublicRoutes(): JSX.Element {
+function PublicRoutes(): ReactElement {
   const { status } = useAuth();
   const location = useLocation();
 

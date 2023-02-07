@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { ComponentProps } from "react";
 import Box from "@mui/material/Box";
 import { ComponentStoryObj } from "@storybook/react";
@@ -11,7 +11,7 @@ export default {
   title: "Layout/Modal/Responsive",
 };
 
-function Template(args: ComponentProps<typeof Component>) {
+function Template(args: ComponentProps<typeof Component>): ReactElement {
   return (
     <Component {...args}>
       <Box>This is content test</Box>

@@ -1,19 +1,19 @@
 import { get, set } from "idb-keyval";
 
 export class IndexDbStorage<T> {
-  private _key: string;
+  private key: string;
 
   constructor(key: string) {
-    this._key = key;
+    this.key = key;
   }
 
   async set(value: T | null): Promise<void> {
     const json = JSON.stringify(value);
-    return await set(this._key, json);
+    return await set(this.key, json);
   }
 
   async get(): Promise<T | null> {
-    const json = await get(this._key);
+    const json = await get(this.key);
     if (!json) {
       return null;
     }

@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
+import { ReactElement, ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
 import { useQuery } from "react-query";
 import useApi from "../../api/hooks/UseApi";
 import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
@@ -18,7 +18,7 @@ interface Props {
   children: ReactNode;
 }
 
-function AuthProvider({ children }: Props) {
+function AuthProvider({ children }: Props): ReactElement {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
   const api = useApi();
 
@@ -49,7 +49,7 @@ function AuthProvider({ children }: Props) {
       dispatch({ type: "auth/logout" });
     });
 
-    return () => sub.unsubscribe();
+    return (): void => sub.unsubscribe();
   });
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

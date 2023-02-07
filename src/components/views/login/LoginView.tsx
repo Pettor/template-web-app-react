@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { useIntl } from "react-intl";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -32,7 +33,7 @@ interface Props {
   handleSignUp: () => void;
 }
 
-function LoginView({ loginForm, handleForgotPassword, handleSignUp }: Props) {
+function LoginView({ loginForm, handleForgotPassword, handleSignUp }: Props): ReactElement {
   const intl = useIntl();
 
   return (

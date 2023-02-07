@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
@@ -30,7 +31,13 @@ export interface HeaderLayoutComponents {
 
 interface Props extends HeaderLayoutProps, HeaderLayoutComponents {}
 
-export default function HeaderLayout({ headerOptions, maxWidth = "lg", sx, headerComponents, children }: Props) {
+export default function HeaderLayout({
+  headerOptions,
+  maxWidth = "lg",
+  sx,
+  headerComponents,
+  children,
+}: Props): ReactElement {
   const theme = useTheme();
   const isLgUp = useMediaQuery(theme.breakpoints.up("lg"));
 

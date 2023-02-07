@@ -1,11 +1,10 @@
-import * as React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormResetPassword } from "../../components/forms/reset-password/ResetPasswordForm";
 import ResetPasswordView from "../../components/views/login/ResetPasswordView";
 import useApi from "../../libs/api/hooks/UseApi";
 
-export default function SignIn() {
+export default function SignIn(): React.ReactElement {
   const navigate = useNavigate();
   const { post } = useApi();
 
@@ -13,11 +12,11 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [open, setOpen] = React.useState(false);
 
-  function handleAlert() {
+  function handleAlert(): void {
     setOpen(false);
   }
 
-  async function handleSubmit(data: FormResetPassword) {
+  async function handleSubmit(data: FormResetPassword): Promise<void> {
     setError("");
 
     const { email } = data;

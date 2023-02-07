@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import { SxProps, styled } from "@mui/material/styles";
@@ -27,7 +28,7 @@ interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
-export default function ContainerLayout({ sx, children }: Props) {
+export default function ContainerLayout({ sx, children }: Props): ReactElement {
   return (
     <StyledBox>
       <Container maxWidth="xs" sx={sx}>

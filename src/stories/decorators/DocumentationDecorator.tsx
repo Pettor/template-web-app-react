@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import { StoryFn } from "@storybook/react";
@@ -40,7 +41,7 @@ const StyledBox = styled(Box)(({ theme }) => ({
   zIndex: 1,
 }));
 
-export default function DocumentationDecorator(Story: StoryFn) {
+export default function DocumentationDecorator(Story: StoryFn): ReactElement {
   return (
     <>
       <LeftColorBox />

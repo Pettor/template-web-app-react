@@ -1,4 +1,4 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, ReactElement } from "react";
 import Box from "@mui/material/Box";
 import { ComponentStoryObj } from "@storybook/react";
 import Component from "./CardModal";
@@ -10,7 +10,7 @@ export default {
   title: "Layout/Modal/Card",
 };
 
-function Template(args: ComponentProps<typeof Component>) {
+function Template(args: ComponentProps<typeof Component>): ReactElement {
   return (
     <Component {...args}>
       <Box>This is content test</Box>

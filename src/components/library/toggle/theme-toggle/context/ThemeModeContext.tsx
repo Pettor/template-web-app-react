@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useMemo } from "react";
+import { ReactElement, ReactNode, createContext, useMemo } from "react";
 import { PaletteMode } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useLocalStorage } from "../../../../../libs/storage/local-storage/hooks/UseLocalStorage";
@@ -14,7 +14,7 @@ type Props = {
 
 export const ThemeModeContext = createContext<IThemeModeContext>({} as IThemeModeContext);
 
-function ThemeModeProvider({ children }: Props) {
+function ThemeModeProvider({ children }: Props): ReactElement {
   const [storedMode, setStoredMode] = useLocalStorage<PaletteMode | null>("theme-mode", null);
   const preferredMode = useMediaQuery("(prefers-color-scheme: dark)");
 
@@ -26,7 +26,7 @@ function ThemeModeProvider({ children }: Props) {
     return preferredMode ? "dark" : "light";
   }, [storedMode, preferredMode]);
 
-  function handleToggleMode(mode: PaletteMode) {
+  function handleToggleMode(mode: PaletteMode): void {
     setStoredMode(mode);
   }
 

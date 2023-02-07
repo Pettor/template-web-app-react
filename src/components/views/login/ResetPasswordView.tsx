@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { useIntl } from "react-intl";
 import Typography from "@mui/material/Typography";
 import useAppInfo from "../../../libs/app/hooks/UseAppInfo";
@@ -9,7 +10,7 @@ interface Props {
   resetForm: ResetPasswordFormProps;
 }
 
-export default function ResetPasswordView({ resetForm }: Props) {
+export default function ResetPasswordView({ resetForm }: Props): ReactElement {
   const intl = useIntl();
   const { appName } = useAppInfo();
 

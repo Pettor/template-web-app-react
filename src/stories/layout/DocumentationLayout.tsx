@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
@@ -14,7 +15,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function DocumentationLayout({ label, children }: Props) {
+export function DocumentationLayout({ label, children }: Props): ReactElement {
   return (
     <Box>
       <Typography variant="h1">{label}</Typography>

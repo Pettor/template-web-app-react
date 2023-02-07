@@ -41,7 +41,7 @@ export default class ApiWorkerCommunication {
     return new Promise<ApiResponse<T>>((resolve, reject) => {
       const messageChannel = new MessageChannel();
 
-      messageChannel.port1.onmessage = function (event: MessageEvent<ApiResponseTypes>) {
+      messageChannel.port1.onmessage = function (event: MessageEvent<ApiResponseTypes>): void {
         const { data } = event;
 
         if (isApiError(data)) {

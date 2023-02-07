@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Modal, { ModalProps } from "@mui/material/Modal";
 import { styled } from "@mui/material/styles";
@@ -25,7 +26,7 @@ const ModalBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-function ResponsiveModal(props: Props) {
+function ResponsiveModal(props: Props): ReactElement {
   const { children } = props;
 
   return (

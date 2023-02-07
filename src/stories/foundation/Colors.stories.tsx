@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { PaletteColor, styled } from "@mui/material/styles";
@@ -24,7 +24,7 @@ const Item = styled(Box)(({ theme }) => ({
   display: "flex",
 }));
 
-function ColorRow(label: string, color: PaletteColor) {
+function ColorRow(label: string, color: PaletteColor): ReactElement {
   const { contrastText, dark, light, main } = color;
   return (
     <>
@@ -46,7 +46,7 @@ function ColorRow(label: string, color: PaletteColor) {
   );
 }
 
-export function Colors() {
+export function Colors(): ReactElement {
   return (
     <DocumentationLayout label="Colors">
       <Grid container>

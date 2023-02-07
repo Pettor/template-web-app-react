@@ -1,17 +1,17 @@
 export class LocalStorage<T> {
-  private _key: string;
+  private key: string;
 
   constructor(key: string) {
-    this._key = key;
+    this.key = key;
   }
 
   set(value: T | null): void {
     const json = JSON.stringify(value);
-    return window.localStorage.setItem(this._key, json);
+    return window.localStorage.setItem(this.key, json);
   }
 
   get(): T | null {
-    const json = window.localStorage.getItem(this._key);
+    const json = window.localStorage.getItem(this.key);
     if (!json) {
       return null;
     }

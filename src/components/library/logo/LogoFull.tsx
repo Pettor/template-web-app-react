@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -15,7 +16,7 @@ interface Props {
   size: LogoFullSize;
 }
 
-export default function LogoFull({ size = "large" }: Props) {
+export default function LogoFull({ size = "large" }: Props): ReactElement {
   const { appNameCapital } = useAppInfo();
 
   return (

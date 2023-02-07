@@ -1,4 +1,5 @@
-import { IntlProvider } from "react-intl";
+import { ReactElement } from "react";
+import { IntlProvider, MessageFormatElement } from "react-intl";
 import en from "../locale/compiled/en.json";
 import sv from "../locale/compiled/sv.json";
 
@@ -8,11 +9,12 @@ interface Props {
 
 const locale = navigator.language;
 
-export default function AppLocales({ children }: Props) {
-  function loadLocaleData() {
+export default function AppLocales({ children }: Props): ReactElement {
+  function loadLocaleData(): Record<string, MessageFormatElement[]> {
     switch (locale) {
       case "sv":
         return sv;
+      case "en":
       default:
         return en;
     }

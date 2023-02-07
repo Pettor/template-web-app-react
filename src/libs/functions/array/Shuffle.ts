@@ -1,4 +1,4 @@
-export function shuffle<T>(array: Array<T>) {
+export function shuffle<T>(array: Array<T>): Array<T> {
   let currentIndex = array.length,
     randomIndex;
 

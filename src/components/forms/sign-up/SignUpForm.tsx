@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -27,7 +28,7 @@ export interface SignUpFormProps {
   onSubmit: SubmitHandler<FormSignUp>;
 }
 
-export default function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps) {
+export default function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup

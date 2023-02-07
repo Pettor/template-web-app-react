@@ -1,6 +1,6 @@
 import { getCrypto } from "../../crypto/GetCrypto";
 
-export function createVerifier() {
+export function createVerifier(): string {
   const charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_~.";
   let random = "";
   const randomValues = Array.from(getCrypto().getRandomValues(new Uint8Array(43)));

@@ -1,9 +1,10 @@
+import { ReactElement } from "react";
 import Menu from "@mui/material/Menu";
 import { MenuOptions } from "./MenuOptions";
 
 interface Props extends MenuOptions {}
 
-export default function AppMenu({ open, anchorEl, handleClose, children }: Props): JSX.Element {
+export default function AppMenu({ open, anchorEl, handleClose, children }: Props): ReactElement {
   return (
     <Menu
       id="long-menu"
