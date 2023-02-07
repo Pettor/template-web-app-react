@@ -1,6 +1,12 @@
 import { ReactElement } from "react";
 import Menu from "@mui/material/Menu";
-import { MenuOptions } from "./MenuOptions";
+
+export interface MenuOptions {
+  open: boolean;
+  anchorEl: HTMLElement | null;
+  handleClose: () => void;
+  children: JSX.Element | JSX.Element[];
+}
 
 interface Props extends MenuOptions {}
 

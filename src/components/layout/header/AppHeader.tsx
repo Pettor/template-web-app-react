@@ -1,7 +1,6 @@
-import { ComponentType, ReactElement, ReactNode, useMemo, useState } from "react";
+import { ReactElement, ReactNode, useMemo } from "react";
 import BackArrow from "@mui/icons-material/ArrowBack";
 import MuiAppBar from "@mui/material/AppBar";
-import Avatar from "@mui/material/Avatar";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
@@ -11,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
 import { joinChildren } from "../../../libs/react/JoinChildren";
 import Logo from "../../library/logo/Logo";
-import { MenuOptions } from "../menu/MenuOptions";
+import AppHeaderIconComponent from "./AppHeaderIconComponent";
 
 interface AppHeaderComponentOptions {
   flexItem?: boolean;
@@ -21,9 +20,10 @@ interface AppHeaderComponentOptions {
 export interface AppHeaderComponent {
   name: string;
   icon: ReactNode;
+  MenuNode?: ReactElement | ReactElement[];
   Node?: ReactElement | ReactElement[];
   responsive: boolean;
-  onClick?(): void;
+  onIconClick?(anchorEl: HTMLElement): void;
 }
 
 export interface AppHeaderOptions {
@@ -33,10 +33,8 @@ export interface AppHeaderOptions {
 }
 
 export interface AppHeaderComponents {
-  Menu?: ComponentType<MenuOptions>;
-  ProfileNode?: ReactElement | ReactElement[];
-  customComponents?: AppHeaderComponent[];
-  customComponentOptions?: AppHeaderComponentOptions;
+  headerComponents?: AppHeaderComponent[];
+  headerComponentOptions?: AppHeaderComponentOptions;
 }
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
@@ -59,55 +57,27 @@ export default function AppHeader({
   isMobile,
   subheader,
   label,
-  Menu,
-  ProfileNode,
-  customComponents,
-  customComponentOptions,
+  headerComponents,
+  headerComponentOptions,
   onBack,
-}: Props) {
-  const [profileAnchorEl, setProfileAnchorEl] = useState<null | HTMLElement>(null);
-  const openProfile = Boolean(profileAnchorEl);
-  const { flexItem, fill } = customComponentOptions || { flexItem: false, fill: false };
+}: Props): ReactElement {
+  const { flexItem, fill } = headerComponentOptions || { flexItem: false, fill: false };
 
-  function handleProfileClick(event: React.MouseEvent<HTMLElement>) {
-    setProfileAnchorEl(event.currentTarget);
-  }
-
-  function handleProfileClose() {
-    setProfileAnchorEl(null);
-  }
-
-  const CustomComponentsNode = useMemo(() => {
-    if (!customComponents) {
+  const HeaderComponents = useMemo(() => {
+    if (!headerComponents) {
       return <></>;
     }
 
-    return customComponents.map((component) => {
-      const { name, Node, icon, responsive, onClick } = component;
+    return headerComponents.map((component) => {
+      const { name, Node, icon, MenuNode, responsive } = component;
 
       if ((isMobile && responsive) || !Node) {
-        return (
-          <IconButton key={name} onClick={onClick}>
-            {icon}
-          </IconButton>
-        );
+        return <AppHeaderIconComponent key={name} MenuNode={MenuNode} icon={icon} />;
       }
 
       return joinChildren(Node, <Divider light orientation="vertical" flexItem />);
     });
-  }, [customComponents, isMobile, flexItem]);
-
-  const ProfileComponent = useMemo(() => {
-    if (!ProfileNode || !Menu) {
-      return <></>;
-    }
-
-    return (
-      <Menu key="app-profile-menu" open={openProfile} anchorEl={profileAnchorEl} handleClose={handleProfileClose}>
-        {ProfileNode}
-      </Menu>
-    );
-  }, [ProfileNode, openProfile]);
+  }, [headerComponents, isMobile, flexItem]);
 
   return (
     <AppBar position="fixed" elevation={1}>
@@ -125,16 +95,9 @@ export default function AppHeader({
               {label}
             </Typography>
           )}
-
           <CustomComponentsContainer flexItem={flexItem} spacing={2} direction="row" alignItems="center">
-            {CustomComponentsNode}
+            {HeaderComponents}
           </CustomComponentsContainer>
-          {!subheader && (
-            <IconButton onClick={handleProfileClick} sx={{ ml: 1 }}>
-              <Avatar sx={{ width: 32, height: 32 }} />
-            </IconButton>
-          )}
-          {ProfileComponent}
         </Container>
       </Toolbar>
     </AppBar>

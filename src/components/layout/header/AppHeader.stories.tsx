@@ -1,8 +1,11 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
+import { MenuList } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
 import { ComponentStoryObj } from "@storybook/react";
 import Search from "../../library/search/Search";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
+import AppMenu from "../menu/AppMenu";
 import Component from "./AppHeader";
 
 type Story = ComponentStoryObj<typeof Component>;
@@ -22,20 +25,26 @@ export const CustomComponents: Story = {
   args: {
     isMobile: false,
     subheader: false,
-    customComponents: [
+    headerComponents: [
       {
         name: "search",
         icon: <SearchIcon />,
         Node: <Search maxWidth="200px" />,
         responsive: true,
-        onClick: () => console.log("Search"),
+        onIconClick: () => console.log("Search"),
       },
       {
         name: "theme-toggle",
         icon: null,
         Node: <ThemeToggle defaultMode="light" onToggle={() => console.log("onToggle")} />,
         responsive: false,
-        onClick: () => console.log("Search"),
+        onIconClick: () => console.log("Search"),
+      },
+      {
+        name: "avatar",
+        icon: <Avatar sx={{ width: 32, height: 32 }} />,
+        MenuNode: <MenuList>Hej</MenuList>,
+        responsive: false,
       },
     ],
   },
@@ -51,16 +60,16 @@ export const SubHeader: Story = {
 export const SubHeaderWithSearch: Story = {
   args: {
     subheader: true,
-    customComponents: [
+    headerComponents: [
       {
         name: "Search",
         icon: <SearchIcon />,
         Node: <Search sx={{ display: "flex", flex: 1 }} />,
         responsive: false,
-        onClick: () => console.log("Search"),
+        onIconClick: () => console.log("Search"),
       },
     ],
-    customComponentOptions: {
+    headerComponentOptions: {
       flexItem: true,
       fill: true,
     },
