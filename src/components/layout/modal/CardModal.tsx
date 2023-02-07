@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -28,7 +29,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-function CardModal(props: Props) {
+function CardModal(props: Props): ReactElement {
   const { title, date, color, onClose, children } = props;
 
   return (

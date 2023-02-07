@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { ReactElement, useMemo } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { useThemeMode } from "../components/library/toggle/theme-toggle/hook/useThemeMode";
@@ -8,7 +8,7 @@ interface Props {
   children: JSX.Element | JSX.Element[];
 }
 
-export default function AppTheme({ children }: Props): JSX.Element {
+export default function AppTheme({ children }: Props): ReactElement {
   const mode = useThemeMode();
   const theme = useMemo(() => createAppTheme(mode), [mode]);
 

@@ -1,11 +1,10 @@
-import * as React from "react";
-import { useState } from "react";
+import React, { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormSignUp } from "../../components/forms/sign-up/SignUpForm";
 import SignUpView from "../../components/views/login/SignUpView";
 import useApi from "../../libs/api/hooks/UseApi";
 
-export default function SignIn() {
+export default function SignIn(): ReactElement {
   const navigate = useNavigate();
   const { post } = useApi();
 
@@ -13,11 +12,11 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [open, setOpen] = React.useState(false);
 
-  function handleAlert() {
+  function handleAlert(): void {
     setOpen(false);
   }
 
-  async function handleSubmit(data: FormSignUp) {
+  async function handleSubmit(data: FormSignUp): Promise<void> {
     setError("");
 
     try {

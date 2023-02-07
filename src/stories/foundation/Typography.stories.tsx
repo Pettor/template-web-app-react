@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Typography } from "@mui/material";
 import Box from "@mui/system/Box";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";
@@ -9,7 +9,7 @@ export default {
   decorators: [DocumentationDecorator],
 };
 
-export function Typograhy() {
+export function Typograhy(): ReactElement {
   return (
     <DocumentationLayout label="Typography">
       <Box sx={{ m: 2 }}>

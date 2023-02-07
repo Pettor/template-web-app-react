@@ -15,7 +15,7 @@ type ApiMessages =
 
 const apiClient = new ApiClient(client);
 
-async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<ApiMessages>) {
+async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<ApiMessages>): Promise<void> {
   let apiResponse: ApiResponseTypes;
 
   try {

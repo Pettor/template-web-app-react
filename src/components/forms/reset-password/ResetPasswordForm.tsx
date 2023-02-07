@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -19,7 +20,13 @@ export interface ResetPasswordFormProps {
   onSubmit: SubmitHandler<FormResetPassword>;
 }
 
-export default function ResetPasswordForm({ error, open, loading, onAlert, onSubmit }: ResetPasswordFormProps) {
+export default function ResetPasswordForm({
+  error,
+  open,
+  loading,
+  onAlert,
+  onSubmit,
+}: ResetPasswordFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup

@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormLogin } from "../../components/forms/login/LoginForm";
 import LoginView from "../../components/views/login/LoginView";
 import useAuth from "../../libs/auth/hooks/UseAuth";
 
-export default function SignIn() {
+export default function SignIn(): ReactElement {
   const navigate = useNavigate();
   const { login } = useAuth();
 
@@ -12,11 +12,11 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [open, setOpen] = useState(false);
 
-  function handleAlert() {
+  function handleAlert(): void {
     setOpen(false);
   }
 
-  async function handleSubmit(data: FormLogin) {
+  async function handleSubmit(data: FormLogin): Promise<void> {
     setError("");
 
     const { email, password } = data;
@@ -31,11 +31,11 @@ export default function SignIn() {
     }
   }
 
-  function handleForgotPassword() {
+  function handleForgotPassword(): void {
     navigate("/forgot-password");
   }
 
-  function handleSignUp() {
+  function handleSignUp(): void {
     navigate("/sign-up");
   }
 

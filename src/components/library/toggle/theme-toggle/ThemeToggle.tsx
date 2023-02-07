@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { PaletteMode } from "@mui/material";
 import Switch, { SwitchProps } from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
@@ -52,8 +53,8 @@ interface Props extends SwitchProps {
   onToggle(mode: PaletteMode): void;
 }
 
-export default function ThemeToggle({ defaultMode, onToggle, ...rest }: Props) {
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+export default function ThemeToggle({ defaultMode, onToggle, ...rest }: Props): ReactElement {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
     onToggle(event.target.checked ? "dark" : "light");
   }
 

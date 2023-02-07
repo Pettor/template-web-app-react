@@ -1,12 +1,13 @@
+import { ReactElement } from "react";
 import useProfileInfo from "../../../libs/api/hooks/UseProfileInfo";
 import useAuth from "../../../libs/auth/hooks/UseAuth";
 import ProfileCard from "./ProfileCard";
 
-export default function ProfileCardExt() {
+export default function ProfileCardExt(): ReactElement {
   const { logout } = useAuth();
   const { data } = useProfileInfo();
 
-  function handleLogout() {
+  function handleLogout(): void {
     logout();
   }
 

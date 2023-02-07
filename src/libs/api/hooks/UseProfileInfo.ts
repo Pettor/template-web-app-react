@@ -3,7 +3,12 @@ import { ProfileDto } from "../service/responses/ProfileDto";
 import { convertFromDto } from "../types/ProfileInfo";
 import useApi from "./UseApi";
 
-export default function useProfileInfo() {
+interface UseProfileInfo {
+  data: ReturnType<typeof convertFromDto> | undefined;
+  isLoading: boolean;
+}
+
+export default function useProfileInfo(): UseProfileInfo {
   const api = useApi();
 
   const { data, isLoading } = useQuery("profile", async () => {

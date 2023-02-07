@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PrivateRoutes from "./libs/routes/PrivateRoutes";
 import PublicRoutes from "./libs/routes/PublicRoutes";
@@ -7,7 +8,7 @@ import ForgotPasswordPage from "./pages/login/ForgotPasswordPage";
 import LoginPage from "./pages/login/LoginPage";
 import SignUpPage from "./pages/login/SignUpPage";
 
-export default function AppRoutes() {
+export default function AppRoutes(): ReactElement {
   return (
     <BrowserRouter>
       <Routes>

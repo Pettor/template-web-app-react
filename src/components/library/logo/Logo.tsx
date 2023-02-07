@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 
@@ -7,7 +8,7 @@ export interface LogoProps {
 
 interface Props extends LogoProps {}
 
-export default function Logo({ size = "large" }: Props): JSX.Element {
+export default function Logo({ size = "large" }: Props): ReactElement {
   const theme = useTheme();
 
   let xy = 80;

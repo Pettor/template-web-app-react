@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { useIntl } from "react-intl";
 import SearchIcon from "@mui/icons-material/Search";
 import Box, { BoxProps } from "@mui/material/Box";
@@ -50,7 +51,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 interface Props extends BoxProps {}
 
-export default function Search({ ...boxProps }: Props) {
+export default function Search({ ...boxProps }: Props): ReactElement {
   const intl = useIntl();
   return (
     <StyledSearch {...boxProps}>

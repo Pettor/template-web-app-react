@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { useIntl } from "react-intl";
 import Typography from "@mui/material/Typography";
 import SignUpForm, { SignUpFormProps } from "../../forms/sign-up/SignUpForm";
@@ -8,7 +9,7 @@ interface Props {
   signUpForm: SignUpFormProps;
 }
 
-export default function SignUpView({ signUpForm }: Props) {
+export default function SignUpView({ signUpForm }: Props): ReactElement {
   const intl = useIntl();
 
   return (

@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import AppLocales from "./AppLocales";
 import AppRoutes from "./AppRoutes";
@@ -8,7 +9,7 @@ import AppTheme from "./theme/AppTheme";
 
 const queryClient = new QueryClient();
 
-export default function App() {
+export default function App(): ReactElement {
   typeof window !== "undefined" && validateCrypto();
 
   return (

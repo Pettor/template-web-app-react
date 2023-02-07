@@ -48,6 +48,7 @@
         "allowSingleExtends": true
       }
     ],
+    "@typescript-eslint/explicit-function-return-type": "error",
     // Plugins
     "prettier/prettier": "error",
     "formatjs/enforce-id": [

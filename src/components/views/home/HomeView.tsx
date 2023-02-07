@@ -1,4 +1,4 @@
-import { ComponentType } from "react";
+import { ComponentType, ReactElement } from "react";
 import { useIntl } from "react-intl";
 import BackendIcon from "@mui/icons-material/Dns";
 import OptimizedIcon from "@mui/icons-material/ElectricBolt";
@@ -65,10 +65,10 @@ const GradientTypography = styled("span")(({ theme }) => ({
 
 interface Props extends HeaderLayoutComponents {}
 
-export default function HomeView({ ...rest }: Props) {
+export default function HomeView({ ...rest }: Props): ReactElement {
   const intl = useIntl();
 
-  function renderGridItem(Icon: ComponentType, heading: string, description: string) {
+  function renderGridItem(Icon: ComponentType, heading: string, description: string): ReactElement {
     return (
       <GridItem>
         <Icon />

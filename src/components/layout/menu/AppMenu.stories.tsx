@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import { ComponentStoryObj } from "@storybook/react";
 import Component from "./AppMenu";
@@ -10,7 +10,7 @@ export default {
   title: "Layout/Menu",
 };
 
-function Template(args) {
+function Template(args): ReactElement {
   return (
     <Component {...args}>
       <MenuItem>Content</MenuItem>

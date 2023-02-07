@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -11,7 +12,7 @@ const GridItem = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export function ContentComponent() {
+export function ContentComponent(): ReactElement {
   return (
     <Container maxWidth="xl">
       <Box>
