@@ -57,5 +57,14 @@
         "idInterpolationPattern": "[sha512:contenthash:base64:6]"
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      // Disable for Storybook
+      "files": ["*stories.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    }
+  ]
 }
