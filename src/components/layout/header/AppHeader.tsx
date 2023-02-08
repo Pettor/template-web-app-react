@@ -1,15 +1,22 @@
-import { ReactElement, ReactNode, useMemo } from "react";
+import { Key, ReactElement, useMemo } from "react";
 import BackArrow from "@mui/icons-material/ArrowBack";
 import MuiAppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
+import { styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
-import { joinChildren } from "../../../libs/react/JoinChildren";
 import Logo from "../../library/logo/Logo";
+import {
+  HeaderComponent,
+  IconHeaderComponent,
+  isClickableIconComponent,
+  isIconComponent,
+  isStaticComponent,
+} from "./AppHeaderComponent";
 import AppHeaderIconComponent from "./AppHeaderIconComponent";
 
 interface AppHeaderComponentOptions {
@@ -18,12 +25,8 @@ interface AppHeaderComponentOptions {
 }
 
 export interface AppHeaderComponent {
-  name: string;
-  icon: ReactNode;
-  MenuNode?: ReactElement | ReactElement[];
-  Node?: ReactElement | ReactElement[];
-  responsive: boolean;
-  onIconClick?(anchorEl: HTMLElement): void;
+  key: Key;
+  component: HeaderComponent;
 }
 
 export interface AppHeaderOptions {
@@ -53,12 +56,52 @@ interface Props extends AppHeaderComponents, AppHeaderOptions {
   isMobile?: boolean;
 }
 
+function parseIconComponent(key: Key, iconComponent: IconHeaderComponent): ReactElement | ReactElement[] {
+  if (isClickableIconComponent(iconComponent)) {
+    const { icon, onIconClick } = iconComponent;
+    return (
+      <IconButton key={key} onClick={onIconClick}>
+        {icon}
+      </IconButton>
+    );
+  }
+
+  const { icon, MenuNode } = iconComponent;
+  return <AppHeaderIconComponent key={key} icon={icon} MenuNode={MenuNode} />;
+}
+
+function parseComponent(key: Key, component?: HeaderComponent, isMobile = false): ReactElement | ReactElement[] {
+  if (!component) {
+    console.log("ME GONE");
+    return <></>;
+  }
+
+  if (isStaticComponent(component)) {
+    return (
+      <Box key={key} sx={{ width: "-webkit-fill-available" }}>
+        {component}
+      </Box>
+    );
+  }
+
+  if (isIconComponent(component)) {
+    return parseIconComponent(key, component);
+  }
+
+  const { mobile, desktop } = component;
+  if (isMobile) {
+    return parseComponent(key, mobile);
+  }
+
+  return parseComponent(key, desktop);
+}
+
 export default function AppHeader({
   isMobile,
   subheader,
   label,
-  headerComponents,
-  headerComponentOptions,
+  headerComponents: headerComponents,
+  headerComponentOptions: headerComponentOptions,
   onBack,
 }: Props): ReactElement {
   const { flexItem, fill } = headerComponentOptions || { flexItem: false, fill: false };
@@ -69,15 +112,10 @@ export default function AppHeader({
     }
 
     return headerComponents.map((component) => {
-      const { name, Node, icon, MenuNode, responsive } = component;
-
-      if ((isMobile && responsive) || !Node) {
-        return <AppHeaderIconComponent key={name} MenuNode={MenuNode} icon={icon} />;
-      }
-
-      return joinChildren(Node, <Divider light orientation="vertical" flexItem />);
+      const { key, component: headerComponent } = component;
+      return parseComponent(key, headerComponent, isMobile ?? false);
     });
-  }, [headerComponents, isMobile, flexItem]);
+  }, [headerComponents, isMobile]);
 
   return (
     <AppBar position="fixed" elevation={1}>

@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -40,7 +41,7 @@ interface Props extends CardProps {
   onLogout?(): void;
 }
 
-export default function ProfileCard({ name, email, isMobile, onLogout, ...cardProps }: Props) {
+export default function ProfileCard({ name, email, isMobile, onLogout, ...cardProps }: Props): ReactElement {
   return (
     <StyledCard isMobile={isMobile} {...cardProps}>
       <CardContent>
