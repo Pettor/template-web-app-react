@@ -1,6 +1,4 @@
 import { ReactElement } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { useIntl } from "react-intl";
 import { yupResolver } from "@hookform/resolvers/yup";
 import CloseIcon from "@mui/icons-material/Close";
 import LoadingButton from "@mui/lab/LoadingButton";
@@ -8,6 +6,8 @@ import Alert from "@mui/material/Alert";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useIntl } from "react-intl";
 import * as yup from "yup";
 
 export interface FormSignUp {

@@ -1,13 +1,13 @@
 import { ComponentType, ReactElement } from "react";
-import { useIntl } from "react-intl";
 import BackendIcon from "@mui/icons-material/Dns";
 import OptimizedIcon from "@mui/icons-material/ElectricBolt";
 import LayersIcon from "@mui/icons-material/Layers";
 import StorybookIcon from "@mui/icons-material/Palette";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import { useIntl } from "react-intl";
 import HeaderLayout, { HeaderLayoutComponents } from "../../layout/templates/HeaderLayout";
 
 const LeftColorBox = styled(Box)(() => ({

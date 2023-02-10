@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
-import { useIntl } from "react-intl";
 import SearchIcon from "@mui/icons-material/Search";
 import Box, { BoxProps } from "@mui/material/Box";
 import InputBase from "@mui/material/InputBase";
 import { alpha, styled } from "@mui/material/styles";
+import { useIntl } from "react-intl";
 
 const StyledSearch = styled(Box)(({ theme }) => ({
   color: theme.palette.text.secondary,
