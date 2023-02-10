@@ -10,8 +10,8 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Skeleton from "@mui/material/Skeleton";
-import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 
 const StyledCard = styled(Card)(() => ({
   height: "100%",

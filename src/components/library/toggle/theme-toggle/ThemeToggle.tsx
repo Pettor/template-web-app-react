@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { PaletteMode } from "@mui/material";
-import Switch, { SwitchProps } from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
+import Switch, { SwitchProps } from "@mui/material/Switch";
 import MoonSvg from "./svg/Moon.svg";
 import SunSvg from "./svg/Sun.svg";
 

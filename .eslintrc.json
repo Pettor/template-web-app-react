@@ -22,7 +22,7 @@
       "version": "detect"
     }
   },
-  "plugins": ["react", "@typescript-eslint", "prettier", "formatjs"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "formatjs", "import"],
   "rules": {
     // Common
     "no-restricted-imports": [
@@ -31,7 +31,24 @@
         "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
       }
     ],
-    "import/no-unresolved": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ],
     "func-style": ["error", "declaration", { "allowArrowFunctions": false }],
     // React
     "react/react-in-jsx-scope": "off",

@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
-import { useIntl } from "react-intl";
 import Typography from "@mui/material/Typography";
+import { useIntl } from "react-intl";
 import useAppInfo from "../../../libs/app/hooks/UseAppInfo";
 import ResetPasswordForm, { ResetPasswordFormProps } from "../../forms/reset-password/ResetPasswordForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";

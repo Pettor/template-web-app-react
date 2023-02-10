@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import { PaletteColor, styled } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
 import CreateAppTheme from "../../theme/Theme";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";

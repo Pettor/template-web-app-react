@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Toolbar from "@mui/material/Toolbar";
 import { Breakpoint, SxProps, Theme, styled, useTheme } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import AppHeader, { AppHeaderComponents, AppHeaderOptions } from "../header/AppHeader";
 
