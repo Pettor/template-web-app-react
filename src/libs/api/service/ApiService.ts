@@ -19,7 +19,12 @@ export async function tokenRefresh(client: AxiosInstance): Promise<AxiosResponse
   return await client.get<TokenDto>("/api/tokens/refresh", defaultConfig);
 }
 
-export async function createPostRequest(client: AxiosInstance, url: string, token: JwtToken, data: unknown) {
+export async function createPostRequest(
+  client: AxiosInstance,
+  url: string,
+  token: JwtToken,
+  data: unknown
+): Promise<AxiosResponse> {
   const config: RawAxiosRequestConfig = {
     ...defaultConfig,
     headers: { ...defaultHeaders, Authorization: `Bearer ${token}` },
@@ -28,7 +33,7 @@ export async function createPostRequest(client: AxiosInstance, url: string, toke
   return await client.post(url, data, config);
 }
 
-export async function createGetRequest(client: AxiosInstance, url: string, token: JwtToken) {
+export async function createGetRequest(client: AxiosInstance, url: string, token: JwtToken): Promise<AxiosResponse> {
   const config: RawAxiosRequestConfig = {
     ...defaultConfig,
     headers: { ...defaultHeaders, Authorization: `Bearer ${token}` },

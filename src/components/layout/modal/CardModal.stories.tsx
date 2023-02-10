@@ -1,15 +1,15 @@
-import type { ComponentProps, ReactElement } from "react";
-import React from "react";
+import { ComponentProps, ReactElement } from "react";
 import Box from "@mui/material/Box";
-import type { ComponentStoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import Component from "./CardModal";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Modal/Card",
-};
+} satisfies Meta<typeof Component>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 function Template(args: ComponentProps<typeof Component>): ReactElement {
   return (
@@ -19,11 +19,11 @@ function Template(args: ComponentProps<typeof Component>): ReactElement {
   );
 }
 
-export const Card: Story = {
+export const Card = {
   render: Template,
   args: {
     open: true,
     title: "Card Modal",
     date: new Date(Date.now()),
   },
-};
+} satisfies Story;
