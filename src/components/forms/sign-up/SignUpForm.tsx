@@ -69,7 +69,7 @@ export default function SignUpForm({ error, open, loading, onAlert, onSubmit }: 
           })
         ),
       passwordConfirmation: yup.string().oneOf(
-        [yup.ref("password"), null],
+        [yup.ref("password")],
         intl.formatMessage({
           description: "SignUpFormValidation - Passwords must match",
           defaultMessage: "Passwords must match",
