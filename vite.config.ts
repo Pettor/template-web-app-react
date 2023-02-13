@@ -5,8 +5,7 @@ import mkcert from "vite-plugin-mkcert";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, command }) => {
-  const envs = loadEnv(mode, process.cwd());
-  process.env = { ...process.env, ...envs };
+  const env = loadEnv(mode, process.cwd(), "");
 
   const commonConfig = {
     plugins: [react()],
@@ -24,11 +23,11 @@ export default defineConfig(({ mode, command }) => {
         plugins: [
           ...commonConfig.plugins,
           mkcert({
-            savePath: "C:\\ProgramData\\mkcert",
+            savePath: env.MKCERT_SAVE_PATH,
           }),
           proxy({
             "^/api": {
-              target: `http://${process.env.VITE_CONNECT_HOST}:${process.env.VITE_CONNECT_PORT}`,
+              target: `http://${env.VITE_CONNECT_HOST}:${env.VITE_CONNECT_PORT}`,
               secure: false,
             },
           }),
