@@ -9,7 +9,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "@typescript-eslint", "prettier", "formatjs", "import", "unused-imports"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "formatjs", "import"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -66,17 +66,6 @@
       }
     ],
     "@typescript-eslint/explicit-function-return-type": "error",
-    "no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
-    ],
     // Plugins
     "prettier/prettier": "error",
     "formatjs/enforce-id": [
