@@ -1,6 +1,7 @@
 import { ReactElement, ReactNode, useState } from "react";
+import { Box } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-import AppMenu from "../menu/AppMenu";
+import AppMenuResponsive from "../menu/AppMenuResponsive";
 
 interface Props {
   icon: ReactNode;
@@ -19,13 +20,13 @@ export default function AppHeaderIconComponent({ icon, MenuNode }: Props): React
   }
 
   return (
-    <>
+    <Box>
       <IconButton onClick={handleClick}>{icon}</IconButton>
       {anchorEl && MenuNode && (
-        <AppMenu anchorEl={anchorEl} open={!!anchorEl} handleClose={handleClose}>
+        <AppMenuResponsive anchorEl={anchorEl} open={!!anchorEl} handleClose={handleClose}>
           {MenuNode}
-        </AppMenu>
+        </AppMenuResponsive>
       )}
-    </>
+    </Box>
   );
 }

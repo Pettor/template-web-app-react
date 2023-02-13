@@ -20,8 +20,14 @@ interface StyledCardProps {
 const StyledCard = styled(Card, {
   shouldForwardProp: (prop) => prop !== "isMobile",
 })<StyledCardProps>(({ isMobile }) => ({
-  height: "100%",
+  height: "auto",
   width: isMobile ? "100vw" : 275,
+}));
+
+const StyledCardContent = styled(CardContent, {
+  shouldForwardProp: (prop) => prop !== "isMobile",
+})<StyledCardProps>(({ isMobile }) => ({
+  paddingTop: isMobile ? 0 : 16,
 }));
 
 const AvatarBox = styled(Box)(() => ({
@@ -43,8 +49,8 @@ interface Props extends CardProps {
 
 export default function ProfileCard({ name, email, isMobile, onLogout, ...cardProps }: Props): ReactElement {
   return (
-    <StyledCard isMobile={isMobile} {...cardProps}>
-      <CardContent>
+    <StyledCard isMobile={isMobile} {...cardProps} elevation={isMobile ? 0 : 1}>
+      <StyledCardContent isMobile={isMobile}>
         <Typography variant="h6" gutterBottom>
           Personal
         </Typography>
@@ -68,7 +74,7 @@ export default function ProfileCard({ name, email, isMobile, onLogout, ...cardPr
           </Grid>
         </Grid>
         <Divider />
-      </CardContent>
+      </StyledCardContent>
       <MenuBox>
         <MenuItem onClick={onLogout}>
           <ListItemIcon>

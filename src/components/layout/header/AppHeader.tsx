@@ -46,7 +46,7 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
   backdropFilter: "saturate(50%) blur(8px)",
 }));
 
-const CustomComponentsContainer = styled(Stack, {
+const CustomComponentsStack = styled(Stack, {
   shouldForwardProp: (prop) => prop !== "flexItem",
 })<AppHeaderComponentOptions>(({ flexItem }) => ({
   flex: flexItem ? 1 : "none",
@@ -72,7 +72,6 @@ function parseIconComponent(key: Key, iconComponent: IconHeaderComponent): React
 
 function parseComponent(key: Key, component?: HeaderComponent, isMobile = false): ReactElement | ReactElement[] {
   if (!component) {
-    console.log("ME GONE");
     return <></>;
   }
 
@@ -133,9 +132,9 @@ export default function AppHeader({
               {label}
             </Typography>
           )}
-          <CustomComponentsContainer flexItem={flexItem} spacing={2} direction="row" alignItems="center">
+          <CustomComponentsStack flexItem={flexItem} spacing={2} direction="row" alignItems="center">
             {HeaderComponents}
-          </CustomComponentsContainer>
+          </CustomComponentsStack>
         </Container>
       </Toolbar>
     </AppBar>

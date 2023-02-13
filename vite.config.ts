@@ -23,7 +23,9 @@ export default defineConfig(({ mode, command }) => {
         ...commonConfig,
         plugins: [
           ...commonConfig.plugins,
-          mkcert(),
+          mkcert({
+            savePath: "C:\\ProgramData\\mkcert",
+          }),
           proxy({
             "^/api": {
               target: `http://${process.env.VITE_CONNECT_HOST}:${process.env.VITE_CONNECT_PORT}`,
