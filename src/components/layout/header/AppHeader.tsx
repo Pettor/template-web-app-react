@@ -1,20 +1,33 @@
-import { ComponentType, ReactElement, useMemo, useState } from "react";
+import { Key, ReactElement, useMemo } from "react";
 import BackArrow from "@mui/icons-material/ArrowBack";
-import AvatarIcon from "@mui/icons-material/Person";
 import MuiAppBar from "@mui/material/AppBar";
-import Badge from "@mui/material/Badge";
+import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Logo from "../../library/logo/Logo";
-import Search from "../../library/search/Search";
-import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggleExt";
-import { MenuOptions } from "../menu/MenuOptions";
+import {
+  HeaderComponent,
+  IconHeaderComponent,
+  isClickableIconComponent,
+  isIconComponent,
+  isStaticComponent,
+} from "./AppHeaderComponent";
+import AppHeaderIconComponent from "./AppHeaderIconComponent";
+
+interface AppHeaderComponentOptions {
+  flexItem?: boolean;
+  fill?: boolean;
+}
+
+export interface AppHeaderComponent {
+  key: Key;
+  component: HeaderComponent;
+}
 
 export interface AppHeaderOptions {
   subheader?: boolean;
@@ -23,8 +36,8 @@ export interface AppHeaderOptions {
 }
 
 export interface AppHeaderComponents {
-  Menu: ComponentType<MenuOptions>;
-  ProfileNode: ReactElement | ReactElement[];
+  headerComponents?: AppHeaderComponent[];
+  headerComponentOptions?: AppHeaderComponentOptions;
 }
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
@@ -33,60 +46,95 @@ const AppBar = styled(MuiAppBar)(({ theme }) => ({
   backdropFilter: "saturate(50%) blur(8px)",
 }));
 
-interface Props extends AppHeaderComponents, AppHeaderOptions {}
+const CustomComponentsStack = styled(Stack, {
+  shouldForwardProp: (prop) => prop !== "flexItem",
+})<AppHeaderComponentOptions>(({ flexItem }) => ({
+  flex: flexItem ? 1 : "none",
+}));
 
-export default function AppHeader({ subheader, label, Menu, ProfileNode, onBack }: Props): ReactElement {
-  const [profileAnchorEl, setProfileAnchorEl] = useState<null | HTMLElement>(null);
-  const openProfile = Boolean(profileAnchorEl);
-  const theme = useTheme();
-  const isSmUp = useMediaQuery(theme.breakpoints.up("sm"));
+interface Props extends AppHeaderComponents, AppHeaderOptions {
+  isMobile?: boolean;
+}
 
-  function handleProfileClick(event: React.MouseEvent<HTMLElement>): void {
-    setProfileAnchorEl(event.currentTarget);
+function parseIconComponent(key: Key, iconComponent: IconHeaderComponent): ReactElement | ReactElement[] {
+  if (isClickableIconComponent(iconComponent)) {
+    const { icon, onIconClick } = iconComponent;
+    return (
+      <IconButton key={key} onClick={onIconClick}>
+        {icon}
+      </IconButton>
+    );
   }
 
-  function handleProfileClose(): void {
-    setProfileAnchorEl(null);
+  const { icon, MenuNode } = iconComponent;
+  return <AppHeaderIconComponent key={key} icon={icon} MenuNode={MenuNode} />;
+}
+
+function parseComponent(key: Key, component?: HeaderComponent, isMobile = false): ReactElement | ReactElement[] {
+  if (!component) {
+    return <></>;
   }
 
-  const ProfileComponent = useMemo(() => {
-    if (!ProfileNode) {
+  if (isStaticComponent(component)) {
+    return (
+      <Box key={key} sx={{ width: "-webkit-fill-available" }}>
+        {component}
+      </Box>
+    );
+  }
+
+  if (isIconComponent(component)) {
+    return parseIconComponent(key, component);
+  }
+
+  const { mobile, desktop } = component;
+  if (isMobile) {
+    return parseComponent(key, mobile);
+  }
+
+  return parseComponent(key, desktop);
+}
+
+export default function AppHeader({
+  isMobile,
+  subheader,
+  label,
+  headerComponents: headerComponents,
+  headerComponentOptions: headerComponentOptions,
+  onBack,
+}: Props): ReactElement {
+  const { flexItem, fill } = headerComponentOptions || { flexItem: false, fill: false };
+
+  const HeaderComponents = useMemo(() => {
+    if (!headerComponents) {
       return <></>;
     }
 
-    return (
-      <Menu key="app-profile-menu" open={openProfile} anchorEl={profileAnchorEl} handleClose={handleProfileClose}>
-        {ProfileNode}
-      </Menu>
-    );
-  }, [ProfileNode, openProfile]);
+    return headerComponents.map((component) => {
+      const { key, component: headerComponent } = component;
+      return parseComponent(key, headerComponent, isMobile ?? false);
+    });
+  }, [headerComponents, isMobile]);
 
   return (
     <AppBar position="fixed" elevation={1}>
       <Toolbar disableGutters>
         <Container maxWidth="lg" sx={{ display: "flex", alignItems: "center" }}>
-          {!subheader && isSmUp && <Logo size="small" />}
+          {!subheader && <Logo size="small" />}
           {subheader && (
             <IconButton onClick={onBack}>
               <BackArrow />
             </IconButton>
           )}
-          <Divider sx={{ mx: 1 }} />
-          <Typography component="h1" variant="h6" color="primary" noWrap sx={{ flexGrow: 1 }}>
-            {label}
-          </Typography>
-          <Stack spacing={1} direction="row" alignItems="center">
-            {isSmUp && <Search sx={{ mr: 2 }} />}
-            <Divider light orientation="vertical" flexItem />
-            <ThemeToggle />
-            <Divider light orientation="vertical" flexItem />
-            <IconButton onClick={handleProfileClick}>
-              <Badge color="info">
-                <AvatarIcon color="primary" />
-              </Badge>
-            </IconButton>
-            {ProfileComponent}
-          </Stack>
+          <Divider sx={{ mx: 1, display: isMobile ? "none" : "flex" }} />
+          {!fill && (
+            <Typography component="h1" variant="h6" color="primary" noWrap sx={{ flexGrow: 1 }}>
+              {label}
+            </Typography>
+          )}
+          <CustomComponentsStack flexItem={flexItem} spacing={2} direction="row" alignItems="center">
+            {HeaderComponents}
+          </CustomComponentsStack>
         </Container>
       </Toolbar>
     </AppBar>

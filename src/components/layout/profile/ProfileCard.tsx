@@ -13,9 +13,21 @@ import Skeleton from "@mui/material/Skeleton";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 
-const StyledCard = styled(Card)(() => ({
-  height: "100%",
-  width: 275,
+interface StyledCardProps {
+  isMobile?: boolean;
+}
+
+const StyledCard = styled(Card, {
+  shouldForwardProp: (prop) => prop !== "isMobile",
+})<StyledCardProps>(({ isMobile }) => ({
+  height: "auto",
+  width: isMobile ? "100vw" : 275,
+}));
+
+const StyledCardContent = styled(CardContent, {
+  shouldForwardProp: (prop) => prop !== "isMobile",
+})<StyledCardProps>(({ isMobile }) => ({
+  paddingTop: isMobile ? 0 : 16,
 }));
 
 const AvatarBox = styled(Box)(() => ({
@@ -31,13 +43,14 @@ const MenuBox = styled(Box)(({ theme }) => ({
 interface Props extends CardProps {
   name?: string;
   email?: string;
+  isMobile: boolean;
   onLogout?(): void;
 }
 
-export default function ProfileCard({ name, email, onLogout, ...cardProps }: Props): ReactElement {
+export default function ProfileCard({ name, email, isMobile, onLogout, ...cardProps }: Props): ReactElement {
   return (
-    <StyledCard {...cardProps}>
-      <CardContent>
+    <StyledCard isMobile={isMobile} {...cardProps} elevation={isMobile ? 0 : 1}>
+      <StyledCardContent isMobile={isMobile}>
         <Typography variant="h6" gutterBottom>
           Personal
         </Typography>
@@ -61,7 +74,7 @@ export default function ProfileCard({ name, email, onLogout, ...cardProps }: Pro
           </Grid>
         </Grid>
         <Divider />
-      </CardContent>
+      </StyledCardContent>
       <MenuBox>
         <MenuItem onClick={onLogout}>
           <ListItemIcon>

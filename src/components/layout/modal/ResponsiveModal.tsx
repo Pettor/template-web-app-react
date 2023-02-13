@@ -14,7 +14,7 @@ const ModalBox = styled(Box)(({ theme }) => ({
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  background: theme.palette.common.white,
+  background: theme.palette.background.default,
   borderRadius: theme.borderRadius.default,
 
   [theme.breakpoints.down("md")]: {

@@ -25,25 +25,17 @@ export interface HeaderLayoutProps {
   children: JSX.Element | JSX.Element[];
 }
 
-export interface HeaderLayoutComponents {
-  headerComponents: AppHeaderComponents;
-}
+export interface HeaderLayoutComponents extends AppHeaderComponents {}
 
 interface Props extends HeaderLayoutProps, HeaderLayoutComponents {}
 
-export default function HeaderLayout({
-  headerOptions,
-  maxWidth = "lg",
-  sx,
-  headerComponents,
-  children,
-}: Props): ReactElement {
+export default function HeaderLayout({ maxWidth = "lg", sx, children, ...headerProps }: Props): ReactElement {
   const theme = useTheme();
   const isLgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <StyledBox sx={{ ...sx }}>
-      <AppHeader {...headerComponents} {...headerOptions} />
+      <AppHeader {...headerProps} />
       <Box
         sx={{
           flexGrow: 1,

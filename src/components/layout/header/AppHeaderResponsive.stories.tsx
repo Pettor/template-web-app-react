@@ -1,12 +1,12 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { MenuList } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
 import { ComponentStoryObj } from "@storybook/react";
 import Search from "../../library/search/Search";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
-import Component from "./AppHeader";
+import Component from "./AppHeaderResponsive";
 
 type Story = ComponentStoryObj<typeof Component>;
 
@@ -15,53 +15,25 @@ export default {
   title: "Layout/Header",
 };
 
-export const AppHeader: Story = {
+export const Responsive: Story = {
   args: {
     label: "This is a Header",
-  },
-};
-
-export const SubHeader: Story = {
-  args: {
-    subheader: true,
-    label: "This is a SubHeader",
-  },
-};
-
-export const SubHeaderWithSearch: Story = {
-  args: {
-    subheader: true,
-    headerComponents: [
-      {
-        key: "Search",
-        component: <Search width="100%" />,
-      },
-    ],
-    headerComponentOptions: {
-      flexItem: true,
-      fill: true,
-    },
-  },
-};
-
-export const HeaderComponents: Story = {
-  args: {
-    isMobile: false,
-    subheader: false,
     headerComponents: [
       {
         key: "search",
         component: {
           mobile: {
             icon: <SearchIcon />,
-            onIconClick: () => console.log("Search"),
+            onIconClick: () => console.log("onSearch"),
           },
           desktop: <Search maxWidth="200px" />,
         },
       },
       {
         key: "theme-toggle",
-        component: <ThemeToggle defaultMode="light" onToggle={() => console.log("onToggle")} />,
+        component: {
+          desktop: <ThemeToggle defaultMode="light" onToggle={() => console.log("onToggle")} />,
+        },
       },
       {
         key: "avatar",

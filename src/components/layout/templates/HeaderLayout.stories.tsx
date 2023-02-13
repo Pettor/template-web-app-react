@@ -1,8 +1,9 @@
 import React from "react";
-import { MenuItem } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
 import { ComponentStoryObj } from "@storybook/react";
 import { ContentComponent } from "../../../stories/data/ContentData";
-import AppMenu from "../menu/AppMenu";
+import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
+import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./HeaderLayout";
 
 type Story = ComponentStoryObj<typeof Component>;
@@ -18,9 +19,18 @@ export const HeaderLayout: Story = {
       label: "This is a Header",
     },
     children: <ContentComponent />,
-    headerComponents: {
-      Menu: AppMenu,
-      ProfileNode: <MenuItem>Content</MenuItem>,
-    },
+    headerComponents: [
+      {
+        key: "theme-toggle",
+        component: <ThemeToggle defaultMode="light" onToggle={() => console.log("onToggle")} />,
+      },
+      {
+        key: "avatar",
+        component: {
+          icon: <Avatar sx={{ width: 32, height: 32 }} />,
+          MenuNode: <ProfileCardResponsive />,
+        },
+      },
+    ],
   },
 };

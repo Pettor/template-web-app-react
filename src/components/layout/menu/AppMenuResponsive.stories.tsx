@@ -1,8 +1,7 @@
 import React from "react";
-import MenuItem from "@mui/material/MenuItem";
 import { ComponentStoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
-import Component from "./AppMenu";
+import Component from "./AppMenuResponsive";
 
 type Story = ComponentStoryObj<typeof Component>;
 
@@ -11,18 +10,7 @@ export default {
   title: "Layout/Menu",
 };
 
-export const WithContent: Story = {
-  render: (args) => (
-    <Component {...args}>
-      <MenuItem>Content</MenuItem>
-    </Component>
-  ),
-  args: {
-    open: true,
-  },
-};
-
-export const WithProfileCard: Story = {
+export const Responsive: Story = {
   render: (args) => (
     <Component {...args}>
       <ProfileCardResponsive />

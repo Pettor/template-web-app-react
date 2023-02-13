@@ -16,13 +16,9 @@ const StyledSearch = styled(Box)(({ theme }) => ({
   marginLeft: 0,
   width: "100%",
   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
 }));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
+const SearchIconWrapper = styled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
   position: "absolute",
