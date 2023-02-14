@@ -23,7 +23,7 @@ export default defineConfig(({ mode, command }) => {
         plugins: [
           ...commonConfig.plugins,
           mkcert({
-            savePath: env.MKCERT_SAVE_PATH,
+            savePath: env.MKCERT_SAVE_PATH || undefined,
           }),
           proxy({
             "^/api": {
