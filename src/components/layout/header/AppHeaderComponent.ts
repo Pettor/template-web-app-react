@@ -1,4 +1,19 @@
-import { ReactElement, ReactNode } from "react";
+import { Key, ReactElement, ReactNode } from "react";
+
+export interface AppHeaderComponentOptions {
+  flexItem?: boolean;
+  fill?: boolean;
+}
+
+export interface AppHeaderComponent {
+  key: Key;
+  component: HeaderComponent;
+}
+
+export interface AppHeaderComponents {
+  headerComponents?: AppHeaderComponent[];
+  headerComponentOptions?: AppHeaderComponentOptions;
+}
 
 export interface ClickableIconHeaderComponent {
   icon: ReactNode;

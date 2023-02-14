@@ -4,7 +4,8 @@ import Container from "@mui/material/Container";
 import { Breakpoint, SxProps, Theme, styled, useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import AppHeader, { AppHeaderComponents, AppHeaderOptions } from "../header/AppHeader";
+import AppHeader, { AppHeaderOptions } from "../header/AppHeader";
+import { AppHeaderComponents } from "../header/AppHeaderComponent";
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",
