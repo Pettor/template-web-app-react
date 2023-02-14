@@ -1,12 +1,11 @@
 import { ReactElement } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import CloseIcon from "@mui/icons-material/Close";
 import { LoadingButton } from "@mui/lab";
-import { Alert, Collapse, IconButton } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import * as yup from "yup";
+import LocalAlert from "../../library/alert/LocalAlert";
 
 export interface FormResetPassword {
   email: string;
@@ -14,19 +13,11 @@ export interface FormResetPassword {
 
 export interface ResetPasswordFormProps {
   error: string;
-  open: boolean;
   loading: boolean;
-  onAlert: () => void;
   onSubmit: SubmitHandler<FormResetPassword>;
 }
 
-export default function ResetPasswordForm({
-  error,
-  open,
-  loading,
-  onAlert,
-  onSubmit,
-}: ResetPasswordFormProps): ReactElement {
+export default function ResetPasswordForm({ error, loading, onSubmit }: ResetPasswordFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup
@@ -73,19 +64,7 @@ export default function ResetPasswordForm({
       <LoadingButton type="submit" fullWidth loading={loading} variant="outlined" sx={{ mt: 3, mb: 2 }}>
         Send
       </LoadingButton>
-      <Collapse in={open && !!error}>
-        <Alert
-          severity="error"
-          action={
-            <IconButton aria-label="close" color="inherit" size="small" onClick={onAlert}>
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
-          }
-          sx={{ mb: 2 }}
-        >
-          {error}
-        </Alert>
-      </Collapse>
+      <LocalAlert text={error} />
     </form>
   );
 }

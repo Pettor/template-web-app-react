@@ -1,4 +1,6 @@
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { FormLogin } from "../../components/forms/login/LoginForm";
 import LoginView from "../../components/views/login/LoginView";
@@ -6,29 +8,26 @@ import useAuth from "../../libs/auth/hooks/UseAuth";
 
 export default function SignIn(): ReactElement {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login: loginAuth } = useAuth();
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [open, setOpen] = useState(false);
+  const {
+    error,
+    isLoading,
+    mutate: login,
+  } = useMutation<void, AxiosError, FormLogin>({
+    mutationFn: async (data: FormLogin) => {
+      const { email, password } = data;
+      await loginAuth({ email, password });
+    },
+    onSuccess: () => {
+      navigate("/");
+    },
+  });
 
-  function handleAlert(): void {
-    setOpen(false);
-  }
+  const { message: errorMessage } = error ?? { message: "" };
 
   async function handleSubmit(data: FormLogin): Promise<void> {
-    setError("");
-
-    const { email, password } = data;
-    try {
-      setLoading(true);
-      await login({ email, password });
-      navigate("/");
-    } catch (error) {
-      setError((error as Error).message);
-      setOpen(true);
-      setLoading(false);
-    }
+    login(data);
   }
 
   function handleForgotPassword(): void {
@@ -42,10 +41,8 @@ export default function SignIn(): ReactElement {
   return (
     <LoginView
       loginForm={{
-        error,
-        open,
-        loading,
-        onAlert: handleAlert,
+        error: errorMessage,
+        loading: isLoading,
         onSubmit: handleSubmit,
       }}
       handleForgotPassword={handleForgotPassword}

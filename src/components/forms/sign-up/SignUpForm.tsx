@@ -1,14 +1,11 @@
 import { ReactElement } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import CloseIcon from "@mui/icons-material/Close";
 import LoadingButton from "@mui/lab/LoadingButton";
-import Alert from "@mui/material/Alert";
-import Collapse from "@mui/material/Collapse";
-import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import * as yup from "yup";
+import LocalAlert from "../../library/alert/LocalAlert";
 
 export interface FormSignUp {
   firstName: string;
@@ -22,13 +19,11 @@ export interface FormSignUp {
 
 export interface SignUpFormProps {
   error: string;
-  open: boolean;
   loading: boolean;
-  onAlert: () => void;
   onSubmit: SubmitHandler<FormSignUp>;
 }
 
-export default function SignUpForm({ error, open, loading, onAlert, onSubmit }: SignUpFormProps): ReactElement {
+export default function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup
@@ -209,19 +204,7 @@ export default function SignUpForm({ error, open, loading, onAlert, onSubmit }: 
           id: "oigOyc",
         })}
       </LoadingButton>
-      <Collapse in={open && !!error}>
-        <Alert
-          severity="error"
-          action={
-            <IconButton aria-label="close" color="inherit" size="small" onClick={onAlert}>
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
-          }
-          sx={{ mb: 2 }}
-        >
-          {error}
-        </Alert>
-      </Collapse>
+      <LocalAlert text={error} />
     </form>
   );
 }

@@ -1,4 +1,6 @@
-import React, { ReactElement, useState } from "react";
+import { ReactElement } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { FormSignUp } from "../../components/forms/sign-up/SignUpForm";
 import SignUpView from "../../components/views/login/SignUpView";
@@ -8,35 +10,30 @@ export default function SignIn(): ReactElement {
   const navigate = useNavigate();
   const { post } = useApi();
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [open, setOpen] = React.useState(false);
+  const {
+    error,
+    isLoading,
+    mutate: signUp,
+  } = useMutation<void, AxiosError, FormSignUp>({
+    mutationFn: async (data: FormSignUp) => {
+      await post("/api/users/self-register", data);
+    },
+    onSuccess: () => {
+      navigate("/");
+    },
+  });
 
-  function handleAlert(): void {
-    setOpen(false);
-  }
+  const { message: errorMessage } = error ?? { message: "" };
 
   async function handleSubmit(data: FormSignUp): Promise<void> {
-    setError("");
-
-    try {
-      setLoading(true);
-      await post("/api/users/self-register", data);
-      navigate("/");
-    } catch (error) {
-      setError((error as Error).message);
-      setOpen(true);
-      setLoading(false);
-    }
+    signUp(data);
   }
 
   return (
     <SignUpView
       signUpForm={{
-        error,
-        open,
-        loading,
-        onAlert: handleAlert,
+        error: errorMessage,
+        loading: isLoading,
         onSubmit: handleSubmit,
       }}
     />

@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import useApi from "../../api/hooks/UseApi";
 import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
 
@@ -23,7 +23,7 @@ function AuthProvider({ children }: Props): ReactElement {
   const api = useApi();
 
   useQuery({
-    queryKey: ["refresh-token-init"],
+    queryKey: ["auth-refresh-token"],
     queryFn: async () => {
       try {
         await api.refreshToken();
