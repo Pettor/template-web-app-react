@@ -1,18 +1,17 @@
-import React from "react";
-import type { BoxProps } from "@mui/material/Box";
-import Box from "@mui/material/Box";
-import type { ComponentStoryObj } from "@storybook/react";
+import Box, { BoxProps } from "@mui/material/Box";
+import { Meta, StoryObj } from "@storybook/react";
+import { ContentComponent } from "../../../stories/data/ContentData";
 import Component from "./ElevationScroll";
-import { ContentComponent } from "~/stories/data/ContentData";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Scrolling",
-};
+} satisfies Meta<typeof Component>;
 
-export const WithContent: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const WithContent = {
   render: (args) => (
     <Component {...args}>
       <Box>
@@ -27,4 +26,4 @@ export const WithContent: Story = {
       },
     }),
   },
-};
+} satisfies Story;

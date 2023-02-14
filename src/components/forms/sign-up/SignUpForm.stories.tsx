@@ -13,10 +13,8 @@ type Story = StoryObj<typeof meta>;
 
 export const SignUp = {
   args: {
-    open: true,
     error: "",
     loading: false,
-    onAlert: () => console.log("onAlert"),
     onSubmit: () => console.log("onSubmit"),
   },
 } satisfies Story;

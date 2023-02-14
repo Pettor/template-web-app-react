@@ -1,19 +1,19 @@
-import React from "react";
 import Avatar from "@mui/material/Avatar";
-import type { ComponentStoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
+import { ContentComponent } from "../../../stories/data/ContentData";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./HeaderLayout";
-import { ContentComponent } from "~/stories/data/ContentData";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Templates",
-};
+} satisfies Meta<typeof Component>;
 
-export const HeaderLayout: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const HeaderLayout = {
   args: {
     headerOptions: {
       label: "This is a Header",
@@ -33,4 +33,4 @@ export const HeaderLayout: Story = {
       },
     ],
   },
-};
+} satisfies Story;

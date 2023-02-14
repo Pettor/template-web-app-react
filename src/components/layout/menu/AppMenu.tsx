@@ -5,7 +5,7 @@ export interface MenuOptions {
   open: boolean;
   anchorEl: HTMLElement | null;
   handleClose: () => void;
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
 }
 
 interface Props extends MenuOptions {}

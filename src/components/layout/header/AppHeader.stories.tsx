@@ -1,35 +1,35 @@
-import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { MenuList } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
-import type { ComponentStoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import Search from "../../library/search/Search";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import Component from "./AppHeader";
 import AppHeaderDivider from "./AppHeaderDivider";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Header",
-};
+} satisfies Meta<typeof Component>;
 
-export const AppHeader: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const AppHeader = {
   args: {
     label: "This is a Header",
   },
-};
+} satisfies Story;
 
-export const SubHeader: Story = {
+export const SubHeader = {
   args: {
     subheader: true,
     label: "This is a SubHeader",
   },
-};
+} satisfies Story;
 
-export const SubHeaderWithSearch: Story = {
+export const SubHeaderWithSearch = {
   args: {
     subheader: true,
     headerComponents: [
@@ -43,9 +43,9 @@ export const SubHeaderWithSearch: Story = {
       fill: true,
     },
   },
-};
+} satisfies Story;
 
-export const HeaderComponents: Story = {
+export const HeaderComponents = {
   args: {
     isMobile: false,
     subheader: false,
@@ -85,4 +85,4 @@ export const HeaderComponents: Story = {
       },
     ],
   },
-};
+} satisfies Story;

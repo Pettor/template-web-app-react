@@ -41,10 +41,9 @@ const MenuBox = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
 
-interface Props extends CardProps {
+interface Props extends CardProps, StyledCardProps {
   name?: string;
   email?: string;
-  isMobile: boolean;
   onLogout?(): void;
 }
 

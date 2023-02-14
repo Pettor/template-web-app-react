@@ -1,19 +1,20 @@
-import type { ComponentStoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
+import CenterDecorator from "../../../stories/decorators/CenterDecorator";
+import PaddingTopDectorator from "../../../stories/decorators/PaddingTopDectorator";
 import Component from "./ProfileCardResponsive";
-import CenterDecorator from "~/stories/decorators/CenterDecorator";
-import PaddingTopDectorator from "~/stories/decorators/PaddingTopDectorator";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Profile/Card",
   decorators: [CenterDecorator, PaddingTopDectorator],
-};
+} satisfies Meta<typeof Component>;
 
-export const Responsive: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Responsive = {
   args: {
     name: "John Doe",
     email: "john.doe@gmail.com",
   },
-};
+} satisfies Story;
