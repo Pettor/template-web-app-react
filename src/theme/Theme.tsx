@@ -10,6 +10,9 @@ import { Theme, createTheme, responsiveFontSizes } from "@mui/material/styles";
 declare module "@mui/material/styles" {
   interface Theme {
     customBackgrounds: {
+      common: {
+        transparent: string;
+      };
       gradients: {
         linear: {
           variation1: string;
@@ -25,6 +28,9 @@ declare module "@mui/material/styles" {
   // allow configuration using `createTheme`
   interface ThemeOptions {
     customBackgrounds?: {
+      common?: {
+        transparent?: string;
+      };
       gradients?: {
         linear?: {
           variation1?: string;
@@ -87,6 +93,9 @@ export default function createAppTheme(mode: PaletteMode = "light"): Theme {
         lg: "12px",
       },
       customBackgrounds: {
+        common: {
+          transparent: "transparent",
+        },
         gradients: {
           linear: {
             variation1: "linear-gradient(120deg, #bd34fe 30%, #41d1ff)",
@@ -104,13 +113,6 @@ export default function createAppTheme(mode: PaletteMode = "light"): Theme {
               "&:hover": {
                 boxShadow: "none",
               },
-            },
-          },
-        },
-        MuiAppBar: {
-          styleOverrides: {
-            root: {
-              boxShadow: "none",
             },
           },
         },

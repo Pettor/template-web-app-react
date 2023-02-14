@@ -1,4 +1,4 @@
-import { Key, ReactElement, useMemo } from "react";
+import { ComponentProps, Key, ReactElement, useMemo } from "react";
 import BackArrow from "@mui/icons-material/ArrowBack";
 import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -6,11 +6,14 @@ import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Logo from "../../library/logo/Logo";
+import ElevationScroll from "../scrolling/ElevationScroll";
 import {
+  AppHeaderComponentOptions,
+  AppHeaderComponents,
   HeaderComponent,
   IconHeaderComponent,
   isClickableIconComponent,
@@ -19,31 +22,15 @@ import {
 } from "./AppHeaderComponent";
 import AppHeaderIconComponent from "./AppHeaderIconComponent";
 
-interface AppHeaderComponentOptions {
-  flexItem?: boolean;
-  fill?: boolean;
-}
-
-export interface AppHeaderComponent {
-  key: Key;
-  component: HeaderComponent;
-}
-
 export interface AppHeaderOptions {
   subheader?: boolean;
   label?: string;
   onBack?(): void;
 }
 
-export interface AppHeaderComponents {
-  headerComponents?: AppHeaderComponent[];
-  headerComponentOptions?: AppHeaderComponentOptions;
-}
-
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
-  background: `${theme.palette.background.default}b0`,
   zIndex: theme.zIndex.drawer + 1,
-  backdropFilter: "saturate(50%) blur(8px)",
+  transition: theme.transitions.create(["background", "box-shadow"], { duration: theme.transitions.duration.short }),
 }));
 
 const CustomComponentsStack = styled(Stack, {
@@ -51,10 +38,6 @@ const CustomComponentsStack = styled(Stack, {
 })<AppHeaderComponentOptions>(({ flexItem }) => ({
   flex: flexItem ? 1 : "none",
 }));
-
-interface Props extends AppHeaderComponents, AppHeaderOptions {
-  isMobile?: boolean;
-}
 
 function parseIconComponent(key: Key, iconComponent: IconHeaderComponent): ReactElement | ReactElement[] {
   if (isClickableIconComponent(iconComponent)) {
@@ -95,6 +78,10 @@ function parseComponent(key: Key, component?: HeaderComponent, isMobile = false)
   return parseComponent(key, desktop);
 }
 
+interface Props extends AppHeaderComponents, AppHeaderOptions {
+  isMobile?: boolean;
+}
+
 export default function AppHeader({
   isMobile,
   subheader,
@@ -103,6 +90,7 @@ export default function AppHeader({
   headerComponentOptions: headerComponentOptions,
   onBack,
 }: Props): ReactElement {
+  const theme = useTheme();
   const { flexItem, fill } = headerComponentOptions || { flexItem: false, fill: false };
 
   const HeaderComponents = useMemo(() => {
@@ -116,27 +104,36 @@ export default function AppHeader({
     });
   }, [headerComponents, isMobile]);
 
+  function handleGetProps(trigger: boolean): ComponentProps<typeof AppBar> {
+    return {
+      elevation: trigger ? 2 : 0,
+      sx: { background: trigger ? theme.palette.background.default : theme.customBackgrounds.common.transparent },
+    };
+  }
+
   return (
-    <AppBar position="fixed" elevation={1}>
-      <Toolbar disableGutters>
-        <Container maxWidth="lg" sx={{ display: "flex", alignItems: "center" }}>
-          {!subheader && <Logo size="small" />}
-          {subheader && (
-            <IconButton onClick={onBack}>
-              <BackArrow />
-            </IconButton>
-          )}
-          <Divider sx={{ mx: 1, display: isMobile ? "none" : "flex" }} />
-          {!fill && (
-            <Typography component="h1" variant="h6" color="primary" noWrap sx={{ flexGrow: 1 }}>
-              {label}
-            </Typography>
-          )}
-          <CustomComponentsStack flexItem={flexItem} spacing={2} direction="row" alignItems="center">
-            {HeaderComponents}
-          </CustomComponentsStack>
-        </Container>
-      </Toolbar>
-    </AppBar>
+    <ElevationScroll getProps={handleGetProps}>
+      <AppBar position="fixed" elevation={1}>
+        <Toolbar disableGutters>
+          <Container maxWidth="lg" sx={{ display: "flex", alignItems: "center" }}>
+            {!subheader && <Logo size="small" />}
+            {subheader && (
+              <IconButton onClick={onBack}>
+                <BackArrow />
+              </IconButton>
+            )}
+            <Divider sx={{ mx: 1, display: isMobile ? "none" : "flex" }} />
+            {!fill && (
+              <Typography component="h1" variant="h6" color="primary" noWrap sx={{ flexGrow: 1 }}>
+                {label}
+              </Typography>
+            )}
+            <CustomComponentsStack flexItem={flexItem} spacing={2} direction="row" alignItems="center">
+              {HeaderComponents}
+            </CustomComponentsStack>
+          </Container>
+        </Toolbar>
+      </AppBar>
+    </ElevationScroll>
   );
 }
