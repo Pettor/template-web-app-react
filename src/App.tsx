@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AppLocales from "./AppLocales";
 import AppRoutes from "./AppRoutes";
 import ThemeModeProvider from "./components/library/toggle/theme-toggle/context/ThemeModeContext";

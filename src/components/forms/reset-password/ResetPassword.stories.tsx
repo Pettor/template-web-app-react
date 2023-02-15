@@ -11,7 +11,5 @@ export default {
 };
 
 export const ResetPassword: Story = {
-  args: {
-    open: true,
-  },
+  args: {},
 };

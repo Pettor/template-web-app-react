@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import { FormResetPassword } from "../../components/forms/reset-password/ResetPasswordForm";
 import ResetPasswordView from "../../components/views/login/ResetPasswordView";
@@ -8,37 +10,31 @@ export default function SignIn(): React.ReactElement {
   const navigate = useNavigate();
   const { post } = useApi();
 
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [open, setOpen] = React.useState(false);
+  const {
+    error,
+    isLoading,
+    mutate: forgotPassword,
+  } = useMutation<void, AxiosError, FormResetPassword>({
+    mutationFn: async (data: FormResetPassword) => {
+      const { email } = data;
+      await post("/api/users/forgot-password", { email });
+    },
+    onSuccess: () => {
+      navigate("/");
+    },
+  });
 
-  function handleAlert(): void {
-    setOpen(false);
-  }
+  const { message: errorMessage } = error ?? { message: "" };
 
   async function handleSubmit(data: FormResetPassword): Promise<void> {
-    setError("");
-
-    const { email } = data;
-    try {
-      setLoading(true);
-      await post("/api/users/forgot-password", { email });
-
-      navigate("/");
-    } catch (error) {
-      setError((error as Error).message);
-      setOpen(true);
-      setLoading(false);
-    }
+    forgotPassword(data);
   }
 
   return (
     <ResetPasswordView
       resetForm={{
-        error,
-        open,
-        loading,
-        onAlert: handleAlert,
+        error: errorMessage,
+        loading: isLoading,
         onSubmit: handleSubmit,
       }}
     />

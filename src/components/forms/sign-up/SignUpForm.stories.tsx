@@ -11,7 +11,5 @@ export default {
 };
 
 export const SignUp: Story = {
-  args: {
-    open: true,
-  },
+  args: {},
 };

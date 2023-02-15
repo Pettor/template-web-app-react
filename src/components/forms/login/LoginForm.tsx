@@ -1,16 +1,13 @@
 import { ReactElement } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import CloseIcon from "@mui/icons-material/Close";
 import LoadingButton from "@mui/lab/LoadingButton";
-import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
-import Collapse from "@mui/material/Collapse";
-import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import * as yup from "yup";
+import LocalAlert from "../../library/alert/LocalAlert";
 
 export interface FormLogin {
   email: string;
@@ -19,13 +16,11 @@ export interface FormLogin {
 
 export interface LoginFormProps {
   error: string;
-  open: boolean;
   loading: boolean;
-  onAlert: () => void;
   onSubmit: SubmitHandler<FormLogin>;
 }
 
-export default function LoginForm({ error, open, loading, onAlert, onSubmit }: LoginFormProps): ReactElement {
+export default function LoginForm({ error, loading, onSubmit }: LoginFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup
@@ -59,6 +54,8 @@ export default function LoginForm({ error, open, loading, onAlert, onSubmit }: L
   } = useForm<FormLogin>({
     resolver: yupResolver(schema),
   });
+
+  console.log({ error });
 
   return (
     <form onSubmit={handleFormSubmit(onSubmit)}>
@@ -111,19 +108,7 @@ export default function LoginForm({ error, open, loading, onAlert, onSubmit }: L
           </LoadingButton>
         </Box>
       </Stack>
-      <Collapse in={open && !!error}>
-        <Alert
-          severity="error"
-          action={
-            <IconButton aria-label="close" color="inherit" size="small" onClick={onAlert}>
-              <CloseIcon fontSize="inherit" />
-            </IconButton>
-          }
-          sx={{ mb: 2 }}
-        >
-          {error}
-        </Alert>
-      </Collapse>
+      <LocalAlert text={error} />
     </form>
   );
 }

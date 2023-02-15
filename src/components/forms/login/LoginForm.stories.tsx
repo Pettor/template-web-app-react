@@ -11,7 +11,5 @@ export default {
 };
 
 export const Login: Story = {
-  args: {
-    open: true,
-  },
+  args: {},
 };
