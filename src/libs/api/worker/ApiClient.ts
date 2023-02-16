@@ -12,6 +12,9 @@ import { TokenDto } from "../service/responses/TokenDto";
 import { getToken, setToken } from "./TokenStorage";
 
 export default class ApiClient {
+  private readonly tokenApiUrl = "/api/tokens";
+  private readonly refreshTokenApiUrl = "/api/tokens/refresh";
+
   private client: AxiosInstance;
   private defaultHeaders: RawAxiosRequestHeaders;
   private defaultConfig: AxiosRequestConfig;
@@ -33,7 +36,7 @@ export default class ApiClient {
         return Promise.reject(failedResponse);
       }
 
-      if (failedResponse.request.responseURL?.includes("/api/tokens/refresh")) {
+      if (failedResponse.request.responseURL?.includes(this.refreshTokenApiUrl)) {
         return Promise.reject(failedResponse);
       }
 
@@ -51,7 +54,7 @@ export default class ApiClient {
   }
 
   public async tokenRequest(data: TokenRequestRequest): Promise<AxiosResponse> {
-    const response = await this.client.post<TokenDto>("/api/tokens", data, this.defaultConfig);
+    const response = await this.client.post<TokenDto>(this.tokenApiUrl, data, this.defaultConfig);
     setToken(response.data.token);
 
     // Remove token from response
@@ -59,12 +62,12 @@ export default class ApiClient {
   }
 
   public async removeToken(): Promise<AxiosResponse> {
-    return await this.client.delete("/api/tokens", this.defaultConfig);
+    return await this.client.delete(this.tokenApiUrl, this.defaultConfig);
   }
 
   public async refreshToken(): Promise<AxiosResponse> {
     // Refresh-Token API will use the standard AXIOS client to avoid issue where API is stuck
-    const response = await axios.get<TokenDto>("/api/tokens/refresh", this.defaultConfig);
+    const response = await axios.get<TokenDto>(this.refreshTokenApiUrl, this.defaultConfig);
     setToken(response.data.token);
 
     // Remove token from response

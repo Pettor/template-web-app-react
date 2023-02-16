@@ -55,8 +55,6 @@ export default function LoginForm({ error, loading, onSubmit }: LoginFormProps):
     resolver: yupResolver(schema),
   });
 
-  console.log({ error });
-
   return (
     <form onSubmit={handleFormSubmit(onSubmit)}>
       <TextField
