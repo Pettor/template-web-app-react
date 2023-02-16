@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
 import { useQuery } from "@tanstack/react-query";
 import useApi from "../../api/hooks/UseApi";
-import { AuthActions, AuthReducer, AuthState } from "../reducer/AuthReducer";
+import AuthReducer, { AuthActions, AuthState } from "../reducer/AuthReducer";
 
 interface IAuthContext {
   state: AuthState;
@@ -44,8 +44,7 @@ function AuthProvider({ children }: Props): ReactElement {
   }, [state]);
 
   useEffect(() => {
-    const sub = api.subscribe((error) => {
-      console.log(error);
+    const sub = api.subscribe(() => {
       dispatch({ type: "auth/logout" });
     });
 
