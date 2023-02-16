@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
-import { useQuery } from "@tanstack/react-query";
 import useApi from "../../api/hooks/UseApi";
+import useRunOnce from "../../react/hooks/UseRunOnce";
 import AuthReducer, { AuthActions, AuthState } from "../reducer/AuthReducer";
 
 interface IAuthContext {
@@ -22,18 +22,16 @@ function AuthProvider({ children }: Props): ReactElement {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
   const api = useApi();
 
-  useQuery({
-    queryKey: ["auth-refresh-token"],
-    queryFn: async () => {
+  useRunOnce({
+    func: async () => {
       try {
+        // Run once on app load to check if the user is logged in
         await api.refreshToken();
         dispatch({ type: "auth/login" });
-      } catch (errro) {
+      } catch (error) {
         dispatch({ type: "auth/logout" });
       }
     },
-    refetchOnWindowFocus: false,
-    staleTime: Infinity,
   });
 
   const value = useMemo(() => {
