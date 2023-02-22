@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, Suspense } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../auth/hooks/UseAuth";
 
@@ -10,7 +10,11 @@ function PublicRoutes(): ReactElement {
     case "idle":
       return <></>;
     case "authenticating":
-      return <Outlet />;
+      return (
+        <Suspense fallback={<></>}>
+          <Outlet />
+        </Suspense>
+      );
     case "authenticated":
       return <Navigate to="/" state={{ from: location }} />;
     default:

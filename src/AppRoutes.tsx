@@ -1,12 +1,13 @@
-import { ReactElement } from "react";
+import { lazy, ReactElement } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PrivateRoutes from "./libs/routes/PrivateRoutes";
 import PublicRoutes from "./libs/routes/PublicRoutes";
-import HomePage from "./pages/home/HomePage";
-import ForgotPasswordPage from "./pages/login/ForgotPasswordPage";
-import LoginPage from "./pages/login/LoginPage";
-import SignUpPage from "./pages/login/SignUpPage";
-import NotFoundPage from "./pages/NotFoundPage";
+
+const HomePage = lazy(() => import("./pages/home/HomePage"));
+const ForgotPasswordPage = lazy(() => import("./pages/login/ForgotPasswordPage"));
+const LoginPage = lazy(() => import("./pages/login/LoginPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+const SignUpPage = lazy(() => import("./pages/login/SignUpPage"));
 
 export default function AppRoutes(): ReactElement {
   return (
