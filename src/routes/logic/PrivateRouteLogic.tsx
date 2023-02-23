@@ -1,6 +1,7 @@
 import { ReactElement, Suspense } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../../libs/auth/hooks/UseAuth";
+import RouteLoading from "./RouteLoading";
 
 function PrivateRouteLogic(): ReactElement {
   const { status } = useAuth();
@@ -8,17 +9,17 @@ function PrivateRouteLogic(): ReactElement {
 
   switch (status) {
     case "idle":
-      return <></>;
+      return <RouteLoading />;
     case "authenticating":
       return <Navigate to="/login" state={{ from: location }} />;
     case "authenticated":
       return (
-        <Suspense fallback={<></>}>
+        <Suspense fallback={<RouteLoading />}>
           <Outlet />
         </Suspense>
       );
     default:
-      return <></>;
+      return <RouteLoading />;
   }
 }
 
