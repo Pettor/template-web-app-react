@@ -1,19 +1,18 @@
 import { ReactElement, useEffect, useMemo, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import Alert from "@mui/material/Alert";
+import Alert, { AlertProps } from "@mui/material/Alert";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import usePrevious from "../../../libs/react/hooks/UsePrevious";
 
-interface Props {
+interface Props extends AlertProps {
   text?: string;
-  isSuccess?: boolean;
   hash?: string;
-  preventClose?: boolean;
+  autoClose?: boolean;
   timeout?: number;
 }
 
-function LocalAlert({ text, hash, isSuccess = false, preventClose = false, timeout = 5000 }: Props): ReactElement {
+function AutoAlert({ text, hash, autoClose = false, timeout = 10000, ...alertProps }: Props): ReactElement {
   const prevText = usePrevious(text);
   const prevHash = usePrevious(hash);
   const [userClose, setUserClose] = useState<boolean>(false);
@@ -44,7 +43,7 @@ function LocalAlert({ text, hash, isSuccess = false, preventClose = false, timeo
   const showText = finalText && !userClose;
 
   useEffect(() => {
-    if (!showText || preventClose) {
+    if (!showText || !autoClose) {
       return;
     }
 
@@ -62,13 +61,13 @@ function LocalAlert({ text, hash, isSuccess = false, preventClose = false, timeo
   return (
     <Collapse in={showText}>
       <Alert
-        severity={isSuccess ? "success" : "error"}
         action={
           <IconButton aria-label="close" color="inherit" size="small" onClick={handleAlert}>
             <CloseIcon fontSize="inherit" />
           </IconButton>
         }
         sx={{ mb: 2 }}
+        {...alertProps}
       >
         {text}
       </Alert>
@@ -76,4 +75,4 @@ function LocalAlert({ text, hash, isSuccess = false, preventClose = false, timeo
   );
 }
 
-export default LocalAlert;
+export default AutoAlert;
