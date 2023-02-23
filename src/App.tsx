@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import AppLocales from "./AppLocales";
-import AppRoutes from "./AppRoutes";
 import ThemeModeProvider from "./components/library/toggle/theme-toggle/context/ThemeModeContext";
 import { AuthProvider } from "./libs/auth/context/AuthContext";
 import { validateCrypto } from "./libs/crypto/GetCrypto";
+import AppLocales from "./locale/AppLocales";
+import AppRoutes from "./routes/AppRoutes";
 import AppTheme from "./theme/AppTheme";
 
 const queryClient = new QueryClient();
