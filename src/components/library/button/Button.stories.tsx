@@ -5,6 +5,7 @@ import CommonDecorator from "../../../stories/decorators/CommonDecorator";
 const meta = {
   title: "Library/Component",
   decorators: [CommonDecorator],
+  tags: ["autodocs"],
 } satisfies Meta<typeof Component>;
 
 export default meta;

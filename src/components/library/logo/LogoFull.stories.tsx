@@ -4,6 +4,7 @@ import Component from "./LogoFull";
 const meta = {
   component: Component,
   title: "Library/Logo",
+  tags: ["autodocs"],
 } satisfies Meta<typeof Component>;
 
 export default meta;

@@ -6,6 +6,7 @@ const meta = {
   title: "Library/Alerts",
   component: Component,
   decorators: [CommonDecorator],
+  tags: ["autodocs"],
 } satisfies Meta<typeof Component>;
 
 export default meta;

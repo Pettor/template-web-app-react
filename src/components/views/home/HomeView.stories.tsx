@@ -1,4 +1,3 @@
-import React from "react";
 import Avatar from "@mui/material/Avatar";
 import type { ComponentStoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../../layout/profile/ProfileCardResponsive";

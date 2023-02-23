@@ -13,7 +13,6 @@ const config = {
   ],
   docs: {
     defaultName: 'Docs',
-    autodocs: true,
   },
   async viteFinal(config) {
     return mergeConfig(config, {

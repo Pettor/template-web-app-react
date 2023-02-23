@@ -7,6 +7,7 @@ const meta = {
   component: Component,
   title: "Layout/Profile/Card",
   decorators: [CenterDecorator, PaddingTopDectorator],
+  tags: ["autodocs"],
 } satisfies Meta<typeof Component>;
 
 export default meta;
