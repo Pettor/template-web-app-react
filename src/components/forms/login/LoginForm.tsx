@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
 import * as yup from "yup";
-import LocalAlert from "../../library/alert/LocalAlert";
+import AutoAlert from "../../library/alert/AutoAlert";
 
 export interface FormLogin {
   email: string;
@@ -106,7 +106,7 @@ export default function LoginForm({ error, loading, onSubmit }: LoginFormProps):
           </LoadingButton>
         </Box>
       </Stack>
-      <LocalAlert text={error} />
+      <AutoAlert text={error} autoClose severity="error" />
     </form>
   );
 }
