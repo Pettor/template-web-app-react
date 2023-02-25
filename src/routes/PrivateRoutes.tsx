@@ -1,20 +1,14 @@
-import { lazy, ReactElement } from "react";
-import { Route } from "react-router-dom";
-import PrivateRouteLogic from "./logic/PrivateRouteLogic";
+import { lazy } from "react";
+import { RouteProps } from "react-router-dom";
 
-const ForgotPasswordPage = lazy(() => import("../pages/login/ForgotPasswordPage"));
-const LoginPage = lazy(() => import("../pages/login/LoginPage"));
-const SignUpPage = lazy(() => import("../pages/login/SignUpPage"));
+const HomePage = lazy(() => import("../pages/home/HomePage"));
 
-export default function PrivateRoutes(): ReactElement {
-  return (
-    <Route element={<PrivateRouteLogic />}>
-      {
-        // Place routes that doesn't require authentication here
-      }
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-      <Route path="/sign-up" element={<SignUpPage />} />
-    </Route>
-  );
+// Routes that are accessible only to authenticated users
+export default function PrivateRoutes(): RouteProps[] {
+  return [
+    {
+      path: "/",
+      element: <HomePage />,
+    },
+  ];
 }

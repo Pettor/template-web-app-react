@@ -1,20 +1,24 @@
-import { lazy, ReactElement } from "react";
-import { Route } from "react-router-dom";
-import PublicRouteLogic from "./logic/PublicRouteLogic";
+import { lazy } from "react";
+import { RouteProps } from "react-router-dom";
 
 const ForgotPasswordPage = lazy(() => import("../pages/login/ForgotPasswordPage"));
 const LoginPage = lazy(() => import("../pages/login/LoginPage"));
 const SignUpPage = lazy(() => import("../pages/login/SignUpPage"));
 
-export default function PublicRoutes(): ReactElement {
-  return (
-    <Route element={<PublicRouteLogic />}>
-      {
-        // Place routes that doesn't require authentication here
-      }
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-      <Route path="/sign-up" element={<SignUpPage />} />
-    </Route>
-  );
+// Routes that are accessible to everyone
+export default function PublicRoutes(): RouteProps[] {
+  return [
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/sign-up",
+      element: <SignUpPage />,
+    },
+    {
+      path: "/forgot-password",
+      element: <ForgotPasswordPage />,
+    },
+  ];
 }
