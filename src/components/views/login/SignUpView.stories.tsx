@@ -11,11 +11,10 @@ type Story = StoryObj<typeof meta>;
 
 export const SignUp = {
   args: {
+    appName: "My App",
     signUpForm: {
-      open: true,
       error: "",
       loading: false,
-      onAlert: () => console.log("onAlert"),
       onSubmit: () => console.log("onSubmit"),
     },
   },

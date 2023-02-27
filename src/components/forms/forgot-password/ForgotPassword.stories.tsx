@@ -11,7 +11,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ResetPassword = {
+export const ForgotPassword = {
   args: {
     error: "",
     loading: false,

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import Component from "./ResetPasswordView";
+import Component from "./ForgotPasswordView";
 
 const meta = {
   component: Component,
@@ -11,11 +11,10 @@ type Story = StoryObj<typeof meta>;
 
 export const ForgotPassword = {
   args: {
+    appName: "My App",
     resetForm: {
-      open: true,
       error: "",
       loading: false,
-      onAlert: () => console.log("onAlert"),
       onSubmit: () => console.log("onSubmit"),
     },
   },
