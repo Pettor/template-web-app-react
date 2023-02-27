@@ -10,8 +10,11 @@ type ApiMessages =
   | { type: "token/request"; payload: RequestTokenDto }
   | { type: "token/refresh" }
   | { type: "user/logout" }
-  | { type: "request/post"; url: string; payload: unknown }
-  | { type: "request/get"; url: string };
+  | { type: "request/patch"; url: string; payload?: unknown }
+  | { type: "request/post"; url: string; payload?: unknown }
+  | { type: "request/put"; url: string; payload?: unknown }
+  | { type: "request/get"; url: string }
+  | { type: "request/delete"; url: string };
 
 const apiClient = new ApiClient(client);
 
@@ -52,11 +55,29 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
 
         break;
 
+      // Patch request
+      case "request/patch":
+        {
+          const { payload, url } = sentData;
+          const { data, status, statusText } = await apiClient.patch(url, payload);
+          apiResponse = { data, status, statusText };
+        }
+        break;
+
       // Post request
       case "request/post":
         {
           const { payload, url } = sentData;
-          const { data, status, statusText } = await apiClient.createPostRequest(url, payload);
+          const { data, status, statusText } = await apiClient.post(url, payload);
+          apiResponse = { data, status, statusText };
+        }
+        break;
+
+      // Put request
+      case "request/put":
+        {
+          const { url, payload } = sentData;
+          const { data, status, statusText } = await apiClient.put(url, payload);
           apiResponse = { data, status, statusText };
         }
         break;
@@ -65,7 +86,16 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "request/get":
         {
           const { url } = sentData;
-          const { data, status, statusText } = await apiClient.createGetRequest(url);
+          const { data, status, statusText } = await apiClient.get(url);
+          apiResponse = { data, status, statusText };
+        }
+        break;
+
+      // Delete request
+      case "request/delete":
+        {
+          const { url } = sentData;
+          const { data, status, statusText } = await apiClient.delete(url);
           apiResponse = { data, status, statusText };
         }
         break;

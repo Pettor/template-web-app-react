@@ -76,12 +76,24 @@ export default class ApiClient {
     return { ...response, data: null };
   }
 
-  public async createPostRequest(url: string, data: unknown): Promise<AxiosResponse> {
+  public async patch(url: string, data?: unknown): Promise<AxiosResponse> {
+    return await this.client.patch(url, data, this.createConfig());
+  }
+
+  public async post(url: string, data?: unknown): Promise<AxiosResponse> {
     return await this.client.post(url, data, this.createConfig());
   }
 
-  public async createGetRequest(url: string): Promise<AxiosResponse> {
+  public async put(url: string, data?: unknown): Promise<AxiosResponse> {
+    return await this.client.put(url, data, this.createConfig());
+  }
+
+  public async get(url: string): Promise<AxiosResponse> {
     return await this.client.get(url, this.createConfig());
+  }
+
+  public async delete(url: string): Promise<AxiosResponse> {
+    return await this.client.delete(url, this.createConfig());
   }
 
   private createConfig(): AxiosRequestConfig {
