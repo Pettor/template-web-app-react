@@ -67,9 +67,7 @@ export default class ApiClient {
 
   public async refreshToken(): Promise<AxiosResponse> {
     // Refresh-Token API will use the standard AXIOS client to avoid issue where API is stuck
-    console.log("HEJ2");
     const response = await axios.get<TokenDto>(this.refreshTokenApiUrl, this.defaultConfig);
-    console.log("HE3");
     setToken(response.data.token);
 
     // Remove token from response

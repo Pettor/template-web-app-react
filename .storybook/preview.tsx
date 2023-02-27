@@ -4,7 +4,7 @@ import { ThemeProvider as Emotion10ThemeProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { useDarkMode } from "storybook-dark-mode";
-import createAppTheme from "../src/theme/Theme";
+import createAppTheme from "../src/libs/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { StoryFn, StoryContext } from "@storybook/react";
