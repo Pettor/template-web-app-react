@@ -1,33 +1,18 @@
 import { ReactElement } from "react";
-import { useMutation } from "@tanstack/react-query";
-import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
+import useLogin from "../../app/api/queries/login/token-request/UseLogin";
+import useAppInfo from "../../app/config/UseAppInfo";
 import { FormLogin } from "../../components/forms/login/LoginForm";
 import LoginView from "../../components/views/login/LoginView";
-import useAuth from "../../libs/auth/hooks/UseAuth";
 
-export default function SignIn(): ReactElement {
+export default function LoginPage(): ReactElement {
   const navigate = useNavigate();
-  const { login: loginAuth } = useAuth();
-
-  const {
-    error,
-    isLoading,
-    mutate: login,
-  } = useMutation<void, AxiosError, FormLogin>({
-    mutationFn: async (data: FormLogin) => {
-      const { email, password } = data;
-      await loginAuth({ email, password });
-    },
-    onSuccess: () => {
-      navigate("/");
-    },
-  });
-
+  const { appName } = useAppInfo();
+  const { error, isLoading, submit } = useLogin();
   const { message: errorMessage } = error ?? { message: "" };
 
   async function handleSubmit(data: FormLogin): Promise<void> {
-    login(data);
+    submit(data);
   }
 
   function handleForgotPassword(): void {
@@ -40,6 +25,7 @@ export default function SignIn(): ReactElement {
 
   return (
     <LoginView
+      appName={appName}
       loginForm={{
         error: errorMessage,
         loading: isLoading,

@@ -28,19 +28,20 @@ export interface IFormCredentials {
 }
 
 interface Props {
+  appName: string;
   loginForm: LoginFormProps;
   handleForgotPassword: () => void;
   handleSignUp: () => void;
 }
 
-function LoginView({ loginForm, handleForgotPassword, handleSignUp }: Props): ReactElement {
+function LoginView({ appName, loginForm, handleForgotPassword, handleSignUp }: Props): ReactElement {
   const intl = useIntl();
 
   return (
     <Box>
       <WaveImg src={meshUrl} />
       <ContainerLayout sx={{ zIndex: 20 }}>
-        <LogoFull size="large" />
+        <LogoFull appName={appName} size="large" />
         <br />
         <LoginForm {...loginForm} />
         <br />

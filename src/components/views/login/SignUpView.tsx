@@ -6,15 +6,16 @@ import ContainerLayout from "../../layout/templates/ContainerLayout";
 import LogoFull from "../../library/logo/LogoFull";
 
 interface Props {
+  appName: string;
   signUpForm: SignUpFormProps;
 }
 
-export default function SignUpView({ signUpForm }: Props): ReactElement {
+export default function SignUpView({ appName, signUpForm }: Props): ReactElement {
   const intl = useIntl();
 
   return (
     <ContainerLayout>
-      <LogoFull size="medium" />
+      <LogoFull appName={appName} size="medium" />
       <br />
       <Typography textAlign="center">
         {intl.formatMessage({

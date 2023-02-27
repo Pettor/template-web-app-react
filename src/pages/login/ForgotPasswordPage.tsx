@@ -1,37 +1,21 @@
 import React from "react";
-import { useMutation } from "@tanstack/react-query";
-import { AxiosError } from "axios";
-import { useNavigate } from "react-router-dom";
-import { FormResetPassword } from "../../components/forms/reset-password/ResetPasswordForm";
-import ResetPasswordView from "../../components/views/login/ResetPasswordView";
-import useApi from "../../libs/api/hooks/UseApi";
+import useForgotPassword from "../../app/api/queries/login/forgot-password/UseForgotPassword";
+import useAppInfo from "../../app/config/UseAppInfo";
+import { FormForgotPassword } from "../../components/forms/forgot-password/ForgotPasswordForm";
+import ForgotPasswordView from "../../components/views/login/ForgotPasswordView";
 
-export default function SignIn(): React.ReactElement {
-  const navigate = useNavigate();
-  const { post } = useApi();
-
-  const {
-    error,
-    isLoading,
-    mutate: forgotPassword,
-  } = useMutation<void, AxiosError, FormResetPassword>({
-    mutationFn: async (data: FormResetPassword) => {
-      const { email } = data;
-      await post("/api/users/forgot-password", { email });
-    },
-    onSuccess: () => {
-      navigate("/");
-    },
-  });
-
+export default function ForgotPasswordPage(): React.ReactElement {
+  const { appName } = useAppInfo();
+  const { error, isLoading, submit } = useForgotPassword();
   const { message: errorMessage } = error ?? { message: "" };
 
-  async function handleSubmit(data: FormResetPassword): Promise<void> {
-    forgotPassword(data);
+  async function handleSubmit(data: FormForgotPassword): Promise<void> {
+    submit(data);
   }
 
   return (
-    <ResetPasswordView
+    <ForgotPasswordView
+      appName={appName}
       resetForm={{
         error: errorMessage,
         loading: isLoading,
