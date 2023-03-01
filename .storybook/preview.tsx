@@ -10,7 +10,6 @@ import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { DocsContainer } from '@storybook/addon-docs';
 import { themes } from "@storybook/theming";
 import { StoryFn, StoryContext } from "@storybook/react";
-import { useDarkMode } from "storybook-dark-mode";
 
 export const parameters = {
   layout: "fullscreen",
@@ -59,9 +58,6 @@ function withThemeProvider(Story: StoryFn, context: StoryContext): ReactElement 
   const { locale } = context.globals;
   const { messages } = reactIntl;
   const theme = createAppTheme(useDarkMode() ? "dark" : "light");
-
-  const darkMode = useDarkMode();
-  const theme = createAppTheme(darkMode ? "dark" : "light");
 
   return (
     <Emotion10ThemeProvider theme={theme}>
