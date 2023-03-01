@@ -13694,10 +13694,10 @@ vfile@^4.0.0:
     unist-util-stringify-position "^2.0.0"
     vfile-message "^2.0.0"
 
-vite-plugin-http2-proxy@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/vite-plugin-http2-proxy/-/vite-plugin-http2-proxy-0.3.2.tgz#fba529c214f4cb0fd417a678dce8c63693f3a75d"
-  integrity sha512-RI0BnnlM1wlQ3gUtpwcw8/qjhvH5L3cw4+vfOV+3k+/26pARqIezNxCEFlCGI3qRDYx4Mtr7+hUmDTRH9Fs9pQ==
+vite-plugin-http2-proxy@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-http2-proxy/-/vite-plugin-http2-proxy-0.4.1.tgz#af3f7c7570c439721ac455270521a7c31c334ea8"
+  integrity sha512-pllBOuVVsVnCqtQYA15qxe33TR7QU1OoGondTTx397UkRIY6Rp1F1wWSATXKEG1JpkVniuf3+iNmoeHB7dkrPw==
   dependencies:
     http2-proxy "^5.0.53"
 
