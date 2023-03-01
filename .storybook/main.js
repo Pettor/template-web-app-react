@@ -8,8 +8,7 @@ const config = {
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
-    "@storybook/addon-viewport",
-    "storybook-dark-mode"
+    "@storybook/addon-viewport"
   ],
   docs: {
     defaultName: 'Docs',
@@ -23,8 +22,7 @@ const config = {
         include: [
           "@storybook/addon-essentials",
           "@storybook/addon-a11y",
-          "@storybook/addon-viewport",
-          "storybook-dark-mode"
+          "@storybook/addon-viewport"
         ],
       },
     });
