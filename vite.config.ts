@@ -27,7 +27,7 @@ export default defineConfig(({ mode, command }) => {
           }),
           proxy({
             "^/api": {
-              target: `http://${env.VITE_CONNECT_HOST}:${env.VITE_CONNECT_PORT}`,
+              target: `${env.VITE_CONNECT_HOST}:${env.VITE_CONNECT_PORT}`,
               secure: false,
             },
           }),
