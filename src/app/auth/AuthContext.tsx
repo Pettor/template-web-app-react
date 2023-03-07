@@ -26,9 +26,7 @@ function AuthProvider({ children }: Props): ReactElement {
     func: async () => {
       try {
         // Run once on app load to check if the user is logged in
-        console.log("HEJ1");
         await api.refreshToken();
-        console.log("HEJ");
         dispatch({ type: "auth/login" });
       } catch (error) {
         dispatch({ type: "auth/logout" });
