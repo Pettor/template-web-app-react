@@ -55,7 +55,7 @@ export function Background(): ReactElement {
       <Grid container>
         <Grid item xs={3}>
           <Item>
-            <Typography variant="h6">Name</Typography>
+            <Typography variant="h6">MUI</Typography>
           </Item>
         </Grid>
         <Grid item xs={9}>
@@ -74,9 +74,17 @@ export function Background(): ReactElement {
           </Item>
         </Grid>
         <Grid item xs={9} />
-
         {ColorRow("Transparent", transparent)}
-        {ColorRow("Paper", variation1)}
+
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              Gradients
+            </Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={9} />
+        {ColorRow("Variation 1", variation1)}
       </Grid>
     </DocumentationLayout>
   );
