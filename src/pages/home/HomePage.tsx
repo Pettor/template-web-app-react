@@ -12,7 +12,7 @@ const headerComponents = [
   {
     key: "header__profile-card",
     component: {
-      icon: <Avatar sx={{ width: 32, height: 32 }} />,
+      icon: <Avatar sx={{ width: 24, height: 24 }} />,
       MenuNode: <ProfileCardExt />,
     },
   },
