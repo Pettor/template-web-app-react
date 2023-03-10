@@ -63,7 +63,7 @@ export default function createAppTheme(mode: PaletteMode = "light"): Theme {
               },
               background: {
                 default: "#ffffff",
-                paper: "#f9f9f9",
+                paper: "#f1f1f1",
               },
             }
           : {
