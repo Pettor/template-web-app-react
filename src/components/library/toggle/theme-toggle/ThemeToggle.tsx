@@ -8,7 +8,7 @@ import SunSvg from "./svg/Sun.svg";
 const StyledSwitch = styled(Switch)(({ theme }) => ({
   padding: 8,
   "& .MuiSwitch-switchBase": {
-    ":hover": {
+    "&:hover": {
       backgroundColor: "transparent",
     },
     "&.Mui-checked": {
@@ -19,6 +19,9 @@ const StyledSwitch = styled(Switch)(({ theme }) => ({
       "& + .MuiSwitch-track": {
         opacity: 1,
         backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+      },
+      "&:hover": {
+        backgroundColor: "transparent",
       },
     },
   },
