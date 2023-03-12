@@ -3,14 +3,45 @@ import type { UserConfig } from "vite";
 import { defineConfig, loadEnv } from "vite";
 import proxy from "vite-plugin-http2-proxy";
 import mkcert from "vite-plugin-mkcert";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, command }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   const commonConfig = {
-    plugins: [react(), tsconfigPaths()],
+    plugins: [
+      react(),
+      VitePWA({
+        includeAssets: ["favicon.ico", "apple-touch-icon.png"],
+        manifest: {
+          name: "WebTemplate",
+          short_name: "WebTemplate",
+          description: "Description for App",
+          theme_color: "#ffffff",
+          icons: [
+            {
+              src: "pwa-192x192.png",
+              sizes: "192x192",
+              type: "image/png",
+            },
+            {
+              src: "pwa-512x512.png",
+              sizes: "512x512",
+              type: "image/png",
+            },
+          ],
+        },
+        registerType: "autoUpdate",
+        injectRegister: "auto",
+        workbox: {
+          globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+        },
+        devOptions: {
+          enabled: true,
+        },
+      }),
+    ],
   };
 
   switch (command) {
