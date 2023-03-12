@@ -7,6 +7,7 @@ import { ComponentStoryObj } from "@storybook/react";
 import Search from "../../library/search/Search";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import Component from "./AppHeader";
+import AppHeaderDivider from "./AppHeaderDivider";
 
 type Story = ComponentStoryObj<typeof Component>;
 
@@ -60,8 +61,16 @@ export const HeaderComponents: Story = {
         },
       },
       {
+        key: "divider 1",
+        component: <AppHeaderDivider />,
+      },
+      {
         key: "theme-toggle",
         component: <ThemeToggle defaultMode="light" onToggle={() => console.log("onToggle")} />,
+      },
+      {
+        key: "divider 2",
+        component: <AppHeaderDivider />,
       },
       {
         key: "avatar",

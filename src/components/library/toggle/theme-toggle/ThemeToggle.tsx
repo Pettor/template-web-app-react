@@ -5,30 +5,31 @@ import Switch, { SwitchProps } from "@mui/material/Switch";
 import MoonSvg from "./svg/Moon.svg";
 import SunSvg from "./svg/Sun.svg";
 
-const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-  width: 62,
-  height: 34,
-  padding: 7,
+const StyledSwitch = styled(Switch)(({ theme }) => ({
+  padding: 8,
   "& .MuiSwitch-switchBase": {
-    margin: 1,
-    padding: 0,
-    transform: "translateX(6px)",
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
     "&.Mui-checked": {
       color: "#fff",
-      transform: "translateX(22px)",
       "& .MuiSwitch-thumb:before": {
-        backgroundImage: `url(${SunSvg})`,
+        backgroundImage: `url(${MoonSvg})`,
       },
       "& + .MuiSwitch-track": {
         opacity: 1,
         backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
       },
+      "&:hover": {
+        backgroundColor: "transparent",
+      },
     },
   },
   "& .MuiSwitch-thumb": {
-    backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#001e3c",
-    width: 32,
-    height: 32,
+    backgroundColor: theme.palette.background.default,
+    width: 16,
+    height: 16,
+    margin: 2,
     "&:before": {
       content: "''",
       position: "absolute",
@@ -38,13 +39,13 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
       top: 0,
       backgroundRepeat: "no-repeat",
       backgroundPosition: "center",
-      backgroundImage: `url(${MoonSvg})`,
+      backgroundImage: `url(${SunSvg})`,
     },
   },
   "& .MuiSwitch-track": {
     opacity: 1,
     backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
-    borderRadius: 20 / 2,
+    borderRadius: 22 / 2,
   },
 }));
 
@@ -58,5 +59,5 @@ export default function ThemeToggle({ defaultMode, onToggle, ...rest }: Props): 
     onToggle(event.target.checked ? "dark" : "light");
   }
 
-  return <MaterialUISwitch {...rest} checked={defaultMode === "dark"} onChange={handleChange} />;
+  return <StyledSwitch {...rest} checked={defaultMode === "dark"} onChange={handleChange} />;
 }
