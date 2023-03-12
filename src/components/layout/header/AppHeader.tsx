@@ -19,7 +19,7 @@ import {
   isClickableIconComponent,
   isIconComponent,
   isStaticComponent,
-} from "./AppHeaderComponent";
+} from "./AppHeaderClasses";
 import AppHeaderIconComponent from "./AppHeaderIconComponent";
 
 export interface AppHeaderOptions {
