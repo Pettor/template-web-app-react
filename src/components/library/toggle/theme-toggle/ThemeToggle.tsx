@@ -9,7 +9,7 @@ const StyledSwitch = styled(Switch)(({ theme }) => ({
   padding: 8,
   "& .MuiSwitch-switchBase": {
     "&:hover": {
-      backgroundColor: "transparent",
+      backgroundColor: theme.customBackgrounds.common.transparent,
     },
     "&.Mui-checked": {
       color: "#fff",
@@ -18,10 +18,10 @@ const StyledSwitch = styled(Switch)(({ theme }) => ({
       },
       "& + .MuiSwitch-track": {
         opacity: 1,
-        backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+        backgroundColor: theme.customBackgrounds.accent.main,
       },
       "&:hover": {
-        backgroundColor: "transparent",
+        backgroundColor: theme.customBackgrounds.common.transparent,
       },
     },
   },
@@ -44,7 +44,7 @@ const StyledSwitch = styled(Switch)(({ theme }) => ({
   },
   "& .MuiSwitch-track": {
     opacity: 1,
-    backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+    backgroundColor: theme.customBackgrounds.accent.main,
     borderRadius: 22 / 2,
   },
 }));
