@@ -10,15 +10,11 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
-    "storybook": "yarn storybook:dev",
-    "storybook:dev": "yarn node:openssl-legacy start-storybook",
-    "storybook:build": "yarn node:openssl-legacy build-storybook",
-    "storybook:test": "yarn node:openssl-legacy test-storybook",
-    "storybook:ci": "start-server-and-test \"npx http-server storybook-static --port 6006 --silent\" http://127.0.0.1:6006 \"yarn test-storybook --url http://127.0.0.1:6006\"",
+    "storybook": "storybook dev",
+    "storybook:build": "storybook build",
     "i18n": "yarn i18n-extract && yarn i18n-compile",
     "i18n:extract": "formatjs extract src/**/*.ts* --ignore=**/*.d.ts --out-file locale/extracted/en.json --id-interpolation-pattern [sha512:contenthash:base64:6] --flatten",
     "i18n:compile": "formatjs compile-folder --ast locale/extracted locale/compiled",
-    "node:openssl-legacy": "cross-env NODE_OPTIONS=--openssl-legacy-provider"
   },
   "dependencies": {
     "@fontsource/rubik": "^4.5.14",
@@ -53,7 +49,6 @@
     "@storybook/react": "^7.0.0-rc.3",
     "@storybook/react-vite": "^7.0.0-rc.3",
     "@storybook/storybook-deployer": "^2.8.16",
-    "@storybook/test-runner": "^0.10.0-next.1",
     "@total-typescript/ts-reset": "^0.4.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
@@ -80,7 +75,6 @@
     "vite-plugin-http2-proxy": "^0.4.0",
     "vite-plugin-mkcert": "^1.13.3",
     "vite-plugin-pwa": "^0.14.4",
-    "vite-tsconfig-paths": "^4.0.7",
-    "webpack": "^5.76.1"
+    "vite-tsconfig-paths": "^4.0.7"
   }
 }
