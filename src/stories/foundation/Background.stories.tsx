@@ -43,6 +43,7 @@ export function Background(): ReactElement {
   } = theme.palette;
   const {
     customBackgrounds: {
+      accent: { light: accentLight, main: accentMain, dark: accentDark },
       common: { transparent },
       gradients: {
         linear: { variation1 },
@@ -69,7 +70,19 @@ export function Background(): ReactElement {
         <Grid item xs={3}>
           <Item>
             <Typography variant="h6" sx={{ mt: 2 }}>
-              Custom
+              Accent
+            </Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={9} />
+        {ColorRow("Main", accentMain)}
+        {ColorRow("Light", accentLight)}
+        {ColorRow("Dark", accentDark)}
+
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              Common
             </Typography>
           </Item>
         </Grid>

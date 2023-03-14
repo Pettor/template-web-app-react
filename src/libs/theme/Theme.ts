@@ -10,6 +10,11 @@ import { Theme, createTheme, responsiveFontSizes } from "@mui/material/styles";
 declare module "@mui/material/styles" {
   interface Theme {
     customBackgrounds: {
+      accent: {
+        light: string;
+        main: string;
+        dark: string;
+      };
       common: {
         transparent: string;
       };
@@ -28,6 +33,11 @@ declare module "@mui/material/styles" {
   // allow configuration using `createTheme`
   interface ThemeOptions {
     customBackgrounds?: {
+      accent: {
+        light: string;
+        main: string;
+        dark: string;
+      };
       common?: {
         transparent?: string;
       };
@@ -56,7 +66,7 @@ export default function createAppTheme(mode: PaletteMode = "light"): Theme {
           ? {
               // palette values for light mode
               primary: {
-                main: "#ea005e",
+                main: "#0074e0",
               },
               secondary: {
                 main: "#1b2027",
@@ -69,7 +79,7 @@ export default function createAppTheme(mode: PaletteMode = "light"): Theme {
           : {
               // palette values for dark mode
               primary: {
-                main: "#fc3384",
+                main: "#27c8ff",
               },
               secondary: {
                 main: "#e3e5e9",
@@ -93,6 +103,18 @@ export default function createAppTheme(mode: PaletteMode = "light"): Theme {
         lg: "12px",
       },
       customBackgrounds: {
+        accent:
+          mode === "light"
+            ? {
+                light: "#9ea7b1",
+                main: "#aab4be",
+                dark: "#7c838b",
+              }
+            : {
+                light: "#a6b8cb",
+                main: "#8796A5",
+                dark: "#5d6772",
+              },
         common: {
           transparent: "transparent",
         },
