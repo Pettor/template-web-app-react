@@ -17,6 +17,9 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
+    "types": [
+      "vite-plugin-pwa/client"
+    ],
     "useDefineForClassFields": true
   },
   "include": ["./src", "types/reset.d.ts"],
