@@ -30,7 +30,7 @@ const RightColorBox = styled(Box)(() => ({
 
 const ContainerBox = styled(Box)(() => ({
   position: "relative",
-  height: "100vh",
+  height: "100dvh",
   width: "100%",
   overflow: "auto",
 }));
