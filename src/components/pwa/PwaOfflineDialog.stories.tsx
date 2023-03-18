@@ -1,4 +1,4 @@
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import CommonDecorator from "../../stories/decorators/CommonDecorator";
 import Component from "./PwaOfflineDialog";
 

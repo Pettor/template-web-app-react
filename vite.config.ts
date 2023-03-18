@@ -4,6 +4,7 @@ import { defineConfig, loadEnv } from "vite";
 import proxy from "vite-plugin-http2-proxy";
 import mkcert from "vite-plugin-mkcert";
 import { VitePWA } from "vite-plugin-pwa";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode, command }) => {
@@ -12,6 +13,7 @@ export default defineConfig(({ mode, command }) => {
   const commonConfig = {
     plugins: [
       react(),
+      tsconfigPaths(),
       VitePWA({
         includeAssets: ["favicon.ico", "apple-touch-icon.png"],
         manifest: {
@@ -32,13 +34,10 @@ export default defineConfig(({ mode, command }) => {
             },
           ],
         },
-        registerType: "autoUpdate",
+        registerType: "prompt",
         injectRegister: "auto",
         workbox: {
           globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
-        },
-        devOptions: {
-          enabled: true,
         },
       }),
     ],

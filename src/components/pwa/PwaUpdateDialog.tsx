@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
