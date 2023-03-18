@@ -21,7 +21,7 @@ const StyledCard = styled(Card, {
   shouldForwardProp: (prop) => prop !== "isMobile",
 })<StyledCardProps>(({ isMobile }) => ({
   height: "auto",
-  width: isMobile ? "100vw" : 275,
+  width: isMobile ? "100dvw" : 275,
 }));
 
 const StyledCardContent = styled(CardContent, {

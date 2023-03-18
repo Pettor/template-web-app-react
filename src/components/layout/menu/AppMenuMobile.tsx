@@ -11,8 +11,8 @@ const MenuContainer = styled(Box)(({ theme }) => ({
   position: "fixed",
   top: 0,
   left: 0,
-  width: "100vw",
-  height: "100vh",
+  width: "100dvw",
+  height: "100dvh",
   background: theme.palette.background.paper,
 }));
 

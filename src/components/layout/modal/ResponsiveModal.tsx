@@ -21,7 +21,7 @@ const ModalBox = styled(Box)(({ theme }) => ({
     minWidth: "100%",
     maxWidth: "100%",
     width: "100%",
-    minHeight: "100vh",
+    minHeight: "100dvh",
     borderRadius: 0,
   },
 }));
