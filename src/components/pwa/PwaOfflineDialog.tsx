@@ -23,38 +23,29 @@ const DescriptionTypography = styled(Typography)(({ theme }) => ({
 }));
 
 interface Props {
-  appName: string;
   open: boolean;
-  onUpdate(): void;
+  onSubmit(): void;
 }
 
-export default function PwaUpdateDialog({ appName, open, onUpdate }: Props): ReactElement {
+export default function PwaOfflineDialog({ open, onSubmit }: Props): ReactElement {
   const intl = useIntl();
 
   return (
-    <Snackbar open={open} anchorOrigin={{ vertical: "bottom", horizontal: "center" }}>
+    <Snackbar open={open}>
       <ContainerBox>
         <Stack spacing={2} direction="row" sx={{ alignItems: "center" }}>
-          <DescriptionTypography
-            dangerouslySetInnerHTML={{
-              __html: intl.formatMessage(
-                {
-                  description: "PwaUpdateDialog - Update available description",
-                  defaultMessage: "A new version of <b>{appName}</b> is available",
-                  id: "GjhGOZ",
-                },
-                {
-                  appName: appName,
-                  b: (...chunks) => `<b>${chunks}</b>`,
-                }
-              ),
-            }}
-          />
-          <Button variant="contained" color="primary" onClick={onUpdate}>
+          <DescriptionTypography>
             {intl.formatMessage({
-              description: "PwaUpdateDialog - Update button",
-              defaultMessage: "Update",
-              id: "Blpjtp",
+              description: "PwaOfflineDialog- Ready to work offline description",
+              defaultMessage: "Ready to work offline",
+              id: "HQHLM4",
+            })}
+          </DescriptionTypography>
+          <Button variant="contained" color="primary" onClick={onSubmit}>
+            {intl.formatMessage({
+              description: "PwaOfflineDialog - OK button",
+              defaultMessage: "OK",
+              id: "lrHj7q",
             })}
           </Button>
         </Stack>

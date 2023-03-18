@@ -1,21 +1,17 @@
 import { ComponentStoryObj } from "@storybook/react";
 import CommonDecorator from "../../stories/decorators/CommonDecorator";
-import Component from "./PwaUpdateDialog";
+import Component from "./PwaOfflineDialog";
 
 type Story = ComponentStoryObj<typeof Component>;
 
 export default {
   component: Component,
-  title: "Pwa/UpdateDialog",
+  title: "Pwa/OfflineDialog",
   decorators: [CommonDecorator],
 };
 
-export const UpdateDialog: Story = {
+export const OfflineDialog: Story = {
   args: {
-    appName: "AppName",
     open: true,
-    onUpdate: () => {
-      console.log("Refresh");
-    },
   },
 };
