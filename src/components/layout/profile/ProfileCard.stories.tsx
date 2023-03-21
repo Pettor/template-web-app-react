@@ -1,7 +1,7 @@
 import { ComponentStoryObj } from "@storybook/react";
-import CenterDecorator from "../../../stories/decorators/CenterDecorator";
-import PaddingTopDectorator from "../../../stories/decorators/PaddingTopDectorator";
 import Component from "./ProfileCard";
+import CenterDecorator from "~/stories/decorators/CenterDecorator";
+import PaddingTopDectorator from "~/stories/decorators/PaddingTopDectorator";
 
 type Story = ComponentStoryObj<typeof Component>;
 

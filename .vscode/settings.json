@@ -8,5 +8,7 @@
   "files.eol": "\n",
   "[xml]": {
     "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
-  }
+  },
+  // Typescript
+  "typescript.preferences.importModuleSpecifier": "shortest"
 }

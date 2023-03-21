@@ -1,4 +1,4 @@
-import { getCrypto } from "../../../libs/crypto/GetCrypto";
+import { getCrypto } from "~/libs/crypto/GetCrypto";
 
 export function createVerifier(): string {
   const charset = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_~.";

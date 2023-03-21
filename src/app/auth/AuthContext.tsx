@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
-import useRunOnce from "../../libs/react/hooks/UseRunOnce";
 import useApi from "../api/UseApi";
 import AuthReducer, { AuthActions, AuthState } from "./AuthReducer";
+import useRunOnce from "~/libs/react/hooks/UseRunOnce";
 
 interface AuthContext {
   state: AuthState;

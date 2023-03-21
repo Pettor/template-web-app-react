@@ -1,6 +1,6 @@
 import { ComponentStoryObj } from "@storybook/react";
-import CommonDecorator from "../../../../stories/decorators/CommonDecorator";
 import Component from "./ThemeToggle";
+import CommonDecorator from "~/stories/decorators/CommonDecorator";
 
 type Story = ComponentStoryObj<typeof Component>;
 

@@ -1,8 +1,8 @@
 import { ReactElement, useMemo } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import createAppTheme from "../../libs/theme/Theme";
 import { useThemeMode } from "./UseThemeMode";
+import createAppTheme from "~/libs/theme/Theme";
 
 interface Props {
   children: JSX.Element | JSX.Element[];

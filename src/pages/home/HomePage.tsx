@@ -3,8 +3,8 @@ import AvatarIcon from "@mui/icons-material/AccountCircle";
 import GithubIcon from "@mui/icons-material/GitHub";
 import ProfileCardExt from "../../app/ext/profile/ProfileCardExt";
 import ThemeToggleExt from "../../app/ext/theme-toggle/ThemeToggleExt";
-import AppHeaderDivider from "../../components/layout/header/AppHeaderDivider";
-import HomeView from "../../components/views/home/HomeView";
+import AppHeaderDivider from "~/components/layout/header/AppHeaderDivider";
+import HomeView from "~/components/views/home/HomeView";
 
 export default function HomePage(): ReactElement {
   function handleGithubClick(): void {

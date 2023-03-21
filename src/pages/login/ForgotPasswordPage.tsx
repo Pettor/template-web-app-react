@@ -1,8 +1,8 @@
 import React from "react";
 import useForgotPassword from "../../app/api/queries/login/forgot-password/UseForgotPassword";
 import useAppInfo from "../../app/config/UseAppInfo";
-import { FormForgotPassword } from "../../components/forms/forgot-password/ForgotPasswordForm";
-import ForgotPasswordView from "../../components/views/login/ForgotPasswordView";
+import { FormForgotPassword } from "~/components/forms/forgot-password/ForgotPasswordForm";
+import ForgotPasswordView from "~/components/views/login/ForgotPasswordView";
 
 export default function ForgotPasswordPage(): React.ReactElement {
   const { appName } = useAppInfo();

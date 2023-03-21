@@ -1,6 +1,6 @@
 import { ComponentStoryObj } from "@storybook/react";
-import ContainerDecorator from "../../../stories/decorators/ContainerDecorator";
 import Component from "./SignUpForm";
+import ContainerDecorator from "~/stories/decorators/ContainerDecorator";
 
 type Story = ComponentStoryObj<typeof Component>;
 
