@@ -1,11 +1,11 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Box from "@mui/material/Box";
 import CardHeader from "@mui/material/CardHeader";
 import IconButton from "@mui/material/IconButton";
 import Slide from "@mui/material/Slide";
 import { styled } from "@mui/material/styles";
-import { MenuOptions } from "./AppMenu";
+import type { MenuOptions } from "./AppMenu";
 
 const MenuContainer = styled(Box)(({ theme }) => ({
   position: "fixed",

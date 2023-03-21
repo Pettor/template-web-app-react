@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Divider from "@mui/material/Divider";
 import { styled } from "@mui/material/styles";
 

@@ -66,6 +66,12 @@
       }
     ],
     "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports"
+      }
+    ],
     // Plugins
     "prettier/prettier": "error",
     "formatjs/enforce-id": [

@@ -1,4 +1,5 @@
-import { lazy, ReactElement } from "react";
+import type { ReactElement } from "react";
+import { lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PrivateRouteLogic from "./logic/PrivateRouteLogic";
 import PublicRouteLogic from "./logic/PublicRouteLogic";

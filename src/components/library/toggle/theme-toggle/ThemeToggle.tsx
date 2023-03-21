@@ -1,7 +1,8 @@
-import { ReactElement } from "react";
-import { PaletteMode } from "@mui/material";
+import type { ReactElement } from "react";
+import type { PaletteMode } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Switch, { SwitchProps } from "@mui/material/Switch";
+import type { SwitchProps } from "@mui/material/Switch";
+import Switch from "@mui/material/Switch";
 import MoonSvg from "./svg/Moon.svg";
 import SunSvg from "./svg/Sun.svg";
 

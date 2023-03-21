@@ -1,7 +1,8 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Typography from "@mui/material/Typography";
 import { useIntl } from "react-intl";
-import ForgotPasswordForm, { ForgotPasswordFormProps } from "../../forms/forgot-password/ForgotPasswordForm";
+import type { ForgotPasswordFormProps } from "../../forms/forgot-password/ForgotPasswordForm";
+import ForgotPasswordForm from "../../forms/forgot-password/ForgotPasswordForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
 import LogoFull from "../../library/logo/LogoFull";
 

@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import AppLocales from "./AppLocales";
 import { AuthProvider } from "./auth/AuthContext";

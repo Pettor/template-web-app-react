@@ -1,7 +1,8 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import { SxProps, styled } from "@mui/material/styles";
+import type { SxProps } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",

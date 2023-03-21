@@ -1,6 +1,7 @@
-import React, { ComponentProps, ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import Component from "./CardModal";
 
 type Story = ComponentStoryObj<typeof Component>;

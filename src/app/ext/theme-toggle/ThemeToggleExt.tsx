@@ -1,5 +1,6 @@
-import { ReactElement, useContext } from "react";
-import { PaletteMode } from "@mui/material";
+import type { ReactElement } from "react";
+import { useContext } from "react";
+import type { PaletteMode } from "@mui/material";
 import { ThemeModeContext } from "../../theme/ThemeModeContext";
 import ThemeToggle from "~/components/library/toggle/theme-toggle/ThemeToggle";
 

@@ -1,5 +1,6 @@
-import { ReactElement } from "react";
-import { IntlProvider, MessageFormatElement } from "react-intl";
+import type { ReactElement } from "react";
+import type { MessageFormatElement } from "react-intl";
+import { IntlProvider } from "react-intl";
 import en from "../../locale/compiled/en.json";
 
 interface Props {

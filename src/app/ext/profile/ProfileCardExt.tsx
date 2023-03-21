@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import useProfileInfo from "../../api/queries/user/profile-info/UseProfileInfo";
 import useAuth from "../../auth/UseAuth";
 import ProfileCardResponsive from "~/components/layout/profile/ProfileCardResponsive";

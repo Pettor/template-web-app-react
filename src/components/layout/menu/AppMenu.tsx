@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Menu from "@mui/material/Menu";
 
 export interface MenuOptions {

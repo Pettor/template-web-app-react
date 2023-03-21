@@ -1,4 +1,5 @@
-import { ReactElement, ReactNode, useState } from "react";
+import type { ReactElement, ReactNode } from "react";
+import { useState } from "react";
 import { Box } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import AppMenuResponsive from "../menu/AppMenuResponsive";

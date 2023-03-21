@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PaletteMode } from "@mui/material";
+import type { PaletteMode } from "@mui/material";
 import { ThemeModeContext } from "./ThemeModeContext";
 
 export function useThemeMode(): PaletteMode {

@@ -1,4 +1,5 @@
-import { ReactElement, useMemo } from "react";
+import type { ReactElement } from "react";
+import { useMemo } from "react";
 import AvatarIcon from "@mui/icons-material/AccountCircle";
 import GithubIcon from "@mui/icons-material/GitHub";
 import ProfileCardExt from "../../app/ext/profile/ProfileCardExt";

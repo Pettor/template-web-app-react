@@ -1,6 +1,8 @@
-import { Subject, Subscription } from "rxjs";
-import { ApiMessages } from "./ApiWorker";
-import { ApiError, ApiResponse, ApiResponseTypes, isApiError } from "./ApiWorkerReponse";
+import type { Subscription } from "rxjs";
+import { Subject } from "rxjs";
+import type { ApiMessages } from "./ApiWorker";
+import type { ApiError, ApiResponse, ApiResponseTypes } from "./ApiWorkerReponse";
+import { isApiError } from "./ApiWorkerReponse";
 
 export default class ApiWorkerCommunication {
   private readonly worker: Worker;

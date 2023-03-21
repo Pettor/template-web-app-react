@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./AppMenuResponsive";
 

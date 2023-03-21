@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import Component from "./ContainerLayout";
 import { ContentComponent } from "~/stories/data/ContentData";
 

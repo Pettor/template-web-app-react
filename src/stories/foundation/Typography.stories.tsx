@@ -1,4 +1,5 @@
-import React, { ReactElement } from "react";
+import type { ReactElement } from "react";
+import React from "react";
 import { Typography } from "@mui/material";
 import Box from "@mui/system/Box";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";

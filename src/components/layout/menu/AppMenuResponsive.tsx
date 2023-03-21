@@ -1,7 +1,9 @@
-import { ComponentType, ReactElement, useMemo } from "react";
+import type { ComponentType, ReactElement } from "react";
+import { useMemo } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import AppMenu, { MenuOptions } from "./AppMenu";
+import type { MenuOptions } from "./AppMenu";
+import AppMenu from "./AppMenu";
 import AppMenuMobile from "./AppMenuMobile";
 
 interface Props extends MenuOptions {}

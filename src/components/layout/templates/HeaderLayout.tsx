@@ -1,11 +1,13 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import { Breakpoint, SxProps, Theme, styled, useTheme } from "@mui/material/styles";
+import type { Breakpoint, SxProps, Theme } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import AppHeader, { AppHeaderOptions } from "../header/AppHeader";
-import { AppHeaderComponents } from "../header/AppHeaderClasses";
+import type { AppHeaderOptions } from "../header/AppHeader";
+import AppHeader from "../header/AppHeader";
+import type { AppHeaderComponents } from "../header/AppHeaderClasses";
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",

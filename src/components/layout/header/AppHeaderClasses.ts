@@ -1,4 +1,4 @@
-import { Key, ReactElement, ReactNode } from "react";
+import type { Key, ReactElement, ReactNode } from "react";
 
 interface AppHeaderComponentOptions {
   flexItem?: boolean;

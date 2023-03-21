@@ -1,6 +1,7 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Box from "@mui/material/Box";
-import Modal, { ModalProps } from "@mui/material/Modal";
+import type { ModalProps } from "@mui/material/Modal";
+import Modal from "@mui/material/Modal";
 import { styled } from "@mui/material/styles";
 
 type Props = ModalProps & {

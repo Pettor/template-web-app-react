@@ -1,11 +1,12 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
 import { useIntl } from "react-intl";
 import meshUrl from "../../../assets/background/wave-background.svg";
-import LoginForm, { LoginFormProps } from "../../forms/login/LoginForm";
+import type { LoginFormProps } from "../../forms/login/LoginForm";
+import LoginForm from "../../forms/login/LoginForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
 import LogoFull from "../../library/logo/LogoFull";
 
