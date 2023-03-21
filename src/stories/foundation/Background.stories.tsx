@@ -4,9 +4,9 @@ import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
 import { useDarkMode } from "storybook-dark-mode";
-import CreateAppTheme from "../../libs/theme/Theme";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";
 import { DocumentationLayout } from "../layout/DocumentationLayout";
+import CreateAppTheme from "~/libs/theme/Theme";
 
 export default {
   title: "Design System/Background",

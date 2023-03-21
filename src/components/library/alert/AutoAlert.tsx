@@ -3,7 +3,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Alert, { AlertProps } from "@mui/material/Alert";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
-import usePrevious from "../../../libs/react/hooks/UsePrevious";
+import usePrevious from "~/libs/react/hooks/UsePrevious";
 
 interface Props extends AlertProps {
   text?: string;

@@ -1,8 +1,8 @@
 import React from "react";
 import Box, { BoxProps } from "@mui/material/Box";
 import { ComponentStoryObj } from "@storybook/react";
-import { ContentComponent } from "../../../stories/data/ContentData";
 import Component from "./ElevationScroll";
+import { ContentComponent } from "~/stories/data/ContentData";
 
 type Story = ComponentStoryObj<typeof Component>;
 

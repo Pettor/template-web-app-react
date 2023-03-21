@@ -1,7 +1,7 @@
 import { ReactElement, useContext } from "react";
 import { PaletteMode } from "@mui/material";
-import ThemeToggle from "../../../components/library/toggle/theme-toggle/ThemeToggle";
 import { ThemeModeContext } from "../../theme/ThemeModeContext";
+import ThemeToggle from "~/components/library/toggle/theme-toggle/ThemeToggle";
 
 export default function ThemeToggleExt(): ReactElement {
   const { mode, toggleMode } = useContext(ThemeModeContext);

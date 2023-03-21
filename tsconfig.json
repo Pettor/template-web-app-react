@@ -20,6 +20,6 @@
     "useDefineForClassFields": true
   },
   "include": ["./src", "types/reset.d.ts"],
-  "exclude": ["dist", "**/*.stories.tsx"],
+  "exclude": ["dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -6,8 +6,8 @@ import CardHeader from "@mui/material/CardHeader";
 import IconButton from "@mui/material/IconButton";
 import { ModalProps } from "@mui/material/Modal";
 import { styled } from "@mui/material/styles";
-import { getWordyDateFormat } from "../../../libs/functions/date/Format";
 import ResponsiveModal from "./ResponsiveModal";
+import { getWordyDateFormat } from "~/libs/functions/date/Format";
 
 type Props = ModalProps & {
   title: string;

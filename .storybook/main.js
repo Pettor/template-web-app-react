@@ -1,3 +1,6 @@
+const { mergeConfig } = require("vite")
+const { default: tsconfigPaths } = require('vite-tsconfig-paths')
+
 module.exports = {
   features: {
     storyStoreV7: true,
@@ -13,8 +16,12 @@ module.exports = {
   stories: ["../src/**/*.stories.@(ts|tsx)"],
   addons: ["@storybook/addon-essentials", "@storybook/addon-a11y", "storybook-dark-mode"],
 
-  async viteFinal(config) {
-    config.base = './';
-    return config;
-  },
+  async viteFinal(config, { configType }) {
+    return mergeConfig(config, {
+      base: "./",
+      plugins: [
+        tsconfigPaths()
+      ]
+    })
+  }
 };

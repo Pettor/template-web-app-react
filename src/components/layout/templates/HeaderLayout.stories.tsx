@@ -1,10 +1,10 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
 import { ComponentStoryObj } from "@storybook/react";
-import { ContentComponent } from "../../../stories/data/ContentData";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./HeaderLayout";
+import { ContentComponent } from "~/stories/data/ContentData";
 
 type Story = ComponentStoryObj<typeof Component>;
 

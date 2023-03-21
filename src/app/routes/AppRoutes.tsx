@@ -5,7 +5,7 @@ import PublicRouteLogic from "./logic/PublicRouteLogic";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 
-const NotFoundPage = lazy(() => import("../../pages/NotFoundPage"));
+const NotFoundPage = lazy(() => import("~/pages/NotFoundPage"));
 
 export default function AppRoutes(): ReactElement {
   return (

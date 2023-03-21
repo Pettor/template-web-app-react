@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStoryObj } from "@storybook/react";
-import { ContentComponent } from "../../../stories/data/ContentData";
 import Component from "./ContainerLayout";
+import { ContentComponent } from "~/stories/data/ContentData";
 
 type Story = ComponentStoryObj<typeof Component>;
 
