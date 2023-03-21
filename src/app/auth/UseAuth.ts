@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { RequestTokenDto } from "../api/queries/login/token-request/RequestTokenDto";
+import type { RequestTokenDto } from "../api/queries/login/token-request/RequestTokenDto";
 import useApi from "../api/UseApi";
 import { AuthContext } from "./AuthContext";
-import { AuthStatus } from "./AuthReducer";
+import type { AuthStatus } from "./AuthReducer";
 
 export default function useAuth(): {
   status: AuthStatus;

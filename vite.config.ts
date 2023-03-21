@@ -1,5 +1,6 @@
 import react from "@vitejs/plugin-react-swc";
-import { UserConfig, defineConfig, loadEnv } from "vite";
+import type { UserConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import proxy from "vite-plugin-http2-proxy";
 import mkcert from "vite-plugin-mkcert";
 import tsconfigPaths from "vite-tsconfig-paths";

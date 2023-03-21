@@ -1,4 +1,4 @@
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import Component from "./ForgotPasswordForm";
 import ContainerDecorator from "~/stories/decorators/ContainerDecorator";
 

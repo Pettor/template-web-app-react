@@ -1,4 +1,4 @@
-import { JwtToken } from "./JwtToken";
+import type { JwtToken } from "./JwtToken";
 
 // Token caching (token should always be hidden from main thread i.e. stay in worker)
 let authToken: JwtToken = null;

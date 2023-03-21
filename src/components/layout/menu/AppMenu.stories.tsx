@@ -1,6 +1,6 @@
 import React from "react";
 import MenuItem from "@mui/material/MenuItem";
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./AppMenu";
 

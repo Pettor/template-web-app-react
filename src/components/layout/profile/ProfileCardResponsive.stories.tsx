@@ -1,4 +1,4 @@
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import Component from "./ProfileCardResponsive";
 import CenterDecorator from "~/stories/decorators/CenterDecorator";
 import PaddingTopDectorator from "~/stories/decorators/PaddingTopDectorator";

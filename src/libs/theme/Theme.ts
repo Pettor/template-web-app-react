@@ -4,8 +4,9 @@ import "@fontsource/rubik/400.css";
 import "@fontsource/rubik/500.css";
 import "@fontsource/rubik/700.css";
 import "@fontsource/rubik/900.css";
-import { PaletteMode } from "@mui/material";
-import { Theme, createTheme, responsiveFontSizes } from "@mui/material/styles";
+import type { PaletteMode } from "@mui/material";
+import type { Theme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
   interface Theme {

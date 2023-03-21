@@ -1,4 +1,5 @@
-import { ComponentProps, Key, ReactElement, useMemo } from "react";
+import type { ComponentProps, Key, ReactElement } from "react";
+import { useMemo } from "react";
 import BackArrow from "@mui/icons-material/ArrowBack";
 import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -11,15 +12,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Logo from "../../library/logo/Logo";
 import ElevationScroll from "../scrolling/ElevationScroll";
-import {
+import type {
   AppHeaderComponentOptions,
   AppHeaderComponents,
   HeaderComponent,
   IconHeaderComponent,
-  isClickableIconComponent,
-  isIconComponent,
-  isStaticComponent,
 } from "./AppHeaderClasses";
+import { isClickableIconComponent, isIconComponent, isStaticComponent } from "./AppHeaderClasses";
 import AppHeaderIconComponent from "./AppHeaderIconComponent";
 
 export interface AppHeaderOptions {

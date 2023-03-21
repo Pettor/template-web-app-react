@@ -2,8 +2,8 @@ import axios from "axios";
 import { clearToken } from "../../auth/token/TokenStorage";
 import ApiClient from "../client/ApiClient";
 import client from "../client/AxiosClient";
-import { RequestTokenDto } from "../queries/login/token-request/RequestTokenDto";
-import { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
+import type { RequestTokenDto } from "../queries/login/token-request/RequestTokenDto";
+import type { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
 
 // Request and Response types
 type ApiMessages =

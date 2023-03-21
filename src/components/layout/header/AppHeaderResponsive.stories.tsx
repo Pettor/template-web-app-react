@@ -3,7 +3,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import Search from "../../library/search/Search";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import Component from "./AppHeaderResponsive";

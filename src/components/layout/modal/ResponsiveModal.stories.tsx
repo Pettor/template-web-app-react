@@ -1,7 +1,8 @@
-import React, { ReactElement } from "react";
-import { ComponentProps } from "react";
+import React from "react";
+import type { ReactElement } from "react";
+import type { ComponentProps } from "react";
 import Box from "@mui/material/Box";
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import Component from "./ResponsiveModal";
 
 type Story = ComponentStoryObj<typeof Component>;

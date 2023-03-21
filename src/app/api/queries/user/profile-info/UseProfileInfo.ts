@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useApi from "../../../UseApi";
-import { ProfileInfo } from "./ProfileInfo";
-import { ProfileInfoDto } from "./ProfileInfoDto";
+import type { ProfileInfo } from "./ProfileInfo";
+import type { ProfileInfoDto } from "./ProfileInfoDto";
 
 function convertFromDto(dto: ProfileInfoDto): ProfileInfo {
   return {

@@ -1,5 +1,6 @@
-import { ReactElement, ReactNode, createContext, useMemo } from "react";
-import { PaletteMode } from "@mui/material";
+import type { ReactElement, ReactNode } from "react";
+import { createContext, useMemo } from "react";
+import type { PaletteMode } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useLocalStorage } from "~/libs/storage/local-storage/hooks/UseLocalStorage";
 

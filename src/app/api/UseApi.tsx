@@ -1,8 +1,8 @@
-import { Subscription } from "rxjs";
-import { RequestTokenDto } from "./queries/login/token-request/RequestTokenDto";
+import type { Subscription } from "rxjs";
+import type { RequestTokenDto } from "./queries/login/token-request/RequestTokenDto";
 import ApiWorker from "./worker/ApiWorker?worker";
 import ApiWorkerCommunication from "./worker/ApiWorkerCommunication";
-import { ApiError, ApiResponse } from "./worker/ApiWorkerReponse";
+import type { ApiError, ApiResponse } from "./worker/ApiWorkerReponse";
 
 const apiWorker = new ApiWorkerCommunication(new ApiWorker());
 

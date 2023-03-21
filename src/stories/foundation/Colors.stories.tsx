@@ -1,6 +1,8 @@
-import React, { ReactElement } from "react";
+import type { ReactElement } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
-import { PaletteColor, styled } from "@mui/material/styles";
+import type { PaletteColor } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
 import { useDarkMode } from "storybook-dark-mode";

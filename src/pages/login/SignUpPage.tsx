@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import useSignUp from "../../app/api/queries/login/sign-up/UseSignUp";
 import useAppInfo from "../../app/config/UseAppInfo";
-import { FormSignUp } from "~/components/forms/sign-up/SignUpForm";
+import type { FormSignUp } from "~/components/forms/sign-up/SignUpForm";
 import SignUpView from "~/components/views/login/SignUpView";
 
 export default function SignIn(): ReactElement {

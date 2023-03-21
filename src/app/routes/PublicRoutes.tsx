@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { RouteProps } from "react-router-dom";
+import type { RouteProps } from "react-router-dom";
 
 const ForgotPasswordPage = lazy(() => import("~/pages/login/ForgotPasswordPage"));
 const LoginPage = lazy(() => import("~/pages/login/LoginPage"));

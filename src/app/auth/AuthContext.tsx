@@ -1,6 +1,8 @@
-import { ReactElement, ReactNode, createContext, useEffect, useMemo, useReducer } from "react";
+import type { ReactElement, ReactNode } from "react";
+import { createContext, useEffect, useMemo, useReducer } from "react";
 import useApi from "../api/UseApi";
-import AuthReducer, { AuthActions, AuthState } from "./AuthReducer";
+import type { AuthActions, AuthState } from "./AuthReducer";
+import AuthReducer from "./AuthReducer";
 import useRunOnce from "~/libs/react/hooks/UseRunOnce";
 
 interface AuthContext {

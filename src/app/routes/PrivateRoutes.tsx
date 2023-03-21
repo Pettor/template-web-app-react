@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import { RouteProps } from "react-router-dom";
+import type { RouteProps } from "react-router-dom";
 
 const HomePage = lazy(() => import("~/pages/home/HomePage"));
 

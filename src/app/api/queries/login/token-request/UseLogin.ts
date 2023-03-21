@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
-import { AxiosError } from "axios";
+import type { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../../../auth/UseAuth";
-import { RequestTokenDto } from "./RequestTokenDto";
+import type { RequestTokenDto } from "./RequestTokenDto";
 
 export default function useLogin(): {
   error: AxiosError | null;

@@ -1,4 +1,4 @@
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import Component from "./LogoFull";
 
 type Story = ComponentStoryObj<typeof Component>;

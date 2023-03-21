@@ -1,6 +1,8 @@
-import { ReactElement, useEffect, useMemo, useState } from "react";
+import type { ReactElement } from "react";
+import { useEffect, useMemo, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import Alert, { AlertProps } from "@mui/material/Alert";
+import type { AlertProps } from "@mui/material/Alert";
+import Alert from "@mui/material/Alert";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import usePrevious from "~/libs/react/hooks/UsePrevious";

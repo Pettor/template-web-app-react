@@ -1,4 +1,4 @@
-import { ComponentProps, ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import AppHeader from "./AppHeader";

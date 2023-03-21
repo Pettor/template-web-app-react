@@ -1,6 +1,6 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
-import { ComponentStoryObj } from "@storybook/react";
+import type { ComponentStoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../../layout/profile/ProfileCardResponsive";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import Component from "./HomeView";

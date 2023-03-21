@@ -1,15 +1,9 @@
-import axios, {
-  AxiosError,
-  AxiosHeaders,
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-  RawAxiosRequestHeaders,
-} from "axios";
+import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
+import axios, { AxiosHeaders } from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { getToken, setToken } from "../../auth/token/TokenStorage";
-import { RequestTokenDto } from "../queries/login/token-request/RequestTokenDto";
-import { TokenDto } from "../queries/login/token-request/TokenDto";
+import type { RequestTokenDto } from "../queries/login/token-request/RequestTokenDto";
+import type { TokenDto } from "../queries/login/token-request/TokenDto";
 
 export default class ApiClient {
   private readonly tokenApiUrl = "/api/tokens";
