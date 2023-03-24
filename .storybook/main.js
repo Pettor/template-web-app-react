@@ -16,7 +16,9 @@ const config = {
   async viteFinal(config) {
     return mergeConfig(config, {
       base: "./",
-      plugins: [tsconfigPaths()],
+      plugins: [
+        tsconfigPaths()
+      ],
       // Add storybook-specific dependencies to pre-optimization
       optimizeDeps: {
         include: [
