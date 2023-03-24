@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import CommonDecorator from "../../../stories/decorators/CommonDecorator";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./Search";
+import CommonDecorator from "~/stories/decorators/CommonDecorator";
 
 const meta = {
   component: Component,

@@ -1,9 +1,9 @@
 import Avatar from "@mui/material/Avatar";
-import { Meta, StoryObj } from "@storybook/react";
-import { ContentComponent } from "../../../stories/data/ContentData";
+import type { Meta, StoryObj } from "@storybook/react";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./HeaderLayout";
+import { ContentComponent } from "~/stories/data/ContentData";
 
 const meta = {
   component: Component,

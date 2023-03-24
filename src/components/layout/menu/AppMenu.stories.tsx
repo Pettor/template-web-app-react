@@ -1,6 +1,6 @@
-import { ComponentProps } from "react";
+import type { ComponentProps } from "react";
 import MenuItem from "@mui/material/MenuItem";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./AppMenu";
 

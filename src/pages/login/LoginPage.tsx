@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
-import useLogin from "../../app/api/queries/login/token-request/UseLogin";
-import useAppInfo from "../../app/config/UseAppInfo";
+import useLogin from "~/app/api/queries/login/token-request/UseLogin";
+import useAppInfo from "~/app/config/UseAppInfo";
 import type { FormLogin } from "~/components/forms/login/LoginForm";
 import LoginView from "~/components/views/login/LoginView";
 

@@ -1,7 +1,7 @@
-import { ReactElement } from "react";
-import { ComponentProps } from "react";
+import type { ReactElement } from "react";
+import type { ComponentProps } from "react";
 import Box from "@mui/material/Box";
-import { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./ResponsiveModal";
 
 const meta = {

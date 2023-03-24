@@ -1,12 +1,13 @@
-import { ReactElement } from "react";
-import { PaletteMode } from "@mui/material";
+import type { ReactElement } from "react";
+import type { PaletteMode } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { PaletteColor, styled } from "@mui/material/styles";
+import type { PaletteColor } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
-import CreateAppTheme from "../../libs/theme/Theme";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";
 import { DocumentationLayout } from "../layout/DocumentationLayout";
+import CreateAppTheme from "~/libs/theme/Theme";
 export default {
   title: "Design System/Colors",
   decorators: [DocumentationDecorator],

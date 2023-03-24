@@ -1,7 +1,8 @@
-import Box, { BoxProps } from "@mui/material/Box";
-import { Meta, StoryObj } from "@storybook/react";
-import { ContentComponent } from "../../../stories/data/ContentData";
+import type { BoxProps } from "@mui/material/Box";
+import Box from "@mui/material/Box";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./ElevationScroll";
+import { ContentComponent } from "~/stories/data/ContentData";
 
 const meta = {
   component: Component,

@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from "@storybook/react";
-import CenterDecorator from "../../../stories/decorators/CenterDecorator";
-import PaddingTopDectorator from "../../../stories/decorators/PaddingTopDectorator";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./ProfileCard";
+import CenterDecorator from "~/stories/decorators/CenterDecorator";
+import PaddingTopDectorator from "~/stories/decorators/PaddingTopDectorator";
 
 const meta = {
   component: Component,

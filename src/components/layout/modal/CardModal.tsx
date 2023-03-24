@@ -1,13 +1,13 @@
-import { ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
 import IconButton from "@mui/material/IconButton";
-import { ModalProps } from "@mui/material/Modal";
+import type { ModalProps } from "@mui/material/Modal";
 import { styled } from "@mui/material/styles";
-import { getWordyDateFormat } from "../../../libs/functions/date/Format";
 import ResponsiveModal from "./ResponsiveModal";
+import { getWordyDateFormat } from "~/libs/functions/date/Format";
 
 type Props = Omit<ModalProps, "children"> & {
   title: string;

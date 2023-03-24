@@ -1,5 +1,5 @@
-import { ComponentProps } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import type { ComponentProps } from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./AppMenuResponsive";
 

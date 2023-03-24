@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { ContentComponent } from "../../../stories/data/ContentData";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./ContainerLayout";
+import { ContentComponent } from "~/stories/data/ContentData";
 
 const meta = {
   component: Component,
