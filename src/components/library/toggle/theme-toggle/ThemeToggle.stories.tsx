@@ -22,4 +22,9 @@ export const Dark: Story = {
   args: {
     defaultMode: "dark",
   },
+  parameters: {
+    theming: {
+      themeOverride: "dark",
+    },
+  },
 } satisfies Story;
