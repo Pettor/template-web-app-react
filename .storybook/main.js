@@ -8,7 +8,8 @@ const config = {
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
-    "@storybook/addon-viewport"
+    "@storybook/addon-viewport",
+    "@storybook/addon-styling",
   ],
   docs: {
     defaultName: 'Docs',
@@ -24,7 +25,8 @@ const config = {
         include: [
           "@storybook/addon-essentials",
           "@storybook/addon-a11y",
-          "@storybook/addon-viewport"
+          "@storybook/addon-viewport",
+          "@storybook/addon-styling",
         ],
       },
     });

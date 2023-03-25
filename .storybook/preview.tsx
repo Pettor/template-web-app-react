@@ -1,12 +1,13 @@
 import type { ReactElement } from "react";
 import React from "react";
-import { ThemeProvider as Emotion10ThemeProvider } from "@emotion/react";
+import { IntlProvider } from "react-intl";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import createAppTheme from "../src/libs/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { StoryFn, StoryContext } from "@storybook/react";
+import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 
 export const parameters = {
   layout: "fullscreen",
@@ -35,36 +36,27 @@ export const globalTypes = {
       ],
     },
   },
-  theme: {
-    name: "Theme",
-    description: "Theme selector",
-    defaultValue: "light",
-    toolbar: {
-      icon: "mirror",
-      dynamicTitle: true,
-      items: [
-        { value: "light", title: "Light" },
-        { value: "dark", title: "Dark" },
-      ],
-    },
-  },
 };
 
-function withThemeProvider(Story: StoryFn, context: StoryContext): ReactElement {
+function withLocaleProvider(Story: StoryFn, context: StoryContext): ReactElement {
   const { locale } = context.globals;
   const { messages } = reactIntl;
-  const theme = createAppTheme(selectedTheme);
 
   return (
-    <Emotion10ThemeProvider theme={theme}>
-      <ThemeProvider theme={theme}>
-        <IntlProvider locale={locale} messages={messages[locale]}>
-          <CssBaseline />
-          <Story {...context} />
-        </IntlProvider>
-      </ThemeProvider>
-    </Emotion10ThemeProvider>
+    <IntlProvider locale={locale} messages={messages[locale]}>
+      <Story {...context} />
+    </IntlProvider>
   );
 }
 
-export const decorators = [withThemeProvider];
+export const decorators = [
+  withLocaleProvider, 
+  withThemeFromJSXProvider({
+    themes: {
+      light: createAppTheme("light"),
+      dark: createAppTheme("dark"),
+    },
+    defaultTheme: "light",
+    Provider: ThemeProvider,
+    GlobalStyles: CssBaseline,
+  })];

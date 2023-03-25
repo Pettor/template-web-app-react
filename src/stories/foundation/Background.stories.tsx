@@ -1,12 +1,10 @@
 import type { ReactElement } from "react";
-import type { PaletteMode } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";
 import { DocumentationLayout } from "../layout/DocumentationLayout";
-import CreateAppTheme from "~/libs/theme/Theme";
 
 export default {
   title: "Design System/Background",
@@ -36,71 +34,69 @@ function ColorRow(label: string, background: string): ReactElement {
   );
 }
 
-export const Background = {
-  render: (_: unknown, { globals: { theme: selectedTheme } }: { globals: { theme: PaletteMode } }) => {
-    const theme = CreateAppTheme(selectedTheme);
-    const {
-      background: { default: defaultBackground, paper: paperBackground },
-    } = theme.palette;
-    const {
-      customBackgrounds: {
-        accent: { light: accentLight, main: accentMain, dark: accentDark },
-        common: { transparent },
-        gradients: {
-          linear: { variation1 },
-        },
+export function Background(): ReactElement {
+  const theme = useTheme();
+  const {
+    background: { default: defaultBackground, paper: paperBackground },
+  } = theme.palette;
+  const {
+    customBackgrounds: {
+      accent: { light: accentLight, main: accentMain, dark: accentDark },
+      common: { transparent },
+      gradients: {
+        linear: { variation1 },
       },
-    } = theme;
+    },
+  } = theme;
 
-    return (
-      <DocumentationLayout label="Background">
-        <Grid container>
-          <Grid item xs={3}>
-            <Item>
-              <Typography variant="h6">MUI</Typography>
-            </Item>
-          </Grid>
-          <Grid item xs={9}>
-            <Item>
-              <Typography variant="h6" />
-            </Item>
-          </Grid>
-          {ColorRow("Default", defaultBackground)}
-          {ColorRow("Paper", paperBackground)}
-
-          <Grid item xs={3}>
-            <Item>
-              <Typography variant="h6" sx={{ mt: 2 }}>
-                Accent
-              </Typography>
-            </Item>
-          </Grid>
-          <Grid item xs={9} />
-          {ColorRow("Main", accentMain)}
-          {ColorRow("Light", accentLight)}
-          {ColorRow("Dark", accentDark)}
-
-          <Grid item xs={3}>
-            <Item>
-              <Typography variant="h6" sx={{ mt: 2 }}>
-                Common
-              </Typography>
-            </Item>
-          </Grid>
-          <Grid item xs={9} />
-          {ColorRow("Transparent", transparent)}
-
-          <Grid item xs={3}>
-            <Item>
-              <Typography variant="h6" sx={{ mt: 2 }}>
-                Gradients
-              </Typography>
-            </Item>
-          </Grid>
-          <Grid item xs={9} />
-          {ColorRow("Variation 1", variation1)}
+  return (
+    <DocumentationLayout label="Background">
+      <Grid container>
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6">MUI</Typography>
+          </Item>
         </Grid>
-      </DocumentationLayout>
-    );
-  },
-};
+        <Grid item xs={9}>
+          <Item>
+            <Typography variant="h6" />
+          </Item>
+        </Grid>
+        {ColorRow("Default", defaultBackground)}
+        {ColorRow("Paper", paperBackground)}
+
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              Accent
+            </Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={9} />
+        {ColorRow("Main", accentMain)}
+        {ColorRow("Light", accentLight)}
+        {ColorRow("Dark", accentDark)}
+
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              Common
+            </Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={9} />
+        {ColorRow("Transparent", transparent)}
+
+        <Grid item xs={3}>
+          <Item>
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              Gradients
+            </Typography>
+          </Item>
+        </Grid>
+        <Grid item xs={9} />
+        {ColorRow("Variation 1", variation1)}
+      </Grid>
+    </DocumentationLayout>
+  );
+}
