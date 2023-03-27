@@ -1,5 +1,6 @@
-const { mergeConfig } = require("vite")
-const { default: tsconfigPaths } = require('vite-tsconfig-paths')
+/* eslint-disable */
+const { mergeConfig } = require("vite");
+const { default: tsconfigPaths } = require("vite-tsconfig-paths");
 
 module.exports = {
   features: {
@@ -16,12 +17,10 @@ module.exports = {
   stories: ["../src/**/*.stories.@(ts|tsx)"],
   addons: ["@storybook/addon-essentials", "@storybook/addon-a11y", "storybook-dark-mode"],
 
-  async viteFinal(config, { configType }) {
+  async viteFinal(config) {
     return mergeConfig(config, {
       base: "./",
-      plugins: [
-        tsconfigPaths()
-      ]
-    })
-  }
+      plugins: [tsconfigPaths()],
+    });
+  },
 };

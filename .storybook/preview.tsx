@@ -1,13 +1,14 @@
+import type { ReactElement } from "react";
 import React from "react";
-import { IntlProvider } from "react-intl";
 import { ThemeProvider as Emotion10ThemeProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import type { StoryFn, StoryContext } from "@storybook/react";
+import { IntlProvider } from "react-intl";
 import { useDarkMode } from "storybook-dark-mode";
 import createAppTheme from "../src/libs/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { StoryFn, StoryContext } from "@storybook/react";
 
 export const parameters = {
   layout: "fullscreen",
@@ -30,14 +31,14 @@ export const globalTypes = {
     toolbar: {
       icon: "globe",
       items: [
+        // Add locales here
         { value: "en", title: "English" },
-        { value: "sv", title: "Swedish" },
       ],
     },
   },
 };
 
-const withThemeProvider = (Story: StoryFn, context: StoryContext) => {
+function withThemeProvider(Story: StoryFn, context: StoryContext): ReactElement {
   const { locale } = context.globals;
   const { messages } = reactIntl;
 
@@ -54,6 +55,6 @@ const withThemeProvider = (Story: StoryFn, context: StoryContext) => {
       </ThemeProvider>
     </Emotion10ThemeProvider>
   );
-};
+}
 
 export const decorators = [withThemeProvider];
