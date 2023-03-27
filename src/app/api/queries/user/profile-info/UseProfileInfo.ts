@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
+import produce from "immer";
 import useApi from "../../../UseApi";
 import type { ProfileInfo } from "./ProfileInfo";
 import type { ProfileInfoDto } from "./ProfileInfoDto";
 
 function convertFromDto(dto: ProfileInfoDto): ProfileInfo {
-  return {
-    ...dto,
-  };
+  return produce(dto, (draft) => {
+    return draft;
+  });
 }
 
 export default function useProfileInfo(): {
