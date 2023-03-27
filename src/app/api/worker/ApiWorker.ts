@@ -1,4 +1,5 @@
 import axios from "axios";
+import produce from "immer";
 import { clearToken } from "../../auth/token/TokenStorage";
 import ApiClient from "../client/ApiClient";
 import client from "../client/AxiosClient";
@@ -120,11 +121,10 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
         status: error.response?.status || 500,
       } as ApiError;
     } else {
-      apiResponse = {
-        ...(error as Error),
-        message: "Unknown error",
-        status: 500,
-      } as ApiError;
+      apiResponse = produce<ApiError>(error as ApiError, (draft) => {
+        draft.message = "Unknown error";
+        draft.status = 500;
+      });
     }
   }
 

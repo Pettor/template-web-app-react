@@ -1,6 +1,14 @@
-import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
-import axios, { AxiosHeaders } from "axios";
+import type {
+  AxiosError,
+  AxiosInstance,
+  AxiosRequestConfig,
+  AxiosResponse,
+  RawAxiosRequestHeaders,
+  AxiosHeaders,
+} from "axios";
+import axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
+import produce from "immer";
 import { getToken, setToken } from "../../auth/token/TokenStorage";
 import type { RequestTokenDto } from "../queries/login/token-request/RequestTokenDto";
 import type { TokenDto } from "../queries/login/token-request/TokenDto";
@@ -52,7 +60,9 @@ export default class ApiClient {
     setToken(response.data.token);
 
     // Remove token from response
-    return { ...response, data: null };
+    return produce<AxiosResponse>(response, (draft) => {
+      draft.data = null;
+    });
   }
 
   public async removeToken(): Promise<AxiosResponse> {
@@ -65,7 +75,9 @@ export default class ApiClient {
     setToken(response.data.token);
 
     // Remove token from response
-    return { ...response, data: null };
+    return produce<AxiosResponse>(response, (draft) => {
+      draft.data = null;
+    });
   }
 
   public async patch(url: string, data?: unknown): Promise<AxiosResponse> {
@@ -89,16 +101,14 @@ export default class ApiClient {
   }
 
   private createConfig(): AxiosRequestConfig {
-    return {
-      ...this.defaultConfig,
-      headers: this.createHeaders(),
-    };
+    return produce<AxiosRequestConfig>(this.defaultConfig, (draft) => {
+      draft.headers = this.createHeaders();
+    });
   }
 
   private createHeaders(): AxiosHeaders {
-    return new AxiosHeaders({
-      Authorization: `Bearer ${getToken()}`,
-      ...this.defaultHeaders,
+    return produce<AxiosHeaders>(this.defaultHeaders as AxiosHeaders, (draft) => {
+      draft["Authorization"] = `Bearer ${getToken()}`;
     });
   }
 }
