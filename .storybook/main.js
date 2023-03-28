@@ -6,10 +6,10 @@ const config = {
   framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(ts|tsx)"],
   addons: [
-    "@storybook/addon-essentials",
     "@storybook/addon-a11y",
-    "@storybook/addon-viewport",
+    "@storybook/addon-essentials",
     "@storybook/addon-styling",
+    "@storybook/addon-viewport",
   ],
   docs: {
     defaultName: 'Docs',
@@ -23,10 +23,10 @@ const config = {
       // Add storybook-specific dependencies to pre-optimization
       optimizeDeps: {
         include: [
-          "@storybook/addon-essentials",
           "@storybook/addon-a11y",
-          "@storybook/addon-viewport",
+          "@storybook/addon-essentials",
           "@storybook/addon-styling",
+          "@storybook/addon-viewport",
         ],
       },
     });

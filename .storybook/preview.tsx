@@ -1,13 +1,13 @@
 import type { ReactElement } from "react";
 import React from "react";
-import { IntlProvider } from "react-intl";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
+import { withThemeFromJSXProvider } from "@storybook/addon-styling";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import type { StoryFn, StoryContext } from "@storybook/react";
+import { IntlProvider } from "react-intl";
 import createAppTheme from "../src/libs/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { StoryFn, StoryContext } from "@storybook/react";
-import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 
 export const parameters = {
   layout: "fullscreen",
@@ -50,7 +50,7 @@ function withLocaleProvider(Story: StoryFn, context: StoryContext): ReactElement
 }
 
 export const decorators = [
-  withLocaleProvider, 
+  withLocaleProvider,
   withThemeFromJSXProvider({
     themes: {
       light: createAppTheme("light"),
@@ -59,4 +59,5 @@ export const decorators = [
     defaultTheme: "light",
     Provider: ThemeProvider,
     GlobalStyles: CssBaseline,
-  })];
+  }),
+];
