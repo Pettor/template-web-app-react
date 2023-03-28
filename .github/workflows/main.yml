@@ -101,7 +101,7 @@ jobs:
         run: yarn
 
       - name: Build Storybook
-        run: yarn build-storybook --quiet
+        run: yarn storybook:build --quiet
 
       - name: Serve Storybook and run tests
-        run: yarn test-storybook:ci
+        run: yarn storybook:ci

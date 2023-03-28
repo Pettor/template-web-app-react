@@ -1,4 +1,4 @@
-import type { ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import type { Breakpoint, SxProps, Theme } from "@mui/material/styles";
@@ -7,7 +7,6 @@ import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import type { AppHeaderOptions } from "../header/AppHeader";
 import AppHeader from "../header/AppHeader";
-import type { AppHeaderComponents } from "../header/AppHeaderClasses";
 
 const StyledBox = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -28,9 +27,7 @@ export interface HeaderLayoutProps {
   children: JSX.Element | JSX.Element[];
 }
 
-export interface HeaderLayoutComponents extends AppHeaderComponents {}
-
-interface Props extends HeaderLayoutProps, HeaderLayoutComponents {}
+interface Props extends HeaderLayoutProps, ComponentProps<typeof AppHeader> {}
 
 export default function HeaderLayout({ maxWidth = "lg", sx, children, ...headerProps }: Props): ReactElement {
   const theme = useTheme();

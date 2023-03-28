@@ -1,11 +1,10 @@
-import type { ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import { styled } from "@mui/material/styles";
 import { useIntl } from "react-intl";
 import meshUrl from "../../../assets/background/wave-background.svg";
-import type { LoginFormProps } from "../../forms/login/LoginForm";
 import LoginForm from "../../forms/login/LoginForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
 import LogoFull from "../../library/logo/LogoFull";
@@ -30,7 +29,7 @@ export interface IFormCredentials {
 
 interface Props {
   appName: string;
-  loginForm: LoginFormProps;
+  loginForm: ComponentProps<typeof LoginForm>;
   handleForgotPassword: () => void;
   handleSignUp: () => void;
 }

@@ -1,14 +1,13 @@
-import type { ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
 import Typography from "@mui/material/Typography";
 import { useIntl } from "react-intl";
-import type { ForgotPasswordFormProps } from "../../forms/forgot-password/ForgotPasswordForm";
 import ForgotPasswordForm from "../../forms/forgot-password/ForgotPasswordForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
 import LogoFull from "../../library/logo/LogoFull";
 
 interface Props {
   appName: string;
-  resetForm: ForgotPasswordFormProps;
+  resetForm: ComponentProps<typeof ForgotPasswordForm>;
 }
 
 export default function ForgotPasswordView({ appName, resetForm }: Props): ReactElement {

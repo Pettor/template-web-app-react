@@ -12,13 +12,13 @@ export interface FormForgotPassword {
   email: string;
 }
 
-export interface ForgotPasswordFormProps {
+interface Props {
   error: string;
   loading: boolean;
   onSubmit: SubmitHandler<FormForgotPassword>;
 }
 
-export default function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordFormProps): ReactElement {
+export default function ForgotPasswordForm({ error, loading, onSubmit }: Props): ReactElement {
   const intl = useIntl();
 
   const schema = yup

@@ -3,10 +3,6 @@
     "defaultMessage": "Password is required",
     "description": "LoginFormValidation - Password is required"
   },
-  "2qmW3a": {
-    "defaultMessage": "Remember me",
-    "description": "LoginFormLabel: Remember me"
-  },
   "3YTbxI": {
     "defaultMessage": "What is your last name?",
     "description": "SignUpFormLabel - Last Name"
@@ -23,6 +19,10 @@
     "defaultMessage": "Password",
     "description": "LoginFormLabel: Password"
   },
+  "Blpjtp": {
+    "defaultMessage": "Update",
+    "description": "PwaUpdateDialog - Update button"
+  },
   "Dv81pe": {
     "defaultMessage": "Template is highly optimized for performance",
     "description": "HomeViewGrid - Optimized Description"
@@ -30,6 +30,14 @@
   "Erb2yF": {
     "defaultMessage": "Don't have an account? Sign up",
     "description": "LoginViewLink - Don't have an account? Sign Up"
+  },
+  "GjhGOZ": {
+    "defaultMessage": "A new version of <b>{appName}</b> is available",
+    "description": "PwaUpdateDialog - Update available description"
+  },
+  "HQHLM4": {
+    "defaultMessage": "Ready to work offline",
+    "description": "PwaOfflineDialog- Ready to work offline description"
   },
   "IOLTJ0": {
     "defaultMessage": "Passwords must match",

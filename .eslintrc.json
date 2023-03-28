@@ -5,9 +5,10 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:storybook/recommended"
   ],
   "plugins": ["react", "@typescript-eslint", "prettier", "formatjs", "import"],
   "parser": "@typescript-eslint/parser",

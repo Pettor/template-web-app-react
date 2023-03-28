@@ -5,12 +5,6 @@
       "value": "Password is required"
     }
   ],
-  "2qmW3a": [
-    {
-      "type": 0,
-      "value": "Remember me"
-    }
-  ],
   "3YTbxI": [
     {
       "type": 0,
@@ -35,6 +29,12 @@
       "value": "Password"
     }
   ],
+  "Blpjtp": [
+    {
+      "type": 0,
+      "value": "Update"
+    }
+  ],
   "Dv81pe": [
     {
       "type": 0,
@@ -45,6 +45,32 @@
     {
       "type": 0,
       "value": "Don't have an account? Sign up"
+    }
+  ],
+  "GjhGOZ": [
+    {
+      "type": 0,
+      "value": "A new version of "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "appName"
+        }
+      ],
+      "type": 8,
+      "value": "b"
+    },
+    {
+      "type": 0,
+      "value": " is available"
+    }
+  ],
+  "HQHLM4": [
+    {
+      "type": 0,
+      "value": "Ready to work offline"
     }
   ],
   "IOLTJ0": [
