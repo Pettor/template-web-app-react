@@ -1,4 +1,4 @@
-import type { ComponentType, ReactElement } from "react";
+import type { ComponentProps, ComponentType, ReactElement } from "react";
 import BackendIcon from "@mui/icons-material/Dns";
 import OptimizedIcon from "@mui/icons-material/ElectricBolt";
 import LayersIcon from "@mui/icons-material/Layers";
@@ -8,7 +8,6 @@ import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import { useIntl } from "react-intl";
-import type { HeaderLayoutComponents } from "../../layout/templates/HeaderLayout";
 import HeaderLayout from "../../layout/templates/HeaderLayout";
 
 const LeftColorBox = styled(Box)(() => ({
@@ -64,9 +63,9 @@ const GradientTypography = styled("span")(({ theme }) => ({
   color: "transparent",
 }));
 
-interface Props extends HeaderLayoutComponents {}
+interface Props extends Omit<ComponentProps<typeof HeaderLayout>, "children"> {}
 
-export default function HomeView({ ...rest }: Props): ReactElement {
+export default function HomeView({ ...headerProps }: Props): ReactElement {
   const intl = useIntl();
 
   function renderGridItem(Icon: ComponentType, heading: string, description: string): ReactElement {
@@ -80,7 +79,7 @@ export default function HomeView({ ...rest }: Props): ReactElement {
   }
 
   return (
-    <HeaderLayout headerOptions={{ label: "Home" }} {...rest}>
+    <HeaderLayout headerOptions={{ label: "Home" }} {...headerProps}>
       <LeftColorBox />
       <RightColorBox />
       <ContainerBox>

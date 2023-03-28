@@ -1,14 +1,13 @@
-import type { ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
 import Typography from "@mui/material/Typography";
 import { useIntl } from "react-intl";
-import type { SignUpFormProps } from "../../forms/sign-up/SignUpForm";
 import SignUpForm from "../../forms/sign-up/SignUpForm";
 import ContainerLayout from "../../layout/templates/ContainerLayout";
 import LogoFull from "../../library/logo/LogoFull";
 
 interface Props {
   appName: string;
-  signUpForm: SignUpFormProps;
+  signUpForm: ComponentProps<typeof SignUpForm>;
 }
 
 export default function SignUpView({ appName, signUpForm }: Props): ReactElement {
