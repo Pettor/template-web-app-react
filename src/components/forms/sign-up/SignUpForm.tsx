@@ -83,8 +83,6 @@ export default function SignUpForm({ error, loading, onSubmit }: Props): ReactEl
     resolver: yupResolver(schema),
   });
 
-  console.log({ errors });
-
   return (
     <form onSubmit={handleFormSubmit(onSubmit)}>
       <TextField
