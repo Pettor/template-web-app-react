@@ -33,7 +33,7 @@ export default function ForgotPasswordView({ appName, resetForm }: Props): React
             }
           ),
         }}
-      ></Typography>
+      />
       <ForgotPasswordForm {...resetForm} />
     </ContainerLayout>
   );
