@@ -6592,9 +6592,9 @@ eslint-module-utils@^2.7.4:
     debug "^3.2.7"
 
 eslint-plugin-formatjs@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-4.9.0.tgz#9ba74f731d41c2a18d132092766b30553855c666"
-  integrity sha512-U3u8TI/Mogo3sunTHDh24mc3p1zWAz/VaYjSkGhuYcLmqfkqEr3BmGUNQ8NTDvZviYHNTkhjHWuXQnUkh81grQ==
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-formatjs/-/eslint-plugin-formatjs-4.9.1.tgz#4269bdf61c627587b3fb112fef55250178d818ce"
+  integrity sha512-e6A7v84y6/RgXRYWqIQHJSHKutXGsQVdkYkzL7pgw5cJGEao0YVFqrbYu8ckbQsxQWfq8Dai4w0A/531F0mm2A==
   dependencies:
     "@formatjs/icu-messageformat-parser" "2.3.0"
     "@formatjs/ts-transformer" "3.12.0"
@@ -6693,10 +6693,15 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.1.0.tgz#f65328259305927392c938ed44eb0a5c9b2bd303"
   integrity sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==
 
-eslint-visitor-keys@^3.1.0, eslint-visitor-keys@^3.3.0:
+eslint-visitor-keys@^3.1.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz#f6480fa6b1f30efe2d1968aa8ac745b862469826"
   integrity sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==
+
+eslint-visitor-keys@^3.3.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.0.tgz#c7f0f956124ce677047ddbc192a68f999454dedc"
+  integrity sha512-HPpKPUBQcAsZOsHAFwTtIKcYlCje62XB7SEAcxjtmW6TD1WVpkS6i6/hOVtTZIl4zGj/mBqpFVGvaDneik+VoQ==
 
 eslint@8.4.1:
   version "8.4.1"
