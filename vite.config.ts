@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react-swc";
-import type { UserConfig } from "vite";
 import { defineConfig, loadEnv } from "vite";
+import { mergeConfig } from "vite";
 import proxy from "vite-plugin-http2-proxy";
 import mkcert from "vite-plugin-mkcert";
 import { VitePWA } from "vite-plugin-pwa";
@@ -36,6 +36,9 @@ export default defineConfig(({ mode, command }) => {
         },
         registerType: "prompt",
         injectRegister: "auto",
+        devOptions: {
+          enabled: false,
+        },
         workbox: {
           globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
         },
@@ -45,15 +48,15 @@ export default defineConfig(({ mode, command }) => {
 
   switch (command) {
     case "build":
-      return {
-        ...commonConfig,
+      return mergeConfig(commonConfig, {
         base: "./",
-      } as UserConfig;
+      });
     case "serve":
-      return {
-        ...commonConfig,
+      return mergeConfig(commonConfig, {
+        server: {
+          https: true,
+        },
         plugins: [
-          ...commonConfig.plugins,
           mkcert({
             savePath: env.MKCERT_SAVE_PATH || undefined,
           }),
@@ -64,9 +67,6 @@ export default defineConfig(({ mode, command }) => {
             },
           }),
         ],
-        server: {
-          https: true,
-        },
-      } as UserConfig;
+      });
   }
 });

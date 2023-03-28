@@ -7,11 +7,11 @@ import AppRoutes from "./routes/AppRoutes";
 import AppTheme from "./theme/AppTheme";
 import ThemeModeProvider from "./theme/ThemeModeContext";
 import { validateCrypto } from "~/libs/crypto/GetCrypto";
+
 const queryClient = new QueryClient();
 
 export default function App(): ReactElement {
   typeof window !== "undefined" && validateCrypto();
-
   return (
     <ThemeModeProvider>
       <AppTheme>
