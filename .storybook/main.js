@@ -1,6 +1,6 @@
 /* eslint-disable */
-const { mergeConfig } = require("vite");
-const { default: tsconfigPaths } = require("vite-tsconfig-paths");
+import { mergeConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 const config = {
   framework: "@storybook/react-vite",
