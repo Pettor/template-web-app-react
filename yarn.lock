@@ -9176,9 +9176,9 @@ vite-plugin-http2-proxy@^0.4.0:
     http2-proxy "^5.0.53"
 
 vite-plugin-mkcert@^1.13.3:
-  version "1.13.4"
-  resolved "https://registry.yarnpkg.com/vite-plugin-mkcert/-/vite-plugin-mkcert-1.13.4.tgz#ca9885f20016a2a076d78cc1558b3a7d37c6fc4b"
-  integrity sha512-sBk/VOoqJijXG0yBir4nqdwktGqhkl6sm260wJLh27KEHPi1wz+dAHs2OfcJszfMbFXKcVzMZKoXwRrKze+NYg==
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-mkcert/-/vite-plugin-mkcert-1.14.0.tgz#e3b09c6cc3d177f969626412076eddda0403c762"
+  integrity sha512-TXLqRYeKKv2kGIpDVMXPLAlTQLXfZ5/VtC4VVhV0ky2vKt5W/TDvFKpmelQPmn0IB7uz9KXvQj8Op+pkT9Ln9A==
   dependencies:
     "@octokit/rest" "^19.0.5"
     axios "^1.2.2"
