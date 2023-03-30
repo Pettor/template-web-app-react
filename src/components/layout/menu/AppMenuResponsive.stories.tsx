@@ -1,22 +1,24 @@
-import React from "react";
-import type { ComponentStoryObj } from "@storybook/react";
+import type { ComponentProps } from "react";
+import type { Meta, StoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../profile/ProfileCardResponsive";
 import Component from "./AppMenuResponsive";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Menu",
-};
+} satisfies Meta<typeof Component>;
 
-export const Responsive: Story = {
-  render: (args) => (
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Responsive = {
+  render: (args: ComponentProps<typeof Component>) => (
     <Component {...args}>
       <ProfileCardResponsive />
     </Component>
   ),
   args: {
     open: true,
+    anchorEl: null,
   },
-};
+} satisfies Story;

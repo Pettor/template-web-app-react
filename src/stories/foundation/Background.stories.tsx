@@ -1,13 +1,10 @@
 import type { ReactElement } from "react";
-import React from "react";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
-import { useDarkMode } from "storybook-dark-mode";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";
 import { DocumentationLayout } from "../layout/DocumentationLayout";
-import CreateAppTheme from "~/libs/theme/Theme";
 
 export default {
   title: "Design System/Background",
@@ -38,7 +35,7 @@ function ColorRow(label: string, background: string): ReactElement {
 }
 
 export function Background(): ReactElement {
-  const theme = CreateAppTheme(useDarkMode() ? "dark" : "light");
+  const theme = useTheme();
   const {
     background: { default: defaultBackground, paper: paperBackground },
   } = theme.palette;

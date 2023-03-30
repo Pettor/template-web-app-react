@@ -1,6 +1,6 @@
 import React from "react";
-import useForgotPassword from "../../app/api/queries/login/forgot-password/UseForgotPassword";
-import useAppInfo from "../../app/config/UseAppInfo";
+import useForgotPassword from "~/app/api/queries/login/forgot-password/UseForgotPassword";
+import useAppInfo from "~/app/config/UseAppInfo";
 import type { FormForgotPassword } from "~/components/forms/forgot-password/ForgotPasswordForm";
 import ForgotPasswordView from "~/components/views/login/ForgotPasswordView";
 

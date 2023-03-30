@@ -1,15 +1,12 @@
 import type { ReactElement } from "react";
-import React from "react";
 import Grid from "@mui/material/Grid";
 import type { PaletteColor } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
-import { useDarkMode } from "storybook-dark-mode";
 import DocumentationDecorator from "../decorators/DocumentationDecorator";
 import { DocumentationLayout } from "../layout/DocumentationLayout";
-import CreateAppTheme from "~/libs/theme/Theme";
-
 export default {
   title: "Design System/Colors",
   decorators: [DocumentationDecorator],
@@ -46,7 +43,7 @@ function ColorRow(label: string, color: PaletteColor): ReactElement {
 }
 
 export function Colors(): ReactElement {
-  const theme = CreateAppTheme(useDarkMode() ? "dark" : "light");
+  const theme = useTheme();
   const { primary, secondary, info, success, warning, error } = theme.palette;
 
   return (

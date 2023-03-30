@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Component from "./LoginForm";
+import Component from "./ForgotPasswordForm";
 import ContainerDecorator from "~/stories/decorators/ContainerDecorator";
 
 const meta = {
@@ -11,7 +11,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Login = {
+export const ForgotPassword = {
   args: {
     error: "",
     loading: false,

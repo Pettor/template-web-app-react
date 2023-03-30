@@ -1,33 +1,33 @@
-import React from "react";
 import Component from "@mui/material/Button";
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import CommonDecorator from "~/stories/decorators/CommonDecorator";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
-  component: Component,
+const meta = {
   title: "Library/Button",
   decorators: [CommonDecorator],
-};
+  tags: ["autodocs"],
+} satisfies Meta<typeof Component>;
 
-export const Contained: Story = {
+export default meta;
+type Story = StoryObj<typeof Component>;
+
+export const Contained = {
   render: (args) => <Component {...args}>Button</Component>,
   args: {
     variant: "contained",
   },
-};
+} satisfies Story;
 
-export const Outlined: Story = {
+export const Outlined = {
   render: (args) => <Component {...args}>Button</Component>,
   args: {
     variant: "outlined",
   },
-};
+} satisfies Story;
 
-export const Text: Story = {
+export const Text = {
   render: (args) => <Component {...args}>Button</Component>,
   args: {
     variant: "text",
   },
-};
+} satisfies Story;

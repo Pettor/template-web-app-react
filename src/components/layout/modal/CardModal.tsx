@@ -1,4 +1,4 @@
-import type { ReactElement } from "react";
+import type { ReactElement, ReactNode } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,12 +9,12 @@ import { styled } from "@mui/material/styles";
 import ResponsiveModal from "./ResponsiveModal";
 import { getWordyDateFormat } from "~/libs/functions/date/Format";
 
-type Props = ModalProps & {
+type Props = Omit<ModalProps, "children"> & {
   title: string;
   date: Date;
   color?: string;
   onClose: () => void;
-  children: JSX.Element | JSX.Element[];
+  children?: ReactNode | ReactNode[];
 };
 
 const StyledCard = styled(Card)(({ theme }) => ({

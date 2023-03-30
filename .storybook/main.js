@@ -1,26 +1,36 @@
 /* eslint-disable */
-const { mergeConfig } = require("vite");
-const { default: tsconfigPaths } = require("vite-tsconfig-paths");
+import { mergeConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
-module.exports = {
-  features: {
-    storyStoreV7: true,
-  },
-  core: {
-    builder: "@storybook/builder-vite",
-    options: {
-      lazyCompilation: true,
-      fsCache: true,
-    },
-  },
-  framework: "@storybook/react",
+const config = {
+  framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(ts|tsx)"],
-  addons: ["@storybook/addon-essentials", "@storybook/addon-a11y", "storybook-dark-mode"],
-
+  addons: [
+    "@storybook/addon-a11y",
+    "@storybook/addon-essentials",
+    "@storybook/addon-styling",
+    "@storybook/addon-viewport",
+  ],
+  docs: {
+    defaultName: 'Docs',
+  },
   async viteFinal(config) {
     return mergeConfig(config, {
       base: "./",
-      plugins: [tsconfigPaths()],
+      plugins: [
+        tsconfigPaths()
+      ],
+      // Add storybook-specific dependencies to pre-optimization
+      optimizeDeps: {
+        include: [
+          "@storybook/addon-a11y",
+          "@storybook/addon-essentials",
+          "@storybook/addon-styling",
+          "@storybook/addon-viewport",
+        ],
+      },
     });
   },
 };
+
+export default config;

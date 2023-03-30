@@ -1,21 +1,21 @@
-import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import Avatar from "@mui/material/Avatar";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Search from "../../library/search/Search";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import Component from "./AppHeaderResponsive";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Header",
-};
+} satisfies Meta<typeof Component>;
 
-export const Responsive: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Responsive = {
   args: {
     label: "This is a Header",
     headerComponents: [
@@ -48,4 +48,4 @@ export const Responsive: Story = {
       },
     ],
   },
-};
+} satisfies Story;

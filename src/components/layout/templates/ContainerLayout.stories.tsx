@@ -1,17 +1,17 @@
-import React from "react";
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./ContainerLayout";
 import { ContentComponent } from "~/stories/data/ContentData";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Templates",
-};
+} satisfies Meta<typeof Component>;
 
-export const ContainerLayout: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const ContainerLayout = {
   args: {
     children: <ContentComponent />,
   },
-};
+} satisfies Story;

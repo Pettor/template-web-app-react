@@ -1,11 +1,21 @@
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./ForgotPasswordView";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Views/Login",
-};
+} satisfies Meta<typeof Component>;
 
-export const ResetPassword: Story = {};
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const ForgotPassword = {
+  args: {
+    appName: "My App",
+    resetForm: {
+      error: "",
+      loading: false,
+      onSubmit: () => console.log("onSubmit"),
+    },
+  },
+} satisfies Story;

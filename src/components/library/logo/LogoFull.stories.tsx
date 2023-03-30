@@ -1,21 +1,25 @@
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./LogoFull";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Library/Logo",
-};
+  tags: ["autodocs"],
+} satisfies Meta<typeof Component>;
 
-export const FullMedium: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const FullMedium = {
   args: {
+    appName: "My App",
     size: "medium",
   },
-};
+} satisfies Story;
 
 export const FullLarge: Story = {
   args: {
+    appName: "My App",
     size: "large",
   },
-};
+} satisfies Story;

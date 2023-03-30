@@ -1,39 +1,41 @@
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./AutoAlert";
 import CommonDecorator from "~/stories/decorators/CommonDecorator";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   title: "Library/Alerts",
   component: Component,
   decorators: [CommonDecorator],
-};
+  tags: ["autodocs"],
+} satisfies Meta<typeof Component>;
 
-export const Info: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Info = {
   args: {
     text: "Info text",
     severity: "info",
   },
-};
+} satisfies Story;
 
-export const Success: Story = {
+export const Success = {
   args: {
     text: "Success text",
     severity: "success",
   },
-};
+} satisfies Story;
 
-export const Warning: Story = {
+export const Warning = {
   args: {
     text: "Warning text",
     severity: "warning",
   },
-};
+} satisfies Story;
 
-export const Error: Story = {
+export const Error = {
   args: {
     text: "Error text",
     severity: "error",
   },
-};
+} satisfies Story;

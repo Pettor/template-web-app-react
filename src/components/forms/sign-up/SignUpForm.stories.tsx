@@ -1,15 +1,20 @@
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./SignUpForm";
 import ContainerDecorator from "~/stories/decorators/ContainerDecorator";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Forms/Login",
   decorators: [ContainerDecorator],
-};
+} satisfies Meta<typeof Component>;
 
-export const SignUp: Story = {
-  args: {},
-};
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const SignUp = {
+  args: {
+    error: "",
+    loading: false,
+    onSubmit: () => console.log("onSubmit"),
+  },
+} satisfies Story;

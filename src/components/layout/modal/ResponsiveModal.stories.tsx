@@ -1,16 +1,16 @@
-import React from "react";
 import type { ReactElement } from "react";
 import type { ComponentProps } from "react";
 import Box from "@mui/material/Box";
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./ResponsiveModal";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Layout/Modal/Responsive",
-};
+} satisfies Meta<typeof Component>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 function Template(args: ComponentProps<typeof Component>): ReactElement {
   return (
@@ -20,10 +20,10 @@ function Template(args: ComponentProps<typeof Component>): ReactElement {
   );
 }
 
-export const Responsive: Story = {
+export const Responsive = {
   render: Template,
   args: {
     open: true,
     title: "Card Modal",
   },
-};
+} satisfies Story;
