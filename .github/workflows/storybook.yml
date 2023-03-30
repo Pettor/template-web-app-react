@@ -37,7 +37,7 @@ jobs:
         run: yarn
 
       - name: Build Storybook
-        run: yarn build-storybook --quiet
+        run: yarn storybook:build --quiet
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
