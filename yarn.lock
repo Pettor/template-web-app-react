@@ -2080,7 +2080,7 @@
   dependencies:
     "@sinonjs/commons" "^2.0.0"
 
-"@storybook/addon-a11y@^7.0.0-rc.9":
+"@storybook/addon-a11y@^7.0.0-rc.10":
   version "7.0.0-rc.10"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-7.0.0-rc.10.tgz#1e37a64938a9493809ab0a96e8b7520c7913ce47"
   integrity sha512-TB/+p45weSPHhjI7maLu+11wp4Pv2EFR7UI5e/Y4l2Kaazpzhb5PFABJ8ytmiwaP84387Gpq5qqLqApKdV7T1g==
@@ -2099,7 +2099,7 @@
     lodash "^4.17.21"
     react-resize-detector "^7.1.2"
 
-"@storybook/addon-actions@7.0.0-rc.10", "@storybook/addon-actions@^7.0.0-rc.9":
+"@storybook/addon-actions@7.0.0-rc.10", "@storybook/addon-actions@^7.0.0-rc.10":
   version "7.0.0-rc.10"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-7.0.0-rc.10.tgz#0de014b2a39b99de4f3d1d3eb141e56d98829896"
   integrity sha512-n7QVyN4qaMMjuu2HyT94VO8DklCgQLqw3tHVMZgSOUEtK5JhS5+OqPCWt1juwQjNyQiDqjrVwrkbJNbuMld4IA==
@@ -2154,7 +2154,7 @@
     lodash "^4.17.21"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-docs@7.0.0-rc.10", "@storybook/addon-docs@^7.0.0-rc.9":
+"@storybook/addon-docs@7.0.0-rc.10", "@storybook/addon-docs@^7.0.0-rc.10":
   version "7.0.0-rc.10"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-7.0.0-rc.10.tgz#d0f5e008bcdc9243eb652ead429a6cbcaf275775"
   integrity sha512-TT85AUqPRqH9Ry9Y80aVI+GoRCyLYC4xg0hWpNfhP3vdez4c2cpTHVGKY1aUIes0blj/iLd5eWv0IpAO9Jmg9g==
@@ -2181,7 +2181,7 @@
     remark-slug "^6.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-essentials@^7.0.0-rc.9":
+"@storybook/addon-essentials@^7.0.0-rc.10":
   version "7.0.0-rc.10"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-7.0.0-rc.10.tgz#460dfcd88715e448ba1ba98ac58c8678297a258f"
   integrity sha512-a4Tnfu+v1yneou2oYrDikAmNHsv4z7jAjyS4npuJTEW2a1WW+WPw8340BfZBI/y89nFYM6zyZGqy26Gie/QqVA==
@@ -2261,7 +2261,7 @@
     "@storybook/preview-api" "7.0.0-rc.10"
     "@storybook/theming" "7.0.0-rc.10"
 
-"@storybook/addon-viewport@7.0.0-rc.10", "@storybook/addon-viewport@^7.0.0-rc.9":
+"@storybook/addon-viewport@7.0.0-rc.10", "@storybook/addon-viewport@^7.0.0-rc.10":
   version "7.0.0-rc.10"
   resolved "https://registry.yarnpkg.com/@storybook/addon-viewport/-/addon-viewport-7.0.0-rc.10.tgz#5dce3de18bf70dafdd6ce962ae9a2414f5d67ea1"
   integrity sha512-aAEp2TEFSTjVmAfpWll3Kb0/tMFezWVEGI3WKlx2M5ladEC+jDygZrGovb4BpnknDQaHkrN0s9dsjUWTLmslww==
@@ -2694,7 +2694,7 @@
   resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-7.0.0-rc.10.tgz#0fbb05091c60b0f819f28889f19e5ba9c79ef194"
   integrity sha512-oRmjN4HLo/gumufM6xrCYMncggbsNQ2UC+0Wju2zs86v6mLmoG8CCVnTE2nyUBiy5IDZ464nBhdGYkkuUEYzrg==
 
-"@storybook/react-vite@^7.0.0-rc.9":
+"@storybook/react-vite@^7.0.0-rc.10":
   version "7.0.0-rc.10"
   resolved "https://registry.yarnpkg.com/@storybook/react-vite/-/react-vite-7.0.0-rc.10.tgz#a93371281011b97dfe670d2eb5411f605b06a805"
   integrity sha512-UqPAu/9FC7m3jcTcw6MgXzi9BTkAxKpr+t0lNgccyczvMRdWf5UNXPm9rdCEb7wmQx22DzwVmGPe+PFgVOIMsg==
@@ -2708,7 +2708,7 @@
     magic-string "^0.27.0"
     react-docgen "6.0.0-alpha.3"
 
-"@storybook/react@7.0.0-rc.10", "@storybook/react@^7.0.0-rc.9":
+"@storybook/react@7.0.0-rc.10", "@storybook/react@^7.0.0-rc.10":
   version "7.0.0-rc.10"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.0-rc.10.tgz#af90e060a166cd043f52e4089a28b51149a32c08"
   integrity sha512-AFN4Jzyp27jhe5qnbtG45yAHq/e3bkdL9p0di2t+AdHXyse8naud2pTzD/j3bbaU23R1iDVwVPQ+X7kAktu0EA==
