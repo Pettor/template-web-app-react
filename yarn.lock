@@ -9197,10 +9197,10 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
-vite-plugin-http2-proxy@0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-http2-proxy/-/vite-plugin-http2-proxy-0.4.0.tgz#0a921014bc361febed4c2a846f6059bdbbe3db17"
-  integrity sha512-hoGhgKTOB6pWaH48v5bDvCl1plIlxTNjdEgmob48FyOZqUuM2jPYyPyyn8qrf0wjCBdg5ex02hQxTNkBqrWvmQ==
+vite-plugin-http2-proxy@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-http2-proxy/-/vite-plugin-http2-proxy-0.4.1.tgz#af3f7c7570c439721ac455270521a7c31c334ea8"
+  integrity sha512-pllBOuVVsVnCqtQYA15qxe33TR7QU1OoGondTTx397UkRIY6Rp1F1wWSATXKEG1JpkVniuf3+iNmoeHB7dkrPw==
   dependencies:
     http2-proxy "^5.0.53"
 
