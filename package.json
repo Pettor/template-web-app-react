@@ -75,7 +75,7 @@
     "vite": "4.1.4",
     "vite-plugin-http2-proxy": "0.4.1",
     "vite-plugin-mkcert": "1.13.3",
-    "vite-plugin-pwa": "0.14.4",
+    "vite-plugin-pwa": "0.14.7",
     "vite-tsconfig-paths": "4.0.8"
   }
 }
