@@ -2,14 +2,14 @@ import type { ReactElement, ReactNode } from "react";
 import { useState } from "react";
 import { Box } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-import AppMenuResponsive from "../menu/AppMenuResponsive";
+import AppMenuResponsive from "~/components/layout/menu/AppMenuResponsive";
 
 interface Props {
   icon: ReactNode;
-  MenuNode?: ReactElement | ReactElement[];
+  children?: ReactElement | ReactElement[];
 }
 
-export default function AppHeaderIconComponent({ icon, MenuNode }: Props): ReactElement {
+export default function IconMenuButton({ icon, children }: Props): ReactElement {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
   function handleClick(event: React.MouseEvent<HTMLElement>): void {
@@ -23,9 +23,9 @@ export default function AppHeaderIconComponent({ icon, MenuNode }: Props): React
   return (
     <Box>
       <IconButton onClick={handleClick}>{icon}</IconButton>
-      {anchorEl && MenuNode && (
+      {anchorEl && (
         <AppMenuResponsive anchorEl={anchorEl} open={!!anchorEl} handleClose={handleClose}>
-          {MenuNode}
+          {children}
         </AppMenuResponsive>
       )}
     </Box>

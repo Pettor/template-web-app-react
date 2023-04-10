@@ -5,8 +5,10 @@ import MenuItem from "@mui/material/MenuItem";
 import type { Meta, StoryObj } from "@storybook/react";
 import Search from "../../library/search/Search";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
+import AppHeaderGroup from "../app-header-group/AppHeaderGroup";
 import Component from "./AppHeader";
-import AppHeaderDivider from "./AppHeaderDivider";
+import IconMenuButton from "~/components/library/icon-button/IconMenuButton";
+import ResponsiveComponent from "~/components/library/responsive/ResponsiveComponent";
 
 const meta = {
   component: Component,
@@ -32,12 +34,7 @@ export const SubHeader = {
 export const SubHeaderWithSearch = {
   args: {
     subheader: true,
-    headerComponents: [
-      {
-        key: "Search",
-        component: <Search width="100%" />,
-      },
-    ],
+    headerComponents: [<Search key="search" width="100%" />],
     headerComponentOptions: {
       flexItem: true,
       fill: true,
@@ -50,39 +47,19 @@ export const HeaderComponents = {
     isMobile: false,
     subheader: false,
     headerComponents: [
-      {
-        key: "search",
-        component: {
-          mobile: {
-            icon: <SearchIcon />,
-            onIconClick: () => console.log("Search"),
-          },
-          desktop: <Search maxWidth="200px" />,
-        },
-      },
-      {
-        key: "divider 1",
-        component: <AppHeaderDivider />,
-      },
-      {
-        key: "theme-toggle",
-        component: <ThemeToggle defaultMode="light" onToggle={() => console.log("onToggle")} />,
-      },
-      {
-        key: "divider 2",
-        component: <AppHeaderDivider />,
-      },
-      {
-        key: "avatar",
-        component: {
-          icon: <Avatar sx={{ width: 32, height: 32 }} />,
-          MenuNode: (
-            <MenuList>
-              <MenuItem>Content</MenuItem>
-            </MenuList>
-          ),
-        },
-      },
+      <ResponsiveComponent
+        key="search"
+        desktop={<Search maxWidth="200px" />}
+        mobile={<IconMenuButton key="search" icon={<SearchIcon />} />}
+      />,
+      <AppHeaderGroup key="group-1">
+        <ThemeToggle key="theme-toggle" defaultMode="light" onToggle={() => console.log("onToggle")} />
+      </AppHeaderGroup>,
+      <IconMenuButton key="avatar" icon={<Avatar sx={{ width: 32, height: 32 }} />}>
+        <MenuList>
+          <MenuItem>Content</MenuItem>{" "}
+        </MenuList>
+      </IconMenuButton>,
     ],
   },
 } satisfies Story;
