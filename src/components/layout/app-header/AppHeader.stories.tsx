@@ -1,14 +1,7 @@
-import SearchIcon from "@mui/icons-material/Search";
-import { MenuList } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import MenuItem from "@mui/material/MenuItem";
 import type { Meta, StoryObj } from "@storybook/react";
 import Search from "../../library/search/Search";
-import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
-import AppHeaderGroup from "../app-header-group/AppHeaderGroup";
 import Component from "./AppHeader";
-import IconMenuButton from "~/components/library/icon-button/IconMenuButton";
-import ResponsiveComponent from "~/components/library/responsive/ResponsiveComponent";
+import { DefaultHeaderComponents } from "~/stories/data/HeaderData";
 
 const meta = {
   component: Component,
@@ -46,20 +39,6 @@ export const HeaderComponents = {
   args: {
     isMobile: false,
     subheader: false,
-    headerComponents: [
-      <ResponsiveComponent
-        key="search"
-        desktop={<Search maxWidth="200px" />}
-        mobile={<IconMenuButton key="search" icon={<SearchIcon />} />}
-      />,
-      <AppHeaderGroup key="group-1">
-        <ThemeToggle key="theme-toggle" defaultMode="light" onToggle={() => console.log("onToggle")} />
-      </AppHeaderGroup>,
-      <IconMenuButton key="avatar" icon={<Avatar sx={{ width: 32, height: 32 }} />}>
-        <MenuList>
-          <MenuItem>Content</MenuItem>{" "}
-        </MenuList>
-      </IconMenuButton>,
-    ],
+    headerComponents: <DefaultHeaderComponents />,
   },
 } satisfies Story;
