@@ -1,16 +1,17 @@
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import CommonDecorator from "../../stories/decorators/CommonDecorator";
 import Component from "./PwaUpdateDialog";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Pwa/UpdateDialog",
   decorators: [CommonDecorator],
-};
+} satisfies Meta;
 
-export const UpdateDialog: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const UpdateDialog = {
   args: {
     appName: "AppName",
     open: true,
@@ -18,4 +19,4 @@ export const UpdateDialog: Story = {
       console.log("Refresh");
     },
   },
-};
+} satisfies Story;

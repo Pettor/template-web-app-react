@@ -1,17 +1,18 @@
 import Avatar from "@mui/material/Avatar";
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import ProfileCardResponsive from "../../layout/profile/ProfileCardResponsive";
 import ThemeToggle from "../../library/toggle/theme-toggle/ThemeToggle";
 import Component from "./HomeView";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Views/Home",
-};
+} satisfies Meta<typeof Component>;
 
-export const Home: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Home = {
   args: {
     headerComponents: [
       {
@@ -27,4 +28,4 @@ export const Home: Story = {
       },
     ],
   },
-};
+} satisfies Story;
