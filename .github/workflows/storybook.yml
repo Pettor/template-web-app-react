@@ -1,4 +1,4 @@
-name: "deploy storybook"
+name: "storybook"
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-storybook:
-    name: Deploy Storybook
+    name: Deploy
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
