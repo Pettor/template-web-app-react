@@ -12,7 +12,7 @@
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "storybook": "storybook dev",
     "storybook:build": "storybook build",
-    "i18n": "yarn i18n-extract && yarn i18n-compile",
+    "i18n": "pnpm i18n:extract && pnpm i18n:compile",
     "i18n:extract": "formatjs extract src/**/*.ts* --ignore=**/*.d.ts --out-file locale/extracted/en.json --id-interpolation-pattern [sha512:contenthash:base64:6] --flatten",
     "i18n:compile": "formatjs compile-folder --ast locale/extracted locale/compiled"
   },
