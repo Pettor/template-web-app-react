@@ -1,16 +1,14 @@
-import { Subject } from "rxjs";
 import type { ApiMessages } from "./ApiWorker";
 import type { ApiError, ApiResponse, ApiResponseTypes } from "./ApiWorkerReponse";
 import { isApiError } from "./ApiWorkerReponse";
 
 export default class ApiWorkerCommunication {
   private readonly worker: Worker;
-  private readonly subscribers: Set<(error: ApiError) => void> = new Set<(error: ApiError) => void>();
-  private readonly subject: Subject<ApiError>;
+  private readonly subscribers: Set<(error: ApiError) => void>;
 
   constructor(worker: Worker) {
     this.worker = worker;
-    this.subject = new Subject<ApiError>();
+    this.subscribers = new Set<(error: ApiError) => void>();
   }
 
   public registerFailedRequestCallback(callback: (error: ApiError) => void): () => void {
