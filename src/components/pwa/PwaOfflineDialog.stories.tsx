@@ -1,17 +1,18 @@
-import type { ComponentStoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import CommonDecorator from "../../stories/decorators/CommonDecorator";
 import Component from "./PwaOfflineDialog";
 
-type Story = ComponentStoryObj<typeof Component>;
-
-export default {
+const meta = {
   component: Component,
   title: "Pwa/OfflineDialog",
   decorators: [CommonDecorator],
-};
+} satisfies Meta;
 
-export const OfflineDialog: Story = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const OfflineDialog = {
   args: {
     open: true,
   },
-};
+} satisfies Story;
