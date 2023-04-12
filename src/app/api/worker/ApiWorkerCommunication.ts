@@ -1,4 +1,3 @@
-import type { Subscription } from "rxjs";
 import { Subject } from "rxjs";
 import type { ApiMessages } from "./ApiWorker";
 import type { ApiError, ApiResponse, ApiResponseTypes } from "./ApiWorkerReponse";
@@ -6,6 +5,7 @@ import { isApiError } from "./ApiWorkerReponse";
 
 export default class ApiWorkerCommunication {
   private readonly worker: Worker;
+  private readonly subscribers: Set<(error: ApiError) => void> = new Set<(error: ApiError) => void>();
   private readonly subject: Subject<ApiError>;
 
   constructor(worker: Worker) {
@@ -13,8 +13,9 @@ export default class ApiWorkerCommunication {
     this.subject = new Subject<ApiError>();
   }
 
-  registerFailedRequestCallback(callback: (error: ApiError) => void): Subscription {
-    return this.subject.subscribe((error) => callback(error));
+  public registerFailedRequestCallback(callback: (error: ApiError) => void): () => void {
+    this.subscribers.add(callback);
+    return () => this.subscribers.delete(callback);
   }
 
   public async send<T>(message: ApiMessages): Promise<ApiResponse<T>> {
@@ -34,7 +35,7 @@ export default class ApiWorkerCommunication {
         };
       }
 
-      this.subject.next(apiError);
+      this.subscribers.forEach((callback) => callback(apiError));
       throw apiError;
     }
   }

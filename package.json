@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.2.0",
   "license": "MIT",
-  "packageManager": "^yarn@1.22.17",
+  "packageManager": "yarn@1.22.19",
   "scripts": {
     "dev": "vite",
     "dev:docker": "vite --mode docker",
@@ -33,7 +33,6 @@
     "react-hook-form": "^7.43.9",
     "react-intl": "^6.2.10",
     "react-router-dom": "^6.9.0",
-    "rxjs": "^7.8.0",
     "yup": "^1.0.2"
   },
   "devDependencies": {

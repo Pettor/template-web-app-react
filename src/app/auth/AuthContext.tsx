@@ -44,11 +44,11 @@ function AuthProvider({ children }: Props): ReactElement {
   }, [state]);
 
   useEffect(() => {
-    const sub = api.subscribe(() => {
+    const unsubscribe = api.subscribe(() => {
       dispatch({ type: "auth/logout" });
     });
 
-    return (): void => sub.unsubscribe();
+    return (): void => unsubscribe();
   });
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
