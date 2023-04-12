@@ -33,7 +33,6 @@
     "react-hook-form": "^7.43.9",
     "react-intl": "^6.2.10",
     "react-router-dom": "^6.9.0",
-    "rxjs": "^7.8.0",
     "yup": "^1.0.2"
   },
   "devDependencies": {

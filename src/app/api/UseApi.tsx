@@ -1,4 +1,3 @@
-import type { Subscription } from "rxjs";
 import type { RequestTokenDto } from "./queries/login/token-request/RequestTokenDto";
 import ApiWorker from "./worker/ApiWorker?worker";
 import ApiWorkerCommunication from "./worker/ApiWorkerCommunication";
@@ -7,7 +6,7 @@ import type { ApiError, ApiResponse } from "./worker/ApiWorkerReponse";
 const apiWorker = new ApiWorkerCommunication(new ApiWorker());
 
 interface UseApi {
-  subscribe(callback: (message: ApiError) => void): Subscription;
+  subscribe(callback: (message: ApiError) => void): () => void;
   requestToken(data: RequestTokenDto): Promise<void>;
   refreshToken(): Promise<void>;
   logout(): Promise<void>;
@@ -16,7 +15,7 @@ interface UseApi {
 }
 
 export default function useApi(): UseApi {
-  function subscribe(callback: (message: ApiError) => void): Subscription {
+  function subscribe(callback: (message: ApiError) => void): () => void {
     return apiWorker.registerFailedRequestCallback(callback);
   }
 
