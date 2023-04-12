@@ -174,6 +174,9 @@ devDependencies:
   vite-tsconfig-paths:
     specifier: ^4.0.9
     version: 4.0.9(typescript@5.0.4)(vite@4.1.4)
+  workbox-window:
+    specifier: ^6.5.4
+    version: 6.5.4
 
 packages:
 
