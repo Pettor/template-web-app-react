@@ -7,7 +7,7 @@
 ### Installing
 
 ```bash
-yarn
+pnpm i
 ```
 
 ## License
