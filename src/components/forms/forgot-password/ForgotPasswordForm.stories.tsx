@@ -4,7 +4,7 @@ import ContainerDecorator from "~/stories/decorators/ContainerDecorator";
 
 const meta = {
   component: Component,
-  title: "Forms/ForgotPassword",
+  title: "Forms/Forgot Password",
   decorators: [ContainerDecorator],
 } satisfies Meta<typeof Component>;
 

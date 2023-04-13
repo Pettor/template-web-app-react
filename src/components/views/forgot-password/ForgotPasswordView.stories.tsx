@@ -3,7 +3,7 @@ import Component from "./ForgotPasswordView";
 
 const meta = {
   component: Component,
-  title: "Views/Login",
+  title: "Views/Forgot Password",
   parameters: {
     layout: "fullscreen",
   },

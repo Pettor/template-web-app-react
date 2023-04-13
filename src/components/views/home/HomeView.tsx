@@ -29,7 +29,14 @@ export default function HomeView({ ...headerProps }: Props): ReactElement {
   }
 
   return (
-    <HeaderLayout headerOptions={{ label: "Home" }} {...headerProps}>
+    <HeaderLayout
+      label={intl.formatMessage({
+        description: "HomeView - Title",
+        defaultMessage: "Home",
+        id: "/UNGRI",
+      })}
+      {...headerProps}
+    >
       <HomeViewColorBox />
       <HomeViewContainer>
         <HomeViewTitle>

@@ -11,11 +11,6 @@ const meta = {
     layout: "fullscreen",
   },
   argTypes: {
-    headerOptions: {
-      table: {
-        disable: true,
-      },
-    },
     headerComponents: {
       table: {
         disable: true,
@@ -37,9 +32,7 @@ function render(args: ComponentProps<typeof Component>) {
 
 export const Header = {
   args: {
-    headerOptions: {
-      label: "This is a Header",
-    },
+    label: "Some Label",
     headerComponents: <DefaultHeaderComponents />,
   },
   render,

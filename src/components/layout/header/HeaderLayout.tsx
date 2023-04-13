@@ -7,10 +7,8 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import HeaderLayoutContainer from "./HeaderLayoutContainer";
 import HeaderLayoutContent from "./HeaderLayoutContent";
 import AppHeader from "~/components/navigation/app-header/AppHeader";
-import type { AppHeaderOptions } from "~/components/navigation/app-header/AppHeaderClasses";
 
 export interface HeaderLayoutProps {
-  headerOptions?: AppHeaderOptions;
   maxWidth?: Breakpoint | false;
   sx?: SxProps<Theme>;
   children?: ReactElement | ReactElement[];

@@ -3,6 +3,10 @@
     "defaultMessage": "Password is required",
     "description": "LoginFormValidation - Password is required"
   },
+  "/UNGRI": {
+    "defaultMessage": "Home",
+    "description": "HomeView - Title"
+  },
   "3YTbxI": {
     "defaultMessage": "What is your last name?",
     "description": "SignUpFormLabel - Last Name"

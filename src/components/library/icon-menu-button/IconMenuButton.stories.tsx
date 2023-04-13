@@ -7,9 +7,16 @@ import Component from "./IconMenuButton";
 import CommonDecorator from "~/stories/decorators/CommonDecorator";
 
 const meta = {
-  title: "Library/Button/IconMenu",
+  title: "Library/Button",
   decorators: [CommonDecorator],
   tags: ["autodocs"],
+  argTypes: {
+    icon: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } satisfies Meta<typeof Component>;
 
 export default meta;
@@ -27,7 +34,7 @@ function render(args: ComponentProps<typeof Component>): ReactElement {
   );
 }
 
-export const SimpleContent = {
+export const IconWithSimpleMenu = {
   args: {
     icon: <SearchIcon />,
   },
@@ -38,7 +45,7 @@ export const SimpleContent = {
   ),
 } satisfies Story;
 
-export const MenuContent = {
+export const IconWithMenuItems = {
   args: {
     icon: <SearchIcon />,
   },

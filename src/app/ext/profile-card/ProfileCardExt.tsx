@@ -12,11 +12,9 @@ export default function ProfileCardExt(): ReactElement {
   }
 
   if (!data) {
-    return <ProfileCardResponsive elevation={0} />;
+    return <ProfileCardResponsive />;
   }
 
   const { email, firstName, lastName } = data;
-  return (
-    <ProfileCardResponsive name={`${firstName} ${lastName}`} email={email} onLogout={handleLogout} elevation={0} />
-  );
+  return <ProfileCardResponsive name={`${firstName} ${lastName}`} email={email} onLogout={handleLogout} />;
 }
