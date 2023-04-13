@@ -1,10 +1,11 @@
 import type { ReactElement } from "react";
-import { useMemo } from "react";
 import AvatarIcon from "@mui/icons-material/AccountCircle";
 import GithubIcon from "@mui/icons-material/GitHub";
-import ProfileCardExt from "~/app/ext/profile/ProfileCardExt";
+import { IconButton } from "@mui/material";
+import ProfileCardExt from "~/app/ext/profile-card/ProfileCardExt";
 import ThemeToggleExt from "~/app/ext/theme-toggle/ThemeToggleExt";
-import AppHeaderDivider from "~/components/layout/header/AppHeaderDivider";
+import IconMenuButton from "~/components/library/icon-menu-button/IconMenuButton";
+import AppHeaderGroup from "~/components/navigation/app-header-group/AppHeaderGroup";
 import HomeView from "~/components/views/home/HomeView";
 
 export default function HomePage(): ReactElement {
@@ -12,32 +13,23 @@ export default function HomePage(): ReactElement {
     window.open("https://github.com/Pettor/template-web-app-react", "_blank", "noreferrer");
   }
 
-  const headerComponents = useMemo(() => {
-    return [
-      {
-        key: "header__theme-toggle",
-        component: <ThemeToggleExt />,
-      },
-      {
-        key: "header__divider",
-        component: <AppHeaderDivider />,
-      },
-      {
-        key: "header__profile-card",
-        component: {
-          icon: <AvatarIcon />,
-          MenuNode: <ProfileCardExt />,
-        },
-      },
-      {
-        key: "header__github",
-        component: {
-          icon: <GithubIcon />,
-          onIconClick: handleGithubClick,
-        },
-      },
-    ];
-  }, []);
-
-  return <HomeView headerComponents={headerComponents} />;
+  return (
+    <HomeView
+      headerComponents={
+        <>
+          <AppHeaderGroup dividerStyle="right">
+            <ThemeToggleExt />
+          </AppHeaderGroup>
+          <AppHeaderGroup dividerStyle="none">
+            <IconMenuButton icon={<AvatarIcon />}>
+              <ProfileCardExt />
+            </IconMenuButton>
+            <IconButton onClick={handleGithubClick}>
+              <GithubIcon />
+            </IconButton>
+          </AppHeaderGroup>
+        </>
+      }
+    />
+  );
 }

@@ -10,21 +10,20 @@ import createAppTheme from "../src/libs/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
 
 export const parameters = {
-  layout: "fullscreen",
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
   options: {
     storySort: {
       method: "alphabetical",
-      order: ["Design System", "Library", "Forms", "Layout", "Pwa", "Views"],
+      order: ["Design System", "Library", "Forms", "Navigation", "Layout", "Views"],
     },
   },
 };
 
 export const globalTypes = {
   locale: {
-    name: "Locale",
+    title: "Locale",
     description: "Formatjs locale",
     defaultValue: "en",
     toolbar: {

@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { useRegisterSW } from "virtual:pwa-register/react";
-import PwaOfflineDialog from "../../components/pwa/PwaOfflineDialog";
-import PwaUpdateDialogExt from "../ext/pwa/PwaUpdateDialogExt";
+import PwaUpdateDialogExt from "../ext/pwa-update-dialog/PwaUpdateDialogExt";
+import PwaOfflineDialog from "~/components/navigation/pwa-offline-dialog/PwaOfflineDialog";
 
 interface Props {
   children: ReactElement;
