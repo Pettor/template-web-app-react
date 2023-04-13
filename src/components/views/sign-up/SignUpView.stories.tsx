@@ -3,7 +3,7 @@ import Component from "./SignUpView";
 
 const meta = {
   component: Component,
-  title: "Views/Login",
+  title: "Views/Sign Up",
   parameters: {
     layout: "fullscreen",
   },

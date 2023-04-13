@@ -7,6 +7,7 @@ interface Props extends MenuOptions {}
 export default function AppMenu({ open, anchorEl, handleClose, children }: Props): ReactElement {
   return (
     <Menu
+      elevation={8}
       id="long-menu"
       MenuListProps={{
         "aria-labelledby": "long-button",

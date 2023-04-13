@@ -14,6 +14,7 @@ const MenuContainer = styled(Box)(({ theme }) => ({
   width: "100dvw",
   height: "100dvh",
   background: theme.palette.background.paper,
+  zIndex: theme.zIndex.drawer + 1,
 }));
 
 interface Props extends MenuOptions {}

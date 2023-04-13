@@ -5,6 +5,12 @@
       "value": "Password is required"
     }
   ],
+  "/UNGRI": [
+    {
+      "type": 0,
+      "value": "Home"
+    }
+  ],
   "3YTbxI": [
     {
       "type": 0,

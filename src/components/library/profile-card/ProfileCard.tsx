@@ -1,7 +1,6 @@
 import type { ReactElement } from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Avatar from "@mui/material/Avatar";
-import type { CardProps } from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -15,15 +14,15 @@ import ProfileCardContainer from "./ProfileCardContainer";
 import ProfileCardContent from "./ProfileCardContent";
 import ProfileCardMenuContainer from "./ProfileCardMenuContainer";
 
-interface Props extends CardProps, ProfileCardProps {
+interface Props extends ProfileCardProps {
   name?: string;
   email?: string;
   onLogout?(): void;
 }
 
-export default function ProfileCard({ name, email, isMobile, onLogout, ...cardProps }: Props): ReactElement {
+export default function ProfileCard({ name, email, isMobile, onLogout }: Props): ReactElement {
   return (
-    <ProfileCardContainer isMobile={isMobile} {...cardProps} elevation={isMobile ? 0 : 1}>
+    <ProfileCardContainer isMobile={isMobile} elevation={isMobile ? 0 : 1}>
       <ProfileCardContent isMobile={isMobile}>
         <Typography variant="h6" gutterBottom>
           Personal

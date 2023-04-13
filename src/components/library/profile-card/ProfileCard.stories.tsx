@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Component from "./ProfileCard";
 import CenterDecorator from "~/stories/decorators/CenterDecorator";
-import PaddingTopDectorator from "~/stories/decorators/PaddingTopDectorator";
 
 const meta = {
   component: Component,
-  title: "Library/ProfileCard",
-  decorators: [CenterDecorator, PaddingTopDectorator],
+  title: "Library/Card/Profile",
+  decorators: [CenterDecorator],
   tags: ["autodocs"],
 } satisfies Meta<typeof Component>;
 
@@ -21,6 +20,13 @@ export const WithData = {
 } satisfies Story;
 
 export const Loading = {
+  args: {
+    name: undefined,
+    email: undefined,
+  },
+} satisfies Story;
+
+export const Styled = {
   args: {
     name: undefined,
     email: undefined,
