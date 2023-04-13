@@ -13,12 +13,12 @@ export default meta;
 type Story = StoryObj<typeof Component>;
 
 export const Contained = {
+  args: {
+    icon: <SearchIcon />,
+  },
   render: (args) => (
     <Component {...args}>
       <div>This is an item</div>
     </Component>
   ),
-  args: {
-    icon: <SearchIcon />,
-  },
 } satisfies Story;

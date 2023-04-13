@@ -23,7 +23,7 @@ export function DefaultHeaderComponents(): ReactElement {
       <AppHeaderGroup key="group-1">
         <ThemeToggle key="theme-toggle" defaultMode="light" onToggle={handleToggle} />
       </AppHeaderGroup>
-      <IconMenuButton key="avatar" icon={<Avatar sx={{ width: 32, height: 32 }} />}>
+      <IconMenuButton key="avatar" icon={<Avatar sx={{ width: 24, height: 24 }} />}>
         <MenuList>
           <MenuItem>Content</MenuItem>{" "}
         </MenuList>

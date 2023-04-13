@@ -1,23 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ProfileCardResponsive from "../profile/ProfileCardResponsive";
-import Component from "./AppMenuResponsive";
+import Component from "./AppHeaderGroup";
 
 const meta = {
   component: Component,
-  title: "Layout/Menu",
+  title: "Layout/Header/Group",
 } satisfies Meta<typeof Component>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Responsive = {
+export const BothDivider = {
   args: {
-    open: true,
-    anchorEl: null,
+    dividerStyle: "both",
   },
   render: (args) => (
     <Component {...args}>
-      <ProfileCardResponsive />
+      <div>Something</div>
     </Component>
   ),
 } satisfies Story;

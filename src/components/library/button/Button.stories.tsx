@@ -12,22 +12,22 @@ export default meta;
 type Story = StoryObj<typeof Component>;
 
 export const Contained = {
-  render: (args) => <Component {...args}>Button</Component>,
   args: {
     variant: "contained",
   },
+  render: (args) => <Component {...args}>Button</Component>,
 } satisfies Story;
 
 export const Outlined = {
-  render: (args) => <Component {...args}>Button</Component>,
   args: {
     variant: "outlined",
   },
+  render: (args) => <Component {...args}>Button</Component>,
 } satisfies Story;
 
 export const Text = {
-  render: (args) => <Component {...args}>Button</Component>,
   args: {
     variant: "text",
   },
+  render: (args) => <Component {...args}>Button</Component>,
 } satisfies Story;

@@ -3,16 +3,27 @@ import AppHeaderDivider from "../app-header-divider/AppHeaderDivider";
 import AppHeaderGroupContainer from "./AppHeaderGroupContainer";
 import AppHeaderGroupContent from "./AppHeaderGroupContent";
 
-type Props = {
-  children: ReactElement | ReactElement[];
-};
+type DividerStyle = "none" | "left" | "right" | "both";
 
-export default function AppHeaderGroup({ children }: Props): ReactElement {
+interface Props {
+  dividerStyle?: DividerStyle;
+  children?: ReactElement | ReactElement[];
+}
+
+export default function AppHeaderGroup({ dividerStyle = "both", children }: Props): ReactElement {
+  function drawDivider(placement: DividerStyle): ReactElement {
+    if (dividerStyle === "both" || dividerStyle === placement) {
+      return <AppHeaderDivider />;
+    }
+
+    return <></>;
+  }
+
   return (
     <AppHeaderGroupContainer>
-      <AppHeaderDivider />
+      {drawDivider("left")}
       <AppHeaderGroupContent>{children}</AppHeaderGroupContent>
-      <AppHeaderDivider />
+      {drawDivider("right")}
     </AppHeaderGroupContainer>
   );
 }

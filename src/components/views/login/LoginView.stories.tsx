@@ -4,6 +4,16 @@ import Component from "./LoginView";
 const meta = {
   component: Component,
   title: "Views/Login",
+  parameters: {
+    layout: "fullscreen",
+  },
+  argTypes: {
+    loginForm: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } satisfies Meta<typeof Component>;
 
 export default meta;

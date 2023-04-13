@@ -6,6 +6,21 @@ import { DefaultHeaderComponents } from "~/stories/data/HeaderData";
 const meta = {
   component: Component,
   title: "Layout/Templates",
+  parameters: {
+    layout: "fullscreen",
+  },
+  argTypes: {
+    headerOptions: {
+      table: {
+        disable: true,
+      },
+    },
+    headerComponents: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } satisfies Meta<typeof Component>;
 
 export default meta;
@@ -16,7 +31,11 @@ export const HeaderLayout = {
     headerOptions: {
       label: "This is a Header",
     },
-    children: <ContentComponent />,
     headerComponents: <DefaultHeaderComponents />,
   },
+  render: (args) => (
+    <Component {...args}>
+      <ContentComponent />
+    </Component>
+  ),
 } satisfies Story;

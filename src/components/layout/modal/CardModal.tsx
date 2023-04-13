@@ -1,4 +1,4 @@
-import type { ReactElement, ReactNode } from "react";
+import type { ReactElement } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -8,14 +8,6 @@ import type { ModalProps } from "@mui/material/Modal";
 import { styled } from "@mui/material/styles";
 import ResponsiveModal from "./ResponsiveModal";
 import { getWordyDateFormat } from "~/libs/functions/date/Format";
-
-type Props = Omit<ModalProps, "children"> & {
-  title: string;
-  date: Date;
-  color?: string;
-  onClose: () => void;
-  children?: ReactNode | ReactNode[];
-};
 
 const StyledCard = styled(Card)(({ theme }) => ({
   height: "100%",
@@ -28,6 +20,14 @@ const StyledCard = styled(Card)(({ theme }) => ({
     width: "100%",
   },
 }));
+
+interface Props extends Omit<ModalProps, "children"> {
+  title: string;
+  date: Date;
+  color?: string;
+  onClose: () => void;
+  children?: ReactElement | ReactElement[];
+}
 
 function CardModal(props: Props): ReactElement {
   const { title, date, color, onClose, children } = props;

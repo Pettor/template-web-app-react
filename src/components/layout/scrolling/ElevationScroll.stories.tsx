@@ -13,13 +13,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const WithContent = {
-  render: (args) => (
-    <Component {...args}>
-      <Box>
-        <ContentComponent />
-      </Box>
-    </Component>
-  ),
   args: {
     getProps: (trigger: boolean): BoxProps => ({
       sx: {
@@ -27,4 +20,11 @@ export const WithContent = {
       },
     }),
   },
+  render: (args) => (
+    <Component {...args}>
+      <Box>
+        <ContentComponent />
+      </Box>
+    </Component>
+  ),
 } satisfies Story;

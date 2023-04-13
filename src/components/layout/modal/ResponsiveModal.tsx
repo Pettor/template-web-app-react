@@ -4,9 +4,9 @@ import type { ModalProps } from "@mui/material/Modal";
 import Modal from "@mui/material/Modal";
 import { styled } from "@mui/material/styles";
 
-type Props = Omit<ModalProps, "children"> & {
+interface Props extends Omit<ModalProps, "children"> {
   children?: JSX.Element | JSX.Element[];
-};
+}
 
 const ModalBox = styled(Box)(({ theme }) => ({
   position: "absolute",

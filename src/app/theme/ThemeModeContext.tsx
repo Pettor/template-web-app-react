@@ -9,9 +9,9 @@ interface IThemeModeContext {
   toggleMode(mode: PaletteMode): void;
 }
 
-type Props = {
+interface Props {
   children: ReactNode;
-};
+}
 
 export const ThemeModeContext = createContext<IThemeModeContext>({} as IThemeModeContext);
 

@@ -3,10 +3,10 @@ import { useMemo } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-type Props = {
+interface Props {
   mobile: ReactElement;
   desktop: ReactElement;
-};
+}
 
 export default function ResponsiveComponent({ mobile, desktop }: Props): ReactElement {
   const theme = useTheme();

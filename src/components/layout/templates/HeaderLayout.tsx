@@ -24,7 +24,7 @@ export interface HeaderLayoutProps {
   headerOptions?: AppHeaderOptions;
   maxWidth?: Breakpoint | false;
   sx?: SxProps<Theme>;
-  children: JSX.Element | JSX.Element[];
+  children?: ReactElement | ReactElement[];
 }
 
 interface Props extends HeaderLayoutProps, ComponentProps<typeof AppHeader> {}

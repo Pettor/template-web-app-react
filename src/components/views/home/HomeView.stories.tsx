@@ -5,6 +5,16 @@ import { DefaultHeaderComponents } from "~/stories/data/HeaderData";
 const meta = {
   component: Component,
   title: "Views/Home",
+  parameters: {
+    layout: "fullscreen",
+  },
+  argTypes: {
+    headerComponents: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } satisfies Meta<typeof Component>;
 
 export default meta;

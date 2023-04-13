@@ -10,7 +10,6 @@ import createAppTheme from "../src/libs/theme/Theme";
 import { reactIntl } from "./plugins/reactIntl";
 
 export const parameters = {
-  layout: "fullscreen",
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
@@ -24,7 +23,7 @@ export const parameters = {
 
 export const globalTypes = {
   locale: {
-    name: "Locale",
+    title: "Locale",
     description: "Formatjs locale",
     defaultValue: "en",
     toolbar: {
