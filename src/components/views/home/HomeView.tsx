@@ -3,65 +3,15 @@ import BackendIcon from "@mui/icons-material/Dns";
 import OptimizedIcon from "@mui/icons-material/ElectricBolt";
 import LayersIcon from "@mui/icons-material/Layers";
 import StorybookIcon from "@mui/icons-material/Palette";
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import { useIntl } from "react-intl";
-import HeaderLayout from "../../layout/templates/HeaderLayout";
-
-const LeftColorBox = styled(Box)(() => ({
-  content: "''",
-  position: "fixed",
-  top: "-200px",
-  left: "-200px",
-  width: "400px",
-  height: "400px",
-  background: "#c989e8",
-  opacity: 0.5,
-  filter: "blur(150px)",
-}));
-
-const RightColorBox = styled(Box)(() => ({
-  content: "''",
-  position: "fixed",
-  top: "-200px",
-  right: "-200px",
-  width: "400px",
-  height: "400px",
-  background: "#b3d4ff",
-  opacity: 0.5,
-  filter: "blur(150px)",
-}));
-
-const ContainerBox = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(2),
-  position: "relative",
-  width: "100%",
-  overflow: "auto",
-}));
-
-const GridContent = styled(Grid)(({ theme }) => ({
-  padding: theme.spacing(2),
-}));
-
-const GridItem = styled(Box)(({ theme }) => ({
-  ...theme.typography.body2,
-  height: "100%",
-  padding: theme.spacing(4),
-  textAlign: "left",
-  color: theme.palette.text.secondary,
-  background: `${theme.palette.background.paper}ba`,
-  borderRadius: "12px",
-}));
-
-const GradientTypography = styled("span")(({ theme }) => ({
-  ...theme.typography.h1,
-  background: theme.customBackgrounds.gradients.linear.variation1,
-  backgroundClip: "text",
-  WebkitBackgroundClip: "text",
-  color: "transparent",
-}));
+import HomeViewColorBox from "./HomeViewColorBox";
+import HomeViewContainer from "./HomeViewContainer";
+import HomeViewGridContent from "./HomeViewGridContent";
+import HomeViewGridItem from "./HomeViewGridItem";
+import HomeViewTitle from "./HomeViewTitle";
+import HeaderLayout from "~/components/layout/header/HeaderLayout";
 
 interface Props extends Omit<ComponentProps<typeof HeaderLayout>, "children"> {}
 
@@ -70,26 +20,25 @@ export default function HomeView({ ...headerProps }: Props): ReactElement {
 
   function renderGridItem(Icon: ComponentType, heading: string, description: string): ReactElement {
     return (
-      <GridItem>
+      <HomeViewGridItem>
         <Icon />
         <Typography variant="h6">{heading}</Typography>
         <Typography variant="subtitle1">{description}</Typography>
-      </GridItem>
+      </HomeViewGridItem>
     );
   }
 
   return (
     <HeaderLayout headerOptions={{ label: "Home" }} {...headerProps}>
-      <LeftColorBox />
-      <RightColorBox />
-      <ContainerBox>
-        <GradientTypography>
+      <HomeViewColorBox />
+      <HomeViewContainer>
+        <HomeViewTitle>
           {intl.formatMessage({
             description: "HomeView - Welcome",
             defaultMessage: "Welcome",
             id: "vlRwrH",
           })}
-        </GradientTypography>
+        </HomeViewTitle>
         <Typography variant="h3" gutterBottom>
           {intl.formatMessage({
             description: "HomeView - Subheader",
@@ -98,7 +47,7 @@ export default function HomeView({ ...headerProps }: Props): ReactElement {
           })}
         </Typography>
 
-        <GridContent container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 8 }}>
+        <HomeViewGridContent container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 8 }}>
           <Grid item xs={4} sm={4} md={4} key={0}>
             {renderGridItem(
               LayersIcon,
@@ -159,8 +108,8 @@ export default function HomeView({ ...headerProps }: Props): ReactElement {
               })
             )}
           </Grid>
-        </GridContent>
-      </ContainerBox>
+        </HomeViewGridContent>
+      </HomeViewContainer>
     </HeaderLayout>
   );
 }
