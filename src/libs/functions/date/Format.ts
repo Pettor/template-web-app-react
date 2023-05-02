@@ -14,13 +14,13 @@ export function getMonthName(date: Date): string {
     "December",
   ];
 
-  return monthNames[date.getMonth()];
+  return monthNames.at(date.getMonth()) || "";
 }
 
 export function getMonthNameShort(date: Date): string {
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  return monthNames[date.getMonth()];
+  return monthNames.at(date.getMonth()) || "";
 }
 
 export function getWordyDateFormat(date: Date, short = false): string {
