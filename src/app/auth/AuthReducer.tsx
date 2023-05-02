@@ -1,4 +1,4 @@
-import produce from "immer";
+import { produce } from "immer";
 
 type AuthActions = { type: "auth/loading" } | { type: "auth/login" } | { type: "auth/logout" };
 type AuthStatus = "idle" | "authenticating" | "authenticated";

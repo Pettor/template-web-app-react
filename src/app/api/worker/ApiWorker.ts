@@ -1,5 +1,5 @@
 import axios from "axios";
-import produce from "immer";
+import { produce } from "immer";
 import { clearToken } from "../../auth/token/TokenStorage";
 import ApiClient from "../client/ApiClient";
 import client from "../client/AxiosClient";

@@ -8,7 +8,7 @@ import type {
 } from "axios";
 import axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
-import produce from "immer";
+import { produce } from "immer";
 import { getToken, setToken } from "../../auth/token/TokenStorage";
 import type { RequestTokenDto } from "../queries/login/token-request/RequestTokenDto";
 import type { TokenDto } from "../queries/login/token-request/TokenDto";

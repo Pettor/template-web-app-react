@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import produce from "immer";
+import { produce } from "immer";
 import useApi from "../../../UseApi";
 import type { ProfileInfo } from "./ProfileInfo";
 import type { ProfileInfoDto } from "./ProfileInfoDto";
