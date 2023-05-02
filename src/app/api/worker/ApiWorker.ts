@@ -22,6 +22,11 @@ const apiClient = new ApiClient(client);
 async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<ApiMessages>): Promise<void> {
   let apiResponse: ApiResponseTypes;
 
+  if (!port) {
+    console.error("No port provided");
+    return;
+  }
+
   try {
     switch (sentData.type) {
       // Login

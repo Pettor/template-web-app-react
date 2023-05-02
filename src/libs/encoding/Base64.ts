@@ -15,5 +15,5 @@ export function bufferToBase64UrlEncoded(input: number[] | ArrayBuffer): string 
 
 function urlEncodeB64(input: string): string {
   const b64Chars: { [index: string]: string } = { "+": "-", "/": "_", "=": "" };
-  return input.replace(/[+/=]/g, (m: string) => b64Chars[m]);
+  return input.replace(/[+/=]/g, (m: string | undefined) => (m && b64Chars[m]) ?? "");
 }
