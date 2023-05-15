@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.2.0",
   "license": "MIT",
-  "packageManager": "pnpm@8.4.0",
+  "packageManager": "pnpm@8.5.1",
   "scripts": {
     "dev": "vite",
     "dev:docker": "vite --mode docker",
