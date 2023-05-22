@@ -45,7 +45,12 @@ jobs:
         run: pnpm install
 
       - name: Build Storybook
-        run: pnpm storybook:build --quiet
+        run: pnpm storybook:build
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+
+      - name: Build Storybook
+        run: pnpm storybook:move
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
 

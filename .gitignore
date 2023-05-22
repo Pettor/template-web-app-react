@@ -24,4 +24,7 @@ dist-ssr
 *.sw?
 
 # Build files
+.turbo
+out/
+build
 storybook-static

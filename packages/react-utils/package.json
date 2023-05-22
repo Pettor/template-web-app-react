@@ -1,0 +1,24 @@
+{
+  "name": "react-utils",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint --max-warnings 0 .",
+    "lint-fix": "eslint --fix .",
+    "tsc": "tsc -p tsconfig.json",
+    "test": "jest --verbose",
+    "test-watch": "jest --verbose --watch",
+    "test-coverage": "jest --coverage --verbose",
+    "update-dependencies": "npx npm-check-updates -u"
+  },
+  "dependencies": {
+    "buffer": "6.0.3",
+    "idb-keyval": "6.2.0"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
+  }
+}
