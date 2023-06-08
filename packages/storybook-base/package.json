@@ -1,0 +1,18 @@
+{
+  "name": "storybook-base",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "mui-theme": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "react-utils": "workspace:*",
+    "tsconfig": "workspace:*"
+  }
+}

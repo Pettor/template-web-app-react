@@ -1,0 +1,48 @@
+{
+  "name": "web",
+  "private": true,
+  "version": "0.2.0",
+  "license": "MIT",
+  "packageManager": "pnpm@8.3.1",
+  "scripts": {
+    "build": "tsc && vite build",
+    "clean": "rimraf dist",
+    "dev": "vite",
+    "preview": "vite preview",
+    "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
+    "lint:fix": "pnpm lint --fix",
+    "storybook": "storybook dev -p 6007",
+    "storybook:build": "storybook build -o storybook-static",
+    "storybook:move": "move-cli storybook-static \"../../storybook-static\""
+  },
+  "dependencies": {
+    "@hookform/resolvers": "3.1.0",
+    "@tanstack/react-query": "4.29.5",
+    "axios": "1.4.0",
+    "axios-auth-refresh": "3.3.6",
+    "immer": "10.0.1",
+    "mui-theme": "workspace:*",
+    "react-hook-form": "7.43.9",
+    "react-router-dom": "6.11.0",
+    "react-utils": "workspace:*",
+    "shared-ui": "workspace:*",
+    "yup": "1.1.1"
+  },
+  "devDependencies": {
+    "@formatjs/cli": "6.1.1",
+    "@vitejs/plugin-react": "4.0.0",
+    "@vitejs/plugin-react-swc": "3.3.0",
+    "cross-env": "7.0.3",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "http-server": "14.1.1",
+    "start-server-and-test": "2.0.0",
+    "storybook-base": "workspace:*",
+    "vite": "4.3.3",
+    "vite-plugin-http2-proxy": "0.4.1",
+    "vite-plugin-mkcert": "1.14.1",
+    "vite-plugin-pwa": "0.14.7",
+    "vite-tsconfig-paths": "4.2.0",
+    "workbox-window": "6.5.4"
+  }
+}
