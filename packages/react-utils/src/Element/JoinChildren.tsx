@@ -1,6 +1,7 @@
+import type { ReactElement } from "react";
 import { Children, cloneElement } from "react";
 
-export function joinChildren(children: React.ReactNode, separator: JSX.Element): React.ReactNode {
+export function joinChildren(children: React.ReactNode, separator: ReactElement): React.ReactNode {
   const childrenArray = Children.toArray(children).filter(Boolean);
 
   return childrenArray.reduce((output, child, index) => {
