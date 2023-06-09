@@ -1,8 +1,10 @@
+import type { ReactElement } from "react";
+
 interface MenuOptions {
   open: boolean;
   anchorEl: HTMLElement | null;
   handleClose: () => void;
-  children?: JSX.Element | JSX.Element[];
+  children?: ReactElement | ReactElement[];
 }
 
 export type { MenuOptions };

@@ -6,7 +6,7 @@ import { createAppTheme } from "mui-theme";
 import { useThemeMode } from "./UseThemeMode";
 
 interface Props {
-  children: JSX.Element | JSX.Element[];
+  children: ReactElement;
 }
 
 export function AppTheme({ children }: Props): ReactElement {

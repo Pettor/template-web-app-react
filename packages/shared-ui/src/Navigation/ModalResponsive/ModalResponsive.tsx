@@ -4,7 +4,7 @@ import type { ModalProps } from "@mui/material/Modal";
 import { ModalResponsiveContent } from "./ModalResponsiveContent";
 
 interface Props extends Omit<ModalProps, "children"> {
-  children?: JSX.Element | JSX.Element[];
+  children?: ReactElement;
 }
 
 export function ModalResponsive(props: Props): ReactElement {

@@ -6,7 +6,7 @@ import { BasicLayoutContent } from "./BasicLayoutContent";
 
 interface Props {
   sx?: SxProps;
-  children: JSX.Element | JSX.Element[];
+  children: ReactElement | ReactElement[];
 }
 
 export function BasicLayout({ sx, children }: Props): ReactElement {
