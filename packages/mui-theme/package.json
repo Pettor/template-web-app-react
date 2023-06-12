@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "index.ts",
   "dependencies": {
-    "@fontsource/rubik": "5.0.2"
+    "@fontsource/rubik": "5.0.3"
   },
   "devDependencies": {
     "tsconfig": "workspace:*"
