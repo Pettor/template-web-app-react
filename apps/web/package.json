@@ -29,20 +29,20 @@
     "yup": "1.2.0"
   },
   "devDependencies": {
-    "@formatjs/cli": "6.1.1",
+    "@formatjs/cli": "6.1.2",
     "@vitejs/plugin-react": "4.0.0",
-    "@vitejs/plugin-react-swc": "3.3.0",
+    "@vitejs/plugin-react-swc": "3.3.2",
     "cross-env": "7.0.3",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "http-server": "14.1.1",
     "start-server-and-test": "2.0.0",
     "storybook-base": "workspace:*",
-    "vite": "4.3.3",
+    "vite": "4.3.9",
     "vite-plugin-http2-proxy": "0.4.1",
-    "vite-plugin-mkcert": "1.14.1",
-    "vite-plugin-pwa": "0.14.7",
+    "vite-plugin-mkcert": "1.15.0",
+    "vite-plugin-pwa": "0.16.3",
     "vite-tsconfig-paths": "4.2.0",
-    "workbox-window": "6.5.4"
+    "workbox-window": "7.0.0"
   }
 }
