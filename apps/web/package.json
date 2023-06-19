@@ -28,7 +28,7 @@
     "yup": "1.2.0"
   },
   "devDependencies": {
-    "@formatjs/cli": "6.1.2",
+    "@formatjs/cli": "6.1.3",
     "@vitejs/plugin-react": "4.0.0",
     "@vitejs/plugin-react-swc": "3.3.2",
     "cross-env": "7.0.3",
@@ -40,7 +40,7 @@
     "vite": "4.3.9",
     "vite-plugin-http2-proxy": "0.4.1",
     "vite-plugin-mkcert": "1.15.0",
-    "vite-plugin-pwa": "0.16.3",
+    "vite-plugin-pwa": "0.16.4",
     "vite-tsconfig-paths": "4.2.0",
     "workbox-window": "7.0.0"
   }
