@@ -8,7 +8,6 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "tsup --watch",
     "lint": "eslint --max-warnings 0 .",
     "lint:fix": "pnpm lint --fix",
     "tsc": "tsc -p tsconfig.json",
