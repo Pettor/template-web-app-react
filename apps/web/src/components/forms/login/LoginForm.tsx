@@ -50,7 +50,7 @@ export function LoginForm({ error, loading, onSubmit }: Props): ReactElement {
     handleSubmit: handleFormSubmit,
     register,
     formState: { errors },
-  } = useForm<FormLogin>({
+  } = useForm({
     resolver: yupResolver(schema),
   });
 
