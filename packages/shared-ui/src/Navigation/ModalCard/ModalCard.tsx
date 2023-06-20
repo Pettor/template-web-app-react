@@ -2,7 +2,6 @@ import type { ReactElement } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import type { ModalProps } from "@mui/material";
 import { CardContent, CardHeader, IconButton } from "@mui/material";
-import { getWordyDateFormat } from "react-utils";
 import { ModalResponsive } from "../../Navigation";
 import { ModalCardContainer } from "./ModalCardContainer";
 
@@ -27,7 +26,7 @@ export function ModalCard(props: Props): ReactElement {
             </IconButton>
           }
           title={title}
-          subheader={getWordyDateFormat(date)}
+          subheader={date.toLocaleString()}
           sx={{ background: color }}
         />
         <CardContent>{children}</CardContent>
