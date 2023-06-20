@@ -6,5 +6,5 @@
       ".": ["."]
     }
   },
-  "include": ["src/**/*", "../mui-theme/mui-theme.d.ts"],
+  "include": ["src/**/*"],
 }

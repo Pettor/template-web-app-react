@@ -4,7 +4,11 @@
     "baseUrl": "src",
     "paths": {
       ".": ["."]
-    }
+    },
+    "types": [
+      "mui-theme/types",
+      "tsconfig/types"
+    ],
   },
-  "include": ["src/**/*", "../mui-theme/mui-theme.d.ts"],
+  "include": ["src/**/*"],
 }

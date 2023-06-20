@@ -12,8 +12,10 @@
       "~/*": ["./src/*"]
     },
     "types": [
-      "vite-plugin-pwa/client"
+      "vite-plugin-pwa/client",
+      "mui-theme/types",
+      "tsconfig/types"
     ],
   },
-  "include": ["./src", "../../packages/mui-theme/mui-theme.d.ts"],
+  "include": ["./src"],
 }
