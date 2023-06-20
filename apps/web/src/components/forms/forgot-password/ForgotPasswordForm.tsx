@@ -41,7 +41,7 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: Props): ReactEl
     handleSubmit: handleFormSubmit,
     register,
     formState: { errors },
-  } = useForm<FormForgotPassword>({
+  } = useForm({
     resolver: yupResolver(schema),
   });
 

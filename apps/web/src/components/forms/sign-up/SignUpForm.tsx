@@ -9,13 +9,13 @@ import { AutoAlert } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormSignUp {
-  firstName: string;
-  lastName: string;
+  firstName?: string;
+  lastName?: string;
   email: string;
   userName: string;
   password: string;
   confirmPassword: string;
-  phoneNumber: string;
+  phoneNumber?: string;
 }
 
 interface Props {
@@ -30,6 +30,8 @@ export function SignUpForm({ error, loading, onSubmit }: Props): ReactElement {
   const schema = yup
     .object()
     .shape({
+      firstName: yup.string().optional(),
+      lastName: yup.string().optional(),
       userName: yup.string().required(
         intl.formatMessage({
           description: "SignUpFormValidation - Display Name is required",
@@ -64,14 +66,18 @@ export function SignUpForm({ error, loading, onSubmit }: Props): ReactElement {
             id: "p9y0Zh",
           })
         ),
-      passwordConfirmation: yup.string().oneOf(
-        [yup.ref("password")],
-        intl.formatMessage({
-          description: "SignUpFormValidation - Passwords must match",
-          defaultMessage: "Passwords must match",
-          id: "IOLTJ0",
-        })
-      ),
+      confirmPassword: yup
+        .string()
+        .required()
+        .oneOf(
+          [yup.ref("password")],
+          intl.formatMessage({
+            description: "SignUpFormValidation - Passwords must match",
+            defaultMessage: "Passwords must match",
+            id: "IOLTJ0",
+          })
+        ),
+      phoneNumber: yup.string().optional(),
     })
     .required();
 
@@ -79,7 +85,7 @@ export function SignUpForm({ error, loading, onSubmit }: Props): ReactElement {
     handleSubmit: handleFormSubmit,
     register,
     formState: { errors },
-  } = useForm<FormSignUp>({
+  } = useForm({
     resolver: yupResolver(schema),
   });
 
