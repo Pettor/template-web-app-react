@@ -5,6 +5,7 @@
   "license": "MIT",
   "packageManager": "pnpm@8.6.2",
   "scripts": {
+    "prepare": "husky install",
     "build": "turbo run build --no-daemon",
     "clean": "turbo run clean --no-daemon",
     "dev": "turbo run dev --no-daemon",
@@ -31,9 +32,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intl": "6.4.4",
-    "wait-on": "^7.0.1"
+    "wait-on": "7.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.6.5",
+    "@commitlint/config-conventional": "17.6.5",
     "@storybook/addon-a11y": "7.0.22",
     "@storybook/addon-actions": "7.0.22",
     "@storybook/addon-docs": "7.0.22",
@@ -45,6 +48,7 @@
     "@storybook/storybook-deployer": "2.8.16",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
+    "husky": "8.0.3",
     "move-cli": "2.0.0",
     "prettier": "2.8.8",
     "rimraf": "5.0.1",
