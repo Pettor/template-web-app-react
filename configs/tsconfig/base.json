@@ -19,5 +19,5 @@
     "strict": true
   },
   "exclude": ["node_modules"],
-  "include": ["types/reset.d.ts", "types/svg.d.ts"]
+  "include": []
 }
