@@ -46,6 +46,8 @@ export default defineConfig(({ mode, command }) => {
     ],
   };
 
+  console.log(env.VITE_CONNECT_PORT);
+
   switch (command) {
     case "build":
       return mergeConfig(commonConfig, {

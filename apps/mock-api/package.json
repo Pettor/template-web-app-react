@@ -1,0 +1,15 @@
+{
+  "name": "mock-api",
+  "private": true,
+  "version": "0.4.0",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev:mocks": "mocks-server",
+    "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
+    "lint:fix": "pnpm lint --fix"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:*"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "exclude": ["dist"],
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    // Build & Resolve
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": [
+      "tsconfig/types"
+    ],
+  },
+  "include": ["./mocks"],
+}
