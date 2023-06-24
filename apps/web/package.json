@@ -7,7 +7,6 @@
     "build": "tsc && vite build",
     "clean": "rimraf dist",
     "dev": "vite",
-    "preview": "vite preview",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
     "storybook": "storybook dev -p 6007",
