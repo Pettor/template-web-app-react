@@ -18,6 +18,5 @@
     "skipLibCheck": true,
     "strict": true
   },
-  "exclude": ["node_modules"],
-  "include": ["types/reset.d.ts", "types/svg.d.ts"]
+  "exclude": ["node_modules"]
 }

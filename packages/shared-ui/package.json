@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist",
+    "clean:all": "rimraf dist node_modules",
     "lint": "eslint --max-warnings 0 .",
     "lint:fix": "pnpm lint --fix",
     "tsc": "tsc -p tsconfig.json",

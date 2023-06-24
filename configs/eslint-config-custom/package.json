@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "main": "index.js",
+  "scripts": {
+    "clean:all": "rimraf dist node_modules"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.60.0",
     "@typescript-eslint/parser": "5.60.0",

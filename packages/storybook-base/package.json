@@ -5,7 +5,7 @@
   "types": "./src/index.ts",
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "tsup --watch"
+    "clean:all": "rimraf dist node_modules"
   },
   "dependencies": {
     "mui-theme": "workspace:*"

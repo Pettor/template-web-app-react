@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from "react";
 import { createContext, useEffect, useMemo, useReducer } from "react";
-import { useRunOnce } from "react-utils";
+import { useEffectOnce } from "usehooks-ts";
 import { useApi } from "../api/UseApi";
 import type { AuthActions, AuthState } from "./AuthReducer";
 import { AuthReducer } from "./AuthReducer";
@@ -24,8 +24,8 @@ function AuthProvider({ children }: Props): ReactElement {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
   const api = useApi();
 
-  useRunOnce({
-    func: async () => {
+  useEffectOnce(() => {
+    (async (): Promise<void> => {
       try {
         // Run once on app load to check if the user is logged in
         await api.refreshToken();
@@ -33,7 +33,7 @@ function AuthProvider({ children }: Props): ReactElement {
       } catch (error) {
         dispatch({ type: "auth/logout" });
       }
-    },
+    })();
   });
 
   const value = useMemo(() => {
