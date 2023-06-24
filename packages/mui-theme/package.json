@@ -6,6 +6,9 @@
     "index.ts",
     "*.d.ts"
   ],
+  "scripts": {
+    "clean:all": "rimraf dist node_modules"
+  },
   "dependencies": {
     "@fontsource/rubik": "5.0.3"
   },

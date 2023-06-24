@@ -8,6 +8,7 @@
     "prepare": "husky install",
     "build": "turbo run build --no-daemon",
     "clean": "turbo run clean --no-daemon",
+    "clean:all": "turbo run clean:all --no-daemon",
     "dev": "turbo run dev --no-daemon",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint --no-daemon",

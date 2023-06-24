@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "clean": "rimraf dist",
+    "clean:all": "rimraf dist node_modules",
     "dev": "vite",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
