@@ -1,9 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":semanticCommits"],
+  "platform": "github",
   "labels": ["dependency", "bot"],
   "schedule": ["every weekend"],
   "separateMajorMinor": false,
+  "automerge": true,
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
