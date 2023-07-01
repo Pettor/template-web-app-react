@@ -39,7 +39,7 @@
     "storybook-base": "workspace:*",
     "vite": "4.3.9",
     "vite-plugin-http2-proxy": "0.4.1",
-    "vite-plugin-mkcert": "1.15.0",
+    "vite-plugin-mkcert": "1.16.0",
     "vite-plugin-pwa": "0.16.4",
     "vite-tsconfig-paths": "4.2.0",
     "workbox-window": "7.0.0"
