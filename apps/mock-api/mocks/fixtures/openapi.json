@@ -1,21 +1,5 @@
 {
-  "x-generator": "NSwag v13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))",
   "openapi": "3.0.0",
-  "info": {
-    "title": "Web API using .NET",
-    "description": "Clean Architecture Template for .NET 7.0 Web API built with Multitenancy Support.",
-    "contact": {},
-    "license": {
-      "name": "MIT License",
-      "url": "https://github.com/Pettor/template-web-api-dotnet/blob/main/LICENSE"
-    },
-    "version": "v1"
-  },
-  "servers": [
-    {
-      "url": "https://localhost:5001"
-    }
-  ],
   "paths": {
     "/api/tokens": {
       "post": {
@@ -55,12 +39,7 @@
                   "$ref": "#/components/schemas/TokenResponse"
                 },
                 "examples": {
-                  "default": {
-                    "value": {
-                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFhZDUxNGIwLTE4M2YtNDQyMi1hNjY2LWM0ZTRkNGRlZmFlOCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQHJvb3QuY29tIiwiZnVsbE5hbWUiOiJyb290IEFkbWluIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6InJvb3QiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiQWRtaW4iLCJpcEFkZHJlc3MiOiIwLjAuMC4xIiwidGVuYW50Ijoicm9vdCIsImltYWdlX3VybCI6IiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiIiwiZXhwIjoxNjg4MzEyNjE1fQ.tpmzgo55BObvEg0g2dtPUefnTMsvILEOD_P7fOUsfjc",
-                      "refreshTokenExpiryTime": "2023-07-09T14:43:35.7794079Z"
-                    }
-                  }
+                  "$ref": "#/components/examples/TokenResponse"
                 }
               }
             }
@@ -71,6 +50,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -81,6 +63,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -112,9 +97,7 @@
                   "$ref": "#/components/schemas/TokenResponse"
                 },
                 "examples": {
-                  "default": {
-                    "value": {}
-                  }
+                  "$ref": "#/components/examples/TokenResponse"
                 }
               }
             }
@@ -148,12 +131,7 @@
                   "$ref": "#/components/schemas/TokenResponse"
                 },
                 "examples": {
-                  "default": {
-                    "value": {
-                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFhZDUxNGIwLTE4M2YtNDQyMi1hNjY2LWM0ZTRkNGRlZmFlOCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQHJvb3QuY29tIiwiZnVsbE5hbWUiOiJyb290IEFkbWluIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6InJvb3QiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiQWRtaW4iLCJpcEFkZHJlc3MiOiIwLjAuMC4xIiwidGVuYW50Ijoicm9vdCIsImltYWdlX3VybCI6IiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiIiwiZXhwIjoxNjg4MzEyNjE1fQ.tpmzgo55BObvEg0g2dtPUefnTMsvILEOD_P7fOUsfjc",
-                      "refreshTokenExpiryTime": "2023-07-09T14:43:35.7794079Z"
-                    }
-                  }
+                  "$ref": "#/components/examples/TokenResponse"
                 }
               }
             }
@@ -164,6 +142,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -174,6 +155,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -195,19 +179,7 @@
                   "$ref": "#/components/schemas/UserDetailsDto"
                 },
                 "examples": {
-                  "default": {
-                    "value": {
-                      "id": "aad514b0-183f-4422-a666-c4e4d4defae8",
-                      "userName": "JohnDoe",
-                      "firstName": "John",
-                      "lastName": "Doe",
-                      "email": "john.doe@test.com",
-                      "isActive": true,
-                      "emailConfirmed": true,
-                      "phoneNumber": null,
-                      "imageUrl": null
-                    }
-                  }
+                  "$ref": "#/components/examples/UserDetailsDto"
                 }
               }
             }
@@ -218,6 +190,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -228,6 +203,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -249,6 +227,9 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UpdateUserRequest"
+              },
+              "examples": {
+                "$ref": "#/components/examples/UpdateUserRequest"
               }
             }
           },
@@ -265,6 +246,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -275,6 +259,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -298,6 +285,9 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ChangePasswordRequest"
+              },
+              "examples": {
+                "$ref": "#/components/examples/ChangePasswordRequest"
               }
             }
           },
@@ -314,6 +304,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -324,762 +317,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/personal/permissions": {
-      "get": {
-        "tags": ["Personal"],
-        "summary": "Get permissions of currently logged in user.",
-        "operationId": "Personal_GetPermissions",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/personal/logs": {
-      "get": {
-        "tags": ["Personal"],
-        "summary": "Get audit logs of currently logged in user.",
-        "operationId": "Personal_GetLogs",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AuditDto"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/tenants": {
-      "get": {
-        "tags": ["Tenants"],
-        "summary": "Get a list of all tenants.",
-        "operationId": "Tenants_GetList",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TenantDto"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      },
-      "post": {
-        "tags": ["Tenants"],
-        "summary": "Create a new tenant.",
-        "operationId": "Tenants_Create",
-        "requestBody": {
-          "x-name": "request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateTenantRequest"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 1
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/tenants/{id}": {
-      "get": {
-        "tags": ["Tenants"],
-        "summary": "Get tenant details.",
-        "operationId": "Tenants_Get",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TenantDto"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/tenants/{id}/activate": {
-      "post": {
-        "tags": ["Tenants"],
-        "summary": "Activate a tenant.",
-        "operationId": "Tenants_Activate",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/tenants/{id}/deactivate": {
-      "post": {
-        "tags": ["Tenants"],
-        "summary": "Deactivate a tenant.",
-        "operationId": "Tenants_Deactivate",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/tenants/{id}/upgrade": {
-      "post": {
-        "tags": ["Tenants"],
-        "summary": "Upgrade a tenant's subscription.",
-        "operationId": "Tenants_UpgradeSubscription",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "requestBody": {
-          "x-name": "request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpgradeSubscriptionRequest"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 2
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/roles": {
-      "get": {
-        "tags": ["Roles"],
-        "summary": "Get a list of all roles.",
-        "operationId": "Roles_GetList",
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RoleDto"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      },
-      "post": {
-        "tags": ["Roles"],
-        "summary": "Create or update a role.",
-        "operationId": "Roles_RegisterRole",
-        "requestBody": {
-          "x-name": "request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateOrUpdateRoleRequest"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 1
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/roles/{id}": {
-      "get": {
-        "tags": ["Roles"],
-        "summary": "Get role details.",
-        "operationId": "Roles_GetById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDto"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": ["Roles"],
-        "summary": "Delete a role.",
-        "operationId": "Roles_Delete",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/roles/{id}/permissions": {
-      "get": {
-        "tags": ["Roles"],
-        "summary": "Get role details with its permissions.",
-        "operationId": "Roles_GetByIdWithPermissions",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RoleDto"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      },
-      "put": {
-        "tags": ["Roles"],
-        "summary": "Update a role's permissions.",
-        "operationId": "Roles_UpdatePermissions",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "requestBody": {
-          "x-name": "request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateRolePermissionsRequest"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 2
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -1106,6 +346,9 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/UserDetailsDto"
+                  },
+                  "examples": {
+                    "$ref": "#/components/examples/UserDetailsDto"
                   }
                 }
               }
@@ -1117,6 +360,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -1127,6 +373,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -1148,6 +397,9 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateUserRequest"
+              },
+              "examples": {
+                "$ref": "#/components/examples/CreateUserRequest"
               }
             }
           },
@@ -1171,6 +423,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -1181,172 +436,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/users/{id}": {
-      "get": {
-        "tags": ["Users"],
-        "summary": "Get a user's details.",
-        "operationId": "Users_GetById",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "$ref": "#/components/schemas/UserDetailsDto"
-            }
-          },
-          "400": {
-            "description": "",
-            "schema": {
-              "$ref": "#/components/schemas/HttpValidationProblemDetails"
-            }
-          },
-          "default": {
-            "description": "",
-            "schema": {
-              "$ref": "#/components/schemas/ErrorResult"
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/users/{id}/roles": {
-      "get": {
-        "tags": ["Users"],
-        "summary": "Get a user's roles.",
-        "operationId": "Users_GetRoles",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/UserRoleDto"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      },
-      "post": {
-        "tags": ["Users"],
-        "summary": "Update a user's assigned roles.",
-        "operationId": "Users_AssignRoles",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "requestBody": {
-          "x-name": "request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserRolesRequest"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 2
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -1395,6 +487,13 @@
               "application/json": {
                 "schema": {
                   "type": "string"
+                },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -1405,6 +504,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -1415,188 +517,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/users/{id}/toggle-status": {
-      "post": {
-        "tags": ["Users"],
-        "summary": "Toggle a user's active status.",
-        "operationId": "Users_ToggleStatus",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
-        "requestBody": {
-          "x-name": "request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ToggleUserStatusRequest"
-              }
-            }
-          },
-          "required": true,
-          "x-position": 2
-        },
-        "responses": {
-          "200": {
-            "description": ""
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
-      }
-    },
-    "/api/users/confirm-email": {
-      "get": {
-        "tags": ["Users"],
-        "summary": "Confirm email address for a user.",
-        "operationId": "Users_ConfirmEmail",
-        "parameters": [
-          {
-            "name": "tenant",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          },
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          },
-          {
-            "name": "code",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 3
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/users/confirm-phone-number": {
-      "get": {
-        "tags": ["Users"],
-        "summary": "Confirm phone number for a user.",
-        "operationId": "Users_ConfirmPhoneNumber",
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          },
-          {
-            "name": "code",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -1640,6 +563,13 @@
               "application/json": {
                 "schema": {
                   "type": "string"
+                },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "type": ""
+                    }
+                  }
                 }
               }
             }
@@ -1650,6 +580,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -1660,6 +593,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -1701,6 +637,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
                 }
               }
             }
@@ -1711,6 +650,9 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorResult"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ErrorResult"
                 }
               }
             }
@@ -2206,441 +1148,85 @@
             "nullable": true
           }
         }
-      },
-      "StatsDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "productCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "brandCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "roleCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "dataEnterBarChart": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ChartSeries"
-            }
-          },
-          "productByBrandTypePieChart": {
-            "type": "object",
-            "nullable": true,
-            "additionalProperties": {
-              "type": "number",
-              "format": "double"
-            }
+      }
+    },
+    "examples": {
+      "TokenResponse": {
+        "token-valid": {
+          "value": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+            "refreshTokenExpiryTime": "2099-09-09T00:00:00.0000000Z"
           }
         }
       },
-      "ChartSeries": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "data": {
-            "type": "array",
-            "nullable": true,
-            "items": {
-              "type": "number",
-              "format": "double"
-            }
+      "UserDetailsDto": {
+        "detail-john-doe": {
+          "value": {
+            "id": "aad514b0-183f-4422-a666-c4e4d4defae8",
+            "userName": "JohnDoe",
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john.doe@test.com",
+            "isActive": true,
+            "emailConfirmed": true,
+            "phoneNumber": "0701234567",
+            "imageUrl": "http://placekitten.com/200/200"
           }
         }
       },
-      "PaginationResponseOfBrandDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BrandDto"
-            }
-          },
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPages": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageSize": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "hasPreviousPage": {
-            "type": "boolean"
-          },
-          "hasNextPage": {
-            "type": "boolean"
+      "UpdateUserRequest": {
+        "update-john-doe": {
+          "value": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john.doe@test.com",
+            "phoneNumber": "0701234567"
           }
         }
       },
-      "BrandDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "guid"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
+      "ChangePasswordRequest": {
+        "change-password123": {
+          "value": {
+            "currentPassword": "password123",
+            "newPassword": "password123"
           }
         }
       },
-      "SearchBrandsRequest": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/PaginationFilter"
-          },
-          {
-            "type": "object",
-            "additionalProperties": false
+      "CreateUserRequest": {
+        "create-bill-andersson": {
+          "value": {
+            "userName": "bill.andersson",
+            "firstName": "Bill",
+            "lastName": "Andersson",
+            "email": "bill.andersson@yahoo.com",
+            "password": "password123",
+            "phoneNumber": "0701234567"
           }
-        ]
+        }
       },
-      "PaginationFilter": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/BaseFilter"
-          },
-          {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "pageNumber": {
-                "type": "integer",
-                "format": "int32"
-              },
-              "pageSize": {
-                "type": "integer",
-                "format": "int32"
-              },
-              "orderBy": {
-                "type": "array",
-                "nullable": true,
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
+      "HttpValidationProblemDetails": {
+        "status-400-no-error": {
+          "value": {
+            "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+            "title": "One or more validation errors occurred.",
+            "status": 400,
+            "traceId": "|a0f0a0f-4c0f0a0f4c0f0a0f."
           }
-        ]
+        }
       },
-      "BaseFilter": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "advancedSearch": {
-            "description": "Column Wise Search is Supported.",
-            "nullable": true,
-            "oneOf": [
+      "ErrorResult": {
+        "code-20-server-error": {
+          "value": {
+            "code": "20",
+            "message": "Server Error",
+            "details": [
               {
-                "$ref": "#/components/schemas/Search"
-              }
-            ]
-          },
-          "keyword": {
-            "type": "string",
-            "description": "Keyword to Search in All the available columns of the Resource.",
-            "nullable": true
-          }
-        }
-      },
-      "Search": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "fields": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "keyword": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "CreateBrandRequest": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "UpdateBrandRequest": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "guid"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "GenerateRandomBrandRequest": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "nSeed": {
-            "type": "integer",
-            "format": "int32"
-          }
-        }
-      },
-      "PaginationResponseOfProductDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProductDto"
-            }
-          },
-          "currentPage": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPages": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "pageSize": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "hasPreviousPage": {
-            "type": "boolean"
-          },
-          "hasNextPage": {
-            "type": "boolean"
-          }
-        }
-      },
-      "ProductDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "guid"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "rate": {
-            "type": "number",
-            "format": "decimal"
-          },
-          "imagePath": {
-            "type": "string",
-            "nullable": true
-          },
-          "brandId": {
-            "type": "string",
-            "format": "guid"
-          },
-          "brandName": {
-            "type": "string"
-          }
-        }
-      },
-      "SearchProductsRequest": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/PaginationFilter"
-          },
-          {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "brandId": {
-                "type": "string",
-                "format": "guid",
-                "nullable": true
-              },
-              "minimumRate": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true
-              },
-              "maximumRate": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true
-              }
-            }
-          }
-        ]
-      },
-      "ProductDetailsDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "guid"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "rate": {
-            "type": "number",
-            "format": "decimal"
-          },
-          "imagePath": {
-            "type": "string",
-            "nullable": true
-          },
-          "brand": {
-            "$ref": "#/components/schemas/BrandDto"
-          }
-        }
-      },
-      "CreateProductRequest": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "rate": {
-            "type": "number",
-            "format": "decimal"
-          },
-          "brandId": {
-            "type": "string",
-            "format": "guid"
-          },
-          "image": {
-            "nullable": true,
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/FileUploadRequest"
+                "code": "20",
+                "message": "Server Error"
               }
             ]
           }
         }
-      },
-      "UpdateProductRequest": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "guid"
-          },
-          "name": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "rate": {
-            "type": "number",
-            "format": "decimal"
-          },
-          "brandId": {
-            "type": "string",
-            "format": "guid"
-          },
-          "deleteCurrentImage": {
-            "type": "boolean"
-          },
-          "image": {
-            "nullable": true,
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/FileUploadRequest"
-              }
-            ]
-          }
-        }
-      },
-      "ExportProductsRequest": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/BaseFilter"
-          },
-          {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "brandId": {
-                "type": "string",
-                "format": "guid",
-                "nullable": true
-              },
-              "minimumRate": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true
-              },
-              "maximumRate": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true
-              }
-            }
-          }
-        ]
       }
     },
     "securitySchemes": {
