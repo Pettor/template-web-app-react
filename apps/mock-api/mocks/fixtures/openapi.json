@@ -18,38 +18,8 @@
   ],
   "paths": {
     "/api/tokens": {
-      "get": {
-        "description": "Returns a user based on a single ID, if the user does not have access to the pet",
-        "operationId": "find pet by id",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of pet to fetch",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "pet response",
-            "schema": {
-              "$ref": "#/definitions/Pet"
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "schema": {
-              "$ref": "#/definitions/Error"
-            }
-          }
-        }
-      },
       "post": {
-        "tags": [
-          "Tokens"
-        ],
+        "tags": ["Tokens"],
         "summary": "Request an access token using credentials.",
         "operationId": "Tokens_GetToken",
         "parameters": [
@@ -85,27 +55,11 @@
                   "$ref": "#/components/schemas/TokenResponse"
                 },
                 "examples": {
-                  "one-user": {
-                    "summary": "One route",
-                    "value": [
-                      {
-                        "id": 1,
-                        "name": "John Doe"
-                      }
-                    ]
-                  },
-                  "two-users": {
-                    "summary": "Two users",
-                    "value": [
-                      {
-                        "id": 1,
-                        "name": "John Doe"
-                      },
-                      {
-                        "id": 2,
-                        "name": "Jane Doe"
-                      }
-                    ]
+                  "default": {
+                    "value": {
+                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFhZDUxNGIwLTE4M2YtNDQyMi1hNjY2LWM0ZTRkNGRlZmFlOCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQHJvb3QuY29tIiwiZnVsbE5hbWUiOiJyb290IEFkbWluIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6InJvb3QiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiQWRtaW4iLCJpcEFkZHJlc3MiOiIwLjAuMC4xIiwidGVuYW50Ijoicm9vdCIsImltYWdlX3VybCI6IiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiIiwiZXhwIjoxNjg4MzEyNjE1fQ.tpmzgo55BObvEg0g2dtPUefnTMsvILEOD_P7fOUsfjc",
+                      "refreshTokenExpiryTime": "2023-07-09T14:43:35.7794079Z"
+                    }
                   }
                 }
               }
@@ -119,11 +73,6 @@
                   "$ref": "#/components/schemas/HttpValidationProblemDetails"
                 }
               }
-            },
-            "examples": {
-              "application/json": {
-                "token": "hej"
-              }
             }
           },
           "default": {
@@ -134,19 +83,12 @@
                   "$ref": "#/components/schemas/ErrorResult"
                 }
               }
-            },
-            "examples": {
-              "application/json": {
-                "token": "hej"
-              }
             }
           }
         }
       },
       "delete": {
-        "tags": [
-          "Tokens"
-        ],
+        "tags": ["Tokens"],
         "summary": "Request an access token using credentials.",
         "operationId": "Tokens_RemoveToken",
         "parameters": [
@@ -177,9 +119,7 @@
     },
     "/api/tokens/refresh": {
       "get": {
-        "tags": [
-          "Tokens"
-        ],
+        "tags": ["Tokens"],
         "summary": "Request an access token using a refresh token.",
         "operationId": "Tokens_Refresh",
         "parameters": [
@@ -201,6 +141,14 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/TokenResponse"
+                },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImFhZDUxNGIwLTE4M2YtNDQyMi1hNjY2LWM0ZTRkNGRlZmFlOCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6ImFkbWluQHJvb3QuY29tIiwiZnVsbE5hbWUiOiJyb290IEFkbWluIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6InJvb3QiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zdXJuYW1lIjoiQWRtaW4iLCJpcEFkZHJlc3MiOiIwLjAuMC4xIiwidGVuYW50Ijoicm9vdCIsImltYWdlX3VybCI6IiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiIiwiZXhwIjoxNjg4MzEyNjE1fQ.tpmzgo55BObvEg0g2dtPUefnTMsvILEOD_P7fOUsfjc",
+                      "refreshTokenExpiryTime": "2023-07-09T14:43:35.7794079Z"
+                    }
+                  }
                 }
               }
             }
@@ -230,9 +178,7 @@
     },
     "/api/personal/profile": {
       "get": {
-        "tags": [
-          "Personal"
-        ],
+        "tags": ["Personal"],
         "summary": "Get profile details of currently logged in user.",
         "operationId": "Personal_GetProfile",
         "responses": {
@@ -274,9 +220,7 @@
         ]
       },
       "put": {
-        "tags": [
-          "Personal"
-        ],
+        "tags": ["Personal"],
         "summary": "Update profile details of currently logged in user.",
         "operationId": "Personal_UpdateProfile",
         "requestBody": {
@@ -325,9 +269,7 @@
     },
     "/api/personal/change-password": {
       "put": {
-        "tags": [
-          "Personal"
-        ],
+        "tags": ["Personal"],
         "summary": "Change password of currently logged in user.",
         "operationId": "Personal_ChangePassword",
         "requestBody": {
@@ -376,9 +318,7 @@
     },
     "/api/personal/permissions": {
       "get": {
-        "tags": [
-          "Personal"
-        ],
+        "tags": ["Personal"],
         "summary": "Get permissions of currently logged in user.",
         "operationId": "Personal_GetPermissions",
         "responses": {
@@ -425,9 +365,7 @@
     },
     "/api/personal/logs": {
       "get": {
-        "tags": [
-          "Personal"
-        ],
+        "tags": ["Personal"],
         "summary": "Get audit logs of currently logged in user.",
         "operationId": "Personal_GetLogs",
         "responses": {
@@ -474,9 +412,7 @@
     },
     "/api/tenants": {
       "get": {
-        "tags": [
-          "Tenants"
-        ],
+        "tags": ["Tenants"],
         "summary": "Get a list of all tenants.",
         "operationId": "Tenants_GetList",
         "responses": {
@@ -521,9 +457,7 @@
         ]
       },
       "post": {
-        "tags": [
-          "Tenants"
-        ],
+        "tags": ["Tenants"],
         "summary": "Create a new tenant.",
         "operationId": "Tenants_Create",
         "requestBody": {
@@ -579,9 +513,7 @@
     },
     "/api/tenants/{id}": {
       "get": {
-        "tags": [
-          "Tenants"
-        ],
+        "tags": ["Tenants"],
         "summary": "Get tenant details.",
         "operationId": "Tenants_Get",
         "parameters": [
@@ -636,9 +568,7 @@
     },
     "/api/tenants/{id}/activate": {
       "post": {
-        "tags": [
-          "Tenants"
-        ],
+        "tags": ["Tenants"],
         "summary": "Activate a tenant.",
         "operationId": "Tenants_Activate",
         "parameters": [
@@ -693,9 +623,7 @@
     },
     "/api/tenants/{id}/deactivate": {
       "post": {
-        "tags": [
-          "Tenants"
-        ],
+        "tags": ["Tenants"],
         "summary": "Deactivate a tenant.",
         "operationId": "Tenants_Deactivate",
         "parameters": [
@@ -750,9 +678,7 @@
     },
     "/api/tenants/{id}/upgrade": {
       "post": {
-        "tags": [
-          "Tenants"
-        ],
+        "tags": ["Tenants"],
         "summary": "Upgrade a tenant's subscription.",
         "operationId": "Tenants_UpgradeSubscription",
         "parameters": [
@@ -819,9 +745,7 @@
     },
     "/api/roles": {
       "get": {
-        "tags": [
-          "Roles"
-        ],
+        "tags": ["Roles"],
         "summary": "Get a list of all roles.",
         "operationId": "Roles_GetList",
         "responses": {
@@ -866,9 +790,7 @@
         ]
       },
       "post": {
-        "tags": [
-          "Roles"
-        ],
+        "tags": ["Roles"],
         "summary": "Create or update a role.",
         "operationId": "Roles_RegisterRole",
         "requestBody": {
@@ -924,9 +846,7 @@
     },
     "/api/roles/{id}": {
       "get": {
-        "tags": [
-          "Roles"
-        ],
+        "tags": ["Roles"],
         "summary": "Get role details.",
         "operationId": "Roles_GetById",
         "parameters": [
@@ -979,9 +899,7 @@
         ]
       },
       "delete": {
-        "tags": [
-          "Roles"
-        ],
+        "tags": ["Roles"],
         "summary": "Delete a role.",
         "operationId": "Roles_Delete",
         "parameters": [
@@ -1036,9 +954,7 @@
     },
     "/api/roles/{id}/permissions": {
       "get": {
-        "tags": [
-          "Roles"
-        ],
+        "tags": ["Roles"],
         "summary": "Get role details with its permissions.",
         "operationId": "Roles_GetByIdWithPermissions",
         "parameters": [
@@ -1091,9 +1007,7 @@
         ]
       },
       "put": {
-        "tags": [
-          "Roles"
-        ],
+        "tags": ["Roles"],
         "summary": "Update a role's permissions.",
         "operationId": "Roles_UpdatePermissions",
         "parameters": [
@@ -1160,9 +1074,7 @@
     },
     "/api/users": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get list of all users.",
         "operationId": "Users_GetList",
         "responses": {
@@ -1207,9 +1119,7 @@
         ]
       },
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Creates a new user.",
         "operationId": "Users_Create",
         "requestBody": {
@@ -1265,9 +1175,7 @@
     },
     "/api/users/{id}": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get a user's details.",
         "operationId": "Users_GetById",
         "parameters": [
@@ -1310,9 +1218,7 @@
     },
     "/api/users/{id}/roles": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get a user's roles.",
         "operationId": "Users_GetRoles",
         "parameters": [
@@ -1368,9 +1274,7 @@
         ]
       },
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Update a user's assigned roles.",
         "operationId": "Users_AssignRoles",
         "parameters": [
@@ -1437,9 +1341,7 @@
     },
     "/api/users/self-register": {
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Anonymous user creates a user.",
         "operationId": "Users_SelfRegister",
         "parameters": [
@@ -1502,9 +1404,7 @@
     },
     "/api/users/{id}/toggle-status": {
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Toggle a user's active status.",
         "operationId": "Users_ToggleStatus",
         "parameters": [
@@ -1564,9 +1464,7 @@
     },
     "/api/users/confirm-email": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Confirm email address for a user.",
         "operationId": "Users_ConfirmEmail",
         "parameters": [
@@ -1631,9 +1529,7 @@
     },
     "/api/users/confirm-phone-number": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Confirm phone number for a user.",
         "operationId": "Users_ConfirmPhoneNumber",
         "parameters": [
@@ -1690,9 +1586,7 @@
     },
     "/api/users/forgot-password": {
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Request a pasword reset email for a user.",
         "operationId": "Users_ForgotPassword",
         "parameters": [
@@ -1755,9 +1649,7 @@
     },
     "/api/users/reset-password": {
       "post": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Reset a user's password.",
         "operationId": "Users_ResetPassword",
         "requestBody": {
