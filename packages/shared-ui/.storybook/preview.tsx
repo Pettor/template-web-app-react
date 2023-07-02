@@ -5,8 +5,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { StoryFn, StoryContext } from "@storybook/react";
-import { IntlProvider } from "react-intl";
 import { createAppTheme } from "mui-theme";
+import { IntlProvider } from "react-intl";
 
 export const parameters = {
   viewport: {

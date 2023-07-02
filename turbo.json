@@ -12,16 +12,6 @@
       ],
       "dependsOn": ["^build"]
     },
-    "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": []
-    },
-    "lint": {
-      "cache": false
-    },
-    "lint:fix": {
-      "cache": false
-    },
     "dev": {
       "dependsOn": ["^build"],
       "cache": false,
@@ -37,6 +27,15 @@
     },
     "clean:all": {
       "cache": false
+    },
+    "lint": {
+      "cache": false
+    },
+    "lint:fix": {
+      "cache": false
+    },
+    "test": {
+      "outputs": ["coverage/**"]
     },
     "storybook": {
       "cache": false
