@@ -35,6 +35,7 @@ module.exports = {
     },
     openapi: {
       collection: {
+        id: "base",
         // Name for the collection created from OpenAPI definitions
         //id: "openapi",
         // Name of the collection to extend from
