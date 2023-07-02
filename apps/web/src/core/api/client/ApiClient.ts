@@ -57,6 +57,8 @@ export class ApiClient {
 
   public async tokenRequest(data: RequestTokenDto): Promise<AxiosResponse> {
     const response = await this.client.post<TokenDto>(this.tokenApiUrl, data, this.defaultConfig);
+
+    console.log({ response });
     setToken(response.data.token);
 
     // Remove token from response

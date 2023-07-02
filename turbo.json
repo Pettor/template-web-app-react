@@ -38,6 +38,9 @@
     "clean:all": {
       "cache": false
     },
+    "mocks": {
+      "cache": false
+    },
     "storybook": {
       "cache": false
     },

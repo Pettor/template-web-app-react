@@ -15,6 +15,7 @@
     "lint": "turbo run lint --no-daemon",
     "lint:fix": "turbo run lint:fix --no-daemon",
     "test": "turbo run test --no-daemon",
+    "mocks": "pnpm --filter=mock-api mocks",
     "storybook": "concurrently -k -s first -n \"ui,web\" -c \"magenta,blue\" \"pnpm storybook:ui\" \"pnpm wait-on http://localhost:6006 && pnpm storybook:web\"",
     "storybook:web": "turbo run storybook --filter=web",
     "storybook:ui": "turbo run storybook --filter=shared-ui",
