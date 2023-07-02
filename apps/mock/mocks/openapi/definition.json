@@ -1,0 +1,7 @@
+[
+  {
+    "document": {
+      "$ref": "../fixtures/openapi.json"
+    }
+  }
+]
