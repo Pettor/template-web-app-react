@@ -86,7 +86,7 @@ jobs:
         run: pnpm build
 
   storybook:
-    name: Storybook
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -126,3 +126,9 @@ jobs:
         run: pnpm storybook:build
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
+
+      - name: Install Playwright
+        run: npx playwright install 
+
+      - name: Test application
+        run: pnpm test

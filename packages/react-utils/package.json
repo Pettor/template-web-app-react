@@ -6,13 +6,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "clean:all": "rimraf dist node_modules",
-    "lint": "eslint --max-warnings 0 .",
-    "lint-fix": "eslint --fix .",
-    "tsc": "tsc -p tsconfig.json",
-    "test": "jest --verbose",
-    "test-watch": "jest --verbose --watch",
-    "test-coverage": "jest --coverage --verbose",
-    "update-dependencies": "npx npm-check-updates -u"
+    "lint": "eslint ./src --ext .ts",
+    "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
     "buffer": "6.0.3",

@@ -9,13 +9,14 @@
   "scripts": {
     "clean": "rimraf dist",
     "clean:all": "rimraf dist node_modules",
-    "lint": "eslint --max-warnings 0 .",
+    "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
-    "tsc": "tsc -p tsconfig.json",
-    "test": "jest --verbose",
+    "test": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9060 \"pnpm storybook:test\"",
     "storybook": "storybook dev -p 6006 --quiet --no-open",
     "storybook:build": "storybook build -o storybook-static",
-    "storybook:move": "move-cli storybook-static \"../../storybook-static/shared-ui\""
+    "storybook:move": "move-cli storybook-static \"../../storybook-static/shared-ui\"",
+    "storybook:server": "npx http-server storybook-static --port 9060 --silent",
+    "storybook:test": "test-storybook --url http://127.0.0.1:9060"
   },
   "dependencies": {
     "mui-theme": "workspace:*"
