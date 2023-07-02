@@ -110,6 +110,11 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/TokenResponse"
+                },
+                "examples": {
+                  "default": {
+                    "value": {}
+                  }
                 }
               }
             }
@@ -188,6 +193,21 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserDetailsDto"
+                },
+                "examples": {
+                  "default": {
+                    "value": {
+                      "id": "aad514b0-183f-4422-a666-c4e4d4defae8",
+                      "userName": "JohnDoe",
+                      "firstName": "John",
+                      "lastName": "Doe",
+                      "email": "john.doe@test.com",
+                      "isActive": true,
+                      "emailConfirmed": true,
+                      "phoneNumber": null,
+                      "imageUrl": null
+                    }
+                  }
                 }
               }
             }

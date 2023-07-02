@@ -111,9 +111,9 @@ importers:
 
   apps/mock-api:
     devDependencies:
-      tsconfig:
+      eslint-config-custom:
         specifier: workspace:*
-        version: link:../../configs/tsconfig
+        version: link:../../configs/eslint-config-custom
 
   apps/web:
     dependencies:

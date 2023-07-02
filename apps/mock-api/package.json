@@ -6,10 +6,10 @@
   "scripts": {
     "clean": "rimraf dist",
     "mocks": "mocks-server",
-    "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
+    "lint": "eslint ./mocks --ext .json",
     "lint:fix": "pnpm lint --fix"
   },
   "devDependencies": {
-    "tsconfig": "workspace:*"
+    "eslint-config-custom": "workspace:*"
   }
 }
