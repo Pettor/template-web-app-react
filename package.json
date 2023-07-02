@@ -40,6 +40,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
+    "@commitlint/types": "17.4.4",
     "@mocks-server/main": "4.1.0",
     "@storybook/addon-a11y": "7.0.24",
     "@storybook/addon-actions": "7.0.24",
@@ -50,6 +51,7 @@
     "@storybook/react": "7.0.24",
     "@storybook/react-vite": "7.0.24",
     "@storybook/storybook-deployer": "2.8.16",
+    "@types/node": "20.3.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "husky": "8.0.3",
