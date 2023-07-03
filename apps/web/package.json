@@ -36,7 +36,6 @@
   },
   "devDependencies": {
     "@formatjs/cli": "6.1.3",
-    "@types/testing-library__jest-dom": "5.14.6",
     "@vitejs/plugin-react-swc": "3.3.2",
     "cross-env": "7.0.3",
     "eslint-config-custom": "workspace:*",
