@@ -60,6 +60,9 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordF
         autoFocus
         error={!!errors?.email}
         helperText={errors?.email?.message}
+        inputProps={{
+          "data-testid": "forgot-password-email__input",
+        }}
         {...register("email")}
       />
       <LoadingButton type="submit" fullWidth loading={loading} variant="outlined" sx={{ mt: 3, mb: 2 }}>

@@ -1,6 +1,6 @@
 import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
-import { within } from "@storybook/testing-library";
+import { userEvent, within } from "@storybook/testing-library";
 import { ContainerDecorator } from "storybook-base";
 import { ForgotPasswordForm as Component } from "./ForgotPasswordForm";
 
@@ -21,6 +21,8 @@ export const ForgotPassword: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    expect(canvas.getByText("Button")).toBeInTheDocument();
+    await userEvent.type(canvas.getByTestId("forgot-password-email__input"), "email@provider.com");
+
+    expect(canvas.getByTestId("forgot-password-email__input")).toHaveValue("email@provider.com");
   },
 } satisfies Story;
