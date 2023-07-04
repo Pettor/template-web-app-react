@@ -35,7 +35,7 @@ export const Success: Story = {
   },
 } satisfies Story;
 
-export const MissingEmail: Story = {
+export const EmailMissing: Story = {
   args: {
     error: "",
     loading: false,
@@ -44,13 +44,14 @@ export const MissingEmail: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
+    await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
     expect(canvas.getByText("Email is required")).toBeInTheDocument;
   },
 } satisfies Story;
 
-export const InvalidEmail: Story = {
+export const EmailInvalid: Story = {
   args: {
     error: "",
     loading: false,
@@ -60,6 +61,24 @@ export const InvalidEmail: Story = {
     const canvas = within(canvasElement);
 
     await userEvent.type(canvas.getByTestId("login-form__email-input"), "incorrect");
+    await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
+    await userEvent.click(canvas.getByTestId("login-form__submit-button"));
+
+    expect(canvas.getByText("Email must be valid")).toBeInTheDocument;
+  },
+} satisfies Story;
+
+export const PasswordMissing: Story = {
+  args: {
+    error: "",
+    loading: false,
+    onSubmit: () => console.log("onSubmit"),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.type(canvas.getByTestId("login-form__email-input"), "email@provider.com");
+    await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
     expect(canvas.getByText("Email must be valid")).toBeInTheDocument;
