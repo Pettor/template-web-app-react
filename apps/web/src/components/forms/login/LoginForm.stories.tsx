@@ -1,4 +1,6 @@
+import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import { ContainerDecorator } from "storybook-base";
 import { LoginForm as Component } from "./LoginForm";
 
@@ -11,10 +13,55 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Login = {
+export const Standard = {
   args: {
     error: "",
     loading: false,
     onSubmit: () => console.log("onSubmit"),
+  },
+} satisfies Story;
+
+export const Success: Story = {
+  args: {
+    error: "",
+    loading: false,
+    onSubmit: () => console.log("onSubmit"),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.type(canvas.getByTestId("login-form__email-input"), "email@provider.com");
+    await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
+  },
+} satisfies Story;
+
+export const MissingEmail: Story = {
+  args: {
+    error: "",
+    loading: false,
+    onSubmit: () => console.log("onSubmit"),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByTestId("login-form__submit-button"));
+
+    expect(canvas.getByText("Email is required")).toBeInTheDocument;
+  },
+} satisfies Story;
+
+export const InvalidEmail: Story = {
+  args: {
+    error: "",
+    loading: false,
+    onSubmit: () => console.log("onSubmit"),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.type(canvas.getByTestId("login-form__email-input"), "incorrect");
+    await userEvent.click(canvas.getByTestId("login-form__submit-button"));
+
+    expect(canvas.getByText("Email must be valid")).toBeInTheDocument;
   },
 } satisfies Story;

@@ -13,7 +13,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ForgotPassword: Story = {
+export const Standard = {
+  args: {
+    error: "",
+    loading: false,
+    onSubmit: () => console.log("onSubmit"),
+  },
+} satisfies Story;
+
+export const Success: Story = {
   args: {
     error: "",
     loading: false,
@@ -21,8 +29,25 @@ export const ForgotPassword: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await userEvent.type(canvas.getByTestId("forgot-password-email__input"), "email@provider.com");
 
-    expect(canvas.getByTestId("forgot-password-email__input")).toHaveValue("email@provider.com");
+    await userEvent.type(canvas.getByTestId("forgot-password-form__email-input"), "email@provider.com");
+
+    expect(canvas.getByTestId("forgot-password-form__email-input")).toHaveValue("email@provider.com");
+  },
+} satisfies Story;
+
+export const Failure: Story = {
+  args: {
+    error: "",
+    loading: false,
+    onSubmit: () => console.log("onSubmit"),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.type(canvas.getByTestId("forgot-password-form__email-input"), "incorrect");
+    await userEvent.click(canvas.getByTestId("forgot-password-form__submit-button"));
+
+    expect(canvas.getByText("Email must be valid")).toBeInTheDocument;
   },
 } satisfies Story;

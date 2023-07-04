@@ -41,7 +41,13 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
       ),
       email: yup
         .string()
-        .email()
+        .email(
+          intl.formatMessage({
+            description: "SignUpFormValidation - Email must be valid",
+            defaultMessage: "Email must be valid",
+            id: "SBRRVR",
+          })
+        )
         .required(
           intl.formatMessage({
             description: "SignUpFormValidation - Email is required",
