@@ -11,12 +11,12 @@
     "dev:mocks": "vite --mode mocks --open",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
-    "test": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9050 \"pnpm storybook:test\"",
-    "storybook": "storybook dev -p 6007",
+    "test": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9055 \"pnpm storybook:test\"",
+    "storybook:dev": "storybook dev -p 9050",
     "storybook:build": "storybook build -o storybook-static",
     "storybook:move": "move-cli storybook-static \"../../storybook-static\"",
-    "storybook:server": "npx http-server storybook-static --port 9050 --silent",
-    "storybook:test": "test-storybook --url http://127.0.0.1:9050"
+    "storybook:server": "npx http-server storybook-static --port 9055 --silent",
+    "storybook:test": "test-storybook --url http://127.0.0.1:9055"
   },
   "dependencies": {
     "@hookform/resolvers": "3.1.1",

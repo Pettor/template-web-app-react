@@ -37,7 +37,7 @@
     "test": {
       "outputs": ["coverage/**"]
     },
-    "storybook": {
+    "storybook:dev": {
       "cache": false
     },
     "storybook:build": {
