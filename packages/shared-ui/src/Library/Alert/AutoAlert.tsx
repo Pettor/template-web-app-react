@@ -5,14 +5,20 @@ import { Alert, Collapse, IconButton } from "@mui/material";
 import type { AlertProps } from "@mui/material/Alert";
 import { usePrevious } from "react-utils";
 
-interface Props extends AlertProps {
+export interface AutoAlertProps extends AlertProps {
   text?: string;
   hash?: string;
   autoClose?: boolean;
   timeout?: number;
 }
 
-export function AutoAlert({ text, hash, autoClose = false, timeout = 10000, ...alertProps }: Props): ReactElement {
+export function AutoAlert({
+  text,
+  hash,
+  autoClose = false,
+  timeout = 10000,
+  ...alertProps
+}: AutoAlertProps): ReactElement {
   const prevText = usePrevious(text);
   const prevHash = usePrevious(hash);
   const [userClose, setUserClose] = useState<boolean>(false);

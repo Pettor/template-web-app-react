@@ -6,9 +6,9 @@ import { SearchContainer } from "./SearchContainer";
 import { SearchIconContainer } from "./SearchIconContainer";
 import { SearchInputBase } from "./SearchInputBase";
 
-interface Props extends BoxProps {}
+export interface SearchProps extends BoxProps {}
 
-export function Search({ ...boxProps }: Props): ReactElement {
+export function Search({ ...boxProps }: SearchProps): ReactElement {
   const intl = useIntl();
   return (
     <SearchContainer {...boxProps}>

@@ -3,12 +3,12 @@ import { useMemo } from "react";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-interface Props {
+export interface ResponsiveComponentProps {
   mobile: ReactElement;
   desktop: ReactElement;
 }
 
-export function ResponsiveComponent({ mobile, desktop }: Props): ReactElement {
+export function ResponsiveComponent({ mobile, desktop }: ResponsiveComponentProps): ReactElement {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 

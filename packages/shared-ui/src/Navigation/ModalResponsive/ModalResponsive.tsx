@@ -3,11 +3,11 @@ import { Modal } from "@mui/material";
 import type { ModalProps } from "@mui/material/Modal";
 import { ModalResponsiveContent } from "./ModalResponsiveContent";
 
-interface Props extends Omit<ModalProps, "children"> {
+export interface ModalResponsiveProps extends Omit<ModalProps, "children"> {
   children?: ReactElement;
 }
 
-export function ModalResponsive(props: Props): ReactElement {
+export function ModalResponsive(props: ModalResponsiveProps): ReactElement {
   const { children } = props;
 
   return (

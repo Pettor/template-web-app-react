@@ -1,6 +1,7 @@
-import type { ComponentProps, ReactElement } from "react";
+import type { ReactElement } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProfileCard } from "Library/ProfileCard";
+import type { AppMenuMobileProps as Props } from "./AppMenuMobile";
 import { AppMenuMobile as Component } from "./AppMenuMobile";
 
 const meta = {
@@ -11,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-function render(args: ComponentProps<typeof Component>): ReactElement {
+function render(args: Props): ReactElement {
   return (
     <Component {...args}>
       <ProfileCard isMobile={true} />

@@ -1,5 +1,4 @@
 export * from "./Alert";
-export * from "./Button";
 export * from "./IconMenuButton";
 export * from "./Logo";
 export * from "./LogoFull";

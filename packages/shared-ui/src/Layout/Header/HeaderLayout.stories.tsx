@@ -1,8 +1,8 @@
-import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { DefaultHeaderComponents } from "Storybook/Data";
 import { ContentComponent } from "storybook-base";
 import { HeaderLayout as Component } from "./HeaderLayout";
+import type { HeaderLayoutProps as Props } from "./HeaderLayout";
 
 const meta = {
   component: Component,
@@ -22,7 +22,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-function render(args: ComponentProps<typeof Component>) {
+function render(args: Props) {
   return (
     <Component {...args}>
       <ContentComponent />

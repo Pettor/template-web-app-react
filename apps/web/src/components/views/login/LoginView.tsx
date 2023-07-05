@@ -1,9 +1,10 @@
-import type { ComponentProps, ReactElement } from "react";
+import type { ReactElement } from "react";
 import { Box, Grid, Link } from "@mui/material";
 import { useIntl } from "react-intl";
 import { BasicLayout, LogoFull } from "shared-ui";
 import meshUrl from "../../../assets/background/wave-background.svg";
 import { LoginViewBackground } from "./LoginViewBackground";
+import type { LoginFormProps } from "~/components/forms/login/LoginForm";
 import { LoginForm } from "~/components/forms/login/LoginForm";
 
 export interface IFormCredentials {
@@ -12,14 +13,14 @@ export interface IFormCredentials {
   remember: boolean;
 }
 
-interface Props {
+export interface LoginViewProps {
   appName: string;
-  loginForm: ComponentProps<typeof LoginForm>;
+  loginForm: LoginFormProps;
   handleForgotPassword: () => void;
   handleSignUp: () => void;
 }
 
-export function LoginView({ appName, loginForm, handleForgotPassword, handleSignUp }: Props): ReactElement {
+export function LoginView({ appName, loginForm, handleForgotPassword, handleSignUp }: LoginViewProps): ReactElement {
   const intl = useIntl();
 
   return (

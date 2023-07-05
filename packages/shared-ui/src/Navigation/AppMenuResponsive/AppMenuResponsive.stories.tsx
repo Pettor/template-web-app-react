@@ -1,6 +1,6 @@
-import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProfileCardResponsive } from "Library/ProfileCardResponsive";
+import type { AppMenuResponsiveProps as Props } from "./AppMenuResponsive";
 import { AppMenuResponsive as Component } from "./AppMenuResponsive";
 
 const meta = {
@@ -11,7 +11,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-function render(args: ComponentProps<typeof Component>) {
+function render(args: Props) {
   return (
     <Component {...args}>
       <ProfileCardResponsive />

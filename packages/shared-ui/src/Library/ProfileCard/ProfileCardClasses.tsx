@@ -1,5 +1,5 @@
-interface ProfileCardProps {
+interface IProfileCardMobile {
   isMobile?: boolean;
 }
 
-export type { ProfileCardProps };
+export type { IProfileCardMobile };

@@ -1,9 +1,10 @@
-import type { ComponentProps, ReactElement } from "react";
+import type { ReactElement } from "react";
 import { Box } from "@mui/material";
 import type { BoxProps } from "@mui/material/Box";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ContentComponent } from "storybook-base";
 import { ElevationScroll as Component } from "./ElevationScroll";
+import type { ElevationScrollProps as Props } from "./ElevationScroll";
 
 const meta = {
   component: Component,
@@ -13,7 +14,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-function render(args: ComponentProps<typeof Component>): ReactElement {
+function render(args: Props<React.Attributes>): ReactElement {
   return (
     <Component {...args}>
       <Box>

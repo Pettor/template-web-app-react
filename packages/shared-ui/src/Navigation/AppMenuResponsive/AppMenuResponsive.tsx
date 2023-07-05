@@ -4,15 +4,15 @@ import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { AppMenu } from "../../Navigation";
 import { AppMenuMobile } from "../../Navigation";
-import type { MenuOptions } from "../AppMenu";
+import type { IMenuOptions } from "../AppMenu";
 
-interface Props extends MenuOptions {}
+export interface AppMenuResponsiveProps extends IMenuOptions {}
 
-export function AppMenuResponsive(props: Props): ReactElement {
+export function AppMenuResponsive(props: AppMenuResponsiveProps): ReactElement {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const AppMenuComponent: ComponentType<MenuOptions> = useMemo(() => {
+  const AppMenuComponent: ComponentType<IMenuOptions> = useMemo(() => {
     return isMobile ? AppMenuMobile : AppMenu;
   }, [isMobile]);
 

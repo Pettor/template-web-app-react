@@ -4,7 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Box, CardHeader, IconButton, Slide } from "@mui/material";
 import type { BoxProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import type { MenuOptions } from "../../Navigation/AppMenu";
+import type { IMenuOptions } from "../../Navigation/AppMenu";
 
 const MenuContainer: StyledComponent<BoxProps> = styled(Box)(({ theme }) => ({
   position: "fixed",
@@ -16,9 +16,9 @@ const MenuContainer: StyledComponent<BoxProps> = styled(Box)(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 1,
 }));
 
-interface Props extends MenuOptions {}
+export interface AppMenuMobileProps extends IMenuOptions {}
 
-export function AppMenuMobile({ open, handleClose, children }: Props): ReactElement {
+export function AppMenuMobile({ open, handleClose, children }: AppMenuMobileProps): ReactElement {
   return (
     <Slide direction="up" in={open} mountOnEnter unmountOnExit>
       <MenuContainer>

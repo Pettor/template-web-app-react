@@ -1,10 +1,11 @@
-import type { ComponentProps, ComponentType, ReactElement } from "react";
+import type { ComponentType, ReactElement } from "react";
 import BackendIcon from "@mui/icons-material/Dns";
 import OptimizedIcon from "@mui/icons-material/ElectricBolt";
 import LayersIcon from "@mui/icons-material/Layers";
 import StorybookIcon from "@mui/icons-material/Palette";
 import { Grid, Typography } from "@mui/material";
 import { useIntl } from "react-intl";
+import type { HeaderLayoutProps } from "shared-ui";
 import { HeaderLayout } from "shared-ui";
 import { HomeViewColorBox } from "./HomeViewColorBox";
 import { HomeViewContainer } from "./HomeViewContainer";
@@ -12,9 +13,9 @@ import { HomeViewGridContent } from "./HomeViewGridContent";
 import { HomeViewGridItem } from "./HomeViewGridItem";
 import { HomeViewTitle } from "./HomeViewTitle";
 
-interface Props extends Omit<ComponentProps<typeof HeaderLayout>, "children"> {}
+export interface HomeViewProps extends Omit<HeaderLayoutProps, "children"> {}
 
-export function HomeView({ ...headerProps }: Props): ReactElement {
+export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
   const intl = useIntl();
 
   function renderGridItem(Icon: ComponentType, heading: string, description: string): ReactElement {

@@ -2,18 +2,18 @@ import type { ReactElement } from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { Grid, Typography, Avatar, Divider, MenuItem, Skeleton, ListItemIcon, ListItemText } from "@mui/material";
 import { ProfileCardAvatarContainer } from "./ProfileCardAvatarContainer";
-import type { ProfileCardProps } from "./ProfileCardClasses";
+import type { IProfileCardMobile } from "./ProfileCardClasses";
 import { ProfileCardContainer } from "./ProfileCardContainer";
 import { ProfileCardContent } from "./ProfileCardContent";
 import { ProfileCardMenuContainer } from "./ProfileCardMenuContainer";
 
-interface Props extends ProfileCardProps {
+export interface ProfileCardProps extends IProfileCardMobile {
   name?: string;
   email?: string;
   onLogout?(): void;
 }
 
-export function ProfileCard({ name, email, isMobile, onLogout }: Props): ReactElement {
+export function ProfileCard({ name, email, isMobile, onLogout }: ProfileCardProps): ReactElement {
   return (
     <ProfileCardContainer isMobile={isMobile} elevation={isMobile ? 0 : 1}>
       <ProfileCardContent isMobile={isMobile}>
