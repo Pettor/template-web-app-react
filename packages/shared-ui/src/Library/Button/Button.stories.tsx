@@ -1,7 +1,7 @@
-import type { ComponentProps } from "react";
+import type { ButtonProps as Props } from "@mui/material";
+import { Button as Component } from "@mui/material";
 import type { Meta, StoryObj } from "@storybook/react";
 import { CommonDecorator } from "storybook-base";
-import { Button as Component } from "./Button";
 
 const meta = {
   title: "Library/Button",
@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Component>;
 
-function render(args: ComponentProps<typeof Component>) {
+function render(args: Props) {
   return <Component {...args}>Button</Component>;
 }
 

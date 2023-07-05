@@ -1,12 +1,13 @@
-import type { ComponentProps, ReactElement } from "react";
+import type { ReactElement } from "react";
 import { Typography } from "@mui/material";
 import { useIntl } from "react-intl";
 import { BasicLayout, LogoFull } from "shared-ui";
+import type { SignUpFormProps } from "~/components/forms/sign-up/SignUpForm";
 import { SignUpForm } from "~/components/forms/sign-up/SignUpForm";
 
 export interface SignUpViewProps {
   appName: string;
-  signUpForm: ComponentProps<typeof SignUpForm>;
+  signUpForm: SignUpFormProps;
 }
 
 export function SignUpView({ appName, signUpForm }: SignUpViewProps): ReactElement {

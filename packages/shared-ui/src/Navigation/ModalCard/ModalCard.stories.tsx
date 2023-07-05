@@ -1,6 +1,6 @@
-import type { ComponentProps } from "react";
 import { Box } from "@mui/material";
 import type { Meta, StoryObj } from "@storybook/react";
+import type { ModalCardProps as Props } from "./ModalCard";
 import { ModalCard as Component } from "./ModalCard";
 
 const meta = {
@@ -11,7 +11,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-function render(args: ComponentProps<typeof Component>) {
+function render(args: Props) {
   return (
     <Component {...args}>
       <Box>This is content test</Box>

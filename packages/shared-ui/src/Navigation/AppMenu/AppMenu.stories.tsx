@@ -1,7 +1,7 @@
-import type { ComponentProps } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProfileCard } from "Library";
+import type { AppMenuProps as Props } from "./AppMenu";
 import { AppMenu as Component } from "./AppMenu";
 
 const meta = {
@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-function render(args: ComponentProps<typeof Component>) {
+function render(args: Props) {
   return (
     <Component {...args}>
       <MenuItem>Content</MenuItem>
@@ -33,7 +33,7 @@ export const WithProfileCard = {
     open: true,
     anchorEl: null,
   },
-  render: (args: ComponentProps<typeof Component>) => (
+  render: (args: Props) => (
     <Component {...args}>
       <ProfileCard />
     </Component>

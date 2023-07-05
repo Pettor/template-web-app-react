@@ -1,5 +1,5 @@
-import type { ComponentProps } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import type { AppHeaderGroupProps as Props } from "./AppHeaderGroup";
 import { AppHeaderGroup as Component } from "./AppHeaderGroup";
 
 const meta = {
@@ -10,7 +10,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-function render(args: ComponentProps<typeof Component>) {
+function render(args: Props) {
   return (
     <Component {...args}>
       <div>First</div>
