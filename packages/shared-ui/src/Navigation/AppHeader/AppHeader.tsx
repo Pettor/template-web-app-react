@@ -8,7 +8,7 @@ import { AppHeaderBar } from "./AppHeaderBar";
 import type { AppHeaderComponents, AppHeaderOptions } from "./AppHeaderClasses";
 import { AppHeaderComponentsContainer } from "./AppHeaderComponentsContainer";
 
-interface Props extends AppHeaderComponents, AppHeaderOptions {
+export interface AppHeaderProps extends AppHeaderComponents, AppHeaderOptions {
   isMobile?: boolean;
 }
 
@@ -19,7 +19,7 @@ export function AppHeader({
   headerComponents,
   headerComponentOptions,
   onBack,
-}: Props): ReactElement {
+}: AppHeaderProps): ReactElement {
   const theme = useTheme();
   const { flexItem, fill } = headerComponentOptions || { flexItem: false, fill: false };
 

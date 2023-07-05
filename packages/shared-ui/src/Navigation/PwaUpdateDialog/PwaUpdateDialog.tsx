@@ -4,13 +4,13 @@ import { useIntl } from "react-intl";
 import { PwaUpdateDialogContainer } from "./PwaUpdateDialogContainer";
 import { PwaUpdateDialogDescription } from "./PwaUpdateDialogDescription";
 
-interface Props {
+export interface PwaUpdateDialogProps {
   appName: string;
   open: boolean;
   onUpdate(): void;
 }
 
-export function PwaUpdateDialog({ appName, open, onUpdate }: Props): ReactElement {
+export function PwaUpdateDialog({ appName, open, onUpdate }: PwaUpdateDialogProps): ReactElement {
   const intl = useIntl();
 
   return (

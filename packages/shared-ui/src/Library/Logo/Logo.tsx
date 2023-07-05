@@ -6,9 +6,7 @@ export interface LogoProps {
   size: "small" | "medium" | "large";
 }
 
-interface Props extends LogoProps {}
-
-export function Logo({ size = "large" }: Props): ReactElement {
+export function Logo({ size = "large" }: LogoProps): ReactElement {
   const theme = useTheme();
 
   let xy = 0;

@@ -4,12 +4,12 @@ import type { SxProps } from "@mui/material";
 import { BasicLayoutContainer } from "./BasicLayoutContainer";
 import { BasicLayoutContent } from "./BasicLayoutContent";
 
-interface Props {
+export interface BasicLayoutProps {
   sx?: SxProps;
   children: ReactElement | ReactElement[];
 }
 
-export function BasicLayout({ sx, children }: Props): ReactElement {
+export function BasicLayout({ sx, children }: BasicLayoutProps): ReactElement {
   return (
     <BasicLayoutContainer>
       <Container maxWidth="xs" sx={sx}>

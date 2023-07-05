@@ -4,12 +4,12 @@ import { Logo } from "../../Library/Logo";
 
 export type LogoFullSize = "medium" | "large";
 
-interface Props {
+export interface LogoFullProps {
   appName: string;
   size: LogoFullSize;
 }
 
-export function LogoFull({ appName, size = "large" }: Props): ReactElement {
+export function LogoFull({ appName, size = "large" }: LogoFullProps): ReactElement {
   return (
     <Stack direction="row" spacing={2}>
       <Box sx={{ display: "flex", alignItems: "center" }}>

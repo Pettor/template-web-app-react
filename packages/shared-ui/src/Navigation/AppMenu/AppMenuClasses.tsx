@@ -1,10 +1,10 @@
 import type { ReactElement } from "react";
 
-interface MenuOptions {
+interface IMenuOptions {
   open: boolean;
   anchorEl: HTMLElement | null;
   handleClose: () => void;
   children?: ReactElement | ReactElement[];
 }
 
-export type { MenuOptions };
+export type { IMenuOptions };

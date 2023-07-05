@@ -5,12 +5,12 @@ import { IconButton, Snackbar } from "@mui/material";
 import type { SnackbarProps } from "@mui/material";
 import { useIntl } from "react-intl";
 
-interface Props extends Pick<SnackbarProps, "autoHideDuration"> {
+export interface PwaOfflineDialogProps extends Pick<SnackbarProps, "autoHideDuration"> {
   open: boolean;
   onClose(): void;
 }
 
-export function PwaOfflineDialog({ open, autoHideDuration, onClose }: Props): ReactElement {
+export function PwaOfflineDialog({ open, autoHideDuration, onClose }: PwaOfflineDialogProps): ReactElement {
   const intl = useIntl();
 
   const action = (

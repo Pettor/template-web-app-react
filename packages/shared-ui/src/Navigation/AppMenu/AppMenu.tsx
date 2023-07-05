@@ -1,10 +1,10 @@
 import type { ReactElement } from "react";
 import { Menu } from "@mui/material";
-import type { MenuOptions } from "./AppMenuClasses";
+import type { IMenuOptions } from "./AppMenuClasses";
 
-interface Props extends MenuOptions {}
+export interface AppMenuProps extends IMenuOptions {}
 
-export function AppMenu({ open, anchorEl, handleClose, children }: Props): ReactElement {
+export function AppMenu({ open, anchorEl, handleClose, children }: AppMenuProps): ReactElement {
   return (
     <Menu
       elevation={8}

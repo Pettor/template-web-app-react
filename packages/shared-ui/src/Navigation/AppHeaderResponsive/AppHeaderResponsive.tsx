@@ -3,9 +3,9 @@ import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { AppHeader } from "../../Navigation";
 
-interface Props extends Omit<ComponentProps<typeof AppHeader>, "isMobile"> {}
+export interface AppHeaderResponsiveProps extends Omit<ComponentProps<typeof AppHeader>, "isMobile"> {}
 
-export function AppHeaderResponsive(props: Props): ReactElement {
+export function AppHeaderResponsive(props: AppHeaderResponsiveProps): ReactElement {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 

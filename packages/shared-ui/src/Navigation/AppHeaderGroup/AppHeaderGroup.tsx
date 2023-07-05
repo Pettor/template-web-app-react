@@ -6,13 +6,13 @@ import { AppHeaderGroupContent } from "./AppHeaderGroupContent";
 
 type DividerStyle = "none" | "left" | "right" | "both";
 
-interface Props {
+export interface AppHeaderGroup {
   spacing?: number;
   dividerStyle?: DividerStyle;
   children?: ReactElement | ReactElement[];
 }
 
-export function AppHeaderGroup({ spacing = 1, dividerStyle = "both", children }: Props): ReactElement {
+export function AppHeaderGroup({ spacing = 1, dividerStyle = "both", children }: AppHeaderGroup): ReactElement {
   function drawDivider(placement: DividerStyle): ReactElement {
     if (dividerStyle === "both" || dividerStyle === placement) {
       return <AppHeaderDivider />;

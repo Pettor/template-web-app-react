@@ -5,7 +5,7 @@ import { CardContent, CardHeader, IconButton } from "@mui/material";
 import { ModalResponsive } from "../../Navigation";
 import { ModalCardContainer } from "./ModalCardContainer";
 
-interface Props extends Omit<ModalProps, "children"> {
+export interface ModalCardProps extends Omit<ModalProps, "children"> {
   title: string;
   date: Date;
   color?: string;
@@ -13,7 +13,7 @@ interface Props extends Omit<ModalProps, "children"> {
   children?: ReactElement | ReactElement[];
 }
 
-export function ModalCard(props: Props): ReactElement {
+export function ModalCard(props: ModalCardProps): ReactElement {
   const { title, date, color, onClose, children } = props;
 
   return (

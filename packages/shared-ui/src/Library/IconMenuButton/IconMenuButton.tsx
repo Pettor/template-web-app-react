@@ -3,12 +3,12 @@ import { useState } from "react";
 import { Box, IconButton } from "@mui/material";
 import { AppMenuResponsive } from "../../Navigation/AppMenuResponsive";
 
-interface Props {
+export interface IconMenuButtonProps {
   icon: ReactNode;
   children?: ReactElement | ReactElement[];
 }
 
-export function IconMenuButton({ icon, children }: Props): ReactElement {
+export function IconMenuButton({ icon, children }: IconMenuButtonProps): ReactElement {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
   function handleClick(event: React.MouseEvent<HTMLElement>): void {
