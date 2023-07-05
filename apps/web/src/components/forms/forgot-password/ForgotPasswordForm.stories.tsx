@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { ContainerDecorator } from "storybook-base";
 import { ForgotPasswordForm as Component } from "./ForgotPasswordForm";
+import type { ForgotPasswordFormProps as Props } from "./ForgotPasswordForm";
 
 const meta = {
   component: Component,
@@ -13,35 +14,30 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const defaultArgs: Props = {
+  error: "",
+  loading: false,
+  onSubmit: () => console.log("onSubmit"),
+};
+
 export const Standard = {
-  args: {
-    error: "",
-    loading: false,
-    onSubmit: () => console.log("onSubmit"),
-  },
+  args: defaultArgs,
 } satisfies Story;
 
 export const Success: Story = {
-  args: {
-    error: "",
-    loading: false,
-    onSubmit: () => console.log("onSubmit"),
-  },
+  args: defaultArgs,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
     await userEvent.type(canvas.getByTestId("forgot-password-form__email-input"), "email@provider.com");
+    await userEvent.click(canvas.getByTestId("forgot-password-form__submit-button"));
 
     expect(canvas.getByTestId("forgot-password-form__email-input")).toHaveValue("email@provider.com");
   },
 } satisfies Story;
 
-export const Failure: Story = {
-  args: {
-    error: "",
-    loading: false,
-    onSubmit: () => console.log("onSubmit"),
-  },
+export const IncorrectEmail: Story = {
+  args: defaultArgs,
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 

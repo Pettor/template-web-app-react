@@ -57,6 +57,13 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
         ),
       password: yup
         .string()
+        .required(
+          intl.formatMessage({
+            description: "SignUpFormValidation - Password is required",
+            defaultMessage: "Password is required",
+            id: "p9y0Zh",
+          })
+        )
         .min(
           8,
           intl.formatMessage({
@@ -64,17 +71,16 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
             defaultMessage: "Password is too short - should be 8 chars minimum",
             id: "YzHSuh",
           })
-        )
-        .required(
-          intl.formatMessage({
-            description: "SignUpFormValidation - Password is required",
-            defaultMessage: "Password is required",
-            id: "p9y0Zh",
-          })
         ),
       confirmPassword: yup
         .string()
-        .required()
+        .required(
+          intl.formatMessage({
+            description: "SignUpFormValidation - PasswordConfirm is required",
+            defaultMessage: "Password must be confirmed",
+            id: "WZbH01",
+          })
+        )
         .oneOf(
           [yup.ref("password")],
           intl.formatMessage({
@@ -111,6 +117,9 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
         type="displayName"
         error={!!errors?.userName}
         helperText={errors?.userName?.message}
+        inputProps={{
+          "data-testid": "sign-up-form__username-input",
+        }}
         {...register("userName")}
       />
       <TextField
@@ -127,6 +136,9 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
         type="displayName"
         error={!!errors?.firstName}
         helperText={errors?.firstName?.message}
+        inputProps={{
+          "data-testid": "sign-up-form__firstname-input",
+        }}
         {...register("firstName")}
       />
       <TextField
@@ -143,6 +155,9 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
         type="displayName"
         error={!!errors?.lastName}
         helperText={errors?.lastName?.message}
+        inputProps={{
+          "data-testid": "sign-up-form__lastname-input",
+        }}
         {...register("lastName")}
       />
       <TextField
@@ -158,6 +173,9 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
         autoComplete="email"
         error={!!errors?.email}
         helperText={errors?.email?.message}
+        inputProps={{
+          "data-testid": "sign-up-form__email-input",
+        }}
         {...register("email")}
       />
       <TextField
@@ -174,6 +192,9 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
         autoComplete="phoneNumber"
         error={!!errors?.phoneNumber}
         helperText={errors?.phoneNumber?.message}
+        inputProps={{
+          "data-testid": "sign-up-form__phonenumber-input",
+        }}
         {...register("phoneNumber")}
       />
       <TextField
@@ -190,6 +211,9 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
         autoComplete="password"
         error={!!errors?.password}
         helperText={errors?.password?.message}
+        inputProps={{
+          "data-testid": "sign-up-form__password-input",
+        }}
         {...register("password")}
       />
       <TextField
@@ -206,9 +230,19 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
         autoComplete="confirmPassword"
         error={!!errors?.confirmPassword}
         helperText={errors?.confirmPassword?.message}
+        inputProps={{
+          "data-testid": "sign-up-form__confirmpassword-input",
+        }}
         {...register("confirmPassword")}
       />
-      <LoadingButton type="submit" loading={loading} variant="outlined" fullWidth sx={{ mt: 3, mb: 2 }}>
+      <LoadingButton
+        type="submit"
+        loading={loading}
+        variant="outlined"
+        fullWidth
+        sx={{ mt: 3, mb: 2 }}
+        data-testid="sign-up-form__submit-button"
+      >
         {intl.formatMessage({
           description: "SignUpFormButton - Sign Up",
           defaultMessage: "Sign Up",

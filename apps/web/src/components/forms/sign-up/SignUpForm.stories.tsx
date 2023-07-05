@@ -1,6 +1,9 @@
+import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 import { ContainerDecorator } from "storybook-base";
 import { SignUpForm as Component } from "./SignUpForm";
+import type { SignUpFormProps as Props } from "./SignUpForm";
 
 const meta = {
   component: Component,
@@ -11,10 +14,66 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SignUp = {
-  args: {
-    error: "",
-    loading: false,
-    onSubmit: () => console.log("onSubmit"),
+const defaultArgs: Props = {
+  error: "",
+  loading: false,
+  onSubmit: () => console.log("onSubmit"),
+};
+
+export const Standard = {
+  args: defaultArgs,
+} satisfies Story;
+
+export const Success: Story = {
+  args: defaultArgs,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.type(canvas.getByTestId("sign-up-form__username-input"), "username");
+    await userEvent.type(canvas.getByTestId("sign-up-form__firstname-input"), "john");
+    await userEvent.type(canvas.getByTestId("sign-up-form__lastname-input"), "doe");
+    await userEvent.type(canvas.getByTestId("sign-up-form__email-input"), "email@provider.com");
+    await userEvent.type(canvas.getByTestId("sign-up-form__phonenumber-input"), "1234567890");
+    await userEvent.type(canvas.getByTestId("sign-up-form__password-input"), "password");
+    await userEvent.type(canvas.getByTestId("sign-up-form__confirmpassword-input"), "password");
+    await userEvent.click(canvas.getByTestId("sign-up-form__submit-button"));
+
+    expect(canvas.getByTestId("sign-up-form__username-input")).toHaveValue("username");
+    expect(canvas.getByTestId("sign-up-form__firstname-input")).toHaveValue("john");
+    expect(canvas.getByTestId("sign-up-form__username-input")).toHaveValue("username");
+    expect(canvas.getByTestId("sign-up-form__lastname-input")).toHaveValue("doe");
+    expect(canvas.getByTestId("sign-up-form__email-input")).toHaveValue("email@provider.com");
+    expect(canvas.getByTestId("sign-up-form__phonenumber-input")).toHaveValue("1234567890");
+    expect(canvas.getByTestId("sign-up-form__password-input")).toHaveValue("password");
+    expect(canvas.getByTestId("sign-up-form__confirmpassword-input")).toHaveValue("password");
   },
 } satisfies Story;
+
+export const MissingFields: Story = {
+  args: defaultArgs,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.click(canvas.getByTestId("sign-up-form__submit-button"));
+
+    expect(canvas.getByText("We need to call you something")).toBeInTheDocument;
+    expect(canvas.getByText("Email is required")).toBeInTheDocument;
+    expect(canvas.getByText("Password is required")).toBeInTheDocument;
+    expect(canvas.getByText("Password must be confirmed")).toBeInTheDocument;
+  },
+};
+
+export const IncorrectPassword: Story = {
+  args: defaultArgs,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.type(canvas.getByTestId("sign-up-form__username-input"), "username");
+    await userEvent.type(canvas.getByTestId("sign-up-form__email-input"), "email@provider.com");
+    await userEvent.type(canvas.getByTestId("sign-up-form__password-input"), "short");
+    await userEvent.type(canvas.getByTestId("sign-up-form__confirmpassword-input"), "short");
+    await userEvent.click(canvas.getByTestId("sign-up-form__submit-button"));
+
+    expect(canvas.getByText("Password is too short - should be 8 chars minimum")).toBeInTheDocument;
+  },
+};
