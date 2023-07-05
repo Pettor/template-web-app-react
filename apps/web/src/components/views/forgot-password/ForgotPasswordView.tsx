@@ -4,12 +4,12 @@ import { useIntl } from "react-intl";
 import { BasicLayout, LogoFull } from "shared-ui";
 import { ForgotPasswordForm } from "../../forms/forgot-password/ForgotPasswordForm";
 
-interface Props {
+export interface ForgotPasswordViewProps {
   appName: string;
   resetForm: ComponentProps<typeof ForgotPasswordForm>;
 }
 
-export function ForgotPasswordView({ appName, resetForm }: Props): ReactElement {
+export function ForgotPasswordView({ appName, resetForm }: ForgotPasswordViewProps): ReactElement {
   const intl = useIntl();
 
   return (

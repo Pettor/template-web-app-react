@@ -4,12 +4,12 @@ import { useIntl } from "react-intl";
 import { BasicLayout, LogoFull } from "shared-ui";
 import { SignUpForm } from "~/components/forms/sign-up/SignUpForm";
 
-interface Props {
+export interface SignUpViewProps {
   appName: string;
   signUpForm: ComponentProps<typeof SignUpForm>;
 }
 
-export function SignUpView({ appName, signUpForm }: Props): ReactElement {
+export function SignUpView({ appName, signUpForm }: SignUpViewProps): ReactElement {
   const intl = useIntl();
 
   return (

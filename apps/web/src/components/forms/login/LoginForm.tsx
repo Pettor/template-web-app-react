@@ -13,13 +13,13 @@ export interface FormLogin {
   password: string;
 }
 
-interface Props {
+export interface LoginFormProps {
   error: string;
   loading: boolean;
   onSubmit: SubmitHandler<FormLogin>;
 }
 
-export function LoginForm({ error, loading, onSubmit }: Props): ReactElement {
+export function LoginForm({ error, loading, onSubmit }: LoginFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup

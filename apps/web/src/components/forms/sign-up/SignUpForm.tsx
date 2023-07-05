@@ -18,13 +18,13 @@ export interface FormSignUp {
   phoneNumber?: string;
 }
 
-interface Props {
+export interface SignUpFormProps {
   error: string;
   loading: boolean;
   onSubmit: SubmitHandler<FormSignUp>;
 }
 
-export function SignUpForm({ error, loading, onSubmit }: Props): ReactElement {
+export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup

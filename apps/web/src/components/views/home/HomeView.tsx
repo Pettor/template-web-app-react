@@ -12,9 +12,9 @@ import { HomeViewGridContent } from "./HomeViewGridContent";
 import { HomeViewGridItem } from "./HomeViewGridItem";
 import { HomeViewTitle } from "./HomeViewTitle";
 
-interface Props extends Omit<ComponentProps<typeof HeaderLayout>, "children"> {}
+export interface HomeViewProps extends Omit<ComponentProps<typeof HeaderLayout>, "children"> {}
 
-export function HomeView({ ...headerProps }: Props): ReactElement {
+export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
   const intl = useIntl();
 
   function renderGridItem(Icon: ComponentType, heading: string, description: string): ReactElement {

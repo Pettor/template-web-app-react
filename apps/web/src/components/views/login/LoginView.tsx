@@ -12,14 +12,14 @@ export interface IFormCredentials {
   remember: boolean;
 }
 
-interface Props {
+export interface LoginViewProps {
   appName: string;
   loginForm: ComponentProps<typeof LoginForm>;
   handleForgotPassword: () => void;
   handleSignUp: () => void;
 }
 
-export function LoginView({ appName, loginForm, handleForgotPassword, handleSignUp }: Props): ReactElement {
+export function LoginView({ appName, loginForm, handleForgotPassword, handleSignUp }: LoginViewProps): ReactElement {
   const intl = useIntl();
 
   return (
