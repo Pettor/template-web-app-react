@@ -1,6 +1,7 @@
 import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
+import { sleep } from "react-utils";
 import { DefaultHeaderComponents } from "Storybook/Data";
 import { Search } from "../../Library/Search/Search";
 import { AppHeader as Component } from "./AppHeader";
@@ -46,7 +47,9 @@ export const HeaderComponents: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    userEvent.click(canvas.getByTestId("theme-toggle__button"));
+    userEvent.click(canvas.getByRole("checkbox"));
+
+    await sleep(500);
 
     expect(canvas.getByTestId("app-header-group__theme-toggle-box")).toHaveTextContent("dark");
   },
