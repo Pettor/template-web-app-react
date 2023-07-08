@@ -111,8 +111,8 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -133,8 +133,8 @@ jobs:
       - name: Test application
         run: pnpm test
 
-      - name: Test Summary
-        uses: test-summary/action@v2
+      - name: Publish test summary
+        uses: mikepenz/action-junit-report@v3
         with:
-          paths: "./output-test/junit-web.xml"
+          report_paths: "**/output-test/junit-*.xml"
         if: always()
