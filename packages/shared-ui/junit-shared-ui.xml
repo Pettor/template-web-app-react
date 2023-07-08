@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="shared-ui tests" tests="42" failures="0" errors="0" time="70.495">
+  <testsuite name="Navigation/Scrolling" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:28" time="22.641" tests="1">
+    <testcase classname="Navigation/Scrolling WithContent smoke-test" name="Navigation/Scrolling WithContent smoke-test" time="1.066">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Button" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:28" time="22.913" tests="2">
+    <testcase classname="Library/Button IconWithSimpleMenu smoke-test" name="Library/Button IconWithSimpleMenu smoke-test" time="0.804">
+    </testcase>
+    <testcase classname="Library/Button IconWithMenuItems smoke-test" name="Library/Button IconWithMenuItems smoke-test" time="0.289">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Menu" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:28" time="23.429" tests="2">
+    <testcase classname="Navigation/Menu WithContent smoke-test" name="Navigation/Menu WithContent smoke-test" time="0.811">
+    </testcase>
+    <testcase classname="Navigation/Menu WithProfileCard smoke-test" name="Navigation/Menu WithProfileCard smoke-test" time="0.37">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Header/Group" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:29" time="23.581" tests="3">
+    <testcase classname="Navigation/Header/Group BothDivider smoke-test" name="Navigation/Header/Group BothDivider smoke-test" time="0.639">
+    </testcase>
+    <testcase classname="Navigation/Header/Group NoDivider smoke-test" name="Navigation/Header/Group NoDivider smoke-test" time="0.347">
+    </testcase>
+    <testcase classname="Navigation/Header/Group WithSpacing smoke-test" name="Navigation/Header/Group WithSpacing smoke-test" time="0.282">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Card/Profile" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:28" time="24.404" tests="4">
+    <testcase classname="Library/Card/Profile WithData smoke-test" name="Library/Card/Profile WithData smoke-test" time="0.869">
+    </testcase>
+    <testcase classname="Library/Card/Profile Loading smoke-test" name="Library/Card/Profile Loading smoke-test" time="0.442">
+    </testcase>
+    <testcase classname="Library/Card/Profile Styled smoke-test" name="Library/Card/Profile Styled smoke-test" time="0.22">
+    </testcase>
+    <testcase classname="Library/Card/Profile Mobile smoke-test" name="Library/Card/Profile Mobile smoke-test" time="0.256">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Header" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:28" time="25.115" tests="4">
+    <testcase classname="Navigation/Header AppHeader smoke-test" name="Navigation/Header AppHeader smoke-test" time="0.816">
+    </testcase>
+    <testcase classname="Navigation/Header SubHeader smoke-test" name="Navigation/Header SubHeader smoke-test" time="0.385">
+    </testcase>
+    <testcase classname="Navigation/Header SubHeaderWithSearch smoke-test" name="Navigation/Header SubHeaderWithSearch smoke-test" time="0.378">
+    </testcase>
+    <testcase classname="Navigation/Header HeaderComponents smoke-test" name="Navigation/Header HeaderComponents smoke-test" time="0.558">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Logo" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:51" time="5.155" tests="2">
+    <testcase classname="Library/Logo FullMedium smoke-test" name="Library/Logo FullMedium smoke-test" time="0.504">
+    </testcase>
+    <testcase classname="Library/Logo FullLarge smoke-test" name="Library/Logo FullLarge smoke-test" time="0.274">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Modal/Card" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:51" time="5.695" tests="1">
+    <testcase classname="Navigation/Modal/Card Card smoke-test" name="Navigation/Modal/Card Card smoke-test" time="0.891">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Logo" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:51" time="7.322" tests="3">
+    <testcase classname="Library/Logo Small smoke-test" name="Library/Logo Small smoke-test" time="0.718">
+    </testcase>
+    <testcase classname="Library/Logo Medium smoke-test" name="Library/Logo Medium smoke-test" time="0.228">
+    </testcase>
+    <testcase classname="Library/Logo Large smoke-test" name="Library/Logo Large smoke-test" time="0.395">
+    </testcase>
+  </testsuite>
+  <testsuite name="Layout/Header" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:29" time="29.86" tests="1">
+    <testcase classname="Layout/Header Header smoke-test" name="Layout/Header Header smoke-test" time="1.349">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Toggle/Theme" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:52" time="6.655" tests="2">
+    <testcase classname="Library/Toggle/Theme Light smoke-test" name="Library/Toggle/Theme Light smoke-test" time="0.945">
+    </testcase>
+    <testcase classname="Library/Toggle/Theme Dark smoke-test" name="Library/Toggle/Theme Dark smoke-test" time="0.643">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Search" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:53" time="6.823" tests="2">
+    <testcase classname="Library/Search FullWidth smoke-test" name="Library/Search FullWidth smoke-test" time="1.012">
+    </testcase>
+    <testcase classname="Library/Search MaxWidth smoke-test" name="Library/Search MaxWidth smoke-test" time="0.424">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Alerts" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:53" time="7.727" tests="4">
+    <testcase classname="Library/Alerts Info smoke-test" name="Library/Alerts Info smoke-test" time="1.298">
+    </testcase>
+    <testcase classname="Library/Alerts Success smoke-test" name="Library/Alerts Success smoke-test" time="0.317">
+    </testcase>
+    <testcase classname="Library/Alerts Warning smoke-test" name="Library/Alerts Warning smoke-test" time="0.293">
+    </testcase>
+    <testcase classname="Library/Alerts Error smoke-test" name="Library/Alerts Error smoke-test" time="0.296">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Card/Profile" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:57" time="5.748" tests="1">
+    <testcase classname="Library/Card/Profile Responsive smoke-test" name="Library/Card/Profile Responsive smoke-test" time="0.733">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Pwa" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:57" time="6.336" tests="1">
+    <testcase classname="Navigation/Pwa UpdateDialog smoke-test" name="Navigation/Pwa UpdateDialog smoke-test" time="0.829">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Modal/Responsive" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:59" time="5.615" tests="1">
+    <testcase classname="Navigation/Modal/Responsive Responsive smoke-test" name="Navigation/Modal/Responsive Responsive smoke-test" time="0.798">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Menu" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:59" time="6.357" tests="1">
+    <testcase classname="Navigation/Menu Responsive smoke-test" name="Navigation/Menu Responsive smoke-test" time="1.198">
+    </testcase>
+  </testsuite>
+  <testsuite name="Library/Button" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:24:59" time="6.876" tests="3">
+    <testcase classname="Library/Button Contained smoke-test" name="Library/Button Contained smoke-test" time="0.711">
+    </testcase>
+    <testcase classname="Library/Button Outlined smoke-test" name="Library/Button Outlined smoke-test" time="0.298">
+    </testcase>
+    <testcase classname="Library/Button Text smoke-test" name="Library/Button Text smoke-test" time="0.485">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Header" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:25:00" time="5.36" tests="1">
+    <testcase classname="Navigation/Header Responsive smoke-test" name="Navigation/Header Responsive smoke-test" time="0.905">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Menu" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:25:00" time="5.841" tests="1">
+    <testcase classname="Navigation/Menu Mobile smoke-test" name="Navigation/Menu Mobile smoke-test" time="0.974">
+    </testcase>
+  </testsuite>
+  <testsuite name="Navigation/Pwa" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:25:03" time="4.666" tests="1">
+    <testcase classname="Navigation/Pwa OfflineDialog smoke-test" name="Navigation/Pwa OfflineDialog smoke-test" time="0.563">
+    </testcase>
+  </testsuite>
+  <testsuite name="Layout/Basic" errors="0" failures="0" skipped="0" timestamp="2023-07-08T16:25:03" time="4.628" tests="1">
+    <testcase classname="Layout/Basic Basic smoke-test" name="Layout/Basic Basic smoke-test" time="0.638">
+    </testcase>
+  </testsuite>
+</testsuites>

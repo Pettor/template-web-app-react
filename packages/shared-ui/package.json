@@ -26,5 +26,10 @@
     "react-utils": "workspace:*",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*"
+  },
+  "jest-junit": {
+    "suiteName": "shared-ui tests",
+    "outputDirectory": "../../output-test",
+    "outputName": "junit-shared-ui.xml"
   }
 }

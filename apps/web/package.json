@@ -47,5 +47,10 @@
     "vite-plugin-pwa": "0.16.4",
     "vite-tsconfig-paths": "4.2.0",
     "workbox-window": "7.0.0"
+  },
+  "jest-junit": {
+    "suiteName": "web tests",
+    "outputDirectory": "../../output-test",
+    "outputName": "junit-web.xml"
   }
 }
