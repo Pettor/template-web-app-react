@@ -136,5 +136,7 @@ jobs:
       - name: Test Summary
         uses: test-summary/action@v2
         with:
-          paths: "apps/**/junit.xml"
+          paths: |
+            "apps/web/junit.xml"
+            "packages/shared-ui/junit.xml"
         if: always()
