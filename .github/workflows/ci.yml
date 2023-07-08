@@ -132,3 +132,9 @@ jobs:
 
       - name: Test application
         run: pnpm test
+
+      - name: Test Summary
+        uses: test-summary/action@v2
+        with:
+          paths: "apps/**/junit.xml"
+        if: always()
