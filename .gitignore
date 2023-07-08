@@ -28,3 +28,4 @@ dist-ssr
 out/
 build
 storybook-static
+output-test

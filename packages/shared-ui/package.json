@@ -16,7 +16,7 @@
     "storybook:build": "storybook build -o storybook-static",
     "storybook:move": "move-cli storybook-static \"../../storybook-static/shared-ui\"",
     "storybook:server": "npx http-server storybook-static --port 9065 --silent",
-    "storybook:test": "test-storybook --url http://127.0.0.1:9065"
+    "storybook:test": "test-storybook --url http://127.0.0.1:9065 --junit"
   },
   "dependencies": {
     "mui-theme": "workspace:*"
@@ -26,5 +26,10 @@
     "react-utils": "workspace:*",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*"
+  },
+  "jest-junit": {
+    "suiteName": "shared-ui tests",
+    "outputDirectory": "../../output-test",
+    "outputName": "junit-shared-ui.xml"
   }
 }

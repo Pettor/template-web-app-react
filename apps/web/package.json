@@ -16,7 +16,7 @@
     "storybook:build": "storybook build -o storybook-static",
     "storybook:move": "move-cli storybook-static \"../../storybook-static\"",
     "storybook:server": "npx http-server storybook-static --port 9055 --silent",
-    "storybook:test": "test-storybook --url http://127.0.0.1:9055"
+    "storybook:test": "test-storybook --url http://127.0.0.1:9055 --junit"
   },
   "dependencies": {
     "@hookform/resolvers": "3.1.1",
@@ -47,5 +47,10 @@
     "vite-plugin-pwa": "0.16.4",
     "vite-tsconfig-paths": "4.2.0",
     "workbox-window": "7.0.0"
+  },
+  "jest-junit": {
+    "suiteName": "web tests",
+    "outputDirectory": "../../output-test",
+    "outputName": "junit-web.xml"
   }
 }
