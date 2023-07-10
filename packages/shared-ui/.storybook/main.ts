@@ -1,12 +1,12 @@
+import type { StorybookConfig } from "@storybook/react-vite";
 import { mergeConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
   framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(ts|tsx)"],
   features: {
-    storyStoreV7: true
+    storyStoreV7: true,
   },
   addons: [
     "@storybook/addon-a11y",

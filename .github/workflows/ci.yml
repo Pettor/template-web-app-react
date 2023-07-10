@@ -131,7 +131,7 @@ jobs:
         run: npx playwright install 
 
       - name: Test application
-        run: pnpm test
+        run: pnpm test:ci
 
       - name: Publish test summary
         uses: mikepenz/action-junit-report@v3
