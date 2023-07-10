@@ -10,6 +10,7 @@ const config: StorybookConfig = {
   },
   addons: [
     "@storybook/addon-a11y",
+    "@storybook/addon-coverage",
     "@storybook/addon-essentials",
     "@storybook/addon-styling",
     "@storybook/addon-viewport",
@@ -25,6 +26,7 @@ const config: StorybookConfig = {
       optimizeDeps: {
         include: [
           "@storybook/addon-a11y",
+          "@storybook/addon-coverage",
           "@storybook/addon-essentials",
           "@storybook/addon-styling",
           "@storybook/addon-viewport",

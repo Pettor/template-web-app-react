@@ -12,6 +12,7 @@ node_modules
 *.local
 
 # Build files
+.nyc_output
 .turbo
 build/
 coverage

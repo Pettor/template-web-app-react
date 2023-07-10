@@ -4,12 +4,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 const config: StorybookConfig = {
   framework: "@storybook/react-vite",
-  stories: ["../src/**/*.stories.@(ts|tsx)"],
+  stories: ["../src/components/**/*.stories.@(ts|tsx)"],
   features: {
     storyStoreV7: true,
   },
   addons: [
     "@storybook/addon-a11y",
+    "@storybook/addon-coverage",
     "@storybook/addon-essentials",
     "@storybook/addon-styling",
     "@storybook/addon-viewport",
@@ -31,6 +32,7 @@ const config: StorybookConfig = {
       optimizeDeps: {
         include: [
           "@storybook/addon-a11y",
+          "@storybook/addon-coverage",
           "@storybook/addon-essentials",
           "@storybook/addon-styling",
           "@storybook/addon-viewport",

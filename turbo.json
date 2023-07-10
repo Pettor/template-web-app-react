@@ -35,13 +35,20 @@
       "cache": false
     },
     "test": {
+      "cache": false
+    },
+    "test:coverage": {
       "cache": false,
-      "outputs": ["coverage/**"]
+      "outputs": ["**/.nyc_output/**"]
+    },
+    "test:coverage:move": {
+      "cache": false,
+      "outputs": ["output/coverage/**"]
     },
     "test:ci": {
       "cache": false,
       "dependsOn": ["storybook:build"],
-      "outputs": ["coverage/**"]
+      "outputs": ["**/.nyc_output/**"]
     },
     "storybook:dev": {
       "cache": false
