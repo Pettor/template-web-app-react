@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc && vite build",
-    "clean": "rimraf dist",
-    "clean:all": "rimraf dist node_modules",
+    "clean": "rimraf dist storybook-static .nyc_output coverage",
+    "clean:all": "pnpm clean node_modules",
     "dev": "vite --open",
     "dev:mocks": "vite --mode mocks --open",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",

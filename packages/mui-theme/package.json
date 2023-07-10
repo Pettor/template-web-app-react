@@ -7,7 +7,7 @@
     "*.d.ts"
   ],
   "scripts": {
-    "clean:all": "rimraf dist node_modules"
+    "clean:all": "pnpm clean node_modules"
   },
   "dependencies": {
     "@fontsource/rubik": "5.0.5"
