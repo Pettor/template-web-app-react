@@ -7,7 +7,7 @@
   "scripts": {
     "prepare": "husky install",
     "build": "turbo run build --no-daemon",
-    "clean": "turbo run clean --no-daemon && rimraf storybook-static output-test",
+    "clean": "turbo run clean --no-daemon && rimraf output",
     "clean:all": "turbo run clean:all --no-daemon",
     "dev": "turbo run dev --no-daemon",
     "dev:mocks": "turbo run dev:mocks --no-daemon",
