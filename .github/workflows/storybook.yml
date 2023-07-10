@@ -50,7 +50,7 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
       - name: Add nojekyll fix for Github Pages
-        run: touch storybook-static/.nojekyll
+        run: touch output/storybook-static/.nojekyll
 
       - name: Deploy storybook
         run: >
