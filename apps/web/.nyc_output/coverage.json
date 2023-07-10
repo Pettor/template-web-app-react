@@ -1,0 +1,931 @@
+{
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/forms/forgot-password/ForgotPasswordForm.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/forms/forgot-password/ForgotPasswordForm.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 22,
+          "column": 2
+        },
+        "end": {
+          "line": 22,
+          "column": null
+        }
+      },
+      "1": {
+        "start": {
+          "line": 24,
+          "column": 2
+        },
+        "end": {
+          "line": 36,
+          "column": null
+        }
+      },
+      "2": {
+        "start": {
+          "line": 43,
+          "column": 24
+        },
+        "end": {
+          "line": 45,
+          "column": null
+        }
+      },
+      "3": {
+        "start": {
+          "line": 48,
+          "column": 2
+        },
+        "end": {
+          "line": 68,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "ForgotPasswordForm",
+        "decl": {
+          "start": {
+            "line": 21,
+            "column": 7
+          },
+          "end": {
+            "line": 21,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 7
+          },
+          "end": {
+            "line": 71,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    },
+    "f": {
+      "0": 4
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/forms/sign-up/SignUpForm.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/forms/sign-up/SignUpForm.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 28,
+          "column": 2
+        },
+        "end": {
+          "line": 28,
+          "column": null
+        }
+      },
+      "1": {
+        "start": {
+          "line": 30,
+          "column": 2
+        },
+        "end": {
+          "line": 80,
+          "column": null
+        }
+      },
+      "2": {
+        "start": {
+          "line": 87,
+          "column": 24
+        },
+        "end": {
+          "line": 89,
+          "column": null
+        }
+      },
+      "3": {
+        "start": {
+          "line": 92,
+          "column": 2
+        },
+        "end": {
+          "line": 212,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "SignUpForm",
+        "decl": {
+          "start": {
+            "line": 27,
+            "column": 7
+          },
+          "end": {
+            "line": 27,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 27,
+            "column": 7
+          },
+          "end": {
+            "line": 215,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    },
+    "f": {
+      "0": 4
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/forms/login/LoginForm.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/forms/login/LoginForm.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 23,
+          "column": 2
+        },
+        "end": {
+          "line": 23,
+          "column": null
+        }
+      },
+      "1": {
+        "start": {
+          "line": 25,
+          "column": 2
+        },
+        "end": {
+          "line": 45,
+          "column": null
+        }
+      },
+      "2": {
+        "start": {
+          "line": 52,
+          "column": 24
+        },
+        "end": {
+          "line": 54,
+          "column": null
+        }
+      },
+      "3": {
+        "start": {
+          "line": 57,
+          "column": 2
+        },
+        "end": {
+          "line": 108,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "LoginForm",
+        "decl": {
+          "start": {
+            "line": 22,
+            "column": 7
+          },
+          "end": {
+            "line": 22,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 22,
+            "column": 7
+          },
+          "end": {
+            "line": 111,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    },
+    "f": {
+      "0": 4
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/login/LoginViewBackground.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/login/LoginViewBackground.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 5,
+          "column": 7
+        },
+        "end": {
+          "line": 17,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 5,
+            "column": 7
+          },
+          "end": {
+            "line": 5,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 7
+          },
+          "end": {
+            "line": 17,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 4
+    },
+    "f": {
+      "0": 2
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/login/LoginView.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/login/LoginView.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 24,
+          "column": 2
+        },
+        "end": {
+          "line": 24,
+          "column": null
+        }
+      },
+      "1": {
+        "start": {
+          "line": 26,
+          "column": 2
+        },
+        "end": {
+          "line": 54,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "LoginView",
+        "decl": {
+          "start": {
+            "line": 23,
+            "column": 7
+          },
+          "end": {
+            "line": 23,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 23,
+            "column": 7
+          },
+          "end": {
+            "line": 57,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 2,
+      "1": 2
+    },
+    "f": {
+      "0": 2
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/forgot-password/ForgotPasswordView.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/forgot-password/ForgotPasswordView.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 14,
+          "column": 2
+        },
+        "end": {
+          "line": 14,
+          "column": null
+        }
+      },
+      "1": {
+        "start": {
+          "line": 16,
+          "column": 2
+        },
+        "end": {
+          "line": 37,
+          "column": null
+        }
+      },
+      "2": {
+        "start": {
+          "line": 31,
+          "column": 14
+        },
+        "end": {
+          "line": 31,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "ForgotPasswordView",
+        "decl": {
+          "start": {
+            "line": 13,
+            "column": 7
+          },
+          "end": {
+            "line": 13,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 7
+          },
+          "end": {
+            "line": 40,
+            "column": null
+          }
+        }
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 31,
+            "column": 14
+          },
+          "end": {
+            "line": 31,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 31,
+            "column": 14
+          },
+          "end": {
+            "line": 31,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 2,
+      "1": 2,
+      "2": 2
+    },
+    "f": {
+      "0": 2,
+      "1": 2
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/sign-up/SignUpView.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/sign-up/SignUpView.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 14,
+          "column": 2
+        },
+        "end": {
+          "line": 14,
+          "column": null
+        }
+      },
+      "1": {
+        "start": {
+          "line": 16,
+          "column": 2
+        },
+        "end": {
+          "line": 27,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "SignUpView",
+        "decl": {
+          "start": {
+            "line": 13,
+            "column": 7
+          },
+          "end": {
+            "line": 13,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 7
+          },
+          "end": {
+            "line": 30,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 2,
+      "1": 2
+    },
+    "f": {
+      "0": 2
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewColorBox.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewColorBox.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 7,
+          "column": 48
+        },
+        "end": {
+          "line": 17,
+          "column": null
+        }
+      },
+      "1": {
+        "start": {
+          "line": 7,
+          "column": 67
+        },
+        "end": {
+          "line": 17,
+          "column": 2
+        }
+      },
+      "2": {
+        "start": {
+          "line": 19,
+          "column": 49
+        },
+        "end": {
+          "line": 29,
+          "column": null
+        }
+      },
+      "3": {
+        "start": {
+          "line": 19,
+          "column": 68
+        },
+        "end": {
+          "line": 29,
+          "column": 2
+        }
+      },
+      "4": {
+        "start": {
+          "line": 32,
+          "column": 2
+        },
+        "end": {
+          "line": 36,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 7,
+            "column": 60
+          },
+          "end": {
+            "line": 7,
+            "column": 67
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 67
+          },
+          "end": {
+            "line": 17,
+            "column": 2
+          }
+        }
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 19,
+            "column": 61
+          },
+          "end": {
+            "line": 19,
+            "column": 68
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 19,
+            "column": 68
+          },
+          "end": {
+            "line": 29,
+            "column": 2
+          }
+        }
+      },
+      "2": {
+        "name": "HomeViewColorBox",
+        "decl": {
+          "start": {
+            "line": 31,
+            "column": 16
+          },
+          "end": {
+            "line": 31,
+            "column": 49
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 31,
+            "column": 49
+          },
+          "end": {
+            "line": 38,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2
+    },
+    "f": {
+      "0": 2,
+      "1": 2,
+      "2": 2
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewContainer.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewContainer.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 6,
+          "column": 7
+        },
+        "end": {
+          "line": 11,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 6,
+            "column": 7
+          },
+          "end": {
+            "line": 6,
+            "column": 88
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 7
+          },
+          "end": {
+            "line": 11,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 4
+    },
+    "f": {
+      "0": 2
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewGridContent.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewGridContent.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 6,
+          "column": 7
+        },
+        "end": {
+          "line": 8,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 6,
+            "column": 7
+          },
+          "end": {
+            "line": 6,
+            "column": 92
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 7
+          },
+          "end": {
+            "line": 8,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 4
+    },
+    "f": {
+      "0": 2
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewGridItem.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewGridItem.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 6,
+          "column": 7
+        },
+        "end": {
+          "line": 14,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 6,
+            "column": 7
+          },
+          "end": {
+            "line": 6,
+            "column": 87
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 7
+          },
+          "end": {
+            "line": 14,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 10
+    },
+    "f": {
+      "0": 8
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewTitle.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeViewTitle.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 5,
+          "column": 7
+        },
+        "end": {
+          "line": 12,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 5,
+            "column": 7
+          },
+          "end": {
+            "line": 5,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 7
+          },
+          "end": {
+            "line": 12,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 4
+    },
+    "f": {
+      "0": 2
+    },
+    "b": {}
+  },
+  "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeView.tsx": {
+    "path": "C:/Users/Petter/Development/Repos/template-web-app-react/apps/web/src/components/views/home/HomeView.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 19,
+          "column": 2
+        },
+        "end": {
+          "line": 19,
+          "column": null
+        }
+      },
+      "1": {
+        "start": {
+          "line": 22,
+          "column": 4
+        },
+        "end": {
+          "line": 26,
+          "column": null
+        }
+      },
+      "2": {
+        "start": {
+          "line": 31,
+          "column": 2
+        },
+        "end": {
+          "line": 119,
+          "column": null
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "HomeView",
+        "decl": {
+          "start": {
+            "line": 18,
+            "column": 7
+          },
+          "end": {
+            "line": 18,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 7
+          },
+          "end": {
+            "line": 122,
+            "column": null
+          }
+        }
+      },
+      "1": {
+        "name": "renderGridItem",
+        "decl": {
+          "start": {
+            "line": 21,
+            "column": 2
+          },
+          "end": {
+            "line": 21,
+            "column": null
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 21,
+            "column": 2
+          },
+          "end": {
+            "line": 27,
+            "column": null
+          }
+        }
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 2,
+      "1": 8,
+      "2": 2
+    },
+    "f": {
+      "0": 2,
+      "1": 8
+    },
+    "b": {}
+  }
+}
