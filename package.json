@@ -22,8 +22,8 @@
     "storybook:dev:ui": "turbo run storybook:dev --filter=shared-ui --no-daemon",
     "storybook:build": "turbo run storybook:build --parallel --no-daemon",
     "storybook:move": "pnpm storybook:move:web && pnpm storybook:move:ui",
-    "storybook:move:web": "turbo run storybook:move --filter=web",
-    "storybook:move:ui": "turbo run storybook:move --filter=shared-ui"
+    "storybook:move:web": "turbo run storybook:move --filter=web --no-daemon",
+    "storybook:move:ui": "turbo run storybook:move --filter=shared-ui --no-daemon"
   },
   "dependencies": {
     "@emotion/core": "11.0.0",
