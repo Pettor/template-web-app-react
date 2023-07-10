@@ -131,11 +131,11 @@ jobs:
         run: npx playwright install 
 
       - name: Test application
-        run: pnpm test
+        run: pnpm test:ci
 
       - name: Publish test summary
         uses: mikepenz/action-junit-report@v3
         with:
-          report_paths: "**/output-test/junit-*.xml"
+          report_paths: "**/output/test-result/*.xml"
           check_name: "Test Summary"
         if: always()

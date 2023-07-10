@@ -35,6 +35,11 @@
       "cache": false
     },
     "test": {
+      "cache": false,
+      "outputs": ["coverage/**"]
+    },
+    "test:ci": {
+      "cache": false,
       "dependsOn": ["storybook:build"],
       "outputs": ["coverage/**"]
     },

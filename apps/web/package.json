@@ -11,10 +11,11 @@
     "dev:mocks": "vite --mode mocks --open",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
-    "test": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9055 \"pnpm storybook:test\"",
+    "test": "test-storybook --url http://127.0.0.1:9050",
+    "test:ci": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9055 \"pnpm storybook:test\"",
     "storybook:dev": "storybook dev -p 9050",
     "storybook:build": "storybook build -o storybook-static",
-    "storybook:move": "move-cli storybook-static \"../../storybook-static\"",
+    "storybook:move": "move-cli storybook-static \"../../output/storybook-static\"",
     "storybook:server": "npx http-server storybook-static --port 9055 --silent",
     "storybook:test": "test-storybook --url http://127.0.0.1:9055 --junit"
   },
@@ -41,7 +42,6 @@
     "start-server-and-test": "2.0.0",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*",
-    "vite": "4.4.2",
     "vite-plugin-http2-proxy": "0.4.1",
     "vite-plugin-mkcert": "1.16.0",
     "vite-plugin-pwa": "0.16.4",
@@ -50,7 +50,7 @@
   },
   "jest-junit": {
     "suiteName": "web tests",
-    "outputDirectory": "../../output-test",
-    "outputName": "junit-web.xml"
+    "outputDirectory": "../../output/junit",
+    "outputName": "web.xml"
   }
 }

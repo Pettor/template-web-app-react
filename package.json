@@ -7,7 +7,7 @@
   "scripts": {
     "prepare": "husky install",
     "build": "turbo run build --no-daemon",
-    "clean": "turbo run clean --no-daemon",
+    "clean": "turbo run clean --no-daemon && rimraf output",
     "clean:all": "turbo run clean:all --no-daemon",
     "dev": "turbo run dev --no-daemon",
     "dev:mocks": "turbo run dev:mocks --no-daemon",
@@ -15,15 +15,16 @@
     "lint": "turbo run lint --no-daemon",
     "lint:fix": "turbo run lint:fix --no-daemon",
     "test": "turbo run test --parallel --no-daemon",
+    "test:ci": "turbo run test:ci --parallel --no-daemon",
     "mocks": "pnpm --filter=mock mocks",
     "storybook": "turbo run storybook:dev --parallel --no-daemon",
     "storybook:dev:combined": "concurrently -k -s first -n \"ui,web\" -c \"magenta,blue\" \"pnpm storybook:dev:ui\" \"pnpm wait-on http://localhost:6006 && pnpm storybook:dev:web\"",
     "storybook:dev:web": "turbo run storybook:dev --filter=web --no-daemon",
     "storybook:dev:ui": "turbo run storybook:dev --filter=shared-ui --no-daemon",
-    "storybook:build": "turbo run storybook:build --parallel",
+    "storybook:build": "turbo run storybook:build --parallel --no-daemon",
     "storybook:move": "pnpm storybook:move:web && pnpm storybook:move:ui",
-    "storybook:move:web": "turbo run storybook:move --filter=web",
-    "storybook:move:ui": "turbo run storybook:move --filter=shared-ui"
+    "storybook:move:web": "turbo run storybook:move --filter=web --no-daemon",
+    "storybook:move:ui": "turbo run storybook:move --filter=shared-ui --no-daemon"
   },
   "dependencies": {
     "@emotion/core": "11.0.0",
@@ -68,6 +69,7 @@
     "storybook": "7.0.26",
     "turbo": "1.10.7",
     "typescript": "5.1.6",
-    "usehooks-ts": "^2.9.1"
+    "usehooks-ts": "2.9.1",
+    "vite": "4.4.2"
   }
 }

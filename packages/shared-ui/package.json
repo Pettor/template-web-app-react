@@ -11,10 +11,11 @@
     "clean:all": "pnpm clean node_modules",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
-    "test": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test\"",
+    "test": "test-storybook --url http://127.0.0.1:9060",
+    "test:ci": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test\"",
     "storybook:dev": "storybook dev -p 9060 --quiet",
     "storybook:build": "storybook build -o storybook-static",
-    "storybook:move": "move-cli storybook-static \"../../storybook-static/shared-ui\"",
+    "storybook:move": "move-cli storybook-static \"../../output/storybook-static/shared-ui\"",
     "storybook:server": "npx http-server storybook-static --port 9065 --silent",
     "storybook:test": "test-storybook --url http://127.0.0.1:9065 --junit"
   },
@@ -29,7 +30,7 @@
   },
   "jest-junit": {
     "suiteName": "shared-ui tests",
-    "outputDirectory": "../../output-test",
-    "outputName": "junit-shared-ui.xml"
+    "outputDirectory": "../../output/junit",
+    "outputName": "shared-ui.xml"
   }
 }

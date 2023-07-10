@@ -130,8 +130,11 @@ importers:
         specifier: 5.1.6
         version: 5.1.6
       usehooks-ts:
-        specifier: ^2.9.1
+        specifier: 2.9.1
         version: 2.9.1(react-dom@18.2.0)(react@18.2.0)
+      vite:
+        specifier: 4.4.2
+        version: 4.4.2(@types/node@20.4.1)(less@4.1.3)
 
   apps/mock:
     devDependencies:
@@ -202,9 +205,6 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/tsconfig
-      vite:
-        specifier: 4.4.2
-        version: 4.4.2(@types/node@20.4.1)(less@4.1.3)
       vite-plugin-http2-proxy:
         specifier: 0.4.1
         version: 0.4.1(vite@4.4.2)
@@ -5025,7 +5025,7 @@ packages:
       magic-string: 0.27.0
       remark-external-links: 8.0.0
       remark-slug: 6.1.0
-      rollup: 3.21.5
+      rollup: 3.26.2
       typescript: 5.1.6
       vite: 4.4.2(@types/node@20.4.1)(less@4.1.3)
     transitivePeerDependencies:
@@ -11719,7 +11719,7 @@ packages:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.5.0
+      tslib: 2.6.0
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.11
@@ -13734,14 +13734,6 @@ packages:
   /rollup@2.79.1:
     resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
     engines: {node: '>=10.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
-  /rollup@3.21.5:
-    resolution: {integrity: sha512-a4NTKS4u9PusbUJcfF4IMxuqjFzjm6ifj76P54a7cKnvVzJaG12BLVR+hgU2YDGHzyMMQNxLAZWuALsn8q2oQg==}
-    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
