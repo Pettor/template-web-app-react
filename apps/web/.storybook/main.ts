@@ -1,12 +1,12 @@
-/* eslint-disable */
 import { mergeConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import type { StorybookConfig } from "@storybook/react-vite";
 
-const config = {
+const config: StorybookConfig  = {
   framework: "@storybook/react-vite",
   stories: ["../src/**/*.stories.@(ts|tsx)"],
   features: {
-    storyStoreV7: true
+    storyStoreV7: true,
   },
   addons: [
     "@storybook/addon-a11y",
@@ -15,14 +15,18 @@ const config = {
     "@storybook/addon-viewport",
   ],
   docs: {
-    defaultName: 'Docs',
+    defaultName: "Docs",
+  },
+  refs: {
+    "shared-ui": {
+      title: "Common Components",
+      url: process.env.NODE_ENV === "development" ? "http://localhost:6006/" : "shared-ui/",
+    },
   },
   async viteFinal(config) {
     return mergeConfig(config, {
       base: "./",
-      plugins: [
-        tsconfigPaths()
-      ],
+      plugins: [tsconfigPaths()],
       // Add storybook-specific dependencies to pre-optimization
       optimizeDeps: {
         include: [
