@@ -41,7 +41,6 @@
     "start-server-and-test": "2.0.0",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*",
-    "vite": "4.4.2",
     "vite-plugin-http2-proxy": "0.4.1",
     "vite-plugin-mkcert": "1.16.0",
     "vite-plugin-pwa": "0.16.4",
