@@ -7,8 +7,8 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rimraf dist",
-    "clean:all": "rimraf dist node_modules",
+    "clean": "rimraf dist storybook-static .nyc_output coverage",
+    "clean:all": "pnpm clean node_modules",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
     "test": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test\"",

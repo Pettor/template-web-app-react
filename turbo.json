@@ -35,6 +35,7 @@
       "cache": false
     },
     "test": {
+      "dependsOn": ["storybook:build"],
       "outputs": ["coverage/**"]
     },
     "storybook:dev": {
