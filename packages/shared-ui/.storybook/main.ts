@@ -1,4 +1,5 @@
 import { mergeConfig } from "vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
@@ -19,6 +20,7 @@ const config: StorybookConfig = {
   async viteFinal(config) {
     return mergeConfig(config, {
       base: "./",
+      plugins: [tsconfigPaths()],
       // Add storybook-specific dependencies to pre-optimization
       optimizeDeps: {
         include: [
