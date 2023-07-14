@@ -1,6 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 import { mergeConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { AddonOptionsVite  } from "@storybook/addon-coverage";
 
 const config: StorybookConfig = {
   framework: "@storybook/react-vite",
@@ -10,7 +11,14 @@ const config: StorybookConfig = {
   },
   addons: [
     "@storybook/addon-a11y",
-    "@storybook/addon-coverage",
+    {
+      name: '@storybook/addon-coverage',
+      options: {
+        istanbul: {
+          exclude: ["**/storybook/**", "**/Button.stories.tsx"]
+        },
+      } satisfies AddonOptionsVite,
+    },
     "@storybook/addon-essentials",
     "@storybook/addon-styling",
     "@storybook/addon-viewport",

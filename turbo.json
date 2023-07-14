@@ -37,13 +37,13 @@
     },
     "test:unit": {
       "cache": false,
-      "outputs": ["**/junit/*.json"],
-      "dependsOn": ["storybook:build"]
+      "dependsOn": ["storybook:build"],
+      "outputs": ["**/junit/*.json"]
     },
     "test:coverage": {
       "cache": false,
-      "outputs": ["**/.nyc_output/*.json"],
-      "dependsOn": ["storybook:build"]
+      "dependsOn": ["storybook:build"],
+      "outputs": ["**/.nyc_output/*.json"]
     },
     "test:coverage:report": {
       "cache": false,
@@ -54,6 +54,7 @@
     },
     "storybook:build": {
       "cache": true,
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts"],
       "outputs": ["**/storybook-static/**"]
     },
     "storybook:move": {

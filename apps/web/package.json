@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc && vite build",
-    "clean": "rimraf dist storybook-static .nyc_output coverage",
+    "clean": "rimraf dist storybook-static .nyc_output .junit coverage",
     "clean:all": "pnpm clean node_modules",
     "dev": "vite --open",
     "dev:mocks": "vite --mode mocks --open",
@@ -52,7 +52,7 @@
   },
   "jest-junit": {
     "suiteName": "web tests",
-    "outputDirectory": "junit",
+    "outputDirectory": ".junit",
     "outputName": "web.xml"
   }
 }

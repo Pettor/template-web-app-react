@@ -7,7 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "clean": "rimraf dist storybook-static .nyc_output coverage",
+    "clean": "rimraf dist storybook-static .nyc_output .junit coverage",
     "clean:all": "pnpm clean node_modules",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
@@ -33,7 +33,7 @@
   },
   "jest-junit": {
     "suiteName": "shared-ui tests",
-    "outputDirectory": "junit",
+    "outputDirectory": ".junit",
     "outputName": "shared-ui.xml"
   }
 }

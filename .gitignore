@@ -13,6 +13,7 @@ node_modules
 
 # Build files
 .nyc_output
+.junit
 .turbo
 build/
 coverage
