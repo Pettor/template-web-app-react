@@ -20,7 +20,7 @@
     "storybook:build": "storybook build -o storybook-static",
     "storybook:move": "move-cli storybook-static \"../../output/storybook-static/shared-ui\" --mkdirp",
     "storybook:server": "npx http-server storybook-static --port 9065 --silent",
-    "storybook:test": "test-storybook --url http://127.0.0.1:9065"
+    "storybook:test": "test-storybook --url http://127.0.0.1:9065 --config-dir ./.storybook-ci"
   },
   "dependencies": {
     "mui-theme": "workspace:*"
