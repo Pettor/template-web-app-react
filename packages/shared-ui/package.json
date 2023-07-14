@@ -12,14 +12,14 @@
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
     "test": "test-storybook --url http://127.0.0.1:9060",
-    "test:ci": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test\"",
-    "test:coverage": "npx nyc report --reporter=cobertura -t .nyc_output --report-dir .nyc_output",
-    "test:coverage:move": "move-cli \".nyc_output/cobertura-coverage.xml\" \"../../output/coverage/cobertura/shared-ui.xml\" --mkdirp",
+    "test:unit": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test --junit\"",
+    "test:coverage": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test --coverage\"",
+    "test:coverage:report": "npx nyc report --reporter=cobertura -t .nyc_output --report-dir .nyc_output",
     "storybook:dev": "storybook dev -p 9060 --quiet",
     "storybook:build": "storybook build -o storybook-static",
     "storybook:move": "move-cli storybook-static \"../../output/storybook-static/shared-ui\" --mkdirp",
     "storybook:server": "npx http-server storybook-static --port 9065 --silent",
-    "storybook:test": "test-storybook --url http://127.0.0.1:9065 --junit --coverage"
+    "storybook:test": "test-storybook --url http://127.0.0.1:9065"
   },
   "dependencies": {
     "mui-theme": "workspace:*"

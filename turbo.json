@@ -6,9 +6,7 @@
     "build": {
       "outputs": [
         "dist/**",
-        "build/**",
-        "api/**",
-        "public/build/**"
+        "build/**"
       ],
       "dependsOn": ["^build"]
     },
@@ -37,28 +35,29 @@
     "test": {
       "cache": false
     },
+    "test:unit": {
+      "cache": false,
+      "dependsOn": ["storybook:build"]
+    },
     "test:coverage": {
       "cache": false,
-      "outputs": ["**/.nyc_output/**"]
+      "outputs": ["**/.nyc_output/*.json"],
+      "dependsOn": ["storybook:build"]
     },
-    "test:coverage:move": {
+    "test:coverage:report": {
       "cache": false,
-      "outputs": ["output/coverage/**"]
-    },
-    "test:ci": {
-      "cache": false,
-      "dependsOn": ["storybook:build"],
-      "outputs": ["**/.nyc_output/**"]
+      "outputs": ["**/.nyc_output/*.xml"]
     },
     "storybook:dev": {
       "cache": false
     },
     "storybook:build": {
-      "cache": false,
-      "outputs": ["storybook-static/**"]
+      "cache": true,
+      "outputs": ["**/storybook-static/**"]
     },
     "storybook:move": {
-      "cache": false
+      "cache": false,
+      "outputs": ["output/storybook-static/**"]
     }
   }
 }
