@@ -134,14 +134,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Install Playwright
+        run: npx playwright install
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+
       - name: Build Storybook
         run: pnpm storybook:build
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
-
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
 
       - name: Test application
         run: pnpm test:ci
