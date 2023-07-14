@@ -86,7 +86,7 @@ jobs:
         run: pnpm build
 
   test-unit:
-    name: Test
+    name: Test Unit
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -161,7 +161,7 @@ jobs:
         run: pnpm test:coverage:move
 
   test-coverage:
-    name: Test
+    name: Test Coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
