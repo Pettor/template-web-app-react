@@ -204,7 +204,7 @@ jobs:
         continue-on-error: true
 
       - name: Create test reports
-        run: pnpm test:coverage:report
+        run: pnpm test:coverage:report:create
 
       - name: Move test reports
         run: pnpm test:coverage:report:move

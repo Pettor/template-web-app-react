@@ -45,7 +45,7 @@
       "dependsOn": ["storybook:build"],
       "outputs": ["**/.nyc_output/*.json"]
     },
-    "test:coverage:report": {
+    "test:coverage:report:create": {
       "cache": false,
       "outputs": ["**/.nyc_output/*.xml"]
     },

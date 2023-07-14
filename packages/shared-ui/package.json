@@ -14,7 +14,7 @@
     "test": "test-storybook --url http://127.0.0.1:9060",
     "test:unit": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test --junit\"",
     "test:coverage": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test --coverage\"",
-    "test:coverage:report": "npx nyc report --reporter=cobertura -t .nyc_output --report-dir .nyc_output",
+    "test:coverage:report:create": "npx nyc report --reporter=cobertura -t .nyc_output --report-dir .nyc_output",
     "test:coverage:report:move": "move-cli .nyc_output/cobertura-coverage.xml \"../../output/coverage/shared-ui.xml\" --mkdirp",
     "storybook:dev": "storybook dev -p 9060 --quiet",
     "storybook:build": "storybook build -o storybook-static",

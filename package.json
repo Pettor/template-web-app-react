@@ -17,7 +17,7 @@
     "test": "turbo run test --parallel --no-daemon",
     "test:unit": "turbo run test:unit --parallel --no-daemon",
     "test:coverage": "turbo run test:coverage --parallel --no-daemon",
-    "test:coverage:report": "turbo run test:coverage:report --parallel --no-daemon",
+    "test:coverage:report:create": "turbo run test:coverage:report:create --parallel --no-daemon",
     "test:coverage:report:move": "turbo run test:coverage:report:move --parallel --no-daemon",
     "mocks": "pnpm --filter=mock mocks",
     "storybook": "turbo run storybook:dev --parallel --no-daemon",
