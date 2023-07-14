@@ -154,12 +154,6 @@ jobs:
           check_name: "Test Summary"
         if: always()
 
-      - name: Cubertura report
-        run: pnpm test:coverage
-
-      - name: Move cubertura reports
-        run: pnpm test:coverage:move
-
   test-coverage:
     name: Test Coverage
     runs-on: ubuntu-latest
@@ -210,7 +204,7 @@ jobs:
         continue-on-error: true
 
       - name: Create test reports
-        run: pnpm test:coverage:reports
+        run: pnpm test:coverage:report
         continue-on-error: true
 
       - name: Code Coverage Report
