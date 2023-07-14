@@ -85,7 +85,7 @@ jobs:
       - name: Build application
         run: pnpm build
 
-  storybook:
+  test-unit:
     name: Test
     runs-on: ubuntu-latest
     steps:
@@ -143,14 +143,14 @@ jobs:
       - name: Install Playwright
         run: npx playwright install
 
-      - name: Test application
-        run: pnpm test:ci
+      - name: Run unit tests
+        run: pnpm test:unit
         continue-on-error: true
 
       - name: Publish test summary
         uses: mikepenz/action-junit-report@v3
         with:
-          report_paths: "**/output/test-result/*.xml"
+          report_paths: "**/junit/*.xml"
           check_name: "Test Summary"
         if: always()
 
@@ -159,6 +159,59 @@ jobs:
 
       - name: Move cubertura reports
         run: pnpm test:coverage:move
+
+  test-coverage:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.4
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Storybook
+        run: pnpm storybook:build
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+
+      - name: Install Playwright
+        run: npx playwright install
+
+      - name: Run test coverage
+        run: pnpm test:coverage
+        continue-on-error: true
+
+      - name: Create test reports
+        run: pnpm test:coverage:reports
+        continue-on-error: true
 
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0

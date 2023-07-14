@@ -37,6 +37,7 @@
     },
     "test:unit": {
       "cache": false,
+      "outputs": ["**/junit/*.json"],
       "dependsOn": ["storybook:build"]
     },
     "test:coverage": {

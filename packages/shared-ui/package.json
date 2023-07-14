@@ -33,7 +33,7 @@
   },
   "jest-junit": {
     "suiteName": "shared-ui tests",
-    "outputDirectory": "../../output/junit",
+    "outputDirectory": "junit",
     "outputName": "shared-ui.xml"
   }
 }

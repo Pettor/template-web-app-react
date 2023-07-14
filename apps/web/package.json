@@ -52,7 +52,7 @@
   },
   "jest-junit": {
     "suiteName": "web tests",
-    "outputDirectory": "../../output/junit",
+    "outputDirectory": "junit",
     "outputName": "web.xml"
   }
 }
