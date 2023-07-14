@@ -49,6 +49,10 @@
       "cache": false,
       "outputs": ["**/.nyc_output/*.xml"]
     },
+    "test:coverage:report:move": {
+      "cache": false,
+      "outputs": ["output/coverage/*.xml"]
+    },
     "storybook:dev": {
       "cache": false
     },

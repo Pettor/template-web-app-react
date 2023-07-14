@@ -18,6 +18,7 @@
     "test:unit": "turbo run test:unit --parallel --no-daemon",
     "test:coverage": "turbo run test:coverage --parallel --no-daemon",
     "test:coverage:report": "turbo run test:coverage:report --parallel --no-daemon",
+    "test:coverage:report:move": "turbo run test:coverage:report:move --parallel --no-daemon",
     "mocks": "pnpm --filter=mock mocks",
     "storybook": "turbo run storybook:dev --parallel --no-daemon",
     "storybook:dev:combined": "concurrently -k -s first -n \"ui,web\" -c \"magenta,blue\" \"pnpm storybook:dev:ui\" \"pnpm wait-on http://localhost:6006 && pnpm storybook:dev:web\"",

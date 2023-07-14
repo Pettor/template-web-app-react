@@ -210,7 +210,7 @@ jobs:
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
-          filename: "**/!(node_modules)/**/.nyc_output/*.xml"
+          filename: "**/output/coverage/*.xml"
           badge: true
           fail_below_min: true
           format: markdown
