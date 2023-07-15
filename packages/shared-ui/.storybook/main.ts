@@ -16,7 +16,7 @@ const config: StorybookConfig = {
       name: "@storybook/addon-coverage",
       options: {
         istanbul: {
-          exclude: ["**/storybook/**"],
+          exclude: ["**Storybook.Data**"],
         },
       } satisfies AddonOptionsVite,
     },

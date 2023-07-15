@@ -1,6 +1,6 @@
 const path = require("path");
 
-const FILTER_STORIES = [`${path.sep}Storybook${path.sep}`, "Button.stories"];
+const FILTER_STORIES = [`${path.sep}storybook${path.sep}`, "Button.stories"];
 
 module.exports = (testPaths) => {
   const allowedPaths = testPaths
