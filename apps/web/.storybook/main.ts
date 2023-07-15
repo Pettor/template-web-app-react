@@ -12,14 +12,7 @@ const config: StorybookConfig = {
   },
   addons: [
     "@storybook/addon-a11y",
-    {
-      name: "@storybook/addon-coverage",
-      options: {
-        istanbul: {
-          exclude: ["**/storybook/**"],
-        },
-      } satisfies AddonOptionsVite,
-    },
+    "@storybook/addon-coverage",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-styling",
@@ -42,7 +35,6 @@ const config: StorybookConfig = {
       optimizeDeps: {
         include: [
           "@storybook/addon-a11y",
-          "@storybook/addon-coverage",
           "@storybook/addon-essentials",
           "@storybook/addon-interactions",
           "@storybook/addon-styling",
