@@ -1,5 +1,6 @@
 import type { AddonOptionsVite } from "@storybook/addon-coverage";
 import type { StorybookConfig } from "@storybook/react-vite";
+import type { UserConfig } from "vite";
 import { mergeConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -46,7 +47,7 @@ const config: StorybookConfig = {
           "@storybook/addon-viewport",
         ],
       },
-    });
+    } satisfies UserConfig);
   },
 };
 

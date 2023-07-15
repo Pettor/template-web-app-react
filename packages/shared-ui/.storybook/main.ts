@@ -1,5 +1,6 @@
 import type { AddonOptionsVite } from "@storybook/addon-coverage";
 import type { StorybookConfig } from "@storybook/react-vite";
+import type { UserConfig } from "vite";
 import { mergeConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -40,7 +41,17 @@ const config: StorybookConfig = {
           "@storybook/addon-viewport",
         ],
       },
-    });
+      build: {
+        rollupOptions: {
+          onwarn: (warning, warn) => {
+            if (warning.code === "MODULE_LEVEL_DIRECTIVE") {
+              return;
+            }
+            warn(warning)
+          }
+        }
+      }
+    } satisfies UserConfig);
   },
 };
 

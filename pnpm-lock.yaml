@@ -187,9 +187,6 @@ importers:
       '@formatjs/cli':
         specifier: 6.1.3
         version: 6.1.3
-      '@vitejs/plugin-react':
-        specifier: 4.0.3
-        version: 4.0.3(vite@4.4.4)
       '@vitejs/plugin-react-swc':
         specifier: 3.3.2
         version: 3.3.2(vite@4.4.4)
@@ -6745,21 +6742,6 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.5)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.5)
       magic-string: 0.27.0
-      react-refresh: 0.14.0
-      vite: 4.4.4(@types/node@20.4.2)(less@4.1.3)
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /@vitejs/plugin-react@4.0.3(vite@4.4.4):
-    resolution: {integrity: sha512-pwXDog5nwwvSIzwrvYYmA2Ljcd/ZNlcsSG2Q9CNDBwnsd55UGAyr2doXtB5j+2uymRCnCfExlznzzSFbBRcoCg==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^4.2.0
-    dependencies:
-      '@babel/core': 7.22.5
-      '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.5)
-      '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.5)
       react-refresh: 0.14.0
       vite: 4.4.4(@types/node@20.4.2)(less@4.1.3)
     transitivePeerDependencies:

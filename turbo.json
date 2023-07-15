@@ -35,26 +35,16 @@
     "test": {
       "cache": false
     },
-    "test:ci": {
+    "test:unit": {
       "cache": false,
       "dependsOn": ["storybook:build"],
       "outputs": ["**/junit/*.json", "**/.nyc_output/*.json"]
     },
-    "test:unit": {
-      "cache": false,
-      "dependsOn": ["storybook:build"],
-      "outputs": ["**/junit/*.json"]
-    },
-    "test:coverage": {
-      "cache": false,
-      "dependsOn": ["storybook:build"],
-      "outputs": ["**/.nyc_output/*.json"]
-    },
-    "test:coverage:create": {
+    "test:unit:coverage:create": {
       "cache": false,
       "outputs": ["**/.nyc_output/*.xml"]
     },
-    "test:coverage:move": {
+    "test:unit:coverage:move": {
       "cache": false,
       "outputs": ["output/coverage/*.xml"]
     },
