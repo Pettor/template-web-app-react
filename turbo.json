@@ -40,11 +40,11 @@
       "dependsOn": ["storybook:build"],
       "outputs": ["**/junit/*.json", "**/.nyc_output/*.json"]
     },
-    "test:unit:coverage:create": {
+    "test:unit:coverage": {
       "cache": false,
-      "outputs": ["**/.nyc_output/*.xml"]
+      "outputs": ["**/.nyc_output/**/*"]
     },
-    "test:unit:coverage:move": {
+    "test:unit:coverage:ci": {
       "cache": false,
       "outputs": ["output/coverage/*.xml"]
     },

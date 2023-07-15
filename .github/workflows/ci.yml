@@ -155,10 +155,7 @@ jobs:
         if: always()
 
       - name: Create test reports
-        run: pnpm test:unit:coverage:create
-
-      - name: Move test reports
-        run: pnpm test:unit:coverage:move
+        run: pnpm test:unit:coverage:ci
 
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
