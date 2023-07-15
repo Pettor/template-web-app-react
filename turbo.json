@@ -35,6 +35,11 @@
     "test": {
       "cache": false
     },
+    "test:ci": {
+      "cache": false,
+      "dependsOn": ["storybook:build"],
+      "outputs": ["**/junit/*.json", "**/.nyc_output/*.json"]
+    },
     "test:unit": {
       "cache": false,
       "dependsOn": ["storybook:build"],
@@ -45,11 +50,11 @@
       "dependsOn": ["storybook:build"],
       "outputs": ["**/.nyc_output/*.json"]
     },
-    "test:coverage:report:create": {
+    "test:coverage:create": {
       "cache": false,
       "outputs": ["**/.nyc_output/*.xml"]
     },
-    "test:coverage:report:move": {
+    "test:coverage:move": {
       "cache": false,
       "outputs": ["output/coverage/*.xml"]
     },

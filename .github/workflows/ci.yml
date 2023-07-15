@@ -146,8 +146,8 @@ jobs:
       - name: Install Playwright
         run: npx playwright install
 
-      - name: Run unit tests
-        run: pnpm test:unit
+      - name: Run tests and coverage
+        run: pnpm test:ci
         continue-on-error: true
 
       - name: Publish test summary
@@ -158,10 +158,10 @@ jobs:
         if: always()
 
       - name: Create test reports
-        run: pnpm test:coverage:report:create
+        run: pnpm test:coverage:create
 
       - name: Move test reports
-        run: pnpm test:coverage:report:move
+        run: pnpm test:coverage:move
 
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
