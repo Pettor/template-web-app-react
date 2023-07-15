@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig, loadEnv } from "vite";
-import { mergeConfig } from "vite";
+import type { UserConfig } from "vite";
+import { defineConfig, loadEnv, mergeConfig } from "vite";
 import proxy from "vite-plugin-http2-proxy";
 import mkcert from "vite-plugin-mkcert";
 import { VitePWA } from "vite-plugin-pwa";
@@ -10,7 +10,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig(({ mode, command }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
-  const commonConfig = {
+  const commonConfig: UserConfig = {
     plugins: [
       react(),
       tsconfigPaths(),
@@ -45,8 +45,6 @@ export default defineConfig(({ mode, command }) => {
       }),
     ],
   };
-
-  console.log(env.VITE_CONNECT_PORT);
 
   switch (command) {
     case "build":

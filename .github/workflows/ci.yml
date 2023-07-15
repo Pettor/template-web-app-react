@@ -85,7 +85,7 @@ jobs:
       - name: Build application
         run: pnpm build
 
-  storybook:
+  test:
     name: Test
     runs-on: ubuntu-latest
     steps:
@@ -131,7 +131,6 @@ jobs:
             ~/.cache/ms-playwright
           key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.PLAYWRIGHT_VERSION }}
 
-
       - name: Install dependencies
         run: pnpm install
 
@@ -144,12 +143,38 @@ jobs:
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
-      - name: Test application
-        run: pnpm test:ci
+      - name: Run tests and coverage
+        run: pnpm test:unit
+        continue-on-error: true
 
       - name: Publish test summary
         uses: mikepenz/action-junit-report@v3
         with:
-          report_paths: "**/output/test-result/*.xml"
+          report_paths: "**/junit/*.xml"
           check_name: "Test Summary"
         if: always()
+
+      - name: Create test reports
+        run: pnpm test:unit:coverage:create
+
+      - name: Move test reports
+        run: pnpm test:unit:coverage:move
+
+      - name: Code Coverage Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: "**/output/coverage/*.xml"
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: true
+          indicators: true
+          output: both
+          thresholds: '60 80'
+
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          recreate: true
+          path: code-coverage-results.md

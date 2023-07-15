@@ -5,19 +5,21 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc && vite build",
-    "clean": "rimraf dist storybook-static .nyc_output coverage",
+    "clean": "rimraf dist storybook-static .nyc_output .junit coverage",
     "clean:all": "pnpm clean node_modules",
     "dev": "vite --open",
     "dev:mocks": "vite --mode mocks --open",
     "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
     "lint:fix": "pnpm lint --fix",
     "test": "test-storybook --url http://127.0.0.1:9050",
-    "test:ci": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9055 \"pnpm storybook:test\"",
+    "test:unit": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9055 \"pnpm storybook:test --junit --coverage\"",
+    "test:unit:coverage:create": "npx nyc report --reporter=cobertura -t .nyc_output --report-dir .nyc_output",
+    "test:unit:coverage:move": "move-cli .nyc_output/cobertura-coverage.xml \"../../output/coverage/web.xml\" --mkdirp",
     "storybook:dev": "storybook dev -p 9050",
     "storybook:build": "storybook build -o storybook-static",
     "storybook:move": "move-cli storybook-static \"../../output/storybook-static\" --mkdirp",
     "storybook:server": "npx http-server storybook-static --port 9055 --silent",
-    "storybook:test": "test-storybook --url http://127.0.0.1:9055 --junit"
+    "storybook:test": "test-storybook --url http://127.0.0.1:9055"
   },
   "dependencies": {
     "@hookform/resolvers": "3.1.1",
@@ -34,7 +36,6 @@
   },
   "devDependencies": {
     "@formatjs/cli": "6.1.3",
-    "@vitejs/plugin-react": "4.0.3",
     "@vitejs/plugin-react-swc": "3.3.2",
     "cross-env": "7.0.3",
     "eslint-config-custom": "workspace:*",
@@ -50,7 +51,7 @@
   },
   "jest-junit": {
     "suiteName": "web tests",
-    "outputDirectory": "../../output/junit",
+    "outputDirectory": ".junit",
     "outputName": "web.xml"
   }
 }
