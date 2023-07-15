@@ -21,7 +21,9 @@ export function IconMenuButton({ icon, children }: IconMenuButtonProps): ReactEl
 
   return (
     <Box>
-      <IconButton onClick={handleClick}>{icon}</IconButton>
+      <IconButton onClick={handleClick} data-testid="icon-menu-button__icon-button">
+        {icon}
+      </IconButton>
       {anchorEl && (
         <AppMenuResponsive anchorEl={anchorEl} open={!!anchorEl} handleClose={handleClose}>
           {children}

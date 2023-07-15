@@ -12,5 +12,12 @@ export function ThemeToggle({ defaultMode, onToggle, ...rest }: ThemeToggleProps
     onToggle(event.target.checked ? "dark" : "light");
   }
 
-  return <ThemeToggleSwitch {...rest} checked={defaultMode === "dark"} onChange={handleChange} />;
+  return (
+    <ThemeToggleSwitch
+      {...rest}
+      checked={defaultMode === "dark"}
+      onChange={handleChange}
+      data-testid="theme-toggle__button"
+    />
+  );
 }

@@ -12,6 +12,5 @@ export function ResponsiveComponent({ mobile, desktop }: ResponsiveComponentProp
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const component = useMemo(() => (isMobile ? mobile : desktop), [isMobile]);
-  return component;
+  return useMemo(() => (isMobile ? mobile : desktop), [isMobile]);
 }

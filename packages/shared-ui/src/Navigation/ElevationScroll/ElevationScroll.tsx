@@ -1,24 +1,17 @@
-import type { ReactElement } from "react";
+import type { ReactElement, Attributes } from "react";
 import { cloneElement } from "react";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 export interface ElevationScrollProps<T> {
   getProps(trigger: boolean): T;
-  children?: React.ReactElement;
+  children: ReactElement;
 }
 
-export function ElevationScroll<T extends React.Attributes>({
-  getProps,
-  children,
-}: ElevationScrollProps<T>): ReactElement {
+export function ElevationScroll<T extends Attributes>({ getProps, children }: ElevationScrollProps<T>): ReactElement {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
   });
-
-  if (!children) {
-    return <></>;
-  }
 
   return cloneElement<T>(children, getProps(trigger));
 }

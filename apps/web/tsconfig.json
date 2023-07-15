@@ -12,9 +12,10 @@
       "~/*": ["./src/*"]
     },
     "types": [
-      "vite-plugin-pwa/client",
+      "@types/testing-library__jest-dom",
       "mui-theme/types",
-      "tsconfig/types"
+      "tsconfig/types",
+      "vite-plugin-pwa/client"
     ],
   },
   "include": ["./src"],

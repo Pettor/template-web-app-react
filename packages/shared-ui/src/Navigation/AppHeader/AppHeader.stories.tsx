@@ -1,4 +1,7 @@
+import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
+import { sleep } from "react-utils";
 import { DefaultHeaderComponents } from "Storybook/Data";
 import { Search } from "../../Library/Search/Search";
 import { AppHeader as Component } from "./AppHeader";
@@ -35,10 +38,25 @@ export const SubHeaderWithSearch = {
   },
 } satisfies Story;
 
-export const HeaderComponents = {
+export const HeaderComponents: Story = {
   args: {
     isMobile: false,
     subheader: false,
     headerComponents: <DefaultHeaderComponents />,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    userEvent.click(canvas.getByRole("checkbox"));
+
+    await sleep(500);
+
+    expect(canvas.getByTestId("app-header-group__theme-toggle-box")).toHaveTextContent("dark");
+
+    userEvent.click(canvas.getByRole("checkbox"));
+
+    await sleep(500);
+
+    expect(canvas.getByTestId("app-header-group__theme-toggle-box")).toHaveTextContent("light");
   },
 } satisfies Story;

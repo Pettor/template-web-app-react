@@ -68,7 +68,13 @@ export function AutoAlert({
     <Collapse in={showText}>
       <Alert
         action={
-          <IconButton aria-label="close" color="inherit" size="small" onClick={handleAlert}>
+          <IconButton
+            aria-label="close"
+            color="inherit"
+            size="small"
+            onClick={handleAlert}
+            data-testid="auto-alert__close-button"
+          >
             <CloseIcon fontSize="inherit" />
           </IconButton>
         }

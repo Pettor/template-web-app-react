@@ -27,7 +27,13 @@ export function LoginForm({ error, loading, onSubmit }: LoginFormProps): ReactEl
     .shape({
       email: yup
         .string()
-        .email()
+        .email(
+          intl.formatMessage({
+            description: "LoginFormValidation - Email must be valid",
+            defaultMessage: "Email must be valid",
+            id: "+2i1XS",
+          })
+        )
         .required(
           intl.formatMessage({
             description: "LoginFormValidation - Email is required",
@@ -69,6 +75,9 @@ export function LoginForm({ error, loading, onSubmit }: LoginFormProps): ReactEl
         autoFocus
         error={!!errors?.email}
         helperText={errors?.email?.message}
+        inputProps={{
+          "data-testid": "login-form__email-input",
+        }}
         {...register("email")}
       />
 
@@ -86,6 +95,9 @@ export function LoginForm({ error, loading, onSubmit }: LoginFormProps): ReactEl
         type="password"
         error={!!errors?.password}
         helperText={errors?.password?.message}
+        inputProps={{
+          "data-testid": "login-form__password-input",
+        }}
         {...register("password")}
       />
       <Stack direction="row">
@@ -96,6 +108,7 @@ export function LoginForm({ error, loading, onSubmit }: LoginFormProps): ReactEl
             variant="outlined"
             color="primary"
             sx={{ mt: 3, mb: 2, width: 150 }}
+            data-testid="login-form__submit-button"
           >
             {intl.formatMessage({
               description: "LoginFormButton: Sign in",

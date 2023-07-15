@@ -26,7 +26,13 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordF
     .shape({
       email: yup
         .string()
-        .email()
+        .email(
+          intl.formatMessage({
+            description: "ResetPasswordFormValidation - Email must be valid",
+            defaultMessage: "Email must be valid",
+            id: "NkLLdE",
+          })
+        )
         .required(
           intl.formatMessage({
             description: "ResetPasswordFormValidation - Email is required",
@@ -60,9 +66,19 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordF
         autoFocus
         error={!!errors?.email}
         helperText={errors?.email?.message}
+        inputProps={{
+          "data-testid": "forgot-password-form__email-input",
+        }}
         {...register("email")}
       />
-      <LoadingButton type="submit" fullWidth loading={loading} variant="outlined" sx={{ mt: 3, mb: 2 }}>
+      <LoadingButton
+        type="submit"
+        fullWidth
+        loading={loading}
+        variant="outlined"
+        sx={{ mt: 3, mb: 2 }}
+        data-testid="forgot-password-form__submit-button"
+      >
         Send
       </LoadingButton>
       <AutoAlert text={error} autoClose severity="error" />

@@ -2,7 +2,10 @@ import type { ReactElement } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
+import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within, screen } from "@storybook/testing-library";
+import { sleep } from "react-utils";
 import { CommonDecorator } from "storybook-base";
 import type { IconMenuButtonProps as Props } from "./IconMenuButton";
 import { IconMenuButton as Component } from "./IconMenuButton";
@@ -35,15 +38,24 @@ function render(args: Props): ReactElement {
   );
 }
 
-export const IconWithSimpleMenu = {
+export const IconWithSimpleMenu: Story = {
   args: {
     icon: <SearchIcon />,
   },
   render: (args) => (
     <Component {...args}>
-      <div>This is an item</div>
+      <div data-testid="item">This is an item</div>
     </Component>
   ),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    userEvent.click(canvas.getByTestId("icon-menu-button__icon-button"));
+
+    await sleep(500);
+
+    expect(screen.getByText("This is an item")).toBeInTheDocument();
+  },
 } satisfies Story;
 
 export const IconWithMenuItems = {

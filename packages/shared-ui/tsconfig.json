@@ -6,6 +6,7 @@
       ".": ["."]
     },
     "types": [
+      "@types/testing-library__jest-dom",
       "mui-theme/types",
       "tsconfig/types"
     ],
