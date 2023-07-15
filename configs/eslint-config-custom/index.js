@@ -86,7 +86,7 @@ module.exports = {
   "overrides": [
     {
       // Disable for Storybook
-      "files": ["*stories.tsx"],
+      "files": ["*stories.tsx", "main.ts"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off"
       }

@@ -1,19 +1,19 @@
 const path = require("path");
 
-const FILTER_STORIES = [`${path.sep}storybook${path.sep}`]
+const FILTER_STORIES = [`${path.sep}storybook${path.sep}`];
 
-module.exports = testPaths => {
+module.exports = (testPaths) => {
   const allowedPaths = testPaths
-    .filter(fileName => {
+    .filter((fileName) => {
       for (const filter of FILTER_STORIES) {
         if (fileName.includes(filter)) {
           return false;
         }
       }
-      
+
       return true;
     })
-    .map(test => ({ test }));
+    .map((test) => ({ test }));
 
   return {
     filtered: allowedPaths,

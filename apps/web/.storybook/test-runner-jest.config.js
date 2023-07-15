@@ -1,13 +1,9 @@
-const { getJestConfig } = require("@storybook/test-runner");
+import { getJestConfig } from "@storybook/test-runner";
 
 /**
  * @type {import('@jest/types').Config.InitialOptions}
  */
-module.exports = {
-  // The default configuration comes from @storybook/test-runner
+export default {
   ...getJestConfig(),
-  /** Add your own overrides below
-   * @see https://jestjs.io/docs/configuration
-   */
-  filter: "./.storybook/test-runner-filter.js"
+  filter: "./.storybook/test-runner-filter.js",
 };

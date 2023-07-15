@@ -47,10 +47,10 @@ const config: StorybookConfig = {
             if (warning.code === "MODULE_LEVEL_DIRECTIVE") {
               return;
             }
-            warn(warning)
-          }
-        }
-      }
+            warn(warning);
+          },
+        },
+      },
     } satisfies UserConfig);
   },
 };
