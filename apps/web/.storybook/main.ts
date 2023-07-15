@@ -1,4 +1,3 @@
-import type { AddonOptionsVite } from "@storybook/addon-coverage";
 import type { StorybookConfig } from "@storybook/react-vite";
 import type { UserConfig } from "vite";
 import { mergeConfig } from "vite";
