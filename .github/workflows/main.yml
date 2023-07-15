@@ -55,6 +55,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Install Playwright
+        run: npx playwright install
+        if: steps.playwright-cache.outputs.cache-hit != 'true'        
+        
       - name: Lint application
         run: pnpm lint
 
