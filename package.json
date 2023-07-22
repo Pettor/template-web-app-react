@@ -60,7 +60,7 @@
     "@storybook/storybook-deployer": "2.8.16",
     "@storybook/test-runner": "0.11.0",
     "@storybook/testing-library": "0.2.0",
-    "@types/node": "20.4.3",
+    "@types/node": "20.4.4",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "@types/testing-library__jest-dom": "5.14.8",
