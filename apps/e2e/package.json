@@ -1,0 +1,14 @@
+{
+  "name": "e2e",
+  "private": true,
+  "version": "0.5.0",
+  "license": "MIT",
+  "scripts": {
+    "test:e2e": "npx playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.36.2",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
+  }
+}

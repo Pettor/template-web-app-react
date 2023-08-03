@@ -35,6 +35,9 @@
     "test": {
       "cache": false
     },
+    "test:e2e": {
+      "cache": false
+    },
     "test:unit": {
       "cache": false,
       "dependsOn": ["storybook:build"],
