@@ -10,7 +10,7 @@
     "clean:all": "pnpm clean node_modules"
   },
   "dependencies": {
-    "@fontsource/rubik": "5.0.7"
+    "@fontsource/rubik": "5.0.8"
   },
   "devDependencies": {
     "tsconfig": "workspace:*"
