@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "3.2.0",
-    "@tanstack/react-query": "4.32.6",
+    "@tanstack/react-query": "4.33.0",
     "axios": "1.4.0",
     "axios-auth-refresh": "3.3.6",
     "immer": "10.0.2",
