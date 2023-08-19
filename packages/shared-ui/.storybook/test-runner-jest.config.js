@@ -5,5 +5,5 @@ import { getJestConfig } from "@storybook/test-runner";
  */
 export default {
   ...getJestConfig(),
-  filter: "./.storybook/test-runner-filter.js",
+  filter: "./packages/shared-ui/.storybook/test-runner-filter.js",
 };
