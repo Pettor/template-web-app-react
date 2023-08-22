@@ -96,6 +96,9 @@ importers:
       '@storybook/testing-library':
         specifier: 0.2.0
         version: 0.2.0
+      '@types/jest':
+        specifier: 29.5.3
+        version: 29.5.3
       '@types/node':
         specifier: 20.5.2
         version: 20.5.2
