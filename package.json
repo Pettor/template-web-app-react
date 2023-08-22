@@ -67,7 +67,6 @@
     "@types/testing-library__jest-dom": "5.14.9",
     "http-server": "14.1.1",
     "husky": "8.0.3",
-    "istanbul": "0.4.5",
     "move-cli": "2.0.0",
     "nyc": "15.1.0",
     "playwright": "1.37.1",
