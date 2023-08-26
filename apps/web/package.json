@@ -24,7 +24,7 @@
     "storybook:test": "test-storybook --url http://127.0.0.1:9055"
   },
   "dependencies": {
-    "@hookform/resolvers": "3.2.0",
+    "@hookform/resolvers": "3.3.0",
     "@tanstack/react-query": "4.33.0",
     "axios": "1.4.0",
     "axios-auth-refresh": "3.3.6",
