@@ -148,7 +148,7 @@ jobs:
         continue-on-error: true
 
       - name: Publish test summary
-        uses: mikepenz/action-junit-report@v3
+        uses: mikepenz/action-junit-report@v4
         with:
           report_paths: "**/.junit/*.xml"
           check_name: "Test Summary"
