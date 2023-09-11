@@ -32,13 +32,13 @@
     "@emotion/core": "11.0.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
-    "@mui/icons-material": "5.14.6",
-    "@mui/lab": "5.0.0-alpha.141",
-    "@mui/material": "5.14.6",
+    "@mui/icons-material": "5.14.8",
+    "@mui/lab": "5.0.0-alpha.143",
+    "@mui/material": "5.14.8",
     "concurrently": "8.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-intl": "6.4.4",
+    "react-intl": "6.4.6",
     "wait-on": "7.0.1"
   },
   "devDependencies": {
