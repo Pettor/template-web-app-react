@@ -31,7 +31,7 @@
     "react-utils": "workspace:*",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*",
-    "vite-tsconfig-paths": "4.2.0"
+    "vite-tsconfig-paths": "4.2.1"
   },
   "jest-junit": {
     "suiteName": "shared-ui tests",
