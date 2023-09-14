@@ -35,6 +35,7 @@ export function AutoAlert({
     if (userClose) {
       setUserClose(false);
     }
+
     return true;
   }, [text]);
 

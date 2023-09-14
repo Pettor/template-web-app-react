@@ -1,16 +1,16 @@
-import type { ReactElement, ReactNode } from "react";
+import type { Dispatch, ReactElement, ReactNode } from "react";
 import { createContext, useEffect, useMemo, useReducer } from "react";
 import { useRunOnce } from "react-utils";
 import { useApi } from "../api/UseApi";
 import type { AuthActions, AuthState } from "./AuthReducer";
 import { AuthReducer } from "./AuthReducer";
 
-interface AuthContext {
+interface IAuthContext {
   state: AuthState;
-  dispatch: React.Dispatch<AuthActions>;
+  dispatch: Dispatch<AuthActions>;
 }
 
-const AuthContext = createContext<AuthContext>({} as AuthContext);
+const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const initialState: AuthState = {
   status: "idle",
@@ -54,5 +54,5 @@ function AuthProvider({ children }: Props): ReactElement {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-export type { AuthContext as IAuthContext };
+export type { IAuthContext };
 export { AuthProvider, AuthContext };
