@@ -159,6 +159,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
+      mocks-playwright:
+        specifier: workspace:*
+        version: link:../../packages/mocks-playwright
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/tsconfig
@@ -276,6 +279,21 @@ importers:
         version: 0.6.13(eslint@8.49.0)(typescript@5.2.2)
 
   configs/tsconfig: {}
+
+  packages/mocks-playwright:
+    devDependencies:
+      '@mocks-server/admin-api-client':
+        specifier: 7.0.1
+        version: 7.0.1
+      '@mocks-server/admin-api-paths':
+        specifier: 5.0.0
+        version: 5.0.0
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../configs/eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
 
   packages/mui-theme:
     dependencies:
@@ -2873,6 +2891,16 @@ packages:
       '@types/mdx': 2.0.7
       '@types/react': 18.2.21
       react: 18.2.0
+    dev: true
+
+  /@mocks-server/admin-api-client@7.0.1:
+    resolution: {integrity: sha512-UFM5xWM3WRCJJYO4tsolxy+tfhEMJRA92rkW3gFnum4pQ6cyzhhUmwNGBBP645cWNUUcRzyQxsqVJh7BdTDk5Q==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@mocks-server/admin-api-paths': 5.0.0
+      cross-fetch: 3.1.6
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /@mocks-server/admin-api-paths@5.0.0:
@@ -7680,6 +7708,14 @@ packages:
     hasBin: true
     dependencies:
       cross-spawn: 7.0.3
+    dev: true
+
+  /cross-fetch@3.1.6:
+    resolution: {integrity: sha512-riRvo06crlE8HiqOwIpQhxwdOk4fOeR7FVM/wXoxchFEqMNUjvbs3bfo4OTgMEMHzppd4DxFBDbyySj8Cv781g==}
+    dependencies:
+      node-fetch: 2.7.0
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /cross-spawn@7.0.3:

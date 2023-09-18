@@ -1,0 +1,18 @@
+{
+  "name": "mocks-playwright",
+  "version": "0.5.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "pnpm clean node_modules",
+    "lint": "eslint ./src --ext .ts",
+    "lint:fix": "pnpm lint --fix"
+  },
+  "devDependencies": {
+    "@mocks-server/admin-api-client": "7.0.1",
+    "@mocks-server/admin-api-paths": "5.0.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*" 
+  }
+}
