@@ -15,7 +15,7 @@ module.exports = {
     proxyRoutesHandler: {},
     adminApi: {
       // Port number for the admin API server to be listening at
-      //port: 3110,
+      port: 3011,
       // Host for the admin API server
       //host: "0.0.0.0",
       https: {
@@ -55,7 +55,7 @@ module.exports = {
   },
   server: {
     // Port number for the server to be listening at
-    //port: 3100,
+    port: 3010,
     // Host for the server
     //host: "0.0.0.0",
     cors: {
