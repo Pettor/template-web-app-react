@@ -23,7 +23,7 @@ export function HomePage(): ReactElement {
             <ThemeToggleExt />
           </AppHeaderGroup>
           <AppHeaderGroup dividerStyle="none">
-            <IconMenuButton icon={<AvatarIcon />}>
+            <IconMenuButton icon={<AvatarIcon />} testId="home-page__menu-button">
               <ProfileCardExt />
             </IconMenuButton>
             <IconButton onClick={handleGithubClick}>
