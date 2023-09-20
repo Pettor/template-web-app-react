@@ -175,3 +175,46 @@ jobs:
         with:
           recreate: true
           path: code-coverage-results.md
+
+  test-e2e:
+    name: Test E2E
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.4.0
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build application
+        run: pnpm build
+
+      - name: Run E2E tests
+        run: pnpm test:e2e
