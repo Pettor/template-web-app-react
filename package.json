@@ -5,7 +5,7 @@
   "license": "MIT",
   "packageManager": "pnpm@8.7.6",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky install && playwright install",
     "build": "turbo run build --no-daemon",
     "clean": "turbo run clean --no-daemon && rimraf output",
     "clean:all": "turbo run clean:all --no-daemon",
