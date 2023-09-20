@@ -17,23 +17,19 @@ export function ForgotPasswordView({ appName, resetForm }: ForgotPasswordViewPro
     <BasicLayout>
       <LogoFull appName={appName} size="medium" />
       <br />
-      <Typography
-        textAlign="center"
-        dangerouslySetInnerHTML={{
-          __html: intl.formatMessage(
-            {
-              description: "ResetPasswordView - Reset password description",
-              defaultMessage:
-                "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
-              id: "LSY7eb",
-            },
-            {
-              appName: appName,
-              b: (...chunks) => `<b>${chunks}</b>`,
-            }
-          ),
-        }}
-      />
+      <Typography textAlign="center">
+        {intl.formatMessage(
+          {
+            description: "ResetPasswordView - Reset password description",
+            defaultMessage:
+              "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
+            id: "LSY7eb",
+          },
+          {
+            appName: appName,
+          }
+        )}
+      </Typography>
       <ForgotPasswordForm {...resetForm} />
     </BasicLayout>
   );
