@@ -17,21 +17,18 @@ export function PwaUpdateDialog({ appName, open, onUpdate }: PwaUpdateDialogProp
     <Snackbar open={open} anchorOrigin={{ vertical: "bottom", horizontal: "center" }}>
       <PwaUpdateDialogContainer>
         <Stack spacing={2} direction="row" sx={{ alignItems: "center" }}>
-          <PwaUpdateDialogDescription
-            dangerouslySetInnerHTML={{
-              __html: intl.formatMessage(
-                {
-                  description: "PwaUpdateDialog - Update available description",
-                  defaultMessage: "A new version of <b>{appName}</b> is available",
-                  id: "GjhGOZ",
-                },
-                {
-                  appName: appName,
-                  b: (...chunks) => `<b>${chunks}</b>`,
-                }
-              ),
-            }}
-          />
+          <PwaUpdateDialogDescription>
+            {intl.formatMessage(
+              {
+                description: "PwaUpdateDialog - Update available description",
+                defaultMessage: "A new version of <b>{appName}</b> is available",
+                id: "GjhGOZ",
+              },
+              {
+                appName: appName,
+              }
+            )}
+          </PwaUpdateDialogDescription>
           <Button variant="contained" color="primary" onClick={onUpdate}>
             {intl.formatMessage({
               description: "PwaUpdateDialog - Update button",
