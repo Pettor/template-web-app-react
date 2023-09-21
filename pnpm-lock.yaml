@@ -159,9 +159,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
-      mocks-playwright:
+      mocks-client:
         specifier: workspace:*
-        version: link:../../packages/mocks-playwright
+        version: link:../../packages/mocks-client
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/tsconfig
@@ -280,7 +280,7 @@ importers:
 
   configs/tsconfig: {}
 
-  packages/mocks-playwright:
+  packages/mocks-client:
     devDependencies:
       '@mocks-server/admin-api-client':
         specifier: 7.0.1

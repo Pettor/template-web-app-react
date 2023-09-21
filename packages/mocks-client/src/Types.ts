@@ -1,12 +1,11 @@
 import type { ApiClientConfig } from "@mocks-server/admin-api-client";
 
-export interface MocksServerPlaywrightApiClientConfig extends ApiClientConfig {
+export interface MocksServerApiClientConfig extends ApiClientConfig {
   enabled?: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type PlaywrightEnvVarValue = any;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type EnvVarValue = any;
 export type ArrayOfValues = (string | number | boolean)[];
 
 export type Log = string;

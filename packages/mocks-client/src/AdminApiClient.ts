@@ -2,8 +2,8 @@ import { AdminApiClient as BaseAdminApiClient } from "@mocks-server/admin-api-cl
 import type { MocksServerConfig, RouteVariantId, Protocol } from "@mocks-server/admin-api-client";
 import { HTTPS_PROTOCOL, DEFAULT_PROTOCOL, DEFAULT_PORT, DEFAULT_CLIENT_HOST } from "@mocks-server/admin-api-paths";
 
-import { isUndefined, isFalsy } from "./helpers";
-import type { MocksServerPlaywrightApiClientConfig } from "./types";
+import { isUndefined, isFalsy } from "./Helpers";
+import type { MocksServerApiClientConfig } from "./Types";
 
 function doNothing() {
   return Promise.resolve();
@@ -11,13 +11,13 @@ function doNothing() {
 
 export class AdminApiClient {
   private _apiClient: BaseAdminApiClient;
-  private _enabled: MocksServerPlaywrightApiClientConfig["enabled"] = true;
-  private _port: MocksServerPlaywrightApiClientConfig["port"] = DEFAULT_PORT;
-  private _host: MocksServerPlaywrightApiClientConfig["host"] = DEFAULT_CLIENT_HOST;
+  private _enabled: MocksServerApiClientConfig["enabled"] = true;
+  private _port: MocksServerApiClientConfig["port"] = DEFAULT_PORT;
+  private _host: MocksServerApiClientConfig["host"] = DEFAULT_CLIENT_HOST;
   private _protocol: Protocol = DEFAULT_PROTOCOL;
 
   constructor(
-    clientConfig: MocksServerPlaywrightApiClientConfig = {
+    clientConfig: MocksServerApiClientConfig = {
       enabled: true,
       port: DEFAULT_PORT,
       host: DEFAULT_CLIENT_HOST,
@@ -53,7 +53,7 @@ export class AdminApiClient {
     return this._apiClient.restoreRouteVariants();
   }
 
-  public configClient(customConfig: MocksServerPlaywrightApiClientConfig = {}) {
+  public configClient(customConfig: MocksServerApiClientConfig = {}) {
     if (!isUndefined(customConfig.enabled)) {
       this._enabled = customConfig.enabled;
     }
