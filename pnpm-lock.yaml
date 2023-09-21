@@ -54,6 +54,9 @@ importers:
       '@mocks-server/main':
         specifier: 4.1.0
         version: 4.1.0
+      '@playwright/test':
+        specifier: 1.36.2
+        version: 1.36.2
       '@storybook/addon-a11y':
         specifier: 7.4.2
         version: 7.4.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
@@ -153,15 +156,15 @@ importers:
 
   apps/e2e:
     devDependencies:
-      '@playwright/test':
-        specifier: ^1.36.2
-        version: 1.38.0
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
       mocks-client:
         specifier: workspace:*
         version: link:../../packages/mocks-client
+      playwright-test:
+        specifier: workspace:*
+        version: link:../../packages/playwright-test
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/tsconfig
@@ -301,6 +304,15 @@ importers:
         specifier: 5.0.12
         version: 5.0.12
     devDependencies:
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
+
+  packages/playwright-test:
+    devDependencies:
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../configs/eslint-config-custom
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/tsconfig
@@ -3457,12 +3469,15 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /@playwright/test@1.38.0:
-    resolution: {integrity: sha512-xis/RXXsLxwThKnlIXouxmIvvT3zvQj1JE39GsNieMUrMpb3/GySHDh2j8itCG22qKVD4MYLBp7xB73cUW/UUw==}
+  /@playwright/test@1.36.2:
+    resolution: {integrity: sha512-2rVZeyPRjxfPH6J0oGJqE8YxiM1IBRyM8hyrXYK7eSiAqmbNhxwcLa7dZ7fy9Kj26V7FYia5fh9XJRq4Dqme+g==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright: 1.38.0
+      '@types/node': 20.6.2
+      playwright-core: 1.36.2
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /@popperjs/core@2.11.8:
@@ -12395,6 +12410,12 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       find-up: 5.0.0
+    dev: true
+
+  /playwright-core@1.36.2:
+    resolution: {integrity: sha512-sQYZt31dwkqxOrP7xy2ggDfEzUxM1lodjhsQ3NMMv5uGTRDsLxU0e4xf4wwMkF2gplIxf17QMBCodSFgm6bFVQ==}
+    engines: {node: '>=16'}
+    hasBin: true
     dev: true
 
   /playwright-core@1.37.1:
