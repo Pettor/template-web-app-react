@@ -19,13 +19,13 @@ function AlertManagerProvider({ children }: Props): ReactElement {
   function addAlert(message: string) {
     const id = Math.random().toString(36).substr(2, 9);
 
-    setAlerts((prevAlerts) => [...prevAlerts, <AutoAlert key={id} text={message} autoClose timeout={2000} />]);   
+    setAlerts((prevAlerts) => [...prevAlerts, <Alert key={id} text={message} autoClose timeout={2000} />]);
   }
 
   const value = useMemo(() => {
     return {
       addAlert,
-      alerts
+      alerts,
     };
   }, [addAlert, alerts]);
 

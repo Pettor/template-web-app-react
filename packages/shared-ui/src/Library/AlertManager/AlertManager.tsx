@@ -1,7 +1,7 @@
-import { AutoAlert } from "Library/Alert/AutoAlert";
+import type { ReactElement } from "react";
 import { useAlertManager } from "./UseAlertManager";
 
-export function AlertManager() {
+export function AlertManager(): ReactElement {
   const { alerts } = useAlertManager();
   console.log(alerts);
 

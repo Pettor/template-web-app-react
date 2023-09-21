@@ -1,1 +1,1 @@
-export * from "./AutoAlert";
+export * from "./Alert";

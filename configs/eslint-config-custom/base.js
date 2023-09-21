@@ -8,10 +8,11 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:storybook/recommended"
   ],
   "ignorePatterns": ["**/dist/*", "**/node_modules/*"],
-  "plugins": ["react", "@typescript-eslint", "prettier", "formatjs", "import"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "formatjs", "import"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -60,6 +61,7 @@ module.exports = {
         "namedComponents": ["function-declaration"]
       }
     ],
+    "react-hooks/exhaustive-deps": "error",
     // Typescript
     "@typescript-eslint/no-empty-interface": [
       "error",

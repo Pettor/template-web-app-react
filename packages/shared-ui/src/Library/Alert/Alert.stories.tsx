@@ -2,8 +2,8 @@ import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { CommonDecorator } from "storybook-base";
-import { AutoAlert as Component } from "./AutoAlert";
-import type { AutoAlertProps } from "./AutoAlert";
+import { Alert as Component } from "./Alert";
+import type { AutoAlertProps } from "./Alert";
 
 const meta = {
   title: "Library/Alerts",
