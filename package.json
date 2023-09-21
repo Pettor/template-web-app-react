@@ -5,7 +5,7 @@
   "license": "MIT",
   "packageManager": "pnpm@8.7.6",
   "scripts": {
-    "prepare": "husky install && turbo run prepare --no-daemon --concurrency 20",
+    "prepare": "husky install",
     "build": "turbo run build --no-daemon",
     "clean": "turbo run clean --no-daemon && rimraf output",
     "clean:all": "turbo run clean:all --no-daemon",
