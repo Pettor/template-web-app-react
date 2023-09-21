@@ -40,7 +40,6 @@
   "devDependencies": {
     "@formatjs/cli": "6.1.5",
     "@vitejs/plugin-react-swc": "3.3.2",
-    "cross-env": "7.0.3",
     "eslint-config-custom": "workspace:*",
     "http-server": "14.1.1",
     "start-server-and-test": "2.0.0",

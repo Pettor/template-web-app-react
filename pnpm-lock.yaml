@@ -111,6 +111,9 @@ importers:
       '@types/testing-library__jest-dom':
         specifier: 5.14.9
         version: 5.14.9
+      cross-env:
+        specifier: 7.0.3
+        version: 7.0.3
       http-server:
         specifier: 14.1.1
         version: 14.1.1
@@ -162,9 +165,6 @@ importers:
       mocks-client:
         specifier: workspace:*
         version: link:../../packages/mocks-client
-      playwright-test:
-        specifier: workspace:*
-        version: link:../../packages/playwright-test
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/tsconfig
@@ -217,9 +217,6 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: 3.3.2
         version: 3.3.2(vite@4.4.9)
-      cross-env:
-        specifier: 7.0.3
-        version: 7.0.3
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
@@ -304,18 +301,6 @@ importers:
         specifier: 5.0.12
         version: 5.0.12
     devDependencies:
-      tsconfig:
-        specifier: workspace:*
-        version: link:../../configs/tsconfig
-
-  packages/playwright-test:
-    devDependencies:
-      '@playwright/test':
-        specifier: 1.36.2
-        version: 1.36.2
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../../configs/eslint-config-custom
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/tsconfig

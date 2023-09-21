@@ -218,3 +218,10 @@ jobs:
 
       - name: Run E2E tests
         run: pnpm test:e2e
+
+      - name: Publish test summary
+        uses: mikepenz/action-junit-report@v4
+        with:
+          report_paths: "**/.test-results/*.xml"
+          check_name: "Test Summary"
+        if: always()
