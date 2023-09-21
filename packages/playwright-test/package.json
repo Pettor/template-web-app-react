@@ -10,6 +10,7 @@
     "lint:fix": "pnpm lint --fix"
   },
   "devDependencies": {
+    "@playwright/test": "1.36.2",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*" 
   }

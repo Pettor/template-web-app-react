@@ -5,7 +5,7 @@
   "license": "MIT",
   "packageManager": "pnpm@8.7.6",
   "scripts": {
-    "prepare": "husky install && playwright install",
+    "prepare": "husky install && turbo run prepare --no-daemon --concurrency 20",
     "build": "turbo run build --no-daemon",
     "clean": "turbo run clean --no-daemon && rimraf output",
     "clean:all": "turbo run clean:all --no-daemon",
@@ -49,7 +49,6 @@
     "@commitlint/config-conventional": "17.7.0",
     "@commitlint/types": "17.4.4",
     "@mocks-server/main": "4.1.0",
-    "@playwright/test": "1.36.2",
     "@storybook/addon-a11y": "7.4.2",
     "@storybook/addon-actions": "7.4.2",
     "@storybook/addon-coverage": "0.0.9",

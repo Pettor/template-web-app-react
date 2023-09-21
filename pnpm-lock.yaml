@@ -54,9 +54,6 @@ importers:
       '@mocks-server/main':
         specifier: 4.1.0
         version: 4.1.0
-      '@playwright/test':
-        specifier: 1.36.2
-        version: 1.36.2
       '@storybook/addon-a11y':
         specifier: 7.4.2
         version: 7.4.2(@types/react-dom@18.2.7)(@types/react@18.2.21)(react-dom@18.2.0)(react@18.2.0)
@@ -156,6 +153,9 @@ importers:
 
   apps/e2e:
     devDependencies:
+      '@playwright/test':
+        specifier: 1.36.2
+        version: 1.36.2
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
@@ -310,6 +310,9 @@ importers:
 
   packages/playwright-test:
     devDependencies:
+      '@playwright/test':
+        specifier: 1.36.2
+        version: 1.36.2
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom

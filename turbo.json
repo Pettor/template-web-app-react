@@ -3,6 +3,9 @@
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": ["PORT"],
   "pipeline": {
+    "prepare": {
+      "cache": true
+    },
     "build": {
       "outputs": [
         "dist/**",

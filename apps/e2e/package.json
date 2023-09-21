@@ -4,9 +4,11 @@
   "version": "0.5.0",
   "license": "MIT",
   "scripts": {
+    "prepare": "playwright install",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "1.36.2",
     "eslint-config-custom": "workspace:*",
     "mocks-client": "workspace:*",
     "playwright-test": "workspace:*",
