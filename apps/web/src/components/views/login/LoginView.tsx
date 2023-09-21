@@ -33,7 +33,12 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
         <br />
         <Grid container>
           <Grid item xs>
-            <Link component="button" onClick={handleForgotPassword} variant="body2">
+            <Link
+              component="button"
+              onClick={handleForgotPassword}
+              variant="body2"
+              data-testid="login-view__reset-password-button"
+            >
               {intl.formatMessage({
                 description: "LoginViewLink - Forgot password",
                 defaultMessage: "Forgot password?",
@@ -42,7 +47,7 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
             </Link>
           </Grid>
           <Grid item>
-            <Link component="button" onClick={handleSignUp} variant="body2">
+            <Link component="button" onClick={handleSignUp} variant="body2" data-testid="login-view__sign-up-button">
               {intl.formatMessage({
                 description: "LoginViewLink - Don't have an account? Sign Up",
                 defaultMessage: "Don't have an account? Sign up",

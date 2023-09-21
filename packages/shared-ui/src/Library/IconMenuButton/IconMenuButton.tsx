@@ -5,10 +5,11 @@ import { AppMenuResponsive } from "../../Navigation/AppMenuResponsive";
 
 export interface IconMenuButtonProps {
   icon: ReactNode;
+  testId?: string;
   children?: ReactElement | ReactElement[];
 }
 
-export function IconMenuButton({ icon, children }: IconMenuButtonProps): ReactElement {
+export function IconMenuButton({ icon, testId, children }: IconMenuButtonProps): ReactElement {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
   function handleClick(event: React.MouseEvent<HTMLElement>): void {
@@ -21,7 +22,7 @@ export function IconMenuButton({ icon, children }: IconMenuButtonProps): ReactEl
 
   return (
     <Box>
-      <IconButton onClick={handleClick} data-testid="icon-menu-button__icon-button">
+      <IconButton onClick={handleClick} data-testid={testId}>
         {icon}
       </IconButton>
       {anchorEl && (

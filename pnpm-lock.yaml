@@ -111,6 +111,9 @@ importers:
       '@types/testing-library__jest-dom':
         specifier: 5.14.9
         version: 5.14.9
+      cross-env:
+        specifier: 7.0.3
+        version: 7.0.3
       http-server:
         specifier: 14.1.1
         version: 14.1.1
@@ -150,6 +153,21 @@ importers:
       vite:
         specifier: 4.4.9
         version: 4.4.9(@types/node@20.6.2)(less@4.2.0)
+
+  apps/e2e:
+    devDependencies:
+      '@playwright/test':
+        specifier: 1.36.2
+        version: 1.36.2
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../configs/eslint-config-custom
+      mocks-client:
+        specifier: workspace:*
+        version: link:../../packages/mocks-client
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
 
   apps/mock:
     devDependencies:
@@ -199,9 +217,6 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: 3.3.2
         version: 3.3.2(vite@4.4.9)
-      cross-env:
-        specifier: 7.0.3
-        version: 7.0.3
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
@@ -264,6 +279,21 @@ importers:
         version: 0.6.13(eslint@8.49.0)(typescript@5.2.2)
 
   configs/tsconfig: {}
+
+  packages/mocks-client:
+    devDependencies:
+      '@mocks-server/admin-api-client':
+        specifier: 7.0.1
+        version: 7.0.1
+      '@mocks-server/admin-api-paths':
+        specifier: 5.0.0
+        version: 5.0.0
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../configs/eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
 
   packages/mui-theme:
     dependencies:
@@ -2863,6 +2893,16 @@ packages:
       react: 18.2.0
     dev: true
 
+  /@mocks-server/admin-api-client@7.0.1:
+    resolution: {integrity: sha512-UFM5xWM3WRCJJYO4tsolxy+tfhEMJRA92rkW3gFnum4pQ6cyzhhUmwNGBBP645cWNUUcRzyQxsqVJh7BdTDk5Q==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@mocks-server/admin-api-paths': 5.0.0
+      cross-fetch: 3.1.6
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /@mocks-server/admin-api-paths@5.0.0:
     resolution: {integrity: sha512-HlFhNnHtvY9ZZGthaatAFvGFofTCs1Yj3kxeb5EmvdHBgNC+dZxfMjXWCvuIhp7qFNaTFarPgGJ3Zsm7+o/siw==}
     engines: {node: '>=14.x'}
@@ -3415,6 +3455,17 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       tslib: 2.6.2
+    dev: true
+
+  /@playwright/test@1.36.2:
+    resolution: {integrity: sha512-2rVZeyPRjxfPH6J0oGJqE8YxiM1IBRyM8hyrXYK7eSiAqmbNhxwcLa7dZ7fy9Kj26V7FYia5fh9XJRq4Dqme+g==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dependencies:
+      '@types/node': 20.6.2
+      playwright-core: 1.36.2
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /@popperjs/core@2.11.8:
@@ -7660,6 +7711,14 @@ packages:
     hasBin: true
     dependencies:
       cross-spawn: 7.0.3
+    dev: true
+
+  /cross-fetch@3.1.6:
+    resolution: {integrity: sha512-riRvo06crlE8HiqOwIpQhxwdOk4fOeR7FVM/wXoxchFEqMNUjvbs3bfo4OTgMEMHzppd4DxFBDbyySj8Cv781g==}
+    dependencies:
+      node-fetch: 2.7.0
+    transitivePeerDependencies:
+      - encoding
     dev: true
 
   /cross-spawn@7.0.3:
@@ -12339,6 +12398,12 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       find-up: 5.0.0
+    dev: true
+
+  /playwright-core@1.36.2:
+    resolution: {integrity: sha512-sQYZt31dwkqxOrP7xy2ggDfEzUxM1lodjhsQ3NMMv5uGTRDsLxU0e4xf4wwMkF2gplIxf17QMBCodSFgm6bFVQ==}
+    engines: {node: '>=16'}
+    hasBin: true
     dev: true
 
   /playwright-core@1.37.1:

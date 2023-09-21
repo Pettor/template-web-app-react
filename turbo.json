@@ -3,6 +3,9 @@
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": ["PORT"],
   "pipeline": {
+    "prepare": {
+      "cache": true
+    },
     "build": {
       "outputs": [
         "dist/**",
@@ -33,6 +36,9 @@
       "cache": false
     },
     "test": {
+      "cache": false
+    },
+    "test:e2e:env": {
       "cache": false
     },
     "test:unit": {

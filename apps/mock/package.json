@@ -8,7 +8,8 @@
     "clean:all": "pnpm clean",
     "mocks": "mocks-server",
     "lint": "eslint ./mocks --ext .json",
-    "lint:fix": "pnpm lint --fix"
+    "lint:fix": "pnpm lint --fix",
+    "test:e2e:env": "mocks-server --no-plugins.inquirerCli.enabled --log=silent"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*"

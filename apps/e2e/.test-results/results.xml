@@ -1,0 +1,10 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="3.8160609999895097">
+<testsuite name="specs\auth.spec.ts" timestamp="2023-09-21T17:53:54.347Z" hostname="chromium" tests="3" failures="0" skipped="0" time="3.15" errors="0">
+<testcase name="auth.loggedin › do login attempt" classname="specs\auth.spec.ts" time="1.269">
+</testcase>
+<testcase name="auth.refreshtoken › do refresh" classname="specs\auth.spec.ts" time="0.669">
+</testcase>
+<testcase name="auth.logout › do logout attempt" classname="specs\auth.spec.ts" time="1.212">
+</testcase>
+</testsuite>
+</testsuites>
