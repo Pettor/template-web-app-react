@@ -173,7 +173,6 @@ jobs:
       - name: Update summary with coverage report
         run: |
           cat eslint-report.md >> $GITHUB_STEP_SUMMARY
-        if: ${{ failure() }}
 
       - name: "Upload coverage report"
         uses: actions/upload-artifact@v3
