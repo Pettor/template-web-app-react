@@ -23,8 +23,8 @@ export const WithData: Story = {
     const canvas = within(canvasElement);
 
     // No text should be visible during loading
-    expect(canvas.getByTestId("profile-card__name-text")).toHaveTextContent("John Doe");
-    expect(canvas.getByTestId("profile-card__email-text")).toHaveTextContent("john.doe@gmail.com");
+    await expect(canvas.getByTestId("profile-card__name-text")).toHaveTextContent("John Doe");
+    await expect(canvas.getByTestId("profile-card__email-text")).toHaveTextContent("john.doe@gmail.com");
 
     userEvent.click(canvas.getByTestId("profile-card__logout-button"));
   },
@@ -39,8 +39,8 @@ export const Loading: Story = {
     const canvas = within(canvasElement);
 
     // No text should be visible during loading
-    expect(canvas.getByTestId("profile-card__name-text")).not.toHaveTextContent(/./);
-    expect(canvas.getByTestId("profile-card__email-text")).not.toHaveTextContent(/./);
+    await expect(canvas.getByTestId("profile-card__name-text")).not.toHaveTextContent(/./);
+    await expect(canvas.getByTestId("profile-card__email-text")).not.toHaveTextContent(/./);
   },
 } satisfies Story;
 

@@ -1,16 +1,14 @@
 import type { ReactElement } from "react";
 import { useCallback, useEffect, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import { Alert as MuiAlert, Collapse, IconButton } from "@mui/material";
-import type { AlertProps } from "@mui/material/Alert";
+import { Alert as MuiAlert, Collapse, IconButton, AlertTitle } from "@mui/material";
+import type { AlertOptions } from "./AlertClasses";
 
-export interface AutoAlertProps extends AlertProps {
-  text?: string;
-  timeout?: number;
-  onClosed: () => void;
+export interface AutoAlertProps extends AlertOptions {
+  onClosed?: () => void;
 }
 
-export function Alert({ text, timeout = 10000, ...alertProps }: AutoAlertProps): ReactElement {
+export function Alert({ title, text, timeout = 0, onClosed, ...alertProps }: AutoAlertProps): ReactElement {
   const [closed, setClosed] = useState<boolean>(false);
 
   useEffect(() => {
@@ -27,10 +25,14 @@ export function Alert({ text, timeout = 10000, ...alertProps }: AutoAlertProps):
 
   const handleAlert = useCallback(() => {
     setClosed(true);
-  }, [setClosed]);
+  }, []);
+
+  const handleExited = useCallback(() => {
+    onClosed?.();
+  }, [onClosed]);
 
   return (
-    <Collapse in={!closed}>
+    <Collapse in={!closed} onExit={handleExited}>
       <MuiAlert
         action={
           <IconButton
@@ -44,8 +46,10 @@ export function Alert({ text, timeout = 10000, ...alertProps }: AutoAlertProps):
           </IconButton>
         }
         sx={{ mb: 2 }}
+        data-testid="auto-alert__container"
         {...alertProps}
       >
+        <AlertTitle>{title}</AlertTitle>
         {text}
       </MuiAlert>
     </Collapse>

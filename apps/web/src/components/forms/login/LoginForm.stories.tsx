@@ -33,8 +33,8 @@ export const Success: Story = {
     await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
-    expect(canvas.getByTestId("login-form__email-input")).toHaveValue("email@provider.com");
-    expect(canvas.getByTestId("login-form__password-input")).toHaveValue("password");
+    await expect(canvas.getByTestId("login-form__email-input")).toHaveValue("email@provider.com");
+    await expect(canvas.getByTestId("login-form__password-input")).toHaveValue("password");
   },
 } satisfies Story;
 
@@ -46,7 +46,7 @@ export const EmailMissing: Story = {
     await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
-    expect(canvas.getByText("Email is required")).toBeInTheDocument;
+    await expect(canvas.getByText("Email is required")).toBeInTheDocument();
   },
 } satisfies Story;
 
@@ -59,7 +59,7 @@ export const EmailInvalid: Story = {
     await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
-    expect(canvas.getByText("Email must be valid")).toBeInTheDocument;
+    await expect(canvas.getByText("Email must be valid")).toBeInTheDocument();
   },
 } satisfies Story;
 
@@ -71,6 +71,6 @@ export const PasswordMissing: Story = {
     await userEvent.type(canvas.getByTestId("login-form__email-input"), "email@provider.com");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
-    expect(canvas.getByText("Password is required")).toBeInTheDocument;
+    await expect(canvas.getByText("Password is required")).toBeInTheDocument();
   },
 } satisfies Story;

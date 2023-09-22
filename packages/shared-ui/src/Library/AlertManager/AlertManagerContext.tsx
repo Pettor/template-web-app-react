@@ -1,9 +1,11 @@
-import { AutoAlert } from "Library/Alert/AutoAlert";
 import type { ReactElement } from "react";
-import { createContext, useMemo, useState } from "react";
+import { createContext, useCallback, useMemo, useState } from "react";
+import { Alert } from "Library/Alert/Alert";
+import type { AlertOptions } from "Library/Alert/AlertClasses";
+import { getCrypto } from "react-utils";
 
 interface IAlertManagerContext {
-  addAlert: (message: string) => void;
+  addAlert: (alertOptions: AlertOptions) => void;
   alerts: ReactElement[];
 }
 
@@ -16,11 +18,11 @@ interface Props {
 function AlertManagerProvider({ children }: Props): ReactElement {
   const [alerts, setAlerts] = useState<ReactElement[]>([]);
 
-  function addAlert(message: string) {
-    const id = Math.random().toString(36).substr(2, 9);
+  const addAlert = useCallback((alertOptions: AlertOptions) => {
+    const id = getCrypto().randomUUID();
 
-    setAlerts((prevAlerts) => [...prevAlerts, <Alert key={id} text={message} autoClose timeout={2000} />]);
-  }
+    setAlerts((prevAlerts) => [...prevAlerts, <Alert key={id} {...alertOptions} />]);
+  }, []);
 
   const value = useMemo(() => {
     return {

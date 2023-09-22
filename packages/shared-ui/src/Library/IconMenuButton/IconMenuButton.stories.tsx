@@ -54,7 +54,7 @@ export const IconWithSimpleMenu: Story = {
 
     await sleep(500);
 
-    expect(screen.getByText("This is an item")).toBeInTheDocument();
+    await expect(screen.getByText("This is an item")).toBeInTheDocument();
   },
 } satisfies Story;
 

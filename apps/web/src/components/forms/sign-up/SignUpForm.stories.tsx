@@ -38,14 +38,14 @@ export const Success: Story = {
     await userEvent.type(canvas.getByTestId("sign-up-form__confirmpassword-input"), "password");
     await userEvent.click(canvas.getByTestId("sign-up-form__submit-button"));
 
-    expect(canvas.getByTestId("sign-up-form__username-input")).toHaveValue("username");
-    expect(canvas.getByTestId("sign-up-form__firstname-input")).toHaveValue("john");
-    expect(canvas.getByTestId("sign-up-form__username-input")).toHaveValue("username");
-    expect(canvas.getByTestId("sign-up-form__lastname-input")).toHaveValue("doe");
-    expect(canvas.getByTestId("sign-up-form__email-input")).toHaveValue("email@provider.com");
-    expect(canvas.getByTestId("sign-up-form__phonenumber-input")).toHaveValue("1234567890");
-    expect(canvas.getByTestId("sign-up-form__password-input")).toHaveValue("password");
-    expect(canvas.getByTestId("sign-up-form__confirmpassword-input")).toHaveValue("password");
+    await expect(canvas.getByTestId("sign-up-form__username-input")).toHaveValue("username");
+    await expect(canvas.getByTestId("sign-up-form__firstname-input")).toHaveValue("john");
+    await expect(canvas.getByTestId("sign-up-form__username-input")).toHaveValue("username");
+    await expect(canvas.getByTestId("sign-up-form__lastname-input")).toHaveValue("doe");
+    await expect(canvas.getByTestId("sign-up-form__email-input")).toHaveValue("email@provider.com");
+    await expect(canvas.getByTestId("sign-up-form__phonenumber-input")).toHaveValue("1234567890");
+    await expect(canvas.getByTestId("sign-up-form__password-input")).toHaveValue("password");
+    await expect(canvas.getByTestId("sign-up-form__confirmpassword-input")).toHaveValue("password");
   },
 } satisfies Story;
 
@@ -56,10 +56,10 @@ export const MissingFields: Story = {
 
     await userEvent.click(canvas.getByTestId("sign-up-form__submit-button"));
 
-    expect(canvas.getByText("We need to call you something")).toBeInTheDocument;
-    expect(canvas.getByText("Email is required")).toBeInTheDocument;
-    expect(canvas.getByText("Password is required")).toBeInTheDocument;
-    expect(canvas.getByText("Password must be confirmed")).toBeInTheDocument;
+    await expect(canvas.getByText("We need to call you something")).toBeInTheDocument();
+    await expect(canvas.getByText("Email is required")).toBeInTheDocument();
+    await expect(canvas.getByText("Password is required")).toBeInTheDocument();
+    await expect(canvas.getByText("Password must be confirmed")).toBeInTheDocument();
   },
 };
 
@@ -74,6 +74,6 @@ export const IncorrectPassword: Story = {
     await userEvent.type(canvas.getByTestId("sign-up-form__confirmpassword-input"), "short");
     await userEvent.click(canvas.getByTestId("sign-up-form__submit-button"));
 
-    expect(canvas.getByText("Password is too short - should be 8 chars minimum")).toBeInTheDocument;
+    await expect(canvas.getByText("Password is too short - should be 8 chars minimum")).toBeInTheDocument();
   },
 };
