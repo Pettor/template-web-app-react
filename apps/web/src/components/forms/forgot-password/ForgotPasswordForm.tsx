@@ -5,7 +5,7 @@ import { TextField } from "@mui/material";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { AutoAlert } from "shared-ui";
+import { Alert } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormForgotPassword {
@@ -81,7 +81,7 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordF
       >
         Send
       </LoadingButton>
-      <AutoAlert text={error} autoClose severity="error" />
+      <Alert text={error} severity="error" />
     </form>
   );
 }
