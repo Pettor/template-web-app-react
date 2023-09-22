@@ -1,6 +1,7 @@
 import { Box, Button } from "@mui/material";
 import type { Meta, StoryObj } from "@storybook/react";
 import { CommonDecorator } from "storybook-base";
+import { useCounter } from "usehooks-ts";
 import { AlertManager as Component } from "./AlertManager";
 import { AlertManagerProvider } from "./AlertManagerContext";
 import { useAlertManager } from "./UseAlertManager";
@@ -31,11 +32,14 @@ export const AlertManager = {
 
 function AddAlertComponent() {
   const { addAlert } = useAlertManager();
+  const { count, increment } = useCounter();
 
   function handleClick() {
+    increment();
     addAlert({
-      title: "Info title",
+      title: `Info title ${count}`,
       text: "Info text",
+      timeout: 3000,
     });
   }
 

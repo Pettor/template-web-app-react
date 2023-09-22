@@ -2,7 +2,6 @@ import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
   testDir: "src",
-  workers: 5,
   retries: 1,
   use: {
     baseURL: "https://localhost:5173",
@@ -17,5 +16,5 @@ export default defineConfig({
       testMatch: "**/*.spec.ts",
     },
   ],
-  reporter: [["list"], ["json", { outputFile: "./.test-results/test-results.json" }]],
+  reporter: [["list"], ["json", { outputFile: "./test-results/test-results.json" }]],
 });
