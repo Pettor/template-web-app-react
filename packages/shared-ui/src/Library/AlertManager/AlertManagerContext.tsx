@@ -14,7 +14,7 @@ interface IAlertManagerContext {
 const AlertManagerContext = createContext<IAlertManagerContext | null>(null);
 
 interface Props {
-  children: ReactElement;
+  children: ReactElement | ReactElement[];
 }
 
 function AlertManagerProvider({ children }: Props): ReactElement {
