@@ -20,19 +20,34 @@ interface Props {
 function AlertManagerProvider({ children }: Props): ReactElement {
   const [alerts, setAlerts] = useState<AlertManagerAlert[]>([]);
 
-  const addAlert = useCallback((alertOptions: AlertOptions) => {
-    const id = getCrypto().randomUUID();
-
+  const handleClosed = useCallback((id: string) => {
     setAlerts((prevAlerts) =>
       produce(prevAlerts, (draft) => {
-        draft.unshift({
-          id,
-          element: <Alert key={id} {...alertOptions} />,
-        });
+        const index = draft.findIndex((alert) => alert.id === id);
+        if (index !== -1) {
+          draft.splice(index, 1);
+        }
         return draft;
       })
     );
   }, []);
+
+  const addAlert = useCallback(
+    (alertOptions: AlertOptions) => {
+      const id = getCrypto().randomUUID();
+
+      setAlerts((prevAlerts) =>
+        produce(prevAlerts, (draft) => {
+          draft.unshift({
+            id,
+            element: <Alert key={id} {...alertOptions} onClosed={(): void => handleClosed(id)} />,
+          });
+          return draft;
+        })
+      );
+    },
+    [handleClosed]
+  );
 
   const value = useMemo(() => {
     return {

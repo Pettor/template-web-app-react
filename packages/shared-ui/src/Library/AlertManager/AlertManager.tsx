@@ -4,7 +4,6 @@ import { useAlertManager } from "./UseAlertManager";
 
 export function AlertManager(): ReactElement {
   const { alerts } = useAlertManager();
-  console.log(alerts);
 
   return (
     <Snackbar
