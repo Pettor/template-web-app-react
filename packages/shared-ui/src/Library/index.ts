@@ -1,4 +1,5 @@
 export * from "./Alert";
+export * from "./AlertManager";
 export * from "./IconMenuButton";
 export * from "./Logo";
 export * from "./LogoFull";

@@ -21,11 +21,11 @@ export function PwaUpdateDialog({ appName, open, onUpdate }: PwaUpdateDialogProp
             {intl.formatMessage(
               {
                 description: "PwaUpdateDialog - Update available description",
-                defaultMessage: "A new version of <b>{appName}</b> is available",
-                id: "GjhGOZ",
+                defaultMessage: "A new version of {appName} is available",
+                id: "Dbak+i",
               },
               {
-                appName: appName,
+                appName,
               }
             )}
           </PwaUpdateDialogDescription>

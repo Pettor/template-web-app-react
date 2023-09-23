@@ -2,7 +2,6 @@ import type { ReactElement } from "react";
 import { Box, Toolbar, useMediaQuery } from "@mui/material";
 import type { Breakpoint, SxProps, Theme } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { CoreLayout } from "Layout/CoreLayout";
 import type { AppHeaderProps } from "../../Navigation/AppHeader";
 import { AppHeader } from "../../Navigation/AppHeader";
 import { HeaderLayoutContainer } from "./HeaderLayoutContainer";
@@ -19,22 +18,20 @@ export function HeaderLayout({ maxWidth = "lg", sx, children, ...headerProps }: 
   const isLgUp = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
-    <CoreLayout>
-      <HeaderLayoutContainer sx={{ ...sx }}>
-        <AppHeader {...headerProps} />
-        <Box
-          sx={{
-            flexGrow: 1,
-          }}
-        >
-          <HeaderLayoutContent maxWidth={maxWidth}>
-            <Toolbar />
-            <Box component="main" sx={{ mt: 2, px: isLgUp ? 10 : 0 }}>
-              {children}
-            </Box>
-          </HeaderLayoutContent>
-        </Box>
-      </HeaderLayoutContainer>
-    </CoreLayout>
+    <HeaderLayoutContainer sx={{ ...sx }}>
+      <AppHeader {...headerProps} />
+      <Box
+        sx={{
+          flexGrow: 1,
+        }}
+      >
+        <HeaderLayoutContent maxWidth={maxWidth}>
+          <Toolbar />
+          <Box component="main" sx={{ mt: 2, px: isLgUp ? 10 : 0 }}>
+            {children}
+          </Box>
+        </HeaderLayoutContent>
+      </Box>
+    </HeaderLayoutContainer>
   );
 }

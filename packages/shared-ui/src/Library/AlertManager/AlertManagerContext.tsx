@@ -4,11 +4,12 @@ import { produce } from "immer";
 import { Alert } from "Library/Alert/Alert";
 import type { AlertOptions } from "Library/Alert/AlertClasses";
 import { getCrypto } from "react-utils";
-import type { AlertManagerAlert } from "./AlertMangerClasses";
+import type { AlertManagerAlert } from "./AlertManagerClasses";
 
 interface IAlertManagerContext {
   addAlert: (alertOptions: AlertOptions) => void;
   alerts: AlertManagerAlert[];
+  reset: () => void;
 }
 
 const AlertManagerContext = createContext<IAlertManagerContext | null>(null);
@@ -49,12 +50,17 @@ function AlertManagerProvider({ children }: Props): ReactElement {
     [handleClosed]
   );
 
+  const reset = useCallback(() => {
+    setAlerts([]);
+  }, []);
+
   const value = useMemo(() => {
     return {
       addAlert,
       alerts,
+      reset,
     };
-  }, [addAlert, alerts]);
+  }, [addAlert, alerts, reset]);
 
   return <AlertManagerContext.Provider value={value}>{children}</AlertManagerContext.Provider>;
 }

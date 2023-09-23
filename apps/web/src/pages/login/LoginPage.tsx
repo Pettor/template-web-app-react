@@ -1,5 +1,7 @@
-import type { ReactElement } from "react";
+import { type ReactElement } from "react";
+import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
+import { useAlertManager } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
 import type { FormLogin } from "~/components/forms/login/LoginForm";
 import { LoginView } from "~/components/views/login/LoginView";
@@ -9,12 +11,31 @@ import { useAppInfo } from "~/core/config/UseAppInfo";
 export function LoginPage(): ReactElement {
   useDocumentTitle("Login");
   const navigate = useNavigate();
+  const intl = useIntl();
   const { appName } = useAppInfo();
-  const { error, isLoading, submit } = useLogin();
-  const { message: errorMessage } = error ?? { message: "" };
+  const { isLoading, mutateAsync: submit } = useLogin();
+  const { addAlert, reset } = useAlertManager();
 
   async function handleSubmit(data: FormLogin): Promise<void> {
-    submit(data);
+    reset();
+    try {
+      await submit(data);
+    } catch (error) {
+      addAlert({
+        id: "login-error",
+        title: intl.formatMessage({
+          description: "Login error alert title",
+          defaultMessage: "Failed to login",
+          id: "uiUOOn",
+        }),
+        text: intl.formatMessage({
+          description: "Login error alert text",
+          defaultMessage: "Please verify your credentials and try again.",
+          id: "vdG15A",
+        }),
+        severity: "error",
+      });
+    }
   }
 
   function handleForgotPassword(): void {
@@ -29,7 +50,6 @@ export function LoginPage(): ReactElement {
     <LoginView
       appName={appName}
       loginForm={{
-        error: errorMessage,
         loading: isLoading,
         onSubmit: handleSubmit,
       }}

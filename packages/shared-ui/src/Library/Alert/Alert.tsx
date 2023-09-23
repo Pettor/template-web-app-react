@@ -32,7 +32,7 @@ export function Alert({ title, text, timeout = 0, onClosed, ...alertProps }: Aut
   }, [onClosed]);
 
   return (
-    <Collapse in={!closed} onExit={handleExited}>
+    <Collapse in={!closed} onExited={handleExited}>
       <MuiAlert
         action={
           <IconButton

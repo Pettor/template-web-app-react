@@ -22,8 +22,8 @@ export function ForgotPasswordView({ appName, resetForm }: ForgotPasswordViewPro
           {
             description: "ResetPasswordView - Reset password description",
             defaultMessage:
-              "Enter your <b>{appName}</b> email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
-            id: "LSY7eb",
+              "Enter your {appName} email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
+            id: "Q7RMaC",
           },
           {
             appName: appName,

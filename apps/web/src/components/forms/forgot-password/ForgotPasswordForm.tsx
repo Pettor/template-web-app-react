@@ -5,7 +5,6 @@ import { TextField } from "@mui/material";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { Alert } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormForgotPassword {
@@ -13,12 +12,11 @@ export interface FormForgotPassword {
 }
 
 export interface ForgotPasswordFormProps {
-  error: string;
   loading: boolean;
   onSubmit: SubmitHandler<FormForgotPassword>;
 }
 
-export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordFormProps): ReactElement {
+export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup
@@ -81,7 +79,6 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordF
       >
         Send
       </LoadingButton>
-      <Alert text={error} severity="error" />
     </form>
   );
 }

@@ -5,8 +5,7 @@ import { useAppInfo } from "~/core/config/UseAppInfo";
 
 export function ForgotPasswordPage(): React.ReactElement {
   const { appName } = useAppInfo();
-  const { error, isLoading, submit } = useForgotPassword();
-  const { message: errorMessage } = error ?? { message: "" };
+  const { isLoading, submit } = useForgotPassword();
 
   async function handleSubmit(data: FormForgotPassword): Promise<void> {
     submit(data);
@@ -16,7 +15,6 @@ export function ForgotPasswordPage(): React.ReactElement {
     <ForgotPasswordView
       appName={appName}
       resetForm={{
-        error: errorMessage,
         loading: isLoading,
         onSubmit: handleSubmit,
       }}

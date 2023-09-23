@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
+import { useAlertManager } from "shared-ui";
 import { useApi } from "../../../UseApi";
 import type { ForgotPasswordDto } from "./ForgotPasswordDto";
 
@@ -11,6 +12,7 @@ export function useForgotPassword(): {
 } {
   const { post } = useApi();
   const navigate = useNavigate();
+  const { addAlert } = useAlertManager();
 
   const { error, isLoading, mutate } = useMutation<void, AxiosError, ForgotPasswordDto>({
     mutationFn: async (data: ForgotPasswordDto) => {
@@ -18,6 +20,13 @@ export function useForgotPassword(): {
     },
     onSuccess: () => {
       navigate("/");
+    },
+    onError: (error) => {
+      addAlert({
+        title: "Error",
+        message: error ?? { message: "" },
+        severity: "error",
+      });
     },
   });
 
