@@ -38,11 +38,11 @@
     "yup": "1.2.0"
   },
   "devDependencies": {
-    "@formatjs/cli": "6.1.5",
+    "@formatjs/cli": "6.2.0",
     "@vitejs/plugin-react-swc": "3.3.2",
     "eslint-config-custom": "workspace:*",
     "http-server": "14.1.1",
-    "start-server-and-test": "2.0.0",
+    "start-server-and-test": "2.0.1",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*",
     "vite-plugin-http2-proxy": "0.4.1",
