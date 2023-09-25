@@ -1,11 +1,11 @@
-import { type ReactElement } from "react";
+import { useState, type ReactElement } from "react";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useAlertManager } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
 import type { FormLogin } from "~/components/forms/login/LoginForm";
 import { LoginView } from "~/components/views/login/LoginView";
-import { useLogin } from "~/core/api/queries/login/token-request/UseLogin";
+import { useAuth } from "~/core/auth/UseAuth";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
 export function LoginPage(): ReactElement {
@@ -13,13 +13,15 @@ export function LoginPage(): ReactElement {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appName } = useAppInfo();
-  const { isLoading, mutateAsync: submit } = useLogin();
+  const { login } = useAuth();
   const { addAlert, reset } = useAlertManager();
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSubmit(data: FormLogin): Promise<void> {
+    setIsLoading(true);
     reset();
     try {
-      await submit(data);
+      await login(data);
     } catch (error) {
       addAlert({
         id: "login-error",
@@ -36,6 +38,7 @@ export function LoginPage(): ReactElement {
         severity: "error",
       });
     }
+    setIsLoading(false);
   }
 
   function handleForgotPassword(): void {

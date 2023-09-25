@@ -1,11 +1,11 @@
 import type { ReactElement } from "react";
+import { useSignUp } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useAlertManager } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
 import type { FormSignUp } from "~/components/forms/sign-up/SignUpForm";
 import { SignUpView } from "~/components/views/sign-up/SignUpView";
-import { useSignUp } from "~/core/api/queries/login/sign-up/UseSignUp";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
 export function SignUpPage(): ReactElement {

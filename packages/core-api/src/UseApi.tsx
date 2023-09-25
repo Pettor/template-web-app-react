@@ -1,7 +1,7 @@
-import type { RequestTokenDto } from "./queries/login/token-request/RequestTokenDto";
-import ApiWorker from "./worker/ApiWorker?worker";
-import { ApiWorkerCommunication } from "./worker/ApiWorkerCommunication";
-import type { ApiError, ApiResponse } from "./worker/ApiWorkerReponse";
+import { RequestTokenDto } from "./Dto/RequestTokenDto";
+import ApiWorker from "./Worker/ApiWorker?worker";
+import { ApiWorkerCommunication } from "./Worker/ApiWorkerCommunication";
+import type { ApiError, ApiResponse } from "./Worker/ApiWorkerReponse";
 
 const apiWorker = new ApiWorkerCommunication(new ApiWorker());
 

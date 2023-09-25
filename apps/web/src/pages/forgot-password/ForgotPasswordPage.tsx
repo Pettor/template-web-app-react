@@ -1,10 +1,10 @@
+import { useForgotPassword } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useAlertManager } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
 import type { FormForgotPassword } from "~/components/forms/forgot-password/ForgotPasswordForm";
 import { ForgotPasswordView } from "~/components/views/forgot-password/ForgotPasswordView";
-import { useForgotPassword } from "~/core/api/queries/login/forgot-password/UseForgotPassword";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
 export function ForgotPasswordPage(): React.ReactElement {

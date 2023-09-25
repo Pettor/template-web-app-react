@@ -1,8 +1,8 @@
 import type { UseMutationResult } from "@tanstack/react-query";
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosError } from "axios";
-import { useApi } from "../../../UseApi";
-import type { ForgotPasswordDto } from "./ForgotPasswordDto";
+import type { ForgotPasswordDto } from "../../Dto/ForgotPasswordDto";
+import { useApi } from "../../UseApi";
 
 export function useForgotPassword(): UseMutationResult<void, AxiosError, ForgotPasswordDto> {
   const { post } = useApi();

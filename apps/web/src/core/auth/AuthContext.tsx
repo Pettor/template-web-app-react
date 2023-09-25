@@ -1,7 +1,7 @@
 import type { Dispatch, ReactElement, ReactNode } from "react";
 import { createContext, useEffect, useMemo, useReducer } from "react";
+import { useApi } from "core-api";
 import { useRunOnce } from "react-utils";
-import { useApi } from "../api/UseApi";
 import type { AuthActions, AuthState } from "./AuthReducer";
 import { AuthReducer } from "./AuthReducer";
 

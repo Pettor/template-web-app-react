@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import type { RequestTokenDto } from "../api/queries/login/token-request/RequestTokenDto";
-import { useApi } from "../api/UseApi";
+import { useApi } from "core-api";
+import type { RequestTokenDto } from "core-api";
 import { AuthContext } from "./AuthContext";
 import type { AuthStatus } from "./AuthReducer";
 

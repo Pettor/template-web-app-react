@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
+import { useProfileInfo } from "core-api";
 import { ProfileCardResponsive } from "shared-ui";
-import { useProfileInfo } from "../../api/queries/user/profile-info/UseProfileInfo";
 import { useAuth } from "../../auth/UseAuth";
 
 export function ProfileCardExt(): ReactElement {
