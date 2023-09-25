@@ -23,7 +23,6 @@ export const SignUp = {
   args: {
     appName: "My App",
     signUpForm: {
-      error: "",
       loading: false,
       onSubmit: () => console.log("onSubmit"),
     },

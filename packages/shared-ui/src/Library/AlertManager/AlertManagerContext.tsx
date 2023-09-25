@@ -1,9 +1,9 @@
 import type { ReactElement } from "react";
 import { createContext, useCallback, useMemo, useState } from "react";
 import { produce } from "immer";
-import { Alert } from "Library/Alert/Alert";
-import type { AlertOptions } from "Library/Alert/AlertClasses";
 import { getCrypto } from "react-utils";
+import { Alert } from "../Alert/Alert";
+import type { AlertOptions } from "../Alert/AlertClasses";
 import type { AlertManagerAlert } from "./AlertManagerClasses";
 
 interface IAlertManagerContext {

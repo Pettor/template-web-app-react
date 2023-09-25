@@ -15,7 +15,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const defaultArgs: Props = {
-  error: "",
   loading: false,
   onSubmit: () => console.log("onSubmit"),
 };
