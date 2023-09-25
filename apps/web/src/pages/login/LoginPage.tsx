@@ -24,14 +24,14 @@ export function LoginPage(): ReactElement {
       addAlert({
         id: "login-error",
         title: intl.formatMessage({
-          description: "Login error alert title",
+          description: "LoginPage - Login error alert title",
           defaultMessage: "Failed to login",
-          id: "uiUOOn",
+          id: "XHC6DM",
         }),
         text: intl.formatMessage({
-          description: "Login error alert text",
+          description: "LoginPage - Login error alert text",
           defaultMessage: "Please verify your credentials and try again.",
-          id: "vdG15A",
+          id: "eaFclI",
         }),
         severity: "error",
       });

@@ -29,6 +29,9 @@ importers:
       concurrently:
         specifier: 8.2.1
         version: 8.2.1
+      immer:
+        specifier: 10.0.2
+        version: 10.0.2
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -189,9 +192,6 @@ importers:
       axios-auth-refresh:
         specifier: 3.3.6
         version: 3.3.6(axios@1.5.0)
-      immer:
-        specifier: 10.0.2
-        version: 10.0.2
       mui-theme:
         specifier: workspace:*
         version: link:../../packages/mui-theme
@@ -274,6 +274,9 @@ importers:
       eslint-plugin-react:
         specifier: 7.33.2
         version: 7.33.2(eslint@8.50.0)
+      eslint-plugin-react-hooks:
+        specifier: 4.6.0
+        version: 4.6.0(eslint@8.50.0)
       eslint-plugin-storybook:
         specifier: 0.6.14
         version: 0.6.14(eslint@8.50.0)(typescript@5.2.2)
@@ -8667,6 +8670,15 @@ packages:
       prettier: 3.0.3
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.5
+    dev: true
+
+  /eslint-plugin-react-hooks@4.6.0(eslint@8.50.0):
+    resolution: {integrity: sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+    dependencies:
+      eslint: 8.50.0
     dev: true
 
   /eslint-plugin-react@7.33.2(eslint@8.50.0):

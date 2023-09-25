@@ -26,16 +26,16 @@ export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProp
         .string()
         .email(
           intl.formatMessage({
-            description: "ResetPasswordFormValidation - Email must be valid",
+            description: "ForgotPasswordFormValidation - Email must be valid",
             defaultMessage: "Email must be valid",
-            id: "NkLLdE",
+            id: "4lmP9Q",
           })
         )
         .required(
           intl.formatMessage({
-            description: "ResetPasswordFormValidation - Email is required",
+            description: "ForgotPasswordFormValidation - Email is required",
             defaultMessage: "Email is required",
-            id: "m5YIDx",
+            id: "wtHdxy",
           })
         ),
     })
@@ -56,9 +56,9 @@ export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProp
         fullWidth
         id="email"
         label={intl.formatMessage({
-          description: "ResetPasswordFormLabel - Email",
+          description: "ForgotPasswordFormLabel - Email",
           defaultMessage: "Email Address",
-          id: "SRtN9p",
+          id: "9CgMnb",
         })}
         autoComplete="email"
         autoFocus

@@ -5,7 +5,6 @@ import { TextField } from "@mui/material";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { Alert } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormSignUp {
@@ -19,12 +18,11 @@ export interface FormSignUp {
 }
 
 export interface SignUpFormProps {
-  error: string;
   loading: boolean;
   onSubmit: SubmitHandler<FormSignUp>;
 }
 
-export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): ReactElement {
+export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup
@@ -249,7 +247,6 @@ export function SignUpForm({ error, loading, onSubmit }: SignUpFormProps): React
           id: "oigOyc",
         })}
       </LoadingButton>
-      <Alert text={error} severity="error" />
     </form>
   );
 }
