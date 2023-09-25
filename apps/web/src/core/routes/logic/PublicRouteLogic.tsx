@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 import { Suspense } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../../auth/UseAuth";
+import { RouteProviders } from "../RouteProviders";
 import { RouteLoading } from "./RouteLoading";
 
 export function PublicRouteLogic(): ReactElement {
@@ -14,7 +15,9 @@ export function PublicRouteLogic(): ReactElement {
     case "authenticating":
       return (
         <Suspense fallback={<RouteLoading />}>
-          <Outlet />
+          <RouteProviders>
+            <Outlet />
+          </RouteProviders>
         </Suspense>
       );
     case "authenticated":

@@ -5,7 +5,6 @@ import { TextField } from "@mui/material";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { AutoAlert } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormForgotPassword {
@@ -13,12 +12,11 @@ export interface FormForgotPassword {
 }
 
 export interface ForgotPasswordFormProps {
-  error: string;
   loading: boolean;
   onSubmit: SubmitHandler<FormForgotPassword>;
 }
 
-export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordFormProps): ReactElement {
+export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup
@@ -28,16 +26,16 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordF
         .string()
         .email(
           intl.formatMessage({
-            description: "ResetPasswordFormValidation - Email must be valid",
+            description: "ForgotPasswordFormValidation - Email must be valid",
             defaultMessage: "Email must be valid",
-            id: "NkLLdE",
+            id: "4lmP9Q",
           })
         )
         .required(
           intl.formatMessage({
-            description: "ResetPasswordFormValidation - Email is required",
+            description: "ForgotPasswordFormValidation - Email is required",
             defaultMessage: "Email is required",
-            id: "m5YIDx",
+            id: "wtHdxy",
           })
         ),
     })
@@ -58,9 +56,9 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordF
         fullWidth
         id="email"
         label={intl.formatMessage({
-          description: "ResetPasswordFormLabel - Email",
+          description: "ForgotPasswordFormLabel - Email",
           defaultMessage: "Email Address",
-          id: "SRtN9p",
+          id: "9CgMnb",
         })}
         autoComplete="email"
         autoFocus
@@ -81,7 +79,6 @@ export function ForgotPasswordForm({ error, loading, onSubmit }: ForgotPasswordF
       >
         Send
       </LoadingButton>
-      <AutoAlert text={error} autoClose severity="error" />
     </form>
   );
 }

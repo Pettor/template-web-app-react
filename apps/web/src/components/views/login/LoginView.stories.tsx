@@ -23,7 +23,6 @@ export const Login = {
   args: {
     appName: "My App",
     loginForm: {
-      error: "",
       loading: false,
       onSubmit: () => console.log("onSubmit"),
     },

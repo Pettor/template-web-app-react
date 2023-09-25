@@ -1,29 +1,15 @@
+import type { UseMutationResult } from "@tanstack/react-query";
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosError } from "axios";
-import { useNavigate } from "react-router-dom";
 import { useApi } from "../../../UseApi";
 import type { ForgotPasswordDto } from "./ForgotPasswordDto";
 
-export function useForgotPassword(): {
-  error: AxiosError | null;
-  isLoading: boolean;
-  submit: (data: ForgotPasswordDto) => void;
-} {
+export function useForgotPassword(): UseMutationResult<void, AxiosError, ForgotPasswordDto> {
   const { post } = useApi();
-  const navigate = useNavigate();
 
-  const { error, isLoading, mutate } = useMutation<void, AxiosError, ForgotPasswordDto>({
+  return useMutation<void, AxiosError, ForgotPasswordDto>({
     mutationFn: async (data: ForgotPasswordDto) => {
       await post("/api/users/forgot-password", data);
     },
-    onSuccess: () => {
-      navigate("/");
-    },
   });
-
-  return {
-    error,
-    isLoading,
-    submit: mutate,
-  };
 }

@@ -1,29 +1,15 @@
+import type { UseMutationResult } from "@tanstack/react-query";
 import { useMutation } from "@tanstack/react-query";
 import type { AxiosError } from "axios";
-import { useNavigate } from "react-router-dom";
 import { useApi } from "../../../UseApi";
 import type { SignUpDto } from "./SignUpDto";
 
-export function useSignUp(): {
-  error: AxiosError | null;
-  isLoading: boolean;
-  submit: (data: SignUpDto) => void;
-} {
+export function useSignUp(): UseMutationResult<void, AxiosError, SignUpDto> {
   const { post } = useApi();
-  const navigate = useNavigate();
 
-  const { error, isLoading, mutate } = useMutation<void, AxiosError, SignUpDto>({
+  return useMutation<void, AxiosError, SignUpDto>({
     mutationFn: async (data: SignUpDto) => {
       await post("/api/users/self-register", data);
     },
-    onSuccess: () => {
-      navigate("/");
-    },
   });
-
-  return {
-    error,
-    isLoading,
-    submit: mutate,
-  };
 }

@@ -1,12 +1,12 @@
 import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { CommonDecorator } from "storybook-base";
-import { AutoAlert as Component } from "./AutoAlert";
-import type { AutoAlertProps } from "./AutoAlert";
+import { Alert as Component } from "./Alert";
+import type { AutoAlertProps } from "./Alert";
 
 const meta = {
-  title: "Library/Alerts",
+  title: "Library/Alert",
   component: Component,
   decorators: [CommonDecorator],
   tags: ["autodocs"],
@@ -52,6 +52,18 @@ export const CloseAlert: Story = {
 
     await userEvent.click(canvas.getByTestId("auto-alert__close-button"));
 
-    expect(canvas.getByText("Info text")).not.toBeInTheDocument;
+    await waitFor(async () => await expect(canvas.getByTestId("auto-alert__container")).not.toBeVisible());
+  },
+} satisfies Story;
+
+export const TimeoutAlert: Story = {
+  args: {
+    ...defaultArgs,
+    timeout: 1,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await waitFor(async () => await expect(canvas.getByTestId("auto-alert__container")).not.toBeVisible());
   },
 } satisfies Story;

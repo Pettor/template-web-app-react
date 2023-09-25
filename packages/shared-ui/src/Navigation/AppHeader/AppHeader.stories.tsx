@@ -51,12 +51,12 @@ export const HeaderComponents: Story = {
 
     await sleep(500);
 
-    expect(canvas.getByTestId("app-header-group__theme-toggle-box")).toHaveTextContent("dark");
+    await expect(canvas.getByTestId("app-header-group__theme-toggle-box")).toHaveTextContent("dark");
 
     userEvent.click(canvas.getByRole("checkbox"));
 
     await sleep(500);
 
-    expect(canvas.getByTestId("app-header-group__theme-toggle-box")).toHaveTextContent("light");
+    await expect(canvas.getByTestId("app-header-group__theme-toggle-box")).toHaveTextContent("light");
   },
 } satisfies Story;

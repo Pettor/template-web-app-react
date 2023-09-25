@@ -5,7 +5,6 @@ import { Box, TextField, Stack } from "@mui/material";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { AutoAlert } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormLogin {
@@ -14,12 +13,11 @@ export interface FormLogin {
 }
 
 export interface LoginFormProps {
-  error: string;
   loading: boolean;
   onSubmit: SubmitHandler<FormLogin>;
 }
 
-export function LoginForm({ error, loading, onSubmit }: LoginFormProps): ReactElement {
+export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
   const intl = useIntl();
 
   const schema = yup
@@ -118,7 +116,6 @@ export function LoginForm({ error, loading, onSubmit }: LoginFormProps): ReactEl
           </LoadingButton>
         </Box>
       </Stack>
-      <AutoAlert text={error} autoClose severity="error" />
     </form>
   );
 }

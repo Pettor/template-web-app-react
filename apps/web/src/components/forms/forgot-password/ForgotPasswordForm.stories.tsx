@@ -15,7 +15,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const defaultArgs: Props = {
-  error: "",
   loading: false,
   onSubmit: () => console.log("onSubmit"),
 };
@@ -32,7 +31,7 @@ export const Success: Story = {
     await userEvent.type(canvas.getByTestId("forgot-password-form__email-input"), "email@provider.com");
     await userEvent.click(canvas.getByTestId("forgot-password-form__submit-button"));
 
-    expect(canvas.getByTestId("forgot-password-form__email-input")).toHaveValue("email@provider.com");
+    await expect(canvas.getByTestId("forgot-password-form__email-input")).toHaveValue("email@provider.com");
   },
 } satisfies Story;
 
@@ -44,6 +43,6 @@ export const IncorrectEmail: Story = {
     await userEvent.type(canvas.getByTestId("forgot-password-form__email-input"), "incorrect");
     await userEvent.click(canvas.getByTestId("forgot-password-form__submit-button"));
 
-    expect(canvas.getByText("Email must be valid")).toBeInTheDocument;
+    await expect(canvas.getByText("Email must be valid")).toBeInTheDocument;
   },
 } satisfies Story;

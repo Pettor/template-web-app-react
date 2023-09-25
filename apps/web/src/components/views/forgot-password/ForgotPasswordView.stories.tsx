@@ -23,7 +23,6 @@ export const ForgotPassword = {
   args: {
     appName: "My App",
     resetForm: {
-      error: "",
       loading: false,
       onSubmit: () => console.log("onSubmit"),
     },
