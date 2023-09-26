@@ -26,6 +26,9 @@ importers:
       '@mui/material':
         specifier: 5.14.10
         version: 5.14.10(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.22)(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/react-query':
+        specifier: 4.35.3
+        version: 4.35.3(react-dom@18.2.0)(react@18.2.0)
       concurrently:
         specifier: 8.2.1
         version: 8.2.1
@@ -279,9 +282,6 @@ importers:
 
   packages/core-api:
     dependencies:
-      '@tanstack/react-query':
-        specifier: 4.35.3
-        version: 4.35.3(react-dom@18.2.0)(react@18.2.0)
       axios:
         specifier: 1.5.0
         version: 1.5.0(debug@4.3.4)

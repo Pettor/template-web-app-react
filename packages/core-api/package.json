@@ -10,7 +10,6 @@
     "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
-    "@tanstack/react-query": "4.35.3",
     "axios": "1.5.0",
     "axios-auth-refresh": "3.3.6"
   },
