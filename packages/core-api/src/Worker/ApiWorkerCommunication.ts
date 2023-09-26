@@ -4,16 +4,9 @@ import { isApiError } from "./ApiWorkerReponse";
 
 export class ApiWorkerCommunication {
   private readonly worker: Worker;
-  private readonly subscribers: Set<(error: ApiError) => void>;
 
   constructor(worker: Worker) {
     this.worker = worker;
-    this.subscribers = new Set<(error: ApiError) => void>();
-  }
-
-  public registerFailedRequestCallback(callback: (error: ApiError) => void): () => void {
-    this.subscribers.add(callback);
-    return () => this.subscribers.delete(callback);
   }
 
   public async send<T>(message: ApiMessages): Promise<ApiResponse<T>> {
@@ -33,7 +26,6 @@ export class ApiWorkerCommunication {
         };
       }
 
-      this.subscribers.forEach((callback) => callback(apiError));
       throw apiError;
     }
   }

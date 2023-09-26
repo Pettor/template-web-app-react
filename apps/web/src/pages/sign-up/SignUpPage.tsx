@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { useSignUp } from "core-api";
+import { useSelfRegisterByData } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useAlertManager } from "shared-ui";
@@ -13,7 +13,7 @@ export function SignUpPage(): ReactElement {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appNameCapital } = useAppInfo();
-  const { isLoading, mutateAsync: submit } = useSignUp();
+  const { isLoading, mutateAsync: submit } = useSelfRegisterByData();
   const { addAlert, reset } = useAlertManager();
 
   async function handleSubmit(data: FormSignUp): Promise<void> {

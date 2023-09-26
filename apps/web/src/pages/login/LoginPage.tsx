@@ -1,4 +1,5 @@
-import { useState, type ReactElement } from "react";
+import { type ReactElement } from "react";
+import { useLogin } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useAlertManager } from "shared-ui";
@@ -14,12 +15,12 @@ export function LoginPage(): ReactElement {
   const intl = useIntl();
   const { appName } = useAppInfo();
   const { login } = useAuth();
-  const { addAlert, reset } = useAlertManager();
-  const [isLoading, setIsLoading] = useState(false);
+  const { isLoading } = useLogin();
+  const { addAlert, reset: resetAlerts } = useAlertManager();
 
   async function handleSubmit(data: FormLogin): Promise<void> {
-    setIsLoading(true);
-    reset();
+    resetAlerts();
+
     try {
       await login(data);
     } catch (error) {
@@ -38,7 +39,6 @@ export function LoginPage(): ReactElement {
         severity: "error",
       });
     }
-    setIsLoading(false);
   }
 
   function handleForgotPassword(): void {

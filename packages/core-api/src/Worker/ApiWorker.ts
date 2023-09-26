@@ -1,8 +1,8 @@
 import axios from "axios";
-import { ApiClient } from "../Client/ApiClient";
 import { client } from "../Client/AxiosClient";
-import type { RequestTokenDto } from "../Dto/RequestTokenDto";
 import { clearToken } from "../Token/TokenStorage";
+import type { RequestTokenDto } from "./ApiWorkerClasses";
+import { ApiWorkerClient } from "./ApiWorkerClient";
 import type { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
 
 // Request and Response types
@@ -16,7 +16,7 @@ type ApiMessages =
   | { type: "request/get"; url: string }
   | { type: "request/delete"; url: string };
 
-const apiClient = new ApiClient(client);
+const apiWorkerClient = new ApiWorkerClient(client);
 
 async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<ApiMessages>): Promise<void> {
   let apiResponse: ApiResponseTypes;
@@ -32,7 +32,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "token/request":
         {
           const { payload } = sentData;
-          const { status, statusText } = await apiClient.tokenRequest(payload);
+          const { status, statusText } = await apiWorkerClient.tokenRequest(payload);
           apiResponse = { data: null, status, statusText };
         }
         break;
@@ -40,7 +40,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       // Refresh Token
       case "token/refresh":
         {
-          const { status, statusText } = await apiClient.refreshToken();
+          const { status, statusText } = await apiWorkerClient.refreshToken();
           apiResponse = { data: null, status, statusText };
         }
         break;
@@ -48,7 +48,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       // Logout
       case "user/logout":
         {
-          await apiClient.removeToken();
+          await apiWorkerClient.removeToken();
           clearToken();
 
           apiResponse = {
@@ -64,7 +64,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "request/patch":
         {
           const { payload, url } = sentData;
-          const { data, status, statusText } = await apiClient.patch(url, payload);
+          const { data, status, statusText } = await apiWorkerClient.patch(url, payload);
           apiResponse = { data, status, statusText };
         }
         break;
@@ -73,7 +73,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "request/post":
         {
           const { payload, url } = sentData;
-          const { data, status, statusText } = await apiClient.post(url, payload);
+          const { data, status, statusText } = await apiWorkerClient.post(url, payload);
           apiResponse = { data, status, statusText };
         }
         break;
@@ -82,7 +82,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "request/put":
         {
           const { url, payload } = sentData;
-          const { data, status, statusText } = await apiClient.put(url, payload);
+          const { data, status, statusText } = await apiWorkerClient.put(url, payload);
           apiResponse = { data, status, statusText };
         }
         break;
@@ -91,7 +91,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "request/get":
         {
           const { url } = sentData;
-          const { data, status, statusText } = await apiClient.get(url);
+          const { data, status, statusText } = await apiWorkerClient.get(url);
           apiResponse = { data, status, statusText };
         }
         break;
@@ -100,7 +100,7 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "request/delete":
         {
           const { url } = sentData;
-          const { data, status, statusText } = await apiClient.delete(url);
+          const { data, status, statusText } = await apiWorkerClient.delete(url);
           apiResponse = { data, status, statusText };
         }
         break;

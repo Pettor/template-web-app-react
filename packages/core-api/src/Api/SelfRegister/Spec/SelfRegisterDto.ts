@@ -1,4 +1,4 @@
-export interface SignUpDto {
+export interface SelfRegisterDataDto {
   firstName?: string;
   lastName?: string;
   email: string;

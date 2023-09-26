@@ -1,119 +1,55 @@
-import type {
-  AxiosError,
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-  RawAxiosRequestHeaders,
-  AxiosHeaders,
-} from "axios";
-import axios from "axios";
-import createAuthRefreshInterceptor from "axios-auth-refresh";
-import { produce } from "immer";
-import type { RequestTokenDto } from "../Dto/RequestTokenDto";
-import type { TokenDto } from "../Dto/TokenDto";
-import { setToken, getToken } from "../Token";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-ignore - this is worker syntax
+import ApiWorker from "../Worker/ApiWorker?worker";
+import type { RequestTokenDto } from "../Worker/ApiWorkerClasses";
+import { ApiWorkerCommunication } from "../Worker/ApiWorkerCommunication";
+import type { ApiResponse } from "../Worker/ApiWorkerReponse";
 
 export class ApiClient {
-  private readonly tokenApiUrl = "/api/tokens";
-  private readonly refreshTokenApiUrl = "/api/tokens/refresh";
+  private _apiWorkerCommunication: ApiWorkerCommunication;
 
-  private client: AxiosInstance;
-  private defaultHeaders: RawAxiosRequestHeaders;
-  private defaultConfig: AxiosRequestConfig;
-
-  constructor(client: AxiosInstance, tenant = "root") {
-    this.client = client;
-
-    this.defaultHeaders = {
-      tenant,
-    };
-
-    this.defaultConfig = {
-      headers: this.defaultHeaders,
-    };
-
-    // Add refresh logic to axios client
-    createAuthRefreshInterceptor(client, async (failedResponse: AxiosError) => {
-      if (!failedResponse.response) {
-        return Promise.reject(failedResponse);
-      }
-
-      if (failedResponse.request.responseURL?.includes(this.refreshTokenApiUrl)) {
-        return Promise.reject(failedResponse);
-      }
-
-      // Try to refresh token and retry request
-      try {
-        await this.refreshToken();
-      } catch (error) {
-        return Promise.reject(error);
-      }
-
-      // Retry request with new token
-      failedResponse.response.config.headers = this.createHeaders();
-      return Promise.resolve();
-    });
+  constructor() {
+    this._apiWorkerCommunication = this.createApiWorkerCommunication();
   }
 
-  public async tokenRequest(data: RequestTokenDto): Promise<AxiosResponse> {
-    const response = await this.client.post<TokenDto>(this.tokenApiUrl, data, this.defaultConfig);
-
-    if (!response.data.token) {
-      throw new Error("No token provided");
-    }
-
-    setToken(response.data.token);
-
-    // Remove token from response
-    return produce<AxiosResponse>(response, (draft) => {
-      draft.data = null;
-    });
+  private createApiWorker(): Worker {
+    return new ApiWorker();
   }
 
-  public async removeToken(): Promise<AxiosResponse> {
-    return await this.client.delete(this.tokenApiUrl, this.defaultConfig);
+  private createApiWorkerCommunication(): ApiWorkerCommunication {
+    const worker = this.createApiWorker();
+    return new ApiWorkerCommunication(worker);
   }
 
-  public async refreshToken(): Promise<AxiosResponse> {
-    // Refresh-Token API will use the standard AXIOS client to avoid issue where API is stuck
-    const response = await axios.get<TokenDto>(this.refreshTokenApiUrl, this.defaultConfig);
-    setToken(response.data.token);
-
-    // Remove token from response
-    return produce<AxiosResponse>(response, (draft) => {
-      draft.data = null;
-    });
+  public login(data: RequestTokenDto): Promise<ApiResponse<void>> {
+    return this._apiWorkerCommunication.send<void>({ type: "token/request", payload: data });
   }
 
-  public async patch(url: string, data?: unknown): Promise<AxiosResponse> {
-    return await this.client.patch(url, data, this.createConfig());
+  public refresh(): Promise<ApiResponse<void>> {
+    return this._apiWorkerCommunication.send({ type: "token/refresh" });
   }
 
-  public async post(url: string, data?: unknown): Promise<AxiosResponse> {
-    return await this.client.post(url, data, this.createConfig());
+  public logout(): Promise<ApiResponse<void>> {
+    return this._apiWorkerCommunication.send({ type: "user/logout" });
   }
 
-  public async put(url: string, data?: unknown): Promise<AxiosResponse> {
-    return await this.client.put(url, data, this.createConfig());
+  public get<T>(url: string): Promise<ApiResponse<T>> {
+    return this._apiWorkerCommunication.send<T>({ type: "request/get", url });
   }
 
-  public async get(url: string): Promise<AxiosResponse> {
-    return await this.client.get(url, this.createConfig());
+  public post<T>(url: string, data: unknown): Promise<ApiResponse<T>> {
+    return this._apiWorkerCommunication.send<T>({ type: "request/post", payload: data, url });
   }
 
-  public async delete(url: string): Promise<AxiosResponse> {
-    return await this.client.delete(url, this.createConfig());
+  public delete<T>(url: string): Promise<ApiResponse<T>> {
+    return this._apiWorkerCommunication.send<T>({ type: "request/delete", url });
   }
 
-  private createConfig(): AxiosRequestConfig {
-    return produce<AxiosRequestConfig>(this.defaultConfig, (draft) => {
-      draft.headers = this.createHeaders();
-    });
+  public patch<T>(url: string): Promise<ApiResponse<T>> {
+    return this._apiWorkerCommunication.send<T>({ type: "request/patch", url });
   }
 
-  private createHeaders(): AxiosHeaders {
-    return produce<AxiosHeaders>(this.defaultHeaders as AxiosHeaders, (draft) => {
-      draft["Authorization"] = `Bearer ${getToken()}`;
-    });
+  public put<T>(url: string): Promise<ApiResponse<T>> {
+    return this._apiWorkerCommunication.send<T>({ type: "request/put", url });
   }
 }

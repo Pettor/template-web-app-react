@@ -1,4 +1,4 @@
-import { useForgotPassword } from "core-api";
+import { useForgotPasswordByEmail } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useAlertManager } from "shared-ui";
@@ -12,13 +12,15 @@ export function ForgotPasswordPage(): React.ReactElement {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appName } = useAppInfo();
-  const { isLoading, mutateAsync: submit } = useForgotPassword();
-  const { addAlert, reset } = useAlertManager();
+  const { isLoading, mutateAsync: submit } = useForgotPasswordByEmail();
+  const { addAlert, reset: resetAlerts } = useAlertManager();
 
   async function handleSubmit(data: FormForgotPassword): Promise<void> {
-    reset();
+    const { email } = data;
+    resetAlerts();
+
     try {
-      submit(data);
+      submit(email);
       navigate("/");
     } catch (error) {
       addAlert({

@@ -1,29 +1,30 @@
 import { useContext } from "react";
-import { useApi } from "core-api";
-import type { RequestTokenDto } from "core-api";
+import type { LoginData } from "core-api";
+import { useLogin, useLogout } from "core-api";
 import { AuthContext } from "./AuthContext";
 import type { AuthStatus } from "./AuthReducer";
 
 export function useAuth(): {
   status: AuthStatus;
-  login(data: RequestTokenDto): Promise<void>;
+  login(data: LoginData): Promise<void>;
   logout(): Promise<void>;
 } {
   const {
     state: { status },
     dispatch,
   } = useContext(AuthContext);
-  const api = useApi();
+  const { mutateAsync: loginFunc } = useLogin();
+  const { mutateAsync: logoutFunc } = useLogout();
 
-  async function login(data: RequestTokenDto): Promise<void> {
-    await api.requestToken(data);
+  async function login(data: LoginData): Promise<void> {
+    await loginFunc(data);
     dispatch({
       type: "auth/login",
     });
   }
 
   async function logout(): Promise<void> {
-    await api.logout();
+    await logoutFunc();
     dispatch({
       type: "auth/logout",
     });

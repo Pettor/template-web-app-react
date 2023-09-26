@@ -1,4 +1,4 @@
-export interface RequestTokenDto {
+export interface LoginData {
   email: string;
   password: string;
 }

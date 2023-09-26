@@ -1,0 +1,21 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="2" errors="0" time="1.934795">
+<testsuite name="specs\auth.spec.ts" timestamp="2023-09-26T14:20:18.654Z" hostname="chromium" tests="3" failures="0" skipped="2" time="0.171" errors="0">
+<testcase name="auth.loggedin › do login attempt" classname="specs\auth.spec.ts" time="0.171">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\specs-auth-auth-loggedin-do-login-attempt-chromium\trace.zip]]
+
+[[ATTACHMENT|..\test-results\specs-auth-auth-loggedin-do-login-attempt-chromium-retry1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="auth.refreshtoken › do refresh" classname="specs\auth.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="auth.logout › do logout attempt" classname="specs\auth.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
