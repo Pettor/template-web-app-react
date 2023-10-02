@@ -1,3 +1,4 @@
+import { ValidationError } from "yup";
 import { isApiError, type ApiError } from "../Worker/ApiWorkerReponse";
 import type { ServiceError } from "./ServiceError";
 
@@ -8,6 +9,10 @@ export class ServiceErrorFactory {
       return {
         ...e,
       } as ServiceError;
+    }
+
+    if (e instanceof ValidationError) {
+      console.error("Validation error", e);
     }
 
     return {

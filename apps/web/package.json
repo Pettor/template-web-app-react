@@ -31,8 +31,7 @@
     "react-hook-form": "7.46.1",
     "react-router-dom": "6.16.0",
     "react-utils": "workspace:*",
-    "shared-ui": "workspace:*",
-    "yup": "1.2.0"
+    "shared-ui": "workspace:*"
   },
   "devDependencies": {
     "@formatjs/cli": "6.2.0",

@@ -1,8 +1,8 @@
 import { apiClient } from "../../../Client";
 import { ServiceErrorFactory } from "../../../Service/ServiceErrorFactory";
-import type { RequestTokenDto } from "../../../Worker/ApiWorkerClasses";
+import type { LoginData } from "../LoginClasses";
 
-export async function postByData(data: RequestTokenDto): Promise<void> {
+export async function postByData(data: LoginData): Promise<void> {
   try {
     await apiClient.login(data);
   } catch (e: unknown) {

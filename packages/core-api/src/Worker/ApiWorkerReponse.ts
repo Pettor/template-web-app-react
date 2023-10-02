@@ -13,5 +13,5 @@ export interface ApiError extends Error {
 export type ApiResponseTypes = ApiError | ApiResponse;
 
 export function isApiError(error: unknown): error is ApiError {
-  return (error as ApiError).message !== undefined;
+  return (error as ApiError).message !== undefined && (error as ApiError).status !== undefined;
 }

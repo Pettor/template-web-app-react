@@ -1,11 +1,11 @@
 export interface ProfileInfo {
-  id: "string";
-  userName: "string";
-  firstName: "string";
-  lastName: "string";
-  email: "string";
-  isActive: true;
-  emailConfirmed: true;
-  phoneNumber: "string";
-  imageUrl: "string";
+  id: string;
+  userName: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  isActive: boolean;
+  emailConfirmed: boolean;
+  phoneNumber: string;
+  imageUrl: string;
 }
