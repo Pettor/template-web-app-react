@@ -1,7 +1,7 @@
+import type { LoginData } from "../Api";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore - this is worker syntax
 import ApiWorker from "../Worker/ApiWorker?worker";
-import type { RequestTokenDto } from "../Worker/ApiWorkerClasses";
 import { ApiWorkerCommunication } from "../Worker/ApiWorkerCommunication";
 import type { ApiResponse } from "../Worker/ApiWorkerReponse";
 
@@ -21,7 +21,7 @@ export class ApiClient {
     return new ApiWorkerCommunication(worker);
   }
 
-  public login(data: RequestTokenDto): Promise<ApiResponse<void>> {
+  public login(data: LoginData): Promise<ApiResponse<void>> {
     return this._apiWorkerCommunication.send<void>({ type: "token/request", payload: data });
   }
 

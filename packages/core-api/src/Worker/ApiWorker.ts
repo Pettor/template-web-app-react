@@ -1,13 +1,13 @@
 import axios from "axios";
+import type { LoginData } from "../Api";
 import { client } from "../Client/AxiosClient";
 import { clearToken } from "../Token/TokenStorage";
-import type { RequestTokenDto } from "./ApiWorkerClasses";
 import { ApiWorkerClient } from "./ApiWorkerClient";
 import type { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
 
 // Request and Response types
 type ApiMessages =
-  | { type: "token/request"; payload: RequestTokenDto }
+  | { type: "token/request"; payload: LoginData }
   | { type: "token/refresh" }
   | { type: "user/logout" }
   | { type: "request/patch"; url: string; payload?: unknown }

@@ -9,8 +9,9 @@ import type {
 import axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { produce } from "immer";
+import type { LoginData } from "../Api";
 import { setToken, getToken } from "../Token/TokenStorage";
-import type { RequestTokenDto, TokenDto } from "./ApiWorkerClasses";
+import type { TokenDto } from "./ApiWorkerClasses";
 
 export class ApiWorkerClient {
   private readonly tokenApiUrl = "/api/tokens";
@@ -54,7 +55,7 @@ export class ApiWorkerClient {
     });
   }
 
-  public async tokenRequest(data: RequestTokenDto): Promise<AxiosResponse> {
+  public async tokenRequest(data: LoginData): Promise<AxiosResponse> {
     const response = await this.client.post<TokenDto>(this.tokenApiUrl, data, this.defaultConfig);
 
     if (!response.data.token) {
