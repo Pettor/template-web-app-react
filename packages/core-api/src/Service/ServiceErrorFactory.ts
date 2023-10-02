@@ -1,15 +1,18 @@
-import type { ApiError } from "../Worker/ApiWorkerReponse";
-import { isApiError } from "../Worker/ApiWorkerReponse";
+import { isApiError, type ApiError } from "../Worker/ApiWorkerReponse";
+import type { ServiceError } from "./ServiceError";
 
 export class ServiceErrorFactory {
   public static create(e: unknown): ApiError {
     if (isApiError(e)) {
-      return e;
+      // Make sure errors are returned as ServiceError
+      return {
+        ...e,
+      } as ServiceError;
     }
 
     return {
-      message: "",
-      name: "",
+      name: "Unknown error",
+      message: "Unknown error",
       status: 500,
     };
   }

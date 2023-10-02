@@ -30,10 +30,10 @@ export function ProfileCard({ name, email, isMobile, onLogout }: ProfileCardProp
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1" component="div" data-testid="profile-card__name-text">
-                  {name ? name : <Skeleton animation={false} />}
+                  {name ? name : <Skeleton />}
                 </Typography>
                 <Typography variant="body2" gutterBottom data-testid="profile-card__email-text">
-                  {email ? email : <Skeleton animation={false} />}
+                  {email ? email : <Skeleton />}
                 </Typography>
               </Grid>
             </Grid>

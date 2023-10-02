@@ -20,7 +20,7 @@ export function ForgotPasswordPage(): React.ReactElement {
     resetAlerts();
 
     try {
-      submit(email);
+      await submit(email);
       navigate("/");
     } catch (error) {
       addAlert({
