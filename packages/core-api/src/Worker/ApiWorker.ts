@@ -2,6 +2,7 @@ import axios from "axios";
 import type { LoginData } from "../Api";
 import { client } from "../Client/AxiosClient";
 import { clearToken, setToken } from "../Token/TokenStorage";
+import { ALLOWED_URLS } from "./ApiWorkerAllowedUrls";
 import { ApiWorkerClient } from "./ApiWorkerClient";
 import type { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
 
@@ -16,7 +17,7 @@ type ApiMessages =
   | { type: "request/get"; url: string }
   | { type: "request/delete"; url: string };
 
-const apiWorkerClient = new ApiWorkerClient(client);
+const apiWorkerClient = new ApiWorkerClient(client, ALLOWED_URLS);
 
 async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<ApiMessages>): Promise<void> {
   let apiResponse: ApiResponseTypes;
