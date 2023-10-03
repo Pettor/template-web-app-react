@@ -1,7 +1,7 @@
 import type { Dispatch, ReactElement, ReactNode } from "react";
-import { createContext, useEffect, useMemo, useReducer } from "react";
+import { createContext, useMemo, useReducer } from "react";
+import { useRefreshToken } from "core-api";
 import { useRunOnce } from "react-utils";
-import { useApi } from "../api/UseApi";
 import type { AuthActions, AuthState } from "./AuthReducer";
 import { AuthReducer } from "./AuthReducer";
 
@@ -22,13 +22,13 @@ interface Props {
 
 function AuthProvider({ children }: Props): ReactElement {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
-  const api = useApi();
+  const { mutateAsync: refreshToken } = useRefreshToken();
 
   useRunOnce({
     func: async () => {
       try {
         // Run once on app load to check if the user is logged in
-        await api.refreshToken();
+        await refreshToken();
         dispatch({ type: "auth/login" });
       } catch (error) {
         dispatch({ type: "auth/logout" });
@@ -42,14 +42,6 @@ function AuthProvider({ children }: Props): ReactElement {
       dispatch,
     };
   }, [state]);
-
-  useEffect(() => {
-    const unsubscribe = api.subscribe(() => {
-      dispatch({ type: "auth/logout" });
-    });
-
-    return (): void => unsubscribe();
-  });
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

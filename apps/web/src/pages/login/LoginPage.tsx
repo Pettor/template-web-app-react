@@ -1,11 +1,12 @@
 import { type ReactElement } from "react";
+import { useLogin } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useAlertManager } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
 import type { FormLogin } from "~/components/forms/login/LoginForm";
 import { LoginView } from "~/components/views/login/LoginView";
-import { useLogin } from "~/core/api/queries/login/token-request/UseLogin";
+import { useAuth } from "~/core/auth/UseAuth";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
 export function LoginPage(): ReactElement {
@@ -13,13 +14,15 @@ export function LoginPage(): ReactElement {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appName } = useAppInfo();
-  const { isLoading, mutateAsync: submit } = useLogin();
-  const { addAlert, reset } = useAlertManager();
+  const { login } = useAuth();
+  const { isLoading } = useLogin();
+  const { addAlert, reset: resetAlerts } = useAlertManager();
 
   async function handleSubmit(data: FormLogin): Promise<void> {
-    reset();
+    resetAlerts();
+
     try {
-      await submit(data);
+      await login(data);
     } catch (error) {
       addAlert({
         id: "login-error",
