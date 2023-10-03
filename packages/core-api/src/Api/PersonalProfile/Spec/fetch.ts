@@ -12,8 +12,8 @@ const profileInfoSchema = object({
   email: string().required(),
   isActive: boolean().required(),
   emailConfirmed: boolean().required(),
-  phoneNumber: string().required(),
-  imageUrl: string().required(),
+  phoneNumber: string().optional().nullable(),
+  imageUrl: string().optional().nullable(),
 });
 
 type ProfileInfoDto = InferType<typeof profileInfoSchema>;
@@ -27,8 +27,8 @@ function convertFromDto(dto: ProfileInfoDto): ProfileInfo {
     email: dto.email,
     isActive: dto.isActive.valueOf(),
     emailConfirmed: dto.emailConfirmed.valueOf(),
-    phoneNumber: dto.phoneNumber,
-    imageUrl: dto.imageUrl,
+    phoneNumber: dto.phoneNumber ?? undefined,
+    imageUrl: dto.imageUrl ?? undefined,
   };
 }
 

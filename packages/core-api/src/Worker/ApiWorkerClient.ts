@@ -10,8 +10,9 @@ import axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { produce } from "immer";
 import type { LoginData } from "../Api";
-import { setToken, getToken } from "../Token/TokenStorage";
-import type { TokenDto } from "./ApiWorkerClasses";
+import type { JwtToken } from "../Token/JwtToken";
+import { getToken } from "../Token/TokenStorage";
+import { tokenSchema } from "./ApiWorkerClasses";
 
 export class ApiWorkerClient {
   private readonly tokenApiUrl = "/api/tokens";
@@ -55,34 +56,21 @@ export class ApiWorkerClient {
     });
   }
 
-  public async tokenRequest(data: LoginData): Promise<AxiosResponse> {
-    const response = await this.client.post<TokenDto>(this.tokenApiUrl, data, this.defaultConfig);
-
-    if (!response.data.token) {
-      throw new Error("No token provided");
-    }
-
-    setToken(response.data.token);
-
-    // Remove token from response
-    return produce<AxiosResponse>(response, (draft) => {
-      draft.data = null;
-    });
+  public async tokenRequest(data: LoginData): Promise<JwtToken> {
+    const response = await this.client.post(this.tokenApiUrl, data, this.defaultConfig);
+    const { token } = await tokenSchema.validate(response.data);
+    return token;
   }
 
   public async removeToken(): Promise<AxiosResponse> {
     return await this.client.delete(this.tokenApiUrl, this.defaultConfig);
   }
 
-  public async refreshToken(): Promise<AxiosResponse> {
+  public async refreshToken(): Promise<JwtToken> {
     // Refresh-Token API will use the standard AXIOS client to avoid issue where API is stuck
-    const response = await axios.get<TokenDto>(this.refreshTokenApiUrl, this.defaultConfig);
-    setToken(response.data.token);
-
-    // Remove token from response
-    return produce<AxiosResponse>(response, (draft) => {
-      draft.data = null;
-    });
+    const response = await axios.get(this.refreshTokenApiUrl, this.defaultConfig);
+    const { token } = await tokenSchema.validate(response.data);
+    return token;
   }
 
   public async patch(url: string, data?: unknown): Promise<AxiosResponse> {

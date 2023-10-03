@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { LoginData } from "../Api";
 import { client } from "../Client/AxiosClient";
-import { clearToken } from "../Token/TokenStorage";
+import { clearToken, setToken } from "../Token/TokenStorage";
 import { ApiWorkerClient } from "./ApiWorkerClient";
 import type { ApiError, ApiResponseTypes } from "./ApiWorkerReponse";
 
@@ -32,16 +32,20 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
       case "token/request":
         {
           const { payload } = sentData;
-          const { status, statusText } = await apiWorkerClient.tokenRequest(payload);
-          apiResponse = { data: null, status, statusText };
+          const token = await apiWorkerClient.tokenRequest(payload);
+
+          setToken(token);
+          apiResponse = { data: null, status: 200, statusText: "OK" };
         }
         break;
 
       // Refresh Token
       case "token/refresh":
         {
-          const { status, statusText } = await apiWorkerClient.refreshToken();
-          apiResponse = { data: null, status, statusText };
+          const token = await apiWorkerClient.refreshToken();
+
+          setToken(token);
+          apiResponse = { data: null, status: 200, statusText: "OK" };
         }
         break;
 
@@ -114,20 +118,20 @@ async function messageHandler({ data: sentData, ports: [port] }: MessageEvent<Ap
         } as ApiError;
       }
     }
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      const { message, code, name, cause } = error;
+  } catch (e) {
+    if (axios.isAxiosError(e)) {
+      const { message, code, name, cause } = e;
       apiResponse = {
         message,
         code,
         name,
         cause,
-        status: error.response?.status || 500,
+        status: e.response?.status || 500,
       } as ApiError;
     } else {
       apiResponse = {
         name: "Unknown error",
-        message: (error as Error).message ?? "Unknown error",
+        message: (e as Error).message ?? "Unknown error",
         status: 500,
       } satisfies ApiError;
     }

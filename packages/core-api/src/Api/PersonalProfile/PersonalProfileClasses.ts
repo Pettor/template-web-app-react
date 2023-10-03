@@ -6,6 +6,6 @@ export interface ProfileInfo {
   email: string;
   isActive: boolean;
   emailConfirmed: boolean;
-  phoneNumber: string;
-  imageUrl: string;
+  phoneNumber?: string;
+  imageUrl?: string;
 }
