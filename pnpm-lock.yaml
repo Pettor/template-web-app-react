@@ -314,8 +314,8 @@ importers:
   packages/mui-theme:
     dependencies:
       '@fontsource/rubik':
-        specifier: 5.0.12
-        version: 5.0.12
+        specifier: 5.0.13
+        version: 5.0.13
     devDependencies:
       tsconfig:
         specifier: workspace:*
@@ -2367,8 +2367,8 @@ packages:
   /@floating-ui/utils@0.1.1:
     resolution: {integrity: sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==}
 
-  /@fontsource/rubik@5.0.12:
-    resolution: {integrity: sha512-R1Yad0eQ8p0WCuuhRn14Jy5h3/lY1ZUQYxs9f2dzJ7NbfBFWUvBRyAVoxcQu/umWnAUzhuVy9VX8uZfOfVFpGQ==}
+  /@fontsource/rubik@5.0.13:
+    resolution: {integrity: sha512-reic3nVM7RWSoHUen0HTwpLX4eyWbQ/B1yNbQYUG36wfDCIrznv1AJVE3UYZcwUcSHgjsUvFrRnbT5rjlJeSUA==}
     dev: false
 
   /@formatjs/cli@6.2.0:
