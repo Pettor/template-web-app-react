@@ -2,24 +2,24 @@ import type { ReactElement } from "react";
 import { createContext, useCallback, useMemo, useState } from "react";
 import { produce } from "immer";
 import { getCrypto } from "react-utils";
-import { Alert } from "../Alert/Alert";
-import type { AlertOptions } from "../Alert/AlertClasses";
-import type { AlertManagerAlert } from "./AlertManagerClasses";
+import { Toast } from "../Toast/Toast";
+import type { ToastOptions } from "../Toast/ToastClasses";
+import type { ToastNotifierAlert } from "./ToastNotifierClasses";
 
-interface IAlertManagerContext {
-  addAlert: (alertOptions: AlertOptions) => void;
-  alerts: AlertManagerAlert[];
+interface IToastNotifierContext {
+  addAlert: (alertOptions: ToastOptions) => void;
+  alerts: ToastNotifierAlert[];
   reset: () => void;
 }
 
-const AlertManagerContext = createContext<IAlertManagerContext | null>(null);
+const ToastNotifierContext = createContext<IToastNotifierContext | null>(null);
 
 interface Props {
   children: ReactElement | ReactElement[];
 }
 
-function AlertManagerProvider({ children }: Props): ReactElement {
-  const [alerts, setAlerts] = useState<AlertManagerAlert[]>([]);
+function ToastNotifierProvider({ children }: Props): ReactElement {
+  const [alerts, setAlerts] = useState<ToastNotifierAlert[]>([]);
 
   const handleClosed = useCallback((id: string) => {
     setAlerts((prevAlerts) =>
@@ -34,14 +34,14 @@ function AlertManagerProvider({ children }: Props): ReactElement {
   }, []);
 
   const addAlert = useCallback(
-    (alertOptions: AlertOptions) => {
+    (alertOptions: ToastOptions) => {
       const id = getCrypto().randomUUID();
 
       setAlerts((prevAlerts) =>
         produce(prevAlerts, (draft) => {
           draft.unshift({
             id,
-            element: <Alert key={id} {...alertOptions} onClosed={(): void => handleClosed(id)} />,
+            element: <Toast key={id} {...alertOptions} onClosed={(): void => handleClosed(id)} />,
           });
           return draft;
         })
@@ -62,8 +62,8 @@ function AlertManagerProvider({ children }: Props): ReactElement {
     };
   }, [addAlert, alerts, reset]);
 
-  return <AlertManagerContext.Provider value={value}>{children}</AlertManagerContext.Provider>;
+  return <ToastNotifierContext.Provider value={value}>{children}</ToastNotifierContext.Provider>;
 }
 
-export type { IAlertManagerContext };
-export { AlertManagerProvider, AlertManagerContext };
+export type { IToastNotifierContext };
+export { ToastNotifierProvider, ToastNotifierContext };

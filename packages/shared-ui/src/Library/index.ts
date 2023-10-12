@@ -1,5 +1,5 @@
-export * from "./Alert";
-export * from "./AlertManager";
+export * from "./Toast";
+export * from "./ToastNotifier";
 export * from "./IconMenuButton";
 export * from "./Logo";
 export * from "./LogoFull";

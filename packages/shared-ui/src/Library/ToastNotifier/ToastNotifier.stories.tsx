@@ -2,12 +2,12 @@ import { Box, Button } from "@mui/material";
 import type { Meta, StoryObj } from "@storybook/react";
 import { CommonDecorator } from "storybook-base";
 import { useCounter } from "usehooks-ts";
-import { AlertManager as Component } from "./AlertManager";
-import { AlertManagerProvider } from "./AlertManagerContext";
-import { useAlertManager } from "./UseAlertManager";
+import { ToastNotifier as Component } from "./ToastNotifier";
+import { ToastNotifierProvider } from "./ToastNotifierContext";
+import { useToastNotifier } from "./UseToastNotifier";
 
 const meta = {
-  title: "Library/Alert/Manager",
+  title: "Library/Toast/Notifier",
   component: Component,
   decorators: [CommonDecorator],
   tags: ["autodocs"],
@@ -16,22 +16,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const AlertManager = {
+export const ToastNotifier = {
   args: {},
   render: (props) => {
     return (
-      <AlertManagerProvider>
+      <ToastNotifierProvider>
         <Box>
           <AddAlertComponent />
           <Component {...props} />
         </Box>
-      </AlertManagerProvider>
+      </ToastNotifierProvider>
     );
   },
 } satisfies Story;
 
 function AddAlertComponent() {
-  const { addAlert } = useAlertManager();
+  const { addAlert } = useToastNotifier();
   const { count, increment } = useCounter();
 
   function handleClick() {

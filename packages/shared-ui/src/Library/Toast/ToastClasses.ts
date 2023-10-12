@@ -1,6 +1,6 @@
 import type { AlertProps } from "@mui/material";
 
-export interface AlertOptions extends AlertProps {
+export interface ToastOptions extends AlertProps {
   text: string;
   title?: string;
   timeout?: number;
