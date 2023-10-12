@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { AlertManager, AlertManagerProvider } from "shared-ui";
+import { ToastNotifier, ToastNotifierProvider } from "shared-ui";
 
 export interface RouteProviderProps {
   children: ReactElement | ReactElement[];
@@ -7,9 +7,9 @@ export interface RouteProviderProps {
 
 export function RouteProviders({ children }: RouteProviderProps): ReactElement {
   return (
-    <AlertManagerProvider>
+    <ToastNotifierProvider>
       <>{children}</>
-      <AlertManager />
-    </AlertManagerProvider>
+      <ToastNotifier />
+    </ToastNotifierProvider>
   );
 }

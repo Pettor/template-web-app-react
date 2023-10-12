@@ -1,9 +1,9 @@
 import type { ReactElement } from "react";
 import { List, ListItem, Snackbar } from "@mui/material";
-import { useAlertManager } from "./UseAlertManager";
+import { useToastNotifier } from "./UseToastNotifier";
 
-export function AlertManager(): ReactElement {
-  const { alerts } = useAlertManager();
+export function ToastNotifier(): ReactElement {
+  const { alerts } = useToastNotifier();
 
   return (
     <Snackbar

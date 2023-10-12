@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 import { useSelfRegisterByData } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { useAlertManager } from "shared-ui";
+import { useToastNotifier } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
 import type { FormSignUp } from "~/components/forms/sign-up/SignUpForm";
 import { SignUpView } from "~/components/views/sign-up/SignUpView";
@@ -14,7 +14,7 @@ export function SignUpPage(): ReactElement {
   const intl = useIntl();
   const { appNameCapital } = useAppInfo();
   const { isLoading, mutateAsync: submit } = useSelfRegisterByData();
-  const { addAlert, reset } = useAlertManager();
+  const { addAlert, reset } = useToastNotifier();
 
   async function handleSubmit(data: FormSignUp): Promise<void> {
     reset();

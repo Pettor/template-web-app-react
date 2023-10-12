@@ -2,11 +2,11 @@ import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, waitFor, within } from "@storybook/testing-library";
 import { CommonDecorator } from "storybook-base";
-import { Alert as Component } from "./Alert";
-import type { AutoAlertProps } from "./Alert";
+import { Toast as Component } from "./Toast";
+import type { ToastProps } from "./Toast";
 
 const meta = {
-  title: "Library/Alert",
+  title: "Library/Toast",
   component: Component,
   decorators: [CommonDecorator],
   tags: ["autodocs"],
@@ -15,7 +15,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const defaultArgs: AutoAlertProps = {
+const defaultArgs: ToastProps = {
   text: "Info text",
   severity: "info",
 };

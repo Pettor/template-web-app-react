@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 
-export interface AlertManagerAlert {
+export interface ToastNotifierAlert {
   id: string;
   element: ReactElement;
 }

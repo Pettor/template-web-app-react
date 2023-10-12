@@ -2,13 +2,13 @@ import type { ReactElement } from "react";
 import { useCallback, useEffect, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { Alert as MuiAlert, Collapse, IconButton, AlertTitle } from "@mui/material";
-import type { AlertOptions } from "./AlertClasses";
+import type { ToastOptions as ToastOptions } from "./ToastClasses";
 
-export interface AutoAlertProps extends AlertOptions {
+export interface ToastProps extends ToastOptions {
   onClosed?: () => void;
 }
 
-export function Alert({ title, text, timeout = 0, onClosed, ...alertProps }: AutoAlertProps): ReactElement {
+export function Toast({ title, text, timeout = 0, onClosed, ...alertProps }: ToastProps): ReactElement {
   const [closed, setClosed] = useState<boolean>(false);
 
   useEffect(() => {

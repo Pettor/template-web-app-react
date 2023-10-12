@@ -2,7 +2,7 @@ import { type ReactElement } from "react";
 import { useLogin } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { useAlertManager } from "shared-ui";
+import { useToastNotifier } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
 import type { FormLogin } from "~/components/forms/login/LoginForm";
 import { LoginView } from "~/components/views/login/LoginView";
@@ -16,7 +16,7 @@ export function LoginPage(): ReactElement {
   const { appName } = useAppInfo();
   const { login } = useAuth();
   const { isLoading } = useLogin();
-  const { addAlert, reset: resetAlerts } = useAlertManager();
+  const { addAlert, reset: resetAlerts } = useToastNotifier();
 
   async function handleSubmit(data: FormLogin): Promise<void> {
     resetAlerts();

@@ -1,7 +1,7 @@
 import { useForgotPasswordByEmail } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { useAlertManager } from "shared-ui";
+import { useToastNotifier } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
 import type { FormForgotPassword } from "~/components/forms/forgot-password/ForgotPasswordForm";
 import { ForgotPasswordView } from "~/components/views/forgot-password/ForgotPasswordView";
@@ -13,7 +13,7 @@ export function ForgotPasswordPage(): React.ReactElement {
   const intl = useIntl();
   const { appName } = useAppInfo();
   const { isLoading, mutateAsync: submit } = useForgotPasswordByEmail();
-  const { addAlert, reset: resetAlerts } = useAlertManager();
+  const { addAlert, reset: resetAlerts } = useToastNotifier();
 
   async function handleSubmit(data: FormForgotPassword): Promise<void> {
     const { email } = data;
