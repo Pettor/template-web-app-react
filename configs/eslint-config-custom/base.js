@@ -28,12 +28,6 @@ module.exports = {
   },
   "rules": {
     // Common
-    "no-restricted-imports": [
-      "error",
-      {
-        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
-      }
-    ],
     "import/order": [
       "error",
       {

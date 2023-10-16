@@ -1,82 +1,103 @@
 import type { ReactElement } from "react";
-import type { StyledComponent } from "@emotion/styled";
-import { Box } from "@mui/material";
-import { Grid } from "@mui/material";
-import { Typography } from "@mui/material";
-import type { BoxProps } from "@mui/material/Box";
-import type { PaletteColor } from "@mui/material/styles";
-import { useTheme, styled } from "@mui/material/styles";
-import { DocumentationDecorator } from "storybook-base";
-import { DocumentationLayout } from "storybook-base";
+import { DocumentationDecorator, DocumentationLayout } from "storybook-base";
+
 export default {
   title: "Design System/Colors",
   decorators: [DocumentationDecorator],
+  parameters: {
+    layout: "fullscreen",
+  },
 };
 
-const Item: StyledComponent<BoxProps> = styled(Box)(({ theme }) => ({
-  ...theme.typography.subtitle2,
-  padding: theme.spacing(2),
-  alignItems: "center",
-  height: "100%",
-  display: "flex",
-}));
-
-function ColorRow(label: string, color: PaletteColor): ReactElement {
-  const { contrastText, dark, light, main } = color;
-  return (
-    <>
-      <Grid item xs={3}>
-        <Item>
-          <Typography variant="subtitle1">{label}</Typography>
-        </Item>
-      </Grid>
-      <Grid item xs={3} sx={{ color: contrastText, background: main }}>
-        <Item>{main}</Item>
-      </Grid>
-      <Grid item xs={3} sx={{ color: contrastText, background: light }}>
-        <Item>{light}</Item>
-      </Grid>
-      <Grid item xs={3} sx={{ color: contrastText, background: dark }}>
-        <Item>{dark}</Item>
-      </Grid>
-    </>
-  );
-}
-
 export function Colors(): ReactElement {
-  const theme = useTheme();
-  const { primary, secondary, info, success, warning, error } = theme.palette;
-
   return (
     <DocumentationLayout label="Colors">
-      <Grid container>
-        <Grid item xs={3}>
-          <Item>
-            <Typography variant="h6">Name</Typography>
-          </Item>
-        </Grid>
-        <Grid item xs={3}>
-          <Item>
-            <Typography variant="h6">Main</Typography>
-          </Item>
-        </Grid>
-        <Grid item xs={3}>
-          <Item>
-            <Typography variant="h6">Light</Typography>
-          </Item>
-        </Grid>
-        <Grid item xs={3}>
-          <Item>
-            <Typography variant="h6">Dark</Typography>
-          </Item>
-        </Grid>
-        {ColorRow("Primary", primary)}
-        {ColorRow("Secondary", secondary)}
-        {ColorRow("Info", info)}
-        {ColorRow("Success", success)}
-        {ColorRow("Warning", warning)}
-        {ColorRow("Error", error)}
-      </Grid>
+      <div className="flex flex-col">
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl font-bold">Name</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"flex basis-1/3 items-center p-6 text-xl font-bold"}>Main</div>
+            <div className={"flex basis-1/3 items-center p-6 text-xl font-bold"}>Content</div>
+            <div className={"flex basis-1/3 items-center p-6 text-xl font-bold"}>Focus</div>
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Primary</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"bg-primary flex basis-1/3 items-center p-6"} />
+            <div className={"bg-primary-content flex basis-1/3 items-center p-6"} />
+            <div className={"bg-primary-focus flex basis-1/3 items-center p-6"} />
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Secondary</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"bg-secondary flex basis-1/3 items-center p-6"} />
+            <div className={"bg-secondary-content flex basis-1/3 items-center p-6"} />
+            <div className={"bg-secondary-focus flex basis-1/3 items-center p-6"} />
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Accent</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"bg-accent flex basis-1/3 items-center p-6"} />
+            <div className={"bg-accent-content flex basis-1/3 items-center p-6"} />
+            <div className={"bg-accent-focus flex basis-1/3 items-center p-6"} />
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Neutral</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"bg-neutral flex basis-1/3 items-center p-6"} />
+            <div className={"bg-neutral-content flex basis-1/3 items-center p-6"} />
+            <div className={"bg-neutral-focus flex basis-1/3 items-center p-6"} />
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Base</div>
+          <div className="flex flex-1 flex-row">
+            <div className="flex flex-1 flex-row">
+              <div className={"bg-base-100 flex basis-1/3 items-center p-6"} />
+              <div className={"bg-base-200 flex basis-1/3 items-center p-6"} />
+              <div className={"bg-base-300 flex basis-1/3 items-center p-6"} />
+            </div>
+            <div className={"bg-base-content flex basis-1/3 items-center p-6"} />
+            <div className={"flex basis-1/3 justify-center"}>N/A</div>
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Info</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"bg-info flex basis-1/3 items-center p-6"} />
+            <div className={"bg-info-content flex basis-1/3 items-center p-6"} />
+            <div className={"alignt-center flex basis-1/3 justify-center"}>N/A</div>
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Success</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"bg-success flex basis-1/3 items-center p-6"} />
+            <div className={"bg-success-content flex basis-1/3 items-center p-6"} />
+            <div className={"alignt-center flex basis-1/3 justify-center"}>N/A</div>
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Warning</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"bg-warning flex basis-1/3 items-center p-6"} />
+            <div className={"bg-warning-content flex basis-1/3 items-center p-6"} />
+            <div className={"alignt-center flex basis-1/3 justify-center"}>N/A</div>
+          </div>
+        </div>
+        <div className="m-2 flex flex-1">
+          <div className="flex basis-1/4 items-center text-xl">Error</div>
+          <div className="flex flex-1 flex-row">
+            <div className={"bg-error flex basis-1/3 items-center p-6"} />
+            <div className={"bg-error-content flex basis-1/3 items-center p-6"} />
+            <div className={"alignt-center flex basis-1/3 justify-center"}>N/A</div>
+          </div>
+        </div>
+      </div>
     </DocumentationLayout>
   );
 }

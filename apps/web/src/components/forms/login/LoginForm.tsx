@@ -1,10 +1,10 @@
 import type { ReactElement } from "react";
+import { EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { LoadingButton } from "@mui/lab";
-import { Box, TextField, Stack } from "@mui/material";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
+import { InputField } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormLogin {
@@ -60,62 +60,36 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
 
   return (
     <form onSubmit={handleFormSubmit(onSubmit)}>
-      <TextField
-        margin="normal"
-        fullWidth
+      <InputField
         id="email"
-        label={intl.formatMessage({
-          description: "LoginFormLabel: Email",
-          defaultMessage: "Email Address",
-          id: "3pA647",
-        })}
-        autoComplete="email"
-        autoFocus
-        error={!!errors?.email}
-        helperText={errors?.email?.message}
-        inputProps={{
-          "data-testid": "login-form__email-input",
-        }}
+        type="text"
+        placeholder="Email"
+        icon={<EnvelopeIcon className="w-5 h-5" />}
+        error={errors.email?.message}
         {...register("email")}
+        data-testid="login-form__email-input"
       />
-
-      <TextField
-        margin="normal"
-        fullWidth
+      <InputField
         id="password"
-        label={intl.formatMessage({
-          description: "LoginFormLabel: Password",
-          defaultMessage: "Password",
-          id: "7VjY8Y",
-        })}
-        autoComplete="current-password"
-        autoFocus
         type="password"
-        error={!!errors?.password}
-        helperText={errors?.password?.message}
-        inputProps={{
-          "data-testid": "login-form__password-input",
-        }}
+        placeholder="Password"
+        icon={<LockClosedIcon className="w-5 h-5" />}
+        error={errors.password?.message}
         {...register("password")}
+        data-testid="login-form__password-input"
       />
-      <Stack direction="row">
-        <Box sx={{ width: "100%", display: "flex", flex: 1, justifyContent: "flex-end" }}>
-          <LoadingButton
-            type="submit"
-            loading={loading}
-            variant="outlined"
-            color="primary"
-            sx={{ mt: 3, mb: 2, width: 150 }}
-            data-testid="login-form__submit-button"
-          >
+      <div className="flex flex-row">
+        <div className="w-full flex flex-1 justify-end">
+          <button type="submit" className="btn btn-primary w-40" data-testid="login-form__submit-button">
+            {loading && <span className="loading loading-spinner" />}
             {intl.formatMessage({
               description: "LoginFormButton: Sign in",
               defaultMessage: "Sign in",
               id: "zXsz1H",
             })}
-          </LoadingButton>
-        </Box>
-      </Stack>
+          </button>
+        </div>
+      </div>
     </form>
   );
 }

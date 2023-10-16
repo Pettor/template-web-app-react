@@ -1,36 +1,43 @@
 import type { ReactElement } from "react";
-import { Fragment } from "react";
-import CloseIcon from "@mui/icons-material/Close";
-import { IconButton, Snackbar } from "@mui/material";
-import type { SnackbarProps } from "@mui/material";
 import { useIntl } from "react-intl";
 
-export interface PwaOfflineDialogProps extends Pick<SnackbarProps, "autoHideDuration"> {
+export interface PwaOfflineDialogProps {
   open: boolean;
   onClose(): void;
 }
 
-export function PwaOfflineDialog({ open, autoHideDuration, onClose }: PwaOfflineDialogProps): ReactElement {
+export function PwaOfflineDialog({ open, onClose }: PwaOfflineDialogProps): ReactElement {
   const intl = useIntl();
 
-  const action = (
-    <Fragment>
-      <IconButton size="small" aria-label="close" color="inherit" onClick={onClose}>
-        <CloseIcon fontSize="small" />
-      </IconButton>
-    </Fragment>
-  );
-
   return (
-    <Snackbar
-      open={open}
-      autoHideDuration={autoHideDuration}
-      message={intl.formatMessage({
-        description: "PwaOfflineDialog- Ready to work offline description",
-        defaultMessage: "Ready to work offline",
-        id: "HQHLM4",
-      })}
-      action={action}
-    />
+    <div className="toast toast-left">
+      {open && (
+        <div role="alert" className="alert">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="stroke-info shrink-0 w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <span>
+            {intl.formatMessage({
+              description: "PwaOfflineDialog- Ready to work offline description",
+              defaultMessage: "Ready to work offline",
+              id: "HQHLM4",
+            })}
+          </span>
+          <div>
+            <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

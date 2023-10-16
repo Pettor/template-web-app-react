@@ -11,7 +11,7 @@ const meta = {
     layout: "fullscreen",
   },
   argTypes: {
-    headerComponents: {
+    components: {
       table: {
         disable: true,
       },
@@ -32,8 +32,8 @@ function render(args: Props) {
 
 export const Header = {
   args: {
-    label: "Some Label",
-    headerComponents: <DefaultHeaderComponents />,
+    title: "Some Label",
+    components: <DefaultHeaderComponents />,
   },
   render,
 } satisfies Story;

@@ -1,37 +1,24 @@
-import type { ReactElement } from "react";
-import { Box, Toolbar, useMediaQuery } from "@mui/material";
-import type { Breakpoint, SxProps, Theme } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import type { AppHeaderProps } from "../../Navigation/AppHeader";
-import { AppHeader } from "../../Navigation/AppHeader";
-import { HeaderLayoutContainer } from "./HeaderLayoutContainer";
-import { HeaderLayoutContent } from "./HeaderLayoutContent";
+import type { ReactElement, ReactNode } from "react";
+import clsx from "clsx";
+import { AppHeader, type AppHeaderProps } from "../../Navigation/AppHeader";
 
 export interface HeaderLayoutProps extends AppHeaderProps {
-  maxWidth?: Breakpoint | false;
-  sx?: SxProps<Theme>;
-  children?: ReactElement | ReactElement[];
+  className?: string;
+  children?: ReactNode;
 }
 
-export function HeaderLayout({ maxWidth = "lg", sx, children, ...headerProps }: HeaderLayoutProps): ReactElement {
-  const theme = useTheme();
-  const isLgUp = useMediaQuery(theme.breakpoints.up("lg"));
-
+export function HeaderLayout({ className, children, ...headerProps }: HeaderLayoutProps): ReactElement {
   return (
-    <HeaderLayoutContainer sx={{ ...sx }}>
-      <AppHeader {...headerProps} />
-      <Box
-        sx={{
-          flexGrow: 1,
-        }}
-      >
-        <HeaderLayoutContent maxWidth={maxWidth}>
-          <Toolbar />
-          <Box component="main" sx={{ mt: 2, px: isLgUp ? 10 : 0 }}>
-            {children}
-          </Box>
-        </HeaderLayoutContent>
-      </Box>
-    </HeaderLayoutContainer>
+    <div className={clsx(className, "flex flex-col")}>
+      <div className="sticky top-0 z-40">
+        <AppHeader {...headerProps} />
+      </div>
+      <div className="flex">
+        <div className="container mb-8">
+          <div className="navbar" />
+          <main className="mt-2 lg:px-10">{children}</main>
+        </div>
+      </div>
+    </div>
   );
 }

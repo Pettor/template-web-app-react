@@ -1,8 +1,5 @@
 import type { ReactElement } from "react";
-import { Button, Snackbar, Stack } from "@mui/material";
 import { useIntl } from "react-intl";
-import { PwaUpdateDialogContainer } from "./PwaUpdateDialogContainer";
-import { PwaUpdateDialogDescription } from "./PwaUpdateDialogDescription";
 
 export interface PwaUpdateDialogProps {
   appName: string;
@@ -14,10 +11,23 @@ export function PwaUpdateDialog({ appName, open, onUpdate }: PwaUpdateDialogProp
   const intl = useIntl();
 
   return (
-    <Snackbar open={open} anchorOrigin={{ vertical: "bottom", horizontal: "center" }}>
-      <PwaUpdateDialogContainer>
-        <Stack spacing={2} direction="row" sx={{ alignItems: "center" }}>
-          <PwaUpdateDialogDescription>
+    <div className="toast toast-center">
+      {open && (
+        <div role="alert" className="alert">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="stroke-info shrink-0 w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            ></path>
+          </svg>
+          <span>
             {intl.formatMessage(
               {
                 description: "PwaUpdateDialog - Update available description",
@@ -28,16 +38,19 @@ export function PwaUpdateDialog({ appName, open, onUpdate }: PwaUpdateDialogProp
                 appName,
               }
             )}
-          </PwaUpdateDialogDescription>
-          <Button variant="contained" color="primary" onClick={onUpdate}>
-            {intl.formatMessage({
-              description: "PwaUpdateDialog - Update button",
-              defaultMessage: "Update",
-              id: "Blpjtp",
-            })}
-          </Button>
-        </Stack>
-      </PwaUpdateDialogContainer>
-    </Snackbar>
+          </span>
+          <div className="flex flex-row gap-2">
+            <button className="btn btn-sm btn-primary" onClick={onUpdate}>
+              {intl.formatMessage({
+                description: "PwaUpdateDialog - Update button",
+                defaultMessage: "Update",
+                id: "Blpjtp",
+              })}
+            </button>
+            <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

@@ -7,9 +7,6 @@
     "clean": "rimraf dist",
     "clean:all": "pnpm clean node_modules"
   },
-  "dependencies": {
-    "mui-theme": "workspace:*"
-  },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "react-utils": "workspace:*",

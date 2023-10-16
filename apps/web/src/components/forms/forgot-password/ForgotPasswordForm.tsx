@@ -1,10 +1,10 @@
 import type { ReactElement } from "react";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { LoadingButton } from "@mui/lab";
-import { TextField } from "@mui/material";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
+import { InputField } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormForgotPassword {
@@ -50,35 +50,24 @@ export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProp
   });
 
   return (
-    <form onSubmit={handleFormSubmit(onSubmit)}>
-      <TextField
-        margin="normal"
-        fullWidth
+    <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col gap-4">
+      <InputField
         id="email"
-        label={intl.formatMessage({
-          description: "ForgotPasswordFormLabel - Email",
-          defaultMessage: "Email Address",
-          id: "9CgMnb",
-        })}
-        autoComplete="email"
-        autoFocus
-        error={!!errors?.email}
-        helperText={errors?.email?.message}
-        inputProps={{
-          "data-testid": "forgot-password-form__email-input",
-        }}
+        type="text"
+        placeholder="Email"
+        icon={<EnvelopeIcon className="w-5 h-5" />}
+        error={errors.email?.message}
         {...register("email")}
+        data-testid="forgot-password-form__email-input"
       />
-      <LoadingButton
-        type="submit"
-        fullWidth
-        loading={loading}
-        variant="outlined"
-        sx={{ mt: 3, mb: 2 }}
-        data-testid="forgot-password-form__submit-button"
-      >
-        Send
-      </LoadingButton>
+      <button type="submit" className="btn btn-primary" data-testid="forgot-password-form__submit-button">
+        {loading && <span className="loading loading-spinner" />}
+        {intl.formatMessage({
+          description: "ForgotPasswordFormButton - Send",
+          defaultMessage: "Send",
+          id: "JypUyk",
+        })}
+      </button>
     </form>
   );
 }

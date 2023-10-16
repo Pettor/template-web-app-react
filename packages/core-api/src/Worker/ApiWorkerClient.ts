@@ -6,7 +6,6 @@ import type {
   RawAxiosRequestHeaders,
   AxiosHeaders,
 } from "axios";
-import axios from "axios";
 import createAuthRefreshInterceptor from "axios-auth-refresh";
 import { produce } from "immer";
 import type { LoginData } from "../Api";
@@ -70,7 +69,7 @@ export class ApiWorkerClient {
 
   public async refreshToken(): Promise<JwtToken> {
     // Refresh-Token API will use the standard AXIOS client to avoid issue where API is stuck
-    const response = await axios.get(this.REFRESH_TOKEN_API_URL, this._defaultConfig);
+    const response = await this._client.get(this.REFRESH_TOKEN_API_URL, this._defaultConfig);
     const { token } = await tokenSchema.validate(response.data);
     return token;
   }

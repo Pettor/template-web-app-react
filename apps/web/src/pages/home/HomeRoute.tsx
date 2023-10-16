@@ -1,5 +1,4 @@
 import type { ReactElement } from "react";
-import { Box } from "@mui/material";
 import { useIntl } from "react-intl";
 import { useLoaderData, useRouteError } from "react-router-dom";
 import { HomePage, type HomePageProps } from "./HomePage";
@@ -14,7 +13,7 @@ export function ErrorBoundary(): ReactElement {
   const intl = useIntl();
   const error = useRouteError() as Error;
   return (
-    <Box>
+    <div>
       {intl.formatMessage(
         {
           description: "HomePage - ErrorBoundary",
@@ -25,6 +24,6 @@ export function ErrorBoundary(): ReactElement {
           error: error.message,
         }
       )}
-    </Box>
+    </div>
   );
 }

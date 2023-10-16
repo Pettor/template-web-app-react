@@ -1,58 +1,48 @@
-import type { ComponentProps, ReactElement } from "react";
-import BackArrow from "@mui/icons-material/ArrowBack";
-import { Typography, Container, IconButton, Divider, Toolbar } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import { Logo } from "../../Library/Logo";
-import { ElevationScroll } from "../../Navigation/ElevationScroll";
-import { AppHeaderBar } from "./AppHeaderBar";
-import type { AppHeaderComponents, AppHeaderOptions } from "./AppHeaderClasses";
-import { AppHeaderComponentsContainer } from "./AppHeaderComponentsContainer";
+import type { ReactElement, ReactNode } from "react";
+import { Logo } from "Components/Logo";
 
-export interface AppHeaderProps extends AppHeaderComponents, AppHeaderOptions {
-  isMobile?: boolean;
+export interface AppHeaderProps {
+  title: string;
+  components?: ReactNode;
 }
 
-export function AppHeader({
-  isMobile,
-  subheader,
-  label,
-  headerComponents,
-  headerComponentOptions,
-  onBack,
-}: AppHeaderProps): ReactElement {
-  const theme = useTheme();
-  const { flexItem, fill } = headerComponentOptions || { flexItem: false, fill: false };
-
-  function handleGetProps(trigger: boolean): ComponentProps<typeof AppHeaderBar> {
-    return {
-      elevation: trigger ? 2 : 0,
-      sx: { background: trigger ? theme.palette.background.default : theme.customBackgrounds.common.transparent },
-    };
-  }
-
+export function AppHeader({ title }: AppHeaderProps): ReactElement {
   return (
-    <ElevationScroll getProps={handleGetProps}>
-      <AppHeaderBar position="fixed" elevation={1}>
-        <Toolbar disableGutters>
-          <Container maxWidth="lg" sx={{ display: "flex", alignItems: "center" }}>
-            {!subheader && <Logo size="small" />}
-            {subheader && (
-              <IconButton onClick={onBack}>
-                <BackArrow />
-              </IconButton>
-            )}
-            <Divider sx={{ mx: 1, display: isMobile ? "none" : "flex" }} />
-            {!fill && (
-              <Typography component="h1" variant="h6" color="primary" noWrap sx={{ flexGrow: 1 }}>
-                {label}
-              </Typography>
-            )}
-            <AppHeaderComponentsContainer flexItem={flexItem} spacing={2} direction="row" alignItems="center">
-              {headerComponents}
-            </AppHeaderComponentsContainer>
-          </Container>
-        </Toolbar>
-      </AppHeaderBar>
-    </ElevationScroll>
+    <div className="navbar bg-base-100 glass bg-opacity-55">
+      <div className="navbar-start">
+        <Logo size="small" />
+        <span>{title}</span>
+      </div>
+      <div className="navbar-end">
+        <div className="form-control">
+          <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+        </div>
+        <div className="divider divider-horizontal" />
+        <div className="dropdown dropdown-end">
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img
+                alt="Tailwind CSS Navbar component"
+                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              />
+            </div>
+          </div>
+          <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+            <li>
+              <a className="justify-between">
+                Profile
+                <span className="badge">New</span>
+              </a>
+            </li>
+            <li>
+              <a>Settings</a>
+            </li>
+            <li>
+              <a>Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }

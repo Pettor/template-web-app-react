@@ -24,14 +24,14 @@
     "storybook:test": "test-storybook --url http://127.0.0.1:9065"
   },
   "dependencies": {
-    "mui-theme": "workspace:*"
+    "tailwind": "workspace:*",
   },
   "devDependencies": {
     "@storybook/addon-a11y": "7.6.17",
     "@storybook/addon-coverage": "1.0.1",
     "@storybook/addon-essentials": "7.6.17",
     "@storybook/addon-interactions": "7.6.17",
-    "@storybook/addon-styling": "1.3.7",
+    "@storybook/addon-themes": "7.6.17",
     "@storybook/addon-viewport": "7.6.17",
     "eslint-config-custom": "workspace:*",
     "react-utils": "workspace:*",

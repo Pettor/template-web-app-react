@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DefaultHeaderComponents } from "shared-ui";
 import { HomeView as Component } from "./HomeView";
+import type { HomeViewProps as Props } from "./HomeView";
 
 const meta = {
   component: Component,
@@ -9,7 +10,7 @@ const meta = {
     layout: "fullscreen",
   },
   argTypes: {
-    headerComponents: {
+    components: {
       table: {
         disable: true,
       },
@@ -20,8 +21,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const defaultArgs = {
+  title: "Home",
+  components: <DefaultHeaderComponents />,
+} satisfies Props;
+
 export const Home = {
-  args: {
-    headerComponents: <DefaultHeaderComponents />,
-  },
+  args: defaultArgs,
 } satisfies Story;

@@ -1,14 +1,14 @@
 import type { ReactElement } from "react";
-import { ProfileCardResponsive } from "shared-ui";
+import { ProfileCard } from "shared-ui";
 import { useProfileCardModule } from "./UseProfileCardModule";
 
 export function ProfileCardModule(): ReactElement {
   const { profileInfo, handleLogout } = useProfileCardModule();
 
   if (!profileInfo) {
-    return <ProfileCardResponsive />;
+    return <ProfileCard />;
   }
 
   const { email, firstName, lastName } = profileInfo;
-  return <ProfileCardResponsive name={`${firstName} ${lastName}`} email={email} onLogout={handleLogout} />;
+  return <ProfileCard name={`${firstName} ${lastName}`} email={email} onLogout={handleLogout} />;
 }

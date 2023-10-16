@@ -1,5 +1,4 @@
 import type { ReactElement } from "react";
-import { Typography } from "@mui/material";
 import { useIntl } from "react-intl";
 import { BasicLayout, LogoFull } from "shared-ui";
 import type { ForgotPasswordFormProps } from "../../forms/forgot-password/ForgotPasswordForm";
@@ -14,10 +13,10 @@ export function ForgotPasswordView({ appName, resetForm }: ForgotPasswordViewPro
   const intl = useIntl();
 
   return (
-    <BasicLayout>
+    <BasicLayout className="z-20 mt-32 max-w-[400px]">
       <LogoFull appName={appName} size="medium" />
       <br />
-      <Typography textAlign="center">
+      <p className="text-base text-center">
         {intl.formatMessage(
           {
             description: "ResetPasswordView - Reset password description",
@@ -29,8 +28,10 @@ export function ForgotPasswordView({ appName, resetForm }: ForgotPasswordViewPro
             appName: appName,
           }
         )}
-      </Typography>
-      <ForgotPasswordForm {...resetForm} />
+      </p>
+      <div className="mt-4">
+        <ForgotPasswordForm {...resetForm} />
+      </div>
     </BasicLayout>
   );
 }

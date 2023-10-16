@@ -1,24 +1,15 @@
-import type { ReactElement } from "react";
-import { Box, Container } from "@mui/material";
-import type { SxProps } from "@mui/material";
-import { BasicLayoutContainer } from "./BasicLayoutContainer";
-import { BasicLayoutContent } from "./BasicLayoutContent";
+import type { ReactElement, ReactNode } from "react";
+import clsx from "clsx";
 
 export interface BasicLayoutProps {
-  sx?: SxProps;
-  children: ReactElement | ReactElement[];
+  className?: string;
+  children: ReactNode;
 }
 
-export function BasicLayout({ sx, children }: BasicLayoutProps): ReactElement {
+export function BasicLayout({ className, children }: BasicLayoutProps): ReactElement {
   return (
-    <BasicLayoutContainer>
-      <Container maxWidth="xs" sx={sx}>
-        <BasicLayoutContent>
-          <Box component="main" sx={{ mt: 4, width: "100%" }}>
-            {children}
-          </Box>
-        </BasicLayoutContent>
-      </Container>
-    </BasicLayoutContainer>
+    <div className="container flex items-center justify-center">
+      <main className={clsx(className, "w-full")}>{children}</main>
+    </div>
   );
 }
