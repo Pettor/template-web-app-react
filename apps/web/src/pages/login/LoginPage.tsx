@@ -9,7 +9,7 @@ import { LoginView } from "~/components/views/login/LoginView";
 import { useAuth } from "~/core/auth/UseAuth";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
-export function LoginPage(): ReactElement {
+export function Component(): ReactElement {
   useDocumentTitle("Login");
   const navigate = useNavigate();
   const intl = useIntl();
@@ -61,3 +61,4 @@ export function LoginPage(): ReactElement {
     />
   );
 }
+Component.displayName = "LoginPage";

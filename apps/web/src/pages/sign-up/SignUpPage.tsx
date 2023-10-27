@@ -8,7 +8,7 @@ import type { FormSignUp } from "~/components/forms/sign-up/SignUpForm";
 import { SignUpView } from "~/components/views/sign-up/SignUpView";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
-export function SignUpPage(): ReactElement {
+export function Component(): ReactElement {
   useDocumentTitle("Sign Up");
   const navigate = useNavigate();
   const intl = useIntl();
@@ -49,3 +49,4 @@ export function SignUpPage(): ReactElement {
     />
   );
 }
+Component.displaName = "SignUpPage";

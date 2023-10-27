@@ -7,7 +7,7 @@ import type { FormForgotPassword } from "~/components/forms/forgot-password/Forg
 import { ForgotPasswordView } from "~/components/views/forgot-password/ForgotPasswordView";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
-export function ForgotPasswordPage(): React.ReactElement {
+export function Component(): React.ReactElement {
   useDocumentTitle("Login");
   const navigate = useNavigate();
   const intl = useIntl();
@@ -50,3 +50,4 @@ export function ForgotPasswordPage(): React.ReactElement {
     />
   );
 }
+Component.displayName = "ForgotPasswordPage";
