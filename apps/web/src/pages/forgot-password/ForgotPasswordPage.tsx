@@ -1,4 +1,4 @@
-import { useForgotPasswordByEmail } from "core-api";
+import { usePostForgotPasswordByEmail } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useToastNotifier } from "shared-ui";
@@ -12,7 +12,7 @@ export function ForgotPasswordPage(): React.ReactElement {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appName } = useAppInfo();
-  const { isPending, mutateAsync: submit } = useForgotPasswordByEmail();
+  const { isPending, mutateAsync: submit } = usePostForgotPasswordByEmail();
   const { addAlert, reset: resetAlerts } = useToastNotifier();
 
   async function handleSubmit(data: FormForgotPassword): Promise<void> {

@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { useSelfRegisterByData } from "core-api";
+import { usePostSelfRegisterByData } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useToastNotifier } from "shared-ui";
@@ -13,7 +13,7 @@ export function SignUpPage(): ReactElement {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appNameCapital } = useAppInfo();
-  const { isPending, mutateAsync: submit } = useSelfRegisterByData();
+  const { isPending, mutateAsync: submit } = usePostSelfRegisterByData();
   const { addAlert, reset } = useToastNotifier();
 
   async function handleSubmit(data: FormSignUp): Promise<void> {

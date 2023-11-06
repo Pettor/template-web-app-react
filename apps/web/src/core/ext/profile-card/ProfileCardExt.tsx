@@ -1,11 +1,11 @@
 import type { ReactElement } from "react";
-import { useFetchPersonalProfile } from "core-api";
+import { useQueryPersonalProfile } from "core-api";
 import { ProfileCardResponsive } from "shared-ui";
 import { useAuth } from "../../auth/UseAuth";
 
 export function ProfileCardExt(): ReactElement {
   const { logout } = useAuth();
-  const { data } = useFetchPersonalProfile();
+  const { data } = useQueryPersonalProfile();
 
   function handleLogout(): void {
     logout();

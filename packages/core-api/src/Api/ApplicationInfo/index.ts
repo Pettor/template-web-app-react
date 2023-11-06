@@ -1,3 +1,3 @@
-export * from "./Spec/fetch";
+export * from "./Spec";
 export * from "./ApplicationInfoClasses";
 export * from "./UseFetchApplicationInfo";

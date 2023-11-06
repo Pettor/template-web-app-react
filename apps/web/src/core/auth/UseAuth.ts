@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import type { LoginData } from "core-api";
-import { useLogin, useLogout } from "core-api";
+import { useLoginByData, useLogout } from "core-api";
 import { AuthContext } from "./AuthContext";
 import type { AuthStatus } from "./AuthReducer";
 
@@ -13,7 +13,7 @@ export function useAuth(): {
     state: { status },
     dispatch,
   } = useContext(AuthContext);
-  const { mutateAsync: loginFunc } = useLogin();
+  const { mutateAsync: loginFunc } = useLoginByData();
   const { mutateAsync: logoutFunc } = useLogout();
 
   async function login(data: LoginData): Promise<void> {

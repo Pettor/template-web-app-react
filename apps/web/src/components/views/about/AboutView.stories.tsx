@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SignUp = {
+export const About = {
   args: {
     version: "1.0.0",
   },
