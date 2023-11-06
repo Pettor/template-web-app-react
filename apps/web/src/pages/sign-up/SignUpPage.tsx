@@ -13,7 +13,7 @@ export function SignUpPage(): ReactElement {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appNameCapital } = useAppInfo();
-  const { isLoading, mutateAsync: submit } = useSelfRegisterByData();
+  const { isPending, mutateAsync: submit } = useSelfRegisterByData();
   const { addAlert, reset } = useToastNotifier();
 
   async function handleSubmit(data: FormSignUp): Promise<void> {
@@ -43,7 +43,7 @@ export function SignUpPage(): ReactElement {
     <SignUpView
       appName={appNameCapital}
       signUpForm={{
-        loading: isLoading,
+        loading: isPending,
         onSubmit: handleSubmit,
       }}
     />
