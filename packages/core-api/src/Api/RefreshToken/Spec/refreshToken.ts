@@ -1,10 +1,9 @@
 import { apiClient } from "../../../Client";
 import { ServiceErrorFactory } from "../../../Service/ServiceErrorFactory";
-import type { LoginData } from "../LoginClasses";
 
-export async function postByData(data: LoginData): Promise<void> {
+export async function refreshToken(): Promise<void> {
   try {
-    await apiClient.login(data);
+    await apiClient.refresh();
   } catch (e: unknown) {
     throw ServiceErrorFactory.create(e);
   }

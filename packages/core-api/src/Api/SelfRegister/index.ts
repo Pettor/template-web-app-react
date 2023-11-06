@@ -1,2 +1,3 @@
+export * from "./Spec";
 export * from "./SelfRegisterClasses";
-export * from "./UseSelfRegisterByData";
+export * from "./UsePostSelfRegisterByData";

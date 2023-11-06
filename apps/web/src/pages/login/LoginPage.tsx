@@ -1,5 +1,5 @@
 import { type ReactElement } from "react";
-import { useLogin } from "core-api";
+import { useLoginByData } from "core-api";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useToastNotifier } from "shared-ui";
@@ -15,7 +15,7 @@ export function LoginPage(): ReactElement {
   const intl = useIntl();
   const { appName } = useAppInfo();
   const { login } = useAuth();
-  const { isPending } = useLogin();
+  const { isPending } = useLoginByData();
   const { addAlert, reset: resetAlerts } = useToastNotifier();
 
   async function handleSubmit(data: FormLogin): Promise<void> {

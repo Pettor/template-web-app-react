@@ -32,7 +32,7 @@ function convertFromDto(dto: ProfileInfoDto): ProfileInfo {
   };
 }
 
-export async function fetch(): Promise<ProfileInfo> {
+export async function fetchPersonalProfile(): Promise<ProfileInfo> {
   try {
     const { data } = await apiClient.get<ProfileInfoDto>("/api/personal/profile");
     const userSchema = await profileInfoSchema.validate(data);

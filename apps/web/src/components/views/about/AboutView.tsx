@@ -8,8 +8,8 @@ export interface AboutViewProps {
 export function AboutView({ version }: AboutViewProps): ReactElement {
   return (
     <BasicLayout>
-      <h1>About View</h1>
-      <h3>{version}</h3>
+      <h1>About</h1>
+      <p>Version: {version}</p>
     </BasicLayout>
   );
 }
