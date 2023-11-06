@@ -4,20 +4,16 @@ import type { RouteProps } from "react-router-dom";
 export function PublicRoutes(): RouteProps[] {
   return [
     {
-      path: "/about",
-      lazy: () => import("~/pages/about/AboutPage"),
-    },
-    {
       path: "/login",
-      lazy: () => import("~/pages/login/LoginPage"),
+      lazy: () => import("~/pages/login/LoginRoute"),
     },
     {
       path: "/sign-up",
-      lazy: () => import("~/pages/sign-up/SignUpPage"),
+      lazy: () => import("~/pages/sign-up/SignUpRoute"),
     },
     {
       path: "/forgot-password",
-      lazy: () => import("~/pages/forgot-password/ForgotPasswordPage"),
+      lazy: () => import("~/pages/forgot-password/ForgotPasswordRoute"),
     },
   ];
 }

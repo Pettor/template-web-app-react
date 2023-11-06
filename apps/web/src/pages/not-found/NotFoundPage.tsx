@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-export function Component(): ReactElement {
+export function NotFoundPage(): ReactElement {
   const navigate = useNavigate();
 
   function handleClick(): void {
@@ -18,4 +18,3 @@ export function Component(): ReactElement {
     </div>
   );
 }
-Component.displayName = "NotFoundPageg";

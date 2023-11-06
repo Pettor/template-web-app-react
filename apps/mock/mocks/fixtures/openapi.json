@@ -664,6 +664,28 @@
           }
         ]
       }
+    },
+    "/api/application/info": {
+      "get": {
+        "tags": ["Application"],
+        "summary": "Get application info.",
+        "operationId": "Application_GetInfo",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "ref": "#/components/schemas/ApplicationInfo"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/ApplicationInfo"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1148,6 +1170,15 @@
             "nullable": true
           }
         }
+      },
+      "ApplicationInfo": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "version": {
+            "type": "string"
+          }
+        }
       }
     },
     "examples": {
@@ -1225,6 +1256,13 @@
                 "message": "Server Error"
               }
             ]
+          }
+        }
+      },
+      "ApplicationInfo": {
+        "application-info-1.0.0": {
+          "value": {
+            "version": "1.0.0"
           }
         }
       }
