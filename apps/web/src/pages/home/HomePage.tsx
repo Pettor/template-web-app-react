@@ -8,11 +8,15 @@ import { HomeView } from "~/components/views/home/HomeView";
 import { ProfileCardExt } from "~/core/ext/profile-card/ProfileCardExt";
 import { ThemeToggleExt } from "~/core/ext/theme-toggle/ThemeToggleExt";
 
-export function HomePage(): ReactElement {
+export interface HomePageProps {
+  url: string;
+}
+
+export function HomePage({ url }: HomePageProps): ReactElement {
   useDocumentTitle("Home");
 
   function handleGithubClick(): void {
-    window.open("https://github.com/Pettor/template-web-app-react", "_blank", "noreferrer");
+    window.open(url, "_blank", "noreferrer");
   }
 
   return (

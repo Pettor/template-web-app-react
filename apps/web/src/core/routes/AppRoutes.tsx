@@ -1,38 +1,43 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+
 import type { ReactElement } from "react";
-import { lazy } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements, Outlet } from "react-router-dom";
+import { GlobalRoutes } from "./GlobalRoutes";
 import { PrivateRouteLogic } from "./logic/PrivateRouteLogic";
 import { PublicRouteLogic } from "./logic/PublicRouteLogic";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { PublicRoutes } from "./PublicRoutes";
 
-const NotFoundPage = lazy(() => import("~/pages/NotFoundPage").then((module) => ({ default: module.NotFoundPage })));
+function Layout(): ReactElement {
+  return <Outlet />;
+}
 
 export function AppRoutes(): ReactElement {
   return (
-    <BrowserRouter>
-      <Routes>
-        {
-          // Routes that are accessible to everyone
-        }
-        <Route element={<PublicRouteLogic />}>
-          {PublicRoutes().map((route) => (
-            <Route key={route.path} {...route} />
-          ))}
-        </Route>
-        {
-          // Routes that are accessible only to authenticated users
-        }
-        <Route element={<PrivateRouteLogic />}>
-          {PrivateRoutes().map((route) => (
-            <Route key={route.path} {...route} />
-          ))}
-        </Route>
-        {
-          // 404 page
-        }
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider
+      router={createBrowserRouter(
+        createRoutesFromElements(
+          <Route path="/" element={<Layout />}>
+            <Route element={<PublicRouteLogic />}>
+              {PublicRoutes().map((route) => (
+                <Route key={route.path} {...route} />
+              ))}
+            </Route>
+            <Route element={<PrivateRouteLogic />}>
+              {PrivateRoutes().map((route) => (
+                <Route key={route.path} {...route} />
+              ))}
+            </Route>
+            <Route>
+              {GlobalRoutes().map((route) => (
+                <Route key={route.path} {...route} />
+              ))}
+            </Route>
+            <Route path="*" lazy={() => import("../../pages/not-found/NotFoundRoute")} />
+          </Route>
+        )
+      )}
+    />
   );
 }

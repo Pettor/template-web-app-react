@@ -61,3 +61,4 @@ export function LoginPage(): ReactElement {
     />
   );
 }
+LoginPage.displayName = "LoginPage";
