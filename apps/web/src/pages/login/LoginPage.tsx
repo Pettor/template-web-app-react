@@ -15,7 +15,7 @@ export function LoginPage(): ReactElement {
   const intl = useIntl();
   const { appName } = useAppInfo();
   const { login } = useAuth();
-  const { isLoading } = useLogin();
+  const { isPending } = useLogin();
   const { addAlert, reset: resetAlerts } = useToastNotifier();
 
   async function handleSubmit(data: FormLogin): Promise<void> {
@@ -53,7 +53,7 @@ export function LoginPage(): ReactElement {
     <LoginView
       appName={appName}
       loginForm={{
-        loading: isLoading,
+        loading: isPending,
         onSubmit: handleSubmit,
       }}
       handleForgotPassword={handleForgotPassword}

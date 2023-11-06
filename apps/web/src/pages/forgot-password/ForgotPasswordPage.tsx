@@ -12,7 +12,7 @@ export function ForgotPasswordPage(): React.ReactElement {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appName } = useAppInfo();
-  const { isLoading, mutateAsync: submit } = useForgotPasswordByEmail();
+  const { isPending, mutateAsync: submit } = useForgotPasswordByEmail();
   const { addAlert, reset: resetAlerts } = useToastNotifier();
 
   async function handleSubmit(data: FormForgotPassword): Promise<void> {
@@ -44,7 +44,7 @@ export function ForgotPasswordPage(): React.ReactElement {
     <ForgotPasswordView
       appName={appName}
       resetForm={{
-        loading: isLoading,
+        loading: isPending,
         onSubmit: handleSubmit,
       }}
     />
