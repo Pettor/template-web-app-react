@@ -74,7 +74,7 @@
     "playwright": "1.39.0",
     "prettier": "3.0.3",
     "rimraf": "5.0.5",
-    "start-server-and-test": "2.0.1",
+    "start-server-and-test": "2.0.2",
     "storybook": "7.5.2",
     "turbo": "1.10.16",
     "typescript": "5.2.2",
