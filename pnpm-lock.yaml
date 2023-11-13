@@ -72,9 +72,6 @@ importers:
       '@storybook/react-vite':
         specifier: 7.5.2
         version: 7.5.2(react-dom@18.2.0)(react@18.2.0)(typescript@5.2.2)(vite@4.5.0)
-      '@storybook/storybook-deployer':
-        specifier: 2.8.16
-        version: 2.8.16
       '@storybook/test-runner':
         specifier: 0.13.0
         version: 0.13.0(@types/node@20.8.10)
@@ -5294,17 +5291,6 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /@storybook/storybook-deployer@2.8.16:
-    resolution: {integrity: sha512-DRQrjyLKaRLXMYo7SNUznyGabtOLJ0b9yfBKNVMu6PsUHJifGPabXuNXmRPZ6qvyhHUSKLQgeLaX8L3Og6uFUg==}
-    hasBin: true
-    dependencies:
-      git-url-parse: 12.0.0
-      glob: 7.2.3
-      parse-repo: 1.0.4
-      shelljs: 0.8.5
-      yargs: 15.4.1
-    dev: true
-
   /@storybook/telemetry@7.5.2:
     resolution: {integrity: sha512-tUgrcIx1vTMhTySp11JbBnWLsaMUNlil5yuOWEJy5i71E4Xy/2hYUtLfxzgXWd/0W7eTl4p2tjUk9uS8AP+S0Q==}
     dependencies:
@@ -9556,19 +9542,6 @@ packages:
       through2: 4.0.2
     dev: true
 
-  /git-up@6.0.0:
-    resolution: {integrity: sha512-6RUFSNd1c/D0xtGnyWN2sxza2bZtZ/EmI9448n6rCZruFwV/ezeEn2fJP7XnUQGwf0RAtd/mmUCbtH6JPYA2SA==}
-    dependencies:
-      is-ssh: 1.4.0
-      parse-url: 7.0.2
-    dev: true
-
-  /git-url-parse@12.0.0:
-    resolution: {integrity: sha512-I6LMWsxV87vysX1WfsoglXsXg6GjQRKq7+Dgiseo+h0skmp5Hp2rzmcEIRQot9CPA+uzU7x1x7jZdqvTFGnB+Q==}
-    dependencies:
-      git-up: 6.0.0
-    dev: true
-
   /github-slugger@1.5.0:
     resolution: {integrity: sha512-wIh+gKBI9Nshz2o46B0B3f5k/W+WI9ZAv6y5Dn5WJ5SK1t0TnDimB4WE5rmTD05ZAIn8HALCZVmCsvj0w0v0lw==}
     dev: true
@@ -10172,11 +10145,6 @@ packages:
       side-channel: 1.0.4
     dev: true
 
-  /interpret@1.4.0:
-    resolution: {integrity: sha512-agE4QfB2Lkp9uICn7BAqoscw4SZP9kTE2hxiFI3jBPmXJfdqiahTbUuKGsMoN2GtqL9AxhYioAcVvgsb1HvRbA==}
-    engines: {node: '>= 0.10'}
-    dev: true
-
   /intl-messageformat@10.5.4:
     resolution: {integrity: sha512-z+hrFdiJ/heRYlzegrdFYqU1m/KOMOVMqNilIArj+PbsuU8TNE7v4TWdQgSoxlxbT4AcZH3Op3/Fu15QTp+W1w==}
     dependencies:
@@ -10463,12 +10431,6 @@ packages:
     resolution: {integrity: sha512-sqN2UDu1/0y6uvXyStCOzyhAjCSlHceFoMKJW8W9EU9cvic/QdsZ0kEU93HEy3IUEFZIiH/3w+AH/UQbPHNdhA==}
     dependencies:
       call-bind: 1.0.2
-    dev: true
-
-  /is-ssh@1.4.0:
-    resolution: {integrity: sha512-x7+VxdxOdlV3CYpjvRLBv5Lo9OJerlYanjwFrPR9fuGPjCiNiCzFgAWpiLAohSbsnH4ZAys3SBh+hq5rJosxUQ==}
-    dependencies:
-      protocols: 2.0.1
     dev: true
 
   /is-stream@2.0.1:
@@ -12145,11 +12107,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /normalize-url@6.1.0:
-    resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
-    engines: {node: '>=10'}
-    dev: true
-
   /npm-run-path@4.0.1:
     resolution: {integrity: sha512-S48WzZW777zhNIrn7gxOlISNAqi9ZC/uQFnRdbeIHhZhCA6UqpkOT8T1G7BvfdgP4Er8gF4sUbaS0i7QvIfCWw==}
     engines: {node: '>=8'}
@@ -12503,25 +12460,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /parse-path@5.0.0:
-    resolution: {integrity: sha512-qOpH55/+ZJ4jUu/oLO+ifUKjFPNZGfnPJtzvGzKN/4oLMil5m9OH4VpOj6++9/ytJcfks4kzH2hhi87GL/OU9A==}
-    dependencies:
-      protocols: 2.0.1
-    dev: true
-
-  /parse-repo@1.0.4:
-    resolution: {integrity: sha512-RdwYLh7cmxByP/BfeZX0QfIVfeNrH2fWgK1aLsGK+G6nCO4WTlCks4J7aW0O3Ap9BCPDF/e8rGTT50giQr10zg==}
-    dev: true
-
-  /parse-url@7.0.2:
-    resolution: {integrity: sha512-PqO4Z0eCiQ08Wj6QQmrmp5YTTxpYfONdOEamrtvK63AmzXpcavIVQubGHxOEwiIoDZFb8uDOoQFS0NCcjqIYQg==}
-    dependencies:
-      is-ssh: 1.4.0
-      normalize-url: 6.1.0
-      parse-path: 5.0.0
-      protocols: 2.0.1
-    dev: true
-
   /parseurl@1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
     engines: {node: '>= 0.8'}
@@ -12869,10 +12807,6 @@ packages:
   /property-expr@2.0.5:
     resolution: {integrity: sha512-IJUkICM5dP5znhCckHSv30Q4b5/JA5enCtkRHYaOVOAocnH/1BQEYTC5NMfT3AVl/iXKdr3aqQbQn9DxyWknwA==}
     dev: false
-
-  /protocols@2.0.1:
-    resolution: {integrity: sha512-/XJ368cyBJ7fzLMwLKv1e4vLxOju2MNAIokcr7meSaNcVbWz/CPcW22cP04mwxOErdA5mwjA8Q6w/cdAQxVn7Q==}
-    dev: true
 
   /proxy-addr@2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
@@ -13310,13 +13244,6 @@ packages:
       esprima: 4.0.1
       source-map: 0.6.1
       tslib: 2.6.2
-    dev: true
-
-  /rechoir@0.6.2:
-    resolution: {integrity: sha512-HFM8rkZ+i3zrV+4LQjwQ0W+ez98pApMGM3HUrN04j3CqzPOzl9nmP15Y8YXNm8QHGv/eacOVEjqhmWpkRV0NAw==}
-    engines: {node: '>= 0.10'}
-    dependencies:
-      resolve: 1.22.4
     dev: true
 
   /redent@3.0.0:
@@ -13812,16 +13739,6 @@ packages:
   /shell-quote@1.8.1:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
     dev: false
-
-  /shelljs@0.8.5:
-    resolution: {integrity: sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==}
-    engines: {node: '>=4'}
-    hasBin: true
-    dependencies:
-      glob: 7.2.3
-      interpret: 1.4.0
-      rechoir: 0.6.2
-    dev: true
 
   /side-channel@1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}

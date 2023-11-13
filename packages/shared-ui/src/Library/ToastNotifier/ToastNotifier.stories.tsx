@@ -22,7 +22,7 @@ export const ToastNotifier = {
     return (
       <ToastNotifierProvider>
         <Box>
-          <AddAlertComponent />
+          <AddToastComponent />
           <Component {...props} />
         </Box>
       </ToastNotifierProvider>
@@ -30,7 +30,7 @@ export const ToastNotifier = {
   },
 } satisfies Story;
 
-function AddAlertComponent() {
+function AddToastComponent() {
   const { addToast } = useToastNotifier();
   const { count, increment } = useCounter();
 

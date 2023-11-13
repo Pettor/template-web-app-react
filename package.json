@@ -58,7 +58,6 @@
     "@storybook/jest": "0.2.3",
     "@storybook/react": "7.5.2",
     "@storybook/react-vite": "7.5.2",
-    "@storybook/storybook-deployer": "2.8.16",
     "@storybook/test-runner": "0.13.0",
     "@storybook/testing-library": "0.2.2",
     "@types/jest": "29.5.7",
