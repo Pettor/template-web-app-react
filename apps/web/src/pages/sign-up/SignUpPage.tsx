@@ -14,7 +14,7 @@ export function SignUpPage(): ReactElement {
   const intl = useIntl();
   const { appNameCapital } = useAppInfo();
   const { isPending, mutateAsync: submit } = usePostSelfRegisterByData();
-  const { addAlert, reset } = useToastNotifier();
+  const { addToast, reset } = useToastNotifier();
 
   async function handleSubmit(data: FormSignUp): Promise<void> {
     reset();
@@ -22,7 +22,7 @@ export function SignUpPage(): ReactElement {
       await submit(data);
       navigate("/");
     } catch (error) {
-      addAlert({
+      addToast({
         id: "sign-up-error",
         title: intl.formatMessage({
           description: "SignUpPage - Sign up error alert title",

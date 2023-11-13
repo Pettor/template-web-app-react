@@ -16,15 +16,15 @@ export function LoginPage(): ReactElement {
   const { appName } = useAppInfo();
   const { login } = useAuth();
   const { isPending } = useLoginByData();
-  const { addAlert, reset: resetAlerts } = useToastNotifier();
+  const { addToast, reset: resetToasts } = useToastNotifier();
 
   async function handleSubmit(data: FormLogin): Promise<void> {
-    resetAlerts();
+    resetToasts();
 
     try {
       await login(data);
     } catch (error) {
-      addAlert({
+      addToast({
         id: "login-error",
         title: intl.formatMessage({
           description: "LoginPage - Login error alert title",

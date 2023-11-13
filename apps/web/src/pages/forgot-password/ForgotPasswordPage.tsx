@@ -13,17 +13,17 @@ export function ForgotPasswordPage(): React.ReactElement {
   const intl = useIntl();
   const { appName } = useAppInfo();
   const { isPending, mutateAsync: submit } = usePostForgotPasswordByEmail();
-  const { addAlert, reset: resetAlerts } = useToastNotifier();
+  const { addToast, reset: resetToasts } = useToastNotifier();
 
   async function handleSubmit(data: FormForgotPassword): Promise<void> {
     const { email } = data;
-    resetAlerts();
+    resetToasts();
 
     try {
       await submit(email);
       navigate("/");
     } catch (error) {
-      addAlert({
+      addToast({
         id: "forgot-password-error",
         title: intl.formatMessage({
           description: "ForgotPasswordPage - Forgot password error alert title",
