@@ -71,4 +71,4 @@ jobs:
           keep_history: false
           target_branch: deploy/storybook/main
         env:
-          GITHUB_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
