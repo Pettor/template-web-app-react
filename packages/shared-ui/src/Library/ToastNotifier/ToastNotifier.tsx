@@ -3,7 +3,7 @@ import { List, ListItem, Snackbar } from "@mui/material";
 import { useToastNotifier } from "./UseToastNotifier";
 
 export function ToastNotifier(): ReactElement {
-  const { alerts } = useToastNotifier();
+  const { toasts: alerts } = useToastNotifier();
 
   return (
     <Snackbar

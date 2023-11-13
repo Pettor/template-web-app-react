@@ -7,8 +7,8 @@ import type { ToastOptions } from "../Toast/ToastClasses";
 import type { ToastNotifierAlert } from "./ToastNotifierClasses";
 
 interface IToastNotifierContext {
-  addAlert: (alertOptions: ToastOptions) => void;
-  alerts: ToastNotifierAlert[];
+  addToast: (alertOptions: ToastOptions) => void;
+  toasts: ToastNotifierAlert[];
   reset: () => void;
 }
 
@@ -19,10 +19,10 @@ interface Props {
 }
 
 function ToastNotifierProvider({ children }: Props): ReactElement {
-  const [alerts, setAlerts] = useState<ToastNotifierAlert[]>([]);
+  const [toasts, setToasts] = useState<ToastNotifierAlert[]>([]);
 
   const handleClosed = useCallback((id: string) => {
-    setAlerts((prevAlerts) =>
+    setToasts((prevAlerts) =>
       produce(prevAlerts, (draft) => {
         const index = draft.findIndex((alert) => alert.id === id);
         if (index !== -1) {
@@ -33,11 +33,11 @@ function ToastNotifierProvider({ children }: Props): ReactElement {
     );
   }, []);
 
-  const addAlert = useCallback(
+  const addToast = useCallback(
     (alertOptions: ToastOptions) => {
       const id = getCrypto().randomUUID();
 
-      setAlerts((prevAlerts) =>
+      setToasts((prevAlerts) =>
         produce(prevAlerts, (draft) => {
           draft.unshift({
             id,
@@ -51,16 +51,16 @@ function ToastNotifierProvider({ children }: Props): ReactElement {
   );
 
   const reset = useCallback(() => {
-    setAlerts([]);
+    setToasts([]);
   }, []);
 
   const value = useMemo(() => {
     return {
-      addAlert,
-      alerts,
+      addToast,
+      toasts,
       reset,
     };
-  }, [addAlert, alerts, reset]);
+  }, [addToast, toasts, reset]);
 
   return <ToastNotifierContext.Provider value={value}>{children}</ToastNotifierContext.Provider>;
 }
