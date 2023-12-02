@@ -49,7 +49,7 @@
     "tsconfig": "workspace:*",
     "vite-plugin-http2-proxy": "0.4.1",
     "vite-plugin-mkcert": "1.17.1",
-    "vite-plugin-pwa": "0.17.0",
+    "vite-plugin-pwa": "0.17.2",
     "vite-tsconfig-paths": "4.2.1",
     "workbox-window": "7.0.0"
   },
