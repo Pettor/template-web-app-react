@@ -10,9 +10,9 @@
     "clean:all": "rimraf dist node_modules"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "6.12.0",
-    "@typescript-eslint/parser": "6.12.0",
-    "eslint": "8.54.0",
+    "@typescript-eslint/eslint-plugin": "6.13.1",
+    "@typescript-eslint/parser": "6.13.1",
+    "eslint": "8.55.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-formatjs": "4.11.3",
     "eslint-plugin-import": "2.29.0",
