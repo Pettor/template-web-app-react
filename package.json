@@ -56,13 +56,13 @@
     "@commitlint/types": "18.4.3",
     "@mocks-server/main": "4.1.0",
     "@storybook/jest": "0.2.3",
-    "@storybook/react": "7.6.3",
-    "@storybook/react-vite": "7.6.3",
+    "@storybook/react": "7.6.4",
+    "@storybook/react-vite": "7.6.4",
     "@storybook/test-runner": "0.16.0",
     "@storybook/testing-library": "0.2.2",
-    "@types/jest": "29.5.10",
-    "@types/node": "20.10.3",
-    "@types/react": "18.2.41",
+    "@types/jest": "29.5.11",
+    "@types/node": "20.10.4",
+    "@types/react": "18.2.42",
     "@types/react-dom": "18.2.17",
     "@types/testing-library__jest-dom": "5.14.9",
     "cross-env": "7.0.3",
@@ -74,10 +74,10 @@
     "prettier": "3.1.0",
     "rimraf": "5.0.5",
     "start-server-and-test": "2.0.3",
-    "storybook": "7.6.3",
-    "turbo": "1.10.16",
-    "typescript": "5.3.2",
+    "storybook": "7.6.4",
+    "turbo": "1.11.1",
+    "typescript": "5.3.3",
     "usehooks-ts": "2.9.1",
-    "vite": "5.0.5"
+    "vite": "5.0.7"
   }
 }
