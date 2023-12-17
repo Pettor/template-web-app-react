@@ -3,7 +3,7 @@ import type { MessageFormatElement } from "react-intl";
 import { IntlProvider } from "react-intl";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactElement;
 }
 
 const locale = navigator.language;

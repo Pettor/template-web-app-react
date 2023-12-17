@@ -12,11 +12,10 @@ export function getCryptoSubtle(): SubtleCrypto {
 
 export function validateCrypto(): void {
   if (!getCrypto()) {
-    throw new Error("For security reasons, `window.crypto` is required to run `auth0-spa-js`.");
+    throw new Error("For security reasons, `window.crypto` is required to run.");
   }
+
   if (typeof getCryptoSubtle() === "undefined") {
-    throw new Error(`
-      auth0-spa-js must run on a secure origin. See https://github.com/auth0/auth0-spa-js/blob/master/FAQ.md#why-do-i-get-auth0-spa-js-must-run-on-a-secure-origin for more information.
-    `);
+    throw new Error("application must run on a secure origin.");
   }
 }

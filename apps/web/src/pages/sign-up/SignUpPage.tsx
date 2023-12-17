@@ -1,49 +1,17 @@
 import type { ReactElement } from "react";
-import { usePostSelfRegisterByData } from "core-api";
-import { useIntl } from "react-intl";
-import { useNavigate } from "react-router-dom";
-import { useToastNotifier } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
-import type { FormSignUp } from "~/components/forms/sign-up/SignUpForm";
+import { useSignUpPage } from "./UseSignUpPage";
 import { SignUpView } from "~/components/views/sign-up/SignUpView";
-import { useAppInfo } from "~/core/config/UseAppInfo";
 
 export function SignUpPage(): ReactElement {
   useDocumentTitle("Sign Up");
-  const navigate = useNavigate();
-  const intl = useIntl();
-  const { appNameCapital } = useAppInfo();
-  const { isPending, mutateAsync: submit } = usePostSelfRegisterByData();
-  const { addToast, reset } = useToastNotifier();
-
-  async function handleSubmit(data: FormSignUp): Promise<void> {
-    reset();
-    try {
-      await submit(data);
-      navigate("/");
-    } catch (error) {
-      addToast({
-        id: "sign-up-error",
-        title: intl.formatMessage({
-          description: "SignUpPage - Sign up error alert title",
-          defaultMessage: "Something went wrong",
-          id: "CrlHXH",
-        }),
-        text: intl.formatMessage({
-          description: "SignUpPage - Sign up error alert text",
-          defaultMessage: "Please verify the submitted information and try again.",
-          id: "N89CNO",
-        }),
-        severity: "error",
-      });
-    }
-  }
+  const { applicationName, isLoading, handleSubmit } = useSignUpPage();
 
   return (
     <SignUpView
-      appName={appNameCapital}
+      appName={applicationName}
       signUpForm={{
-        loading: isPending,
+        loading: isLoading,
         onSubmit: handleSubmit,
       }}
     />
