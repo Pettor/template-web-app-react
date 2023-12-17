@@ -1,6 +1,6 @@
 import type { Dispatch, ReactElement, ReactNode } from "react";
 import { createContext, useMemo, useReducer } from "react";
-import { useRefreshToken } from "core-api";
+import { usePostRefreshTokenMutate } from "core-api";
 import { useRunOnce } from "react-utils";
 import type { AuthActions, AuthState } from "./AuthReducer";
 import { AuthReducer } from "./AuthReducer";
@@ -22,7 +22,7 @@ interface Props {
 
 function AuthProvider({ children }: Props): ReactElement {
   const [state, dispatch] = useReducer(AuthReducer, initialState);
-  const { mutateAsync: refreshToken } = useRefreshToken();
+  const { mutateAsync: refreshToken } = usePostRefreshTokenMutate();
 
   useRunOnce({
     func: async () => {

@@ -1,3 +1,2 @@
-export * from "./Spec";
-export * from "./PersonalProfileClasses";
-export * from "./UseQueryPersonalProfile";
+export * from "./Classes";
+export * from "./Fetch";

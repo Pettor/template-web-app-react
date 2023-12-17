@@ -1,3 +1,2 @@
-export * from "./Spec";
-export * from "./LoginClasses";
-export * from "./UseLoginByData";
+export * from "./Classes";
+export * from "./Post";

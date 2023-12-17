@@ -4,31 +4,29 @@ import GithubIcon from "@mui/icons-material/GitHub";
 import { IconButton } from "@mui/material";
 import { AppHeaderGroup, IconMenuButton } from "shared-ui";
 import { useDocumentTitle } from "usehooks-ts";
+import { useHomePage } from "./UseHomePage";
+import { ProfileCardModule } from "~/components/modules/profile-card/ProfileCardModule";
+import { ThemeToggleModule } from "~/components/modules/theme-toggle/ThemeToggleModule";
 import { HomeView } from "~/components/views/home/HomeView";
-import { ProfileCardExt } from "~/core/ext/profile-card/ProfileCardExt";
-import { ThemeToggleExt } from "~/core/ext/theme-toggle/ThemeToggleExt";
 
 export interface HomePageProps {
-  url: string;
+  repoUrl: string;
 }
 
-export function HomePage({ url }: HomePageProps): ReactElement {
+export function HomePage({ repoUrl }: HomePageProps): ReactElement {
   useDocumentTitle("Home");
-
-  function handleGithubClick(): void {
-    window.open(url, "_blank", "noreferrer");
-  }
+  const { handleGithubClick } = useHomePage(repoUrl);
 
   return (
     <HomeView
       headerComponents={
         <>
           <AppHeaderGroup dividerStyle="right">
-            <ThemeToggleExt />
+            <ThemeToggleModule />
           </AppHeaderGroup>
           <AppHeaderGroup dividerStyle="none">
             <IconMenuButton icon={<AvatarIcon />} testId="home-page__menu-button">
-              <ProfileCardExt />
+              <ProfileCardModule />
             </IconMenuButton>
             <IconButton onClick={handleGithubClick}>
               <GithubIcon />
