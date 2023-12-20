@@ -4,12 +4,6 @@ import { useIntl } from "react-intl";
 import { useLoaderData, useRouteError } from "react-router-dom";
 import { HomePage, type HomePageProps } from "./HomePage";
 
-export function loader(): HomePageProps {
-  return {
-    url: "https://github.com/Pettor/template-web-app-react",
-  };
-}
-
 export function Component(): ReactElement {
   const data = useLoaderData() as HomePageProps;
   return <HomePage {...data} />;

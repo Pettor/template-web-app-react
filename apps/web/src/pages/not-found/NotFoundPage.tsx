@@ -1,13 +1,9 @@
 import type { ReactElement } from "react";
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNotFoundPage } from "./UseNotFoundPage";
 
 export function NotFoundPage(): ReactElement {
-  const navigate = useNavigate();
-
-  function handleClick(): void {
-    navigate("/login");
-  }
+  const { handleClick } = useNotFoundPage();
 
   return (
     <div>
