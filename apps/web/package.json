@@ -28,8 +28,8 @@
     "@hookform/resolvers": "3.3.2",
     "core-api": "workspace:*",
     "mui-theme": "workspace:*",
-    "react-hook-form": "7.49.0",
-    "react-router-dom": "6.20.1",
+    "react-hook-form": "7.49.2",
+    "react-router-dom": "6.21.0",
     "react-utils": "workspace:*",
     "shared-ui": "workspace:*"
   },
