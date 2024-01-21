@@ -71,7 +71,7 @@
     "move-cli": "2.0.0",
     "nyc": "15.1.0",
     "playwright": "1.40.1",
-    "prettier": "3.2.1",
+    "prettier": "3.2.2",
     "rimraf": "5.0.5",
     "start-server-and-test": "2.0.3",
     "storybook": "7.6.8",
