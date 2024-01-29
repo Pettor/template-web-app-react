@@ -62,6 +62,11 @@
       "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts"],
       "outputs": ["**/storybook-static/**"]
     },
+    "storybook:publish": {
+      "cache": true,
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts"],
+      "outputs": ["**/storybook-static/**"]
+    },
     "storybook:move": {
       "cache": false,
       "outputs": ["output/storybook-static/**"]
