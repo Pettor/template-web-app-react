@@ -48,7 +48,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Storybook
-        run: pnpm storybook:build
+        run: pnpm pnpm storybook:publish
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
