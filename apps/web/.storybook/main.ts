@@ -5,7 +5,10 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 const config: StorybookConfig = {
   framework: "@storybook/react-vite",
-  stories: ["../src/**/*.stories.@(ts|tsx)"],
+  stories: [
+    "../src/**/*.stories.@(ts|tsx)",
+    process.env.NODE_ENV === "production" ? "../../../packages/shared-ui/src/**/*.stories.@(ts|tsx)" : "",
+  ],
   features: {
     storyStoreV7: true,
   },
@@ -19,12 +22,6 @@ const config: StorybookConfig = {
   ],
   docs: {
     defaultName: "Docs",
-  },
-  refs: {
-    "shared-ui": {
-      title: "Common Components",
-      url: process.env.NODE_ENV === "development" ? "http://localhost:6006/" : "shared-ui/",
-    },
   },
   async viteFinal(config) {
     return mergeConfig(config, {
