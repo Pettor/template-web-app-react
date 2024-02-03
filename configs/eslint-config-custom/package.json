@@ -10,11 +10,11 @@
     "clean:all": "rimraf dist node_modules"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "6.19.0",
-    "@typescript-eslint/parser": "6.19.0",
+    "@typescript-eslint/eslint-plugin": "6.19.1",
+    "@typescript-eslint/parser": "6.19.1",
     "eslint": "8.56.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-formatjs": "4.12.1",
+    "eslint-plugin-formatjs": "4.12.2",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-prettier": "5.1.3",
     "eslint-plugin-react": "7.33.2",

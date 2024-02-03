@@ -35,7 +35,7 @@
     "shared-ui": "workspace:*"
   },
   "devDependencies": {
-    "@formatjs/cli": "6.2.6",
+    "@formatjs/cli": "6.2.7",
     "@storybook/addon-a11y": "7.6.10",
     "@storybook/addon-coverage": "1.0.0",
     "@storybook/addon-essentials": "7.6.10",
@@ -50,7 +50,7 @@
     "tsconfig": "workspace:*",
     "vite-plugin-http2-proxy": "0.4.1",
     "vite-plugin-mkcert": "1.17.3",
-    "vite-plugin-pwa": "0.17.4",
+    "vite-plugin-pwa": "0.17.5",
     "vite-tsconfig-paths": "4.3.1",
     "workbox-window": "7.0.0"
   },
