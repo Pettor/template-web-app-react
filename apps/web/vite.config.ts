@@ -10,6 +10,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig(({ mode, command }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
+  if (env.VITE_SKIP_CONFIG === "true") {
+    return {
+      base: "./",
+    } satisfies UserConfig;
+  }
+
   const commonConfig: UserConfig = {
     plugins: [
       react(),

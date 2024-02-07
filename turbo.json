@@ -63,7 +63,7 @@
       "outputs": ["**/storybook-static/**"]
     },
     "storybook:publish": {
-      "cache": true,
+      "cache": false,
       "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts"],
       "outputs": ["**/storybook-static/**"]
     },
