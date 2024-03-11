@@ -42,7 +42,7 @@
     "@mui/icons-material": "5.15.11",
     "@mui/lab": "5.0.0-alpha.166",
     "@mui/material": "5.15.11",
-    "@tanstack/react-query": "5.24.6",
+    "@tanstack/react-query": "5.24.7",
     "concurrently": "8.2.2",
     "immer": "10.0.3",
     "react": "18.2.0",
