@@ -27,8 +27,8 @@ importers:
         specifier: 5.15.11
         version: 5.15.11(@emotion/react@11.11.4)(@emotion/styled@11.11.0)(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/react-query':
-        specifier: 5.24.6
-        version: 5.24.6(react@18.2.0)
+        specifier: 5.24.7
+        version: 5.24.7(react@18.2.0)
       concurrently:
         specifier: 8.2.2
         version: 8.2.2
@@ -305,8 +305,8 @@ importers:
   packages/mui-theme:
     dependencies:
       '@fontsource/rubik':
-        specifier: 5.0.18
-        version: 5.0.18
+        specifier: 5.0.19
+        version: 5.0.19
     devDependencies:
       tsconfig:
         specifier: workspace:*
@@ -2544,8 +2544,8 @@ packages:
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
 
-  /@fontsource/rubik@5.0.18:
-    resolution: {integrity: sha512-AmEsTzBYA6PZCgCbSE/VC7asgtOtuLQrmcca210CcW+Yb+KYJQdut/jKQAEaSl889jDMyLfowmZe8r1GBzSCqQ==}
+  /@fontsource/rubik@5.0.19:
+    resolution: {integrity: sha512-U5vEMCMBrrXYQ+xBYE/1MbJ049lHpVfyIAc/8eMGk4PC6fkJvVMOBrfIcX05BgXogGBQ6lbxMB/8ZvihZMcefA==}
     dev: false
 
   /@formatjs/cli@6.2.7:
@@ -5603,16 +5603,16 @@ packages:
       defer-to-connect: 1.1.3
     dev: true
 
-  /@tanstack/query-core@5.24.6:
-    resolution: {integrity: sha512-xYhxiMUPh1JzamVK8VwwkBpIBXVYRyIBW9gjSN+/BB4kL1nS86gnRWeW8L+sacCj1RiyEsysJe3GSvtbIpHdWw==}
+  /@tanstack/query-core@5.24.7:
+    resolution: {integrity: sha512-24d9o44FktHTgTOu3XdQWXMu24SJodmzGWXfvd9gT57ijarjOsN2cUyg/RqyCzuDTfD59+1QdCfPB4QvRRsCjw==}
     dev: false
 
-  /@tanstack/react-query@5.24.6(react@18.2.0):
-    resolution: {integrity: sha512-eyIWwHiO1ZirYGzqs0kfRMkf8icuXroFunjnsgntk9YgGFbGoPs3Hxy9/OushNvpnkHT9RwPZb8UfEKzMzzEaQ==}
+  /@tanstack/react-query@5.24.7(react@18.2.0):
+    resolution: {integrity: sha512-+yO1UuXeh47/mnegBZcgwqRrxcXiOYkUSMdk69FsNKtPzH7PFFRXLdkyWk/cu6eEc0Zc8g9Skgu26oqEYWTxpQ==}
     peerDependencies:
       react: ^18.0.0
     dependencies:
-      '@tanstack/query-core': 5.24.6
+      '@tanstack/query-core': 5.24.7
       react: 18.2.0
     dev: false
 

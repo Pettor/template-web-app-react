@@ -10,7 +10,7 @@
     "clean:all": "rimraf node_modules"
   },
   "dependencies": {
-    "@fontsource/rubik": "5.0.18"
+    "@fontsource/rubik": "5.0.19"
   },
   "devDependencies": {
     "tsconfig": "workspace:*"
