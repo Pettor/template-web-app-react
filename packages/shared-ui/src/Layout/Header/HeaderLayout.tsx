@@ -16,7 +16,7 @@ export function HeaderLayout({ className, children, ...headerProps }: HeaderLayo
       <div className="flex">
         <div className="container mb-8">
           <div className="navbar" />
-          <main className="mt-2 lg:px-10">{children}</main>
+          <main className="lg:px-10">{children}</main>
         </div>
       </div>
     </div>

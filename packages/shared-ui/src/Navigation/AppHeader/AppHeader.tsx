@@ -1,14 +1,18 @@
 import type { ReactElement, ReactNode } from "react";
+import { ArrowRightStartOnRectangleIcon, Cog8ToothIcon, UserCircleIcon } from "@heroicons/react/20/solid";
 import { ThemeSwitch } from "Components";
 import { Logo } from "Components/Logo";
 import { useThemeSwitcher } from "Components/ThemeSwitch/UseThemeSwitcher";
+import { GithubIcon, LinkedInIcon } from "Icons";
 
 export interface AppHeaderProps {
   title: string;
   components?: ReactNode;
+  onGithubClick: () => void;
+  onLinkedInClick: () => void;
 }
 
-export function AppHeader({ title }: AppHeaderProps): ReactElement {
+export function AppHeader({ title, onGithubClick, onLinkedInClick }: AppHeaderProps): ReactElement {
   const themeProps = useThemeSwitcher();
 
   return (
@@ -19,36 +23,47 @@ export function AppHeader({ title }: AppHeaderProps): ReactElement {
           <span className="text-2xl font-semibold">{title}</span>
         </div>
         <div className="navbar-end h-8">
-          <div>
-            <ThemeSwitch {...themeProps} />
-          </div>
-          <div className="divider divider-horizontal" />
           <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="avatar btn btn-circle btn-ghost">
-              <div className="w-8 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                />
+            <div className="flex items-center">
+              <div tabIndex={0} role="button" className="avatar btn btn-circle btn-ghost btn-sm">
+                <div className="w-8 rounded-full">
+                  <UserCircleIcon />
+                </div>
               </div>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
-            >
+            <ul tabIndex={0} className="menu dropdown-content z-[1] w-52 gap-1 rounded-box bg-base-100 p-2 shadow-xl">
               <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
+                <a>
+                  <Cog8ToothIcon className="h-5 w-5" />
+                  Settings
                 </a>
               </li>
               <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
+                <a>
+                  <ArrowRightStartOnRectangleIcon className="h-5 w-5" />
+                  Logout
+                </a>
               </li>
             </ul>
+          </div>
+          <div className="divider divider-horizontal mx-2" />
+          <div>
+            <ThemeSwitch {...themeProps} />
+          </div>
+          <div className="divider divider-horizontal mx-2" />
+          <div className="flex items-center gap-2">
+            <button
+              className="h-10 w-10 fill-neutral p-2 brightness-200 transition-all hover:brightness-75 dark:fill-neutral-content"
+              onClick={onGithubClick}
+            >
+              <GithubIcon />
+            </button>
+            <button
+              className="h-10 w-10 fill-neutral p-2 brightness-200 transition-all hover:brightness-75 dark:fill-neutral-content"
+              onClick={onLinkedInClick}
+            >
+              <LinkedInIcon />
+            </button>
           </div>
         </div>
       </div>
