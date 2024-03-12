@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import clsx from "clsx";
-import { Logo } from "Components/Logo";
+import { Logo } from "../Logo/Logo";
 
 export type LogoFullSize = "medium" | "large";
 

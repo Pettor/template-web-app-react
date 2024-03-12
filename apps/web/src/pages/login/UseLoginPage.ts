@@ -18,28 +18,21 @@ export function useLoginPage(): {
   const { appName } = useAppInfo();
   const { login } = useAuth();
   const { isPending } = usePostLoginMutate();
-  const { addToast, reset: resetToasts } = useToastNotifier();
+  const { addToast, clearToasts } = useToastNotifier();
 
   async function handleSubmit(data: FormLogin): Promise<void> {
-    resetToasts();
+    clearToasts();
 
     try {
       await login(data);
     } catch (error) {
-      addToast({
-        id: "login-error",
-        title: intl.formatMessage({
+      addToast(
+        intl.formatMessage({
           description: "LoginPage - Login error alert title",
           defaultMessage: "Failed to login",
           id: "XHC6DM",
-        }),
-        text: intl.formatMessage({
-          description: "LoginPage - Login error alert text",
-          defaultMessage: "Please verify your credentials and try again.",
-          id: "eaFclI",
-        }),
-        severity: "error",
-      });
+        })
+      );
     }
   }
 

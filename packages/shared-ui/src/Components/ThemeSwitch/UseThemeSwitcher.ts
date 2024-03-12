@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAtom } from "jotai";
-import { themeModeAtom } from "./atoms/ThemeAtoms";
+import { themeModeAtom } from "./Atoms/ThemeAtoms";
 import type { ThemeSwitchProps } from "./ThemeSwitch";
 
 export function useThemeSwitcher(): ThemeSwitchProps {

@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
-import type { ModalProps } from "Actions";
-import { Modal } from "Actions";
+import type { ModalProps } from "../Modal/Modal";
+import { Modal } from "../Modal/Modal";
 
 export interface ModalCardProps extends Omit<ModalProps, "children"> {
   title: string;

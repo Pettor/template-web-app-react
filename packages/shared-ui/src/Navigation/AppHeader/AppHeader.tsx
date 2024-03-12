@@ -1,5 +1,5 @@
 import type { ReactElement, ReactNode } from "react";
-import { Logo } from "Components/Logo";
+import { Logo } from "../../Components/Logo/Logo";
 
 export interface AppHeaderProps {
   title: string;

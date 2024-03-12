@@ -22,7 +22,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
-  title: "Home",
   components: <DefaultHeaderComponents />,
 } satisfies Props;
 

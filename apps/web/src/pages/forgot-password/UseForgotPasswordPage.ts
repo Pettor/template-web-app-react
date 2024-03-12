@@ -14,30 +14,23 @@ export function useForgotPasswordPage(): {
   const navigate = useNavigate();
   const intl = useIntl();
   const { isPending, mutateAsync: submit } = usePostForgotPasswordMutate();
-  const { addToast, reset: resetToasts } = useToastNotifier();
+  const { addToast, clearToasts } = useToastNotifier();
 
   async function handleSubmit(data: FormForgotPassword): Promise<void> {
     const { email } = data;
-    resetToasts();
+    clearToasts();
 
     try {
       await submit(email);
       navigate("/");
     } catch (error) {
-      addToast({
-        id: "forgot-password-error",
-        title: intl.formatMessage({
+      addToast(
+        intl.formatMessage({
           description: "ForgotPasswordPage - Forgot password error alert title",
           defaultMessage: "Something went wrong",
           id: "gmuIUo",
-        }),
-        text: intl.formatMessage({
-          description: "ForgotPasswordPage - Forgot password error alert text",
-          defaultMessage: "Please verify your email address and try again.",
-          id: "Dq0Eck",
-        }),
-        severity: "error",
-      });
+        })
+      );
     }
   }
 
