@@ -64,6 +64,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
         id="email"
         type="text"
         placeholder="Email"
+        autoComplete="username"
         icon={<EnvelopeIcon className="h-5 w-5" />}
         error={errors.email?.message}
         {...register("email")}
@@ -73,6 +74,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
         id="password"
         type="password"
         placeholder="Password"
+        autoComplete="current-password"
         icon={<LockClosedIcon className="h-5 w-5" />}
         error={errors.password?.message}
         {...register("password")}
@@ -80,7 +82,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
       />
       <div className="flex flex-row">
         <div className="flex w-full flex-1 justify-end">
-          <button type="button" className="btn btn-primary w-40" data-testid="login-form__submit-button">
+          <button type="submit" className="btn btn-primary w-40" data-testid="login-form__submit-button">
             {loading && <span className="loading loading-spinner" />}
             {intl.formatMessage({
               description: "LoginFormButton: Sign in",

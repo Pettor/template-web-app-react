@@ -26,7 +26,7 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
         <div className="hero">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="card w-full max-w-md shrink-0 bg-base-100 shadow-2xl">
-              <form className="card-body">
+              <div className="card-body">
                 <LogoFull appName={appName} size="large" />
                 <br />
                 <LoginForm {...loginForm} />
@@ -47,7 +47,7 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
                     })}
                   </button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

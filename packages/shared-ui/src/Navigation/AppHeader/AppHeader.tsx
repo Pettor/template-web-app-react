@@ -1,5 +1,7 @@
 import type { ReactElement, ReactNode } from "react";
-import { Logo } from "../../Components/Logo/Logo";
+import { ThemeSwitch } from "Components";
+import { Logo } from "Components/Logo";
+import { useThemeSwitcher } from "Components/ThemeSwitch/UseThemeSwitcher";
 
 export interface AppHeaderProps {
   title: string;
@@ -7,21 +9,23 @@ export interface AppHeaderProps {
 }
 
 export function AppHeader({ title }: AppHeaderProps): ReactElement {
+  const themeProps = useThemeSwitcher();
+
   return (
-    <div className="glass navbar bg-base-100 bg-opacity-55">
+    <div className="glass navbar bg-base-100 bg-opacity-55 p-0 dark:bg-opacity-80 dark:bg-none ">
       <div className="container navbar min-h-0 p-0">
-        <div className="navbar-start">
+        <div className="navbar-start h-full">
           <Logo size="small" />
           <span className="text-2xl font-semibold">{title}</span>
         </div>
-        <div className="navbar-end">
-          <div className="form-control">
-            <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+        <div className="navbar-end h-8">
+          <div>
+            <ThemeSwitch {...themeProps} />
           </div>
           <div className="divider divider-horizontal" />
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="avatar btn btn-circle btn-ghost">
-              <div className="w-10 rounded-full">
+              <div className="w-8 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
                   src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
