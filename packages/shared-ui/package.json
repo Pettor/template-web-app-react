@@ -24,7 +24,8 @@
     "storybook:test": "test-storybook --url http://127.0.0.1:9065"
   },
   "dependencies": {
-    "tailwind": "workspace:*",
+    "react-utils": "workspace:*",
+    "tailwind": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "7.6.17",
@@ -34,7 +35,6 @@
     "@storybook/addon-themes": "7.6.17",
     "@storybook/addon-viewport": "7.6.17",
     "eslint-config-custom": "workspace:*",
-    "react-utils": "workspace:*",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*",
     "vite-tsconfig-paths": "4.3.1"
