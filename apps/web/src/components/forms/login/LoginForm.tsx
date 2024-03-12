@@ -64,7 +64,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
         id="email"
         type="text"
         placeholder="Email"
-        icon={<EnvelopeIcon className="w-5 h-5" />}
+        icon={<EnvelopeIcon className="h-5 w-5" />}
         error={errors.email?.message}
         {...register("email")}
         data-testid="login-form__email-input"
@@ -73,14 +73,14 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
         id="password"
         type="password"
         placeholder="Password"
-        icon={<LockClosedIcon className="w-5 h-5" />}
+        icon={<LockClosedIcon className="h-5 w-5" />}
         error={errors.password?.message}
         {...register("password")}
         data-testid="login-form__password-input"
       />
       <div className="flex flex-row">
-        <div className="w-full flex flex-1 justify-end">
-          <button type="submit" className="btn btn-primary w-40" data-testid="login-form__submit-button">
+        <div className="flex w-full flex-1 justify-end">
+          <button type="button" className="btn btn-primary w-40" data-testid="login-form__submit-button">
             {loading && <span className="loading loading-spinner" />}
             {intl.formatMessage({
               description: "LoginFormButton: Sign in",

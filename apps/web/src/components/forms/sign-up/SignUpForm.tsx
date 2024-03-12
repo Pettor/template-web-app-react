@@ -99,7 +99,7 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
   });
 
   return (
-    <form onSubmit={handleFormSubmit(onSubmit)}>
+    <form onSubmit={handleFormSubmit(onSubmit)} className="w-full">
       <InputField
         id="userName"
         type="text"

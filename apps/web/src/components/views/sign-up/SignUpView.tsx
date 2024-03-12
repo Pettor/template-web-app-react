@@ -13,17 +13,21 @@ export function SignUpView({ appName, signUpForm }: SignUpViewProps): ReactEleme
   const intl = useIntl();
 
   return (
-    <BasicLayout className="z-20 mt-32 max-w-[400px]">
-      <LogoFull appName={appName} size="medium" />
-      <br />
-      <p className="text-center">
-        {intl.formatMessage({
-          description: "SignUpView - Sign up description",
-          defaultMessage: "Sign up with your email address",
-          id: "NG06ZV",
-        })}
-      </p>
-      <SignUpForm {...signUpForm} />
+    <BasicLayout>
+      <div className="flex flex-1 flex-col items-center justify-center">
+        <div className="w-full max-w-[500px]">
+          <LogoFull appName={appName} size="medium" />
+          <br />
+          <p className="text-center">
+            {intl.formatMessage({
+              description: "SignUpView - Sign up description",
+              defaultMessage: "Sign up with your email address",
+              id: "NG06ZV",
+            })}
+          </p>
+          <SignUpForm {...signUpForm} />
+        </div>
+      </div>
     </BasicLayout>
   );
 }

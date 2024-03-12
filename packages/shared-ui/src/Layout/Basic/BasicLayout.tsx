@@ -8,8 +8,8 @@ export interface BasicLayoutProps {
 
 export function BasicLayout({ className, children }: BasicLayoutProps): ReactElement {
   return (
-    <div className="container flex items-center justify-center">
-      <main className={clsx(className, "w-full")}>{children}</main>
+    <div className={clsx(className, "flex min-h-screen flex-1")}>
+      <main className="container flex flex-1">{children}</main>
     </div>
   );
 }

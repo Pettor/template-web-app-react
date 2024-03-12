@@ -21,26 +21,36 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
   const intl = useIntl();
 
   return (
-    <BasicLayout className="z-20 mt-32 max-w-96">
-      <LogoFull appName={appName} size="large" />
-      <br />
-      <LoginForm {...loginForm} />
-      <br />
-      <div className="container flex flex-row">
-        <button className="btn btn-link" onClick={handleForgotPassword}>
-          {intl.formatMessage({
-            description: "LoginViewLink - Forgot password",
-            defaultMessage: "Forgot password?",
-            id: "aNSSLX",
-          })}
-        </button>
-        <button className="btn btn-link" onClick={handleSignUp}>
-          {intl.formatMessage({
-            description: "LoginViewLink - Don't have an account? Sign Up",
-            defaultMessage: "Don't have an account? Sign up",
-            id: "Erb2yF",
-          })}
-        </button>
+    <BasicLayout className="bg-base-200">
+      <div className="flex flex-1 items-center justify-center">
+        <div className="hero">
+          <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+              <form className="card-body">
+                <LogoFull appName={appName} size="large" />
+                <br />
+                <LoginForm {...loginForm} />
+                <br />
+                <div className="container flex flex-row">
+                  <button className="btn btn-link" onClick={handleForgotPassword}>
+                    {intl.formatMessage({
+                      description: "LoginViewLink - Forgot password",
+                      defaultMessage: "Forgot password?",
+                      id: "aNSSLX",
+                    })}
+                  </button>
+                  <button className="btn btn-link" onClick={handleSignUp}>
+                    {intl.formatMessage({
+                      description: "LoginViewLink - Don't have an account? Sign Up",
+                      defaultMessage: "Don't have an account? Sign up",
+                      id: "Erb2yF",
+                    })}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </BasicLayout>
   );

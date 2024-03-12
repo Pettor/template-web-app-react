@@ -13,24 +13,28 @@ export function ForgotPasswordView({ appName, resetForm }: ForgotPasswordViewPro
   const intl = useIntl();
 
   return (
-    <BasicLayout className="z-20 mt-32 max-w-[400px]">
-      <LogoFull appName={appName} size="medium" />
-      <br />
-      <p className="text-base text-center">
-        {intl.formatMessage(
-          {
-            description: "ResetPasswordView - Reset password description",
-            defaultMessage:
-              "Enter your {appName} email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
-            id: "Q7RMaC",
-          },
-          {
-            appName: appName,
-          }
-        )}
-      </p>
-      <div className="mt-4">
-        <ForgotPasswordForm {...resetForm} />
+    <BasicLayout>
+      <div className="flex flex-1 flex-col items-center justify-center">
+        <div className="w-full max-w-[500px]">
+          <LogoFull appName={appName} size="medium" />
+          <br />
+          <p className="text-center text-base">
+            {intl.formatMessage(
+              {
+                description: "ResetPasswordView - Reset password description",
+                defaultMessage:
+                  "Enter your {appName} email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
+                id: "Q7RMaC",
+              },
+              {
+                appName: appName,
+              }
+            )}
+          </p>
+          <div className="mt-4">
+            <ForgotPasswordForm {...resetForm} />
+          </div>
+        </div>
       </div>
     </BasicLayout>
   );
