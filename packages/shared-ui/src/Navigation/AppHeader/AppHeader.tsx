@@ -8,11 +8,11 @@ export interface AppHeaderProps {
 
 export function AppHeader({ title }: AppHeaderProps): ReactElement {
   return (
-    <div className="navbar bg-base-100 glass bg-opacity-55">
-      <div className="navbar container min-h-0 p-0">
+    <div className="glass navbar bg-base-100 bg-opacity-55">
+      <div className="container navbar min-h-0 p-0">
         <div className="navbar-start">
           <Logo size="small" />
-          <span>{title}</span>
+          <span className="text-2xl font-semibold">{title}</span>
         </div>
         <div className="navbar-end">
           <div className="form-control">
@@ -20,7 +20,7 @@ export function AppHeader({ title }: AppHeaderProps): ReactElement {
           </div>
           <div className="divider divider-horizontal" />
           <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            <div tabIndex={0} role="button" className="avatar btn btn-circle btn-ghost">
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
@@ -30,7 +30,7 @@ export function AppHeader({ title }: AppHeaderProps): ReactElement {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
             >
               <li>
                 <a className="justify-between">

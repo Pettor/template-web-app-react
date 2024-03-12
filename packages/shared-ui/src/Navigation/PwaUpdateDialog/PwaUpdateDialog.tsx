@@ -18,7 +18,7 @@ export function PwaUpdateDialog({ appName, open, onUpdate }: PwaUpdateDialogProp
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="stroke-info shrink-0 w-6 h-6"
+            className="h-6 w-6 shrink-0 stroke-info"
           >
             <path
               strokeLinecap="round"
@@ -40,14 +40,14 @@ export function PwaUpdateDialog({ appName, open, onUpdate }: PwaUpdateDialogProp
             )}
           </span>
           <div className="flex flex-row gap-2">
-            <button className="btn btn-sm btn-primary" onClick={onUpdate}>
+            <button className="btn btn-primary btn-sm" onClick={onUpdate}>
               {intl.formatMessage({
                 description: "PwaUpdateDialog - Update button",
                 defaultMessage: "Update",
                 id: "Blpjtp",
               })}
             </button>
-            <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+            <button className="btn btn-circle btn-ghost btn-sm">✕</button>
           </div>
         </div>
       )}

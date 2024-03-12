@@ -17,22 +17,36 @@ export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
       {...headerProps}
     >
       <div className="flex flex-1 flex-col">
-        <div className="flex flex-1 flex-row items-center">
-          <span className="from-primary to-secondary inline-block bg-gradient-to-r bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-7xl">
-            {intl.formatMessage({
-              description: "HomeView - Welcome",
-              defaultMessage: "Welcome",
-              id: "vlRwrH",
-            })}{" "}
-          </span>
+        <div className="hero">
+          <div className="hero-content text-center">
+            <div className="max-w-screen-md">
+              <span className="inline-block text-4xl font-bold md:text-5xl lg:text-7xl">
+                {intl.formatMessage({
+                  description: "HomeView - Header title ending",
+                  defaultMessage: "Welcome to",
+                  id: "1/+0+G",
+                })}
+                &nbsp;
+              </span>
+              <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-7xl">
+                {intl.formatMessage({
+                  description: "HomeView - Header title start",
+                  defaultMessage: "React",
+                  id: "oAy59O",
+                })}
+              </span>
+              <span className="inline-block text-4xl font-bold md:text-5xl lg:text-7xl">
+                {intl.formatMessage({
+                  description: "HomeView - Header title ending",
+                  defaultMessage: "Template",
+                  id: "ojp/AE",
+                })}
+              </span>
+              <p className="py-6 text-lg">Optimized using Turborepo, React and TailwindCSS.</p>
+              <button className="btn btn-primary">Get Started</button>
+            </div>
+          </div>
         </div>
-        <span className="text-2xl">
-          {intl.formatMessage({
-            description: "HomeView - Subheader",
-            defaultMessage: "This is the home page",
-            id: "MIobVx",
-          })}
-        </span>
       </div>
     </HeaderLayout>
   );

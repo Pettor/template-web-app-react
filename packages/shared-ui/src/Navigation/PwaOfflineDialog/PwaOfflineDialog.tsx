@@ -10,14 +10,14 @@ export function PwaOfflineDialog({ open, onClose }: PwaOfflineDialogProps): Reac
   const intl = useIntl();
 
   return (
-    <div className="toast toast-left">
+    <div className="toast-left toast">
       {open && (
         <div role="alert" className="alert">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            className="stroke-info shrink-0 w-6 h-6"
+            className="h-6 w-6 shrink-0 stroke-info"
           >
             <path
               strokeLinecap="round"
@@ -34,7 +34,9 @@ export function PwaOfflineDialog({ open, onClose }: PwaOfflineDialogProps): Reac
             })}
           </span>
           <div>
-            <button className="btn btn-sm btn-circle btn-ghost">✕</button>
+            <button className="btn btn-circle btn-ghost btn-sm" onClick={onClose}>
+              ✕
+            </button>
           </div>
         </div>
       )}

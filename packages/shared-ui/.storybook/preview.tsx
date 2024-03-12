@@ -1,12 +1,11 @@
 import type { ReactElement } from "react";
 import React from "react";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { withThemeByClassName } from "@storybook/addon-themes";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { StoryFn, StoryContext } from "@storybook/react";
 import { IntlProvider } from "react-intl";
 import "../src/tailwind.css";
-
 
 export const parameters = {
   viewport: {

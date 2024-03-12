@@ -12,7 +12,7 @@ export function ModalCard({ title, children, ...modalProps }: ModalCardProps): R
   return (
     <Modal {...modalProps}>
       <form method="dialog">
-        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        <button className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">✕</button>
       </form>
       <span className="text-lg font-bold">{title}</span>
       <div className="py-4">{children}</div>

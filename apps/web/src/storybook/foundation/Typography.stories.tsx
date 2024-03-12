@@ -21,15 +21,15 @@ export function Typograhy(): ReactElement {
         <h6>h6. Heading</h6>
       </div>
       <div className="prose mt-2">
-        <div className="font-thin">100 - Font Weight</div>
-        <div className="font-extralight">200 - Font Weight</div>
-        <div className="font-light">300 - Font Weight</div>
-        <div className="font-normal">400 - Font Weight</div>
-        <div className="font-medium">500 - Font Weight</div>
-        <div className="font-semibold">600 - Font Weight</div>
-        <div className="font-bold">700 - Font Weight</div>
-        <div className="font-extrabold">800 - Font Weight</div>
-        <div className="font-black">800 - Font Weight</div>
+        <div className="font-thin">Thin - Font Weight</div>
+        <div className="font-extralight">Extralight - Font Weight</div>
+        <div className="font-light">Light - Font Weight</div>
+        <div className="font-normal">Normal - Font Weight</div>
+        <div className="font-medium">Medium - Font Weight</div>
+        <div className="font-semibold">Semibold - Font Weight</div>
+        <div className="font-bold">Bold - Font Weight</div>
+        <div className="font-extrabold">Extrabold - Font Weight</div>
+        <div className="font-black">Black - Font Weight</div>
       </div>
       <div className="prose mt-2">
         <div>subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur</div>

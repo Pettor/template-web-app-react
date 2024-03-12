@@ -11,5 +11,5 @@ export function HomePage({ repoUrl }: HomePageProps): ReactElement {
   useDocumentTitle("Home");
   const { handleGithubClick } = useHomePage(repoUrl);
 
-  return <HomeView components={<div>Component</div>} />;
+  return <HomeView components={<button onClick={handleGithubClick}>Component</button>} />;
 }
