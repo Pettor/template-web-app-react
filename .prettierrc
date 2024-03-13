@@ -1,6 +1,6 @@
 {
   "endOfLine": "auto",
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-classnames"],
   "printWidth": 120,
   "singleQuote": false,
   "tabWidth": 2,

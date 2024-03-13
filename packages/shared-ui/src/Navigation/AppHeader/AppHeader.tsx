@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from "react";
-import { ArrowRightStartOnRectangleIcon, Cog8ToothIcon, UserCircleIcon } from "@heroicons/react/20/solid";
-import { ThemeSwitch } from "Components";
+import { UserCircleIcon } from "@heroicons/react/20/solid";
+import { ProfileCard, ThemeSwitch } from "Components";
 import { Logo } from "Components/Logo";
 import { useThemeSwitcher } from "Components/ThemeSwitch/UseThemeSwitcher";
 import { GithubIcon, LinkedInIcon } from "Icons";
@@ -16,7 +16,7 @@ export function AppHeader({ title, onGithubClick, onLinkedInClick }: AppHeaderPr
   const themeProps = useThemeSwitcher();
 
   return (
-    <div className="glass navbar bg-base-100 bg-opacity-55 p-0 dark:bg-opacity-80 dark:bg-none ">
+    <div className="glass navbar bg-opacity-55 p-0 dark:bg-opacity-100 dark:bg-none ">
       <div className="container navbar min-h-0 p-0">
         <div className="navbar-start h-full">
           <Logo size="small" />
@@ -31,19 +31,8 @@ export function AppHeader({ title, onGithubClick, onLinkedInClick }: AppHeaderPr
                 </div>
               </div>
             </div>
-            <ul tabIndex={0} className="menu dropdown-content z-[1] w-52 gap-1 rounded-box bg-base-100 p-2 shadow-xl">
-              <li>
-                <a>
-                  <Cog8ToothIcon className="h-5 w-5" />
-                  Settings
-                </a>
-              </li>
-              <li>
-                <a>
-                  <ArrowRightStartOnRectangleIcon className="h-5 w-5" />
-                  Logout
-                </a>
-              </li>
+            <ul tabIndex={0} className="dropdown-content">
+              <ProfileCard />
             </ul>
           </div>
           <div className="divider divider-horizontal mx-2" />
