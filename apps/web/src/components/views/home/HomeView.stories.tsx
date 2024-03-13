@@ -22,6 +22,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
+  onGithubClick: (): void => console.log("onGithubClick"),
+  onLinkedInClick: (): void => console.log("onLinkedInClick"),
   components: <DefaultHeaderComponents />,
 } satisfies Props;
 

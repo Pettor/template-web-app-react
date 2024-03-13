@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from "react";
 import clsx from "clsx";
-import { GithubIcon, LinkedInIcon } from "Icons";
+import { GithubIcon, LinkedInIcon } from "../../Icons";
 import { AppHeader, type AppHeaderProps } from "../../Navigation/AppHeader";
 
 export interface HeaderLayoutProps extends AppHeaderProps {
@@ -8,6 +8,8 @@ export interface HeaderLayoutProps extends AppHeaderProps {
   backgroundElement?: ReactNode;
   className?: string;
   children?: ReactNode;
+  onGithubClick: () => void;
+  onLinkedInClick: () => void;
 }
 
 export function HeaderLayout({
