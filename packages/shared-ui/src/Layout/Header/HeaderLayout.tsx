@@ -5,14 +5,14 @@ import { AppHeader, type AppHeaderProps } from "../../Navigation/AppHeader";
 
 export interface HeaderLayoutProps extends AppHeaderProps {
   footer?: boolean;
-  backgrouncClassName?: string;
+  backgroundElement?: ReactNode;
   className?: string;
   children?: ReactNode;
 }
 
 export function HeaderLayout({
   className,
-  backgrouncClassName,
+  backgroundElement,
   footer,
   children,
   ...headerProps
@@ -20,9 +20,9 @@ export function HeaderLayout({
   const { onGithubClick, onLinkedInClick } = headerProps;
 
   return (
-    <div className="flex h-screen flex-col bg-white dark:bg-black">
-      {backgrouncClassName && <div className={backgrouncClassName} />}
-      <div className={clsx(className, "z-10 flex flex-1 flex-col")}>
+    <div className="flex min-h-screen flex-col">
+      {backgroundElement}
+      <div className={clsx(className, "flex flex-1 flex-col")}>
         <div className="sticky top-0 z-40">
           <AppHeader {...headerProps} />
         </div>

@@ -59,7 +59,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
   });
 
   return (
-    <form onSubmit={handleFormSubmit(onSubmit)}>
+    <form onSubmit={handleFormSubmit(onSubmit)} className="justify-center">
       <InputField
         id="email"
         type="text"
@@ -82,7 +82,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
       />
       <div className="flex flex-row">
         <div className="flex w-full flex-1 justify-end">
-          <button type="submit" className="btn btn-primary w-40" data-testid="login-form__submit-button">
+          <button type="submit" className="btn btn-primary w-full md:w-40" data-testid="login-form__submit-button">
             {loading && <span className="loading loading-spinner" />}
             {intl.formatMessage({
               description: "LoginFormButton: Sign in",
