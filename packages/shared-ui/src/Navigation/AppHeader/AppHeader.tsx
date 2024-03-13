@@ -24,7 +24,12 @@ export function AppHeader({ title, profileCardElement, onGithubClick, onLinkedIn
         <div className="navbar-end h-8">
           <div className="dropdown dropdown-end">
             <div className="flex items-center">
-              <div tabIndex={0} role="button" className="avatar btn btn-circle btn-ghost btn-sm">
+              <div
+                tabIndex={0}
+                role="button"
+                className="avatar btn btn-circle btn-ghost btn-sm"
+                data-testid="home-page__menu-button"
+              >
                 <div className="w-8 rounded-full">
                   <UserCircleIcon />
                 </div>

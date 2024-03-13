@@ -30,7 +30,7 @@ export function ProfileCard({ name, email, onLogout }: ProfileCardProps): ReactE
         <div className="divider m-0" />
         <ul className="menu gap-2 rounded-box p-0">
           <li>
-            <button onClick={onLogout} data-testid="profile-card__logout-button">
+            <button onClick={onLogout} data-testid="profile-card__settings-button">
               <Cog8ToothIcon className="h-5 w-5" />
               <span className="text-base">
                 {intl.formatMessage({
