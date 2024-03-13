@@ -6,7 +6,7 @@ export function ProfileCardModule(): ReactElement {
   const { profileInfo, handleLogout } = useProfileCardModule();
 
   if (!profileInfo) {
-    return <ProfileCard />;
+    return <ProfileCard onLogout={handleLogout} />;
   }
 
   const { email, firstName, lastName } = profileInfo;

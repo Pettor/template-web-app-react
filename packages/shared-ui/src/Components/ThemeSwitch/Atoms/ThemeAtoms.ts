@@ -1,5 +1,6 @@
 import { atom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
+import { atomEffect } from "jotai-effect";
 import type { ThemeMode } from "../ThemeSwitcherClasses";
 
 const themeLocalStorageAtom = atomWithStorage<ThemeMode>("theme", "light");
@@ -24,3 +25,17 @@ export const themeModeAtom = atom(
     set(themeLocalStorageAtom, newTheme);
   }
 );
+
+// Effects
+export const themeModeEffect = atomEffect((get) => {
+  const themeMode = get(themeModeAtom);
+
+  if (themeMode === "dark") {
+    document.documentElement.classList.add("dark");
+    document.querySelector("html")?.setAttribute("data-theme", "dark");
+    return;
+  }
+
+  document.documentElement.classList.remove("dark");
+  document.querySelector("html")?.setAttribute("data-theme", "light");
+});

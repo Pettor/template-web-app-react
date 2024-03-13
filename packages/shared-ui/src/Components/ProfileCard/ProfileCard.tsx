@@ -5,7 +5,7 @@ import { useIntl } from "react-intl";
 export interface ProfileCardProps {
   name?: string;
   email?: string;
-  onLogout?(): void;
+  onLogout(): void;
 }
 
 export function ProfileCard({ name, email, onLogout }: ProfileCardProps): ReactElement {

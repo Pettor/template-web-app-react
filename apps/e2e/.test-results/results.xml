@@ -1,10 +1,12 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="3.9652089999999998">
-<testsuite name="specs\auth.spec.ts" timestamp="2023-10-12T07:46:06.325Z" hostname="chromium" tests="3" failures="0" skipped="0" time="3.229" errors="0">
-<testcase name="auth.loggedin › do login attempt" classname="specs\auth.spec.ts" time="1.37">
+<testsuites id="" name="" tests="3" failures="0" skipped="1" errors="0" time="35.899179000000004">
+<testsuite name="specs\auth.spec.ts" timestamp="2024-03-13T20:33:58.804Z" hostname="chromium" tests="3" failures="0" skipped="1" time="34.113" errors="0">
+<testcase name="auth.loggedin › do login attempt" classname="specs\auth.spec.ts" time="3.821">
 </testcase>
-<testcase name="auth.refreshtoken › do refresh" classname="specs\auth.spec.ts" time="0.681">
+<testcase name="auth.refreshtoken › do refresh" classname="specs\auth.spec.ts" time="0.598">
 </testcase>
-<testcase name="auth.logout › do logout attempt" classname="specs\auth.spec.ts" time="1.178">
+<testcase name="auth.logout › do logout attempt" classname="specs\auth.spec.ts" time="29.694">
+<skipped>
+</skipped>
 </testcase>
 </testsuite>
 </testsuites>

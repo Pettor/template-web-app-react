@@ -1,18 +1,17 @@
 import type { ReactElement, ReactNode } from "react";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
-import { ProfileCard, ThemeSwitch } from "Components";
-import { Logo } from "Components/Logo";
 import { useThemeSwitcher } from "Components/ThemeSwitch/UseThemeSwitcher";
 import { GithubIcon, LinkedInIcon } from "Icons";
+import { ThemeSwitch, Logo } from "../../Components";
 
 export interface AppHeaderProps {
   title: string;
-  components?: ReactNode;
+  profileCardElement: ReactNode;
   onGithubClick: () => void;
   onLinkedInClick: () => void;
 }
 
-export function AppHeader({ title, onGithubClick, onLinkedInClick }: AppHeaderProps): ReactElement {
+export function AppHeader({ title, profileCardElement, onGithubClick, onLinkedInClick }: AppHeaderProps): ReactElement {
   const themeProps = useThemeSwitcher();
 
   return (
@@ -32,7 +31,7 @@ export function AppHeader({ title, onGithubClick, onLinkedInClick }: AppHeaderPr
               </div>
             </div>
             <ul tabIndex={0} className="dropdown-content">
-              <ProfileCard />
+              {profileCardElement}
             </ul>
           </div>
           <div className="divider divider-horizontal mx-2" />

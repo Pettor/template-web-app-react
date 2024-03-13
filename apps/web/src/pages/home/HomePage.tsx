@@ -4,12 +4,13 @@ import { useHomePage } from "./UseHomePage";
 import { HomeView } from "~/components/views/home/HomeView";
 
 export interface HomePageProps {
-  repoUrl: string;
+  githubLink: string;
+  linkedInLink: string;
 }
 
-export function HomePage({ repoUrl }: HomePageProps): ReactElement {
+export function HomePage({ githubLink, linkedInLink }: HomePageProps): ReactElement {
   useDocumentTitle("Home");
-  const { handleGithubClick } = useHomePage(repoUrl);
+  const homeProps = useHomePage(githubLink, linkedInLink);
 
-  return <HomeView components={<button onClick={handleGithubClick}>Component</button>} />;
+  return <HomeView {...homeProps} />;
 }
