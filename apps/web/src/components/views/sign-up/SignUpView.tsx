@@ -28,7 +28,7 @@ export function SignUpView({ signUpForm, onBack }: SignUpViewProps): ReactElemen
         <div className="hero">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
-              <div className="card-body w-full min-w-96">
+              <div className="card-body w-full md:min-w-96">
                 <div className="card-actions justify-end">
                   <button
                     className="btn btn-square btn-sm"

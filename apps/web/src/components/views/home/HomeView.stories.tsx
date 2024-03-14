@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DefaultHeaderComponents } from "shared-ui";
+import { FullSizeDecorator } from "storybook-base";
 import { HomeView as Component } from "./HomeView";
 import type { HomeViewProps as Props } from "./HomeView";
 
@@ -27,6 +28,12 @@ const defaultArgs = {
   components: <DefaultHeaderComponents />,
 } satisfies Props;
 
-export const Home = {
+export const Fullscreen = {
   args: defaultArgs,
+  decorators: [FullSizeDecorator],
+} satisfies Story;
+
+export const Phone = {
+  args: defaultArgs,
+  parameters: { viewport: { defaultViewport: "iphonex" } },
 } satisfies Story;

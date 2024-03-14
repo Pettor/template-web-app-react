@@ -1,23 +1,10 @@
 import type { ReactElement } from "react";
 import React from "react";
-import { withThemeByDataAttribute } from "@storybook/addon-themes";
-import { withThemeByClassName } from "@storybook/addon-themes";
+import { withThemeByDataAttribute, withThemeByClassName } from "@storybook/addon-themes";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { StoryFn, StoryContext } from "@storybook/react";
 import { IntlProvider } from "react-intl";
 import "../src/tailwind.css";
-
-export const parameters = {
-  viewport: {
-    viewports: INITIAL_VIEWPORTS,
-  },
-  options: {
-    storySort: {
-      method: "alphabetical",
-      order: ["Design System", "Actions", "Components", "Layout", "Navigation", "Views"],
-    },
-  },
-};
 
 function withLocaleProvider(Story: StoryFn, context: StoryContext): ReactElement {
   return (
@@ -45,3 +32,15 @@ export const decorators = [
     attributeName: "data-theme",
   }),
 ];
+
+export const parameters = {
+  options: {
+    storySort: {
+      method: "alphabetical",
+      order: ["Design System", "Actions", "Components", "Layout", "Navigation", "Views"],
+    },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+};
