@@ -1,10 +1,14 @@
 # React Web Application Template
 
-[![GitHub](https://img.shields.io/github/license/fullstackhero/dotnet-webapi-boilerplate?color=2da44e)](https://github.com/fullstackhero/dotnet-webapi-boilerplate/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/badge/license-MIT-green)](https://github.com/Pettor/template-web-app-react/blob/main/LICENSE)
 [![Actions Main](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
-[![Storybook](https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg)](https://pettor.github.io/template-web-app-react/)
+[![Storybook](https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg)](https://pettor.github.io/template-web-app-react/storybook/)
 
 This is a template for building web applications with React. It includes a basic project structure and configuration files to help you get started quickly.
+
+## Demo
+
+To check out a demo of the latest main branch [click here](https://pettor.github.io/template-web-app-react/).
 
 ## Getting Started
 

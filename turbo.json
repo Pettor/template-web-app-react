@@ -13,6 +13,18 @@
       ],
       "dependsOn": ["^build"]
     },
+    "deploy:build": {
+      "outputs": [
+        "dist/**"
+      ],
+      "dependsOn": ["^build"]
+    },
+    "deploy:move": {
+      "outputs": [
+        "output/**"
+      ],
+      "dependsOn": ["^build"]
+    },
     "dev": {
       "dependsOn": ["^build"],
       "cache": false,
