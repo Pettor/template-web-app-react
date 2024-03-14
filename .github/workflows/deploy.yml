@@ -48,7 +48,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build deployment and move files
-        run: pnpm run deploy --quiet
+        run: pnpm run deploy
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
