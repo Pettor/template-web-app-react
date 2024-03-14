@@ -18,7 +18,7 @@ export function AppHeaderItems({
   onLinkedInClick,
 }: AppHeaderItemsProps): ReactElement {
   return (
-    <>
+    <div className="flex flex-row items-center">
       <div className="dropdown dropdown-end">
         <div className="flex items-center">
           <div
@@ -55,6 +55,6 @@ export function AppHeaderItems({
           <LinkedInIcon />
         </button>
       </div>
-    </>
+    </div>
   );
 }

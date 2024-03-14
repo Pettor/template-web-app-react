@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DefaultHeaderComponents } from "Storybook";
 import { AppHeader as Component } from "./AppHeader";
-import type { AppHeaderProps } from "./AppHeader";
+import type { AppHeaderProps as Props } from "./AppHeader";
 
 const meta = {
   component: Component,
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
   title: "This is a Header",
-} satisfies AppHeaderProps;
+} satisfies Props;
 
 export const Standard = {
   args: defaultArgs,
