@@ -99,8 +99,9 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
   });
 
   return (
-    <form onSubmit={handleFormSubmit(onSubmit)} className="w-full">
+    <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col">
       <InputField
+        autoFocus
         id="userName"
         type="text"
         placeholder={intl.formatMessage({
@@ -184,7 +185,7 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
         {...register("password")}
         data-testid="sign-up-form__confirmpassword-input"
       />
-      <button type="submit" className="btn btn-primary w-36" data-testid="sign-up-form__submit-button">
+      <button type="submit" className="mt-2 btn btn-primary" data-testid="sign-up-form__submit-button">
         {loading && <span className="loading loading-spinner" />}
         {intl.formatMessage({
           description: "SignUpFormButton - Sign Up",

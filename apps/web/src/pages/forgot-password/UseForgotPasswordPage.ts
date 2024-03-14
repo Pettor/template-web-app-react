@@ -3,20 +3,22 @@ import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useToastNotifier } from "shared-ui";
 import type { FormForgotPassword } from "~/components/forms/forgot-password/ForgotPasswordForm";
+import type { ForgotPasswordViewProps } from "~/components/views/forgot-password/ForgotPasswordView";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
-export function useForgotPasswordPage(): {
-  applicationName: string;
-  isLoading: boolean;
-  handleSubmit: (data: FormForgotPassword) => Promise<void>;
-} {
+export function useForgotPasswordPage(): ForgotPasswordViewProps {
   const { appName } = useAppInfo();
   const navigate = useNavigate();
   const intl = useIntl();
   const { isPending, mutateAsync: submit } = usePostForgotPasswordMutate();
   const { addToast, clearToasts } = useToastNotifier();
 
-  async function handleSubmit(data: FormForgotPassword): Promise<void> {
+  function handleOnBack(): void {
+    console.log("handleBack");
+    navigate("/login");
+  }
+
+  async function handleOnSubmit(data: FormForgotPassword): Promise<void> {
     const { email } = data;
     clearToasts();
 
@@ -35,8 +37,11 @@ export function useForgotPasswordPage(): {
   }
 
   return {
-    applicationName: appName,
-    isLoading: isPending,
-    handleSubmit,
+    appName,
+    onBack: handleOnBack,
+    resetForm: {
+      loading: isPending,
+      onSubmit: handleOnSubmit,
+    },
   };
 }

@@ -61,6 +61,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
   return (
     <form onSubmit={handleFormSubmit(onSubmit)} className="justify-center">
       <InputField
+        autoFocus
         id="email"
         type="text"
         placeholder="Email"

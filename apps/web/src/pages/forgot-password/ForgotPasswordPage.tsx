@@ -4,15 +4,6 @@ import { ForgotPasswordView } from "~/components/views/forgot-password/ForgotPas
 
 export function ForgotPasswordPage(): React.ReactElement {
   useDocumentTitle("Forgot Password");
-  const { applicationName, isLoading, handleSubmit } = useForgotPasswordPage();
-
-  return (
-    <ForgotPasswordView
-      appName={applicationName}
-      resetForm={{
-        loading: isLoading,
-        onSubmit: handleSubmit,
-      }}
-    />
-  );
+  const forgotPasswordProps = useForgotPasswordPage();
+  return <ForgotPasswordView {...forgotPasswordProps} />;
 }

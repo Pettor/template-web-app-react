@@ -50,8 +50,9 @@ export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProp
   });
 
   return (
-    <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col gap-4">
+    <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col">
       <InputField
+        autoFocus
         id="email"
         type="text"
         placeholder="Email"

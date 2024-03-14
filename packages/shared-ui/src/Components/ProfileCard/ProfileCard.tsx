@@ -11,19 +11,19 @@ export interface ProfileCardProps {
 export function ProfileCard({ name, email, onLogout }: ProfileCardProps): ReactElement {
   const intl = useIntl();
   return (
-    <div className="card w-screen bg-neutral-content dark:bg-neutral shadow-xl sm:w-80">
+    <div className="card w-screen bg-base-100 dark:bg-base-200 shadow-xl sm:w-80">
       <div className="card-body rounded-xl shadow-inner dark:bg-none">
         <span className="text-xl font-semibold">Personal</span>
         <div className="flex flex-1 flex-row items-center justify-center gap-4 py-2">
           <div className="flex h-full items-center justify-center">
             <UserCircleIcon className="h-8 w-8 full-neutral dark:fill-neutral-content" />
           </div>
-          <div className="flex flex-1 flex-col gap-2">
-            <span className="h-5" data-testid="profile-card__name-text">
-              {name ? name : <div className="skeleton h-full bg-neutral/20 dark:bg-base-300/20" />}
+          <div className="flex flex-1 flex-col gap-2 min-w-0">
+            <span className="h-5 truncate" data-testid="profile-card__name-text">
+              {name ? name : <div className="skeleton h-full" />}
             </span>
-            <span className="h-5" data-testid="profile-card__email-text">
-              {email ? email : <div className="skeleton h-full bg-neutral/20 dark:bg-base-300/20" />}
+            <span className="h-5 truncate" data-testid="profile-card__email-text">
+              {email ? email : <div className="skeleton h-full" />}
             </span>
           </div>
         </div>

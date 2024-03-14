@@ -22,7 +22,7 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
 
   return (
     <BasicLayout
-      className="bg-base-200 dark:bg-base-300"
+      className="dark:bg-base-300"
       backgroundElement={
         <>
           <div
@@ -42,10 +42,10 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
               <div className="card-body">
-                <div className="md:hidden">
+                <div className="md:hidden flex justify-center">
                   <LogoFull appName={appName} size="small" />
                 </div>
-                <div className="max-md:hidden">
+                <div className="max-md:hidden flex justify-center">
                   <LogoFull appName={appName} size="large" />
                 </div>
                 <br />

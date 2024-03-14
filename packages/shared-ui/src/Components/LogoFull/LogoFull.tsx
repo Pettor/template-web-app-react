@@ -19,7 +19,7 @@ export function LogoFull({ appName, size = "large" }: LogoFullProps): ReactEleme
   }, [size]);
 
   return (
-    <div className="flex flex-row gap-4">
+    <div className="flex flex-row">
       <div className="flex items-center">
         <Logo size={size} />
       </div>
