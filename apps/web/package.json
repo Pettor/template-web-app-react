@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc && vite build",
-    "deploy": "pnpm build && pnpm storybook:build",
+    "deploy": "pnpm deploy:build && pnpm deploy:move",
+    "deploy:build": "pnpm build && pnpm storybook:build",
     "deploy:move": "pnpm deploy:move:dist && pnpm deploy:move:storybook",
     "deploy:move:dist": "move-cli dist \"../../output/deployment\" --mkdirp",
     "deploy:move:storybook": "move-cli storybook-static \"../../output/deployment/storybook\" --mkdirp",
