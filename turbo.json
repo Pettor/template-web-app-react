@@ -13,15 +13,10 @@
       ],
       "dependsOn": ["^build"]
     },
-    "deploy:build": {
+    "deploy": {
       "outputs": [
-        "dist/**"
-      ],
-      "dependsOn": ["^build"]
-    },
-    "deploy:move": {
-      "outputs": [
-        "output/**"
+        "dist/**",
+        "output/deployment/**"
       ],
       "dependsOn": ["^build"]
     },

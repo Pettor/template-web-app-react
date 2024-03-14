@@ -10,9 +10,7 @@
   "scripts": {
     "prepare": "husky install",
     "build": "turbo run build --no-daemon",
-    "deploy": "pnpm deploy:build && pnpm deploy:move",
-    "deploy:build": "turbo run deploy:build --no-daemon",
-    "deploy:move": "turbo run deploy:move --no-daemon",
+    "deploy": "turbo run deploy --no-daemon",
     "clean": "turbo run clean --no-daemon && rimraf output",
     "clean:all": "turbo run clean:all --no-daemon",
     "dev": "turbo run dev --no-daemon --concurrency 20",
