@@ -3,7 +3,7 @@ import { Logo } from "../../Components";
 
 export interface AppHeaderProps {
   title: string;
-  components: ReactNode;
+  components?: ReactNode;
 }
 
 export function AppHeader({ title, components }: AppHeaderProps): ReactElement {

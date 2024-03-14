@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { useIntl } from "react-intl";
-import { BasicLayout, LogoFull } from "shared-ui";
+import { BasicLayout, BlueFadeBackground, GridBackground, LogoFull } from "shared-ui";
 import type { LoginFormProps } from "~/components/forms/login/LoginForm";
 import { LoginForm } from "~/components/forms/login/LoginForm";
 
@@ -25,15 +25,8 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
       className="dark:bg-base-300"
       backgroundElement={
         <>
-          <div
-            className="absolute inset-0 h-full w-full bg-base-100 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]
-              [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)] dark:bg-base-300
-              dark:bg-[radial-gradient(#46464645_1px,transparent_1px)]"
-          />
-          <div
-            className="absolute top-0 z-[-1] h-full w-full bg-base-100
-              bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-          />
+          <BlueFadeBackground />
+          <GridBackground />
         </>
       }
     >

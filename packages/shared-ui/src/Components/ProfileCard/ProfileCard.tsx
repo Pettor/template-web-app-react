@@ -1,14 +1,20 @@
 import type { ReactElement } from "react";
-import { UserCircleIcon, ArrowLeftStartOnRectangleIcon, Cog8ToothIcon } from "@heroicons/react/20/solid";
+import {
+  UserCircleIcon,
+  ArrowLeftStartOnRectangleIcon,
+  Cog8ToothIcon,
+  InformationCircleIcon,
+} from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
 
 export interface ProfileCardProps {
   name?: string;
   email?: string;
+  onAbout(): void;
   onLogout(): void;
 }
 
-export function ProfileCard({ name, email, onLogout }: ProfileCardProps): ReactElement {
+export function ProfileCard({ name, email, onAbout, onLogout }: ProfileCardProps): ReactElement {
   const intl = useIntl();
   return (
     <div className="card w-screen bg-base-100 dark:bg-base-200 shadow-xl sm:w-80">
@@ -29,6 +35,18 @@ export function ProfileCard({ name, email, onLogout }: ProfileCardProps): ReactE
         </div>
         <div className="divider m-0" />
         <ul className="menu gap-2 rounded-box p-0">
+          <li>
+            <button onClick={onAbout} data-testid="profile-card__info-button">
+              <InformationCircleIcon className="h-5 w-5" />
+              <span className="text-base">
+                {intl.formatMessage({
+                  description: "ProfileCard - Info",
+                  defaultMessage: "About",
+                  id: "NfKNqH",
+                })}
+              </span>
+            </button>
+          </li>
           <li>
             <button onClick={onLogout} data-testid="profile-card__settings-button">
               <Cog8ToothIcon className="h-5 w-5" />

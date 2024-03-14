@@ -14,6 +14,8 @@ type Story = StoryObj<typeof meta>;
 
 export const About = {
   args: {
+    appName: "My App",
     version: "1.0.0",
+    onBack: () => console.log("onBack"),
   },
 } satisfies Story;

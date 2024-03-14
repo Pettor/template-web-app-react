@@ -11,6 +11,7 @@ export function DefaultHeaderComponents(): ReactElement {
         <ProfileCard
           name={faker.person.fullName()}
           email={faker.internet.email()}
+          onAbout={() => console.log("onAbout")}
           onLogout={() => console.log("onLogout")}
         />
       }

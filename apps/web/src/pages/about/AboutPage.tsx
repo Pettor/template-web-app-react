@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+import { useAboutPage } from "./UseAboutPage";
 import { AboutView } from "~/components/views/about/AboutView";
 
 export interface AboutPageProps {
@@ -6,5 +7,6 @@ export interface AboutPageProps {
 }
 
 export function AboutPage({ version }: AboutPageProps): ReactElement {
-  return <AboutView version={version} />;
+  const aboutProps = useAboutPage(version);
+  return <AboutView {...aboutProps} />;
 }

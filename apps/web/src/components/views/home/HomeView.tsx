@@ -1,6 +1,6 @@
-import { useMemo, type ReactElement } from "react";
+import { type ReactElement } from "react";
 import { useIntl } from "react-intl";
-import { HeaderLayout, type HeaderLayoutProps } from "shared-ui";
+import { BlueFadeBackground, HeaderLayout, type HeaderLayoutProps } from "shared-ui";
 
 export interface HomeViewProps extends Omit<HeaderLayoutProps, "title" | "backgroundElement" | "children"> {}
 
@@ -25,18 +25,6 @@ function GridItem({ title, description, goto }: { title: string; description: st
 export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
   const intl = useIntl();
 
-  const backgroundElement = useMemo(
-    () => (
-      <>
-        <div
-          className="absolute top-0 z-[-2] h-full w-full bg-base-100 dark:bg-base-300
-            bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-        />
-      </>
-    ),
-    []
-  );
-
   return (
     <HeaderLayout
       title={intl.formatMessage({
@@ -45,7 +33,7 @@ export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
         id: "/UNGRI",
       })}
       footer
-      backgroundElement={backgroundElement}
+      backgroundElement={<BlueFadeBackground />}
       {...headerProps}
     >
       <div className="flex flex-1 flex-col">
