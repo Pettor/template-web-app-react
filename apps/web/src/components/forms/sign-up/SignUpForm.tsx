@@ -1,10 +1,9 @@
 import type { ReactElement } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { LoadingButton } from "@mui/lab";
-import { TextField } from "@mui/material";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
+import { InputField } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormSignUp {
@@ -100,153 +99,104 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
   });
 
   return (
-    <form onSubmit={handleFormSubmit(onSubmit)}>
-      <TextField
+    <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col">
+      <InputField
         autoFocus
-        margin="normal"
-        fullWidth
-        size="small"
         id="userName"
-        label={intl.formatMessage({
+        type="text"
+        placeholder={intl.formatMessage({
           description: "SignUpFormLabel - User Name",
           defaultMessage: "What should we call you?",
           id: "f2xRFX",
         })}
-        type="displayName"
-        error={!!errors?.userName}
-        helperText={errors?.userName?.message}
-        inputProps={{
-          "data-testid": "sign-up-form__username-input",
-        }}
+        error={errors.userName?.message}
         {...register("userName")}
+        data-testid="sign-up-form__username-input"
       />
-      <TextField
-        margin="normal"
-        fullWidth
-        size="small"
+      <InputField
         id="firstName"
-        label={intl.formatMessage({
+        type="text"
+        placeholder={intl.formatMessage({
           description: "SignUpFormLabel - First Name",
           defaultMessage: "What is your first name?",
           id: "NFDCUF",
         })}
-        autoComplete="firstName"
-        type="displayName"
-        error={!!errors?.firstName}
-        helperText={errors?.firstName?.message}
-        inputProps={{
-          "data-testid": "sign-up-form__firstname-input",
-        }}
+        error={errors.firstName?.message}
         {...register("firstName")}
+        data-testid="sign-up-form__firstname-input"
       />
-      <TextField
-        margin="normal"
-        fullWidth
-        size="small"
+      <InputField
         id="lastName"
-        label={intl.formatMessage({
+        type="text"
+        placeholder={intl.formatMessage({
           description: "SignUpFormLabel - Last Name",
           defaultMessage: "What is your last name?",
           id: "3YTbxI",
         })}
-        autoComplete="lastName"
-        type="displayName"
-        error={!!errors?.lastName}
-        helperText={errors?.lastName?.message}
-        inputProps={{
-          "data-testid": "sign-up-form__lastname-input",
-        }}
+        error={errors.lastName?.message}
         {...register("lastName")}
+        data-testid="sign-up-form__lastname-input"
       />
-      <TextField
-        margin="normal"
-        fullWidth
-        size="small"
-        id="email"
-        label={intl.formatMessage({
+      <InputField
+        id="lastName"
+        type="email"
+        placeholder={intl.formatMessage({
           description: "SignUpFormLabel - Email",
           defaultMessage: "What's your email?",
           id: "tZBQgk",
         })}
-        autoComplete="email"
-        error={!!errors?.email}
-        helperText={errors?.email?.message}
-        inputProps={{
-          "data-testid": "sign-up-form__email-input",
-        }}
+        error={errors.email?.message}
         {...register("email")}
+        data-testid="sign-up-form__email-input"
       />
-      <TextField
-        margin="normal"
-        type="tel"
-        fullWidth
-        size="small"
+      <InputField
         id="phoneNumber"
-        label={intl.formatMessage({
+        type="tel"
+        placeholder={intl.formatMessage({
           description: "SignUpFormLabel - Phone Number",
           defaultMessage: "What's your phone number?",
           id: "UjAA8C",
         })}
-        autoComplete="phoneNumber"
-        error={!!errors?.phoneNumber}
-        helperText={errors?.phoneNumber?.message}
-        inputProps={{
-          "data-testid": "sign-up-form__phonenumber-input",
-        }}
+        error={errors.phoneNumber?.message}
         {...register("phoneNumber")}
+        data-testid="sign-up-form__phonenumber-input"
       />
-      <TextField
-        type="password"
-        margin="normal"
-        fullWidth
-        size="small"
+      <InputField
         id="password"
-        label={intl.formatMessage({
+        type="password"
+        placeholder={intl.formatMessage({
           description: "SignUpFormLabel - Password",
           defaultMessage: "Create a password",
           id: "ppqAda",
         })}
-        autoComplete="password"
-        error={!!errors?.password}
-        helperText={errors?.password?.message}
-        inputProps={{
-          "data-testid": "sign-up-form__password-input",
-        }}
+        error={errors.password?.message}
         {...register("password")}
+        data-testid="sign-up-form__password-input"
       />
-      <TextField
-        type="password"
-        margin="normal"
-        fullWidth
-        size="small"
+      <InputField
         id="confirmPassword"
-        label={intl.formatMessage({
+        type="password"
+        placeholder={intl.formatMessage({
           description: "SignUpFormLabel - Confirm Password",
           defaultMessage: "Confirm password",
           id: "dU9xzq",
         })}
-        autoComplete="confirmPassword"
-        error={!!errors?.confirmPassword}
-        helperText={errors?.confirmPassword?.message}
-        inputProps={{
-          "data-testid": "sign-up-form__confirmpassword-input",
-        }}
-        {...register("confirmPassword")}
+        error={errors.confirmPassword?.message}
+        {...register("password")}
+        data-testid="sign-up-form__confirmpassword-input"
       />
-      <LoadingButton
+      <button
         type="submit"
-        loading={loading}
-        variant="outlined"
-        fullWidth
-        sx={{ mt: 3, mb: 2 }}
+        className="mt-2 btn btn-primary z-20 text-base-100 dark:text-base-300"
         data-testid="sign-up-form__submit-button"
       >
+        {loading && <span className="loading loading-spinner" />}
         {intl.formatMessage({
           description: "SignUpFormButton - Sign Up",
           defaultMessage: "Sign Up",
           id: "oigOyc",
         })}
-      </LoadingButton>
+      </button>
     </form>
   );
 }

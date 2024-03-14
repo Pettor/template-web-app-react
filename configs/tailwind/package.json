@@ -1,0 +1,14 @@
+{
+  "name": "tailwind",
+  "version": "0.6.0",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "*.ts"
+  ],
+  "devDependencies": {
+    "storybook-base": "workspace:*"
+  }
+}

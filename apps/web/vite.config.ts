@@ -15,12 +15,16 @@ export default defineConfig(({ mode, command }) => {
       react(),
       tsconfigPaths(),
       VitePWA({
-        includeAssets: ["favicon.ico", "apple-touch-icon.png"],
+        devOptions: {
+          enabled: false,
+        },
+        includeAssets: ["favicon.ico", "apple-touch-icon.png", "pwa-192x192.png", "pwa-512x512.png"],
+        injectRegister: "auto",
         manifest: {
-          name: "WebTemplate",
-          short_name: "WebTemplate",
-          description: "Description for App",
-          theme_color: "#ffffff",
+          background_color: "#ffffff",
+          display: "standalone",
+          description: "React Template using Turborepo, TailwindCSS, DaisyUI and Vite.",
+          name: "ReactWebTemplate",
           icons: [
             {
               src: "pwa-192x192.png",
@@ -33,12 +37,10 @@ export default defineConfig(({ mode, command }) => {
               type: "image/png",
             },
           ],
+          short_name: "WebTemplate",
+          theme_color: "#ffffff",
         },
         registerType: "prompt",
-        injectRegister: "auto",
-        devOptions: {
-          enabled: false,
-        },
         workbox: {
           globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
         },

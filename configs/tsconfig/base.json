@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true,
     "composite": false,
     "declaration": true,
@@ -11,6 +12,7 @@
     "inlineSources": false,
     "isolatedModules": true,
     "moduleResolution": "node",
+    "noEmit": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,

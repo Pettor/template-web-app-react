@@ -3,47 +3,45 @@ import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import { useToastNotifier } from "shared-ui";
 import type { FormForgotPassword } from "~/components/forms/forgot-password/ForgotPasswordForm";
+import type { ForgotPasswordViewProps } from "~/components/views/forgot-password/ForgotPasswordView";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
-export function useForgotPasswordPage(): {
-  applicationName: string;
-  isLoading: boolean;
-  handleSubmit: (data: FormForgotPassword) => Promise<void>;
-} {
+export function useForgotPasswordPage(): ForgotPasswordViewProps {
   const { appName } = useAppInfo();
   const navigate = useNavigate();
   const intl = useIntl();
   const { isPending, mutateAsync: submit } = usePostForgotPasswordMutate();
-  const { addToast, reset: resetToasts } = useToastNotifier();
+  const { addToast, clearToasts } = useToastNotifier();
 
-  async function handleSubmit(data: FormForgotPassword): Promise<void> {
+  function handleOnBack(): void {
+    console.log("handleBack");
+    navigate("/login");
+  }
+
+  async function handleOnSubmit(data: FormForgotPassword): Promise<void> {
     const { email } = data;
-    resetToasts();
+    clearToasts();
 
     try {
       await submit(email);
       navigate("/");
     } catch (error) {
-      addToast({
-        id: "forgot-password-error",
-        title: intl.formatMessage({
+      addToast(
+        intl.formatMessage({
           description: "ForgotPasswordPage - Forgot password error alert title",
           defaultMessage: "Something went wrong",
           id: "gmuIUo",
-        }),
-        text: intl.formatMessage({
-          description: "ForgotPasswordPage - Forgot password error alert text",
-          defaultMessage: "Please verify your email address and try again.",
-          id: "Dq0Eck",
-        }),
-        severity: "error",
-      });
+        })
+      );
     }
   }
 
   return {
-    applicationName: appName,
-    isLoading: isPending,
-    handleSubmit,
+    appName,
+    onBack: handleOnBack,
+    resetForm: {
+      loading: isPending,
+      onSubmit: handleOnSubmit,
+    },
   };
 }

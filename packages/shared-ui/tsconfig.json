@@ -1,13 +1,14 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "baseUrl": "src",
+    "noEmit": true,
     "paths": {
-      ".": ["."]
+      ".": ["."],
     },
     "types": [
       "@types/testing-library__jest-dom",
-      "mui-theme/types",
       "tsconfig/types"
     ],
   },

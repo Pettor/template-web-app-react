@@ -1,7 +1,6 @@
 import type { ReactElement } from "react";
 import { PwaOfflineDialog } from "shared-ui";
 import { PwaUpdateDialogModule } from "../pwa-update-dialog/PwaUpdateDialogModule";
-import { PWA_OFFLINE_AUTO_HIDE } from "./PwaProviderModuleConstants";
 import { usePwaProviderModule } from "./UsePwaProviderModule";
 
 interface Props {
@@ -14,7 +13,7 @@ export function PwaProviderModule({ children }: Props): ReactElement {
   return (
     <>
       <PwaUpdateDialogModule open={needRefresh} onUpdate={handleRefresh} />
-      <PwaOfflineDialog open={offlineReady} autoHideDuration={PWA_OFFLINE_AUTO_HIDE} onClose={handleOfflineClose} />
+      <PwaOfflineDialog open={offlineReady} onClose={handleOfflineClose} />
       {children}
     </>
   );

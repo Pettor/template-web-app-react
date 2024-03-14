@@ -1,24 +1,10 @@
 import type { ReactElement } from "react";
 import React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material/styles";
-import { withThemeFromJSXProvider } from "@storybook/addon-styling";
+import { withThemeByDataAttribute, withThemeByClassName } from "@storybook/addon-themes";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { StoryFn, StoryContext } from "@storybook/react";
-import { createAppTheme } from "mui-theme";
 import { IntlProvider } from "react-intl";
-
-export const parameters = {
-  viewport: {
-    viewports: INITIAL_VIEWPORTS,
-  },
-  options: {
-    storySort: {
-      method: "alphabetical",
-      order: ["Design System", "Library", "Forms", "Navigation", "Layout", "Views"],
-    },
-  },
-};
+import "../src/tailwind.css";
 
 function withLocaleProvider(Story: StoryFn, context: StoryContext): ReactElement {
   return (
@@ -30,13 +16,31 @@ function withLocaleProvider(Story: StoryFn, context: StoryContext): ReactElement
 
 export const decorators = [
   withLocaleProvider,
-  withThemeFromJSXProvider({
+  withThemeByClassName({
     themes: {
-      light: createAppTheme("light"),
-      dark: createAppTheme("dark"),
+      light: "light",
+      dark: "dark",
     },
     defaultTheme: "light",
-    Provider: ThemeProvider,
-    GlobalStyles: CssBaseline,
+  }),
+  withThemeByDataAttribute({
+    themes: {
+      light: "light",
+      dark: "dark",
+    },
+    defaultTheme: "light",
+    attributeName: "data-theme",
   }),
 ];
+
+export const parameters = {
+  options: {
+    storySort: {
+      method: "alphabetical",
+      order: ["Design System", "Actions", "Components", "Layout", "Navigation", "Views"],
+    },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+  },
+};

@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { FullSizeDecorator } from "storybook-base";
 import { SignUpView as Component } from "./SignUpView";
+import type { SignUpViewProps as Props } from "./SignUpView";
 
 const meta = {
   component: Component,
@@ -19,12 +21,21 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SignUp = {
-  args: {
-    appName: "My App",
-    signUpForm: {
-      loading: false,
-      onSubmit: () => console.log("onSubmit"),
-    },
+const defaultArgs = {
+  appName: "My App",
+  signUpForm: {
+    loading: false,
+    onSubmit: () => console.log("onSubmit"),
   },
+  onBack: () => console.log("onBack"),
+} satisfies Props;
+
+export const Fullscreen = {
+  args: defaultArgs,
+  decorators: [FullSizeDecorator],
+} satisfies Story;
+
+export const Phone = {
+  args: defaultArgs,
+  parameters: { viewport: { defaultViewport: "iphonex" } },
 } satisfies Story;

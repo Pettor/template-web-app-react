@@ -6,7 +6,7 @@ const config: StorybookConfig = {
     "@storybook/addon-coverage",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling",
+    "@storybook/addon-themes",
     "@storybook/addon-viewport",
   ],
   core: {
@@ -26,7 +26,9 @@ const config: StorybookConfig = {
   },
   stories: [
     "../src/**/*.stories.@(ts|tsx)",
-    process.env.NODE_ENV === "production" ? "../../../packages/shared-ui/src/**/*.stories.@(ts|tsx)" : "",
+    process.env.NODE_ENV === "production" || process.env.STORYBOOK_MODE === "combined"
+      ? "../../../packages/shared-ui/src/**/*.stories.@(ts|tsx)"
+      : "",
   ],
 };
 

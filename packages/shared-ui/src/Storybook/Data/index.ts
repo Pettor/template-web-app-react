@@ -1,1 +1,1 @@
-export * from "./HeaderData";
+export * from "./DefaultHeaderComponents";

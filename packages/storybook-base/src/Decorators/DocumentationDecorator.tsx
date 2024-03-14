@@ -1,57 +1,16 @@
 import type { ReactElement } from "react";
-import type { StyledComponent } from "@emotion/styled";
-import { Box } from "@mui/material";
-import type { BoxProps } from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
 import type { StoryFn } from "@storybook/react";
-
-const LeftColorBox: StyledComponent<BoxProps> = styled(Box)(() => ({
-  content: "''",
-  position: "fixed",
-  top: "-200px",
-  left: "-200px",
-  width: "400px",
-  height: "400px",
-  background: "#c989e8",
-  opacity: 0.5,
-  filter: "blur(150px)",
-}));
-
-const RightColorBox: StyledComponent<BoxProps> = styled(Box)(() => ({
-  content: "''",
-  position: "fixed",
-  top: "-200px",
-  right: "-200px",
-  width: "400px",
-  height: "400px",
-  background: "#b3d4ff",
-  opacity: 0.5,
-  filter: "blur(150px)",
-}));
-
-const ContainerBox: StyledComponent<BoxProps> = styled(Box)(() => ({
-  position: "relative",
-  height: "100dvh",
-  width: "100%",
-  overflow: "auto",
-}));
-
-const StyledBox: StyledComponent<BoxProps> = styled(Box)(({ theme }) => ({
-  position: "relative",
-  margin: theme.spacing(4),
-  zIndex: 1,
-}));
 
 export function DocumentationDecorator(Story: StoryFn): ReactElement {
   return (
     <>
-      <LeftColorBox />
-      <RightColorBox />
-      <ContainerBox>
-        <StyledBox>
+      <div className="fixed -left-[200px] -top-[200px] h-[400px] w-[400px] bg-[#c989e8] bg-opacity-50 blur-[150px] content-none" />
+      <div className="fixed -right-[200px] -top-[200px] h-[400px] w-[400px] bg-[#b3d4ff] bg-opacity-50 blur-[150px] content-none" />
+      <div className="relative h-[100dvh] w-full overflow-auto">
+        <div className="z-1 relative m-4">
           <Story />
-        </StyledBox>
-      </ContainerBox>
+        </div>
+      </div>
     </>
   );
 }

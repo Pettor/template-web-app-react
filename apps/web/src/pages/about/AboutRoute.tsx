@@ -1,5 +1,4 @@
 import type { ReactElement } from "react";
-import { Box } from "@mui/material";
 import { useLoaderData, useRouteError } from "react-router-dom";
 import { AboutPage, type AboutPageProps } from "./AboutPage";
 export { AboutPage } from "./AboutPage";
@@ -12,6 +11,6 @@ Component.displayName = "AboutPage";
 
 export function ErrorBoundary(): ReactElement | null {
   const error = useRouteError() as Error;
-  return <Box>{error.message}</Box>;
+  return <div>{error.message}</div>;
 }
 ErrorBoundary.displayName = "AboutPageError";

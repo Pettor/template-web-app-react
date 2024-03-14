@@ -1,8 +1,12 @@
 {
+  "customFunctions": ["clsx"],
   "endOfLine": "auto",
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-classnames"],
   "printWidth": 120,
   "singleQuote": false,
   "tabWidth": 2,
+  "tailwindConfig": "./configs/tailwind/tailwind.config.ts",
+  "tailwindFunctions": ["clsx", "tw"],
   "trailingComma": "es5",
   "useTabs": false
 }

@@ -197,6 +197,19 @@
               }
             }
           },
+          "401": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationProblemDetails"
+                },
+                "examples": {
+                  "$ref": "#/components/examples/HttpValidationProblemDetails"
+                }
+              }
+            }
+          },
           "default": {
             "description": "",
             "content": {

@@ -5,15 +5,7 @@ import { SignUpView } from "~/components/views/sign-up/SignUpView";
 
 export function SignUpPage(): ReactElement {
   useDocumentTitle("Sign Up");
-  const { applicationName, isLoading, handleSubmit } = useSignUpPage();
+  const signUpProps = useSignUpPage();
 
-  return (
-    <SignUpView
-      appName={applicationName}
-      signUpForm={{
-        loading: isLoading,
-        onSubmit: handleSubmit,
-      }}
-    />
-  );
+  return <SignUpView {...signUpProps} />;
 }

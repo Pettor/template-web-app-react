@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import type { ReactElement } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements, Outlet } from "react-router-dom";
+import { RouterProvider, Route, createHashRouter, createRoutesFromElements, Outlet } from "react-router-dom";
 import { GlobalRoutes } from "./GlobalRoutes";
 import { PrivateRouteLogic } from "./logic/PrivateRouteLogic";
 import { PublicRouteLogic } from "./logic/PublicRouteLogic";
@@ -13,7 +13,7 @@ export function AppRoutes(): ReactElement {
 
   return (
     <RouterProvider
-      router={createBrowserRouter(
+      router={createHashRouter(
         createRoutesFromElements(
           <Route path="/" element={<Outlet />}>
             <Route element={<PublicRouteLogic />}>
