@@ -43,6 +43,7 @@ export default defineConfig(({ mode, command }) => {
         registerType: "prompt",
         workbox: {
           globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+          navigateFallbackDenylist: [/^\/storybook/],
         },
       }),
     ],
