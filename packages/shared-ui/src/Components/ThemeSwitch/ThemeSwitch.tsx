@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+import { useIntl } from "react-intl";
 import type { ThemeMode } from "./ThemeSwitcherClasses";
 
 export interface ThemeSwitchProps {
@@ -7,9 +8,16 @@ export interface ThemeSwitchProps {
 }
 
 export function ThemeSwitch({ mode, onSwitch }: ThemeSwitchProps): ReactElement {
+  const intl = useIntl();
+
   return (
     <label className="grid cursor-pointer place-items-center">
       <input
+        aria-label={intl.formatMessage({
+          description: "ThemeSwitch - Dark mode switch",
+          defaultMessage: "Theme switch",
+          id: "rq5Vsy",
+        })}
         type="checkbox"
         checked={mode === "dark"}
         value={mode}

@@ -11,7 +11,7 @@ export function BasicLayout({ className, backgroundElement, children }: BasicLay
   return (
     <div className={clsx(className, "flex min-h-screen flex-1")}>
       {backgroundElement}
-      <main className="container flex flex-1">{children}</main>
+      <main className="container flex flex-1 z-10">{children}</main>
     </div>
   );
 }

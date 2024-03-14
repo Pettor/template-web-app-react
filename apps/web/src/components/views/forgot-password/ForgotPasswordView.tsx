@@ -30,24 +30,37 @@ export function ForgotPasswordView({ appName, resetForm, onBack }: ForgotPasswor
             <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
               <div className="card-body w-full max-w-[500px]">
                 <div className="card-actions justify-end">
-                  <button className="btn btn-square btn-sm" onClick={onBack}>
+                  <button
+                    className="btn btn-square btn-sm"
+                    onClick={onBack}
+                    title={intl.formatMessage({
+                      description: "ForgotPasswordView - Back button title",
+                      defaultMessage: "Back",
+                      id: "bz4LRs",
+                    })}
+                    aria-label={intl.formatMessage({
+                      description: "ForgotPasswordView - Back button aria label",
+                      defaultMessage: "Back",
+                      id: "lJxJFw",
+                    })}
+                  >
                     <XMarkIcon className="w-6 h-6" />
                   </button>
                 </div>
                 <p className="text-center text-base mt-4">
                   {intl.formatMessage(
                     {
-                      description: "ResetPasswordView - Reset password description",
+                      description: "ForgotPasswordView - Reset password description",
                       defaultMessage:
                         "Enter your {appName} email adress that you used to register. We'll send you an email with your username and a link to reset your password.",
-                      id: "Q7RMaC",
+                      id: "02xDV+",
                     },
                     {
                       appName: appName,
                     }
                   )}
                 </p>
-                <div className="mt-4 px-4 md:px-20">
+                <div className="mt-4 mb-2 px-4 md:px-20">
                   <ForgotPasswordForm {...resetForm} />
                 </div>
               </div>

@@ -185,7 +185,11 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
         {...register("password")}
         data-testid="sign-up-form__confirmpassword-input"
       />
-      <button type="submit" className="mt-2 btn btn-primary" data-testid="sign-up-form__submit-button">
+      <button
+        type="submit"
+        className="mt-2 btn btn-primary z-20 text-base-100 dark:text-base-300"
+        data-testid="sign-up-form__submit-button"
+      >
         {loading && <span className="loading loading-spinner" />}
         {intl.formatMessage({
           description: "SignUpFormButton - Sign Up",

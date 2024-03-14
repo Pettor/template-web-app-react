@@ -37,10 +37,10 @@ export function HeaderLayout({
         <div className="flex flex-1" />
         {footer && (
           <footer className="glass footer footer-center gap-y-2 py-2 text-base-content dark:bg-none lg:p-4">
-            <aside className="lg:mt-2">
+            <div className="lg:mt-2">
               <p className="text-base font-bold">Made with ☕ by Petter Hancock</p>
               <p>Copyright © 2024 - All right reserved</p>
-            </aside>
+            </div>
             <nav>
               <div className="grid grid-flow-col gap-2">
                 <button className="btn btn-square btn-ghost fill-primary p-2" onClick={onGithubClick}>

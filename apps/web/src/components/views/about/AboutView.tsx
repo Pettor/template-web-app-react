@@ -27,7 +27,20 @@ export function AboutView({ appName, version, onBack }: AboutViewProps): ReactEl
           <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
             <div className="card-body min-w-72">
               <div className="card-actions justify-end">
-                <button className="btn btn-square btn-sm" onClick={onBack}>
+                <button
+                  className="btn btn-square btn-sm"
+                  onClick={onBack}
+                  title={intl.formatMessage({
+                    description: "AboutView - Back button title",
+                    defaultMessage: "Back",
+                    id: "72q+Ui",
+                  })}
+                  aria-label={intl.formatMessage({
+                    description: "AboutView - Back button aria label",
+                    defaultMessage: "Back",
+                    id: "ZTBga3",
+                  })}
+                >
                   <XMarkIcon className="w-6 h-6" />
                 </button>
               </div>

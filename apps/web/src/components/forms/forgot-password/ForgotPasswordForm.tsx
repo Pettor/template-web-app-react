@@ -61,12 +61,26 @@ export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProp
         {...register("email")}
         data-testid="forgot-password-form__email-input"
       />
-      <button type="submit" className="btn btn-primary" data-testid="forgot-password-form__submit-button">
+      <button
+        type="submit"
+        className="btn btn-primary z-20 text-base-100 dark:text-base-300"
+        title={intl.formatMessage({
+          description: "ForgotPasswordFormValidation - Send button title",
+          defaultMessage: "Submit",
+          id: "ojcPit",
+        })}
+        aria-label={intl.formatMessage({
+          description: "ForgotPasswordFormValidation - Send button title",
+          defaultMessage: "Submit",
+          id: "ojcPit",
+        })}
+        data-testid="forgot-password-form__submit-button"
+      >
         {loading && <span className="loading loading-spinner" />}
         {intl.formatMessage({
-          description: "ForgotPasswordFormButton - Send",
+          description: "ForgotPasswordFormValidation - Send",
           defaultMessage: "Send",
-          id: "JypUyk",
+          id: "r3YQJ5",
         })}
       </button>
     </form>

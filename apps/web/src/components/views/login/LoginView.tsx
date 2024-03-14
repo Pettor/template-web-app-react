@@ -47,14 +47,14 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
                 </div>
                 <br />
                 <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-5 ">
-                  <button className="btn btn-link justify-start col-span-2" onClick={handleForgotPassword}>
+                  <button className="btn btn-link justify-start col-span-2 z-20" onClick={handleForgotPassword}>
                     {intl.formatMessage({
                       description: "LoginViewLink - Forgot password",
                       defaultMessage: "Forgot password?",
                       id: "aNSSLX",
                     })}
                   </button>
-                  <button className="btn btn-link col-span-3 justify-start" onClick={handleSignUp}>
+                  <button className="btn btn-link col-span-3 justify-start z-20" onClick={handleSignUp}>
                     {intl.formatMessage({
                       description: "LoginViewLink - Don't have an account? Sign Up",
                       defaultMessage: "Don't have an account? Sign up",

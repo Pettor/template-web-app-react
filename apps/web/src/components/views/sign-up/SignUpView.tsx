@@ -30,7 +30,20 @@ export function SignUpView({ signUpForm, onBack }: SignUpViewProps): ReactElemen
             <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
               <div className="card-body w-full min-w-96">
                 <div className="card-actions justify-end">
-                  <button className="btn btn-square btn-sm" onClick={onBack}>
+                  <button
+                    className="btn btn-square btn-sm"
+                    onClick={onBack}
+                    title={intl.formatMessage({
+                      description: "SignUpView - Back button title",
+                      defaultMessage: "Back",
+                      id: "beyKXy",
+                    })}
+                    aria-label={intl.formatMessage({
+                      description: "SignUpView - Back button aria label",
+                      defaultMessage: "Back",
+                      id: "Gy2cjY",
+                    })}
+                  >
                     <XMarkIcon className="w-6 h-6" />
                   </button>
                 </div>
