@@ -8,7 +8,7 @@ This is a template for building web applications with React. It includes a basic
 
 ## Demo
 
-To check out a demo of the latest main branch [click here](https://pettor.github.io/template-web-app-react/).
+To check out a demo of the latest main branch [click here](https://pettor.github.io/template-web-app-react/app/).
 
 ## Getting Started
 
