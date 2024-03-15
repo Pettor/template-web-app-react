@@ -28,12 +28,12 @@
     "tailwind": "workspace:*"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "7.6.17",
+    "@storybook/addon-a11y": "8.0.0",
     "@storybook/addon-coverage": "1.0.1",
-    "@storybook/addon-essentials": "7.6.17",
-    "@storybook/addon-interactions": "7.6.17",
-    "@storybook/addon-themes": "7.6.17",
-    "@storybook/addon-viewport": "7.6.17",
+    "@storybook/addon-essentials": "8.0.0",
+    "@storybook/addon-interactions": "8.0.0",
+    "@storybook/addon-themes": "8.0.0",
+    "@storybook/addon-viewport": "8.0.0",
     "eslint-config-custom": "workspace:*",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*",
