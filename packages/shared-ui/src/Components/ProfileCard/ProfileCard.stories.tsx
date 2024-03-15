@@ -1,6 +1,5 @@
-import { expect } from "@storybook/jest";
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
+import { userEvent, within, expect } from "@storybook/test";
 import { CenterDecorator } from "storybook-base";
 import { ProfileCard as Component } from "./ProfileCard";
 

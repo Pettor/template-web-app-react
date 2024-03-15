@@ -3,6 +3,7 @@ import { DocumentationDecorator, DocumentationLayout } from "storybook-base";
 
 export default {
   title: "Design System/Colors",
+  tags: ["no-tests"],
   decorators: [DocumentationDecorator],
   parameters: {
     layout: "fullscreen",
