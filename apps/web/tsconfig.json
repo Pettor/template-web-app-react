@@ -12,7 +12,6 @@
       "~/*": ["./src/*"]
     },
     "types": [
-      "@types/testing-library__jest-dom",
       "tsconfig/types",
       "vite-plugin-pwa/client"
     ],

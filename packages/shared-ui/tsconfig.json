@@ -8,7 +8,6 @@
       ".": ["."],
     },
     "types": [
-      "@types/testing-library__jest-dom",
       "tsconfig/types"
     ],
   },
