@@ -33,6 +33,7 @@ const defaultArgs = {
 export const Fullscreen = {
   args: defaultArgs,
   decorators: [FullSizeDecorator],
+  parameters: { viewport: { defaultViewport: "full" } },
 } satisfies Story;
 
 export const Phone = {
