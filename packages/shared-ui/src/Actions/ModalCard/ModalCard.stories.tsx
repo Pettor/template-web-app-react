@@ -4,7 +4,7 @@ import { ModalCard as Component } from "./ModalCard";
 
 const meta = {
   component: Component,
-  title: "Actions/Modal",
+  title: "Shared/Actions/Modal",
 } satisfies Meta<typeof Component>;
 
 export default meta;

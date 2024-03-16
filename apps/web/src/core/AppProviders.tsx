@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { validateCrypto } from "react-utils";
 import { AppLocales } from "./AppLocales";
 import { AuthProvider } from "./auth/AuthContext";
-import { PwaProviderModule } from "~/components/modules/pwa-provider/PwaProviderModule";
+import { PwaProviderModule } from "~/components/modules/pwa-provider-module/PwaProviderModule";
 
 const queryClient = new QueryClient();
 

@@ -187,7 +187,7 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
       />
       <button
         type="submit"
-        className="mt-2 btn btn-primary z-20 text-base-100 dark:text-base-300"
+        className="btn btn-primary z-20 mt-2 text-base-100 dark:text-base-300"
         data-testid="sign-up-form__submit-button"
       >
         {loading && <span className="loading loading-spinner" />}

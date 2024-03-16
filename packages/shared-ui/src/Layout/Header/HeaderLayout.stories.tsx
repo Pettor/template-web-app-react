@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DefaultHeaderComponents } from "Storybook/Data";
-import { ContentComponent } from "storybook-base";
+import { NavbarComponent } from "Storybook/NavbarComponent";
+import { TableContentComponent } from "Storybook/TableContentComponent";
 import { HeaderLayout as Component } from "./HeaderLayout";
-import type { HeaderLayoutProps as Props } from "./HeaderLayout";
+import type { HeaderLayoutProps, HeaderLayoutProps as Props } from "./HeaderLayout";
 
 const meta = {
   component: Component,
-  title: "Layout/Header",
+  title: "Shared/Layout",
   parameters: {
     layout: "fullscreen",
   },
   argTypes: {
-    components: {
+    navbarElement: {
       table: {
         disable: true,
       },
@@ -22,18 +22,21 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const defaultArgs = {
+  navbarElement: <NavbarComponent />,
+  onGithubClick: () => console.log("onGithubClick"),
+  onLinkedInClick: () => console.log("onLinkedInClick"),
+} satisfies HeaderLayoutProps;
+
 function render(args: Props) {
   return (
     <Component {...args}>
-      <ContentComponent />
+      <TableContentComponent />
     </Component>
   );
 }
 
-export const Header = {
-  args: {
-    title: "Some Label",
-    components: <DefaultHeaderComponents />,
-  },
+export const HeaderLayout = {
+  args: defaultArgs,
   render,
 } satisfies Story;

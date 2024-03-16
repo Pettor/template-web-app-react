@@ -44,7 +44,7 @@ export function SignUpView({ signUpForm, onBack }: SignUpViewProps): ReactElemen
                       id: "Gy2cjY",
                     })}
                   >
-                    <XMarkIcon className="w-6 h-6" />
+                    <XMarkIcon className="h-6 w-6" />
                   </button>
                 </div>
                 <p className="my-2 text-center">

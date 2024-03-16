@@ -7,8 +7,8 @@ export interface HomeViewProps extends Omit<HeaderLayoutProps, "title" | "backgr
 function GridItem({ title, description, goto }: { title: string; description: string; goto: string }): ReactElement {
   return (
     <div
-      className="card bg-base-300 hover:bg-neutral-content/70 dark:hover:bg-neutral/40 cursor-pointer transition-colors bg-opacity-20
-        shadow-inner"
+      className="card cursor-pointer bg-base-300 bg-opacity-20 shadow-inner transition-colors hover:bg-neutral-content/70
+        dark:hover:bg-neutral/40"
     >
       <div className="card-body glass rounded-xl dark:bg-none">
         <h2 className="card-title">{title}</h2>
@@ -26,16 +26,7 @@ export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
   const intl = useIntl();
 
   return (
-    <HeaderLayout
-      title={intl.formatMessage({
-        description: "HomeView - Title",
-        defaultMessage: "Home",
-        id: "/UNGRI",
-      })}
-      footer
-      backgroundElement={<BlueFadeBackground />}
-      {...headerProps}
-    >
+    <HeaderLayout footer backgroundElement={<BlueFadeBackground />} {...headerProps}>
       <div className="flex flex-1 flex-col">
         <div className="hero">
           <div className="hero-content text-center">

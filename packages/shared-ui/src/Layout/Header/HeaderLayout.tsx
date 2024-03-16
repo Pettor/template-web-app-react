@@ -1,33 +1,31 @@
 import type { ReactElement, ReactNode } from "react";
 import clsx from "clsx";
 import { GithubIcon, LinkedInIcon } from "../../Icons";
-import { AppHeader, type AppHeaderProps } from "../../Navigation/AppHeader";
 
-export interface HeaderLayoutProps extends AppHeaderProps {
+export interface HeaderLayoutProps {
   footer?: boolean;
   backgroundElement?: ReactNode;
+  navbarElement: ReactNode;
   className?: string;
-  children?: ReactNode;
   onGithubClick: () => void;
   onLinkedInClick: () => void;
+  children?: ReactNode;
 }
 
 export function HeaderLayout({
   className,
   backgroundElement,
+  navbarElement,
   footer,
+  onGithubClick,
+  onLinkedInClick,
   children,
-  ...headerProps
 }: HeaderLayoutProps): ReactElement {
-  const { onGithubClick, onLinkedInClick } = headerProps;
-
   return (
     <div className="flex min-h-screen flex-col">
       {backgroundElement}
       <div className={clsx(className, "flex flex-1 flex-col")}>
-        <div className="sticky top-0 z-40">
-          <AppHeader {...headerProps} />
-        </div>
+        <div className="sticky top-0 z-40">{navbarElement}</div>
         <div className="flex">
           <div className="container mb-8">
             <div className="navbar" />

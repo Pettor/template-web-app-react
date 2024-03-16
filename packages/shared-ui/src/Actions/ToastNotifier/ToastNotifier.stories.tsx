@@ -7,7 +7,7 @@ import { ToastNotifier as Component } from "./ToastNotifier";
 const meta = {
   component: Component,
   decorators: [CommonDecorator],
-  title: "Actions/Toast/Notifier",
+  title: "Shared/Actions/Toast/Notifier",
   tags: ["autodocs"],
 } satisfies Meta<typeof Component>;
 

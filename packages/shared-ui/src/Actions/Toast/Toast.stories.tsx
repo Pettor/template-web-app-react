@@ -6,7 +6,7 @@ import { Toast as Component } from "./Toast";
 const meta = {
   component: Component,
   decorators: [CommonDecorator],
-  title: "Actions/Toast",
+  title: "Shared/Actions/Toast",
   tags: ["autodocs"],
 } satisfies Meta<typeof Component>;
 

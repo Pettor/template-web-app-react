@@ -1,5 +1,5 @@
-import { AppHeaderItems, useThemeSwitcher } from "shared-ui";
-import { ProfileCardModule } from "~/components/modules/profile-card/ProfileCardModule";
+import { useThemeSwitcher } from "~/components/library/theme-switch";
+import { ProfileCardModule } from "~/components/modules/profile-card-module/ProfileCardModule";
 import type { HomeViewProps } from "~/components/views/home/HomeView";
 
 export function useHomePage(githubLink: string, linkedInLink: string): HomeViewProps {

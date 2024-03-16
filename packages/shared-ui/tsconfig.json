@@ -11,5 +11,5 @@
       "tsconfig/types"
     ],
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../../apps/web/src/Classes"],
 }

@@ -21,9 +21,6 @@ const config: StorybookConfig = {
     defaultName: "Docs",
   },
   framework: "@storybook/react-vite",
-  features: {
-    storyStoreV7: true,
-  },
   stories: [
     "../src/**/*.stories.@(ts|tsx)",
     process.env.NODE_ENV === "production" || process.env.STORYBOOK_MODE === "combined"

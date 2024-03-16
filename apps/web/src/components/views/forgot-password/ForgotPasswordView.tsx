@@ -44,10 +44,10 @@ export function ForgotPasswordView({ appName, resetForm, onBack }: ForgotPasswor
                       id: "lJxJFw",
                     })}
                   >
-                    <XMarkIcon className="w-6 h-6" />
+                    <XMarkIcon className="h-6 w-6" />
                   </button>
                 </div>
-                <p className="text-center text-base mt-4">
+                <p className="mt-4 text-center text-base">
                   {intl.formatMessage(
                     {
                       description: "ForgotPasswordView - Reset password description",
@@ -60,7 +60,7 @@ export function ForgotPasswordView({ appName, resetForm, onBack }: ForgotPasswor
                     }
                   )}
                 </p>
-                <div className="mt-4 mb-2 px-4 md:px-20">
+                <div className="mb-2 mt-4 px-4 md:px-20">
                   <ForgotPasswordForm {...resetForm} />
                 </div>
               </div>

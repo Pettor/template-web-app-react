@@ -37,7 +37,7 @@ export const parameters = {
   options: {
     storySort: {
       method: "alphabetical",
-      order: ["Design System", "Actions", "Components", "Layout", "Navigation", "Views"],
+      order: ["Design System", "Shared"],
     },
   },
   viewport: {
