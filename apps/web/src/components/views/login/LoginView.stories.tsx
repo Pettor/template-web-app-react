@@ -27,8 +27,8 @@ const defaultArgs = {
     loading: false,
     onSubmit: () => console.log("onSubmit"),
   },
-  handleForgotPassword: () => console.log("handleForgotPassword"),
-  handleSignUp: () => console.log("handleSignUp"),
+  onForgotPassword: () => console.log("handleForgotPassword"),
+  onSignUp: () => console.log("handleSignUp"),
 } satisfies Props;
 
 export const Fullscreen = {
