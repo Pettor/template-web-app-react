@@ -7,7 +7,7 @@ import { type AppbarProps } from "~/components/navigation/appbar";
 
 export interface HomeViewProps {
   appSocialLinkProps: AppSocialLinks;
-  appNavbarProps: Omit<AppbarProps, "title">;
+  appNavbarProps: Omit<AppbarProps, "title" | "onGithubClick" | "onLinkedInClick">;
 }
 
 function GridItem({ title, description, goto }: { title: string; description: string; goto: string }): ReactElement {

@@ -13,7 +13,6 @@ export function useHomePage(githubLink: string, linkedInLink: string): HomeViewP
     appSocialLinkProps: socialLinkProps,
     appNavbarProps: {
       appbarDesktopProps: {
-        ...socialLinkProps,
         themeSwitchProps: themeSwitchProps,
         profileCardElement: <ProfileCardModule />,
       },

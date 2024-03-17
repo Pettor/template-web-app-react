@@ -3,9 +3,10 @@ import { UseMediaQuery } from "react-utils";
 import type { NavbarProps } from "shared-ui";
 import { AppNavbarDesktop, type AppbarDesktopProps } from "../appbar-desktop";
 import { AppbarPhone, type AppbarPhoneProps } from "../appbar-phone";
+import type { AppSocialLinks } from "~/classes/app-social-links/AppSocialLinks";
 
-export interface AppbarProps extends Pick<NavbarProps, "title"> {
-  appbarDesktopProps: Omit<AppbarDesktopProps, "title">;
+export interface AppbarProps extends Pick<NavbarProps, "title">, AppSocialLinks {
+  appbarDesktopProps: Omit<AppbarDesktopProps, "title" | "onGithubClick" | "onLinkedInClick">;
   appbarPhoneProps: Omit<AppbarPhoneProps, "title">;
 }
 
