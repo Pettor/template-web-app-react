@@ -8,13 +8,15 @@ export function useAuth(): {
   status: AuthStatus;
   login(data: LoginData): Promise<void>;
   logout(): Promise<void>;
+  loginLoading: boolean;
+  logoutLoading: boolean;
 } {
   const {
     state: { status },
     dispatch,
   } = useContext(AuthContext);
-  const { mutateAsync: loginFunc } = usePostLoginMutate();
-  const { mutateAsync: logoutFunc } = usePostLogoutMutate();
+  const { mutateAsync: loginFunc, isPending: loginLoading } = usePostLoginMutate();
+  const { mutateAsync: logoutFunc, isPending: logoutLoading } = usePostLogoutMutate();
 
   async function login(data: LoginData): Promise<void> {
     await loginFunc(data);
@@ -34,5 +36,7 @@ export function useAuth(): {
     status,
     login,
     logout,
+    loginLoading,
+    logoutLoading,
   };
 }

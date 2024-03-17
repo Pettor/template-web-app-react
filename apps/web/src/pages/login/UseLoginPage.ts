@@ -1,7 +1,6 @@
-import { usePostLoginMutate } from "core-api";
+import { useState } from "react";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { useToastNotifier } from "shared-ui";
 import type { FormLogin } from "~/components/forms/login/LoginForm";
 import { useAuth } from "~/core/auth/UseAuth";
 import { useAppInfo } from "~/core/config/UseAppInfo";
@@ -9,6 +8,7 @@ import { useAppInfo } from "~/core/config/UseAppInfo";
 export function useLoginPage(): {
   applicationName: string;
   isLoading: boolean;
+  error: string;
   handleSubmit: (data: FormLogin) => Promise<void>;
   handleForgotPassword: () => void;
   handleSignUp: () => void;
@@ -16,21 +16,21 @@ export function useLoginPage(): {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appName } = useAppInfo();
-  const { login } = useAuth();
-  const { isPending } = usePostLoginMutate();
-  const { addToast, clearToasts } = useToastNotifier();
+  const { login, loginLoading } = useAuth();
+  const [loginError, setLoginError] = useState<string>("");
 
   async function handleSubmit(data: FormLogin): Promise<void> {
-    clearToasts();
+    setLoginError("");
 
     try {
       await login(data);
+      navigate("/");
     } catch (error) {
-      addToast(
+      setLoginError(
         intl.formatMessage({
           description: "LoginPage - Login error alert title",
-          defaultMessage: "Failed to login",
-          id: "XHC6DM",
+          defaultMessage: "Incorrect username or password.",
+          id: "Lh6FxC",
         })
       );
     }
@@ -46,7 +46,8 @@ export function useLoginPage(): {
 
   return {
     applicationName: appName,
-    isLoading: isPending,
+    isLoading: loginLoading,
+    error: loginError,
     handleSubmit,
     handleForgotPassword,
     handleSignUp,

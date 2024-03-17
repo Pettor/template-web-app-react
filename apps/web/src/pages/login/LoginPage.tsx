@@ -5,7 +5,7 @@ import { LoginView } from "~/components/views/login/LoginView";
 
 export function LoginPage(): ReactElement {
   useDocumentTitle("Login");
-  const { applicationName, isLoading, handleForgotPassword, handleSignUp, handleSubmit } = useLoginPage();
+  const { applicationName, isLoading, error, handleForgotPassword, handleSignUp, handleSubmit } = useLoginPage();
 
   return (
     <LoginView
@@ -14,8 +14,9 @@ export function LoginPage(): ReactElement {
         loading: isLoading,
         onSubmit: handleSubmit,
       }}
-      handleForgotPassword={handleForgotPassword}
-      handleSignUp={handleSignUp}
+      error={error}
+      onForgotPassword={handleForgotPassword}
+      onSignUp={handleSignUp}
     />
   );
 }
