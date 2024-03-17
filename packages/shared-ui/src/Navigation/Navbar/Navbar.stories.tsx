@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { NavbarContentComponent } from "Storybook/NavbarContentComponent";
+import { StorybookNavbarContentComponent } from "Storybook";
 import { Navbar as Component } from "./Navbar";
 import type { NavbarProps as Props } from "./Navbar";
 
@@ -25,7 +25,7 @@ export const Standard = {
 export const WithComponents = {
   args: {
     ...defaultArgs,
-    endElement: <NavbarContentComponent />,
+    endElement: <StorybookNavbarContentComponent />,
   },
   parameters: { viewport: { defaultViewport: "full" } },
 } satisfies Story;

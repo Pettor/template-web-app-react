@@ -6,7 +6,7 @@ import { Navbar } from "shared-ui";
 import { AppDrawer, type AppDrawerProps } from "../app-drawer";
 
 interface AppNavbarPhoneComponentsProps {
-  appDrawerProps: AppDrawerProps;
+  appDrawerProps: Omit<AppDrawerProps, "open" | "onClose">;
 }
 
 export interface AppNavbarPhoneProps

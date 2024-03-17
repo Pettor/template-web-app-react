@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { faker } from "@faker-js/faker";
 
-export function TableContentComponent(): ReactElement {
+export function StorybookTableContentComponent(): ReactElement {
   return (
     <div className="flex flex-1 justify-center overflow-x-auto">
       <table className="table table-zebra max-sm:table-xs">

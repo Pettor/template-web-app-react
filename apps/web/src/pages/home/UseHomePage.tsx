@@ -1,28 +1,25 @@
-import { useThemeSwitcher } from "~/components/library/theme-switch";
+import { useAppSessionContent } from "~/classes/app-session/UseAppSessionContent";
+import { useAppSocialLinks } from "~/classes/app-social-links/UseAppSocialLinks";
+import { useThemeSwitcher } from "~/components/actions/theme-switch";
 import { ProfileCardModule } from "~/components/modules/profile-card-module/ProfileCardModule";
 import type { HomeViewProps } from "~/components/views/home/HomeView";
 
 export function useHomePage(githubLink: string, linkedInLink: string): HomeViewProps {
+  const appSessionProps = useAppSessionContent();
   const themeSwitchProps = useThemeSwitcher();
-
-  function handleOnGithubClick(): void {
-    window.open(githubLink, "_blank", "noreferrer");
-  }
-
-  function handleOnLinkedInClick(): void {
-    window.open(linkedInLink, "_blank", "noreferrer");
-  }
+  const socialLinkProps = useAppSocialLinks(githubLink, linkedInLink);
 
   return {
-    onGithubClick: handleOnGithubClick,
-    onLinkedInClick: handleOnLinkedInClick,
-    components: (
-      <AppHeaderItems
-        themeSwitchProps={themeSwitchProps}
-        profileCardElement={<ProfileCardModule />}
-        onGithubClick={handleOnGithubClick}
-        onLinkedInClick={handleOnLinkedInClick}
-      />
-    ),
+    appSocialLinkProps: socialLinkProps,
+    appNavbarProps: {
+      appNavbarDesktopProps: {
+        ...socialLinkProps,
+        themeSwitchProps: themeSwitchProps,
+        profileCardElement: <ProfileCardModule />,
+      },
+      appNavbarPhoneProps: {
+        appDrawerProps: appSessionProps,
+      },
+    },
   };
 }

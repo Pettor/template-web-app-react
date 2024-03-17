@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
-import { useProfileCardModule } from "./UseProfileCardModule";
+import { useAppSessionContent } from "~/classes/app-session/UseAppSessionContent";
 import { ProfileCard } from "~/components/actions/profile-card";
 
 export function ProfileCardModule(): ReactElement {
-  const profileProps = useProfileCardModule();
-  return <ProfileCard {...profileProps} />;
+  const appSessionProps = useAppSessionContent();
+  return <ProfileCard {...appSessionProps} />;
 }

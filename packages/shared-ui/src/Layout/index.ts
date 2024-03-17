@@ -1,5 +1,5 @@
 export * from "./Background";
-export * from "./Basic";
-export * from "./Header";
+export * from "./BasicLayout";
+export * from "./NavbarLayout";
 export * from "./Logo";
 export * from "./LogoFull";

@@ -12,7 +12,9 @@ interface AppNavbarDesktopComponentsProps {
   onLinkedInClick(): void;
 }
 
-export interface AppNavbarDesktopProps extends AppNavbarDesktopComponentsProps, Omit<NavbarProps, "components"> {}
+export interface AppNavbarDesktopProps
+  extends AppNavbarDesktopComponentsProps,
+    Omit<NavbarProps, "centerElement" | "endElement"> {}
 
 export function AppNavbarDesktop(props: AppNavbarDesktopProps): ReactElement {
   return <Navbar {...props} endElement={<AppNavbarDesktopComponents {...props} />} />;
@@ -28,7 +30,7 @@ function AppNavbarDesktopComponents({
 
   return (
     <div className="flex flex-row">
-      <div className="hidden items-center md:flex">
+      <div className="flex items-center">
         <div className="dropdown dropdown-end">
           <div className="flex items-center">
             <div

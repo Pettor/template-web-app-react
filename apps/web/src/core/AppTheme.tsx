@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { useAtom } from "jotai";
-import { themeModeEffect } from "shared-ui";
+import { themeModeEffect } from "~/components/actions/theme-switch";
 
 export interface AppThemeProps {
   children: ReactElement;

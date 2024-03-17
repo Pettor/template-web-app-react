@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { TableContentComponent } from "Storybook/TableContentComponent";
+import { StorybookTableContentComponent } from "Storybook";
 import { BasicLayout as Component } from "./BasicLayout";
 
 const meta = {
@@ -12,6 +12,6 @@ type Story = StoryObj<typeof meta>;
 
 export const BasicLayout = {
   args: {
-    children: <TableContentComponent />,
+    children: <StorybookTableContentComponent />,
   },
 } satisfies Story;

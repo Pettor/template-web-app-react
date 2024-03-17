@@ -2,17 +2,17 @@ import type { ReactElement, ReactNode } from "react";
 import clsx from "clsx";
 import { GithubIcon, LinkedInIcon } from "../../Icons";
 
-export interface HeaderLayoutProps {
+export interface NavbarLayoutProps {
+  navbarElement: ReactNode;
   footer?: boolean;
   backgroundElement?: ReactNode;
-  navbarElement: ReactNode;
   className?: string;
   onGithubClick: () => void;
   onLinkedInClick: () => void;
   children?: ReactNode;
 }
 
-export function HeaderLayout({
+export function NavbarLayout({
   className,
   backgroundElement,
   navbarElement,
@@ -20,12 +20,12 @@ export function HeaderLayout({
   onGithubClick,
   onLinkedInClick,
   children,
-}: HeaderLayoutProps): ReactElement {
+}: NavbarLayoutProps): ReactElement {
   return (
     <div className="flex min-h-screen flex-col">
       {backgroundElement}
       <div className={clsx(className, "flex flex-1 flex-col")}>
-        <div className="sticky top-0 z-40">{navbarElement}</div>
+        <div className="sticky bottom-0 z-40">{navbarElement}</div>
         <div className="flex">
           <div className="container mb-8">
             <div className="navbar" />

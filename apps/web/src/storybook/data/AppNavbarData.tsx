@@ -3,7 +3,7 @@ import type { AppNavbarDesktopProps } from "../../components/navigation/app-navb
 import type { AppNavbarPhoneProps } from "../../components/navigation/app-navbar-phone";
 import { AppSessionData } from "./AppSessionData";
 
-export const NavbarDesktopData: AppNavbarDesktopProps = {
+export const AppNavbarDesktopData: AppNavbarDesktopProps = {
   title: "Some Title",
   themeSwitchProps: {
     mode: "light",
@@ -14,11 +14,7 @@ export const NavbarDesktopData: AppNavbarDesktopProps = {
   onLinkedInClick: () => console.log("onLinkedInClick"),
 };
 
-export const NavbarPhoneData: AppNavbarPhoneProps = {
+export const AppNavbarPhoneData: AppNavbarPhoneProps = {
   title: "Some Title",
-  appDrawerProps: {
-    ...AppSessionData,
-    open: false,
-    onClose: () => console.log("onClose"),
-  },
+  appDrawerProps: AppSessionData,
 };

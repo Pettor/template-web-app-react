@@ -1,8 +1,14 @@
 import { type ReactElement } from "react";
 import { useIntl } from "react-intl";
-import { BlueFadeBackground, HeaderLayout, type HeaderLayoutProps } from "shared-ui";
+import { BlueFadeBackground } from "shared-ui";
+import type { AppSocialLinks } from "~/classes/app-social-links/AppSocialLinks";
+import { AppNavbarLayout } from "~/components/layout/AppNavbarLayout";
+import { type AppNavbarProps } from "~/components/navigation/app-navbar";
 
-export interface HomeViewProps extends Omit<HeaderLayoutProps, "title" | "backgroundElement" | "children"> {}
+export interface HomeViewProps {
+  appSocialLinkProps: AppSocialLinks;
+  appNavbarProps: Omit<AppNavbarProps, "title">;
+}
 
 function GridItem({ title, description, goto }: { title: string; description: string; goto: string }): ReactElement {
   return (
@@ -22,11 +28,21 @@ function GridItem({ title, description, goto }: { title: string; description: st
   );
 }
 
-export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
+export function HomeView({ appNavbarProps, appSocialLinkProps }: HomeViewProps): ReactElement {
   const intl = useIntl();
 
   return (
-    <HeaderLayout footer backgroundElement={<BlueFadeBackground />} {...headerProps}>
+    <AppNavbarLayout
+      {...appNavbarProps}
+      {...appSocialLinkProps}
+      title={intl.formatMessage({
+        description: "HomeView - Navbar title",
+        defaultMessage: "Home",
+        id: "A82TU4",
+      })}
+      footer
+      backgroundElement={<BlueFadeBackground />}
+    >
       <div className="flex flex-1 flex-col">
         <div className="hero">
           <div className="hero-content text-center">
@@ -179,6 +195,6 @@ export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
           />
         </div>
       </div>
-    </HeaderLayout>
+    </AppNavbarLayout>
   );
 }

@@ -6,7 +6,7 @@ import {
   ArrowLeftStartOnRectangleIcon,
 } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
-import type { AppSessionContent } from "~/classes/AppSessionContent";
+import type { AppSessionContent } from "~/classes/app-session/AppSessionContent";
 
 export interface ProfileCardProps extends AppSessionContent {}
 

@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 
-export function NavbarContentComponent(): ReactElement {
+export function StorybookNavbarContentComponent(): ReactElement {
   return (
     <ul className="menu menu-horizontal px-1">
       <li>
