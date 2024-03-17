@@ -3,21 +3,17 @@ import { Bars3Icon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
 import type { NavbarProps } from "shared-ui";
 import { Navbar } from "shared-ui";
-import { AppDrawer, type AppDrawerProps } from "../app-drawer";
+import { AppDrawer } from "../app-drawer";
+import type { IAppSessionContent } from "~/classes/app-session/IAppSessionContent";
+import type { IAppbar } from "~/classes/appbar/IAppbar";
 
-interface AppbarPhoneComponentsProps {
-  appDrawerProps: Omit<AppDrawerProps, "open" | "onClose">;
-}
-
-export interface AppbarPhoneProps
-  extends AppbarPhoneComponentsProps,
-    Omit<NavbarProps, "open" | "centerElement" | "endElement"> {}
+export interface AppbarPhoneProps extends IAppbar, Omit<NavbarProps, "open" | "centerElement" | "endElement"> {}
 
 export function AppbarPhone(props: AppbarPhoneProps): ReactElement {
-  return <Navbar {...props} endElement={<AppbarDesktopComponents {...props} />} />;
+  return <Navbar {...props} endElement={<AppbarPhoneComponents {...props} />} />;
 }
 
-function AppbarDesktopComponents({ appDrawerProps }: AppbarPhoneComponentsProps): ReactElement {
+function AppbarPhoneComponents(props: IAppSessionContent): ReactElement {
   const intl = useIntl();
   const [openDrawer, setOpenDrawer] = useState(false);
 
@@ -46,7 +42,7 @@ function AppbarDesktopComponents({ appDrawerProps }: AppbarPhoneComponentsProps)
             </button>
           </div>
         </div>
-        <AppDrawer {...appDrawerProps} open={openDrawer} onClose={() => setOpenDrawer(false)} />
+        <AppDrawer {...props} open={openDrawer} onClose={() => setOpenDrawer(false)} />
       </div>
     </div>
   );

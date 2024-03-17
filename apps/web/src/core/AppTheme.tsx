@@ -1,13 +1,11 @@
 import type { ReactElement } from "react";
-import { useAtom } from "jotai";
-import { themeModeEffect } from "~/components/actions/theme-switch";
+import { useTheme } from "~/classes/theme/UseTheme";
 
 export interface AppThemeProps {
   children: ReactElement;
 }
 
 export function AppTheme({ children }: AppThemeProps): ReactElement {
-  useAtom(themeModeEffect);
-
+  useTheme();
   return <>{children}</>;
 }

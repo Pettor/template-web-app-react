@@ -153,6 +153,9 @@ importers:
       usehooks-ts:
         specifier: 3.0.1
         version: 3.0.1(react@18.2.0)
+      utility-types:
+        specifier: 3.11.0
+        version: 3.11.0
       vite:
         specifier: 5.1.5
         version: 5.1.5(@types/node@20.11.25)
@@ -189,9 +192,6 @@ importers:
       core-api:
         specifier: workspace:*
         version: link:../../packages/core-api
-      mui-theme:
-        specifier: workspace:*
-        version: link:../../packages/mui-theme
       react-hook-form:
         specifier: 7.51.0
         version: 7.51.0(react@18.2.0)
@@ -331,16 +331,6 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../configs/eslint-config-custom
-      tsconfig:
-        specifier: workspace:*
-        version: link:../../configs/tsconfig
-
-  packages/mui-theme:
-    dependencies:
-      '@fontsource/rubik':
-        specifier: 5.0.19
-        version: 5.0.19
-    devDependencies:
       tsconfig:
         specifier: workspace:*
         version: link:../../configs/tsconfig
@@ -14741,6 +14731,11 @@ packages:
       is-generator-function: 1.0.10
       is-typed-array: 1.1.12
       which-typed-array: 1.1.13
+    dev: true
+
+  /utility-types@3.11.0:
+    resolution: {integrity: sha512-6Z7Ma2aVEWisaL6TvBCy7P8rm2LQoPv6dJ7ecIaIixHcwfbJ0x7mWdbcwlIM5IGQxPZSFYeqRCqlOOeKoJYMkw==}
+    engines: {node: '>= 4'}
     dev: true
 
   /utils-merge@1.0.1:

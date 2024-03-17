@@ -7,9 +7,9 @@ import {
 } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
 import { useOnClickOutside } from "usehooks-ts";
-import type { AppSessionContent } from "~/classes/app-session/AppSessionContent";
+import type { IAppSessionContent } from "~/classes/app-session/IAppSessionContent";
 
-export interface AppDrawerProps extends AppSessionContent {
+export interface AppDrawerProps extends IAppSessionContent {
   open: boolean;
   onClose(): void;
 }

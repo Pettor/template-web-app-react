@@ -1,4 +1,4 @@
-export interface AppSessionContent {
+export interface IAppSessionContent {
   name: string;
   email: string;
   onAbout: () => void;

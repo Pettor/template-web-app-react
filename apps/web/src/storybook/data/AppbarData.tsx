@@ -1,20 +1,15 @@
-import { ProfileCard } from "../../components/actions/profile-card";
 import type { AppbarDesktopProps } from "../../components/navigation/appbar-desktop";
 import type { AppbarPhoneProps } from "../../components/navigation/appbar-phone";
 import { AppSessionData } from "./AppSessionData";
 
-export const AppbarDesktopData: AppbarDesktopProps = {
+const AppbarCommonData: AppbarPhoneProps & AppbarDesktopProps = {
   title: "Some Title",
-  themeSwitchProps: {
-    mode: "light",
-    onSwitch: () => console.log("onToggle"),
-  },
-  profileCardElement: <ProfileCard {...AppSessionData} />,
+  mode: "light",
+  ...AppSessionData,
+  onSwitch: () => console.log("onToggle"),
   onGithubClick: () => console.log("onGithubClick"),
   onLinkedInClick: () => console.log("onLinkedInClick"),
 };
 
-export const AppbarPhoneData: AppbarPhoneProps = {
-  title: "Some Title",
-  appDrawerProps: AppSessionData,
-};
+export const AppbarDesktopData: AppbarDesktopProps = AppbarCommonData;
+export const AppbarPhoneData: AppbarPhoneProps = AppbarCommonData;

@@ -6,9 +6,9 @@ import {
   ArrowLeftStartOnRectangleIcon,
 } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
-import type { AppSessionContent } from "~/classes/app-session/AppSessionContent";
+import type { IAppSessionContent } from "~/classes/app-session/IAppSessionContent";
 
-export interface ProfileCardProps extends AppSessionContent {}
+export interface ProfileCardProps extends IAppSessionContent {}
 
 export function ProfileCard({ name, email, onAbout, onLogout }: ProfileCardProps): ReactElement {
   const intl = useIntl();

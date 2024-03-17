@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { useIntl } from "react-intl";
-import type { ThemeMode } from "./ThemeSwitcherClasses";
+import type { ThemeMode } from "~/classes/theme/ThemeMode";
 
 export interface ThemeSwitchProps {
   mode: ThemeMode;

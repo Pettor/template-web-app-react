@@ -1,7 +1,7 @@
 import { atom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 import { atomEffect } from "jotai-effect";
-import type { ThemeMode } from "../ThemeSwitcherClasses";
+import type { ThemeMode } from "~/classes/theme/ThemeMode";
 
 const themeLocalStorageAtom = atomWithStorage<ThemeMode>("theme", "light");
 const themeMediaQueryAtom = atom(() => window.matchMedia("(prefers-color-scheme: dark)"));

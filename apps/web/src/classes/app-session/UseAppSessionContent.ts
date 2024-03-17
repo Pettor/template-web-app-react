@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 import { useFetchPersonalProfileQuery } from "core-api";
 import { useNavigate } from "react-router-dom";
-import type { AppSessionContent } from "./AppSessionContent";
+import type { IAppSessionContent } from "./IAppSessionContent";
 import { useAuth } from "~/core/auth/UseAuth";
 
-export function useAppSessionContent(): AppSessionContent {
+export function useAppSessionContent(): IAppSessionContent {
   const navigate = useNavigate();
   const { logout } = useAuth();
   const { data: profileInfo } = useFetchPersonalProfileQuery();
 
-  const { name: profileName, email: profileEmail }: Pick<AppSessionContent, "email"> & { name: string } =
+  const { name: profileName, email: profileEmail }: Pick<IAppSessionContent, "email"> & { name: string } =
     useMemo(() => {
       if (!profileInfo) {
         return {

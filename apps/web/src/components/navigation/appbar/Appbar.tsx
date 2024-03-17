@@ -1,13 +1,14 @@
 import { useMemo, type ReactElement } from "react";
 import { UseMediaQuery } from "react-utils";
 import type { NavbarProps } from "shared-ui";
+import type { Subtract } from "utility-types";
 import { AppNavbarDesktop, type AppbarDesktopProps } from "../appbar-desktop";
 import { AppbarPhone, type AppbarPhoneProps } from "../appbar-phone";
-import type { AppSocialLinks } from "~/classes/app-social-links/AppSocialLinks";
+import type { IAppSocialLinks } from "~/classes/app-social-links/IAppSocialLinks";
 
-export interface AppbarProps extends Pick<NavbarProps, "title">, AppSocialLinks {
-  appbarDesktopProps: Omit<AppbarDesktopProps, "title" | "onGithubClick" | "onLinkedInClick">;
-  appbarPhoneProps: Omit<AppbarPhoneProps, "title">;
+export interface AppbarProps extends Pick<NavbarProps, "title">, IAppSocialLinks {
+  appbarDesktopProps: Subtract<Omit<AppbarDesktopProps, "title">, IAppSocialLinks>;
+  appbarPhoneProps: Subtract<Omit<AppbarPhoneProps, "title">, IAppSocialLinks>;
 }
 
 export function Appbar({ appbarDesktopProps, appbarPhoneProps, ...navbarProps }: AppbarProps): ReactElement {

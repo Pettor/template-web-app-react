@@ -16,5 +16,5 @@
       "vite-plugin-pwa/client"
     ],
   },
-  "include": ["./src", "../../packages/core-api/src/Token"],
+  "include": ["./src"],
 }

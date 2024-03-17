@@ -1,31 +1,19 @@
-import type { ReactElement, ReactNode } from "react";
+import type { ReactElement } from "react";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
 import type { NavbarProps } from "shared-ui";
 import { Navbar, GithubIcon, LinkedInIcon } from "shared-ui";
-import { ThemeSwitch, type ThemeSwitchProps } from "~/components/actions/theme-switch";
+import type { IAppbar } from "~/classes/appbar/IAppbar";
+import { ProfileCard } from "~/components/actions/profile-card";
+import { ThemeSwitch } from "~/components/actions/theme-switch/ThemeSwitch";
 
-interface AppbarDesktopComponentsProps {
-  profileCardElement: ReactNode;
-  themeSwitchProps: ThemeSwitchProps;
-  onGithubClick(): void;
-  onLinkedInClick(): void;
-}
-
-export interface AppbarDesktopProps
-  extends AppbarDesktopComponentsProps,
-    Omit<NavbarProps, "centerElement" | "endElement"> {}
+export interface AppbarDesktopProps extends IAppbar, Omit<NavbarProps, "centerElement" | "endElement"> {}
 
 export function AppNavbarDesktop(props: AppbarDesktopProps): ReactElement {
   return <Navbar {...props} endElement={<AppbarDesktopComponents {...props} />} />;
 }
 
-function AppbarDesktopComponents({
-  profileCardElement,
-  themeSwitchProps,
-  onGithubClick,
-  onLinkedInClick,
-}: AppbarDesktopComponentsProps): ReactElement {
+function AppbarDesktopComponents({ onGithubClick, onLinkedInClick, ...props }: IAppbar): ReactElement {
   const intl = useIntl();
 
   return (
@@ -55,12 +43,12 @@ function AppbarDesktopComponents({
             </div>
           </div>
           <ul tabIndex={0} className="dropdown-content">
-            {profileCardElement}
+            <ProfileCard {...props} />
           </ul>
         </div>
         <div className="divider divider-horizontal mx-2" />
         <div>
-          <ThemeSwitch {...themeSwitchProps} />
+          <ThemeSwitch {...props} />
         </div>
         <div className="divider divider-horizontal mx-2" />
         <div className="flex items-center gap-2">

@@ -1,6 +1,6 @@
-import type { AppSocialLinks } from "./AppSocialLinks";
+import type { IAppSocialLinks } from "./IAppSocialLinks";
 
-export function useAppSocialLinks(githubLink: string, linkedInLink: string): AppSocialLinks {
+export function useAppSocialLinks(githubLink: string, linkedInLink: string): IAppSocialLinks {
   function handleOnGithubClick(): void {
     window.open(githubLink, "_blank", "noreferrer");
   }

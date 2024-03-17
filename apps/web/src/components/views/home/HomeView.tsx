@@ -1,12 +1,12 @@
 import { type ReactElement } from "react";
 import { useIntl } from "react-intl";
 import { BlueFadeBackground } from "shared-ui";
-import type { AppSocialLinks } from "~/classes/app-social-links/AppSocialLinks";
+import type { IAppSocialLinks } from "~/classes/app-social-links/IAppSocialLinks";
 import { AppbarLayout } from "~/components/layout/AppbarLayout";
 import { type AppbarProps } from "~/components/navigation/appbar";
 
 export interface HomeViewProps {
-  appSocialLinkProps: AppSocialLinks;
+  appSocialLinkProps: IAppSocialLinks;
   appNavbarProps: Omit<AppbarProps, "title" | "onGithubClick" | "onLinkedInClick">;
 }
 

@@ -1,7 +1,7 @@
+import { useMemo } from "react";
 import { useAppSessionContent } from "~/classes/app-session/UseAppSessionContent";
 import { useAppSocialLinks } from "~/classes/app-social-links/UseAppSocialLinks";
-import { useThemeSwitcher } from "~/components/actions/theme-switch";
-import { ProfileCardModule } from "~/components/modules/profile-card-module/ProfileCardModule";
+import { useThemeSwitcher } from "~/components/actions/theme-switch/UseThemeSwitcher";
 import type { HomeViewProps } from "~/components/views/home/HomeView";
 
 export function useHomePage(githubLink: string, linkedInLink: string): HomeViewProps {
@@ -9,16 +9,19 @@ export function useHomePage(githubLink: string, linkedInLink: string): HomeViewP
   const themeSwitchProps = useThemeSwitcher();
   const socialLinkProps = useAppSocialLinks(githubLink, linkedInLink);
 
+  const appbarProps = useMemo(
+    () => ({
+      ...appSessionProps,
+      ...themeSwitchProps,
+    }),
+    [appSessionProps, themeSwitchProps]
+  );
+
   return {
     appSocialLinkProps: socialLinkProps,
     appNavbarProps: {
-      appbarDesktopProps: {
-        themeSwitchProps: themeSwitchProps,
-        profileCardElement: <ProfileCardModule />,
-      },
-      appbarPhoneProps: {
-        appDrawerProps: appSessionProps,
-      },
+      appbarDesktopProps: appbarProps,
+      appbarPhoneProps: appbarProps,
     },
   };
 }
