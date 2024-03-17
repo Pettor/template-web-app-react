@@ -6,7 +6,7 @@ import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData"
 
 const meta = {
   component: Component,
-  title: "Layout/Appbar",
+  title: "Layout/Appbar Layout",
   parameters: {
     layout: "fullscreen",
   },
@@ -24,6 +24,6 @@ const defaultArgs = {
   children: <StorybookTableContentComponent />,
 } satisfies Props;
 
-export const Appbar = {
+export const AppbarLayout = {
   args: defaultArgs,
 } satisfies Story;

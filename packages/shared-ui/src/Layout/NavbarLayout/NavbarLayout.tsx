@@ -25,7 +25,7 @@ export function NavbarLayout({
     <div className="flex min-h-screen flex-col">
       {backgroundElement}
       <div className={clsx(className, "flex flex-1 flex-col")}>
-        <div className="sticky bottom-0 z-40">{navbarElement}</div>
+        <div className="sticky top-0 z-40">{navbarElement}</div>
         <div className="flex">
           <div className="container mb-8">
             <div className="navbar" />
