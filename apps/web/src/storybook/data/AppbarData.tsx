@@ -1,9 +1,9 @@
 import { ProfileCard } from "../../components/actions/profile-card";
-import type { AppNavbarDesktopProps } from "../../components/navigation/app-navbar-desktop";
-import type { AppNavbarPhoneProps } from "../../components/navigation/app-navbar-phone";
+import type { AppbarDesktopProps } from "../../components/navigation/appbar-desktop";
+import type { AppbarPhoneProps } from "../../components/navigation/appbar-phone";
 import { AppSessionData } from "./AppSessionData";
 
-export const AppNavbarDesktopData: AppNavbarDesktopProps = {
+export const AppbarDesktopData: AppbarDesktopProps = {
   title: "Some Title",
   themeSwitchProps: {
     mode: "light",
@@ -14,7 +14,7 @@ export const AppNavbarDesktopData: AppNavbarDesktopProps = {
   onLinkedInClick: () => console.log("onLinkedInClick"),
 };
 
-export const AppNavbarPhoneData: AppNavbarPhoneProps = {
+export const AppbarPhoneData: AppbarPhoneProps = {
   title: "Some Title",
   appDrawerProps: AppSessionData,
 };

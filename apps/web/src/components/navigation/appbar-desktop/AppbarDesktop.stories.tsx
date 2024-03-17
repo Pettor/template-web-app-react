@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AppNavbarDesktop as Component } from "./AppNavbarDesktop";
-import type { AppNavbarDesktopProps as Props } from "./AppNavbarDesktop";
-import { AppNavbarDesktopData } from "~/storybook/data/AppNavbarData";
+import { AppNavbarDesktop as Component } from "./AppbarDesktop";
+import type { AppbarDesktopProps as Props } from "./AppbarDesktop";
+import { AppbarDesktopData } from "~/storybook/data/AppbarData";
 
 const meta = {
   component: Component,
-  title: "Navigation/Navbar",
+  title: "Navigation/Appbar",
   parameters: {
     layout: "fullscreen",
   },
@@ -15,7 +15,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
-  ...AppNavbarDesktopData,
+  ...AppbarDesktopData,
 } satisfies Props;
 
 export const Desktop = {

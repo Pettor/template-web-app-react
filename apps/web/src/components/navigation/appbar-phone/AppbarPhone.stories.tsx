@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { FullSizeDecorator } from "storybook-base";
-import { AppNavbarPhone as Component } from "./AppNavbarPhone";
-import type { AppNavbarPhoneProps as Props } from "./AppNavbarPhone";
-import { AppNavbarPhoneData } from "~/storybook/data/AppNavbarData";
+import { AppbarPhone as Component } from "./AppbarPhone";
+import type { AppbarPhoneProps as Props } from "./AppbarPhone";
+import { AppbarPhoneData } from "~/storybook/data/AppbarData";
 
 const meta = {
   component: Component,
-  title: "Navigation/Navbar",
+  title: "Navigation/Appbar",
   parameters: {
     layout: "fullscreen",
   },
@@ -16,7 +16,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
-  ...AppNavbarPhoneData,
+  ...AppbarPhoneData,
 } satisfies Props;
 
 export const Phone = {

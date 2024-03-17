@@ -2,12 +2,12 @@ import { type ReactElement } from "react";
 import { useIntl } from "react-intl";
 import { BlueFadeBackground } from "shared-ui";
 import type { AppSocialLinks } from "~/classes/app-social-links/AppSocialLinks";
-import { AppNavbarLayout } from "~/components/layout/AppNavbarLayout";
-import { type AppNavbarProps } from "~/components/navigation/app-navbar";
+import { AppbarLayout } from "~/components/layout/AppbarLayout";
+import { type AppbarProps } from "~/components/navigation/appbar";
 
 export interface HomeViewProps {
   appSocialLinkProps: AppSocialLinks;
-  appNavbarProps: Omit<AppNavbarProps, "title">;
+  appNavbarProps: Omit<AppbarProps, "title">;
 }
 
 function GridItem({ title, description, goto }: { title: string; description: string; goto: string }): ReactElement {
@@ -32,7 +32,7 @@ export function HomeView({ appNavbarProps, appSocialLinkProps }: HomeViewProps):
   const intl = useIntl();
 
   return (
-    <AppNavbarLayout
+    <AppbarLayout
       {...appNavbarProps}
       {...appSocialLinkProps}
       title={intl.formatMessage({
@@ -195,6 +195,6 @@ export function HomeView({ appNavbarProps, appSocialLinkProps }: HomeViewProps):
           />
         </div>
       </div>
-    </AppNavbarLayout>
+    </AppbarLayout>
   );
 }

@@ -5,19 +5,19 @@ import type { NavbarProps } from "shared-ui";
 import { Navbar } from "shared-ui";
 import { AppDrawer, type AppDrawerProps } from "../app-drawer";
 
-interface AppNavbarPhoneComponentsProps {
+interface AppbarPhoneComponentsProps {
   appDrawerProps: Omit<AppDrawerProps, "open" | "onClose">;
 }
 
-export interface AppNavbarPhoneProps
-  extends AppNavbarPhoneComponentsProps,
+export interface AppbarPhoneProps
+  extends AppbarPhoneComponentsProps,
     Omit<NavbarProps, "open" | "centerElement" | "endElement"> {}
 
-export function AppNavbarPhone(props: AppNavbarPhoneProps): ReactElement {
-  return <Navbar {...props} endElement={<AppNavbarDesktopComponents {...props} />} />;
+export function AppbarPhone(props: AppbarPhoneProps): ReactElement {
+  return <Navbar {...props} endElement={<AppbarDesktopComponents {...props} />} />;
 }
 
-function AppNavbarDesktopComponents({ appDrawerProps }: AppNavbarPhoneComponentsProps): ReactElement {
+function AppbarDesktopComponents({ appDrawerProps }: AppbarPhoneComponentsProps): ReactElement {
   const intl = useIntl();
   const [openDrawer, setOpenDrawer] = useState(false);
 

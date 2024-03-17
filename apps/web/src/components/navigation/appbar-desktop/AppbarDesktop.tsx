@@ -5,27 +5,27 @@ import type { NavbarProps } from "shared-ui";
 import { Navbar, GithubIcon, LinkedInIcon } from "shared-ui";
 import { ThemeSwitch, type ThemeSwitchProps } from "~/components/actions/theme-switch";
 
-interface AppNavbarDesktopComponentsProps {
+interface AppbarDesktopComponentsProps {
   profileCardElement: ReactNode;
   themeSwitchProps: ThemeSwitchProps;
   onGithubClick(): void;
   onLinkedInClick(): void;
 }
 
-export interface AppNavbarDesktopProps
-  extends AppNavbarDesktopComponentsProps,
+export interface AppbarDesktopProps
+  extends AppbarDesktopComponentsProps,
     Omit<NavbarProps, "centerElement" | "endElement"> {}
 
-export function AppNavbarDesktop(props: AppNavbarDesktopProps): ReactElement {
-  return <Navbar {...props} endElement={<AppNavbarDesktopComponents {...props} />} />;
+export function AppNavbarDesktop(props: AppbarDesktopProps): ReactElement {
+  return <Navbar {...props} endElement={<AppbarDesktopComponents {...props} />} />;
 }
 
-function AppNavbarDesktopComponents({
+function AppbarDesktopComponents({
   profileCardElement,
   themeSwitchProps,
   onGithubClick,
   onLinkedInClick,
-}: AppNavbarDesktopComponentsProps): ReactElement {
+}: AppbarDesktopComponentsProps): ReactElement {
   const intl = useIntl();
 
   return (

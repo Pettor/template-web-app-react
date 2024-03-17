@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { StorybookTableContentComponent } from "shared-ui";
-import { AppNavbarLayout as Component } from "./AppNavbarLayout";
-import type { AppNavbarLayoutProps as Props } from "./AppNavbarLayout";
-import { AppNavbarDesktopData, AppNavbarPhoneData } from "~/storybook/data/AppNavbarData";
+import { AppbarLayout as Component } from "./AppbarLayout";
+import type { AppbarLayoutProps as Props } from "./AppbarLayout";
+import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";
 
 const meta = {
   component: Component,
-  title: "Layout/AppNavbar",
+  title: "Layout/Appbar",
   parameters: {
     layout: "fullscreen",
   },
@@ -17,13 +17,13 @@ type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
   title: "This is a Header",
-  appNavbarDesktopProps: AppNavbarDesktopData,
-  appNavbarPhoneProps: AppNavbarPhoneData,
+  appbarDesktopProps: AppbarDesktopData,
+  appbarPhoneProps: AppbarPhoneData,
   onGithubClick: (): void => console.log("onGithubClick"),
   onLinkedInClick: (): void => console.log("onLinkedInClick"),
   children: <StorybookTableContentComponent />,
 } satisfies Props;
 
-export const AppNavbarLayout = {
+export const Appbar = {
   args: defaultArgs,
 } satisfies Story;

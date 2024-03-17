@@ -12,12 +12,12 @@ export function useHomePage(githubLink: string, linkedInLink: string): HomeViewP
   return {
     appSocialLinkProps: socialLinkProps,
     appNavbarProps: {
-      appNavbarDesktopProps: {
+      appbarDesktopProps: {
         ...socialLinkProps,
         themeSwitchProps: themeSwitchProps,
         profileCardElement: <ProfileCardModule />,
       },
-      appNavbarPhoneProps: {
+      appbarPhoneProps: {
         appDrawerProps: appSessionProps,
       },
     },

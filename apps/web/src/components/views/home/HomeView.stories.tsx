@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { FullSizeDecorator } from "storybook-base";
 import { HomeView as Component } from "./HomeView";
 import type { HomeViewProps as Props } from "./HomeView";
-import { AppNavbarDesktopData, AppNavbarPhoneData } from "~/storybook/data/AppNavbarData";
+import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";
 import { AppSocialLinksData } from "~/storybook/data/AppSocialLinksData";
 
 const meta = {
@@ -30,8 +30,8 @@ type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
   appNavbarProps: {
-    appNavbarDesktopProps: AppNavbarDesktopData,
-    appNavbarPhoneProps: AppNavbarPhoneData,
+    appbarDesktopProps: AppbarDesktopData,
+    appbarPhoneProps: AppbarPhoneData,
   },
   appSocialLinkProps: AppSocialLinksData,
 } satisfies Props;

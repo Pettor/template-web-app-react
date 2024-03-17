@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AppNavbar as Component } from "./AppNavbar";
-import type { AppNavbarProps as Props } from "./AppNavbar";
-import { AppNavbarDesktopData, AppNavbarPhoneData } from "~/storybook/data/AppNavbarData";
+import { Appbar as Component } from "./Appbar";
+import type { AppbarProps as Props } from "./Appbar";
+import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";
 
 const meta = {
   component: Component,
-  title: "Navigation/Navbar",
+  title: "Navigation/Appbar",
   parameters: {
     layout: "fullscreen",
   },
@@ -16,8 +16,8 @@ type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
   title: "This is a Header",
-  appNavbarDesktopProps: AppNavbarDesktopData,
-  appNavbarPhoneProps: AppNavbarPhoneData,
+  appbarDesktopProps: AppbarDesktopData,
+  appbarPhoneProps: AppbarPhoneData,
 } satisfies Props;
 
 export const Responsive = {
