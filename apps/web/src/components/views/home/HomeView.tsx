@@ -1,14 +1,20 @@
 import { type ReactElement } from "react";
 import { useIntl } from "react-intl";
-import { BlueFadeBackground, HeaderLayout, type HeaderLayoutProps } from "shared-ui";
+import { BlueFadeBackground } from "shared-ui";
+import type { IAppSocialLinks } from "~/classes/app-social-links/IAppSocialLinks";
+import { AppbarLayout } from "~/components/layout/AppbarLayout";
+import { type AppbarProps } from "~/components/navigation/appbar";
 
-export interface HomeViewProps extends Omit<HeaderLayoutProps, "title" | "backgroundElement" | "children"> {}
+export interface HomeViewProps {
+  appSocialLinkProps: IAppSocialLinks;
+  appNavbarProps: Omit<AppbarProps, "title" | "onGithubClick" | "onLinkedInClick">;
+}
 
 function GridItem({ title, description, goto }: { title: string; description: string; goto: string }): ReactElement {
   return (
     <div
-      className="card bg-base-300 hover:bg-neutral-content/70 dark:hover:bg-neutral/40 cursor-pointer transition-colors bg-opacity-20
-        shadow-inner"
+      className="card cursor-pointer bg-base-300 bg-opacity-20 shadow-inner transition-colors hover:bg-neutral-content/70
+        dark:hover:bg-neutral/40"
     >
       <div className="card-body glass rounded-xl dark:bg-none">
         <h2 className="card-title">{title}</h2>
@@ -22,19 +28,20 @@ function GridItem({ title, description, goto }: { title: string; description: st
   );
 }
 
-export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
+export function HomeView({ appNavbarProps, appSocialLinkProps }: HomeViewProps): ReactElement {
   const intl = useIntl();
 
   return (
-    <HeaderLayout
+    <AppbarLayout
+      {...appNavbarProps}
+      {...appSocialLinkProps}
       title={intl.formatMessage({
-        description: "HomeView - Title",
+        description: "HomeView - Navbar title",
         defaultMessage: "Home",
-        id: "/UNGRI",
+        id: "A82TU4",
       })}
       footer
       backgroundElement={<BlueFadeBackground />}
-      {...headerProps}
     >
       <div className="flex flex-1 flex-col">
         <div className="hero">
@@ -188,6 +195,6 @@ export function HomeView({ ...headerProps }: HomeViewProps): ReactElement {
           />
         </div>
       </div>
-    </HeaderLayout>
+    </AppbarLayout>
   );
 }

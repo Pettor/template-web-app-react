@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DefaultHeaderComponents } from "shared-ui";
 import { FullSizeDecorator } from "storybook-base";
 import { HomeView as Component } from "./HomeView";
 import type { HomeViewProps as Props } from "./HomeView";
+import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";
+import { AppSocialLinksData } from "~/storybook/data/AppSocialLinksData";
 
 const meta = {
   component: Component,
@@ -11,7 +12,12 @@ const meta = {
     layout: "fullscreen",
   },
   argTypes: {
-    components: {
+    appNavbarProps: {
+      table: {
+        disable: true,
+      },
+    },
+    appSocialLinkProps: {
       table: {
         disable: true,
       },
@@ -23,9 +29,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
-  onGithubClick: (): void => console.log("onGithubClick"),
-  onLinkedInClick: (): void => console.log("onLinkedInClick"),
-  components: <DefaultHeaderComponents />,
+  appNavbarProps: {
+    appbarDesktopProps: AppbarDesktopData,
+    appbarPhoneProps: AppbarPhoneData,
+  },
+  appSocialLinkProps: AppSocialLinksData,
 } satisfies Props;
 
 export const Fullscreen = {

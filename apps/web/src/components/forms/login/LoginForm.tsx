@@ -85,7 +85,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
         <div className="flex w-full flex-1 justify-end">
           <button
             type="submit"
-            className="btn btn-primary w-full md:w-40 z-20 text-base-100 dark:text-base-300"
+            className="btn btn-primary z-20 w-full text-base-100 dark:text-base-300 md:w-40"
             data-testid="login-form__submit-button"
           >
             {loading && <span className="loading loading-spinner" />}

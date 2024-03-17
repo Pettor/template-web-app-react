@@ -41,16 +41,16 @@ export function AboutView({ appName, version, onBack }: AboutViewProps): ReactEl
                     id: "ZTBga3",
                   })}
                 >
-                  <XMarkIcon className="w-6 h-6" />
+                  <XMarkIcon className="h-6 w-6" />
                 </button>
               </div>
-              <div className="flex flex-1 flex-col mt-4 items-left">
+              <div className="items-left mt-4 flex flex-1 flex-col">
                 <span className="text-3xl font-semibold">About</span>
                 <div className="divider mt-2" />
                 <table className="table table-lg">
                   <tbody>
                     <tr>
-                      <td className="font-semibold px-0">
+                      <td className="px-0 font-semibold">
                         {intl.formatMessage({
                           description: "AboutView - App name",
                           defaultMessage: "Name:",
@@ -60,7 +60,7 @@ export function AboutView({ appName, version, onBack }: AboutViewProps): ReactEl
                       <td>{appName}</td>
                     </tr>
                     <tr>
-                      <td className="font-semibold pl-0">
+                      <td className="pl-0 font-semibold">
                         {intl.formatMessage({
                           description: "AboutView - App version",
                           defaultMessage: "Version",

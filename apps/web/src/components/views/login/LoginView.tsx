@@ -35,10 +35,10 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
               <div className="card-body">
-                <div className="md:hidden flex justify-center">
+                <div className="flex justify-center md:hidden">
                   <LogoFull appName={appName} size="small" />
                 </div>
-                <div className="max-md:hidden flex justify-center">
+                <div className="flex justify-center max-md:hidden">
                   <LogoFull appName={appName} size="large" />
                 </div>
                 <br />
@@ -47,14 +47,14 @@ export function LoginView({ appName, loginForm, handleForgotPassword, handleSign
                 </div>
                 <br />
                 <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-5 ">
-                  <button className="btn btn-link justify-start col-span-2 z-20" onClick={handleForgotPassword}>
+                  <button className="btn btn-link z-20 col-span-2 justify-start" onClick={handleForgotPassword}>
                     {intl.formatMessage({
                       description: "LoginViewLink - Forgot password",
                       defaultMessage: "Forgot password?",
                       id: "aNSSLX",
                     })}
                   </button>
-                  <button className="btn btn-link col-span-3 justify-start z-20" onClick={handleSignUp}>
+                  <button className="btn btn-link z-20 col-span-3 justify-start" onClick={handleSignUp}>
                     {intl.formatMessage({
                       description: "LoginViewLink - Don't have an account? Sign Up",
                       defaultMessage: "Don't have an account? Sign up",
