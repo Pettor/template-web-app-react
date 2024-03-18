@@ -13,82 +13,71 @@ export default {
 export function Colors(): ReactElement {
   return (
     <DocumentationLayout label="Colors">
-      <div className="flex flex-col">
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl font-bold">Name</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center p-6 text-xl font-bold"}>Main</div>
-            <div className={"flex basis-1/2 items-center p-6 text-xl font-bold"}>Content</div>
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Primary</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center bg-primary p-6"} />
-            <div className={"flex basis-1/2 items-center bg-primary-content p-6"} />
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Secondary</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center bg-secondary p-6"} />
-            <div className={"flex basis-1/2 items-center bg-secondary-content p-6"} />
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Accent</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center bg-accent p-6"} />
-            <div className={"flex basis-1/2 items-center bg-accent-content p-6"} />
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Neutral</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center bg-neutral p-6"} />
-            <div className={"flex basis-1/2 items-center bg-neutral-content p-6"} />
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Base</div>
-          <div className="flex flex-1 flex-row">
-            <div className="flex flex-1 flex-row">
-              <div className={"flex basis-1/3 items-center bg-base-100 p-6"} />
-              <div className={"flex basis-1/3 items-center bg-base-200 p-6"} />
-              <div className={"flex basis-1/3 items-center bg-base-300 p-6"} />
-            </div>
-            <div className={"flex basis-1/2 items-center bg-base-content p-6"} />
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Info</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center bg-info p-6"} />
-            <div className={"flex basis-1/2 items-center bg-info-content p-6"} />
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Success</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center bg-success p-6"} />
-            <div className={"flex basis-1/2 items-center bg-success-content p-6"} />
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Warning</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center bg-warning p-6"} />
-            <div className={"flex basis-1/2 items-center bg-warning-content p-6"} />
-          </div>
-        </div>
-        <div className="m-2 flex flex-1">
-          <div className="flex basis-1/4 items-center text-xl">Error</div>
-          <div className="flex flex-1 flex-row">
-            <div className={"flex basis-1/2 items-center bg-error p-6"} />
-            <div className={"flex basis-1/2 items-center bg-error-content p-6"} />
-          </div>
-        </div>
-      </div>
+      <table className="table border-separate border-spacing-y-4 text-xl max-sm:table-xs [&_*]:border-0 [&_td]:py-0 [&_th]:px-0 [&_tr]:py-2">
+        <thead className="text-lg text-base-content md:text-2xl">
+          <tr>
+            <th>Name</th>
+            <th>Main</th>
+            <th>Content</th>
+          </tr>
+        </thead>
+        <colgroup>
+          <col className="w-2/12 md:w-3/12" />
+          <col className="w-5/12 md:w-4/12" />
+          <col className="w-5/12 md:w-4/12" />
+        </colgroup>
+        <tbody className="[&_tr]:h-8 md:[&_tr]:h-12">
+          <tr>
+            <td>Primary</td>
+            <td className="bg-primary" />
+            <td className="bg-primary-content" />
+          </tr>
+          <tr>
+            <td>Secondary</td>
+            <td className="bg-secondary" />
+            <td className="bg-secondary-content" />
+          </tr>
+          <tr>
+            <td>Accent</td>
+            <td className="bg-accent" />
+            <td className="bg-accent-content" />
+          </tr>
+          <tr>
+            <td>Neutral</td>
+            <td className="bg-neutral" />
+            <td className="bg-neutral-content" />
+          </tr>
+          <tr>
+            <td>Base</td>
+            <td className="flex h-8 flex-row !p-0 md:h-12">
+              <div className="basis-1/3 bg-base-100">&nbsp;</div>
+              <div className="basis-1/3 bg-base-200">&nbsp;</div>
+              <div className="basis-1/3 bg-base-300" />
+            </td>
+            <td className="bg-neutral-content" />
+          </tr>
+          <tr>
+            <td>Info</td>
+            <td className="bg-info" />
+            <td className="bg-info-content" />
+          </tr>
+          <tr>
+            <td>Success</td>
+            <td className="bg-success" />
+            <td className="bg-success-content" />
+          </tr>
+          <tr>
+            <td>Warning</td>
+            <td className="bg-warning" />
+            <td className="bg-warning-content" />
+          </tr>
+          <tr>
+            <td>Error</td>
+            <td className="bg-error" />
+            <td className="bg-error-content" />
+          </tr>
+        </tbody>
+      </table>
     </DocumentationLayout>
   );
 }
