@@ -10,7 +10,7 @@ export function PwaOfflineDialog({ open, onClose }: PwaOfflineDialogProps): Reac
   const intl = useIntl();
 
   return (
-    <div className="toast-left toast">
+    <div className="toast-left toast z-50">
       {open && (
         <div role="alert" className="alert">
           <svg

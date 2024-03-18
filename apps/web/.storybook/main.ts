@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import { join } from "path";
 
 const config: StorybookConfig = {
   addons: [
@@ -24,7 +25,7 @@ const config: StorybookConfig = {
   stories: [
     "../src/**/*.stories.@(ts|tsx)",
     process.env.NODE_ENV === "production" || process.env.STORYBOOK_MODE === "combined"
-      ? "../../../packages/shared-ui/src/**/*.stories.@(ts|tsx)"
+      ? "../../../packages/shared-ui/src/**/*.stories.@(tsx)"
       : "",
   ],
 };
