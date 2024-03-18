@@ -11,7 +11,7 @@ export function PwaUpdateDialog({ appName, open, onUpdate }: PwaUpdateDialogProp
   const intl = useIntl();
 
   return (
-    <div className="toast toast-center">
+    <div className="toast toast-center z-50">
       {open && (
         <div role="alert" className="alert">
           <svg

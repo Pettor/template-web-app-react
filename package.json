@@ -62,6 +62,7 @@
     "@commitlint/types": "19.0.3",
     "@faker-js/faker": "8.4.1",
     "@mocks-server/main": "4.1.0",
+    "@storybook/builder-vite": "8.0.0",
     "@storybook/react": "8.0.0",
     "@storybook/react-vite": "8.0.0",
     "@storybook/test": "8.0.0",

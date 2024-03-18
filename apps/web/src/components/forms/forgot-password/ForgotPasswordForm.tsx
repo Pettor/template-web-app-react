@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { InputField } from "shared-ui";
+import { ButtonLoading, InputField } from "shared-ui";
 import * as yup from "yup";
 
 export interface FormForgotPassword {
@@ -61,7 +61,8 @@ export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProp
         {...register("email")}
         data-testid="forgot-password-form__email-input"
       />
-      <button
+      <ButtonLoading
+        loading={loading}
         type="submit"
         className="btn btn-primary z-20 text-base-100 dark:text-base-300"
         title={intl.formatMessage({
@@ -76,13 +77,12 @@ export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProp
         })}
         data-testid="forgot-password-form__submit-button"
       >
-        {loading && <span className="loading loading-spinner" />}
         {intl.formatMessage({
           description: "ForgotPasswordFormValidation - Send",
           defaultMessage: "Send",
           id: "r3YQJ5",
         })}
-      </button>
+      </ButtonLoading>
     </form>
   );
 }
