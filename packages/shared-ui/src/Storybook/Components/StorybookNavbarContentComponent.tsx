@@ -4,9 +4,6 @@ export function StorybookNavbarContentComponent(): ReactElement {
   return (
     <ul className="menu menu-horizontal px-1">
       <li>
-        <a>Item 1</a>
-      </li>
-      <li>
         <details>
           <summary>Parent</summary>
           <ul className="p-2">
@@ -20,7 +17,7 @@ export function StorybookNavbarContentComponent(): ReactElement {
         </details>
       </li>
       <li>
-        <a>Item 3</a>
+        <a>Item 1</a>
       </li>
     </ul>
   );

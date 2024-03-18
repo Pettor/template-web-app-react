@@ -12,11 +12,16 @@ export function StorybookTableContentComponent(): ReactElement {
             <th>Avatar</th>
           </tr>
         </thead>
+        <colgroup>
+          <col className="w-5/12" />
+          <col className="w-7/12" />
+          <col className="w-0" />
+        </colgroup>
         <tbody>
           {Array.from({ length: 150 }, (_, i) => (
             <tr key={i}>
-              <td>{faker.internet.userName()}</td>
-              <td>{faker.internet.email()}</td>
+              <td className="max-w-0 truncate">{faker.internet.userName()}</td>
+              <td className="max-w-0 truncate">asdsadasdasd asdasdasd sadsad sad asdasd das asdas dasd asd</td>
               <td>
                 <div className="avatar">
                   <div className="w-10 rounded-full">
