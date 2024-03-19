@@ -41,6 +41,7 @@ export default defineConfig(({ mode, command }) => {
           theme_color: "#ffffff",
         },
         registerType: "prompt",
+        scope: "/app/",
         workbox: {
           globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
           navigateFallbackDenylist: [/storybook/],
