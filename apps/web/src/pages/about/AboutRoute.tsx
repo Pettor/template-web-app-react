@@ -1,5 +1,6 @@
 import type { ReactElement } from "react";
-import { useLoaderData, useRouteError } from "react-router-dom";
+import { useIntl } from "react-intl";
+import { useLoaderData } from "react-router-dom";
 import { AboutPage, type AboutPageProps } from "./AboutPage";
 export { AboutPage } from "./AboutPage";
 
@@ -10,7 +11,15 @@ export function Component(): ReactElement {
 Component.displayName = "AboutPage";
 
 export function ErrorBoundary(): ReactElement | null {
-  const error = useRouteError() as Error;
-  return <div>{error.message}</div>;
+  const intl = useIntl();
+  return (
+    <AboutPage
+      serverVersion={intl.formatMessage({
+        description: "AbourPage - Error server version N/A",
+        defaultMessage: "N/A",
+        id: "tDfYMW",
+      })}
+    />
+  );
 }
 ErrorBoundary.displayName = "AboutPageError";

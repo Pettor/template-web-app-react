@@ -27,6 +27,7 @@ const defaultArgs = {
     loading: false,
     onSubmit: () => console.log("onSubmit"),
   },
+  onAbout: () => console.log("onAbout"),
   onForgotPassword: () => console.log("handleForgotPassword"),
   onSignUp: () => console.log("handleSignUp"),
 } satisfies Props;

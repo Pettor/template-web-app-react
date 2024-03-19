@@ -1,18 +1,12 @@
 import { useState } from "react";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
+import type { LoginViewProps } from "../../components/views/login/LoginView";
 import type { FormLogin } from "~/components/forms/login/LoginForm";
 import { useAuth } from "~/core/auth/UseAuth";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
-export function useLoginPage(): {
-  applicationName: string;
-  isLoading: boolean;
-  error: string;
-  handleSubmit: (data: FormLogin) => Promise<void>;
-  handleForgotPassword: () => void;
-  handleSignUp: () => void;
-} {
+export function useLoginPage(): LoginViewProps {
   const navigate = useNavigate();
   const intl = useIntl();
   const { appName } = useAppInfo();
@@ -36,6 +30,10 @@ export function useLoginPage(): {
     }
   }
 
+  function handleOnAbout(): void {
+    navigate("/about");
+  }
+
   function handleForgotPassword(): void {
     navigate("/forgot-password", { state: { something: "Incoming!" } });
   }
@@ -45,11 +43,14 @@ export function useLoginPage(): {
   }
 
   return {
-    applicationName: appName,
-    isLoading: loginLoading,
+    appName,
+    loginForm: {
+      loading: loginLoading,
+      onSubmit: handleSubmit,
+    },
     error: loginError,
-    handleSubmit,
-    handleForgotPassword,
-    handleSignUp,
+    onAbout: handleOnAbout,
+    onForgotPassword: handleForgotPassword,
+    onSignUp: handleSignUp,
   };
 }

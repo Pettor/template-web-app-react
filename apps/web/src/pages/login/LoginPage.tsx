@@ -5,19 +5,8 @@ import { LoginView } from "~/components/views/login/LoginView";
 
 export function LoginPage(): ReactElement {
   useDocumentTitle("Login");
-  const { applicationName, isLoading, error, handleForgotPassword, handleSignUp, handleSubmit } = useLoginPage();
+  const loginProps = useLoginPage();
 
-  return (
-    <LoginView
-      appName={applicationName}
-      loginForm={{
-        loading: isLoading,
-        onSubmit: handleSubmit,
-      }}
-      error={error}
-      onForgotPassword={handleForgotPassword}
-      onSignUp={handleSignUp}
-    />
-  );
+  return <LoginView {...loginProps} />;
 }
 LoginPage.displayName = "LoginPage";

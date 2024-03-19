@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom";
 import type { AboutViewProps } from "~/components/views/about/AboutView";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
-export function useAboutPage(version: string): AboutViewProps {
+export function useAboutPage(serverVersion: string): AboutViewProps {
+  console.log(import.meta.env);
   const { appName } = useAppInfo();
   const navigate = useNavigate();
 
@@ -10,5 +11,5 @@ export function useAboutPage(version: string): AboutViewProps {
     navigate(-1);
   }
 
-  return { version, appName, onBack: handleOnBack };
+  return { appVersion: import.meta.env.VITE_APP_VERSION, serverVersion, appName, onBack: handleOnBack };
 }

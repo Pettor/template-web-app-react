@@ -5,11 +5,12 @@ import { BasicLayout, BlueFadeBackground, GridBackground } from "shared-ui";
 
 export interface AboutViewProps {
   appName: string;
-  version: string;
+  appVersion: string;
+  serverVersion: string;
   onBack: () => void;
 }
 
-export function AboutView({ appName, version, onBack }: AboutViewProps): ReactElement {
+export function AboutView({ appName, appVersion, serverVersion, onBack }: AboutViewProps): ReactElement {
   const intl = useIntl();
 
   return (
@@ -63,11 +64,21 @@ export function AboutView({ appName, version, onBack }: AboutViewProps): ReactEl
                       <td className="pl-0 font-semibold">
                         {intl.formatMessage({
                           description: "AboutView - App version",
-                          defaultMessage: "Version",
-                          id: "YlDZGr",
+                          defaultMessage: "App Version",
+                          id: "3kCFcr",
                         })}
                       </td>
-                      <td>{version}</td>
+                      <td>{appVersion}</td>
+                    </tr>
+                    <tr>
+                      <td className="pl-0 font-semibold">
+                        {intl.formatMessage({
+                          description: "AboutView - Server version",
+                          defaultMessage: "Server version",
+                          id: "7klmPZ",
+                        })}
+                      </td>
+                      <td>{serverVersion}</td>
                     </tr>
                   </tbody>
                 </table>

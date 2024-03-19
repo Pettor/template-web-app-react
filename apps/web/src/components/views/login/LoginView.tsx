@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
+import { ExclamationTriangleIcon, InformationCircleIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
 import { BasicLayout, BlueFadeBackground, GridBackground, LogoFull } from "shared-ui";
 import type { LoginFormProps } from "~/components/forms/login/LoginForm";
@@ -9,11 +9,19 @@ export interface LoginViewProps {
   appName: string;
   loginForm: LoginFormProps;
   error?: string;
-  onForgotPassword: () => void;
-  onSignUp: () => void;
+  onAbout(): void;
+  onForgotPassword(): void;
+  onSignUp(): void;
 }
 
-export function LoginView({ appName, loginForm, error, onForgotPassword, onSignUp }: LoginViewProps): ReactElement {
+export function LoginView({
+  appName,
+  loginForm,
+  error,
+  onAbout,
+  onForgotPassword,
+  onSignUp,
+}: LoginViewProps): ReactElement {
   const intl = useIntl();
 
   return (
@@ -31,6 +39,11 @@ export function LoginView({ appName, loginForm, error, onForgotPassword, onSignU
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
               <div className="card-body">
+                <div className="card-actions justify-end">
+                  <button className="btn btn-square btn-ghost btn-sm" onClick={onAbout}>
+                    <InformationCircleIcon className="h-6 w-6" />
+                  </button>
+                </div>
                 <div className="flex justify-center md:hidden">
                   <LogoFull appName={appName} size="small" />
                 </div>
