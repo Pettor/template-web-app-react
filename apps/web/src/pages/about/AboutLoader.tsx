@@ -9,6 +9,6 @@ export async function loader(queryClient: QueryClient): Promise<AboutPageProps> 
   const { version } =
     queryClient.getQueryData<ApplicationInfo>(QUERY_KEY_APPLICATION_INFO) ?? (await queryClient.fetchQuery(query));
   return {
-    version,
+    serverVersion: version,
   };
 }
