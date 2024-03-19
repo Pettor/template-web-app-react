@@ -24,7 +24,7 @@ export default defineConfig(({ mode, command }) => {
           "pwa-192x192.png",
           "pwa-512x512.png",
           "screenshot-desktop.png",
-          "screenshot-mobile.png",
+          "screenshot-phone.png",
         ],
         injectRegister: "auto",
         manifest: {
@@ -54,7 +54,7 @@ export default defineConfig(({ mode, command }) => {
               label: "WebTemplate on Desktop",
             },
             {
-              src: "screenshot-mobile.png",
+              src: "screenshot-phone.png",
               sizes: "435x608",
               type: "image/png",
               form_factor: "narrow",
