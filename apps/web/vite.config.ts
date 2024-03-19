@@ -37,11 +37,12 @@ export default defineConfig(({ mode, command }) => {
               type: "image/png",
             },
           ],
+          scope: "/app/",
+          start_url: "./",
           short_name: "WebTemplate",
           theme_color: "#ffffff",
         },
         registerType: "prompt",
-        scope: "/app/",
         workbox: {
           globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
           navigateFallbackDenylist: [/storybook/],
