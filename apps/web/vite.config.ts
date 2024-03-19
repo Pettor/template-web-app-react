@@ -38,11 +38,11 @@ export default defineConfig(({ mode, command }) => {
             },
           ],
           scope: "/app/",
-          start_url: "./",
+          start_url: "/app/",
           short_name: "WebTemplate",
           theme_color: "#ffffff",
         },
-        registerType: "prompt",
+        registerType: "autoUpdate",
         workbox: {
           globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
           navigateFallbackDenylist: [/storybook/],
