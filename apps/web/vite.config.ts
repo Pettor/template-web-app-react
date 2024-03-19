@@ -18,7 +18,14 @@ export default defineConfig(({ mode, command }) => {
         devOptions: {
           enabled: false,
         },
-        includeAssets: ["favicon.ico", "apple-touch-icon.png", "pwa-192x192.png", "pwa-512x512.png"],
+        includeAssets: [
+          "favicon.ico",
+          "apple-touch-icon.png",
+          "pwa-192x192.png",
+          "pwa-512x512.png",
+          "screenshot-desktop.png",
+          "screenshot-mobile.png",
+        ],
         injectRegister: "auto",
         manifest: {
           background_color: "#ffffff",
@@ -38,6 +45,22 @@ export default defineConfig(({ mode, command }) => {
             },
           ],
           scope: "/app/",
+          screenshots: [
+            {
+              src: "screenshot-desktop.png",
+              sizes: "690x670",
+              type: "image/png",
+              form_factor: "wide",
+              label: "WebTemplate on Desktop",
+            },
+            {
+              src: "screenshot-mobile.png",
+              sizes: "435x608",
+              type: "image/png",
+              form_factor: "narrow",
+              label: "WebTemplate on Phone",
+            },
+          ],
           start_url: "/app/",
           short_name: "WebTemplate",
           theme_color: "#ffffff",
