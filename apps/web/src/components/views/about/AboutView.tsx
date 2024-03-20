@@ -2,15 +2,13 @@ import type { ReactElement } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
 import { BasicLayout, BlueFadeBackground, GridBackground } from "shared-ui";
+import { About, type AboutProps } from "~/components/feedback/about/About";
 
-export interface AboutViewProps {
-  appName: string;
-  appVersion: string;
-  serverVersion: string;
+export interface AboutViewProps extends AboutProps {
   onBack: () => void;
 }
 
-export function AboutView({ appName, appVersion, serverVersion, onBack }: AboutViewProps): ReactElement {
+export function AboutView({ onBack, ...aboutProps }: AboutViewProps): ReactElement {
   const intl = useIntl();
 
   return (
@@ -45,44 +43,7 @@ export function AboutView({ appName, appVersion, serverVersion, onBack }: AboutV
                   <XMarkIcon className="h-6 w-6" />
                 </button>
               </div>
-              <div className="items-left flex flex-1 flex-col px-4 md:mt-4">
-                <span className="text-3xl font-semibold">About</span>
-                <div className="divider mt-2" />
-                <table className="table table-lg">
-                  <tbody>
-                    <tr>
-                      <td className="px-0 font-semibold">
-                        {intl.formatMessage({
-                          description: "AboutView - App name",
-                          defaultMessage: "Name:",
-                          id: "S5SFCm",
-                        })}
-                      </td>
-                      <td>{appName}</td>
-                    </tr>
-                    <tr>
-                      <td className="pl-0 font-semibold">
-                        {intl.formatMessage({
-                          description: "AboutView - App version",
-                          defaultMessage: "App Version",
-                          id: "3kCFcr",
-                        })}
-                      </td>
-                      <td>{appVersion}</td>
-                    </tr>
-                    <tr>
-                      <td className="pl-0 font-semibold">
-                        {intl.formatMessage({
-                          description: "AboutView - Server version",
-                          defaultMessage: "Server version",
-                          id: "7klmPZ",
-                        })}
-                      </td>
-                      <td>{serverVersion}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <About {...aboutProps} />
             </div>
           </div>
         </div>

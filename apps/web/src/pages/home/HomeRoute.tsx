@@ -1,11 +1,16 @@
 import type { ReactElement } from "react";
 import { useIntl } from "react-intl";
-import { useLoaderData, useRouteError } from "react-router-dom";
+import { Outlet, useLoaderData, useRouteError } from "react-router-dom";
 import { HomePage, type HomePageProps } from "./HomePage";
 
 export function Component(): ReactElement {
   const data = useLoaderData() as HomePageProps;
-  return <HomePage {...data} />;
+  return (
+    <>
+      <HomePage {...data} />
+      <Outlet />
+    </>
+  );
 }
 Component.displayName = "HomePage";
 

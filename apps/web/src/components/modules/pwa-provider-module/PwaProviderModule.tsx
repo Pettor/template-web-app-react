@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { PwaUpdateDialogModule } from "../pwa-update-dialog-module/PwaUpdateDialogModule";
 import { usePwaProviderModule } from "./UsePwaProviderModule";
-import { PwaOfflineDialog } from "~/components/feedback/pwa-offline-dialog";
+import { PwaOfflineDialog } from "~/components/feedback/pwa-offline-dialog/PwaOfflineDialog";
 
 interface Props {
   children: ReactElement;

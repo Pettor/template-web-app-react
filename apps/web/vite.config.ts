@@ -78,6 +78,11 @@ export default defineConfig(({ mode, command }) => {
     case "build":
       return mergeConfig(commonConfig, {
         base: "./",
+        build: {
+          commonjsOptions: {
+            exclude: ["@faker-js/faker"],
+          },
+        },
       });
     case "serve":
       return mergeConfig(commonConfig, {

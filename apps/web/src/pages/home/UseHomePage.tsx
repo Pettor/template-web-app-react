@@ -5,7 +5,7 @@ import { useThemeSwitcher } from "~/components/actions/theme-switch/UseThemeSwit
 import type { HomeViewProps } from "~/components/views/home/HomeView";
 
 export function useHomePage(githubLink: string, linkedInLink: string): HomeViewProps {
-  const appSessionProps = useAppSessionContent();
+  const appSessionProps = useAppSessionContent("/version");
   const themeSwitchProps = useThemeSwitcher();
   const socialLinkProps = useAppSocialLinks(githubLink, linkedInLink);
 

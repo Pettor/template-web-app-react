@@ -1,9 +1,9 @@
 import type { ReactElement } from "react";
-import type { AboutViewProps } from "../../components/views/about/AboutView";
 import { useAboutPage } from "./UseAboutPage";
+import type { AboutProps } from "~/components/feedback/about/About";
 import { AboutView } from "~/components/views/about/AboutView";
 
-export interface AboutPageProps extends Pick<AboutViewProps, "serverVersion"> {}
+export interface AboutPageProps extends Pick<AboutProps, "serverVersion"> {}
 
 export function AboutPage({ serverVersion }: AboutPageProps): ReactElement {
   const aboutProps = useAboutPage(serverVersion);

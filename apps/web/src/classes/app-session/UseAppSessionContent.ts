@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import type { IAppSessionContent } from "./IAppSessionContent";
 import { useAuth } from "~/core/auth/UseAuth";
 
-export function useAppSessionContent(): IAppSessionContent {
+export function useAppSessionContent(aboutRoute: string = "/about"): IAppSessionContent {
   const navigate = useNavigate();
   const { logout } = useAuth();
   const { data: profileInfo } = useFetchPersonalProfileQuery();
@@ -30,7 +30,7 @@ export function useAppSessionContent(): IAppSessionContent {
   }
 
   function handleOnAbout(): void {
-    navigate("/about");
+    navigate(aboutRoute);
   }
 
   return {
