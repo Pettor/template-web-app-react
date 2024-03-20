@@ -44,7 +44,6 @@ export default defineConfig(({ mode, command }) => {
               type: "image/png",
             },
           ],
-          scope: "/app/",
           screenshots: [
             {
               src: "screenshot-desktop.png",
@@ -61,7 +60,6 @@ export default defineConfig(({ mode, command }) => {
               label: "WebTemplate on Phone",
             },
           ],
-          start_url: "/app/",
           short_name: "WebTemplate",
           theme_color: "#ffffff",
         },
