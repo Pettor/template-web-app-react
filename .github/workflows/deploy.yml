@@ -50,7 +50,7 @@ jobs:
       - name: Add buildnumber to version
         run: |
           cd $GITHUB_WORKSPACE/apps/web
-          echo "\"VITE_APP_VERSION\": \"$npm_package_version-build.${{github.run_number}}\"" > .env.production
+          echo "VITE_APP_VERSION=\$npm_package_version-build.${{github.run_number}}" > .env.production
 
       - name: Build deployment and move files
         run: pnpm run deploy
