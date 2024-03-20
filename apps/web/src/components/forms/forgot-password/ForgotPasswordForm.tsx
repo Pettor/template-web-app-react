@@ -64,7 +64,7 @@ export function ForgotPasswordForm({ loading, onSubmit }: ForgotPasswordFormProp
       <ButtonLoading
         loading={loading}
         type="submit"
-        className="btn btn-primary z-20 text-base-100 dark:text-base-300"
+        className="btn btn-primary z-20 w-full text-base-100 dark:text-base-300"
         title={intl.formatMessage({
           description: "ForgotPasswordFormValidation - Send button title",
           defaultMessage: "Submit",

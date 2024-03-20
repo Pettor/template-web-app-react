@@ -82,21 +82,19 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
         {...register("password")}
         data-testid="login-form__password-input"
       />
-      <div className="flex flex-row">
-        <div className="flex w-full flex-1 justify-end">
-          <ButtonLoading
-            loading={loading}
-            type="submit"
-            className="btn btn-primary z-20 w-full text-base-100 dark:text-base-300 md:w-40"
-            data-testid="login-form__submit-button"
-          >
-            {intl.formatMessage({
-              description: "LoginFormButton: Sign in",
-              defaultMessage: "Sign in",
-              id: "zXsz1H",
-            })}
-          </ButtonLoading>
-        </div>
+      <div className="flex w-full flex-1 justify-end">
+        <ButtonLoading
+          loading={loading}
+          type="submit"
+          className="btn btn-primary z-20 w-full text-base-100 dark:text-base-300 md:w-40"
+          data-testid="login-form__submit-button"
+        >
+          {intl.formatMessage({
+            description: "LoginFormButton: Sign in",
+            defaultMessage: "Sign in",
+            id: "zXsz1H",
+          })}
+        </ButtonLoading>
       </div>
     </form>
   );

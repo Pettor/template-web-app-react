@@ -24,9 +24,9 @@ export function AboutView({ appName, appVersion, serverVersion, onBack }: AboutV
       }
     >
       <div className="hero">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
-            <div className="card-body min-w-72">
+        <div className="hero-content w-full flex-col lg:flex-row-reverse">
+          <div className="card min-h-[550px] w-full shrink-0 bg-base-100 shadow-2xl sm:w-[550px]">
+            <div className="card-body">
               <div className="card-actions justify-end">
                 <button
                   className="btn btn-square btn-sm"
@@ -45,7 +45,7 @@ export function AboutView({ appName, appVersion, serverVersion, onBack }: AboutV
                   <XMarkIcon className="h-6 w-6" />
                 </button>
               </div>
-              <div className="items-left mt-4 flex flex-1 flex-col">
+              <div className="items-left flex flex-1 flex-col px-4 md:mt-4">
                 <span className="text-3xl font-semibold">About</span>
                 <div className="divider mt-2" />
                 <table className="table table-lg">
