@@ -1,4 +1,4 @@
-import { type ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useIntl } from "react-intl";
 import { BlueFadeBackground } from "shared-ui";
 import type { IAppSocialLinks } from "~/classes/app-social-links/IAppSocialLinks";
