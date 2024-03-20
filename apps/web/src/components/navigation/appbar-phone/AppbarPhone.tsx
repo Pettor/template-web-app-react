@@ -15,7 +15,13 @@ export function AppbarPhone(props: AppbarPhoneProps): ReactElement {
 
 function AppbarPhoneComponents(props: IAppSessionContent): ReactElement {
   const intl = useIntl();
+  const { onAbout } = props;
   const [openDrawer, setOpenDrawer] = useState(false);
+
+  function handleAbout(): void {
+    onAbout();
+    setOpenDrawer(false);
+  }
 
   return (
     <div className="flex flex-row">
@@ -42,7 +48,7 @@ function AppbarPhoneComponents(props: IAppSessionContent): ReactElement {
             </button>
           </div>
         </div>
-        <AppDrawer {...props} open={openDrawer} onClose={() => setOpenDrawer(false)} />
+        <AppDrawer {...props} onAbout={handleAbout} open={openDrawer} onClose={() => setOpenDrawer(false)} />
       </div>
     </div>
   );

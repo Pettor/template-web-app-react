@@ -4,8 +4,8 @@ import { useIntl } from "react-intl";
 import type { NavbarProps } from "shared-ui";
 import { Navbar, GithubIcon, LinkedInIcon } from "shared-ui";
 import type { IAppbar } from "~/classes/appbar/IAppbar";
-import { ProfileCard } from "~/components/actions/profile-card";
 import { ThemeSwitch } from "~/components/actions/theme-switch/ThemeSwitch";
+import { ProfileCard } from "~/components/feedback/profile-card/ProfileCard";
 
 export interface AppbarDesktopProps extends IAppbar, Omit<NavbarProps, "centerElement" | "endElement"> {}
 

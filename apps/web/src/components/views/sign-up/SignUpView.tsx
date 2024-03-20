@@ -26,8 +26,8 @@ export function SignUpView({ signUpForm, onBack }: SignUpViewProps): ReactElemen
     >
       <div className="flex flex-1 flex-col items-center justify-center">
         <div className="hero">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-            <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
+          <div className="hero-content w-full flex-col lg:flex-row-reverse">
+            <div className="card w-full shrink-0 bg-base-100 shadow-2xl sm:min-h-[550px] sm:w-[550px]">
               <div className="card-body w-full md:min-w-96">
                 <div className="card-actions justify-end">
                   <button
@@ -54,7 +54,9 @@ export function SignUpView({ signUpForm, onBack }: SignUpViewProps): ReactElemen
                     id: "NG06ZV",
                   })}
                 </p>
-                <SignUpForm {...signUpForm} />
+                <div className="md:px-12">
+                  <SignUpForm {...signUpForm} />
+                </div>
               </div>
             </div>
           </div>

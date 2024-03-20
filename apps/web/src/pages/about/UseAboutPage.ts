@@ -3,7 +3,6 @@ import type { AboutViewProps } from "~/components/views/about/AboutView";
 import { useAppInfo } from "~/core/config/UseAppInfo";
 
 export function useAboutPage(serverVersion: string): AboutViewProps {
-  console.log(import.meta.env);
   const { appName } = useAppInfo();
   const navigate = useNavigate();
 

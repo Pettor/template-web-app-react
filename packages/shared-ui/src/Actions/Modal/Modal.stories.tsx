@@ -12,6 +12,7 @@ type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
   open: true,
+  onClose: () => console.log("onClose"),
   children: <div>This is content test</div>,
 } satisfies Props;
 

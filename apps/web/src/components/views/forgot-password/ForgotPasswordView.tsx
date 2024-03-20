@@ -26,9 +26,9 @@ export function ForgotPasswordView({ appName, resetForm, onBack }: ForgotPasswor
     >
       <div className="flex flex-1 flex-col items-center justify-center">
         <div className="hero">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-            <div className="card w-full shrink-0 bg-base-100 shadow-2xl">
-              <div className="card-body w-full max-w-[500px]">
+          <div className="hero-content w-full flex-col lg:flex-row-reverse">
+            <div className="card min-h-[550px] w-full shrink-0 bg-base-100 shadow-2xl sm:w-[550px]">
+              <div className="card-body w-full">
                 <div className="card-actions justify-end">
                   <button
                     className="btn btn-square btn-sm"
@@ -47,7 +47,7 @@ export function ForgotPasswordView({ appName, resetForm, onBack }: ForgotPasswor
                     <XMarkIcon className="h-6 w-6" />
                   </button>
                 </div>
-                <p className="mt-4 text-center text-base">
+                <span className="mt-8 text-center text-base">
                   {intl.formatMessage(
                     {
                       description: "ForgotPasswordView - Reset password description",
@@ -59,8 +59,8 @@ export function ForgotPasswordView({ appName, resetForm, onBack }: ForgotPasswor
                       appName: appName,
                     }
                   )}
-                </p>
-                <div className="mb-2 mt-4 px-4 md:px-20">
+                </span>
+                <div className="mb-2 mt-4 px-4 md:mt-8 md:px-12">
                   <ForgotPasswordForm {...resetForm} />
                 </div>
               </div>

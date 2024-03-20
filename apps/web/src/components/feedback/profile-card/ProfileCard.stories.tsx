@@ -7,7 +7,7 @@ import { AppSessionData } from "~/storybook/data/AppSessionData";
 
 const meta = {
   component: Component,
-  title: "Actions/Profile/Card",
+  title: "Feedback/Profile/Card",
   decorators: [CenterDecorator],
   tags: ["autodocs"],
 } satisfies Meta<typeof Component>;
