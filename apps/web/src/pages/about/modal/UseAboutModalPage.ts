@@ -7,8 +7,7 @@ export function useAboutModalPage(serverVersion: string): AboutModalProps {
   const aboutProps = useAboutPage(serverVersion);
 
   function handleOnClose(): void {
-    console.log("HEJ");
-    navigate(-2);
+    navigate(-1);
   }
 
   return {
