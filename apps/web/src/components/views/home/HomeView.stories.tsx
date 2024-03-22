@@ -34,6 +34,7 @@ const defaultArgs = {
     appbarPhoneProps: AppbarPhoneData,
   },
   appSocialLinkProps: AppSocialLinksData,
+  onGotoClick: (href: string) => console.log(href),
 } satisfies Props;
 
 export const Fullscreen = {

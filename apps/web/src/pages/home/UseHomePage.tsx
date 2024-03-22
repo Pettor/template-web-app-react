@@ -17,11 +17,16 @@ export function useHomePage(githubLink: string, linkedInLink: string): HomeViewP
     [appSessionProps, themeSwitchProps]
   );
 
+  function handleOnGotoClick(href: string): void {
+    window.open(href, "_blank", "noreferrer");
+  }
+
   return {
     appSocialLinkProps: socialLinkProps,
     appNavbarProps: {
       appbarDesktopProps: appbarProps,
       appbarPhoneProps: appbarProps,
     },
+    onGotoClick: handleOnGotoClick,
   };
 }

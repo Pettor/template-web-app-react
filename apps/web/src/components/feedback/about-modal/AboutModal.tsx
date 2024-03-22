@@ -1,15 +1,15 @@
 import type { ReactElement } from "react";
 import type { ModalProps } from "shared-ui";
 import { Modal } from "shared-ui";
-import type { AboutProps } from "../about/About";
-import { About } from "../about/About";
+import type { AboutDetailsProps } from "../about-details/AboutDetails";
+import { AboutDetails } from "../about-details/AboutDetails";
 
-export interface AboutModalProps extends Omit<ModalProps, "children">, AboutProps {}
+export interface AboutModalProps extends Omit<ModalProps, "children">, AboutDetailsProps {}
 
 export function AboutModal({ open, onClose, ...aboutProps }: AboutModalProps): ReactElement {
   return (
     <Modal open={open} onClose={onClose} className="min-h-96">
-      <About {...aboutProps} />
+      <AboutDetails {...aboutProps} />
     </Modal>
   );
 }

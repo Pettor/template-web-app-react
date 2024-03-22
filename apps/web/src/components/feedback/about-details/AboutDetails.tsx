@@ -1,13 +1,13 @@
 import type { ReactElement } from "react";
 import { useIntl } from "react-intl";
 
-export interface AboutProps {
+export interface AboutDetailsProps {
   appName: string;
   appVersion: string;
   serverVersion: string;
 }
 
-export function About({ appName, appVersion, serverVersion }: AboutProps): ReactElement {
+export function AboutDetails({ appName, appVersion, serverVersion }: AboutDetailsProps): ReactElement {
   const intl = useIntl();
 
   return (
