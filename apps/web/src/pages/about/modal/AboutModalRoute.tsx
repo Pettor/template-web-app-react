@@ -2,10 +2,10 @@ import type { ReactElement } from "react";
 import { useIntl } from "react-intl";
 import { useLoaderData, useRouteError } from "react-router-dom";
 import { AboutModalPage } from "./AboutModalPage";
-import type { AboutProps } from "~/components/feedback/about/About";
+import type { AboutDetailsProps } from "~/components/feedback/about-details/AboutDetails";
 
 export function Component(): ReactElement {
-  const data = useLoaderData() as AboutProps;
+  const data = useLoaderData() as AboutDetailsProps;
   return <AboutModalPage {...data} />;
 }
 Component.displayName = "AboutPage";

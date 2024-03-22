@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { CommonDecorator } from "storybook-base";
-import { About as Component } from "./About";
-import type { AboutProps as Props } from "./About";
+import { AboutDetails as Component } from "./AboutDetails";
+import type { AboutDetailsProps as Props } from "./AboutDetails";
 
 const meta = {
   component: Component,
@@ -18,6 +18,6 @@ const defaultArgs = {
   serverVersion: "1.0.0",
 } satisfies Props;
 
-export const Standard = {
+export const Details = {
   args: defaultArgs,
 } satisfies Story;

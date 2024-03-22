@@ -5,7 +5,7 @@ import type { AboutModalProps as Props } from "./AboutModal";
 
 const meta = {
   component: Component,
-  title: "Feedback/About/Modal",
+  title: "Feedback/About",
   decorators: [CommonDecorator],
 } satisfies Meta;
 
@@ -20,6 +20,6 @@ const defaultArgs = {
   onClose: () => console.log("onClose"),
 } satisfies Props;
 
-export const Standard = {
+export const Modal = {
   args: defaultArgs,
 } satisfies Story;

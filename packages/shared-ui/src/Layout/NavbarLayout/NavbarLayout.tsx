@@ -19,7 +19,7 @@ export function NavbarLayout({
   children,
 }: NavbarLayoutProps): ReactElement {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       {backgroundElement}
       <div className="sticky top-0 z-40">{navbarElement}</div>
       <div className="container mb-8">

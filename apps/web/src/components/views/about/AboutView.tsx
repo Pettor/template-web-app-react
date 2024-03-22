@@ -2,9 +2,9 @@ import type { ReactElement } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
 import { BasicLayout, BlueFadeBackground, GridBackground } from "shared-ui";
-import { About, type AboutProps } from "~/components/feedback/about/About";
+import { AboutDetails, type AboutDetailsProps } from "~/components/feedback/about-details/AboutDetails";
 
-export interface AboutViewProps extends AboutProps {
+export interface AboutViewProps extends AboutDetailsProps {
   onBack: () => void;
 }
 
@@ -43,7 +43,7 @@ export function AboutView({ onBack, ...aboutProps }: AboutViewProps): ReactEleme
                   <XMarkIcon className="h-6 w-6" />
                 </button>
               </div>
-              <About {...aboutProps} />
+              <AboutDetails {...aboutProps} />
             </div>
           </div>
         </div>
