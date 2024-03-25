@@ -1,0 +1,4 @@
+import{j as r}from"./jsx-runtime-CKrituN3.js";import{D as t}from"./Drawer-BlUoDNl6.js";import"./index-CBqU2yxZ.js";import"./_commonjsHelpers-BosuxZz1.js";import"./index-DLc5FIae.js";const p={component:t,title:"Shared/Navigation/Drawer",parameters:{layout:"fullscreen"}},l={open:!0,onClose:()=>console.log("onClose"),children:r.jsxs("ul",{className:"menu h-full w-full",children:[r.jsx("li",{children:r.jsx("a",{children:"Sidebar Item 1"})}),r.jsx("li",{children:r.jsx("a",{children:"Sidebar Item 2"})})]})},e={args:l};var s,a,o;e.parameters={...e.parameters,docs:{...(s=e.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  args: defaultArgs
+} satisfies Story`,...(o=(a=e.parameters)==null?void 0:a.docs)==null?void 0:o.source}}};const u=["Standard"];export{e as Standard,u as __namedExportsOrder,p as default};
+//# sourceMappingURL=Drawer.stories-CI2SUlfb.js.map
