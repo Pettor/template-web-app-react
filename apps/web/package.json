@@ -31,7 +31,7 @@
   "dependencies": {
     "@hookform/resolvers": "3.3.4",
     "core-api": "workspace:*",
-    "react-hook-form": "7.51.3",
+    "react-hook-form": "7.51.4",
     "react-router-dom": "6.23.0",
     "react-utils": "workspace:*",
     "shared-ui": "workspace:*",
