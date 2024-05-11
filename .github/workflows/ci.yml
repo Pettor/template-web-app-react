@@ -20,7 +20,7 @@ jobs:
           node-version: "18"
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3.0.0
+        uses: pnpm/action-setup@v4.0.0
         id: pnpm-install
         with:
           run_install: false
@@ -60,7 +60,7 @@ jobs:
           node-version: "18"
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3.0.0
+        uses: pnpm/action-setup@v4.0.0
         id: pnpm-install
         with:
           run_install: false
@@ -100,7 +100,7 @@ jobs:
           node-version: "18"
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3.0.0
+        uses: pnpm/action-setup@v4.0.0
         id: pnpm-install
         with:
           run_install: false
@@ -150,7 +150,7 @@ jobs:
           node-version: "18"
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3.0.0
+        uses: pnpm/action-setup@v4.0.0
         id: pnpm-install
         with:
           run_install: false
