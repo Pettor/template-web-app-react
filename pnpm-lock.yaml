@@ -45,11 +45,11 @@ importers:
         specifier: 10.1.1
         version: 10.1.1
       jotai:
-        specifier: 2.8.0
-        version: 2.8.0(@types/react@18.2.75)(react@18.3.1)
+        specifier: 2.8.1
+        version: 2.8.1(@types/react@18.2.75)(react@18.3.1)
       jotai-effect:
         specifier: 1.0.0
-        version: 1.0.0(jotai@2.8.0(@types/react@18.2.75)(react@18.3.1))
+        version: 1.0.0(jotai@2.8.1(@types/react@18.2.75)(react@18.3.1))
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -193,14 +193,14 @@ importers:
   apps/web:
     dependencies:
       '@hookform/resolvers':
-        specifier: 3.4.0
-        version: 3.4.0(react-hook-form@7.51.4(react@18.3.1))
+        specifier: 3.4.2
+        version: 3.4.2(react-hook-form@7.51.5(react@18.3.1))
       core-api:
         specifier: workspace:*
         version: link:../../packages/core-api
       react-hook-form:
-        specifier: 7.51.4
-        version: 7.51.4(react@18.3.1)
+        specifier: 7.51.5
+        version: 7.51.5(react@18.3.1)
       react-router-dom:
         specifier: 6.23.1
         version: 6.23.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -313,11 +313,11 @@ importers:
   packages/core-api:
     dependencies:
       axios:
-        specifier: 1.7.0
-        version: 1.7.0(debug@4.3.4)
+        specifier: 1.7.2
+        version: 1.7.2(debug@4.3.4)
       axios-auth-refresh:
         specifier: 3.3.6
-        version: 3.3.6(axios@1.7.0)
+        version: 3.3.6(axios@1.7.2)
     devDependencies:
       eslint-config-custom:
         specifier: workspace:*
@@ -1490,8 +1490,8 @@ packages:
     peerDependencies:
       react: '>= 16'
 
-  '@hookform/resolvers@3.4.0':
-    resolution: {integrity: sha512-+oAqK3okmoEDnvUkJ3N/mvNMeeMv5Apgy1jkoRmlaaAF4vBgcJs9tHvtXU7VE4DvPosvAUUkPOaNFunzt1dbgA==}
+  '@hookform/resolvers@3.4.2':
+    resolution: {integrity: sha512-1m9uAVIO8wVf7VCDAGsuGA0t6Z3m6jVGAN50HkV9vYLl0yixKK/Z1lr01vaRvYCkIKGoy1noVRxMzQYb4y/j1Q==}
     peerDependencies:
       react-hook-form: ^7.0.0
 
@@ -2859,8 +2859,8 @@ packages:
   axios@1.6.8:
     resolution: {integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==}
 
-  axios@1.7.0:
-    resolution: {integrity: sha512-IiB0wQeKyPRdsFVhBgIo31FbzOyf2M6wYl7/NVutFwFBRMiAbjNiydJIHKeLmPugF4kJLfA1uWZ82Is2QzqqFA==}
+  axios@1.7.2:
+    resolution: {integrity: sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==}
 
   babel-core@7.0.0-bridge.0:
     resolution: {integrity: sha512-poPX9mZH/5CSanm50Q+1toVci6pv5KSRv/5TWCwtzQS5XEwn40BcCrgIeMFWP9CKKIniKXNxoIOnOq4VVlGXhg==}
@@ -4965,8 +4965,8 @@ packages:
     peerDependencies:
       jotai: '>=2.5.0'
 
-  jotai@2.8.0:
-    resolution: {integrity: sha512-yZNMC36FdLOksOr8qga0yLf14miCJlEThlp5DeFJNnqzm2+ZG7wLcJzoOyij5K6U6Xlc5ljQqPDlJRgqW0Y18g==}
+  jotai@2.8.1:
+    resolution: {integrity: sha512-Gmk5Y3yJL/vN5S0rQ6AaWpXH5Q+HBGHThMHXfylVzXGVuO8YxPRtZf8Y9XYvl+h7ZMQXoHNdFi37vNsJFsiszQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -6037,8 +6037,8 @@ packages:
       react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
       react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
 
-  react-hook-form@7.51.4:
-    resolution: {integrity: sha512-V14i8SEkh+V1gs6YtD0hdHYnoL4tp/HX/A45wWQN15CYr9bFRmmRdYStSO5L65lCCZRF+kYiSKhm9alqbcdiVA==}
+  react-hook-form@7.51.5:
+    resolution: {integrity: sha512-J2ILT5gWx1XUIJRETiA7M19iXHlG74+6O3KApzvqB/w8S5NQR7AbU8HVZrMALdmDgWpRPYiZJl0zx8Z4L2mP6Q==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
@@ -8679,9 +8679,9 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  '@hookform/resolvers@3.4.0(react-hook-form@7.51.4(react@18.3.1))':
+  '@hookform/resolvers@3.4.2(react-hook-form@7.51.5(react@18.3.1))':
     dependencies:
-      react-hook-form: 7.51.4(react@18.3.1)
+      react-hook-form: 7.51.5(react@18.3.1)
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -10792,9 +10792,9 @@ snapshots:
 
   axe-core@4.8.3: {}
 
-  axios-auth-refresh@3.3.6(axios@1.7.0):
+  axios-auth-refresh@3.3.6(axios@1.7.2):
     dependencies:
-      axios: 1.7.0(debug@4.3.4)
+      axios: 1.7.2(debug@4.3.4)
 
   axios@1.6.8(debug@4.3.4):
     dependencies:
@@ -10804,7 +10804,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  axios@1.7.0(debug@4.3.4):
+  axios@1.7.2(debug@4.3.4):
     dependencies:
       follow-redirects: 1.15.6(debug@4.3.4)
       form-data: 4.0.0
@@ -13498,11 +13498,11 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai-effect@1.0.0(jotai@2.8.0(@types/react@18.2.75)(react@18.3.1)):
+  jotai-effect@1.0.0(jotai@2.8.1(@types/react@18.2.75)(react@18.3.1)):
     dependencies:
-      jotai: 2.8.0(@types/react@18.2.75)(react@18.3.1)
+      jotai: 2.8.1(@types/react@18.2.75)(react@18.3.1)
 
-  jotai@2.8.0(@types/react@18.2.75)(react@18.3.1):
+  jotai@2.8.1(@types/react@18.2.75)(react@18.3.1):
     optionalDependencies:
       '@types/react': 18.2.75
       react: 18.3.1
@@ -14509,7 +14509,7 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       react-is: 18.1.0
 
-  react-hook-form@7.51.4(react@18.3.1):
+  react-hook-form@7.51.5(react@18.3.1):
     dependencies:
       react: 18.3.1
 
@@ -15756,7 +15756,7 @@ snapshots:
 
   wait-on@7.2.0(debug@4.3.4):
     dependencies:
-      axios: 1.7.0(debug@4.3.4)
+      axios: 1.7.2(debug@4.3.4)
       joi: 17.11.0
       lodash: 4.17.21
       minimist: 1.2.8
