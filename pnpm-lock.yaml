@@ -39,8 +39,8 @@ importers:
         specifier: 8.2.2
         version: 8.2.2
       daisyui:
-        specifier: 4.12.6
-        version: 4.12.6(postcss@8.4.38)
+        specifier: 4.12.7
+        version: 4.12.7(postcss@8.4.38)
       immer:
         specifier: 10.1.1
         version: 10.1.1
@@ -3376,8 +3376,8 @@ packages:
     resolution: {integrity: sha512-YGZxdTTL9lmLkCUTpg4j0zQ7IhRB5ZmqNBbGCl3Tg6MP/d5/6sY7L5mmTjzbc6JKgVZYiqTQTNhPFsbXNGlRaA==}
     engines: {node: '>=0.8'}
 
-  daisyui@4.12.6:
-    resolution: {integrity: sha512-Tz/rvi2ws7+7uh51JgGpsRqnASwI13t6Sz53ePaGkhLzhr4SQI4wwNxSypE8lj/d4gl/+lbHK1phIKUo+d2YNw==}
+  daisyui@4.12.7:
+    resolution: {integrity: sha512-KQN3BFs+c5eaDN6xNYbVX9ob7b830PiRF8o5m6os7e4WDTgMg8S3o21CZ/gDttNAfLS2zz1esass9oDP6pv2WA==}
     engines: {node: '>=16.9.0'}
 
   dargs@8.1.0:
@@ -11418,7 +11418,7 @@ snapshots:
       find-pkg: 0.1.2
       fs-exists-sync: 0.1.0
 
-  daisyui@4.12.6(postcss@8.4.38):
+  daisyui@4.12.7(postcss@8.4.38):
     dependencies:
       css-selector-tokenizer: 0.8.0
       culori: 3.3.0
