@@ -1,0 +1,4 @@
+import{f as e}from"./index-xJp9Kd2E.js";import{A as s}from"./AppDrawer-nkO7NA9f.js";import"./jsx-runtime-Nms4Y4qS.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./index-DvfjBVbr.js";import"./index-BcEy6LoI.js";import"./UserCircleIcon-Bsc9WbvB.js";import"./InformationCircleIcon-CGykgIFI.js";const A={component:s,title:"Navigation/Drawer",parameters:{layout:"fullscreen"}},n={open:!0,name:e.internet.userName(),email:e.internet.email(),onAbout:()=>console.log("onAbout"),onLogout:()=>console.log("onLogout"),onClose:()=>console.log("onClose")},o={args:n};var r,t,a;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  args: defaultArgs
+} satisfies Story`,...(a=(t=o.parameters)==null?void 0:t.docs)==null?void 0:a.source}}};const b=["Application"];export{o as Application,b as __namedExportsOrder,A as default};
+//# sourceMappingURL=AppDrawer.stories-BWyXCdxq.js.map
