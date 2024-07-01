@@ -46,7 +46,7 @@
     "autoprefixer": "10.4.19",
     "clsx": "2.1.1",
     "concurrently": "8.2.2",
-    "daisyui": "4.12.6",
+    "daisyui": "4.12.7",
     "immer": "10.1.1",
     "jotai": "2.8.3",
     "jotai-effect": "1.0.0",
