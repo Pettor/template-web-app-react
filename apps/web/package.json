@@ -32,7 +32,7 @@
     "@hookform/resolvers": "3.9.0",
     "core-api": "workspace:*",
     "react-hook-form": "7.52.1",
-    "react-router-dom": "6.24.1",
+    "react-router-dom": "6.25.1",
     "react-utils": "workspace:*",
     "shared-ui": "workspace:*",
     "tailwind": "workspace:*"
