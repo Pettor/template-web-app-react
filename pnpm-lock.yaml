@@ -48,8 +48,8 @@ importers:
         specifier: 2.9.3
         version: 2.9.3(@types/react@18.2.75)(react@18.3.1)
       jotai-effect:
-        specifier: 1.0.1
-        version: 1.0.1(jotai@2.9.3(@types/react@18.2.75)(react@18.3.1))
+        specifier: 1.0.2
+        version: 1.0.2(jotai@2.9.3(@types/react@18.2.75)(react@18.3.1))
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -5126,10 +5126,10 @@ packages:
   joi@17.13.3:
     resolution: {integrity: sha512-otDA4ldcIx+ZXsKHWmp0YizCweVRZG96J10b0FevjfuncLO1oX59THoAmHkNubYJ+9gWsYsp5k8v4ib6oDv1fA==}
 
-  jotai-effect@1.0.1:
-    resolution: {integrity: sha512-za329Iv2euXPHaHiwxoj121ybsdGdobJS8F0kJb6ivuXWoJwYVEMng+FXqXVrpiy6xbxfl8j1SrRktboat+Mgg==}
+  jotai-effect@1.0.2:
+    resolution: {integrity: sha512-DWX47WVvZ2gZgzsCcc4JjhtNvCFIC1bXkOjDQZbZH875l2aIls5OKq/9H4MpFv/jwyDowES2D//zORlCM3Vyuw==}
     peerDependencies:
-      jotai: '>=2.5.0 <2.9.0'
+      jotai: '>=2.5.0'
 
   jotai@2.9.3:
     resolution: {integrity: sha512-IqMWKoXuEzWSShjd9UhalNsRGbdju5G2FrqNLQJT+Ih6p41VNYe2sav5hnwQx4HJr25jq9wRqvGSWGviGG6Gjw==}
@@ -13805,7 +13805,7 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai-effect@1.0.1(jotai@2.9.3(@types/react@18.2.75)(react@18.3.1)):
+  jotai-effect@1.0.2(jotai@2.9.3(@types/react@18.2.75)(react@18.3.1)):
     dependencies:
       jotai: 2.9.3(@types/react@18.2.75)(react@18.3.1)
 
