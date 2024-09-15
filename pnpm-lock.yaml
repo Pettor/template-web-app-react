@@ -21,8 +21,8 @@ importers:
         specifier: 11.13.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.2.75)(react@18.3.1))(@types/react@18.2.75)(react@18.3.1)
       '@fontsource/rubik':
-        specifier: 5.0.21
-        version: 5.0.21
+        specifier: 5.0.22
+        version: 5.0.22
       '@heroicons/react':
         specifier: 2.1.5
         version: 2.1.5(react@18.3.1)
@@ -1550,8 +1550,8 @@ packages:
   '@fal-works/esbuild-plugin-global-externals@2.1.2':
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
 
-  '@fontsource/rubik@5.0.21':
-    resolution: {integrity: sha512-llUikt1/wbKL+PG73KyAFJEBnvZDiqVn8vTjV6ce7QP91IRmpgIoE4vJj4a0udacQtGaN9dxjmb7MbSxHvw5iA==}
+  '@fontsource/rubik@5.0.22':
+    resolution: {integrity: sha512-HJpKdkoFrCLgXJCZ+xX4aSIVmHvyN/eGkMo7FmlRQQxFlgd4U6D6i+EF5GBI6WWfVy1J1R1vQg6uqETMHsxk9g==}
 
   '@formatjs/cli@6.2.9':
     resolution: {integrity: sha512-YH09kY6oufPdNDIwva/rC7wyg/ptJG6hRZ768eJEafiBR5R1VV1pKFmx106FV5WT7nzBm8Xf4Td+8+Mu+DtQsg==}
@@ -8840,7 +8840,7 @@ snapshots:
 
   '@fal-works/esbuild-plugin-global-externals@2.1.2': {}
 
-  '@fontsource/rubik@5.0.21': {}
+  '@fontsource/rubik@5.0.22': {}
 
   '@formatjs/cli@6.2.9': {}
 
