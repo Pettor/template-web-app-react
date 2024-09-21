@@ -21,14 +21,14 @@ importers:
         specifier: 11.13.0
         version: 11.13.0(@emotion/react@11.13.3(@types/react@18.2.75)(react@18.3.1))(@types/react@18.2.75)(react@18.3.1)
       '@fontsource/rubik':
-        specifier: 5.0.22
-        version: 5.0.22
+        specifier: 5.1.0
+        version: 5.1.0
       '@heroicons/react':
         specifier: 2.1.5
         version: 2.1.5(react@18.3.1)
       '@tanstack/react-query':
-        specifier: 5.55.2
-        version: 5.55.2(react@18.3.1)
+        specifier: 5.56.2
+        version: 5.56.2(react@18.3.1)
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.38)
@@ -36,8 +36,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       concurrently:
-        specifier: 9.0.0
-        version: 9.0.0
+        specifier: 9.0.1
+        version: 9.0.1
       daisyui:
         specifier: 4.12.10
         version: 4.12.10(postcss@8.4.38)
@@ -60,8 +60,8 @@ importers:
         specifier: 6.6.8
         version: 6.6.8(react@18.3.1)(typescript@5.4.5)
       wait-on:
-        specifier: 8.0.0
-        version: 8.0.0
+        specifier: 8.0.1
+        version: 8.0.1
       yup:
         specifier: 1.4.0
         version: 1.4.0
@@ -202,8 +202,8 @@ importers:
         specifier: 7.53.0
         version: 7.53.0(react@18.3.1)
       react-router-dom:
-        specifier: 6.26.1
-        version: 6.26.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.26.2
+        version: 6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-utils:
         specifier: workspace:*
         version: link:../../packages/react-utils
@@ -1550,8 +1550,8 @@ packages:
   '@fal-works/esbuild-plugin-global-externals@2.1.2':
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
 
-  '@fontsource/rubik@5.0.22':
-    resolution: {integrity: sha512-HJpKdkoFrCLgXJCZ+xX4aSIVmHvyN/eGkMo7FmlRQQxFlgd4U6D6i+EF5GBI6WWfVy1J1R1vQg6uqETMHsxk9g==}
+  '@fontsource/rubik@5.1.0':
+    resolution: {integrity: sha512-QyZQw03z/v1RltDPPtWxAQsYgmwbDY6CKH/YWubRY4x9UFGuAImwFYPitR2sTB/FBj0Dxf0DftoC9kqGZKWjug==}
 
   '@formatjs/cli@6.2.9':
     resolution: {integrity: sha512-YH09kY6oufPdNDIwva/rC7wyg/ptJG6hRZ768eJEafiBR5R1VV1pKFmx106FV5WT7nzBm8Xf4Td+8+Mu+DtQsg==}
@@ -1921,8 +1921,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@remix-run/router@1.19.1':
-    resolution: {integrity: sha512-S45oynt/WH19bHbIXjtli6QmwNYvaz+vtnubvNpNDvUOoA/OWh6j1OikIP3G+v5GHdxyC6EXoChG3HgYGEUfcg==}
+  '@remix-run/router@1.19.2':
+    resolution: {integrity: sha512-baiMx18+IMuD1yyvOGaHM9QrVUPGGG0jC+z+IPHnRJWUAUvaKuWKyE8gjDj2rzv3sz9zOGoRSPgeBVHRhZnBlA==}
     engines: {node: '>=14.0.0'}
 
   '@rollup/plugin-babel@5.3.1':
@@ -2387,11 +2387,11 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-  '@tanstack/query-core@5.55.2':
-    resolution: {integrity: sha512-WfuUx06sw/V3R2tRRQf4KZj0g4Q5EHrTdwJmCUovMFuHWVzDvLd5U+B7d5Pk8ni5w5SGpUuzGuQv3nN8xo1QbQ==}
+  '@tanstack/query-core@5.56.2':
+    resolution: {integrity: sha512-gor0RI3/R5rVV3gXfddh1MM+hgl0Z4G7tj6Xxpq6p2I03NGPaJ8dITY9Gz05zYYb/EJq9vPas/T4wn9EaDPd4Q==}
 
-  '@tanstack/react-query@5.55.2':
-    resolution: {integrity: sha512-PkbEmO64nphWPhufkE9aJ+iEScg8tNNCykYlH7vDwb2R6G8uJC+HTJgXc2n8cRaJe6ETVIeQLFFESVd+2N/tww==}
+  '@tanstack/react-query@5.56.2':
+    resolution: {integrity: sha512-SR0GzHVo6yzhN72pnRhkEFRAHMsUo5ZPzAxfTMvUxFIDVS6W9LYUp6nXW3fcHVdg0ZJl8opSH85jqahvm6DSVg==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -3393,8 +3393,8 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  concurrently@9.0.0:
-    resolution: {integrity: sha512-iAxbsDeUkn8E/4+QalT7T3WvlyTfmsoez+19lbbcsxZdOEMfBukd8LA30KYez2UR5xkKFzbcqXIZy5RisCbaxw==}
+  concurrently@9.0.1:
+    resolution: {integrity: sha512-wYKvCd/f54sTXJMSfV6Ln/B8UrfLBKOYa+lzc6CHay3Qek+LorVSBdMVfyewFhRbH0Rbabsk4D+3PL/VjQ5gzg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6236,15 +6236,15 @@ packages:
   react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  react-router-dom@6.26.1:
-    resolution: {integrity: sha512-veut7m41S1fLql4pLhxeSW3jlqs+4MtjRLj0xvuCEXsxusJCbs6I8yn9BxzzDX2XDgafrccY6hwjmd/bL54tFw==}
+  react-router-dom@6.26.2:
+    resolution: {integrity: sha512-z7YkaEW0Dy35T3/QKPYB1LjMK2R1fxnHO8kWpUMTBdfVzZrWOiY9a7CtN8HqdWtDUWd5FY6Dl8HFsqVwH4uOtQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
 
-  react-router@6.26.1:
-    resolution: {integrity: sha512-kIwJveZNwp7teQRI5QmwWo39A5bXRyqpH0COKKmPnyD2vBvDwgFXSqDUYtt1h+FEyfnE8eXr7oe0MxRzVwCcvQ==}
+  react-router@6.26.2:
+    resolution: {integrity: sha512-tvN1iuT03kHgOFnLPfLJ8V95eijteveqdOSk+srqfePtQvqCExB8eHOYnlilbOcyJyKnYkr1vJvf7YqotAJu1A==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
@@ -7322,8 +7322,8 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  wait-on@8.0.0:
-    resolution: {integrity: sha512-fNE5SXinLr2Bt7cJvjvLg2PcXfqznlqRvtE3f8AqYdRZ9BhE+XpsCp1mwQbRoO7s1q7uhAuCw0Ro3mG/KdZjEw==}
+  wait-on@8.0.1:
+    resolution: {integrity: sha512-1wWQOyR2LVVtaqrcIL2+OM+x7bkpmzVROa0Nf6FryXkS+er5Sa1kzFGjzZRqLnHa3n1rACFLeTwUqE1ETL9Mig==}
     engines: {node: '>=12.0.0'}
     hasBin: true
 
@@ -8833,7 +8833,7 @@ snapshots:
 
   '@fal-works/esbuild-plugin-global-externals@2.1.2': {}
 
-  '@fontsource/rubik@5.0.22': {}
+  '@fontsource/rubik@5.1.0': {}
 
   '@formatjs/cli@6.2.9': {}
 
@@ -9393,7 +9393,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.2.75
 
-  '@remix-run/router@1.19.1': {}
+  '@remix-run/router@1.19.2': {}
 
   '@rollup/plugin-babel@5.3.1(@babel/core@7.24.4)(@types/babel__core@7.20.5)(rollup@2.79.1)':
     dependencies:
@@ -10328,11 +10328,11 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.3
 
-  '@tanstack/query-core@5.55.2': {}
+  '@tanstack/query-core@5.56.2': {}
 
-  '@tanstack/react-query@5.55.2(react@18.3.1)':
+  '@tanstack/react-query@5.56.2(react@18.3.1)':
     dependencies:
-      '@tanstack/query-core': 5.55.2
+      '@tanstack/query-core': 5.56.2
       react: 18.3.1
 
   '@testing-library/dom@9.3.4':
@@ -11528,7 +11528,7 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  concurrently@9.0.0:
+  concurrently@9.0.1:
     dependencies:
       chalk: 4.1.2
       lodash: 4.17.21
@@ -14841,16 +14841,16 @@ snapshots:
 
   react-is@18.2.0: {}
 
-  react-router-dom@6.26.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router-dom@6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@remix-run/router': 1.19.1
+      '@remix-run/router': 1.19.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.26.1(react@18.3.1)
+      react-router: 6.26.2(react@18.3.1)
 
-  react-router@6.26.1(react@18.3.1):
+  react-router@6.26.2(react@18.3.1):
     dependencies:
-      '@remix-run/router': 1.19.1
+      '@remix-run/router': 1.19.2
       react: 18.3.1
 
   react@18.3.1:
@@ -16075,7 +16075,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  wait-on@8.0.0:
+  wait-on@8.0.1:
     dependencies:
       axios: 1.7.7(debug@4.3.4)
       joi: 17.13.3
