@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import type { ReactElement } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { RouterProvider, Route, createHashRouter, createRoutesFromElements, Outlet } from "react-router-dom";

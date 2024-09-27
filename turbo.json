@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": ["PORT"],
-  "pipeline": {
+  "tasks": {
     "prepare": {
       "cache": true
     },

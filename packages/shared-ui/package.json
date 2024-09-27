@@ -37,7 +37,7 @@
     "eslint-config-custom": "workspace:*",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*",
-    "vite-tsconfig-paths": "5.0.1"
+    "vite-tsconfig-paths": "4.3.2"
   },
   "jest-junit": {
     "suiteName": "shared-ui tests",
