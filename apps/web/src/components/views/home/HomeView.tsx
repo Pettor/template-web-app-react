@@ -36,10 +36,7 @@ function GridItem({
   const intl = useIntl();
 
   return (
-    <div
-      className="card bg-base-300 bg-opacity-20 shadow-inner transition-colors hover:bg-neutral-content/70
-        dark:hover:bg-neutral/40"
-    >
+    <div className="card bg-base-300 bg-opacity-20 shadow-inner transition-colors hover:bg-neutral-content/70 dark:hover:bg-neutral/40">
       <div className="card-body glass min-h-56 rounded-xl dark:bg-none">
         <h2 className="card-title">
           {imageSrc && (
@@ -92,10 +89,7 @@ export function HomeView({ appNavbarProps, appSocialLinkProps, onGotoClick }: Ho
                 })}
                 &nbsp;
               </span>
-              <span
-                className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-4xl font-bold text-transparent md:text-5xl
-                  lg:text-7xl"
-              >
+              <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-7xl">
                 {intl.formatMessage({
                   description: "HomeView - Header title start",
                   defaultMessage: "React",
