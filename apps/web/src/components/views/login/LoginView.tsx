@@ -61,7 +61,7 @@ export function LoginView({
                   <LoginForm {...loginForm} />
                 </div>
                 <br />
-                <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-5 ">
+                <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-5">
                   <button className="btn btn-link z-20 col-span-2 justify-start" onClick={onForgotPassword}>
                     {intl.formatMessage({
                       description: "LoginViewLink - Forgot password",

@@ -9,7 +9,7 @@ export interface NavbarProps {
 
 export function Navbar({ title, centerElement, endElement }: NavbarProps): ReactElement {
   return (
-    <div className="glass navbar bg-opacity-55 p-0 dark:bg-opacity-100 dark:bg-none ">
+    <div className="glass navbar bg-opacity-55 p-0 dark:bg-opacity-100 dark:bg-none">
       <div className="container navbar min-h-0 p-0">
         <div className="navbar-start h-full">
           <Logo size="small" />
