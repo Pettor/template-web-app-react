@@ -57,8 +57,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
       react-intl:
-        specifier: 6.6.8
-        version: 6.6.8(react@18.3.1)(typescript@5.6.2)
+        specifier: 6.7.0
+        version: 6.7.0(react@18.3.1)(typescript@5.6.2)
       wait-on:
         specifier: 8.0.1
         version: 8.0.1(debug@4.3.7)
@@ -1537,8 +1537,8 @@ packages:
   '@formatjs/intl-localematcher@0.5.4':
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
 
-  '@formatjs/intl@2.10.4':
-    resolution: {integrity: sha512-56483O+HVcL0c7VucAS2tyH020mt9XTozZO67cwtGg0a7KWDukS/FzW3OnvaHmTHDuYsoPIzO+ZHVfU6fT/bJw==}
+  '@formatjs/intl@2.10.5':
+    resolution: {integrity: sha512-f9qPNNgLrh2KvoFvHGIfcPTmNGbyy7lyyV4/P6JioDqtTE7Akdmgt+ZzVndr+yMLZnssUShyTMXxM/6aV9eVuQ==}
     peerDependencies:
       typescript: ^4.7 || 5
     peerDependenciesMeta:
@@ -5927,8 +5927,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
-  react-intl@6.6.8:
-    resolution: {integrity: sha512-M0pkhzcgV31h++2901BiRXWl69hp2zPyLxRrSwRjd1ErXbNoubz/f4M6DrRTd4OiSUrT4ajRQzrmtS5plG4FtA==}
+  react-intl@6.7.0:
+    resolution: {integrity: sha512-f5QhjuKb+WEqiAbL5hDqUs2+sSRkF0vxkTbJ4A8ompt55XTyOHcrDlCXGq4o73ywFFrpgz+78C9IXegSLlya2A==}
     peerDependencies:
       react: ^16.6.0 || 17 || 18
       typescript: ^4.7 || 5
@@ -8413,7 +8413,7 @@ snapshots:
     dependencies:
       tslib: 2.6.2
 
-  '@formatjs/intl@2.10.4(typescript@5.6.2)':
+  '@formatjs/intl@2.10.5(typescript@5.6.2)':
     dependencies:
       '@formatjs/ecma402-abstract': 2.0.0
       '@formatjs/fast-memoize': 2.2.0
@@ -13751,11 +13751,11 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  react-intl@6.6.8(react@18.3.1)(typescript@5.6.2):
+  react-intl@6.7.0(react@18.3.1)(typescript@5.6.2):
     dependencies:
       '@formatjs/ecma402-abstract': 2.0.0
       '@formatjs/icu-messageformat-parser': 2.7.8
-      '@formatjs/intl': 2.10.4(typescript@5.6.2)
+      '@formatjs/intl': 2.10.5(typescript@5.6.2)
       '@formatjs/intl-displaynames': 6.6.8
       '@formatjs/intl-listformat': 7.5.7
       '@types/hoist-non-react-statics': 3.3.5
