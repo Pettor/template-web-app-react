@@ -39,13 +39,13 @@
   },
   "devDependencies": {
     "@formatjs/cli": "6.2.12",
-    "@storybook/addon-a11y": "8.3.2",
+    "@storybook/addon-a11y": "8.3.4",
     "@storybook/addon-coverage": "1.0.4",
-    "@storybook/addon-essentials": "8.3.2",
-    "@storybook/addon-interactions": "8.3.2",
-    "@storybook/addon-themes": "8.3.2",
-    "@storybook/addon-viewport": "8.3.2",
-    "@vitejs/plugin-react-swc": "3.7.0",
+    "@storybook/addon-essentials": "8.3.4",
+    "@storybook/addon-interactions": "8.3.4",
+    "@storybook/addon-themes": "8.3.4",
+    "@storybook/addon-viewport": "8.3.4",
+    "@vitejs/plugin-react-swc": "3.7.1",
     "eslint-config-custom": "workspace:*",
     "http-server": "14.1.1",
     "start-server-and-test": "2.0.8",
@@ -54,7 +54,7 @@
     "vite-plugin-http2-proxy": "0.4.3",
     "vite-plugin-mkcert": "1.17.6",
     "vite-plugin-pwa": "0.20.5",
-    "vite-tsconfig-paths": "4.3.2",
+    "vite-tsconfig-paths": "5.0.1",
     "workbox-window": "7.1.0"
   },
   "jest-junit": {
