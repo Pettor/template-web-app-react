@@ -129,7 +129,7 @@ jobs:
         run: pnpm test:e2e
 
       - name: Publish test summary
-        uses: mikepenz/action-junit-report@v4
+        uses: mikepenz/action-junit-report@v5
         with:
           report_paths: "**/.test-results/*.xml"
           check_name: "Test Summary E2E"
@@ -198,7 +198,7 @@ jobs:
         continue-on-error: true
 
       - name: Publish test summary
-        uses: mikepenz/action-junit-report@v4
+        uses: mikepenz/action-junit-report@v5
         with:
           report_paths: "**/.junit/*.xml"
           check_name: "Test Summary Components"
