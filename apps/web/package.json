@@ -29,10 +29,10 @@
     "storybook:test": "test-storybook --url http://127.0.0.1:9055"
   },
   "dependencies": {
-    "@hookform/resolvers": "3.9.0",
+    "@hookform/resolvers": "3.9.1",
     "core-api": "workspace:*",
-    "react-hook-form": "7.53.0",
-    "react-router-dom": "6.26.2",
+    "react-hook-form": "7.53.1",
+    "react-router-dom": "6.27.0",
     "react-utils": "workspace:*",
     "shared-ui": "workspace:*",
     "tailwind": "workspace:*"
