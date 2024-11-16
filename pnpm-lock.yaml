@@ -27,8 +27,8 @@ importers:
         specifier: 2.1.5
         version: 2.1.5(react@18.3.1)
       '@tanstack/react-query':
-        specifier: 5.59.19
-        version: 5.59.19(react@18.3.1)
+        specifier: 5.59.20
+        version: 5.59.20(react@18.3.1)
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.47)
@@ -36,8 +36,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       concurrently:
-        specifier: 9.0.1
-        version: 9.0.1
+        specifier: 9.1.0
+        version: 9.1.0
       daisyui:
         specifier: 4.12.14
         version: 4.12.14(postcss@8.4.47)
@@ -57,8 +57,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
       react-intl:
-        specifier: 6.8.5
-        version: 6.8.5(react@18.3.1)(typescript@5.6.2)
+        specifier: 6.8.7
+        version: 6.8.7(react@18.3.1)(typescript@5.6.2)
       wait-on:
         specifier: 8.0.1
         version: 8.0.1(debug@4.3.7)
@@ -194,16 +194,16 @@ importers:
     dependencies:
       '@hookform/resolvers':
         specifier: 3.9.1
-        version: 3.9.1(react-hook-form@7.53.1(react@18.3.1))
+        version: 3.9.1(react-hook-form@7.53.2(react@18.3.1))
       core-api:
         specifier: workspace:*
         version: link:../../packages/core-api
       react-hook-form:
-        specifier: 7.53.1
-        version: 7.53.1(react@18.3.1)
+        specifier: 7.53.2
+        version: 7.53.2(react@18.3.1)
       react-router-dom:
-        specifier: 6.27.0
-        version: 6.27.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 6.28.0
+        version: 6.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-utils:
         specifier: workspace:*
         version: link:../../packages/react-utils
@@ -1519,8 +1519,8 @@ packages:
   '@formatjs/ecma402-abstract@2.0.0':
     resolution: {integrity: sha512-rRqXOqdFmk7RYvj4khklyqzcfQl9vEL/usogncBHRZfZBDOwMGuSRNFl02fu5KGHXdbinju+YXyuR+Nk8xlr/g==}
 
-  '@formatjs/ecma402-abstract@2.2.2':
-    resolution: {integrity: sha512-zReeOJo3gA6Lgk4gTsUUdCwwTBa+Tw0LcqKHD84JCAJdPSxsxKdKPAPXihVgKDZevIWFGi4UTpy7JJ3D5EWeSw==}
+  '@formatjs/ecma402-abstract@2.2.3':
+    resolution: {integrity: sha512-aElGmleuReGnk2wtYOzYFmNWYoiWWmf1pPPCYg0oiIQSJj0mjc4eUfzUXaSOJ4S8WzI/cLqnCTWjqz904FT2OQ==}
 
   '@formatjs/fast-memoize@2.2.3':
     resolution: {integrity: sha512-3jeJ+HyOfu8osl3GNSL4vVHUuWFXR03Iz9jjgI7RwjG6ysu/Ymdr0JRCPHfF5yGbTE6JCrd63EpvX1/WybYRbA==}
@@ -1528,20 +1528,20 @@ packages:
   '@formatjs/icu-messageformat-parser@2.7.8':
     resolution: {integrity: sha512-nBZJYmhpcSX0WeJ5SDYUkZ42AgR3xiyhNCsQweFx3cz/ULJjym8bHAzWKvG5e2+1XO98dBYC0fWeeAECAVSwLA==}
 
-  '@formatjs/icu-messageformat-parser@2.9.2':
-    resolution: {integrity: sha512-WAQ2zGbroadkWXUDDjbGUOBN0TeDUEC47lcXV8wTtFN1QYCI1T26AVWOHqvVMVBqXHheKa82myjEVaXWVTwBNA==}
+  '@formatjs/icu-messageformat-parser@2.9.3':
+    resolution: {integrity: sha512-9L99QsH14XjOCIp4TmbT8wxuffJxGK8uLNO1zNhLtcZaVXvv626N0s4A2qgRCKG3dfYWx9psvGlFmvyVBa6u/w==}
 
   '@formatjs/icu-skeleton-parser@1.8.2':
     resolution: {integrity: sha512-k4ERKgw7aKGWJZgTarIcNEmvyTVD9FYh0mTrrBMHZ1b8hUu6iOJ4SzsZlo3UNAvHYa+PnvntIwRPt1/vy4nA9Q==}
 
-  '@formatjs/icu-skeleton-parser@1.8.6':
-    resolution: {integrity: sha512-rQXThZE7lxhw1eaOyu4mmFdKBYlh/dyYPSFB6hR3lZqPOm5vYdyHekQaxld9WIofZK2e3rxfel81RfAuy8kdIw==}
+  '@formatjs/icu-skeleton-parser@1.8.7':
+    resolution: {integrity: sha512-fI+6SmS2g7h3srfAKSWa5dwreU5zNEfon2uFo99OToiLF6yxGE+WikvFSbsvMAYkscucvVmTYNlWlaDPp0n5HA==}
 
-  '@formatjs/intl-displaynames@6.8.2':
-    resolution: {integrity: sha512-p1oOYVBB3n2FpSRyXg0UYtXbh06yJQqIJOdaxxJukCH75WgxHqu8Hc1TBl13amJJjUykiQsXgaTwDe8/rpymBw==}
+  '@formatjs/intl-displaynames@6.8.4':
+    resolution: {integrity: sha512-HDVNBspDAOW0yTWluWTPHX2fk/9iBO4oST4R96f/IUaPGsFtjsHrpakwc+XDRPa3U5RniSEU2z34ZY0W78+E6Q==}
 
-  '@formatjs/intl-listformat@7.7.2':
-    resolution: {integrity: sha512-JJrYYmDPIxFn9WxNh6Mw3nl0FErP7IxvWv2qkvSFqRcpG2jtbPINv/ow+LYPZHSl6BeQduKlK1J5SIdemT6vaQ==}
+  '@formatjs/intl-listformat@7.7.4':
+    resolution: {integrity: sha512-lipFspH2MZcoeXxR6WSR/Jy9unzJ/iT0w+gbL8vgv25Ap0S9cUtcDVAce4ECEKI1bDtAvEU3b6+9Dha27gAikA==}
 
   '@formatjs/intl-localematcher@0.5.4':
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
@@ -1549,8 +1549,8 @@ packages:
   '@formatjs/intl-localematcher@0.5.7':
     resolution: {integrity: sha512-GGFtfHGQVFe/niOZp24Kal5b2i36eE2bNL0xi9Sg/yd0TR8aLjcteApZdHmismP5QQax1cMnZM9yWySUUjJteA==}
 
-  '@formatjs/intl@2.10.12':
-    resolution: {integrity: sha512-xdOYCKlK4P+swVrOdrdFkArYO6KDDOb97GScSVbxoja9tL6TxHgiRhqvEwqNcEj46SNdSAXLN3hvrLJR99fDqg==}
+  '@formatjs/intl@2.10.14':
+    resolution: {integrity: sha512-4CA1EO75i/mSMHdjwfpgRj3Rsdsm6WjALeu/nlzYhBmAPxGu/Ha5GIRHAet5SO05TnpmqxmEGOsskWqFm0IeoA==}
     peerDependencies:
       typescript: ^4.7 || 5
     peerDependenciesMeta:
@@ -1865,8 +1865,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@remix-run/router@1.20.0':
-    resolution: {integrity: sha512-mUnk8rPJBI9loFDZ+YzPGdeniYK+FTmRD1TMCz7ev2SNIozyKKpnGgsxO34u6Z4z/t0ITuu7voi/AshfsGsgFg==}
+  '@remix-run/router@1.21.0':
+    resolution: {integrity: sha512-xfSkCAchbdG5PnbrKqFWwia4Bi61nH+wm8wLEqfHDyp7Y3dZzgqS2itV8i4gAq9pC2HsTpwyBC6Ds8VHZ96JlA==}
     engines: {node: '>=14.0.0'}
 
   '@rollup/plugin-babel@5.3.1':
@@ -2319,11 +2319,11 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
 
-  '@tanstack/query-core@5.59.17':
-    resolution: {integrity: sha512-jWdDiif8kaqnRGHNXAa9CnudtxY5v9DUxXhodgqX2Rwzj+1UwStDHEbBd9IA5C7VYAaJ2s+BxFR6PUBs8ERorA==}
+  '@tanstack/query-core@5.59.20':
+    resolution: {integrity: sha512-e8vw0lf7KwfGe1if4uPFhvZRWULqHjFcz3K8AebtieXvnMOz5FSzlZe3mTLlPuUBcydCnBRqYs2YJ5ys68wwLg==}
 
-  '@tanstack/react-query@5.59.19':
-    resolution: {integrity: sha512-xLRfyFyQOFcLltKCds0LijfC6/HQJrrTTnZB8ciyn74LIkVAm++vZJ6eUVG20RmJtdP8REdy7vSOYW4M3//XLA==}
+  '@tanstack/react-query@5.59.20':
+    resolution: {integrity: sha512-Zly0egsK0tFdfSbh5/mapSa+Zfc3Et0Zkar7Wo5sQkFzWyB3p3uZWOHR2wrlAEEV2L953eLuDBtbgFvMYiLvUw==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -3243,8 +3243,8 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  concurrently@9.0.1:
-    resolution: {integrity: sha512-wYKvCd/f54sTXJMSfV6Ln/B8UrfLBKOYa+lzc6CHay3Qek+LorVSBdMVfyewFhRbH0Rbabsk4D+3PL/VjQ5gzg==}
+  concurrently@9.1.0:
+    resolution: {integrity: sha512-VxkzwMAn4LP7WyMnJNbHN5mKV9L2IbyDjpzemKr99sXNR3GqRNMMHdm7prV1ws9wg7ETj6WUkNOigZVsptwbgg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4451,8 +4451,8 @@ packages:
     resolution: {integrity: sha512-NGnrKwXzSms2qUUih/ILZ5JBqNTSa1+ZmP6flaIp6KmSElgE9qdndzS3cqjrDovwFdmwsGsLdeFgB6suw+1e9g==}
     engines: {node: '>= 0.4'}
 
-  intl-messageformat@10.7.4:
-    resolution: {integrity: sha512-D4wGk8/XAp/5YMLtTXR+BUyGeSl4+28N43cwXXmIGQ8Tt+STA/oUsz9KUerzgiwBlJ+2dRDsQ3qQvvlVF6jzFA==}
+  intl-messageformat@10.7.6:
+    resolution: {integrity: sha512-IsMU/hqyy3FJwNJ0hxDfY2heJ7MteSuFvcnCebxRp67di4Fhx1gKKE+qS0bBwUF8yXkX9SsPUhLeX/B6h5SKUA==}
 
   ipaddr.js@1.9.1:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
@@ -5931,14 +5931,14 @@ packages:
       react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
       react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
 
-  react-hook-form@7.53.1:
-    resolution: {integrity: sha512-6aiQeBda4zjcuaugWvim9WsGqisoUk+etmFEsSUMm451/Ic8L/UAb7sRtMj3V+Hdzm6mMjU1VhiSzYUZeBm0Vg==}
+  react-hook-form@7.53.2:
+    resolution: {integrity: sha512-YVel6fW5sOeedd1524pltpHX+jgU2u3DSDtXEaBORNdqiNrsX/nUI/iGXONegttg0mJVnfrIkiV0cmTU6Oo2xw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
-  react-intl@6.8.5:
-    resolution: {integrity: sha512-shWnEkOaMPq7FmDiHoi+pE2/WT9RXSRI9tk7MNylnKOpW71cOr2kXbtnJO4vdjaK8Enkm9D7/QzYzXkVIYfQVQ==}
+  react-intl@6.8.7:
+    resolution: {integrity: sha512-Ocv8Tg6fXqBdVdkkYohQ79T9rJls3G1lmDSjhqHdK9873BdQFLSeITGgwuGWTRBd6Mg5FL33TBen4FtujCTP0g==}
     peerDependencies:
       react: ^16.6.0 || 17 || 18
       typescript: ^4.7 || 5
@@ -5958,15 +5958,15 @@ packages:
   react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  react-router-dom@6.27.0:
-    resolution: {integrity: sha512-+bvtFWMC0DgAFrfKXKG9Fc+BcXWRUO1aJIihbB79xaeq0v5UzfvnM5houGUm1Y461WVRcgAQ+Clh5rdb1eCx4g==}
+  react-router-dom@6.28.0:
+    resolution: {integrity: sha512-kQ7Unsl5YdyOltsPGl31zOjLrDv+m2VcIEcIHqYYD3Lp0UppLjrzcfJqDJwXxFw3TH/yvapbnUvPlAj7Kx5nbg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
       react-dom: '>=16.8'
 
-  react-router@6.27.0:
-    resolution: {integrity: sha512-YA+HGZXz4jaAkVoYBE98VQl+nVzI+cVI2Oj/06F5ZM+0u3TgedN9Y9kmMRo2mnkSK2nCpNQn0DVob4HCsY/WLw==}
+  react-router@6.28.0:
+    resolution: {integrity: sha512-HrYdIFqdrnhDw0PqG/AKjAqEqM7AvxCz0DQ4h2W8k6nqmc5uRBYDag0SBxx9iYz5G8gnuNVLzUe13wl9eAsXXg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
@@ -8392,7 +8392,7 @@ snapshots:
       '@formatjs/intl-localematcher': 0.5.4
       tslib: 2.6.2
 
-  '@formatjs/ecma402-abstract@2.2.2':
+  '@formatjs/ecma402-abstract@2.2.3':
     dependencies:
       '@formatjs/fast-memoize': 2.2.3
       '@formatjs/intl-localematcher': 0.5.7
@@ -8408,10 +8408,10 @@ snapshots:
       '@formatjs/icu-skeleton-parser': 1.8.2
       tslib: 2.6.2
 
-  '@formatjs/icu-messageformat-parser@2.9.2':
+  '@formatjs/icu-messageformat-parser@2.9.3':
     dependencies:
-      '@formatjs/ecma402-abstract': 2.2.2
-      '@formatjs/icu-skeleton-parser': 1.8.6
+      '@formatjs/ecma402-abstract': 2.2.3
+      '@formatjs/icu-skeleton-parser': 1.8.7
       tslib: 2.6.2
 
   '@formatjs/icu-skeleton-parser@1.8.2':
@@ -8419,20 +8419,20 @@ snapshots:
       '@formatjs/ecma402-abstract': 2.0.0
       tslib: 2.6.2
 
-  '@formatjs/icu-skeleton-parser@1.8.6':
+  '@formatjs/icu-skeleton-parser@1.8.7':
     dependencies:
-      '@formatjs/ecma402-abstract': 2.2.2
+      '@formatjs/ecma402-abstract': 2.2.3
       tslib: 2.6.2
 
-  '@formatjs/intl-displaynames@6.8.2':
+  '@formatjs/intl-displaynames@6.8.4':
     dependencies:
-      '@formatjs/ecma402-abstract': 2.2.2
+      '@formatjs/ecma402-abstract': 2.2.3
       '@formatjs/intl-localematcher': 0.5.7
       tslib: 2.6.2
 
-  '@formatjs/intl-listformat@7.7.2':
+  '@formatjs/intl-listformat@7.7.4':
     dependencies:
-      '@formatjs/ecma402-abstract': 2.2.2
+      '@formatjs/ecma402-abstract': 2.2.3
       '@formatjs/intl-localematcher': 0.5.7
       tslib: 2.6.2
 
@@ -8444,14 +8444,14 @@ snapshots:
     dependencies:
       tslib: 2.6.2
 
-  '@formatjs/intl@2.10.12(typescript@5.6.2)':
+  '@formatjs/intl@2.10.14(typescript@5.6.2)':
     dependencies:
-      '@formatjs/ecma402-abstract': 2.2.2
+      '@formatjs/ecma402-abstract': 2.2.3
       '@formatjs/fast-memoize': 2.2.3
-      '@formatjs/icu-messageformat-parser': 2.9.2
-      '@formatjs/intl-displaynames': 6.8.2
-      '@formatjs/intl-listformat': 7.7.2
-      intl-messageformat: 10.7.4
+      '@formatjs/icu-messageformat-parser': 2.9.3
+      '@formatjs/intl-displaynames': 6.8.4
+      '@formatjs/intl-listformat': 7.7.4
+      intl-messageformat: 10.7.6
       tslib: 2.6.2
     optionalDependencies:
       typescript: 5.6.2
@@ -8480,9 +8480,9 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  '@hookform/resolvers@3.9.1(react-hook-form@7.53.1(react@18.3.1))':
+  '@hookform/resolvers@3.9.1(react-hook-form@7.53.2(react@18.3.1))':
     dependencies:
-      react-hook-form: 7.53.1(react@18.3.1)
+      react-hook-form: 7.53.2(react@18.3.1)
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -8935,7 +8935,7 @@ snapshots:
     dependencies:
       playwright: 1.47.1
 
-  '@remix-run/router@1.20.0': {}
+  '@remix-run/router@1.21.0': {}
 
   '@rollup/plugin-babel@5.3.1(@babel/core@7.24.4)(@types/babel__core@7.20.5)(rollup@2.79.1)':
     dependencies:
@@ -9537,11 +9537,11 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.12
 
-  '@tanstack/query-core@5.59.17': {}
+  '@tanstack/query-core@5.59.20': {}
 
-  '@tanstack/react-query@5.59.19(react@18.3.1)':
+  '@tanstack/react-query@5.59.20(react@18.3.1)':
     dependencies:
-      '@tanstack/query-core': 5.59.17
+      '@tanstack/query-core': 5.59.20
       react: 18.3.1
 
   '@testing-library/dom@10.4.0':
@@ -10661,7 +10661,7 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  concurrently@9.0.1:
+  concurrently@9.1.0:
     dependencies:
       chalk: 4.1.2
       lodash: 4.17.21
@@ -12163,11 +12163,11 @@ snapshots:
       hasown: 2.0.2
       side-channel: 1.0.6
 
-  intl-messageformat@10.7.4:
+  intl-messageformat@10.7.6:
     dependencies:
-      '@formatjs/ecma402-abstract': 2.2.2
+      '@formatjs/ecma402-abstract': 2.2.3
       '@formatjs/fast-memoize': 2.2.3
-      '@formatjs/icu-messageformat-parser': 2.9.2
+      '@formatjs/icu-messageformat-parser': 2.9.3
       tslib: 2.6.2
 
   ipaddr.js@1.9.1: {}
@@ -13776,21 +13776,21 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       react-is: 18.1.0
 
-  react-hook-form@7.53.1(react@18.3.1):
+  react-hook-form@7.53.2(react@18.3.1):
     dependencies:
       react: 18.3.1
 
-  react-intl@6.8.5(react@18.3.1)(typescript@5.6.2):
+  react-intl@6.8.7(react@18.3.1)(typescript@5.6.2):
     dependencies:
-      '@formatjs/ecma402-abstract': 2.2.2
-      '@formatjs/icu-messageformat-parser': 2.9.2
-      '@formatjs/intl': 2.10.12(typescript@5.6.2)
-      '@formatjs/intl-displaynames': 6.8.2
-      '@formatjs/intl-listformat': 7.7.2
+      '@formatjs/ecma402-abstract': 2.2.3
+      '@formatjs/icu-messageformat-parser': 2.9.3
+      '@formatjs/intl': 2.10.14(typescript@5.6.2)
+      '@formatjs/intl-displaynames': 6.8.4
+      '@formatjs/intl-listformat': 7.7.4
       '@types/hoist-non-react-statics': 3.3.5
       '@types/react': 18.3.8
       hoist-non-react-statics: 3.3.2
-      intl-messageformat: 10.7.4
+      intl-messageformat: 10.7.6
       react: 18.3.1
       tslib: 2.6.2
     optionalDependencies:
@@ -13804,16 +13804,16 @@ snapshots:
 
   react-is@18.2.0: {}
 
-  react-router-dom@6.27.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-router-dom@6.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@remix-run/router': 1.20.0
+      '@remix-run/router': 1.21.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-router: 6.27.0(react@18.3.1)
+      react-router: 6.28.0(react@18.3.1)
 
-  react-router@6.27.0(react@18.3.1):
+  react-router@6.28.0(react@18.3.1):
     dependencies:
-      '@remix-run/router': 1.20.0
+      '@remix-run/router': 1.21.0
       react: 18.3.1
 
   react@18.3.1:
