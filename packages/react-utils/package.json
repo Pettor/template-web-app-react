@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "clean:all": "pnpm clean node_modules",
-    "lint": "eslint ./src --ext .ts",
+    "lint": "eslint ./src",
     "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
