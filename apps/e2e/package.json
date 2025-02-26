@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@playwright/test": "1.47.1",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config": "workspace:*",
     "mocks-client": "workspace:*",
     "tsconfig": "workspace:*"
   }

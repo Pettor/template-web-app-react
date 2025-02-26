@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.6.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "tsc && vite build",
     "deploy": "pnpm deploy:build && pnpm deploy:move",
@@ -46,7 +47,7 @@
     "@storybook/addon-themes": "8.3.2",
     "@storybook/addon-viewport": "8.3.2",
     "@vitejs/plugin-react-swc": "3.7.0",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config": "workspace:*",
     "http-server": "14.1.1",
     "start-server-and-test": "2.0.8",
     "storybook-base": "workspace:*",
