@@ -7,11 +7,11 @@
     "clean": "rimraf dist",
     "clean:all": "pnpm clean",
     "mocks": "mocks-server",
-    "lint": "eslint ./mocks --ext .json",
+    "lint": "eslint ./mocks",
     "lint:fix": "pnpm lint --fix",
     "test:e2e:env": "mocks-server --no-plugins.inquirerCli.enabled --log=silent"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*"
+    "eslint-config": "workspace:*"
   }
 }

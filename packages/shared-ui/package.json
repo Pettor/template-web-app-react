@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf dist storybook-static .junit coverage",
     "clean:all": "pnpm clean node_modules",
-    "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
+    "lint": "eslint ./src ./.storybook",
     "lint:fix": "pnpm lint --fix",
     "test": "test-storybook --url http://127.0.0.1:9060",
     "test:unit": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test --junit --coverage\"",
@@ -34,7 +34,7 @@
     "@storybook/addon-interactions": "8.3.2",
     "@storybook/addon-themes": "8.3.2",
     "@storybook/addon-viewport": "8.3.2",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config": "workspace:*",
     "storybook-base": "workspace:*",
     "tsconfig": "workspace:*",
     "vite-tsconfig-paths": "4.3.2"
