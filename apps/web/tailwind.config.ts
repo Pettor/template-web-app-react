@@ -7,8 +7,8 @@ import type { Config } from "tailwindcss";
 const config: Pick<Config, "content" | "presets"> = {
   content: [
     join("./src", TAILWIND_CONSTANTS_CONTENT_FORMATS),
-    join(require.resolve("shared-ui"), "..", TAILWIND_CONSTANTS_CONTENT_FORMATS),
-    join(require.resolve("storybook-base"), "..", TAILWIND_CONSTANTS_CONTENT_FORMATS),
+    join(require.resolve("ui-package"), "..", TAILWIND_CONSTANTS_CONTENT_FORMATS),
+    join(require.resolve("storybook-package"), "..", TAILWIND_CONSTANTS_CONTENT_FORMATS),
   ],
   presets: [sharedConfig],
 };

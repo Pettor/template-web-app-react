@@ -29,12 +29,12 @@
     "storybook": "pnpm storybook:dev:combined",
     "storybook:dev:combined": "cross-env STORYBOOK_MODE=combined turbo run storybook:dev --filter=web --no-daemon",
     "storybook:dev:web": "turbo run storybook:dev --filter=web --no-daemon",
-    "storybook:dev:ui": "turbo run storybook:dev --filter=shared-ui --no-daemon",
+    "storybook:dev:ui": "turbo run storybook:dev --filter=ui-package --no-daemon",
     "storybook:build": "turbo run storybook:build --parallel --no-daemon",
     "storybook:publish": "turbo run storybook:publish --parallel --no-daemon",
     "storybook:move": "pnpm storybook:move:web && pnpm storybook:move:ui",
     "storybook:move:web": "turbo run storybook:move --filter=web --no-daemon",
-    "storybook:move:ui": "turbo run storybook:move --filter=shared-ui --no-daemon"
+    "storybook:move:ui": "turbo run storybook:move --filter=ui-package --no-daemon"
   },
   "dependencies": {
     "@emotion/core": "11.0.0",

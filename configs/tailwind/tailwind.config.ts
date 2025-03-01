@@ -5,7 +5,7 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     join("./src", TAILWIND_CONSTANTS_CONTENT_FORMATS),
-    join(require.resolve("storybook-base"), "..", TAILWIND_CONSTANTS_CONTENT_FORMATS),
+    join(require.resolve("storybook-package"), "..", TAILWIND_CONSTANTS_CONTENT_FORMATS),
   ],
   darkMode: ["class"],
   daisyui: {

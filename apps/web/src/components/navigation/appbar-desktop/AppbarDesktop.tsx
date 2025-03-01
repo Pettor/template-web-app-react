@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
-import type { NavbarProps } from "shared-ui";
-import { Navbar, GithubIcon, LinkedInIcon } from "shared-ui";
+import type { NavbarProps } from "ui-package";
+import { Navbar, GithubIcon, LinkedInIcon } from "ui-package";
 import type { IAppbar } from "~/classes/appbar/IAppbar";
 import { ThemeSwitch } from "~/components/actions/theme-switch/ThemeSwitch";
 import { ProfileCard } from "~/components/feedback/profile-card/ProfileCard";

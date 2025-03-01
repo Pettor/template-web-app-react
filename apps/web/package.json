@@ -31,12 +31,12 @@
   },
   "dependencies": {
     "@hookform/resolvers": "3.9.1",
-    "core-api": "workspace:*",
+    "api-package": "workspace:*",
     "react-hook-form": "7.53.2",
     "react-router-dom": "6.28.0",
-    "react-utils": "workspace:*",
-    "shared-ui": "workspace:*",
-    "tailwind": "workspace:*"
+    "react-package": "workspace:*",
+    "ui-package": "workspace:*",
+    "tailwind-config": "workspace:*"
   },
   "devDependencies": {
     "@formatjs/cli": "6.2.12",
@@ -50,8 +50,8 @@
     "eslint-config": "workspace:*",
     "http-server": "14.1.1",
     "start-server-and-test": "2.0.8",
-    "storybook-base": "workspace:*",
-    "tsconfig": "workspace:*",
+    "storybook-package": "workspace:*",
+    "tsconfig-config": "workspace:*",
     "vite-plugin-http2-proxy": "0.4.3",
     "vite-plugin-mkcert": "1.17.6",
     "vite-plugin-pwa": "0.20.5",

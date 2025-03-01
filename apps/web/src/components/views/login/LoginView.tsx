@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { ExclamationTriangleIcon, InformationCircleIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
-import { BasicLayout, BlueFadeBackground, GridBackground, LogoFull } from "shared-ui";
+import { BasicLayout, BlueFadeBackground, GridBackground, LogoFull } from "ui-package";
 import type { LoginFormProps } from "~/components/forms/login/LoginForm";
 import { LoginForm } from "~/components/forms/login/LoginForm";
 
