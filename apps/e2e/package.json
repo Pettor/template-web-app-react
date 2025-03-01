@@ -1,8 +1,8 @@
 {
   "name": "e2e",
+  "license": "MIT",
   "private": true,
   "version": "0.6.0",
-  "license": "MIT",
   "scripts": {
     "prepare": "playwright install",
     "test:e2e": "cross-env PLAYWRIGHT_JUNIT_OUTPUT_NAME=\"./.test-results/results.xml\" pnpm playwright test --reporter=junit"

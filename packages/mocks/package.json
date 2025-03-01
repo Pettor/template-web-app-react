@@ -1,8 +1,8 @@
 {
   "name": "mocks-package",
-  "version": "0.6.0",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
+  "version": "0.6.0",
   "scripts": {
     "clean": "rimraf dist",
     "clean:all": "pnpm clean node_modules",
