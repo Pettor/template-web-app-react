@@ -1,7 +1,7 @@
 import type { Dispatch, ReactElement, ReactNode } from "react";
 import { createContext, useMemo, useReducer } from "react";
-import { usePostRefreshTokenMutate } from "core-api";
-import { useRunOnce } from "react-utils";
+import { usePostRefreshTokenMutate } from "api-package";
+import { useRunOnce } from "react-package";
 import type { AuthActions, AuthState } from "./AuthReducer";
 import { AuthReducer } from "./AuthReducer";
 

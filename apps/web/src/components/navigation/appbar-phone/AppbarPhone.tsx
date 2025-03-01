@@ -1,8 +1,8 @@
 import { useState, type ReactElement } from "react";
 import { Bars3Icon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
-import type { NavbarProps } from "shared-ui";
-import { Navbar } from "shared-ui";
+import type { NavbarProps } from "ui-package";
+import { Navbar } from "ui-package";
 import { AppDrawer } from "../app-drawer";
 import type { IAppSessionContent } from "~/classes/app-session/IAppSessionContent";
 import type { IAppbar } from "~/classes/appbar/IAppbar";

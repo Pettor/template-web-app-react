@@ -1,5 +1,5 @@
 {
-  "name": "shared-ui",
+  "name": "ui-package",
   "version": "0.6.0",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -16,16 +16,16 @@
     "test:unit:coverage": "npx nyc report --reporter=lcov -t ./coverage/storybook --report-dir ./coverage/storybook",
     "test:unit:coverage:ci": "pnpm test:unit:coverage:ci:create && pnpm test:unit:coverage:ci:move",
     "test:unit:coverage:ci:create": "npx nyc report --reporter=cobertura -t ./coverage/storybook --report-dir ./coverage/storybook",
-    "test:unit:coverage:ci:move": "move-cli ./coverage/storybook/cobertura-coverage.xml \"../../output/coverage/shared-ui.xml\" --mkdirp",
+    "test:unit:coverage:ci:move": "move-cli ./coverage/storybook/cobertura-coverage.xml \"../../output/coverage/ui-package.xml\" --mkdirp",
     "storybook:dev": "storybook dev -p 9060 --quiet",
     "storybook:build": "storybook build -o storybook-static",
-    "storybook:move": "move-cli storybook-static \"../../output/storybook-static/shared-ui\" --mkdirp",
+    "storybook:move": "move-cli storybook-static \"../../output/storybook-static/ui-package\" --mkdirp",
     "storybook:server": "npx http-server storybook-static --port 9065 --silent",
     "storybook:test": "test-storybook --url http://127.0.0.1:9065"
   },
   "dependencies": {
-    "react-utils": "workspace:*",
-    "tailwind": "workspace:*"
+    "react-package": "workspace:*",
+    "tailwind-config": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "8.3.2",
@@ -35,13 +35,13 @@
     "@storybook/addon-themes": "8.3.2",
     "@storybook/addon-viewport": "8.3.2",
     "eslint-config": "workspace:*",
-    "storybook-base": "workspace:*",
-    "tsconfig": "workspace:*",
+    "storybook-package": "workspace:*",
+    "tsconfig-config": "workspace:*",
     "vite-tsconfig-paths": "4.3.2"
   },
   "jest-junit": {
-    "suiteName": "shared-ui tests",
+    "suiteName": "ui-package tests",
     "outputDirectory": ".junit",
-    "outputName": "shared-ui.xml"
+    "outputName": "ui-package.xml"
   }
 }

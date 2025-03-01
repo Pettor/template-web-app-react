@@ -1,5 +1,5 @@
 {
-  "name": "storybook-base",
+  "name": "storybook-package",
   "version": "0.6.0",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "eslint-config": "workspace:*",
-    "react-utils": "workspace:*",
-    "tsconfig": "workspace:*"
+    "react-package": "workspace:*",
+    "tsconfig-config": "workspace:*"
   }
 }

@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import clsx from "clsx";
 import { useIntl } from "react-intl";
-import { BlueFadeBackground } from "shared-ui";
+import { BlueFadeBackground } from "ui-package";
 import daisyuiImgSrc from "~/assets/images/logo/daisyui.png";
 import githubImgSrc from "~/assets/images/logo/github.png";
 import mocksServerImgSrc from "~/assets/images/logo/mocks-server.png";

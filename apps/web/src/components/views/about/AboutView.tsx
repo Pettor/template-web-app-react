@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
-import { BasicLayout, BlueFadeBackground, GridBackground } from "shared-ui";
+import { BasicLayout, BlueFadeBackground, GridBackground } from "ui-package";
 import { AboutDetails, type AboutDetailsProps } from "~/components/feedback/about-details/AboutDetails";
 
 export interface AboutViewProps extends AboutDetailsProps {

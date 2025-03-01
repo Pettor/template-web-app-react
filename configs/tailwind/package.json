@@ -1,5 +1,5 @@
 {
-  "name": "tailwind",
+  "name": "tailwind-config",
   "version": "0.6.0",
   "private": true,
   "publishConfig": {
@@ -7,8 +7,5 @@
   },
   "files": [
     "*.ts"
-  ],
-  "devDependencies": {
-    "storybook-base": "workspace:*"
-  }
+  ]
 }

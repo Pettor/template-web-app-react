@@ -1,5 +1,5 @@
 {
-  "name": "tsconfig",
+  "name": "tsconfig-config",
   "version": "0.0.0",
   "private": true,
   "publishConfig": {
