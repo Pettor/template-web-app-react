@@ -30,7 +30,7 @@ function AuthProvider({ children }: Props): ReactElement {
         // Run once on app load to check if the user is logged in
         await refreshToken();
         dispatch({ type: "auth/login" });
-      } catch (error) {
+      } catch {
         dispatch({ type: "auth/logout" });
       }
     },

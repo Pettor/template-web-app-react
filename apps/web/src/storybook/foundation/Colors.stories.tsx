@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { DocumentationDecorator, DocumentationLayout } from "storybook-base";
+import { DocumentationDecorator, DocumentationLayout } from "storybook-package";
 
 export default {
   title: "Design System/Colors",

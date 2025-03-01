@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FullSizeDecorator } from "storybook-base";
+import { FullSizeDecorator } from "storybook-package";
 import { SignUpView as Component } from "./SignUpView";
 import type { SignUpViewProps as Props } from "./SignUpView";
 

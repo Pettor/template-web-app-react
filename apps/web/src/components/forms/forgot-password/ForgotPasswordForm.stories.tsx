@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within, expect } from "@storybook/test";
-import { ContainerDecorator } from "storybook-base";
+import { ContainerDecorator } from "storybook-package";
 import { ForgotPasswordForm as Component } from "./ForgotPasswordForm";
 import type { ForgotPasswordFormProps as Props } from "./ForgotPasswordForm";
 

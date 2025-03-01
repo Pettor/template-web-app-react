@@ -4,9 +4,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { InputField } from "shared-ui";
+import { InputField } from "ui-package";
 import * as yup from "yup";
-import { ButtonLoading } from "../../../../../../packages/shared-ui/src/Actions/ButtonLoading/ButtonLoading";
+import { ButtonLoading } from "ui-package";
 
 export interface FormLogin {
   email: string;

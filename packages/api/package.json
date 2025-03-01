@@ -1,6 +1,7 @@
 {
   "name": "api-package",
   "main": "./src/index.ts",
+  "type": "module",
   "types": "./src/index.ts",
   "version": "0.6.0",
   "scripts": {

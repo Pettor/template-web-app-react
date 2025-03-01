@@ -2,7 +2,6 @@
   "name": "web",
   "license": "MIT",
   "private": true,
-  "type": "module",
   "version": "0.6.0",
   "scripts": {
     "build": "tsc && vite build",

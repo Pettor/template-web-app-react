@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
-import type { ModalProps } from "shared-ui";
-import { Modal } from "shared-ui";
+import type { ModalProps } from "ui-package";
+import { Modal } from "ui-package";
 import type { AboutDetailsProps } from "../about-details/AboutDetails";
 import { AboutDetails } from "../about-details/AboutDetails";
 

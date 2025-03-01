@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { atom } from "jotai";
-import { getCrypto } from "react-utils";
+import { getCrypto } from "react-package";
 import { Toast } from "../../Toast/Toast";
 
 export const toastAtom = atom<ReactElement[]>([]);

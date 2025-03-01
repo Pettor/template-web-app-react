@@ -22,7 +22,7 @@ export function useSignUpPage(): SignUpViewProps {
     try {
       await submit(data);
       navigate("/");
-    } catch (error) {
+    } catch {
       addToast(
         intl.formatMessage({
           description: "SignUpPage - Sign up error alert title",

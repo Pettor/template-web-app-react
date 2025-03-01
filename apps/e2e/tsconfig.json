@@ -1,6 +1,6 @@
 {
   "exclude": ["dist"],
-  "extends": "tsconfig/base.json",
+  "extends": "tsconfig-config/base.json",
   "compilerOptions": {
     // Build & Resolve
     "target": "ESNext",
@@ -11,9 +11,7 @@
     "paths": {
       "~/*": ["./src/*"]
     },
-    "types": [
-      "tsconfig/types",
-    ],
+    "types": ["tsconfig-config/types"]
   },
-  "include": ["./src"],
+  "include": ["./src"]
 }

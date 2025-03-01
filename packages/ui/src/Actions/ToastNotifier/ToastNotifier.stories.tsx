@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useSetAtom } from "jotai";
-import { CommonDecorator } from "storybook-base";
+import { CommonDecorator } from "storybook-package";
 import { toastAddAtom } from "./Atoms/ToastAtoms";
 import { ToastNotifier as Component } from "./ToastNotifier";
 

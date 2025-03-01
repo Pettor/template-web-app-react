@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StorybookTableContentComponent } from "../../../../../packages/ui-package/src/Storybook/Components/StorybookTableContentComponent";
+import { StorybookTableContentComponent } from "ui-package";
 import { AppbarLayout as Component } from "./AppbarLayout";
 import type { AppbarLayoutProps as Props } from "./AppbarLayout";
 import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";

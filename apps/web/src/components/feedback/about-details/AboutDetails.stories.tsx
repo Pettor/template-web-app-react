@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CommonDecorator } from "storybook-base";
+import { CommonDecorator } from "storybook-package";
 import { AboutDetails as Component } from "./AboutDetails";
 import type { AboutDetailsProps as Props } from "./AboutDetails";
 

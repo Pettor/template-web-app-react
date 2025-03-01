@@ -1,7 +1,7 @@
 import type { ReactNode, MouseEvent } from "react";
 import { useMemo, type ReactElement, useRef, useEffect } from "react";
 import clsx from "clsx";
-import { getCrypto } from "react-utils";
+import { getCrypto } from "react-package";
 
 export interface ModalProps {
   open: boolean;

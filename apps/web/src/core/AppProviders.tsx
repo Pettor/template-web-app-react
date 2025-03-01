@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { validateCrypto } from "react-utils";
+import { validateCrypto } from "react-package";
 import { AppLocales } from "./AppLocales";
 import { AuthProvider } from "./auth/AuthContext";
 import { PwaProviderModule } from "~/components/modules/pwa-provider-module/PwaProviderModule";
@@ -12,6 +12,7 @@ export interface AppProvidersProps {
 }
 
 export function AppProviders({ children }: AppProvidersProps): ReactElement {
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   typeof window !== "undefined" && validateCrypto();
   return (
     <AppLocales>

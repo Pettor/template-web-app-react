@@ -25,7 +25,7 @@ export function useForgotPasswordPage(): ForgotPasswordViewProps {
     try {
       await submit(email);
       navigate("/");
-    } catch (error) {
+    } catch {
       addToast(
         intl.formatMessage({
           description: "ForgotPasswordPage - Forgot password error alert title",

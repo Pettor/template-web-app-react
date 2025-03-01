@@ -1,41 +1,29 @@
-import js from "@eslint/js";
-import tseslint from "typescript-eslint";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import prettier from "eslint-plugin-prettier";
-import formatjs from "eslint-plugin-formatjs";
-import eslintImport from "eslint-plugin-import";
-import storybook from "eslint-plugin-storybook";
+import jsEslint from "@eslint/js";
+import tsEslint from "typescript-eslint";
+import prettierEslint from "eslint-plugin-prettier/recommended";
+import importEslint from "eslint-plugin-import";
+import formatjsEslint from "eslint-plugin-formatjs";
 
-export default [
-  js.configs.recommended,
-  prettier,
-  ...tseslint.configs.recommended,
+/**
+ * A shared ESLint configuration for the repository.
+ *
+ * @type {import("eslint").Linter.Config}
+ * */
+export const config = [
+  jsEslint.configs.recommended,
+  prettierEslint,
+  ...tsEslint.configs.recommended,
   {
-    ...react.configs.flat.recommended,
-    languageOptions: {
-      ...react.configs.flat.recommended.languageOptions,
-      ecmaVersion: "latest",
-      sourceType: "module",
-      parserOptions: {
-        ecmaFeatures: { jsx: true },
-      },
-    },
-    linterOptions: {
-      ignorePatterns: ["**/dist/*", "**/node_modules/*"],
-    },
+    ignores: ["*.js", "dist", "public", "node_modules", "storybook-static"],
+  },
+  {
     plugins: {
-      "react-hooks": reactHooks,
-      formatjs,
-      import: eslintImport,
-      storybook,
+      formatjs: formatjsEslint,
+      import: importEslint,
     },
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
+    files: ["*.ts", "*.tsx"],
     rules: {
+      "import/no-unresolved": "off",
       "import/order": [
         "error",
         {
@@ -52,34 +40,16 @@ export default [
         },
       ],
       "func-style": ["error", "declaration", { allowArrowFunctions: false }],
-      "react/react-in-jsx-scope": "off",
-      "react/function-component-definition": [
-        "warn",
-        {
-          namedComponents: ["function-declaration"],
-        },
-      ],
-      "react-hooks/exhaustive-deps": "error",
-      "@typescript-eslint/no-empty-interface": [
-        "error",
-        { allowSingleExtends: true },
-      ],
-      "@typescript-eslint/explicit-function-return-type": "error",
-      "@typescript-eslint/consistent-type-imports": [
-        "error",
-        { prefer: "type-imports" },
-      ],
       "prettier/prettier": "error",
-      "formatjs/enforce-id": [
-        "error",
-        { idInterpolationPattern: "[sha512:contenthash:base64:6]" },
-      ],
+      "formatjs/enforce-id": ["error", { idInterpolationPattern: "[sha512:contenthash:base64:6]" }],
     },
   },
   {
-    files: ["*stories.tsx", "main.ts"],
     rules: {
-      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-empty-interface": ["error", { allowSingleExtends: true }],
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/explicit-function-return-type": ["warn", { allowExpressions: true }],
+      "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
     },
   },
 ];

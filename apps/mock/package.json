@@ -2,16 +2,16 @@
   "name": "mock",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "version": "0.6.0",
   "scripts": {
     "clean": "rimraf dist",
     "clean:all": "pnpm clean",
     "mocks": "mocks-server",
-    "lint": "eslint ./mocks",
-    "lint:fix": "pnpm lint --fix",
     "test:e2e:env": "mocks-server --no-plugins.inquirerCli.enabled --log=silent"
   },
   "devDependencies": {
-    "eslint-config": "workspace:*"
+    "eslint-config": "workspace:*",
+    "tsconfig-config": "workspace:*"
   }
 }

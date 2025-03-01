@@ -9,5 +9,6 @@
     "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
   },
   // Typescript
-  "typescript.preferences.importModuleSpecifier": "shortest"
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "eslint.useFlatConfig": true
 }
