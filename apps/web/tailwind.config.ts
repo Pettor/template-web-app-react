@@ -1,7 +1,7 @@
 // tailwind config is required for editor support
 import { join } from "path";
-import sharedConfig from "tailwind/tailwind.config.ts";
-import { TAILWIND_CONSTANTS_CONTENT_FORMATS } from "tailwind/tailwind.constants.ts";
+import sharedConfig from "tailwind-config/tailwind.config.ts";
+import { TAILWIND_CONSTANTS_CONTENT_FORMATS } from "tailwind-config/tailwind.constants.ts";
 import type { Config } from "tailwindcss";
 
 const config: Pick<Config, "content" | "presets"> = {

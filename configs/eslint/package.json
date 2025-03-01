@@ -1,8 +1,12 @@
 {
   "name": "eslint-config",
   "exports": {
-    "./base": "./base.js"
+    "./base": "./base.js",
+    "./react": "./react.js"
   },
+  "files": [
+    "base.js"
+  ],
   "type": "module",
   "version": "0.6.0",
   "scripts": {
@@ -11,10 +15,10 @@
   "devDependencies": {
     "@eslint/js": "9.21.0",
     "eslint-config-prettier": "10.0.2",
-    "eslint-plugin-formatjs": "4.13.3",
-    "eslint-plugin-import": "2.30.0",
+    "eslint-plugin-formatjs": "5.2.14",
+    "eslint-plugin-import": "2.31.0",
     "eslint-plugin-prettier": "5.2.1",
-    "eslint-plugin-react": "7.36.1",
+    "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-storybook": "0.8.0",
     "typescript-eslint": "8.24.0"

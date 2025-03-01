@@ -1,6 +1,6 @@
 {
   "exclude": ["dist"],
-  "extends": "tsconfig/base.json",
+  "extends": "tsconfig-config/base.json",
   "compilerOptions": {
     // Build & Resolve
     "target": "ESNext",

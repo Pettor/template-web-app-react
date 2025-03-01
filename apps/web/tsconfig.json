@@ -1,6 +1,6 @@
 {
   "exclude": ["dist"],
-  "extends": "tsconfig/vite.json",
+  "extends": "tsconfig-config/vite.json",
   "compilerOptions": {
     // Build & Resolve
     "target": "ESNext",
@@ -12,7 +12,7 @@
       "~/*": ["./src/*"]
     },
     "types": [
-      "tsconfig/types",
+      "tsconfig-config/types",
       "vite-plugin-pwa/client"
     ],
   },
