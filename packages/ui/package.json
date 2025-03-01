@@ -1,11 +1,11 @@
 {
   "name": "ui-package",
-  "version": "0.6.0",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
   "files": [
     "dist"
   ],
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "version": "0.6.0",
   "scripts": {
     "clean": "rimraf dist storybook-static .junit coverage",
     "clean:all": "pnpm clean node_modules",

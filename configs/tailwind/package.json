@@ -1,11 +1,7 @@
 {
   "name": "tailwind-config",
-  "version": "0.6.0",
-  "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
   "files": [
     "*.ts"
-  ]
+  ],
+  "version": "0.6.0"
 }

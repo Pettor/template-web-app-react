@@ -1,11 +1,7 @@
 {
   "name": "tsconfig-config",
-  "version": "0.0.0",
-  "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
   "files": [
     "*.d.ts"
-  ]
+  ],
+  "version": "0.0.0"
 }

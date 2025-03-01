@@ -1,15 +1,13 @@
 {
   "name": "eslint-config",
-  "version": "0.6.0",
-  "license": "MIT",
   "exports": {
     "./base": "./base.js"
   },
-  "private": true,
+  "type": "module",
+  "version": "0.6.0",
   "scripts": {
     "clean:all": "rimraf dist node_modules"
   },
-  "type": "module",
   "devDependencies": {
     "@eslint/js": "9.21.0",
     "eslint-config-prettier": "10.0.2",

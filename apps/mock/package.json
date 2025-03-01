@@ -1,8 +1,8 @@
 {
   "name": "mock",
+  "license": "MIT",
   "private": true,
   "version": "0.6.0",
-  "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
     "clean:all": "pnpm clean",
