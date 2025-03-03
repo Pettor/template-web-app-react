@@ -1,15 +1,15 @@
 {
-  "extends": "tsconfig/react-library.json",
+  "extends": "typescript-config/react-library.json",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "baseUrl": "src",
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
     "noEmit": true,
     "paths": {
-      ".": ["."],
+      ".": ["."]
     },
-    "types": [
-      "tsconfig/types"
-    ],
+    "types": ["typescript-config/types"]
   },
-  "include": ["src/**/*", "../../apps/web/src/Classes"],
+  "include": ["**/*.ts", "**/*.tsx", ".storybook/vite.config.ts"]
 }

@@ -21,9 +21,6 @@ const config: StorybookConfig = {
     defaultName: "Docs",
   },
   framework: "@storybook/react-vite",
-  features: {
-    storyStoreV7: true,
-  },
   stories: ["../src/**/*.stories.@(ts|tsx)"],
 };
 

@@ -1,6 +1,7 @@
 import jsEslint from "@eslint/js";
 import tsEslint from "typescript-eslint";
 import prettierEslint from "eslint-plugin-prettier/recommended";
+import prettierConfigEslint from "eslint-config-prettier";
 import importEslint from "eslint-plugin-import";
 import formatjsEslint from "eslint-plugin-formatjs";
 
@@ -11,7 +12,6 @@ import formatjsEslint from "eslint-plugin-formatjs";
  * */
 export const config = [
   jsEslint.configs.recommended,
-  prettierEslint,
   ...tsEslint.configs.recommended,
   {
     ignores: ["*.js", "dist", "public", "node_modules", "storybook-static"],
@@ -40,7 +40,6 @@ export const config = [
         },
       ],
       "func-style": ["error", "declaration", { allowArrowFunctions: false }],
-      "prettier/prettier": "error",
       "formatjs/enforce-id": ["error", { idInterpolationPattern: "[sha512:contenthash:base64:6]" }],
     },
   },
@@ -52,4 +51,5 @@ export const config = [
       "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
     },
   },
+  prettierEslint,
 ];

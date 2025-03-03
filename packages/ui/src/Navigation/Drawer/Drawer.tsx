@@ -16,7 +16,7 @@ export function Drawer({ open, onClose, children }: DrawerProps): ReactElement {
       <input id="app-drawer" readOnly type="checkbox" checked={open} className="drawer-toggle" />
       <div className="drawer-side">
         <label htmlFor="app-drawer" aria-label="close sidebar" className="drawer-overlay" />
-        <div ref={menuRef} className="min-h-full w-80 bg-base-200 p-4 text-base-content">
+        <div ref={menuRef} className="bg-base-200 text-base-content min-h-full w-80 p-4">
           {children}
         </div>
       </div>

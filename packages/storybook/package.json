@@ -11,6 +11,6 @@
   "devDependencies": {
     "eslint-config": "workspace:*",
     "react-package": "workspace:*",
-    "tsconfig-config": "workspace:*"
+    "typescript-config": "workspace:*"
   }
 }

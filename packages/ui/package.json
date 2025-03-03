@@ -29,15 +29,15 @@
     "tailwind-config": "workspace:*"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "8.3.2",
+    "@storybook/addon-a11y": "8.6.3",
     "@storybook/addon-coverage": "1.0.4",
-    "@storybook/addon-essentials": "8.3.2",
-    "@storybook/addon-interactions": "8.3.2",
-    "@storybook/addon-themes": "8.3.2",
-    "@storybook/addon-viewport": "8.3.2",
+    "@storybook/addon-essentials": "8.6.3",
+    "@storybook/addon-interactions": "8.6.3",
+    "@storybook/addon-themes": "8.6.3",
+    "@storybook/addon-viewport": "8.6.3",
     "eslint-config": "workspace:*",
     "storybook-package": "workspace:*",
-    "tsconfig-config": "workspace:*",
+    "typescript-config": "workspace:*",
     "vite-tsconfig-paths": "4.3.2"
   },
   "jest-junit": {

@@ -31,7 +31,7 @@ export function Modal({ open, onClose, className, children }: ModalProps): React
     <dialog id={dialogId} className="modal" ref={ref}>
       <div className={clsx(className, "modal-box")}>
         <form method="dialog">
-          <button className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2" onClick={handleOnClose}>
+          <button className="btn btn-circle btn-ghost btn-sm absolute top-2 right-2" onClick={handleOnClose}>
             ✕
           </button>
         </form>

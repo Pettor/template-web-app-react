@@ -60,7 +60,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
   });
 
   return (
-    <form onSubmit={handleFormSubmit(onSubmit)} className="justify-center">
+    <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col justify-center">
       <InputField
         autoFocus
         id="email"
@@ -86,7 +86,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
         <ButtonLoading
           loading={loading}
           type="submit"
-          className="btn btn-primary z-20 w-full text-base-100 dark:text-base-300 md:w-40"
+          className="btn btn-primary text-base-100 dark:text-base-300 z-20 w-full md:w-40"
           data-testid="login-form__submit-button"
         >
           {intl.formatMessage({

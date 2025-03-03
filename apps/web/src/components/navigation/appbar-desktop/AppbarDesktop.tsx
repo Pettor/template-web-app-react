@@ -53,13 +53,13 @@ function AppbarDesktopComponents({ onGithubClick, onLinkedInClick, ...props }: I
         <div className="divider divider-horizontal mx-2" />
         <div className="flex items-center gap-2">
           <button
-            className="h-10 w-10 fill-neutral p-2 brightness-200 transition-all hover:brightness-75 dark:fill-neutral-content"
+            className="fill-neutral/60 dark:fill-neutral-content hover:fill-neutral dark:hover:fill-neutral-content/60 h-10 w-10 cursor-pointer p-2 transition-all"
             onClick={onGithubClick}
           >
             <GithubIcon />
           </button>
           <button
-            className="h-10 w-10 fill-neutral p-2 brightness-200 transition-all hover:brightness-75 dark:fill-neutral-content"
+            className="fill-neutral/60 dark:fill-neutral-content hover:fill-neutral dark:hover:fill-neutral-content/60 h-10 w-10 cursor-pointer p-2 transition-all"
             onClick={onLinkedInClick}
           >
             <LinkedInIcon />

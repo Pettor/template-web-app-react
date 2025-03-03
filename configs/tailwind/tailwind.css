@@ -7,6 +7,13 @@
 @import "@fontsource/rubik/800.css";
 @import "@fontsource/rubik/900.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind confugration */
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Tailwind theme */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+body {
+  font-family: "Rubik", sans-serif, system-ui;
+}

@@ -4,7 +4,7 @@ import { faker } from "@faker-js/faker";
 export function StorybookTableContentComponent(): ReactElement {
   return (
     <div className="flex flex-1 justify-center overflow-x-auto">
-      <table className="table table-zebra max-sm:table-xs">
+      <table className="table-zebra max-sm:table-xs table">
         <thead>
           <tr>
             <th>Name</th>

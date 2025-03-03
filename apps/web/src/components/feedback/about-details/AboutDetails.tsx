@@ -20,7 +20,7 @@ export function AboutDetails({ appName, appVersion, serverVersion }: AboutDetail
         })}
       </span>
       <div className="divider mt-2" />
-      <table className="table table-lg">
+      <table className="table-lg table">
         <tbody>
           <tr>
             <td className="px-0 font-semibold">

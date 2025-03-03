@@ -188,7 +188,7 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
       <ButtonLoading
         loading={loading}
         type="submit"
-        className="btn btn-primary z-20 mt-2 text-base-100 dark:text-base-300"
+        className="btn btn-primary text-base-100 dark:text-base-300 z-20 mt-2"
         data-testid="sign-up-form__submit-button"
       >
         {intl.formatMessage({

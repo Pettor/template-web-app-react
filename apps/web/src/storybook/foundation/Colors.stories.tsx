@@ -13,8 +13,8 @@ export default {
 export function Colors(): ReactElement {
   return (
     <DocumentationLayout label="Colors">
-      <table className="table border-separate border-spacing-y-4 text-xl max-sm:table-xs [&_*]:border-0 [&_td]:py-0 [&_th]:px-0 [&_tr]:py-2">
-        <thead className="text-lg text-base-content md:text-2xl">
+      <table className="max-sm:table-xs table border-separate border-spacing-y-4 text-xl [&_*]:border-0 [&_td]:py-0 [&_th]:px-0 [&_tr]:py-2">
+        <thead className="text-base-content text-lg md:text-2xl">
           <tr>
             <th>Name</th>
             <th>Main</th>
@@ -50,9 +50,9 @@ export function Colors(): ReactElement {
           <tr>
             <td>Base</td>
             <td className="flex h-8 flex-row !p-0 md:h-12">
-              <div className="basis-1/3 bg-base-100">&nbsp;</div>
-              <div className="basis-1/3 bg-base-200">&nbsp;</div>
-              <div className="basis-1/3 bg-base-300" />
+              <div className="bg-base-100 basis-1/3">&nbsp;</div>
+              <div className="bg-base-200 basis-1/3">&nbsp;</div>
+              <div className="bg-base-300 basis-1/3" />
             </td>
             <td className="bg-neutral-content" />
           </tr>

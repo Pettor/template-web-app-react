@@ -11,6 +11,6 @@
     "@playwright/test": "1.47.1",
     "eslint-config": "workspace:*",
     "mocks-package": "workspace:*",
-    "tsconfig-config": "workspace:*"
+    "typescript-config": "workspace:*"
   }
 }

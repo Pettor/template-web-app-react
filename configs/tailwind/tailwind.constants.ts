@@ -1,1 +1,0 @@
-export const TAILWIND_CONSTANTS_CONTENT_FORMATS = "/**/*.{js,ts,jsx,tsx,mdx}";

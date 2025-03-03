@@ -1,6 +1,7 @@
 import reactEslint from "eslint-plugin-react";
 import reactHooksEslint from "eslint-plugin-react-hooks";
 import { config as baseConfig } from "./base.js";
+import prettierConfigEslint from "eslint-config-prettier";
 
 /**
  * A shared ESLint configuration for the repository.

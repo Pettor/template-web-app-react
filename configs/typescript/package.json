@@ -1,5 +1,5 @@
 {
-  "name": "tsconfig-config",
+  "name": "typescript-config",
   "files": [
     "*.d.ts"
   ],

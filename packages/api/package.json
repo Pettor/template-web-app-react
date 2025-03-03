@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "eslint-config": "workspace:*",
-    "tsconfig-config": "workspace:*" 
+    "typescript-config": "workspace:*"
   }
 }

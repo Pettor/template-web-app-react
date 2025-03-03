@@ -1,7 +1,7 @@
 {
   "name": "tailwind-config",
   "files": [
-    "*.ts"
+    "*.css"
   ],
   "version": "0.6.0",
   "devDependencies": {

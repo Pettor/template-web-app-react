@@ -1,20 +1,15 @@
 {
   "exclude": ["dist"],
-  "extends": "tsconfig-config/vite.json",
+  "extends": "typescript-config/vite.json",
   "compilerOptions": {
     // Build & Resolve
     "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     // Paths & Types
     "paths": {
       "~/*": ["./src/*"]
     },
-    "types": [
-      "tsconfig-config/types",
-      "vite-plugin-pwa/client"
-    ],
+    "types": ["typescript-config/types", "vite-plugin-pwa/client"]
   },
-  "include": ["./src"],
+  "include": ["**/*.ts", "**/*.tsx", ".storybook/vite.config.ts", "vite.config.ts"]
 }
