@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
-import type { NavbarLayoutProps } from "shared-ui";
-import { NavbarLayout } from "shared-ui";
+import type { NavbarLayoutProps } from "ui-package";
+import { NavbarLayout } from "ui-package";
 import type { AppbarProps } from "../navigation/appbar";
 import { Appbar } from "../navigation/appbar";
 

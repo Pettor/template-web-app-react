@@ -1,0 +1,16 @@
+{
+  "name": "storybook-package",
+  "main": "./src/index.ts",
+  "type": "module",
+  "types": "./src/index.ts",
+  "version": "0.6.0",
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "pnpm clean node_modules"
+  },
+  "devDependencies": {
+    "eslint-config": "workspace:*",
+    "react-package": "workspace:*",
+    "typescript-config": "workspace:*"
+  }
+}

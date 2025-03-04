@@ -4,9 +4,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { InputField } from "shared-ui";
+import { InputField } from "ui-package";
 import * as yup from "yup";
-import { ButtonLoading } from "../../../../../../packages/shared-ui/src/Actions/ButtonLoading/ButtonLoading";
+import { ButtonLoading } from "ui-package";
 
 export interface FormLogin {
   email: string;
@@ -60,7 +60,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
   });
 
   return (
-    <form onSubmit={handleFormSubmit(onSubmit)} className="justify-center">
+    <form onSubmit={handleFormSubmit(onSubmit)} className="flex flex-col justify-center">
       <InputField
         autoFocus
         id="email"
@@ -86,7 +86,7 @@ export function LoginForm({ loading, onSubmit }: LoginFormProps): ReactElement {
         <ButtonLoading
           loading={loading}
           type="submit"
-          className="btn btn-primary z-20 w-full text-base-100 dark:text-base-300 md:w-40"
+          className="btn btn-primary text-base-100 dark:text-base-300 z-20 w-full md:w-40"
           data-testid="login-form__submit-button"
         >
           {intl.formatMessage({

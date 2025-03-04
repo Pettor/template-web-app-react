@@ -24,7 +24,7 @@ export function AppDrawer({ open, name, email, onAbout, onLogout, onClose }: App
       <input id="app-drawer" readOnly type="checkbox" checked={open} className="drawer-toggle" />
       <div className="drawer-side">
         <label htmlFor="app-drawer" aria-label="close sidebar" className="drawer-overlay" />
-        <ul ref={menuRef} className="menu min-h-full w-80 bg-base-200 p-4 text-base-content">
+        <ul ref={menuRef} className="menu bg-base-200 text-base-content min-h-full w-80 p-4">
           <span className="text-xl font-semibold">
             {intl.formatMessage({
               description: "ProfileCard - Title",
@@ -34,7 +34,7 @@ export function AppDrawer({ open, name, email, onAbout, onLogout, onClose }: App
           </span>
           <div className="mt-2 flex flex-row items-center justify-center gap-4 py-2">
             <div className="flex h-full items-center justify-center">
-              <UserCircleIcon className="full-neutral h-8 w-8 dark:fill-neutral-content" />
+              <UserCircleIcon className="full-neutral dark:fill-neutral-content h-8 w-8" />
             </div>
             <div className="flex min-w-0 flex-1 flex-col gap-2">
               <span className="h-5 truncate" data-testid="profile-card__name-text">
@@ -46,7 +46,7 @@ export function AppDrawer({ open, name, email, onAbout, onLogout, onClose }: App
             </div>
           </div>
           <div className="divider m-0" />
-          <ul className="menu gap-2 rounded-box p-0">
+          <ul className="menu rounded-box gap-2 p-0">
             <li>
               <button onClick={onAbout} data-testid="profile-card__info-button">
                 <InformationCircleIcon className="h-5 w-5" />

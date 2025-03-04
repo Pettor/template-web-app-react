@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { ExclamationTriangleIcon, InformationCircleIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
-import { BasicLayout, BlueFadeBackground, GridBackground, LogoFull } from "shared-ui";
+import { BasicLayout, BlueFadeBackground, GridBackground, LogoFull } from "ui-package";
 import type { LoginFormProps } from "~/components/forms/login/LoginForm";
 import { LoginForm } from "~/components/forms/login/LoginForm";
 
@@ -37,7 +37,7 @@ export function LoginView({
       <div className="flex flex-1 items-center justify-center">
         <div className="hero">
           <div className="hero-content w-full flex-col lg:flex-row-reverse">
-            <div className="card min-h-[550px] w-full bg-base-100 shadow-2xl sm:w-[550px]">
+            <div className="card bg-base-100 min-h-[550px] w-full shadow-2xl sm:w-[550px]">
               <div className="card-body w-full">
                 <div className="card-actions justify-end">
                   <button className="btn btn-square btn-ghost btn-sm" onClick={onAbout}>
@@ -57,7 +57,7 @@ export function LoginView({
                     {error}
                   </div>
                 )}
-                <div className="md:px-8">
+                <div className="md:px-16">
                   <LoginForm {...loginForm} />
                 </div>
                 <br />

@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { useIntl } from "react-intl";
-import { BasicLayout, BlueFadeBackground, GridBackground } from "shared-ui";
+import { BasicLayout, BlueFadeBackground, GridBackground } from "ui-package";
 import type { SignUpFormProps } from "~/components/forms/sign-up/SignUpForm";
 import { SignUpForm } from "~/components/forms/sign-up/SignUpForm";
 
@@ -27,7 +27,7 @@ export function SignUpView({ signUpForm, onBack }: SignUpViewProps): ReactElemen
       <div className="flex flex-1 flex-col items-center justify-center">
         <div className="hero">
           <div className="hero-content w-full flex-col lg:flex-row-reverse">
-            <div className="card w-full shrink-0 bg-base-100 shadow-2xl sm:min-h-[550px] sm:w-[550px]">
+            <div className="card bg-base-100 w-full shrink-0 shadow-2xl sm:min-h-[550px] sm:w-[550px]">
               <div className="card-body w-full md:min-w-96">
                 <div className="card-actions justify-end">
                   <button

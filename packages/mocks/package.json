@@ -1,0 +1,19 @@
+{
+  "name": "mocks-package",
+  "main": "./src/index.ts",
+  "type": "module",
+  "types": "./src/index.ts",
+  "version": "0.6.0",
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "pnpm clean node_modules",
+    "lint": "eslint ./src",
+    "lint:fix": "pnpm lint --fix"
+  },
+  "devDependencies": {
+    "@mocks-server/admin-api-client": "7.0.1",
+    "@mocks-server/admin-api-paths": "5.0.0",
+    "eslint-config": "workspace:*",
+    "typescript-config": "workspace:*"
+  }
+}

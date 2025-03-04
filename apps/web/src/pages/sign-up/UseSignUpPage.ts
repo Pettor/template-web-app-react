@@ -1,7 +1,7 @@
-import { usePostSelfRegister } from "core-api";
+import { usePostSelfRegister } from "api-package";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { useToastNotifier } from "shared-ui";
+import { useToastNotifier } from "ui-package";
 import type { FormSignUp } from "~/components/forms/sign-up/SignUpForm";
 import type { SignUpViewProps } from "~/components/views/sign-up/SignUpView";
 import { useAppInfo } from "~/core/config/UseAppInfo";
@@ -22,7 +22,7 @@ export function useSignUpPage(): SignUpViewProps {
     try {
       await submit(data);
       navigate("/");
-    } catch (error) {
+    } catch {
       addToast(
         intl.formatMessage({
           description: "SignUpPage - Sign up error alert title",

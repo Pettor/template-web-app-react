@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { ButtonLoading, InputField } from "shared-ui";
+import { ButtonLoading, InputField } from "ui-package";
 import * as yup from "yup";
 
 export interface FormSignUp {
@@ -188,7 +188,7 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
       <ButtonLoading
         loading={loading}
         type="submit"
-        className="btn btn-primary z-20 mt-2 text-base-100 dark:text-base-300"
+        className="btn btn-primary text-base-100 dark:text-base-300 z-20 mt-2"
         data-testid="sign-up-form__submit-button"
       >
         {intl.formatMessage({

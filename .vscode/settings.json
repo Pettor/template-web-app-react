@@ -1,13 +1,15 @@
 {
+  "[xml]": {
+    "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.fixAll.eslint": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.eol": "\n",
-  "[xml]": {
-    "editor.defaultFormatter": "fabianlauer.vs-code-xml-format"
+  "files.associations": {
+    "*.css": "tailwindcss"
   },
-  // Typescript
   "typescript.preferences.importModuleSpecifier": "shortest"
 }

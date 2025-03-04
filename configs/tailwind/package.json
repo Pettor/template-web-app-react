@@ -1,14 +1,10 @@
 {
-  "name": "tailwind",
-  "version": "0.6.0",
-  "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
+  "name": "tailwind-config",
   "files": [
-    "*.ts"
+    "*.css"
   ],
+  "version": "0.6.0",
   "devDependencies": {
-    "storybook-base": "workspace:*"
+    "storybook-package": "workspace:*"
   }
 }

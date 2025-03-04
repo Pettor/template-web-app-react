@@ -14,12 +14,12 @@ export function ProfileCard({ name, email, onAbout, onLogout }: ProfileCardProps
   const intl = useIntl();
 
   return (
-    <div className="card w-screen bg-base-100 shadow-xl dark:bg-base-200 sm:w-80">
+    <div className="card bg-base-100 dark:bg-base-200 w-screen shadow-xl sm:w-80">
       <div className="card-body rounded-xl shadow-inner dark:bg-none">
         <span className="text-xl font-semibold">Personal</span>
         <div className="mt-2 flex flex-row items-center justify-center gap-4 py-2">
           <div className="flex h-full items-center justify-center">
-            <UserCircleIcon className="full-neutral h-8 w-8 dark:fill-neutral-content" />
+            <UserCircleIcon className="full-neutral dark:fill-neutral-content h-8 w-8" />
           </div>
           <div className="flex min-w-0 flex-1 flex-col gap-2">
             <span className="h-5 truncate" data-testid="profile-card__name-text">
@@ -31,9 +31,9 @@ export function ProfileCard({ name, email, onAbout, onLogout }: ProfileCardProps
           </div>
         </div>
         <div className="divider m-0" />
-        <ul className="menu gap-2 rounded-box p-0">
+        <ul className="menu rounded-box w-full gap-2 p-0">
           <li>
-            <button onClick={onAbout} data-testid="profile-card__info-button">
+            <button className="w-full" onClick={onAbout} data-testid="profile-card__info-button">
               <InformationCircleIcon className="h-5 w-5" />
               <span className="text-base">
                 {intl.formatMessage({

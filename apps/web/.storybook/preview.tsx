@@ -1,10 +1,8 @@
 import type { ReactElement } from "react";
-import React from "react";
 import { withThemeByDataAttribute, withThemeByClassName } from "@storybook/addon-themes";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { StoryFn, StoryContext } from "@storybook/react";
 import { IntlProvider } from "react-intl";
-import "../src/assets/styling/tailwind.css";
 
 function withLocaleProvider(Story: StoryFn, context: StoryContext): ReactElement {
   return (

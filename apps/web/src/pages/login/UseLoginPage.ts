@@ -19,7 +19,7 @@ export function useLoginPage(): LoginViewProps {
     try {
       await login(data);
       navigate("/");
-    } catch (error) {
+    } catch {
       setLoginError(
         intl.formatMessage({
           description: "LoginPage - Login error alert title",

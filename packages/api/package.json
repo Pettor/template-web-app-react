@@ -1,0 +1,21 @@
+{
+  "name": "api-package",
+  "main": "./src/index.ts",
+  "type": "module",
+  "types": "./src/index.ts",
+  "version": "0.6.0",
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "pnpm clean node_modules",
+    "lint": "eslint ./src",
+    "lint:fix": "pnpm lint --fix"
+  },
+  "dependencies": {
+    "axios": "1.7.7",
+    "axios-auth-refresh": "3.3.6"
+  },
+  "devDependencies": {
+    "eslint-config": "workspace:*",
+    "typescript-config": "workspace:*"
+  }
+}

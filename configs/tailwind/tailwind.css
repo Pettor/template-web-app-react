@@ -1,0 +1,19 @@
+@import "@fontsource/rubik";
+@import "@fontsource/rubik/300.css";
+@import "@fontsource/rubik/400.css";
+@import "@fontsource/rubik/500.css";
+@import "@fontsource/rubik/600.css";
+@import "@fontsource/rubik/700.css";
+@import "@fontsource/rubik/800.css";
+@import "@fontsource/rubik/900.css";
+
+/* Tailwind confugration */
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Tailwind theme */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+body {
+  font-family: "Rubik", sans-serif, system-ui;
+}

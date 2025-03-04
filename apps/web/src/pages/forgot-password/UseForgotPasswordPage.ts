@@ -1,7 +1,7 @@
-import { usePostForgotPasswordMutate } from "core-api";
+import { usePostForgotPasswordMutate } from "api-package";
 import { useIntl } from "react-intl";
 import { useNavigate } from "react-router-dom";
-import { useToastNotifier } from "shared-ui";
+import { useToastNotifier } from "ui-package";
 import type { FormForgotPassword } from "~/components/forms/forgot-password/ForgotPasswordForm";
 import type { ForgotPasswordViewProps } from "~/components/views/forgot-password/ForgotPasswordView";
 import { useAppInfo } from "~/core/config/UseAppInfo";
@@ -25,7 +25,7 @@ export function useForgotPasswordPage(): ForgotPasswordViewProps {
     try {
       await submit(email);
       navigate("/");
-    } catch (error) {
+    } catch {
       addToast(
         intl.formatMessage({
           description: "ForgotPasswordPage - Forgot password error alert title",

@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import clsx from "clsx";
 import { useIntl } from "react-intl";
-import { BlueFadeBackground } from "shared-ui";
+import { BlueFadeBackground } from "ui-package";
 import daisyuiImgSrc from "~/assets/images/logo/daisyui.png";
 import githubImgSrc from "~/assets/images/logo/github.png";
 import mocksServerImgSrc from "~/assets/images/logo/mocks-server.png";
@@ -36,7 +36,7 @@ function GridItem({
   const intl = useIntl();
 
   return (
-    <div className="card bg-base-300 bg-opacity-20 shadow-inner transition-colors hover:bg-neutral-content/70 dark:hover:bg-neutral/40">
+    <div className="card hover:bg-neutral-content/70 dark:hover:bg-neutral/40 transition-colors">
       <div className="card-body glass min-h-56 rounded-xl dark:bg-none">
         <h2 className="card-title">
           {imageSrc && (
@@ -89,7 +89,7 @@ export function HomeView({ appNavbarProps, appSocialLinkProps, onGotoClick }: Ho
                 })}
                 &nbsp;
               </span>
-              <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-7xl">
+              <span className="from-primary to-secondary inline-block bg-gradient-to-r bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-7xl">
                 {intl.formatMessage({
                   description: "HomeView - Header title start",
                   defaultMessage: "React",

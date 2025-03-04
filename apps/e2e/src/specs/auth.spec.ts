@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { mocksClient } from "mocks-client";
+import { mocksClient } from "mocks-package";
 
 test.describe("auth.loggedin", () => {
   test.beforeEach(async () => {

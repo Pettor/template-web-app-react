@@ -1,6 +1,6 @@
 import { useMemo, type ReactElement } from "react";
-import { UseMediaQuery } from "react-utils";
-import type { NavbarProps } from "shared-ui";
+import { UseMediaQuery } from "react-package";
+import type { NavbarProps } from "ui-package";
 import type { Subtract } from "utility-types";
 import { AppNavbarDesktop, type AppbarDesktopProps } from "../appbar-desktop";
 import { AppbarPhone, type AppbarPhoneProps } from "../appbar-phone";

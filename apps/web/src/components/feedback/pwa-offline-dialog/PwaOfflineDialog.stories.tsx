@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { CommonDecorator } from "storybook-base";
+import { CommonDecorator } from "storybook-package";
 import { PwaOfflineDialog as Component } from "./PwaOfflineDialog";
 import type { PwaOfflineDialogProps as Props } from "./PwaOfflineDialog";
 

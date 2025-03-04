@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { FullSizeDecorator } from "storybook-base";
+import { FullSizeDecorator } from "storybook-package";
 import { HomeView as Component } from "./HomeView";
 import type { HomeViewProps as Props } from "./HomeView";
 import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";
