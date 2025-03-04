@@ -4,9 +4,6 @@
   "extends": "./base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "lib": ["dom", "ESNext"],
-    "module": "ESNext",
-    "target": "ESNext"
   },
   "exclude": ["dist", "build"]
 }

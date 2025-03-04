@@ -1,6 +1,6 @@
 import type { ReactElement, ReactNode } from "react";
 import { GithubIcon, LinkedInIcon } from "../../Icons";
-import { Logo } from "Layout/Logo";
+import { Logo } from "../Logo";
 
 export interface NavbarLayoutProps {
   navbarElement: ReactNode;

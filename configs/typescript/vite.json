@@ -6,13 +6,9 @@
     "allowJs": false,
     "esModuleInterop": false,
     "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "ESNext"],
-    "module": "Preserve",
-    "moduleResolution": "bundler",
     "noEmit": true,
     "resolveJsonModule": true,
-    "skipLibCheck": false,
-    "target": "ESNext",
+    "skipLibCheck": true,
     "types": ["vite/client"]
   }
 }

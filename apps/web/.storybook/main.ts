@@ -21,7 +21,12 @@ const config: StorybookConfig = {
     defaultName: "Docs",
   },
   framework: "@storybook/react-vite",
-  stories: ["../src/**/*.stories.@(ts|tsx)", "../../../packages/ui/src/**/*.stories.tsx"],
+  stories: [
+    "../src/**/*.stories.@(ts|tsx)",
+    process.env.NODE_ENV === "production" || process.env.STORYBOOK_MODE === "combined"
+      ? "../../../packages/shared-ui/src/**/*.stories.tsx"
+      : "",
+  ],
 };
 
 export default config;

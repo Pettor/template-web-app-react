@@ -2,9 +2,6 @@
   "exclude": ["dist"],
   "extends": "typescript-config/vite.json",
   "compilerOptions": {
-    // Build & Resolve
-    "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     // Paths & Types
     "paths": {
       "~/*": ["./src/*"]
