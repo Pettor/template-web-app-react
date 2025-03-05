@@ -1,4 +1,4 @@
-import { useMemo, type ReactElement } from "react";
+import { type ReactElement } from "react";
 import { UseMediaQuery } from "react-package";
 import type { NavbarProps } from "ui-package";
 import type { Subtract } from "utility-types";
@@ -14,13 +14,9 @@ export interface AppbarProps extends Pick<NavbarProps, "title">, IAppSocialLinks
 export function Appbar({ appbarDesktopProps, appbarPhoneProps, ...navbarProps }: AppbarProps): ReactElement {
   const { matches } = UseMediaQuery("md");
 
-  const navbarElement: ReactElement = useMemo(() => {
-    if (matches) {
-      return <AppNavbarDesktop {...navbarProps} {...appbarDesktopProps} />;
-    }
+  if (matches) {
+    return <AppNavbarDesktop {...navbarProps} {...appbarDesktopProps} />;
+  }
 
-    return <AppbarPhone {...navbarProps} {...appbarPhoneProps} />;
-  }, [appbarDesktopProps, appbarPhoneProps, matches, navbarProps]);
-
-  return <>{navbarElement}</>;
+  return <AppbarPhone {...navbarProps} {...appbarPhoneProps} />;
 }

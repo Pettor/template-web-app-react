@@ -1,7 +1,7 @@
 import reactEslint from "eslint-plugin-react";
 import reactHooksEslint from "eslint-plugin-react-hooks";
+import reactCompilerEslint from "eslint-plugin-react-compiler";
 import { config as baseConfig } from "./base.js";
-import prettierConfigEslint from "eslint-config-prettier";
 
 /**
  * A shared ESLint configuration for the repository.
@@ -10,6 +10,7 @@ import prettierConfigEslint from "eslint-config-prettier";
  * */
 export const config = [
   ...baseConfig,
+  reactCompilerEslint.configs.recommended,
   {
     ...reactEslint.configs.flat.recommended,
     languageOptions: {

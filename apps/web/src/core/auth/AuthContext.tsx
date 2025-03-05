@@ -1,5 +1,5 @@
 import type { Dispatch, ReactElement, ReactNode } from "react";
-import { createContext, useMemo, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import { usePostRefreshTokenMutate } from "api-package";
 import { useRunOnce } from "react-package";
 import type { AuthActions, AuthState } from "./AuthReducer";
@@ -36,14 +36,16 @@ function AuthProvider({ children }: Props): ReactElement {
     },
   });
 
-  const value = useMemo(() => {
-    return {
-      state,
-      dispatch,
-    };
-  }, [state]);
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider
+      value={{
+        state,
+        dispatch,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export type { IAuthContext };
