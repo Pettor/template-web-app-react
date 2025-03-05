@@ -1,3 +1,4 @@
+import type { RefObject } from "react";
 import { useRef, type ReactElement } from "react";
 import { useOnClickOutside } from "usehooks-ts";
 
@@ -9,7 +10,7 @@ export interface DrawerProps {
 
 export function Drawer({ open, onClose, children }: DrawerProps): ReactElement {
   const menuRef = useRef<HTMLDivElement>(null);
-  useOnClickOutside(menuRef, onClose);
+  useOnClickOutside(menuRef as RefObject<HTMLDivElement>, onClose);
 
   return (
     <div className="drawer z-30">

@@ -1,10 +1,5 @@
-import type { ReactElement } from "react";
-import type { StoryFn } from "@storybook/react";
+import type { Decorator } from "@storybook/react";
 
-export function CenterDecorator(Story: StoryFn): ReactElement {
-  return (
-    <div className="flex w-full justify-center">
-      <Story />
-    </div>
-  );
-}
+export const CenterDecorator: Decorator = (Story) => {
+  return <div className="flex w-full justify-center">{Story()}</div>;
+};

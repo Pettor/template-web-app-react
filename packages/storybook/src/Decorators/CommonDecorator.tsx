@@ -1,10 +1,9 @@
-import type { ReactElement } from "react";
-import type { StoryFn } from "@storybook/react";
+import type { Decorator } from "@storybook/react";
 
-export function CommonDecorator(Story: StoryFn): ReactElement {
+export const CommonDecorator: Decorator = (Story) => {
   return (
     <div className="p-8">
       <Story />
     </div>
   );
-}
+};

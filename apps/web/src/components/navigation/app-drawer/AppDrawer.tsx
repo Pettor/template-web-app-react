@@ -1,3 +1,4 @@
+import type { RefObject } from "react";
 import { useRef, type ReactElement } from "react";
 import {
   UserCircleIcon,
@@ -17,7 +18,8 @@ export interface AppDrawerProps extends IAppSessionContent {
 export function AppDrawer({ open, name, email, onAbout, onLogout, onClose }: AppDrawerProps): ReactElement {
   const intl = useIntl();
   const menuRef = useRef<HTMLUListElement>(null);
-  useOnClickOutside(menuRef, onClose);
+  // TODO: Remove the cast when useOnClickOutside support React 19 null ref
+  useOnClickOutside(menuRef as RefObject<HTMLUListElement>, onClose);
 
   return (
     <div className="drawer z-30">

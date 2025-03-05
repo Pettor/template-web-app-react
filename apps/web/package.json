@@ -39,24 +39,24 @@
     "tailwind-config": "workspace:*"
   },
   "devDependencies": {
-    "@formatjs/cli": "6.2.12",
+    "@formatjs/cli": "6.6.1",
     "@storybook/addon-a11y": "8.6.3",
-    "@storybook/addon-coverage": "1.0.4",
+    "@storybook/addon-coverage": "1.0.5",
     "@storybook/addon-essentials": "8.6.3",
     "@storybook/addon-interactions": "8.6.3",
     "@storybook/addon-themes": "8.6.3",
     "@storybook/addon-viewport": "8.6.3",
-    "@vitejs/plugin-react-swc": "3.7.0",
+    "@vitejs/plugin-react-swc": "3.8.0",
     "eslint-config": "workspace:*",
     "http-server": "14.1.1",
-    "start-server-and-test": "2.0.8",
+    "start-server-and-test": "2.0.10",
     "storybook-package": "workspace:*",
     "typescript-config": "workspace:*",
-    "vite-plugin-http2-proxy": "0.4.3",
+    "vite-plugin-http2-proxy": "0.5.0",
     "vite-plugin-mkcert": "1.17.6",
-    "vite-plugin-pwa": "0.20.5",
-    "vite-tsconfig-paths": "4.3.2",
-    "workbox-window": "7.1.0"
+    "vite-plugin-pwa": "0.21.1",
+    "vite-tsconfig-paths": "5.1.4",
+    "workbox-window": "7.3.0"
   },
   "jest-junit": {
     "suiteName": "web tests",

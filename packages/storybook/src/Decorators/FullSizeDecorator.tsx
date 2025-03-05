@@ -1,10 +1,9 @@
-import type { ReactElement } from "react";
-import type { StoryFn } from "@storybook/react";
+import type { Decorator } from "@storybook/react";
 
-export function FullSizeDecorator(Story: StoryFn): ReactElement {
+export const FullSizeDecorator: Decorator = (Story) => {
   return (
-    <div className="flex flex-col h-svh w-svw">
+    <div className="flex h-svh w-svw flex-col">
       <Story />
     </div>
   );
-}
+};
