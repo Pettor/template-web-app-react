@@ -8,7 +8,7 @@
     "node": ">=18.0.0 <23.0.0"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "build": "turbo run build --no-daemon",
     "deploy": "turbo run deploy --no-daemon",
     "clean": "turbo run clean --no-daemon && rimraf output",
