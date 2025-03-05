@@ -1,7 +1,6 @@
-import type { ReactElement } from "react";
-import type { StoryFn } from "@storybook/react";
+import type { Decorator } from "@storybook/react";
 
-export function MockPhoneDecorator(Story: StoryFn): ReactElement {
+export const MockPhoneDecorator: Decorator = (Story) => {
   return (
     <div className="flex flex-1 justify-center">
       <div className="item m-8">
@@ -16,4 +15,4 @@ export function MockPhoneDecorator(Story: StoryFn): ReactElement {
       </div>
     </div>
   );
-}
+};

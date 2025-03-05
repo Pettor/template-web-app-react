@@ -1,17 +1,16 @@
-import type { ReactElement } from "react";
-import type { StoryFn } from "@storybook/react";
+import type { Decorator } from "@storybook/react";
 
-export function MockBrowserDecorator(Story: StoryFn): ReactElement {
+export const MockBrowserDecorator: Decorator = (Story) => {
   return (
     <div className="flex h-svh w-svw p-8">
-      <div className="mockup-browser flex h-full w-full flex-1 flex-col border bg-base-300">
+      <div className="mockup-browser bg-base-300 flex h-full w-full flex-1 flex-col border">
         <div className="mockup-browser-toolbar">
           <div className="input">https://daisyui.com</div>
         </div>
-        <div className="flex h-full w-full flex-1 justify-center bg-base-200">
+        <div className="bg-base-200 flex h-full w-full flex-1 justify-center">
           <Story />
         </div>
       </div>
     </div>
   );
-}
+};

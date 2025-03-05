@@ -1,17 +1,16 @@
-import type { ReactElement } from "react";
 import { withThemeByDataAttribute, withThemeByClassName } from "@storybook/addon-themes";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import type { StoryFn, StoryContext } from "@storybook/react";
+import type { Decorator } from "@storybook/react";
 import { IntlProvider } from "react-intl";
 import "../src/main.css";
 
-function withLocaleProvider(Story: StoryFn, context: StoryContext): ReactElement {
+const withLocaleProvider: Decorator = (Story, context) => {
   return (
     <IntlProvider locale="en" messages={{}}>
       <Story {...context} />
     </IntlProvider>
   );
-}
+};
 
 export const decorators = [
   withLocaleProvider,

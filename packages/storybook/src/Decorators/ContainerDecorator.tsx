@@ -1,10 +1,9 @@
-import type { ReactElement } from "react";
-import type { StoryFn } from "@storybook/react";
+import type { Decorator } from "@storybook/react";
 
-export function ContainerDecorator(Story: StoryFn): ReactElement {
+export const ContainerDecorator: Decorator = (Story) => {
   return (
     <div className="container">
       <Story />
     </div>
   );
-}
+};
