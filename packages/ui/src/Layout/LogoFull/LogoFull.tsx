@@ -1,4 +1,4 @@
-import { useMemo, type ReactElement } from "react";
+import { type ReactElement } from "react";
 import { Logo } from "../Logo/Logo";
 
 export interface LogoFullProps {
@@ -7,7 +7,7 @@ export interface LogoFullProps {
 }
 
 export function LogoFull({ appName, size = "large" }: LogoFullProps): ReactElement {
-  const logoTextClass = useMemo(() => {
+  const logoTextClass = (): string => {
     switch (size) {
       case "small":
         return "text-4xl";
@@ -16,7 +16,7 @@ export function LogoFull({ appName, size = "large" }: LogoFullProps): ReactEleme
       case "large":
         return "text-6xl";
     }
-  }, [size]);
+  };
 
   return (
     <div className="flex flex-row">
@@ -24,7 +24,7 @@ export function LogoFull({ appName, size = "large" }: LogoFullProps): ReactEleme
         <Logo size={size} />
       </div>
       <div className="flex items-center">
-        <span className={logoTextClass}>{appName}</span>
+        <span className={logoTextClass()}>{appName}</span>
       </div>
     </div>
   );

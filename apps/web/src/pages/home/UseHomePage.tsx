@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useAppSessionContent } from "~/classes/app-session/UseAppSessionContent";
 import { useAppSocialLinks } from "~/classes/app-social-links/UseAppSocialLinks";
 import { useThemeSwitcher } from "~/components/actions/theme-switch/UseThemeSwitcher";
@@ -8,14 +7,10 @@ export function useHomePage(githubLink: string, linkedInLink: string): HomeViewP
   const appSessionProps = useAppSessionContent("/version");
   const themeSwitchProps = useThemeSwitcher();
   const socialLinkProps = useAppSocialLinks(githubLink, linkedInLink);
-
-  const appbarProps = useMemo(
-    () => ({
-      ...appSessionProps,
-      ...themeSwitchProps,
-    }),
-    [appSessionProps, themeSwitchProps]
-  );
+  const appbarProps = {
+    ...appSessionProps,
+    ...themeSwitchProps,
+  };
 
   function handleOnGotoClick(href: string): void {
     window.open(href, "_blank", "noreferrer");

@@ -1,4 +1,4 @@
-import { useMemo, type ReactElement } from "react";
+import { type ReactElement } from "react";
 import clsx from "clsx";
 
 export interface ToastProps {
@@ -11,7 +11,7 @@ export interface ToastProps {
 }
 
 export function Toast({ message, severity, positionX, positionY, disablePosition, onClose }: ToastProps): ReactElement {
-  const typeClass = useMemo(() => {
+  const typeClass = (): string => {
     switch (severity) {
       case "success":
         return "alert-success";
@@ -24,9 +24,9 @@ export function Toast({ message, severity, positionX, positionY, disablePosition
       default:
         return "alert-info";
     }
-  }, [severity]);
+  };
 
-  const positionClass = useMemo(() => {
+  const positionClass = (): string => {
     let x = "end";
     let y = "bottom";
 
@@ -52,11 +52,11 @@ export function Toast({ message, severity, positionX, positionY, disablePosition
     }
 
     return `toast-${x} toast-${y}`;
-  }, [positionX, positionY]);
+  };
 
   return (
-    <div className={disablePosition ? "" : clsx(positionClass, "toast")}>
-      <div className={clsx(typeClass, "alert shadow-md")}>
+    <div className={disablePosition ? "" : clsx(positionClass(), "toast")}>
+      <div className={clsx(typeClass(), "alert shadow-md")}>
         <span>{message}</span>
         {onClose && (
           <button className="btn btn-circle btn-ghost btn-sm" onClick={onClose}>

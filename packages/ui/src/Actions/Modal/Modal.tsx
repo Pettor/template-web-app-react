@@ -1,5 +1,5 @@
 import type { ReactNode, MouseEvent } from "react";
-import { useMemo, type ReactElement, useRef, useEffect } from "react";
+import { type ReactElement, useRef, useEffect } from "react";
 import clsx from "clsx";
 import { getCrypto } from "react-package";
 
@@ -12,7 +12,7 @@ export interface ModalProps {
 
 export function Modal({ open, onClose, className, children }: ModalProps): ReactElement {
   const ref = useRef<HTMLDialogElement>(null);
-  const dialogId = useMemo(() => getCrypto().randomUUID(), []);
+  const dialogId = getCrypto().randomUUID();
 
   useEffect(() => {
     if (open && ref.current) {
