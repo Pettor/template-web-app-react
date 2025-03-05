@@ -138,7 +138,7 @@ export function SignUpForm({ loading, onSubmit }: SignUpFormProps): ReactElement
         data-testid="sign-up-form__lastname-input"
       />
       <InputField
-        id="lastName"
+        id="email"
         type="email"
         placeholder={intl.formatMessage({
           description: "SignUpFormLabel - Email",
