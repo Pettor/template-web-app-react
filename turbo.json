@@ -64,6 +64,9 @@
     "storybook:dev": {
       "cache": false
     },
+    "storybook:dev:combined": {
+      "cache": false
+    },
     "storybook:build": {
       "cache": false,
       "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts"],
