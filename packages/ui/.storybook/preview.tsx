@@ -3,6 +3,7 @@ import { withThemeByDataAttribute, withThemeByClassName } from "@storybook/addon
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import type { StoryFn, StoryContext } from "@storybook/react";
 import { IntlProvider } from "react-intl";
+import "../src/main.css";
 
 function withLocaleProvider(Story: StoryFn, context: StoryContext): ReactElement {
   return (
