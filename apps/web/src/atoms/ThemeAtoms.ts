@@ -1,3 +1,4 @@
+import type { Atom } from "jotai";
 import { atom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 import { atomEffect } from "jotai-effect";
@@ -27,7 +28,7 @@ export const themeModeAtom = atom(
 );
 
 // Effects
-export const themeModeEffect = atomEffect((get) => {
+export const themeModeEffect: Atom<void> = atomEffect((get) => {
   const themeMode = get(themeModeAtom);
 
   if (themeMode === "dark") {
