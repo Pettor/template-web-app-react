@@ -27,7 +27,7 @@
     "test:unit:coverage:ci": "turbo run test:unit:coverage:ci --parallel --no-daemon",
     "mocks": "pnpm --filter=mock mocks",
     "storybook": "pnpm storybook:dev:combined",
-    "storybook:dev:combined": "cross-env STORYBOOK_MODE=combined turbo run storybook:dev --filter=web --no-daemon",
+    "storybook:dev:combined": "turbo run storybook:dev:combined --filter=web --no-daemon",
     "storybook:dev:web": "turbo run storybook:dev --filter=web --no-daemon",
     "storybook:dev:ui": "turbo run storybook:dev --filter=ui-package --no-daemon",
     "storybook:build": "turbo run storybook:build --parallel --no-daemon",
