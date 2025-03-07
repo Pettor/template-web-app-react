@@ -1,5 +1,6 @@
 /* Tailwind confugration */
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @plugin "daisyui";
 
 /* Tailwind theme */
