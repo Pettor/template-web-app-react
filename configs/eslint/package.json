@@ -20,7 +20,7 @@
     "eslint-plugin-prettier": "5.2.3",
     "eslint-plugin-react": "7.37.4",
     "eslint-plugin-react-compiler": "19.0.0-beta-40c6c23-20250301",
-    "eslint-plugin-react-hooks": "5.1.0",
+    "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-storybook": "0.11.3",
     "typescript-eslint": "8.25.0"
   }
