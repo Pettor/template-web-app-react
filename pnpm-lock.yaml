@@ -319,11 +319,11 @@ importers:
   packages/api:
     dependencies:
       axios:
-        specifier: 1.8.0
-        version: 1.8.0(debug@4.4.0)
+        specifier: 1.8.2
+        version: 1.8.2(debug@4.4.0)
       axios-auth-refresh:
         specifier: 3.3.6
-        version: 3.3.6(axios@1.8.0)
+        version: 3.3.6(axios@1.8.2)
     devDependencies:
       eslint-config:
         specifier: workspace:*
@@ -2543,6 +2543,11 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
+  acorn@8.14.1:
+    resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+
   aggregate-error@3.1.0:
     resolution: {integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==}
     engines: {node: '>=8'}
@@ -2716,8 +2721,8 @@ packages:
   axios@1.7.7:
     resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
 
-  axios@1.8.0:
-    resolution: {integrity: sha512-AS3x1klSQ4VeoeAaOyITVjomjITxIRgpKVgAXhE8QFJiNiYliuU+cW0p7XpqvlwNKmiwE57aNEyhPtsfAxERqg==}
+  axios@1.8.2:
+    resolution: {integrity: sha512-ls4GYBm5aig9vWx8AWDSGLpnpDQRtWAfrjU+EuytuODrFBkqesN2RkOQCBzrA1RQNHw1SmRMSDDDSwzNAYQ6Rg==}
 
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
@@ -9420,6 +9425,8 @@ snapshots:
 
   acorn@8.14.0: {}
 
+  acorn@8.14.1: {}
+
   aggregate-error@3.1.0:
     dependencies:
       clean-stack: 2.2.0
@@ -9607,9 +9614,9 @@ snapshots:
 
   axe-core@4.10.2: {}
 
-  axios-auth-refresh@3.3.6(axios@1.8.0):
+  axios-auth-refresh@3.3.6(axios@1.8.2):
     dependencies:
-      axios: 1.8.0(debug@4.4.0)
+      axios: 1.8.2(debug@4.4.0)
 
   axios@1.7.7(debug@4.4.0):
     dependencies:
@@ -9619,7 +9626,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  axios@1.8.0(debug@4.4.0):
+  axios@1.8.2(debug@4.4.0):
     dependencies:
       follow-redirects: 1.15.9(debug@4.4.0)
       form-data: 4.0.2
@@ -13587,7 +13594,7 @@ snapshots:
   terser@5.39.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.14.0
+      acorn: 8.14.1
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -14022,7 +14029,7 @@ snapshots:
 
   wait-on@7.2.0:
     dependencies:
-      axios: 1.8.0(debug@4.4.0)
+      axios: 1.8.2(debug@4.4.0)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8
@@ -14032,7 +14039,7 @@ snapshots:
 
   wait-on@8.0.2(debug@4.4.0):
     dependencies:
-      axios: 1.8.0(debug@4.4.0)
+      axios: 1.8.2(debug@4.4.0)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8

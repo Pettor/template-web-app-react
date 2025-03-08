@@ -11,7 +11,7 @@
     "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
-    "axios": "1.8.0",
+    "axios": "1.8.2",
     "axios-auth-refresh": "3.3.6"
   },
   "devDependencies": {
