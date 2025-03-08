@@ -1,0 +1,11 @@
+{
+  "name": "storybook-config",
+  "exports": {
+    "./main": "./main.ts",
+    "./preview": "./preview.tsx"
+  },
+  "version": "0.6.0",
+  "devDependencies": {
+    "typescript-config": "workspace:*"
+  }
+}

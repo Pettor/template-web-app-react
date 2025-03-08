@@ -8,7 +8,7 @@ interface Props {
 export function DocumentationLayout({ label, children }: Props): ReactElement {
   return (
     <div className="md:m-4">
-      <div className="card w-full bg-base-100 shadow-xl">
+      <div className="card bg-base-100 w-full shadow-xl">
         <div className="card-body">
           <div className="card-title">
             <span className="text-3xl md:text-5xl">{label}</span>

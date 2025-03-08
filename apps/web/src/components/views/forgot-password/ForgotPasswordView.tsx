@@ -16,7 +16,7 @@ export function ForgotPasswordView({ appName, resetForm, onBack }: ForgotPasswor
 
   return (
     <BasicLayout
-      className="dark:bg-base-300"
+      className="dark:bg-base-300/40"
       backgroundElement={
         <>
           <BlueFadeBackground />
