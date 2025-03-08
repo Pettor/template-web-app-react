@@ -16,7 +16,7 @@ export function SignUpView({ signUpForm, onBack }: SignUpViewProps): ReactElemen
 
   return (
     <BasicLayout
-      className="dark:bg-base-300"
+      className="dark:bg-base-300/40"
       backgroundElement={
         <>
           <BlueFadeBackground />

@@ -29,7 +29,7 @@ export function NavbarLayout({
       </div>
       <div className="flex flex-1" />
       {footer && (
-        <footer className="glass footer footer-horizontal footer-center p-10">
+        <footer className="glass footer footer-horizontal footer-center p-10 dark:bg-none">
           <aside>
             <Logo size="large" />
             <p className="text-base font-bold">Made with ☕ by Petter Hancock</p>
