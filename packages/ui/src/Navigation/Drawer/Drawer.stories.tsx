@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Drawer as Component } from "./Drawer";
 import type { DrawerProps as Props } from "./Drawer";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Shared/Navigation/Drawer",
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -28,6 +28,6 @@ const defaultArgs = {
   ),
 } satisfies Props;
 
-export const Standard = {
+export const Standard: Story = {
   args: defaultArgs,
-} satisfies Story;
+};

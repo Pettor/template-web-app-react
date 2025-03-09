@@ -4,13 +4,13 @@ import { AppbarPhone as Component } from "./AppbarPhone";
 import type { AppbarPhoneProps as Props } from "./AppbarPhone";
 import { AppbarPhoneData } from "~/storybook/data/AppbarData";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Navigation/Appbar",
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -19,7 +19,7 @@ const defaultArgs = {
   ...AppbarPhoneData,
 } satisfies Props;
 
-export const Phone = {
+export const Phone: Story = {
   args: defaultArgs,
   decorators: [FullSizeDecorator],
-} satisfies Story;
+};

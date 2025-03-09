@@ -3,11 +3,11 @@ import { CommonDecorator } from "storybook-package";
 import { PwaUpdateDialog as Component } from "./PwaUpdateDialog";
 import type { PwaUpdateDialogProps as Props } from "./PwaUpdateDialog";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Feedback/Progressive Web App",
   decorators: [CommonDecorator],
-} satisfies Meta;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -20,6 +20,6 @@ const defaultArgs = {
   },
 } satisfies Props;
 
-export const UpdateDialog = {
+export const UpdateDialog: Story = {
   args: defaultArgs,
-} satisfies Story;
+};

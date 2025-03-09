@@ -3,13 +3,13 @@ import { StorybookNavbarContentComponent } from "Storybook/Components/StorybookN
 import { Navbar as Component } from "./Navbar";
 import type { NavbarProps as Props } from "./Navbar";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Shared/Navigation/Navbar",
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,14 +18,14 @@ const defaultArgs = {
   title: "This is a Header",
 } satisfies Props;
 
-export const Standard = {
+export const Standard: Story = {
   args: defaultArgs,
-} satisfies Story;
+};
 
-export const WithComponents = {
+export const WithComponents: Story = {
   args: {
     ...defaultArgs,
     endElement: <StorybookNavbarContentComponent />,
   },
   parameters: { viewport: { defaultViewport: "full" } },
-} satisfies Story;
+};

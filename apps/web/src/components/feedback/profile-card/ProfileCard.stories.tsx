@@ -5,12 +5,12 @@ import { ProfileCard as Component } from "./ProfileCard";
 import type { ProfileCardProps as Props } from "./ProfileCard";
 import { AppSessionData } from "~/storybook/data/AppSessionData";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Feedback/Profile/Card",
   decorators: [CenterDecorator],
   tags: ["autodocs"],
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -31,7 +31,7 @@ export const WithData: Story = {
 
     userEvent.click(canvas.getByTestId("profile-card__logout-button"));
   },
-} satisfies Story;
+};
 
 export const Loading: Story = {
   args: {
@@ -46,4 +46,4 @@ export const Loading: Story = {
     await expect(canvas.getByTestId("profile-card__name-text")).not.toHaveTextContent(/./);
     await expect(canvas.getByTestId("profile-card__email-text")).not.toHaveTextContent(/./);
   },
-} satisfies Story;
+};

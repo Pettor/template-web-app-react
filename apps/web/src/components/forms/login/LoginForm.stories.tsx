@@ -4,11 +4,11 @@ import { ContainerDecorator } from "storybook-package";
 import { LoginForm as Component } from "./LoginForm";
 import type { LoginFormProps as Props } from "./LoginForm";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Forms/Login",
   decorators: [ContainerDecorator],
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,9 +18,9 @@ const defaultArgs: Props = {
   onSubmit: () => console.log("onSubmit"),
 };
 
-export const Standard = {
+export const Standard: Story = {
   args: defaultArgs,
-} satisfies Story;
+};
 
 export const Success: Story = {
   args: defaultArgs,
@@ -59,7 +59,7 @@ export const EmailInvalid: Story = {
 
     await expect(canvas.getByText("Email must be valid")).toBeInTheDocument();
   },
-} satisfies Story;
+};
 
 export const PasswordMissing: Story = {
   args: defaultArgs,
@@ -71,4 +71,4 @@ export const PasswordMissing: Story = {
 
     await expect(canvas.getByText("Password is required")).toBeInTheDocument();
   },
-} satisfies Story;
+};

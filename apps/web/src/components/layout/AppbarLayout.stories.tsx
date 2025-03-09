@@ -4,13 +4,13 @@ import { AppbarLayout as Component } from "./AppbarLayout";
 import type { AppbarLayoutProps as Props } from "./AppbarLayout";
 import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Layout/Appbar Layout",
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -24,6 +24,6 @@ const defaultArgs = {
   children: <StorybookTableContentComponent />,
 } satisfies Props;
 
-export const AppbarLayout = {
+export const AppbarLayout: Story = {
   args: defaultArgs,
-} satisfies Story;
+};
