@@ -22,14 +22,14 @@ importers:
         specifier: 11.14.0
         version: 11.14.0(@emotion/react@11.14.0(@types/react@19.0.10)(react@19.0.0))(@types/react@19.0.10)(react@19.0.0)
       '@fontsource/rubik':
-        specifier: 5.1.1
-        version: 5.1.1
+        specifier: 5.2.5
+        version: 5.2.5
       '@heroicons/react':
         specifier: 2.2.0
         version: 2.2.0(react@19.0.0)
       '@tanstack/react-query':
-        specifier: 5.66.9
-        version: 5.66.9(react@19.0.0)
+        specifier: 5.66.11
+        version: 5.66.11(react@19.0.0)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -1334,8 +1334,8 @@ packages:
     resolution: {integrity: sha512-3vm4by+B5lvsFPSyep3ELWmZfE3kicDtmemVpuwl1yH7tqtnHdsA6hG8fbXedMVdkzgtvzWoRgjSB4Q+FHnZiw==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
 
-  '@fontsource/rubik@5.1.1':
-    resolution: {integrity: sha512-g5H+vzDxwTxUBtEpPoNNF3uVZkqIvrXnYn0S8aQZNz1r2LMfpT0o/pnWr43hVumapVpm0CsT4xvH2Mw9LHnGqQ==}
+  '@fontsource/rubik@5.2.5':
+    resolution: {integrity: sha512-vr7hwIRJfK+OGi8+pEcNdLCzMoOAxfHPOmfDfZ63mDzG1/OUSeTLWiAtYywKCwPluTcV84hY2CHBUBF+OpKEcw==}
 
   '@formatjs/cli@6.6.1':
     resolution: {integrity: sha512-zzAIcIyM7urVm9hgH0h1E6/SvbkkHJ3+99VNWKiik3DE8xqnM7/bJODSvk+8w9GfrEYkX1EyvUzcu+v4hgdKdg==}
@@ -2173,11 +2173,11 @@ packages:
     peerDependencies:
       vite: 6.2.1
 
-  '@tanstack/query-core@5.66.4':
-    resolution: {integrity: sha512-skM/gzNX4shPkqmdTCSoHtJAPMTtmIJNS0hE+xwTTUVYwezArCT34NMermABmBVUg5Ls5aiUXEDXfqwR1oVkcA==}
+  '@tanstack/query-core@5.66.11':
+    resolution: {integrity: sha512-ZEYxgHUcohj3sHkbRaw0gYwFxjY5O6M3IXOYXEun7E1rqNhsP8fOtqjJTKPZpVHcdIdrmX4lzZctT4+pts0OgA==}
 
-  '@tanstack/react-query@5.66.9':
-    resolution: {integrity: sha512-NRI02PHJsP5y2gAuWKP+awamTIBFBSKMnO6UVzi03GTclmHHHInH5UzVgzi5tpu4+FmGfsdT7Umqegobtsp23A==}
+  '@tanstack/react-query@5.66.11':
+    resolution: {integrity: sha512-uPDiQbZScWkAeihmZ9gAm3wOBA1TmLB1KCB1fJ1hIiEKq3dTT+ja/aYM7wGUD+XiEsY4sDSE7p8VIz/21L2Dow==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -7871,7 +7871,7 @@ snapshots:
 
   '@faker-js/faker@9.6.0': {}
 
-  '@fontsource/rubik@5.1.1': {}
+  '@fontsource/rubik@5.2.5': {}
 
   '@formatjs/cli@6.6.1': {}
 
@@ -8867,11 +8867,11 @@ snapshots:
       tailwindcss: 4.0.9
       vite: 6.2.1(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.39.0)
 
-  '@tanstack/query-core@5.66.4': {}
+  '@tanstack/query-core@5.66.11': {}
 
-  '@tanstack/react-query@5.66.9(react@19.0.0)':
+  '@tanstack/react-query@5.66.11(react@19.0.0)':
     dependencies:
-      '@tanstack/query-core': 5.66.4
+      '@tanstack/query-core': 5.66.11
       react: 19.0.0
 
   '@testing-library/dom@10.4.0':
