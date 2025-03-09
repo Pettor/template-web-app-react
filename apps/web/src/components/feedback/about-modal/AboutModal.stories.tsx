@@ -3,11 +3,11 @@ import { CommonDecorator } from "storybook-package";
 import { AboutModal as Component } from "./AboutModal";
 import type { AboutModalProps as Props } from "./AboutModal";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Feedback/About",
   decorators: [CommonDecorator],
-} satisfies Meta;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -20,6 +20,6 @@ const defaultArgs = {
   onClose: () => console.log("onClose"),
 } satisfies Props;
 
-export const Modal = {
+export const Modal: Story = {
   args: defaultArgs,
-} satisfies Story;
+};

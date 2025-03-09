@@ -5,7 +5,7 @@ import type { HomeViewProps as Props } from "./HomeView";
 import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";
 import { AppSocialLinksData } from "~/storybook/data/AppSocialLinksData";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Views/Home",
   parameters: {
@@ -23,7 +23,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -37,13 +37,13 @@ const defaultArgs = {
   onGotoClick: (href: string) => console.log(href),
 } satisfies Props;
 
-export const Fullscreen = {
+export const Fullscreen: Story = {
   args: defaultArgs,
   decorators: [FullSizeDecorator],
   parameters: { viewport: { defaultViewport: "full" } },
-} satisfies Story;
+};
 
-export const Phone = {
+export const Phone: Story = {
   args: defaultArgs,
   parameters: { viewport: { defaultViewport: "iphonex" } },
-} satisfies Story;
+};

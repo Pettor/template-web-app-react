@@ -4,13 +4,13 @@ import { StorybookTableContentComponent } from "Storybook/Components/StorybookTa
 import { NavbarLayout as Component } from "./NavbarLayout";
 import type { NavbarLayoutProps, NavbarLayoutProps as Props } from "./NavbarLayout";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Shared/Layout",
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -29,7 +29,7 @@ function render(args: Props) {
   );
 }
 
-export const NavbarLayout = {
+export const NavbarLayout: Story = {
   args: defaultArgs,
   render,
-} satisfies Story;
+};

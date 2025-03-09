@@ -2,16 +2,16 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { StorybookTableContentComponent } from "Storybook/Components/StorybookTableContentComponent";
 import { BasicLayout as Component } from "./BasicLayout";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Shared/Layout",
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const BasicLayout = {
+export const BasicLayout: Story = {
   args: {
     children: <StorybookTableContentComponent />,
   },
-} satisfies Story;
+};

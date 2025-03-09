@@ -3,13 +3,13 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { AppDrawer as Component } from "./AppDrawer";
 import type { AppDrawerProps as Props } from "./AppDrawer";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Navigation/Drawer",
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -23,6 +23,6 @@ const defaultArgs = {
   onClose: () => console.log("onClose"),
 } satisfies Props;
 
-export const Application = {
+export const Application: Story = {
   args: defaultArgs,
-} satisfies Story;
+};

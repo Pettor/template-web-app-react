@@ -4,11 +4,11 @@ import { ContainerDecorator } from "storybook-package";
 import { ForgotPasswordForm as Component } from "./ForgotPasswordForm";
 import type { ForgotPasswordFormProps as Props } from "./ForgotPasswordForm";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Forms/Forgot Password",
   decorators: [ContainerDecorator],
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,9 +18,9 @@ const defaultArgs: Props = {
   onSubmit: () => console.log("onSubmit"),
 };
 
-export const Standard = {
+export const Standard: Story = {
   args: defaultArgs,
-} satisfies Story;
+};
 
 export const Success: Story = {
   args: defaultArgs,
@@ -32,7 +32,7 @@ export const Success: Story = {
 
     await expect(canvas.getByTestId("forgot-password-form__email-input")).toHaveValue("email@provider.com");
   },
-} satisfies Story;
+};
 
 export const IncorrectEmail: Story = {
   args: defaultArgs,
@@ -44,4 +44,4 @@ export const IncorrectEmail: Story = {
 
     await expect(canvas.getByText("Email must be valid")).toBeInTheDocument;
   },
-} satisfies Story;
+};

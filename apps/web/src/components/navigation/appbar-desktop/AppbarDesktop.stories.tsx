@@ -3,13 +3,13 @@ import { AppNavbarDesktop as Component } from "./AppbarDesktop";
 import type { AppbarDesktopProps as Props } from "./AppbarDesktop";
 import { AppbarDesktopData } from "~/storybook/data/AppbarData";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Navigation/Appbar",
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,6 +18,6 @@ const defaultArgs = {
   ...AppbarDesktopData,
 } satisfies Props;
 
-export const Desktop = {
+export const Desktop: Story = {
   args: defaultArgs,
-} satisfies Story;
+};
