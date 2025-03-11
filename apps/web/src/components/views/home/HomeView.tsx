@@ -9,6 +9,7 @@ import playwrightImgSrc from "~/assets/images/logo/playwright.png";
 import reactImgSrc from "~/assets/images/logo/react.png";
 import storybookImgSrc from "~/assets/images/logo/storybook.png";
 import turborepoImgSrc from "~/assets/images/logo/turborepo.png";
+import viteImgSrc from "~/assets/images/logo/vite.png";
 import type { IAppSocialLinks } from "~/classes/app-social-links/IAppSocialLinks";
 import { AppbarLayout } from "~/components/layout/AppbarLayout";
 import { type AppbarProps } from "~/components/navigation/appbar";
@@ -88,6 +89,21 @@ export function HomeView({ appNavbarProps, appSocialLinkProps, onGotoClick }: Ho
               id: "Loc3Ef",
             })}
             onClick={() => onGotoClick("https://react.dev/")}
+          />
+          <GridItem
+            imageSrc={viteImgSrc}
+            title={intl.formatMessage({
+              description: "HomeView - Vite title",
+              defaultMessage: "Vite",
+              id: "/+IE0C",
+            })}
+            description={intl.formatMessage({
+              description: "HomeView - Turborepo description",
+              defaultMessage:
+                "Vite is a blazing fast frontend build tool powering the next generation of web applications. ",
+              id: "5pk6t0",
+            })}
+            onClick={() => onGotoClick("https://vite.dev/")}
           />
           <GridItem
             imageSrc={turborepoImgSrc}

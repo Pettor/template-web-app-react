@@ -32,11 +32,8 @@ export const themeModeEffect: Atom<void> = atomEffect((get) => {
   const themeMode = get(themeModeAtom);
 
   if (themeMode === "dark") {
-    document.documentElement.classList.add("dark");
-    document.querySelector("html")?.setAttribute("data-theme", "dark");
+    document.querySelector("html")?.setAttribute("data-theme", "night");
     return;
   }
-
-  document.documentElement.classList.remove("dark");
   document.querySelector("html")?.setAttribute("data-theme", "light");
 });

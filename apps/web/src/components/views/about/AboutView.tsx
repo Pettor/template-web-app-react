@@ -13,7 +13,7 @@ export function AboutView({ onBack, ...aboutProps }: AboutViewProps): ReactEleme
 
   return (
     <BasicLayout
-      className="dark:bg-base-300/40"
+      className="dark:bg-base-300/70"
       backgroundElement={
         <>
           <BlueFadeBackground />
