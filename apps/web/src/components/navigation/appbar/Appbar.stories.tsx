@@ -4,13 +4,13 @@ import type { AppbarProps as Props } from "./Appbar";
 import { AppbarDesktopData, AppbarPhoneData } from "~/storybook/data/AppbarData";
 import { AppSocialLinksData } from "~/storybook/data/AppSocialLinksData";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Navigation/Appbar",
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -22,6 +22,6 @@ const defaultArgs = {
   ...AppSocialLinksData,
 } satisfies Props;
 
-export const Responsive = {
+export const Responsive: Story = {
   args: defaultArgs,
-} satisfies Story;
+};

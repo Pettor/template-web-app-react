@@ -3,7 +3,7 @@ import { FullSizeDecorator } from "storybook-package";
 import { SignUpView as Component } from "./SignUpView";
 import type { SignUpViewProps as Props } from "./SignUpView";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Views/Sign Up",
   parameters: {
@@ -16,7 +16,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -30,13 +30,13 @@ const defaultArgs = {
   onBack: () => console.log("onBack"),
 } satisfies Props;
 
-export const Fullscreen = {
+export const Fullscreen: Story = {
   args: defaultArgs,
   decorators: [FullSizeDecorator],
   parameters: { viewport: { defaultViewport: "full" } },
-} satisfies Story;
+};
 
-export const Phone = {
+export const Phone: Story = {
   args: defaultArgs,
   parameters: { viewport: { defaultViewport: "iphonex" } },
-} satisfies Story;
+};

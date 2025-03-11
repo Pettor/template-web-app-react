@@ -4,11 +4,11 @@ import { ContainerDecorator } from "storybook-package";
 import { SignUpForm as Component } from "./SignUpForm";
 import type { SignUpFormProps as Props } from "./SignUpForm";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Forms/Sign Up",
   decorators: [ContainerDecorator],
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -18,9 +18,9 @@ const defaultArgs: Props = {
   onSubmit: () => console.log("onSubmit"),
 };
 
-export const Standard = {
+export const Standard: Story = {
   args: defaultArgs,
-} satisfies Story;
+};
 
 export const Success: Story = {
   args: defaultArgs,
@@ -45,7 +45,7 @@ export const Success: Story = {
     await expect(canvas.getByTestId("sign-up-form__password-input")).toHaveValue("password");
     await expect(canvas.getByTestId("sign-up-form__confirmpassword-input")).toHaveValue("password");
   },
-} satisfies Story;
+};
 
 export const MissingFields: Story = {
   args: defaultArgs,

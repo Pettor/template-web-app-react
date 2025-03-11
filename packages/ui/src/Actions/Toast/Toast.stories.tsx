@@ -3,12 +3,12 @@ import { CommonDecorator } from "storybook-package";
 import type { ToastProps as Props } from "./Toast";
 import { Toast as Component } from "./Toast";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   decorators: [CommonDecorator],
   title: "Shared/Actions/Toast",
   tags: ["autodocs"],
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -20,32 +20,32 @@ const defaultArgs = {
   positionY: "top",
 } satisfies Props;
 
-export const Standard = {
+export const Standard: Story = {
   args: defaultArgs,
-} satisfies Story;
+};
 
-export const Success = {
+export const Success: Story = {
   args: {
     ...defaultArgs,
     severity: "success",
   },
-} satisfies Story;
+};
 
-export const Warning = {
+export const Warning: Story = {
   args: {
     ...defaultArgs,
     severity: "warning",
   },
-} satisfies Story;
+};
 
-export const Error = {
+export const Error: Story = {
   args: {
     ...defaultArgs,
     severity: "error",
   },
-} satisfies Story;
+};
 
-export const WithClose = {
+export const WithClose: Story = {
   args: {
     ...defaultArgs,
     onClose: () => console.log("onClose"),

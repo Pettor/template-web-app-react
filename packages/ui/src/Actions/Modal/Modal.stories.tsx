@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import type { ModalProps as Props } from "./Modal";
 import { Modal as Component } from "./Modal";
 
-const meta = {
+const meta: Meta<typeof Component> = {
   component: Component,
   title: "Shared/Actions/Modal",
-} satisfies Meta<typeof Component>;
+};
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -16,6 +16,6 @@ const defaultArgs = {
   children: <div>This is content test</div>,
 } satisfies Props;
 
-export const Standard = {
+export const Standard: Story = {
   args: defaultArgs,
-} satisfies Story;
+};
