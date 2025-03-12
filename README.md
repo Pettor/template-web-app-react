@@ -10,38 +10,6 @@ This is a template for building web applications with React. It includes a basic
 
 To check out a demo of the latest main branch [click here](https://pettor.github.io/template-web-app-react/app/).
 
-## Getting Started
-
-To get started with this template, follow these steps:
-
-1. Clone the repository to your local machine.
-1. Enable `corepack` by running `corepack enable`.
-1. Install the dependencies by running `pnpm i` in the project directory.
-1. Start the development server by running `pnpm dev`.
-
-## Enable Github Actions
-
-To enable Github Actions for this repository, follow these steps:
-
-1. Go to the `Settings` tab in the repository.
-1. Click the `Actions` tab in the sidebar.
-1. Enable the `Allow all actions` option.
-1. Click the `Rules` tab in the sidebar.
-1. Add a new rule with the following settings:
-   - Name: `Main`
-   - Enforcement status: `Active`
-   - Target branches: `Include default branch`
-   - Rules: `Require status checks to pass` and add `Lint`, `Build`, `Test Components` and `Test E2E` checks.
-
-## Enable Github Pages
-
-To enable Github Pages for this repository, follow these steps:
-
-1. Go to the `Settings` tab in the repository.
-1. Click the `Pages` tab in the sidebar.
-1. Select the `deploy/main` branch as the source.
-1. Update Readme with the correct link to the deployed application.
-
 ## Features
 
 This template includes the following features:
@@ -60,6 +28,38 @@ This template includes the following features:
 - [Github Pages](https://pages.github.com/) for hosting the application.
 - [Prettier](https://prettier.io/) for code formatting.
 - [ESLint](https://eslint.org/) for linting.
+
+## Getting Started
+
+To get started with this template, follow these steps:
+
+1. Clone the repository to your local machine.
+1. Enable `corepack` by running `corepack enable`.
+1. Install the dependencies by running `pnpm i` in the project directory.
+1. Start the development server by running `pnpm dev`.
+
+### Enable Github Actions
+
+To enable Github Actions for this repository, follow these steps:
+
+1. Go to the `Settings` tab in the repository.
+1. Click the `Actions` tab in the sidebar.
+1. Enable the `Allow all actions` option.
+1. Click the `Rules` tab in the sidebar.
+1. Add a new rule with the following settings:
+   - Name: `Main`
+   - Enforcement status: `Active`
+   - Target branches: `Include default branch`
+   - Rules: `Require status checks to pass` and add `Lint`, `Build`, `Test Components` and `Test E2E` checks.
+
+### Enable Github Pages
+
+To enable Github Pages for this repository, follow these steps:
+
+1. Go to the `Settings` tab in the repository.
+1. Click the `Pages` tab in the sidebar.
+1. Select the `deploy/main` branch as the source.
+1. Update Readme with the correct link to the deployed application.
 
 ## Contributing
 
