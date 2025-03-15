@@ -37,17 +37,17 @@ importers:
         specifier: 9.1.2
         version: 9.1.2
       daisyui:
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 5.0.4
+        version: 5.0.4
       immer:
         specifier: 10.1.1
         version: 10.1.1
       jotai:
-        specifier: 2.12.1
-        version: 2.12.1(@types/react@19.0.10)(react@19.0.0)
+        specifier: 2.12.2
+        version: 2.12.2(@types/react@19.0.10)(react@19.0.0)
       jotai-effect:
         specifier: 2.0.1
-        version: 2.0.1(jotai@2.12.1(@types/react@19.0.10)(react@19.0.0))
+        version: 2.0.1(jotai@2.12.2(@types/react@19.0.10)(react@19.0.0))
       react:
         specifier: 19.0.0
         version: 19.0.0
@@ -58,8 +58,8 @@ importers:
         specifier: 7.1.6
         version: 7.1.6(react@19.0.0)(typescript@5.8.2)
       wait-on:
-        specifier: 8.0.2
-        version: 8.0.2(debug@4.4.0)
+        specifier: 8.0.3
+        version: 8.0.3
       yup:
         specifier: 1.6.1
         version: 1.6.1
@@ -326,11 +326,11 @@ importers:
   packages/api:
     dependencies:
       axios:
-        specifier: 1.8.2
-        version: 1.8.2(debug@4.4.0)
+        specifier: 1.8.3
+        version: 1.8.3(debug@4.4.0)
       axios-auth-refresh:
         specifier: 3.3.6
-        version: 3.3.6(axios@1.8.2)
+        version: 3.3.6(axios@1.8.3)
     devDependencies:
       eslint-config:
         specifier: workspace:*
@@ -2649,6 +2649,9 @@ packages:
   axios@1.8.2:
     resolution: {integrity: sha512-ls4GYBm5aig9vWx8AWDSGLpnpDQRtWAfrjU+EuytuODrFBkqesN2RkOQCBzrA1RQNHw1SmRMSDDDSwzNAYQ6Rg==}
 
+  axios@1.8.3:
+    resolution: {integrity: sha512-iP4DebzoNlP/YN2dpwCgb8zoCmhtkajzS48JvwmkSkXvPI3DHc7m+XYL5tGnSlJtR6nImXZmdCuN5aP8dh1d8A==}
+
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -3095,8 +3098,8 @@ packages:
     resolution: {integrity: sha512-YGZxdTTL9lmLkCUTpg4j0zQ7IhRB5ZmqNBbGCl3Tg6MP/d5/6sY7L5mmTjzbc6JKgVZYiqTQTNhPFsbXNGlRaA==}
     engines: {node: '>=0.8'}
 
-  daisyui@5.0.0:
-    resolution: {integrity: sha512-U0K9Bac3Bi3zZGm6ojrw12F0vBHTpEgf46zv/BYxLe07hF0Xnx7emIQliwaRBgJuYhY0BhwQ6wSnq5cJXHA2yA==}
+  daisyui@5.0.4:
+    resolution: {integrity: sha512-9X3oX/k9hPBCslAECk8kYfvwgrz6Grs0lN7VI0/ZTM/hUfq1uFREHxCcBCCq0QROpN183N19B1hTNRWGipO2Eg==}
 
   dargs@8.1.0:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
@@ -4530,8 +4533,8 @@ packages:
     peerDependencies:
       jotai: '>=2.12.1'
 
-  jotai@2.12.1:
-    resolution: {integrity: sha512-VUW0nMPYIru5g89tdxwr9ftiVdc/nGV9jvHISN8Ucx+m1vI9dBeHemfqYzEuw5XSkmYjD/MEyApN9k6yrATsZQ==}
+  jotai@2.12.2:
+    resolution: {integrity: sha512-oN8715y7MkjXlSrpyjlR887TOuc/NLZMs9gvgtfWH/JP47ChwO0lR2ijSwBvPMYyXRAPT+liIAhuBavluKGgtA==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -6536,6 +6539,11 @@ packages:
 
   wait-on@8.0.2:
     resolution: {integrity: sha512-qHlU6AawrgAIHlueGQHQ+ETcPLAauXbnoTKl3RKq20W0T8x0DKVAo5xWIYjHSyvHxQlcYbFdR0jp4T9bDVITFA==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+
+  wait-on@8.0.3:
+    resolution: {integrity: sha512-nQFqAFzZDeRxsu7S3C7LbuxslHhk+gnJZHyethuGKAn2IVleIbTB9I3vJSQiSR+DifUqmdzfPMoMPJfLqMF2vw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
 
@@ -9452,11 +9460,19 @@ snapshots:
 
   axe-core@4.10.2: {}
 
-  axios-auth-refresh@3.3.6(axios@1.8.2):
+  axios-auth-refresh@3.3.6(axios@1.8.3):
     dependencies:
-      axios: 1.8.2(debug@4.4.0)
+      axios: 1.8.3(debug@4.4.0)
 
   axios@1.8.2(debug@4.4.0):
+    dependencies:
+      follow-redirects: 1.15.9(debug@4.4.0)
+      form-data: 4.0.2
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.8.3(debug@4.4.0):
     dependencies:
       follow-redirects: 1.15.9(debug@4.4.0)
       form-data: 4.0.2
@@ -9997,7 +10013,7 @@ snapshots:
       find-pkg: 0.1.2
       fs-exists-sync: 0.1.0
 
-  daisyui@5.0.0: {}
+  daisyui@5.0.4: {}
 
   dargs@8.1.0: {}
 
@@ -11858,11 +11874,11 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai-effect@2.0.1(jotai@2.12.1(@types/react@19.0.10)(react@19.0.0)):
+  jotai-effect@2.0.1(jotai@2.12.2(@types/react@19.0.10)(react@19.0.0)):
     dependencies:
-      jotai: 2.12.1(@types/react@19.0.10)(react@19.0.0)
+      jotai: 2.12.2(@types/react@19.0.10)(react@19.0.0)
 
-  jotai@2.12.1(@types/react@19.0.10)(react@19.0.0):
+  jotai@2.12.2(@types/react@19.0.10)(react@19.0.0):
     optionalDependencies:
       '@types/react': 19.0.10
       react: 19.0.0
@@ -13849,7 +13865,7 @@ snapshots:
 
   wait-on@7.2.0:
     dependencies:
-      axios: 1.8.2(debug@4.4.0)
+      axios: 1.8.3(debug@4.4.0)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8
@@ -13859,7 +13875,17 @@ snapshots:
 
   wait-on@8.0.2(debug@4.4.0):
     dependencies:
-      axios: 1.8.2(debug@4.4.0)
+      axios: 1.8.3(debug@4.4.0)
+      joi: 17.13.3
+      lodash: 4.17.21
+      minimist: 1.2.8
+      rxjs: 7.8.2
+    transitivePeerDependencies:
+      - debug
+
+  wait-on@8.0.3:
+    dependencies:
+      axios: 1.8.3(debug@4.4.0)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8
