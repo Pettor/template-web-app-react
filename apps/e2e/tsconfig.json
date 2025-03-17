@@ -1,6 +1,6 @@
 {
   "exclude": ["dist"],
-  "extends": "typescript-config/base.json",
+  "extends": "typescript-config/base",
   "compilerOptions": {
     // Build & Resolve
     "target": "ESNext",

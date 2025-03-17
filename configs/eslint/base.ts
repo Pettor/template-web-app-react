@@ -1,5 +1,5 @@
 import jsEslint from "@eslint/js";
-import tsEslint from "typescript-eslint";
+import tsEslint, { ConfigArray } from "typescript-eslint";
 import prettierEslint from "eslint-plugin-prettier/recommended";
 import prettierConfigEslint from "eslint-config-prettier";
 import importEslint from "eslint-plugin-import";
@@ -10,7 +10,7 @@ import formatjsEslint from "eslint-plugin-formatjs";
  *
  * @type {import("eslint").Linter.Config}
  * */
-export const config = [
+export const config: ConfigArray = tsEslint.config(
   jsEslint.configs.recommended,
   ...tsEslint.configs.recommended,
   {
@@ -52,4 +52,5 @@ export const config = [
     },
   },
   prettierEslint,
-];
+  prettierConfigEslint
+);

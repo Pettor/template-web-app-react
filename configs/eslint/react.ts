@@ -1,20 +1,21 @@
+import tsEslint, { ConfigArray, ConfigWithExtends } from "typescript-eslint";
 import reactEslint from "eslint-plugin-react";
 import reactHooksEslint from "eslint-plugin-react-hooks";
 import reactCompilerEslint from "eslint-plugin-react-compiler";
-import { config as baseConfig } from "./base.js";
+import { config as baseConfig } from "./base";
 
 /**
  * A shared ESLint configuration for the repository.
  *
  * @type {import("eslint").Linter.Config}
  * */
-export const config = [
+export const config: ConfigArray = tsEslint.config(
   ...baseConfig,
-  reactCompilerEslint.configs.recommended,
+  reactCompilerEslint.configs.recommended as ConfigWithExtends,
   {
     ...reactEslint.configs.flat.recommended,
     languageOptions: {
-      ...reactEslint.configs.flat.recommended.languageOptions,
+      ...reactEslint.configs.flat.recommended?.languageOptions,
       ecmaVersion: "latest",
       sourceType: "module",
       parserOptions: {
@@ -47,4 +48,4 @@ export const config = [
       "@typescript-eslint/explicit-function-return-type": "off",
     },
   },
-];
+);

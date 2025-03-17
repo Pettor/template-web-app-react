@@ -1,5 +1,10 @@
 {
   "name": "typescript-config",
+  "exports": {
+    "./base.": "./base.json",
+    "./react": "./react.json",
+    "./vite": "./vite.json"
+  },
   "files": [
     "*.d.ts"
   ],

@@ -172,9 +172,6 @@ importers:
       turbo:
         specifier: 2.4.4
         version: 2.4.4
-      typescript:
-        specifier: 5.8.2
-        version: 5.8.2
       usehooks-ts:
         specifier: 3.1.1
         version: 3.1.1(react@19.0.0)
@@ -305,6 +302,9 @@ importers:
       eslint-plugin-storybook:
         specifier: 0.11.4
         version: 0.11.4(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
+      typescript-config:
+        specifier: workspace:*
+        version: link:../typescript
       typescript-eslint:
         specifier: 8.26.0
         version: 8.26.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)

@@ -1,12 +1,9 @@
 {
   "name": "eslint-config",
   "exports": {
-    "./base": "./base.js",
-    "./react": "./react.js"
+    "./base": "./base.ts",
+    "./react": "./react.ts"
   },
-  "files": [
-    "base.js"
-  ],
   "type": "module",
   "version": "0.6.0",
   "scripts": {
@@ -22,6 +19,7 @@
     "eslint-plugin-react-compiler": "19.0.0-beta-bafa41b-20250307",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-storybook": "0.11.4",
+    "typescript-config": "workspace:*",
     "typescript-eslint": "8.26.0"
   }
 }
