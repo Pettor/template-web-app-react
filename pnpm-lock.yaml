@@ -297,8 +297,8 @@ importers:
         specifier: 7.37.4
         version: 7.37.4(eslint@9.22.0(jiti@2.4.2))
       eslint-plugin-react-compiler:
-        specifier: 19.0.0-beta-e552027-20250112
-        version: 19.0.0-beta-e552027-20250112(eslint@9.22.0(jiti@2.4.2))
+        specifier: 19.0.0-beta-3229e95-20250315
+        version: 19.0.0-beta-3229e95-20250315(eslint@9.22.0(jiti@2.4.2))
       eslint-plugin-react-hooks:
         specifier: 5.2.0
         version: 5.2.0(eslint@9.22.0(jiti@2.4.2))
@@ -3467,8 +3467,8 @@ packages:
       eslint-config-prettier:
         optional: true
 
-  eslint-plugin-react-compiler@19.0.0-beta-e552027-20250112:
-    resolution: {integrity: sha512-VjkIXHouCYyJHgk5HmZ1LH+fAK5CX+ULRX9iNYtwYJ+ljbivFhIT+JJyxNT/USQpCeS2Dt5ahjFeeMv0RRwTww==}
+  eslint-plugin-react-compiler@19.0.0-beta-3229e95-20250315:
+    resolution: {integrity: sha512-cJL+A3P3nIBAugbZ/RroaixQ6ygnKYMVM1sRnAE26dqHZRVRfqT8+PCyGtB2tgLmQWZhv6glQ+PRoiXqLMcRug==}
     engines: {node: ^14.17.0 || ^16.0.0 || >= 18.0.0}
     peerDependencies:
       eslint: '>=7'
@@ -10419,7 +10419,7 @@ snapshots:
       '@types/eslint': 9.6.1
       eslint-config-prettier: 10.1.1(eslint@9.22.0(jiti@2.4.2))
 
-  eslint-plugin-react-compiler@19.0.0-beta-e552027-20250112(eslint@9.22.0(jiti@2.4.2)):
+  eslint-plugin-react-compiler@19.0.0-beta-3229e95-20250315(eslint@9.22.0(jiti@2.4.2)):
     dependencies:
       '@babel/core': 7.26.9
       '@babel/parser': 7.26.9
