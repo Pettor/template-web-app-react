@@ -1,5 +1,5 @@
 {
-  "extends": "typescript-config/react-library.json",
+  "extends": "typescript-config/react.json",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "baseUrl": "src",

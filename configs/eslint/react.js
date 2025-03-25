@@ -13,6 +13,7 @@ export const config = [
   reactCompilerEslint.configs.recommended,
   {
     ...reactEslint.configs.flat.recommended,
+    files: ["*.ts", "*.tsx"],
     languageOptions: {
       ...reactEslint.configs.flat.recommended.languageOptions,
       ecmaVersion: "latest",
@@ -29,7 +30,6 @@ export const config = [
       react: reactEslint,
       "react-hooks": reactHooksEslint,
     },
-    files: ["*.ts", "*.tsx"],
     rules: {
       "react/react-in-jsx-scope": "off",
       "react/function-component-definition": [
