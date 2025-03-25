@@ -15,13 +15,11 @@ export const config = [
   ...tsEslint.configs.recommended,
   {
     ignores: ["*.js", "dist", "public", "node_modules", "storybook-static"],
-  },
-  {
+    files: ["*.ts", "*.tsx"],
     plugins: {
       formatjs: formatjsEslint,
       import: importEslint,
     },
-    files: ["*.ts", "*.tsx"],
     rules: {
       "import/no-unresolved": "off",
       "import/order": [
@@ -52,4 +50,5 @@ export const config = [
     },
   },
   prettierEslint,
+  prettierConfigEslint,
 ];

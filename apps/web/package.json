@@ -15,7 +15,7 @@
     "clean:all": "pnpm clean node_modules",
     "dev": "vite --open",
     "dev:mocks": "vite --mode mocks",
-    "lint": "eslint ./src ./.storybook --ext .js,.ts,.tsx",
+    "lint": "eslint ./src ./.storybook",
     "lint:fix": "pnpm lint --fix",
     "test": "test-storybook --url http://127.0.0.1:9050",
     "test:e2e:env": "pnpm dev:mocks",

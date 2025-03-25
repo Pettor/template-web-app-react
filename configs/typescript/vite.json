@@ -4,11 +4,8 @@
   "extends": "./base.json",
   "compilerOptions": {
     "allowJs": false,
-    "esModuleInterop": false,
     "jsx": "react-jsx",
-    "noEmit": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
     "types": ["vite/client"]
   }
 }
