@@ -37,8 +37,8 @@ importers:
         specifier: 9.1.2
         version: 9.1.2
       daisyui:
-        specifier: 5.0.4
-        version: 5.0.4
+        specifier: 5.0.9
+        version: 5.0.9
       immer:
         specifier: 10.1.1
         version: 10.1.1
@@ -326,11 +326,11 @@ importers:
   packages/api:
     dependencies:
       axios:
-        specifier: 1.8.3
-        version: 1.8.3(debug@4.4.0)
+        specifier: 1.8.4
+        version: 1.8.4(debug@4.4.0)
       axios-auth-refresh:
         specifier: 3.3.6
-        version: 3.3.6(axios@1.8.3)
+        version: 3.3.6(axios@1.8.4)
     devDependencies:
       eslint-config:
         specifier: workspace:*
@@ -2705,6 +2705,9 @@ packages:
   axios@1.8.3:
     resolution: {integrity: sha512-iP4DebzoNlP/YN2dpwCgb8zoCmhtkajzS48JvwmkSkXvPI3DHc7m+XYL5tGnSlJtR6nImXZmdCuN5aP8dh1d8A==}
 
+  axios@1.8.4:
+    resolution: {integrity: sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==}
+
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -3151,8 +3154,8 @@ packages:
     resolution: {integrity: sha512-YGZxdTTL9lmLkCUTpg4j0zQ7IhRB5ZmqNBbGCl3Tg6MP/d5/6sY7L5mmTjzbc6JKgVZYiqTQTNhPFsbXNGlRaA==}
     engines: {node: '>=0.8'}
 
-  daisyui@5.0.4:
-    resolution: {integrity: sha512-9X3oX/k9hPBCslAECk8kYfvwgrz6Grs0lN7VI0/ZTM/hUfq1uFREHxCcBCCq0QROpN183N19B1hTNRWGipO2Eg==}
+  daisyui@5.0.9:
+    resolution: {integrity: sha512-RsaehHh45f+0shWgZZaOY09/8eOae2voRsqJCD71j9yrnYgcke0Nj5ys0ZxrW4SPcc4+q96kWyJu0Z8P1zZdoA==}
 
   dargs@8.1.0:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
@@ -9623,11 +9626,19 @@ snapshots:
 
   axe-core@4.10.2: {}
 
-  axios-auth-refresh@3.3.6(axios@1.8.3):
+  axios-auth-refresh@3.3.6(axios@1.8.4):
     dependencies:
-      axios: 1.8.3(debug@4.4.0)
+      axios: 1.8.4(debug@4.4.0)
 
   axios@1.8.3(debug@4.4.0):
+    dependencies:
+      follow-redirects: 1.15.9(debug@4.4.0)
+      form-data: 4.0.2
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.8.4(debug@4.4.0):
     dependencies:
       follow-redirects: 1.15.9(debug@4.4.0)
       form-data: 4.0.2
@@ -10168,7 +10179,7 @@ snapshots:
       find-pkg: 0.1.2
       fs-exists-sync: 0.1.0
 
-  daisyui@5.0.4: {}
+  daisyui@5.0.9: {}
 
   dargs@8.1.0: {}
 
@@ -14021,7 +14032,7 @@ snapshots:
 
   wait-on@7.2.0:
     dependencies:
-      axios: 1.8.3(debug@4.4.0)
+      axios: 1.8.4(debug@4.4.0)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8
@@ -14031,7 +14042,7 @@ snapshots:
 
   wait-on@8.0.3(debug@4.4.0):
     dependencies:
-      axios: 1.8.3(debug@4.4.0)
+      axios: 1.8.4(debug@4.4.0)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8
