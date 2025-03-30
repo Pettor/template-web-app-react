@@ -42,7 +42,7 @@
     "@emotion/styled": "11.14.0",
     "@fontsource/rubik": "5.2.5",
     "@heroicons/react": "2.2.0",
-    "@tanstack/react-query": "5.70.0",
+    "@tanstack/react-query": "5.71.0",
     "clsx": "2.1.1",
     "concurrently": "9.1.2",
     "daisyui": "5.0.9",
