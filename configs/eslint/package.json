@@ -16,7 +16,7 @@
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-prettier": "5.2.4",
     "eslint-plugin-react": "7.37.4",
-    "eslint-plugin-react-compiler": "19.0.0-beta-a7bf2bd-20241110",
+    "eslint-plugin-react-compiler": "19.0.0-beta-e993439-20250405",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-storybook": "0.11.6",
     "typescript-eslint": "8.27.0"
