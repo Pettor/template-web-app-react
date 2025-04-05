@@ -46,8 +46,8 @@ importers:
         specifier: 2.12.2
         version: 2.12.2(@types/react@19.0.10)(react@19.1.0)
       jotai-effect:
-        specifier: 2.0.1
-        version: 2.0.1(jotai@2.12.2(@types/react@19.0.10)(react@19.1.0))
+        specifier: 2.0.2
+        version: 2.0.2(jotai@2.12.2(@types/react@19.0.10)(react@19.1.0))
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -55,8 +55,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       react-intl:
-        specifier: 7.1.9
-        version: 7.1.9(react@19.1.0)(typescript@5.8.3)
+        specifier: 7.1.10
+        version: 7.1.10(react@19.1.0)(typescript@5.8.3)
       wait-on:
         specifier: 8.0.3
         version: 8.0.3(debug@4.4.0)
@@ -1445,8 +1445,8 @@ packages:
   '@formatjs/intl-localematcher@0.6.1':
     resolution: {integrity: sha512-ePEgLgVCqi2BBFnTMWPfIghu6FkbZnnBVhO2sSxvLfrdFw7wCHAHiDoM2h4NRgjbaY7+B7HgOLZGkK187pZTZg==}
 
-  '@formatjs/intl@3.1.5':
-    resolution: {integrity: sha512-cCTrhTqXGbacet55cKrRlT6lhhDqCBJCqoyngksWNqKzr832jDqrMLjf2tihJArx6TNhPdCJOVgyDw93DhfFhA==}
+  '@formatjs/intl@3.1.6':
+    resolution: {integrity: sha512-tDkXnA4qpIFcDWac8CyVJq6oW8DR7W44QDUBsfXWIIJD/FYYen0QoH46W7XsVMFfPOVKkvbufjboZrrWbEfmww==}
     peerDependencies:
       typescript: 5.8.3
     peerDependenciesMeta:
@@ -4597,8 +4597,8 @@ packages:
   joi@17.13.3:
     resolution: {integrity: sha512-otDA4ldcIx+ZXsKHWmp0YizCweVRZG96J10b0FevjfuncLO1oX59THoAmHkNubYJ+9gWsYsp5k8v4ib6oDv1fA==}
 
-  jotai-effect@2.0.1:
-    resolution: {integrity: sha512-jZw18vUzlerIMQCaB75Ndxr9+6BR/fCt7Ah0CO2RpR5UhtBbXurgIprAZoVSzADaWoTN/qj0pyT6IQQWWP6dpA==}
+  jotai-effect@2.0.2:
+    resolution: {integrity: sha512-bk5J9YreQjenxoss+9gHtH1KEHpznXVq0JlThbhSmsX+0lbBZoMbJrJNspd4UOqMS3gesmpP/ea8cCaPK3AkEw==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       jotai: '>=2.12.1'
@@ -5584,8 +5584,8 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
 
-  react-intl@7.1.9:
-    resolution: {integrity: sha512-VmM0pD/olitUrzGswkphoPCoVZmaJKNJR0gPKVQfiK5Vy0+l5ucoSsYbTfwu/j0WzYzZl/Gdfr2H7Z22AJ5TBg==}
+  react-intl@7.1.10:
+    resolution: {integrity: sha512-I5eB73BAqBbkd2M3wL8gTSE/xFvJRmxZcjS1HMnBT3KXya2PUSI7nDO/tlapX8khchoDoliliMsmyIURB/ww1g==}
     peerDependencies:
       react: 16 || 17 || 18 || 19
       typescript: 5.8.3
@@ -8119,7 +8119,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@formatjs/intl@3.1.5(typescript@5.8.3)':
+  '@formatjs/intl@3.1.6(typescript@5.8.3)':
     dependencies:
       '@formatjs/ecma402-abstract': 2.3.4
       '@formatjs/fast-memoize': 2.2.7
@@ -12081,7 +12081,7 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai-effect@2.0.1(jotai@2.12.2(@types/react@19.0.10)(react@19.1.0)):
+  jotai-effect@2.0.2(jotai@2.12.2(@types/react@19.0.10)(react@19.1.0)):
     dependencies:
       jotai: 2.12.2(@types/react@19.0.10)(react@19.1.0)
 
@@ -12985,11 +12985,11 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  react-intl@7.1.9(react@19.1.0)(typescript@5.8.3):
+  react-intl@7.1.10(react@19.1.0)(typescript@5.8.3):
     dependencies:
       '@formatjs/ecma402-abstract': 2.3.4
       '@formatjs/icu-messageformat-parser': 2.11.2
-      '@formatjs/intl': 3.1.5(typescript@5.8.3)
+      '@formatjs/intl': 3.1.6(typescript@5.8.3)
       '@types/hoist-non-react-statics': 3.3.6
       '@types/react': 19.0.10
       hoist-non-react-statics: 3.3.2
