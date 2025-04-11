@@ -1,0 +1,5 @@
+import{j as r}from"./jsx-runtime-D_zvdyIk.js";import{S as m}from"./StorybookNavbarComponent-BenTm0_W.js";import{S as i}from"./StorybookTableContentComponent-CvAsvn1j.js";import{a as n}from"./StorybookNavbarContentComponent-DFfGeHrl.js";import"./Drawer-DKCfGrIf.js";import"./index-n-xcLTj3.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./index-CzfdDWUY.js";import"./chunk-LSEVNFON-G8OzWBoO.js";import"./BasicLayout-BYo8Ed5F.js";import"./clsx-B-dksMZM.js";import"./Logo-BdjsM1M9.js";import"./LogoFull-Ja5zr25l.js";const v={component:n,title:"Shared/Layout",parameters:{layout:"fullscreen"}},p={navbarElement:r.jsx(m,{}),onGithubClick:()=>console.log("onGithubClick"),onLinkedInClick:()=>console.log("onLinkedInClick")};function c(s){return r.jsx(n,{...s,children:r.jsx(i,{})})}const o={args:p,render:c};var t,e,a;o.parameters={...o.parameters,docs:{...(t=o.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  args: defaultArgs,
+  render
+}`,...(a=(e=o.parameters)==null?void 0:e.docs)==null?void 0:a.source}}};const h=["NavbarLayout"];export{o as NavbarLayout,h as __namedExportsOrder,v as default};
+//# sourceMappingURL=NavbarLayout.stories-BACxJ5MJ.js.map
