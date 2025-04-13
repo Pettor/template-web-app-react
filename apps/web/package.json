@@ -40,8 +40,8 @@
     "tailwind-config": "workspace:*"
   },
   "devDependencies": {
-    "@formatjs/cli": "6.6.1",
-    "@vitejs/plugin-react-swc": "3.8.0",
+    "@formatjs/cli": "6.6.3",
+    "@vitejs/plugin-react-swc": "3.8.1",
     "eslint-config": "workspace:*",
     "http-server": "14.1.1",
     "start-server-and-test": "2.0.11",
