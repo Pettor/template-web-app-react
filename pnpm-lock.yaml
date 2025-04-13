@@ -28,8 +28,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(react@19.1.0)
       '@tanstack/react-query':
-        specifier: 5.73.3
-        version: 5.73.3(react@19.1.0)
+        specifier: 5.74.0
+        version: 5.74.0(react@19.1.0)
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -2240,11 +2240,11 @@ packages:
     peerDependencies:
       vite: 6.2.6
 
-  '@tanstack/query-core@5.73.3':
-    resolution: {integrity: sha512-LUpsgVT3IkvOECdkQ3QD6esczSH71mAzH/LDZ2cu8j6w430v5W0JB1ulzsG8FFwFBd5fm/ePM2DFpg9TucRMgQ==}
+  '@tanstack/query-core@5.74.0':
+    resolution: {integrity: sha512-kMqBfXA06INskI06rm+abAY3/Vi/Kq1nRNfLbpwuhuMJ5lMAI5qASretlvjEO5OJoze6w7OB3pNvsbztirIWWQ==}
 
-  '@tanstack/react-query@5.73.3':
-    resolution: {integrity: sha512-umsAEsVsSSnrOZrstX/OlctdqkRZm6vPsetmbl241tdNo0jT3s+0bUoof9kCaTsPr/GopPlbJ1OYlrZj4toKzg==}
+  '@tanstack/react-query@5.74.0':
+    resolution: {integrity: sha512-tT/XQ8FmG5nlN7O8xnYaOM1c1ckJi9+SPKRq+Ay8rV118lefWCoFDQIsF/BarRsLTHijBmSQ6xE9PRugaOqrCQ==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -9089,11 +9089,11 @@ snapshots:
       tailwindcss: 4.0.14
       vite: 6.2.6(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)
 
-  '@tanstack/query-core@5.73.3': {}
+  '@tanstack/query-core@5.74.0': {}
 
-  '@tanstack/react-query@5.73.3(react@19.1.0)':
+  '@tanstack/react-query@5.74.0(react@19.1.0)':
     dependencies:
-      '@tanstack/query-core': 5.73.3
+      '@tanstack/query-core': 5.74.0
       react: 19.1.0
 
   '@testing-library/dom@10.4.0':
