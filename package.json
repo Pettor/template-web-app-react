@@ -59,7 +59,7 @@
     "@commitlint/cli": "19.8.0",
     "@commitlint/config-conventional": "19.8.0",
     "@commitlint/types": "19.8.0",
-    "@faker-js/faker": "9.6.0",
+    "@faker-js/faker": "9.7.0",
     "@mocks-server/main": "4.1.0",
     "@storybook/addon-a11y": "8.6.12",
     "@storybook/addon-coverage": "1.0.5",
