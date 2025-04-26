@@ -326,11 +326,11 @@ importers:
   packages/api:
     dependencies:
       axios:
-        specifier: 1.8.4
-        version: 1.8.4(debug@4.4.0)
+        specifier: 1.9.0
+        version: 1.9.0(debug@4.4.0)
       axios-auth-refresh:
         specifier: 3.3.6
-        version: 3.3.6(axios@1.8.4)
+        version: 3.3.6(axios@1.9.0)
     devDependencies:
       eslint-config:
         specifier: workspace:*
@@ -2746,8 +2746,8 @@ packages:
   axios@1.8.3:
     resolution: {integrity: sha512-iP4DebzoNlP/YN2dpwCgb8zoCmhtkajzS48JvwmkSkXvPI3DHc7m+XYL5tGnSlJtR6nImXZmdCuN5aP8dh1d8A==}
 
-  axios@1.8.4:
-    resolution: {integrity: sha512-eBSYY4Y68NNlHbHBMdeDmKNtDgXWhQsJcGqzO3iLUM0GraQFSS9cVgPX5I9b3lbdFKyYoAEGAZF1DwhTaljNAw==}
+  axios@1.9.0:
+    resolution: {integrity: sha512-re4CqKTJaURpzbLHtIi6XpDv20/CnpXOtjRY5/CU32L8gU8ek9UIivcfvSWvmKEngmVbrUtPpdDwWDWL7DNHvg==}
 
   babel-jest@29.7.0:
     resolution: {integrity: sha512-BrvGY3xZSwEcCzKvKsCi2GgHqDqsYkOP4/by5xCgIwGXQxIEh+8ew3gmrE1y7XRR6LHZIj6yLYnUi/mm2KXKBg==}
@@ -9655,9 +9655,9 @@ snapshots:
 
   axe-core@4.10.2: {}
 
-  axios-auth-refresh@3.3.6(axios@1.8.4):
+  axios-auth-refresh@3.3.6(axios@1.9.0):
     dependencies:
-      axios: 1.8.4(debug@4.4.0)
+      axios: 1.9.0(debug@4.4.0)
 
   axios@1.8.3(debug@4.4.0):
     dependencies:
@@ -9667,7 +9667,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  axios@1.8.4(debug@4.4.0):
+  axios@1.9.0(debug@4.4.0):
     dependencies:
       follow-redirects: 1.15.9(debug@4.4.0)
       form-data: 4.0.2
@@ -14073,7 +14073,7 @@ snapshots:
 
   wait-on@7.2.0:
     dependencies:
-      axios: 1.8.4(debug@4.4.0)
+      axios: 1.9.0(debug@4.4.0)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8
@@ -14083,7 +14083,7 @@ snapshots:
 
   wait-on@8.0.3(debug@4.4.0):
     dependencies:
-      axios: 1.8.4(debug@4.4.0)
+      axios: 1.9.0(debug@4.4.0)
       joi: 17.13.3
       lodash: 4.17.21
       minimist: 1.2.8
