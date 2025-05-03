@@ -75,11 +75,11 @@
     "@tailwindcss/aspect-ratio": "0.4.2",
     "@tailwindcss/typography": "0.5.16",
     "@tailwindcss/vite": "4.1.4",
-    "@types/node": "22.14.1",
+    "@types/node": "22.15.2",
     "@types/react": "19.1.2",
     "@types/react-dom": "19.1.2",
     "cross-env": "7.0.3",
-    "eslint": "9.25.0",
+    "eslint": "9.25.1",
     "http-server": "14.1.1",
     "husky": "9.1.7",
     "move-cli": "2.0.0",
@@ -91,13 +91,13 @@
     "start-server-and-test": "2.0.11",
     "storybook": "8.6.12",
     "tailwindcss": "4.1.4",
-    "turbo": "2.5.0",
+    "turbo": "2.5.2",
     "typescript": "5.8.2",
     "usehooks-ts": "3.1.1",
     "utility-types": "3.11.0",
     "vite": "6.3.4",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.1.1"
+    "vitest": "3.1.2"
   },
   "pnpm": {
     "overrides": {
