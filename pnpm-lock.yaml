@@ -37,8 +37,8 @@ importers:
         specifier: 9.1.2
         version: 9.1.2
       daisyui:
-        specifier: 5.0.28
-        version: 5.0.28
+        specifier: 5.0.35
+        version: 5.0.35
       immer:
         specifier: 10.1.1
         version: 10.1.1
@@ -3196,8 +3196,8 @@ packages:
     resolution: {integrity: sha512-YGZxdTTL9lmLkCUTpg4j0zQ7IhRB5ZmqNBbGCl3Tg6MP/d5/6sY7L5mmTjzbc6JKgVZYiqTQTNhPFsbXNGlRaA==}
     engines: {node: '>=0.8'}
 
-  daisyui@5.0.28:
-    resolution: {integrity: sha512-H082p8Lg3c7Se9wTbjfSOOhfUbp3BnOM2+cdr3OeY5G1Ll7GYLXB9NWLHgitkTsB1pQKwHRYYchqN2YG0VVShg==}
+  daisyui@5.0.35:
+    resolution: {integrity: sha512-AWi11n/x5++mps55jcwrBf0Lmip1euWY0FYcH/05SFGmoqrU7S7/aIUWaiaeqlJ5EcmEZ/7zEY73aOxMv6hcIg==}
 
   dargs@8.1.0:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
@@ -10209,7 +10209,7 @@ snapshots:
       find-pkg: 0.1.2
       fs-exists-sync: 0.1.0
 
-  daisyui@5.0.28: {}
+  daisyui@5.0.35: {}
 
   dargs@8.1.0: {}
 
