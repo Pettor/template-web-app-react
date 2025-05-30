@@ -1,6 +1,5 @@
 import reactEslint from "eslint-plugin-react";
 import reactHooksEslint from "eslint-plugin-react-hooks";
-import reactCompilerEslint from "eslint-plugin-react-compiler";
 import { config as baseConfig } from "./base.js";
 
 /**
@@ -10,7 +9,6 @@ import { config as baseConfig } from "./base.js";
  * */
 export const config = [
   ...baseConfig,
-  reactCompilerEslint.configs.recommended,
   {
     ...reactEslint.configs.flat.recommended,
     files: ["*.ts", "*.tsx"],
@@ -39,6 +37,7 @@ export const config = [
         },
       ],
       "react-hooks/exhaustive-deps": "error",
+      'react-hooks/react-compiler': 'error'
     },
   },
   {
