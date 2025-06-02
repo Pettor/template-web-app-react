@@ -12,7 +12,7 @@
     "clean:all": "pnpm clean node_modules",
     "lint": "eslint ./src ./.storybook",
     "lint:fix": "pnpm lint --fix",
-    "test": "test-storybook --url http://127.0.0.1:9060",
+    "test": "vitest --project=storybook",
     "test:unit": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test --junit --coverage\"",
     "test:unit:coverage": "npx nyc report --reporter=lcov -t ./coverage/storybook --report-dir ./coverage/storybook",
     "test:unit:coverage:ci": "pnpm test:unit:coverage:ci:create && pnpm test:unit:coverage:ci:move",

@@ -4,10 +4,9 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-a11y",
     "@storybook/addon-coverage",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
     "@storybook/addon-themes",
-    "@storybook/addon-viewport",
+    "@storybook/addon-vitest",
+    "storybook/viewport"
   ],
   core: {
     builder: {

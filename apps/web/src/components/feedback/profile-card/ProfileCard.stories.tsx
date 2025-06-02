@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within, expect } from "@storybook/test";
+import { userEvent, within, expect } from "storybook/test";
 import { CenterDecorator } from "storybook-package";
 import { ProfileCard as Component } from "./ProfileCard";
 import type { ProfileCardProps as Props } from "./ProfileCard";
