@@ -1,4 +1,4 @@
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
 import { Preview } from "@storybook/react";
 import { IntlProvider } from "react-intl";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";

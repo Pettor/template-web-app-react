@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within, expect } from "@storybook/test";
+import { userEvent, within, expect } from "storybook/test";
 import { ContainerDecorator } from "storybook-package";
 import { LoginForm as Component } from "./LoginForm";
 import type { LoginFormProps as Props } from "./LoginForm";

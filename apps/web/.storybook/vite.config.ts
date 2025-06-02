@@ -10,7 +10,7 @@ export default defineConfig(() => {
     plugins: [tailwindcss() as PluginOption, tsconfigPaths() as PluginOption],
     // Add storybook-specific dependencies to pre-optimization
     optimizeDeps: {
-      include: ["@storybook/addon-a11y", "@storybook/addon-interactions", "@storybook/addon-viewport"],
+      include: ["@storybook/addon-a11y", "@storybook/addon-interactions", "storybook/viewport"],
     },
   };
 });
