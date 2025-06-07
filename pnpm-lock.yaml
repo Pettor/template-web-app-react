@@ -31,17 +31,17 @@ importers:
         specifier: 9.1.2
         version: 9.1.2
       daisyui:
-        specifier: 5.0.37
-        version: 5.0.37
+        specifier: 5.0.43
+        version: 5.0.43
       immer:
         specifier: 10.1.1
         version: 10.1.1
       jotai:
-        specifier: 2.12.4
-        version: 2.12.4(@types/react@19.1.5)(react@19.1.0)
+        specifier: 2.12.5
+        version: 2.12.5(@types/react@19.1.5)(react@19.1.0)
       jotai-effect:
         specifier: 2.0.2
-        version: 2.0.2(jotai@2.12.4(@types/react@19.1.5)(react@19.1.0))
+        version: 2.0.2(jotai@2.12.5(@types/react@19.1.5)(react@19.1.0))
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -3079,8 +3079,8 @@ packages:
     resolution: {integrity: sha512-YGZxdTTL9lmLkCUTpg4j0zQ7IhRB5ZmqNBbGCl3Tg6MP/d5/6sY7L5mmTjzbc6JKgVZYiqTQTNhPFsbXNGlRaA==}
     engines: {node: '>=0.8'}
 
-  daisyui@5.0.37:
-    resolution: {integrity: sha512-PLc+MhWAqTwolygEGPDi+ac+OsFqIt9nZylTIiyVlEx8loYL7Pt7hNWb8cp5pQQ9dhjYnda1ERiuM6OsJmvPGw==}
+  daisyui@5.0.43:
+    resolution: {integrity: sha512-2pshHJ73vetSpsbAyaOncGnNYL0mwvgseS1EWy1I9Qpw8D11OuBoDNIWrPIME4UFcq2xuff3A9x+eXbuFR9fUQ==}
 
   dargs@8.1.0:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
@@ -4525,8 +4525,8 @@ packages:
     peerDependencies:
       jotai: '>=2.12.1'
 
-  jotai@2.12.4:
-    resolution: {integrity: sha512-eFXLJol4oOLM8BS1+QV+XwaYQITG8n1tatBCFl4F5HE3zR5j2WIK8QpMt7VJIYmlogNUZfvB7wjwLoVk+umB9Q==}
+  jotai@2.12.5:
+    resolution: {integrity: sha512-G8m32HW3lSmcz/4mbqx0hgJIQ0ekndKWiYP7kWVKi0p6saLXdSoye+FZiOFyonnd7Q482LCzm8sMDl7Ar1NWDw==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -10017,7 +10017,7 @@ snapshots:
       find-pkg: 0.1.2
       fs-exists-sync: 0.1.0
 
-  daisyui@5.0.37: {}
+  daisyui@5.0.43: {}
 
   dargs@8.1.0: {}
 
@@ -11888,11 +11888,11 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai-effect@2.0.2(jotai@2.12.4(@types/react@19.1.5)(react@19.1.0)):
+  jotai-effect@2.0.2(jotai@2.12.5(@types/react@19.1.5)(react@19.1.0)):
     dependencies:
-      jotai: 2.12.4(@types/react@19.1.5)(react@19.1.0)
+      jotai: 2.12.5(@types/react@19.1.5)(react@19.1.0)
 
-  jotai@2.12.4(@types/react@19.1.5)(react@19.1.0):
+  jotai@2.12.5(@types/react@19.1.5)(react@19.1.0):
     optionalDependencies:
       '@types/react': 19.1.5
       react: 19.1.0
