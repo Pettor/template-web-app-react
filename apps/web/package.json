@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@formatjs/cli": "6.7.1",
-    "@vitejs/plugin-react": "4.5.0",
+    "@vitejs/plugin-react": "4.5.1",
     "eslint-config": "workspace:*",
     "http-server": "14.1.1",
     "start-server-and-test": "2.0.12",
