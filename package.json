@@ -37,7 +37,7 @@
     "storybook:move:ui": "turbo run storybook:move --filter=ui-package --no-daemon"
   },
   "dependencies": {
-    "@fontsource/rubik": "5.2.5",
+    "@fontsource/rubik": "5.2.6",
     "@heroicons/react": "2.2.0",
     "@tanstack/react-query": "5.80.6",
     "babel-plugin-react-compiler": "19.1.0-rc.2",

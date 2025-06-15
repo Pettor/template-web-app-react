@@ -13,8 +13,8 @@ importers:
   .:
     dependencies:
       '@fontsource/rubik':
-        specifier: 5.2.5
-        version: 5.2.5
+        specifier: 5.2.6
+        version: 5.2.6
       '@heroicons/react':
         specifier: 2.2.0
         version: 2.2.0(react@19.1.0)
@@ -1277,8 +1277,8 @@ packages:
     resolution: {integrity: sha512-U9wpuSrJC93jZBxx/Qq2wPjCuYISBueyVUGK7qqdmj7r/nxaxwW8AQDCLeRO7wZnjj94sh3p246cAYjUKuqgfg==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
 
-  '@fontsource/rubik@5.2.5':
-    resolution: {integrity: sha512-vr7hwIRJfK+OGi8+pEcNdLCzMoOAxfHPOmfDfZ63mDzG1/OUSeTLWiAtYywKCwPluTcV84hY2CHBUBF+OpKEcw==}
+  '@fontsource/rubik@5.2.6':
+    resolution: {integrity: sha512-KNY87CIXAzmKMfL8gnQV0nbePn9g/kG3tF4GJoUEASSz+ECFWYoPir8TSySblYfXTInDL/kHJm6CMrrEW/U/ZA==}
 
   '@formatjs/cli@6.7.1':
     resolution: {integrity: sha512-ULiXbLkbuTyd8f0qaByu1Nuc+jbAOLH1qRAtHZ7waIABQGPBB93OQ2FFtQPgoYoupKOKyNr+PZXR6pOT45E4EQ==}
@@ -7809,7 +7809,7 @@ snapshots:
 
   '@faker-js/faker@9.8.0': {}
 
-  '@fontsource/rubik@5.2.5': {}
+  '@fontsource/rubik@5.2.6': {}
 
   '@formatjs/cli@6.7.1': {}
 
