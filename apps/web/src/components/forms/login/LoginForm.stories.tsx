@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within, expect } from "storybook/test";
+import { expect, waitFor } from "storybook/test";
 import { ContainerDecorator } from "storybook-package";
 import { LoginForm as Component } from "./LoginForm";
 import type { LoginFormProps as Props } from "./LoginForm";
@@ -24,23 +24,21 @@ export const Standard: Story = {
 
 export const Success: Story = {
   args: defaultArgs,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
+  play: async ({ canvas, userEvent }) => {
     await userEvent.type(canvas.getByTestId("login-form__email-input"), "email@provider.com");
     await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
-    await expect(canvas.getByTestId("login-form__email-input")).toHaveValue("email@provider.com");
-    await expect(canvas.getByTestId("login-form__password-input")).toHaveValue("password");
+    waitFor(async () => {
+      await expect(canvas.getByTestId("login-form__email-input")).toHaveValue("email@provider.com");
+      await expect(canvas.getByTestId("login-form__password-input")).toHaveValue("password");
+    });
   },
 } satisfies Story;
 
 export const EmailMissing: Story = {
   args: defaultArgs,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
+  play: async ({ canvas, userEvent }) => {
     await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
@@ -50,9 +48,7 @@ export const EmailMissing: Story = {
 
 export const EmailInvalid: Story = {
   args: defaultArgs,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
+  play: async ({ canvas, userEvent }) => {
     await userEvent.type(canvas.getByTestId("login-form__email-input"), "incorrect");
     await userEvent.type(canvas.getByTestId("login-form__password-input"), "password");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
@@ -63,9 +59,7 @@ export const EmailInvalid: Story = {
 
 export const PasswordMissing: Story = {
   args: defaultArgs,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
+  play: async ({ canvas, userEvent }) => {
     await userEvent.type(canvas.getByTestId("login-form__email-input"), "email@provider.com");
     await userEvent.click(canvas.getByTestId("login-form__submit-button"));
 
