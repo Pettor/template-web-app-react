@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within, expect } from "@storybook/test";
+import { expect } from "storybook/test";
 import { ContainerDecorator } from "storybook-package";
 import { ForgotPasswordForm as Component } from "./ForgotPasswordForm";
 import type { ForgotPasswordFormProps as Props } from "./ForgotPasswordForm";
@@ -24,9 +24,7 @@ export const Standard: Story = {
 
 export const Success: Story = {
   args: defaultArgs,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
+  play: async ({ canvas, userEvent }) => {
     await userEvent.type(canvas.getByTestId("forgot-password-form__email-input"), "email@provider.com");
     await userEvent.click(canvas.getByTestId("forgot-password-form__submit-button"));
 
@@ -36,9 +34,7 @@ export const Success: Story = {
 
 export const IncorrectEmail: Story = {
   args: defaultArgs,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
+  play: async ({ canvas, userEvent }) => {
     await userEvent.type(canvas.getByTestId("forgot-password-form__email-input"), "incorrect");
     await userEvent.click(canvas.getByTestId("forgot-password-form__submit-button"));
 

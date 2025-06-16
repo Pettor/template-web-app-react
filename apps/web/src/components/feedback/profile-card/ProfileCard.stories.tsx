@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within, expect } from "@storybook/test";
+import { expect } from "storybook/test";
 import { CenterDecorator } from "storybook-package";
 import { ProfileCard as Component } from "./ProfileCard";
 import type { ProfileCardProps as Props } from "./ProfileCard";
@@ -22,9 +22,7 @@ const defaultArgs = {
 export const WithData: Story = {
   args: defaultArgs,
   parameters: { viewport: { defaultViewport: "full" } },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
+  play: async ({ canvas, userEvent }) => {
     // No text should be visible during loading
     await expect(canvas.getByTestId("profile-card__name-text")).toHaveTextContent("John Doe");
     await expect(canvas.getByTestId("profile-card__email-text")).toHaveTextContent("john.doe@gmail.com");
@@ -39,9 +37,7 @@ export const Loading: Story = {
     name: "",
     email: "",
   },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
+  play: async ({ canvas }) => {
     // No text should be visible during loading
     await expect(canvas.getByTestId("profile-card__name-text")).not.toHaveTextContent(/./);
     await expect(canvas.getByTestId("profile-card__email-text")).not.toHaveTextContent(/./);
