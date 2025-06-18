@@ -4,67 +4,164 @@
 [![Actions Main](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
 [![Storybook](https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg)](https://pettor.github.io/template-web-app-react/storybook/)
 
-This is a template for building web applications with React. It includes a basic project structure and configuration files to help you get started quickly.
+A modern, production-ready React web application template designed to jumpstart your next project with industry best practices, comprehensive tooling, and a robust development workflow.
 
-## Demo
+## 🚀 Demo
 
-To check out a demo of the latest main branch [click here](https://pettor.github.io/template-web-app-react/app/).
+Experience the template in action:
+- **[Live Application Demo](https://pettor.github.io/template-web-app-react/app/)** - See the main application
+- **[Storybook Component Library](https://pettor.github.io/template-web-app-react/storybook/)** - Explore the component documentation
 
-## Features
+## ✨ Key Features
 
-This template includes the following features:
+This template provides a complete modern web development stack with everything you need to build scalable applications:
 
-- [React](https://reactjs.org/) for building user interfaces.
-- [TypeScript](https://www.typescriptlang.org/) for static type checking.
-- [Vite](https://vitejs.dev/) for fast development and building.
-- [Turborepo](https://turbo.build/repo/) for performant build system.
-- [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS.
-- [DiasyUI](https://daisyui.com/) for component styling.
-- [Storybook](https://storybook.js.org/) for component development.
-- [Storybook Component Test](https://storybook.js.org/docs/writing-tests/component-testing) for testing components.
-- [Playwright](https://playwright.dev/) for end-to-end testing.
-- [Vitest](https://vitest.dev/) for testing components.
-- [Github Actions](https://docs.github.com/en/actions) for continuous integration.
-- [Github Pages](https://pages.github.com/) for hosting the application.
-- [Prettier](https://prettier.io/) for code formatting.
-- [ESLint](https://eslint.org/) for linting.
+### 🏗️ **Core Technologies**
+- **[React 19](https://reactjs.org/)** - Latest React with concurrent features and improved performance
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript for better developer experience and fewer runtime errors
+- **[Vite](https://vitejs.dev/)** - Lightning-fast development server and optimized production builds
+- **[Turborepo](https://turbo.build/repo/)** - High-performance monorepo build system for scalable development
 
-## Getting Started
+### 🎨 **Styling & UI**
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework for rapid UI development
+- **[DaisyUI](https://daisyui.com/)** - Beautiful, semantic component library built on Tailwind
+- **Responsive Design** - Mobile-first approach with modern CSS Grid and Flexbox layouts
 
-To get started with this template, follow these steps:
+### 🧪 **Testing & Quality Assurance**
+- **[Vitest](https://vitest.dev/)** - Fast unit and integration testing with hot reload
+- **[Playwright](https://playwright.dev/)** - Reliable end-to-end testing across all browsers
+- **[Storybook Component Testing](https://storybook.js.org/docs/writing-tests/component-testing)** - Visual component testing and documentation
+- **Code Coverage Reports** - Comprehensive coverage tracking with detailed reporting
 
-1. Clone the repository to your local machine.
-1. Enable `corepack` by running `corepack enable`.
-1. Install the dependencies by running `pnpm i` in the project directory.
-1. Start the development server by running `pnpm dev`.
+### 🔧 **Development Tools**
+- **[Storybook](https://storybook.js.org/)** - Component development environment and documentation
+- **[ESLint](https://eslint.org/)** - Advanced linting with React and TypeScript rules
+- **[Prettier](https://prettier.io/)** - Consistent code formatting across the entire codebase
+- **Hot Module Replacement** - Instant feedback during development
 
-### Enable Github Actions
+### 🚀 **DevOps & Deployment**
+- **[GitHub Actions](https://docs.github.com/en/actions)** - Automated CI/CD pipeline with comprehensive testing
+- **[GitHub Pages](https://pages.github.com/)** - Seamless deployment and hosting
+- **Automated Quality Gates** - Build, lint, and test validation on every pull request
+- **Branch Protection Rules** - Enforce code quality standards before merging
 
-To enable Github Actions for this repository, follow these steps:
+### 🌐 **Additional Integrations**
+- **Mock API Server** - [Mocks Server](https://mocks-server.org/) integration for frontend development
+- **Internationalization Ready** - Built-in i18n support with React Intl
+- **Environment Configuration** - Multi-environment setup with proper variable management
+- **Performance Monitoring** - Build-time performance analysis and optimization
 
-1. Go to the `Settings` tab in the repository.
-1. Click the `Actions` tab in the sidebar.
-1. Enable the `Allow all actions` option.
-1. Click the `Rules` tab in the sidebar.
-1. Add a new rule with the following settings:
-   - Name: `Main`
-   - Enforcement status: `Active`
-   - Target branches: `Include default branch`
-   - Rules: `Require status checks to pass` and add `Lint`, `Build`, `Test Components` and `Test E2E` checks.
+## 🏃‍♂️ Quick Start
 
-### Enable Github Pages
+Get up and running in minutes:
 
-To enable Github Pages for this repository, follow these steps:
+### Prerequisites
+- Node.js 22 or higher
+- pnpm (recommended package manager)
 
-1. Go to the `Settings` tab in the repository.
-1. Click the `Pages` tab in the sidebar.
-1. Select the `deploy/main` branch as the source.
-1. Update Readme with the correct link to the deployed application.
+### Installation
 
-## Contributing
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Pettor/template-web-app-react.git
+   cd template-web-app-react
+   ```
 
-Contributions are welcome! If you find a bug or have a feature request, please open an issue on the GitHub repository. If you would like to contribute code, please fork the repository and submit a pull request.
+2. **Enable corepack for package manager**
+   ```bash
+   corepack enable
+   ```
 
-## License
+3. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+4. **Start development server**
+   ```bash
+   pnpm dev
+   ```
+
+Your application will be available at `http://localhost:5173` with hot reload enabled.
+
+### Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm test:unit` - Run unit tests
+- `pnpm test:e2e` - Run end-to-end tests
+- `pnpm lint` - Run ESLint
+- `pnpm storybook` - Start Storybook development server
+- `pnpm deploy` - Build and prepare for deployment
+
+## ⚙️ Configuration
+
+### GitHub Actions Setup
+
+Enable continuous integration and deployment:
+
+1. Navigate to repository **Settings** → **Actions**
+2. Enable **"Allow all actions"**
+3. Go to **Settings** → **Rules** and create a branch protection rule:
+   - **Name**: Main
+   - **Target**: Include default branch
+   - **Required status checks**: `Lint`, `Build`, `Test Components`, `Test E2E`
+
+### GitHub Pages Deployment
+
+Set up automatic deployment:
+
+1. Go to **Settings** → **Pages**
+2. Select **Source**: Deploy from a branch
+3. Choose **Branch**: `deploy/main`
+4. Update README links to match your repository URL
+
+## 🏗️ Project Structure
+
+```
+├── apps/
+│   └── web/                 # Main React application
+├── configs/                 # Shared configs
+├── packages/                # Shared packages and utilities
+├── .github/
+│   └── workflows/          # CI/CD pipeline definitions
+├── output/                 # Build artifacts
+└── storybook-static/       # Storybook build output
+```
+
+## 🔗 Related Templates
+
+Expand your development stack:
+
+- **[.NET 8 Backend Template](https://github.com/Pettor/template-web-api-dotnet)** - Fully integrated C# backend template designed to work seamlessly with this React frontend
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how to get involved:
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and add tests
+4. **Run the test suite**: `pnpm test:unit && pnpm test:e2e`
+5. **Submit a pull request** with a clear description
+
+### Contribution Guidelines
+
+- Follow existing code style and conventions
+- Add tests for new features
+- Update documentation as needed
+- Ensure all CI checks pass
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+- **Issues**: [GitHub Issues](https://github.com/Pettor/template-web-app-react/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Pettor/template-web-app-react/discussions)
+- **Documentation**: [Storybook Documentation](https://pettor.github.io/template-web-app-react/storybook/)
+
+---
+
+**Ready to build something amazing?** 🚀 Star this repository if you find it helpful and share it with your team!
