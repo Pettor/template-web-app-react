@@ -88,7 +88,7 @@ Your application will be available at `http://localhost:5173` with hot reload en
 
 - `pnpm dev` - Start development server
 - `pnpm build` - Build for production
-- `pnpm test:unit` - Run unit tests
+- `pnpm test` - Run unit tests
 - `pnpm test:e2e` - Run end-to-end tests
 - `pnpm lint` - Run ESLint
 - `pnpm storybook` - Start Storybook development server
@@ -142,7 +142,7 @@ We welcome contributions! Here's how to get involved:
 1. **Fork the repository**
 2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
 3. **Make your changes** and add tests
-4. **Run the test suite**: `pnpm test:unit && pnpm test:e2e`
+4. **Run the test suite**: `pnpm test && pnpm test:e2e`
 5. **Submit a pull request** with a clear description
 
 ### Contribution Guidelines

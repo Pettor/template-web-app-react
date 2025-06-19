@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 const defaultArgs = {
   open: true,
-  name: faker.internet.userName(),
+  name: faker.internet.username(),
   email: faker.internet.email(),
   onAbout: () => console.log("onAbout"),
   onLogout: () => console.log("onLogout"),

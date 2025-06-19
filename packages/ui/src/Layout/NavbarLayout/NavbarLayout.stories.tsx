@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StorybookNavbarComponent } from "Storybook/Components/StorybookNavbarComponent";
-import { StorybookTableContentComponent } from "Storybook/Components/StorybookTableContentComponent";
+import { StorybookNavbarComponent } from "../../Storybook/Components/StorybookNavbarComponent";
+import { StorybookTableContentComponent } from "../../Storybook/Components/StorybookTableContentComponent";
 import { NavbarLayout as Component } from "./NavbarLayout";
 import type { NavbarLayoutProps, NavbarLayoutProps as Props } from "./NavbarLayout";
 

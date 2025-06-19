@@ -3,12 +3,8 @@ import baseConfig from "storybook-config/main";
 
 const config: StorybookConfig = {
   ...baseConfig,
-  stories: [
-    "../src/**/*.stories.@(ts|tsx)",
-    process.env.NODE_ENV === "production" || process.env.STORYBOOK_MODE === "combined"
-      ? "../../../packages/ui/src/**/*.stories.tsx"
-      : "",
-  ],
+  stories: ["../src/**/*.stories.@(ts|tsx)", "../../../packages/ui/src/**/*.stories.tsx"],
+  addons: ["@storybook/addon-vitest"],
 };
 
 export default config;

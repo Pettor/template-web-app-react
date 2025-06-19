@@ -194,18 +194,8 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
       - name: Run tests and coverage
-        run: pnpm test:unit
-        continue-on-error: true
-
-      - name: Publish test summary
-        uses: mikepenz/action-junit-report@v5
-        with:
-          report_paths: "**/.junit/*.xml"
-          check_name: "Test Summary Components"
-        if: always()
-
-      - name: Create test reports
-        run: pnpm test:unit:coverage:ci
+        run: pnpm test:coverage:ci
+        continue-on-error: false
 
       - name: Code coverage report
         uses: irongut/CodeCoverageSummary@v1.3.0
