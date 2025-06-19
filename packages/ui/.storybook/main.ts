@@ -4,6 +4,7 @@ import baseConfig from "storybook-config/main";
 const config: StorybookConfig = {
   ...baseConfig,
   stories: ["../src/**/*.stories.@(ts|tsx)"],
+  addons: ["@storybook/addon-a11y", "@storybook/addon-vitest"],
 };
 
 export default config;

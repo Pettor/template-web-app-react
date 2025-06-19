@@ -48,23 +48,15 @@
     "test:e2e:env": {
       "cache": false
     },
-    "test:unit": {
+    "test:coverage": {
       "cache": false,
-      "dependsOn": ["storybook:build"],
-      "outputs": ["**/junit/*.json", "**/.nyc_output/*.json"]
+      "outputs": ["**/.coverage/**/*"]
     },
-    "test:unit:coverage": {
-      "cache": false,
-      "outputs": ["**/.nyc_output/**/*"]
-    },
-    "test:unit:coverage:ci": {
+    "test:coverage:ci": {
       "cache": false,
       "outputs": ["output/coverage/*.xml"]
     },
-    "storybook:dev": {
-      "cache": false
-    },
-    "storybook:dev:combined": {
+    "storybook": {
       "cache": false
     },
     "storybook:build": {
