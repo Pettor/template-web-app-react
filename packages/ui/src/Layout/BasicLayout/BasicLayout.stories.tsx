@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { StorybookTableContentComponent } from "Storybook/Components/StorybookTableContentComponent";
+import { StorybookTableContentComponent } from "../../Storybook/Components/StorybookTableContentComponent";
 import { BasicLayout as Component } from "./BasicLayout";
 
 const meta: Meta<typeof Component> = {

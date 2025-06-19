@@ -20,7 +20,7 @@ export function StorybookTableContentComponent(): ReactElement {
         <tbody>
           {Array.from({ length: 150 }, (_, i) => (
             <tr key={i}>
-              <td className="max-w-0 truncate">{faker.internet.userName()}</td>
+              <td className="max-w-0 truncate">{faker.internet.username()}</td>
               <td className="max-w-0 truncate">asdsadasdasd asdasdasd sadsad sad asdasd das asdas dasd asd</td>
               <td>
                 <div className="avatar">

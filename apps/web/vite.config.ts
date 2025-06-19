@@ -1,3 +1,5 @@
+import path from "path";
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import type { PluginOption, UserConfig } from "vite";
@@ -94,6 +96,32 @@ export default defineConfig(({ mode, command }) => {
       });
     case "serve":
       return mergeConfig(commonConfig, {
+        test: {
+          projects: [
+            {
+              extends: true,
+              optimizeDeps: {
+                include: ["react/jsx-dev-runtime"],
+              },
+              plugins: [
+                // The plugin will run tests for the stories defined in your Storybook config
+                // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
+                storybookTest({ configDir: path.join(__dirname, ".storybook") }),
+              ],
+              test: {
+                name: "storybook",
+                browser: {
+                  enabled: true,
+                  headless: true,
+                  provider: "playwright",
+                  instances: [{ browser: "chromium" }],
+                },
+
+                setupFiles: [path.join(".storybook", "vitest.setup.ts")],
+              },
+            },
+          ],
+        },
         server: {
           cors: true,
           https: true,
