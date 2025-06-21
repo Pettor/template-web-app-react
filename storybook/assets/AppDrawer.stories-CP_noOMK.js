@@ -1,0 +1,4 @@
+import{f as e}from"./chunk-TVFJBHBT-BUrEn1b-.js";import{A as n}from"./AppDrawer-NvgTh_Yo.js";import"./iframe-xPoOMcH3.js";import"./index-Dl7v4I77.js";import"./UserCircleIcon-Du-T8wMQ.js";import"./InformationCircleIcon-CfrvHqs3.js";const g={component:n,title:"Navigation/Drawer",parameters:{layout:"fullscreen"}},s={open:!0,name:e.internet.userName(),email:e.internet.email(),onAbout:()=>console.log("onAbout"),onLogout:()=>console.log("onLogout"),onClose:()=>console.log("onClose")},o={args:s};var r,t,a;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  args: defaultArgs
+}`,...(a=(t=o.parameters)==null?void 0:t.docs)==null?void 0:a.source}}};const d=["Application"];export{o as Application,d as __namedExportsOrder,g as default};
+//# sourceMappingURL=AppDrawer.stories-CP_noOMK.js.map

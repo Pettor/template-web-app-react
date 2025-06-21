@@ -1,0 +1,5 @@
+import{j as r}from"./iframe-xPoOMcH3.js";import{S as m}from"./StorybookNavbarComponent-CJgC1IRa.js";import{S as i}from"./StorybookTableContentComponent-CLo2IFF4.js";import{N as n}from"./StorybookNavbarContentComponent-DkiwGjxU.js";import"./Drawer-C4xIhs9M.js";import"./index-Dl7v4I77.js";import"./chunk-TVFJBHBT-BUrEn1b-.js";import"./BasicLayout-CbyF0bYq.js";import"./clsx-B-dksMZM.js";import"./Logo-CBYUuAqn.js";import"./LogoFull-CJVWlxWf.js";const S={component:n,title:"Shared/Layout",parameters:{layout:"fullscreen"}},p={navbarElement:r.jsx(m,{}),onGithubClick:()=>console.log("onGithubClick"),onLinkedInClick:()=>console.log("onLinkedInClick")};function c(s){return r.jsx(n,{...s,children:r.jsx(i,{})})}const o={args:p,render:c};var t,e,a;o.parameters={...o.parameters,docs:{...(t=o.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  args: defaultArgs,
+  render
+}`,...(a=(e=o.parameters)==null?void 0:e.docs)==null?void 0:a.source}}};const j=["NavbarLayout"];export{o as NavbarLayout,j as __namedExportsOrder,S as default};
+//# sourceMappingURL=NavbarLayout.stories-BoGqNuXr.js.map
