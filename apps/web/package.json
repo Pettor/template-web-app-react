@@ -31,7 +31,7 @@
     "storybook:test": "test-storybook --url http://127.0.0.1:9055"
   },
   "dependencies": {
-    "@hookform/resolvers": "5.1.0",
+    "@hookform/resolvers": "5.1.1",
     "api-package": "workspace:*",
     "react-hook-form": "7.58.0",
     "react-router-dom": "7.6.2",
