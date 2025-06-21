@@ -19,8 +19,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(react@19.1.0)
       '@tanstack/react-query':
-        specifier: 5.80.6
-        version: 5.80.6(react@19.1.0)
+        specifier: 5.80.7
+        version: 5.80.7(react@19.1.0)
       babel-plugin-react-compiler:
         specifier: 19.1.0-rc.2
         version: 19.1.0-rc.2
@@ -40,8 +40,8 @@ importers:
         specifier: 2.12.5
         version: 2.12.5(@types/react@19.1.6)(react@19.1.0)
       jotai-effect:
-        specifier: 2.0.2
-        version: 2.0.2(jotai@2.12.5(@types/react@19.1.6)(react@19.1.0))
+        specifier: 2.0.4
+        version: 2.0.4(jotai@2.12.5(@types/react@19.1.6)(react@19.1.0))
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -200,8 +200,8 @@ importers:
   apps/web:
     dependencies:
       '@hookform/resolvers':
-        specifier: 5.1.0
-        version: 5.1.0(react-hook-form@7.58.0(react@19.1.0))
+        specifier: 5.1.1
+        version: 5.1.1(react-hook-form@7.58.0(react@19.1.0))
       api-package:
         specifier: workspace:*
         version: link:../../packages/api
@@ -1344,8 +1344,8 @@ packages:
     peerDependencies:
       react: '>= 16 || ^19.0.0-rc'
 
-  '@hookform/resolvers@5.1.0':
-    resolution: {integrity: sha512-A5tY8gxqvvR0lFfropqpy/gUDOxjwT7LZCxJ8lNA9puK7nFNRl/O0egGKxzdF4JSz/pnnT1O8g76P/YMyTBEFw==}
+  '@hookform/resolvers@5.1.1':
+    resolution: {integrity: sha512-J/NVING3LMAEvexJkyTLjruSm7aOFx7QX21pzkiJfMoNG0wl5aFEjLTl7ay7IQb9EWY6AkrBy7tHL2Alijpdcg==}
     peerDependencies:
       react-hook-form: ^7.55.0
 
@@ -2000,11 +2000,11 @@ packages:
     peerDependencies:
       vite: 6.3.5
 
-  '@tanstack/query-core@5.80.6':
-    resolution: {integrity: sha512-nl7YxT/TAU+VTf+e2zTkObGTyY8YZBMnbgeA1ee66lIVqzKlYursAII6z5t0e6rXgwUMJSV4dshBTNacNpZHbQ==}
+  '@tanstack/query-core@5.80.7':
+    resolution: {integrity: sha512-s09l5zeUKC8q7DCCCIkVSns8zZrK4ZDT6ryEjxNBFi68G4z2EBobBS7rdOY3r6W1WbUDpc1fe5oY+YO/+2UVUg==}
 
-  '@tanstack/react-query@5.80.6':
-    resolution: {integrity: sha512-izX+5CnkpON3NQGcEm3/d7LfFQNo9ZpFtX2QsINgCYK9LT2VCIdi8D3bMaMSNhrAJCznRoAkFic76uvLroALBw==}
+  '@tanstack/react-query@5.80.7':
+    resolution: {integrity: sha512-u2F0VK6+anItoEvB3+rfvTO9GEh2vb00Je05OwlUe/A0lkJBgW1HckiY3f9YZa+jx6IOe4dHPh10dyp9aY3iRQ==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -4355,8 +4355,8 @@ packages:
   joi@17.13.3:
     resolution: {integrity: sha512-otDA4ldcIx+ZXsKHWmp0YizCweVRZG96J10b0FevjfuncLO1oX59THoAmHkNubYJ+9gWsYsp5k8v4ib6oDv1fA==}
 
-  jotai-effect@2.0.2:
-    resolution: {integrity: sha512-bk5J9YreQjenxoss+9gHtH1KEHpznXVq0JlThbhSmsX+0lbBZoMbJrJNspd4UOqMS3gesmpP/ea8cCaPK3AkEw==}
+  jotai-effect@2.0.4:
+    resolution: {integrity: sha512-V2ARMu1JvRCie43X6SwCXPpecMR+cRI7JuSoOz/6uziOEQJnziJFRzvWHoWple+DvWdARHcFMjlIp+BEDsUoVQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       jotai: '>=2.12.1'
@@ -7682,7 +7682,7 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  '@hookform/resolvers@5.1.0(react-hook-form@7.58.0(react@19.1.0))':
+  '@hookform/resolvers@5.1.1(react-hook-form@7.58.0(react@19.1.0))':
     dependencies:
       '@standard-schema/utils': 0.3.0
       react-hook-form: 7.58.0(react@19.1.0)
@@ -8458,11 +8458,11 @@ snapshots:
       tailwindcss: 4.1.8
       vite: 6.3.5(@types/node@22.15.30)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.39.0)
 
-  '@tanstack/query-core@5.80.6': {}
+  '@tanstack/query-core@5.80.7': {}
 
-  '@tanstack/react-query@5.80.6(react@19.1.0)':
+  '@tanstack/react-query@5.80.7(react@19.1.0)':
     dependencies:
-      '@tanstack/query-core': 5.80.6
+      '@tanstack/query-core': 5.80.7
       react: 19.1.0
 
   '@testing-library/dom@10.4.0':
@@ -11457,7 +11457,7 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai-effect@2.0.2(jotai@2.12.5(@types/react@19.1.6)(react@19.1.0)):
+  jotai-effect@2.0.4(jotai@2.12.5(@types/react@19.1.6)(react@19.1.0)):
     dependencies:
       jotai: 2.12.5(@types/react@19.1.6)(react@19.1.0)
 
