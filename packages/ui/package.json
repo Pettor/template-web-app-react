@@ -12,17 +12,14 @@
     "clean:all": "pnpm clean node_modules",
     "lint": "eslint ./src ./.storybook",
     "lint:fix": "pnpm lint --fix",
-    "test": "test-storybook --url http://127.0.0.1:9060",
-    "test:unit": "start-server-and-test \"pnpm storybook:server\" http://127.0.0.1:9065 \"pnpm storybook:test --junit --coverage\"",
-    "test:unit:coverage": "npx nyc report --reporter=lcov -t ./coverage/storybook --report-dir ./coverage/storybook",
-    "test:unit:coverage:ci": "pnpm test:unit:coverage:ci:create && pnpm test:unit:coverage:ci:move",
-    "test:unit:coverage:ci:create": "npx nyc report --reporter=cobertura -t ./coverage/storybook --report-dir ./coverage/storybook",
-    "test:unit:coverage:ci:move": "move-cli ./coverage/storybook/cobertura-coverage.xml \"../../output/coverage/ui-package.xml\" --mkdirp",
+    "test": "vitest --project=storybook",
+    "test:coverage": "vitest --project=storybook --coverage",
+    "test:coverage:ci": "pnpm test:coverage && pnpm test:coverage:ci:create && pnpm test:coverage:ci:move",
+    "test:coverage:ci:create": "npx nyc report --reporter=cobertura -t ./coverage --report-dir ./coverage/storybook",
+    "test:coverage:ci:move": "move-cli ./coverage/storybook/cobertura-coverage.xml \"../../output/coverage/ui-package.xml\" --mkdirp",
     "storybook:dev": "storybook dev -p 9060 --quiet",
     "storybook:build": "storybook build -o storybook-static",
-    "storybook:move": "move-cli storybook-static \"../../output/storybook-static/ui-package\" --mkdirp",
-    "storybook:server": "npx http-server storybook-static --port 9065 --silent",
-    "storybook:test": "test-storybook --url http://127.0.0.1:9065"
+    "storybook:move": "move-cli storybook-static \"../../output/storybook-static/ui-package\" --mkdirp"
   },
   "dependencies": {
     "react-package": "workspace:*",
