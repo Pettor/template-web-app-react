@@ -31,7 +31,7 @@
     "@hookform/resolvers": "5.1.1",
     "api-package": "workspace:*",
     "react-hook-form": "7.59.0",
-    "react-router-dom": "7.6.2",
+    "react-router-dom": "7.6.3",
     "react-package": "workspace:*",
     "ui-package": "workspace:*",
     "tailwind-config": "workspace:*"
