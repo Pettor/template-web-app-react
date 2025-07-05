@@ -1,0 +1,4 @@
+import{j as r}from"./iframe-VVovpiOi.js";import{S as a}from"./StorybookNavbarComponent-DR8VE6D3.js";import{S as n}from"./StorybookTableContentComponent-CGzOmVqF.js";import{N as t}from"./StorybookNavbarContentComponent-BoVaxqlz.js";import"./Drawer-BYTcXcEU.js";import"./index-CVZl6vnV.js";import"./chunk-TVFJBHBT-GaUcJ0Yz.js";import"./BasicLayout-BZl2L6UJ.js";import"./clsx-B-dksMZM.js";import"./Logo-B0SvQA_I.js";import"./LogoFull-BNJMfdSM.js";const y={component:t,title:"Shared/Layout",parameters:{layout:"fullscreen"}},s={navbarElement:r.jsx(a,{}),onGithubClick:()=>console.log("onGithubClick"),onLinkedInClick:()=>console.log("onLinkedInClick")};function m(e){return r.jsx(t,{...e,children:r.jsx(n,{})})}const o={args:s,render:m};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  args: defaultArgs,
+  render
+}`,...o.parameters?.docs?.source}}};const C=["NavbarLayout"];export{o as NavbarLayout,C as __namedExportsOrder,y as default};

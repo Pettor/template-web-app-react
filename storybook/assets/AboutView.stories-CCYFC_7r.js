@@ -1,0 +1,16 @@
+import{F as p}from"./DocumentationLayout-0sQIwZvZ.js";import{u as c,j as e}from"./iframe-VVovpiOi.js";import"./ButtonLoading-DjU4rp3W.js";import"./Modal-CurSEfQr.js";import"./Toast-0xBhZ60E.js";import"./ToastNotifier-DxnQMYpT.js";import{B as l,G as m}from"./StorybookNavbarContentComponent-BoVaxqlz.js";import"./InputField-C4Z-J31_.js";import{B as d}from"./BasicLayout-BZl2L6UJ.js";import"./Logo-B0SvQA_I.js";import"./LogoFull-BNJMfdSM.js";import"./Drawer-BYTcXcEU.js";import"./StorybookNavbarComponent-DR8VE6D3.js";import"./StorybookTableContentComponent-CGzOmVqF.js";import{A as u}from"./AboutDetails-DC0fAVny.js";import{F as f}from"./XMarkIcon-YaeY46t9.js";import"./clsx-B-dksMZM.js";import"./index-D9WrIkEy.js";import"./index-CVZl6vnV.js";import"./chunk-TVFJBHBT-GaUcJ0Yz.js";function t({onBack:i,...n}){const a=c();return e.jsx(d,{className:"dark:bg-base-300/70",backgroundElement:e.jsxs(e.Fragment,{children:[e.jsx(l,{}),e.jsx(m,{})]}),children:e.jsx("div",{className:"hero",children:e.jsx("div",{className:"hero-content w-full flex-col lg:flex-row-reverse",children:e.jsx("div",{className:"card bg-base-100 min-h-[550px] w-full shrink-0 shadow-2xl sm:w-[550px]",children:e.jsxs("div",{className:"card-body",children:[e.jsx("div",{className:"card-actions justify-end",children:e.jsx("button",{className:"btn btn-square btn-sm",onClick:i,title:a.formatMessage({description:"AboutView - Back button title",defaultMessage:"Back",id:"72q+Ui"}),"aria-label":a.formatMessage({description:"AboutView - Back button aria label",defaultMessage:"Back",id:"ZTBga3"}),children:e.jsx(f,{className:"h-6 w-6"})})}),e.jsx(u,{...n})]})})})})})}t.__docgenInfo={description:"",methods:[],displayName:"AboutView",props:{appName:{required:!0,tsType:{name:"string"},description:""},appVersion:{required:!0,tsType:{name:"string"},description:""},serverVersion:{required:!0,tsType:{name:"string"},description:""},onBack:{required:!0,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:""}}};const E={component:t,title:"Views/About",parameters:{layout:"fullscreen"}},o={appName:"My App",appVersion:"1.0.0",serverVersion:"1.0.0",onBack:()=>console.log("onBack")},r={args:o,decorators:[p],parameters:{viewport:{defaultViewport:"full"}}},s={args:o,parameters:{viewport:{defaultViewport:"iphonex"}}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+  args: defaultArgs,
+  decorators: [FullSizeDecorator],
+  parameters: {
+    viewport: {
+      defaultViewport: "full"
+    }
+  }
+}`,...r.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: defaultArgs,
+  parameters: {
+    viewport: {
+      defaultViewport: "iphonex"
+    }
+  }
+}`,...s.parameters?.docs?.source}}};const z=["Fullscreen","Phone"];export{r as Fullscreen,s as Phone,z as __namedExportsOrder,E as default};
