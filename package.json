@@ -42,7 +42,7 @@
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "clsx": "2.1.1",
     "concurrently": "9.2.0",
-    "daisyui": "5.0.43",
+    "daisyui": "5.0.46",
     "immer": "10.1.1",
     "jotai": "2.12.5",
     "jotai-effect": "2.0.4",
