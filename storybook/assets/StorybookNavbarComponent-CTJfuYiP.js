@@ -1,0 +1,1 @@
+import{j as o}from"./iframe-BrlSpEe-.js";import"./Drawer-Bg9-v4yb.js";import{a as t,S as e}from"./StorybookNavbarContentComponent-DCVW26y0.js";function n(){return o.jsx(t,{title:"Some Title",endElement:o.jsx(e,{})})}n.__docgenInfo={description:"",methods:[],displayName:"StorybookNavbarComponent"};export{n as S};
