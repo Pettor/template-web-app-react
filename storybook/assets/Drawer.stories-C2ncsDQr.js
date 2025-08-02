@@ -1,0 +1,3 @@
+import{j as e}from"./iframe-D2v7luz4.js";import{D as a}from"./Drawer-YeVekm1m.js";import"./index-P_QEV54E.js";const n={component:a,title:"Shared/Navigation/Drawer",parameters:{layout:"fullscreen"}},s={open:!0,onClose:()=>console.log("onClose"),children:e.jsxs("ul",{className:"menu h-full w-full",children:[e.jsx("li",{children:e.jsx("a",{children:"Sidebar Item 1"})}),e.jsx("li",{children:e.jsx("a",{children:"Sidebar Item 2"})})]})},r={args:s};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+  args: defaultArgs
+}`,...r.parameters?.docs?.source}}};const d=["Standard"];export{r as Standard,d as __namedExportsOrder,n as default};
