@@ -31,8 +31,8 @@ importers:
         specifier: 9.2.0
         version: 9.2.0
       daisyui:
-        specifier: 5.0.47
-        version: 5.0.47
+        specifier: 5.0.48
+        version: 5.0.48
       immer:
         specifier: 10.1.1
         version: 10.1.1
@@ -2712,8 +2712,8 @@ packages:
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
-  daisyui@5.0.47:
-    resolution: {integrity: sha512-RuYjjVKpodDoOYAHIvG6qC3BeRxhlyj4JCO+6aV0VzK+i3RWD7cmICh0m5+Xfr5938mV0Mk7FUOQ00msz8H8dw==}
+  daisyui@5.0.48:
+    resolution: {integrity: sha512-t2nvzKENuhbjkKmxhIoDgV/nzAnNLbswK9MBlOMnEO6hxfgNLlt7jVrHYWw6ts492JdQ0Mmf6iX3aO/u+1zXAw==}
 
   dargs@8.1.0:
     resolution: {integrity: sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==}
@@ -8817,7 +8817,7 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  daisyui@5.0.47: {}
+  daisyui@5.0.48: {}
 
   dargs@8.1.0: {}
 
