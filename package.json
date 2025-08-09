@@ -44,7 +44,7 @@
     "concurrently": "9.2.0",
     "daisyui": "5.0.50",
     "immer": "10.1.1",
-    "jotai": "2.12.5",
+    "jotai": "2.13.0",
     "jotai-effect": "2.0.5",
     "react": "19.1.1",
     "react-dom": "19.1.1",
