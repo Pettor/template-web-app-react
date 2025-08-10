@@ -75,7 +75,7 @@
     "eslint": "9.32.0",
     "http-server": "14.1.1",
     "husky": "9.1.7",
-    "lint-staged": "16.1.2",
+    "lint-staged": "16.1.4",
     "move-cli": "2.0.0",
     "nyc": "17.1.0",
     "playwright": "1.54.2",
