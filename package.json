@@ -95,7 +95,7 @@
   "pnpm": {
     "overrides": {
       "typescript": "5.9.2",
-      "vite": "7.1.1"
+      "vite": "7.1.2"
     }
   },
   "lint-staged": {
