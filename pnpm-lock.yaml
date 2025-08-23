@@ -37,11 +37,11 @@ importers:
         specifier: 10.1.1
         version: 10.1.1
       jotai:
-        specifier: 2.13.0
-        version: 2.13.0(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1)
+        specifier: 2.13.1
+        version: 2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1)
       jotai-effect:
         specifier: 2.0.5
-        version: 2.0.5(jotai@2.13.0(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1))
+        version: 2.0.5(jotai@2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1))
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -212,8 +212,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/react
       react-router-dom:
-        specifier: 7.8.0
-        version: 7.8.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 7.8.1
+        version: 7.8.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       tailwind-config:
         specifier: workspace:*
         version: link:../../configs/tailwind
@@ -3886,8 +3886,8 @@ packages:
     peerDependencies:
       jotai: '>=2.12.1'
 
-  jotai@2.13.0:
-    resolution: {integrity: sha512-H43zXdanNTdpfOEJ4NVbm4hgmrctpXLZagjJNcqAywhUv+sTE7esvFjwm5oBg/ywT9Qw63lIkM6fjrhFuW8UDg==}
+  jotai@2.13.1:
+    resolution: {integrity: sha512-cRsw6kFeGC9Z/D3egVKrTXRweycZ4z/k7i2MrfCzPYsL9SIWcPXTyqv258/+Ay8VUEcihNiE/coBLE6Kic6b8A==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@babel/core': '>=7.0.0'
@@ -4860,15 +4860,15 @@ packages:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
     engines: {node: '>=0.10.0'}
 
-  react-router-dom@7.8.0:
-    resolution: {integrity: sha512-ntInsnDVnVRdtSu6ODmTQ41cbluak/ENeTif7GBce0L6eztFg6/e1hXAysFQI8X25C8ipKmT9cClbJwxx3Kaqw==}
+  react-router-dom@7.8.1:
+    resolution: {integrity: sha512-NkgBCF3sVgCiAWIlSt89GR2PLaksMpoo3HDCorpRfnCEfdtRPLiuTf+CNXvqZMI5SJLZCLpVCvcZrTdtGW64xQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
 
-  react-router@7.8.0:
-    resolution: {integrity: sha512-r15M3+LHKgM4SOapNmsH3smAizWds1vJ0Z9C4mWaKnT9/wD7+d/0jYcj6LmOvonkrO4Rgdyp4KQ/29gWN2i1eg==}
+  react-router@7.8.1:
+    resolution: {integrity: sha512-5cy/M8DHcG51/KUIka1nfZ2QeylS4PJRs6TT8I4PF5axVsI5JUxp0hC0NZ/AEEj8Vw7xsEoD7L/6FY+zoYaOGA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       react: '>=18'
@@ -10240,11 +10240,11 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai-effect@2.0.5(jotai@2.13.0(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1)):
+  jotai-effect@2.0.5(jotai@2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1)):
     dependencies:
-      jotai: 2.13.0(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1)
+      jotai: 2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1)
 
-  jotai@2.13.0(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1):
+  jotai@2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.10)(react@19.1.1):
     optionalDependencies:
       '@babel/core': 7.27.4
       '@babel/template': 7.27.2
@@ -11125,13 +11125,13 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
-  react-router-dom@7.8.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-router-dom@7.8.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
-      react-router: 7.8.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      react-router: 7.8.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  react-router@7.8.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-router@7.8.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       cookie: 1.0.2
       react: 19.1.1
