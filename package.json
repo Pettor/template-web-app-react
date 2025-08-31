@@ -38,7 +38,7 @@
   "dependencies": {
     "@fontsource/rubik": "5.2.6",
     "@heroicons/react": "2.2.0",
-    "@tanstack/react-query": "5.85.3",
+    "@tanstack/react-query": "5.85.5",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "clsx": "2.1.1",
     "concurrently": "9.2.0",
