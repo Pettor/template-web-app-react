@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@formatjs/cli": "6.7.2",
-    "@vitejs/plugin-react": "5.0.0",
+    "@vitejs/plugin-react": "5.0.1",
     "eslint-config": "workspace:*",
     "http-server": "14.1.1",
     "storybook-config": "workspace:*",
@@ -46,7 +46,7 @@
     "typescript-config": "workspace:*",
     "vite-plugin-http2-proxy": "0.5.1",
     "vite-plugin-mkcert": "1.17.8",
-    "vite-plugin-pwa": "1.0.2",
+    "vite-plugin-pwa": "1.0.3",
     "workbox-window": "7.3.0"
   },
   "jest-junit": {
