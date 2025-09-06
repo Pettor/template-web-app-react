@@ -1,0 +1,3 @@
+import{f as e}from"./chunk-4X5ZEQ5K-DKZdp5Hc.js";import{A as r}from"./AppDrawer-aPWhukid.js";import"./iframe-BUrpZTC8.js";import"./preload-helper-D9Z9MdNV.js";import"./index-COADeKQK.js";import"./UserCircleIcon-H3NnzM4a.js";import"./InformationCircleIcon-nihxR9iJ.js";const c={component:r,title:"Navigation/Drawer",parameters:{layout:"fullscreen"}},t={open:!0,name:e.internet.username(),email:e.internet.email(),onAbout:()=>console.log("onAbout"),onLogout:()=>console.log("onLogout"),onClose:()=>console.log("onClose")},o={args:t};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  args: defaultArgs
+}`,...o.parameters?.docs?.source}}};const u=["Application"];export{o as Application,u as __namedExportsOrder,c as default};

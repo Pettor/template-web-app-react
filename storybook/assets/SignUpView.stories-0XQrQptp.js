@@ -1,0 +1,16 @@
+import{F as p}from"./DocumentationLayout-Cm4VZaS8.js";import{u as l,j as e}from"./iframe-BUrpZTC8.js";import"./ButtonLoading-Cyn6c8T3.js";import"./Modal-CtKol1Yl.js";import"./Toast-CG404bCP.js";import"./ToastNotifier-C2O5cqxC.js";import{B as m,G as c}from"./StorybookNavbarContentComponent-vQ5puYhG.js";import"./InputField-Dx15XDaV.js";import{B as d}from"./BasicLayout-BNYJtu6U.js";import"./Logo-tSCg1WHM.js";import"./LogoFull-B7bcKucG.js";import"./Drawer-BXVON29h.js";import"./StorybookNavbarComponent-5auVJ2jj.js";import"./StorybookTableContentComponent-B24aJwzA.js";import{S as u}from"./SignUpForm-BxGqQuAB.js";import{F as g}from"./XMarkIcon-BKYLznJN.js";import"./preload-helper-D9Z9MdNV.js";import"./clsx-B-dksMZM.js";import"./index-D9WrIkEy.js";import"./index-COADeKQK.js";import"./chunk-4X5ZEQ5K-DKZdp5Hc.js";import"./index.esm-BQ4Y4HLR.js";function t({signUpForm:i,onBack:n}){const a=l();return e.jsx(d,{className:"dark:bg-base-300/40",backgroundElement:e.jsxs(e.Fragment,{children:[e.jsx(m,{}),e.jsx(c,{})]}),children:e.jsx("div",{className:"flex flex-1 flex-col items-center justify-center",children:e.jsx("div",{className:"hero",children:e.jsx("div",{className:"hero-content w-full flex-col lg:flex-row-reverse",children:e.jsx("div",{className:"card bg-base-100 w-full shrink-0 shadow-2xl sm:min-h-[550px] sm:w-[550px]",children:e.jsxs("div",{className:"card-body w-full md:min-w-96",children:[e.jsx("div",{className:"card-actions justify-end",children:e.jsx("button",{className:"btn btn-square btn-sm",onClick:n,title:a.formatMessage({description:"SignUpView - Back button title",defaultMessage:"Back",id:"beyKXy"}),"aria-label":a.formatMessage({description:"SignUpView - Back button aria label",defaultMessage:"Back",id:"Gy2cjY"}),children:e.jsx(g,{className:"h-6 w-6"})})}),e.jsx("p",{className:"my-2 text-center",children:a.formatMessage({description:"SignUpView - Sign up description",defaultMessage:"Sign up with your email address",id:"NG06ZV"})}),e.jsx("div",{className:"md:px-12",children:e.jsx(u,{...i})})]})})})})})})}t.__docgenInfo={description:"",methods:[],displayName:"SignUpView",props:{appName:{required:!0,tsType:{name:"string"},description:""},signUpForm:{required:!0,tsType:{name:"SignUpFormProps"},description:""},onBack:{required:!0,tsType:{name:"signature",type:"function",raw:"() => void",signature:{arguments:[],return:{name:"void"}}},description:""}}};const P={component:t,title:"Views/Sign Up",parameters:{layout:"fullscreen"},argTypes:{signUpForm:{table:{disable:!0}}}},o={appName:"My App",signUpForm:{loading:!1,onSubmit:()=>console.log("onSubmit")},onBack:()=>console.log("onBack")},r={args:o,decorators:[p],parameters:{viewport:{defaultViewport:"full"}}},s={args:o,parameters:{viewport:{defaultViewport:"iphonex"}}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+  args: defaultArgs,
+  decorators: [FullSizeDecorator],
+  parameters: {
+    viewport: {
+      defaultViewport: "full"
+    }
+  }
+}`,...r.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: defaultArgs,
+  parameters: {
+    viewport: {
+      defaultViewport: "iphonex"
+    }
+  }
+}`,...s.parameters?.docs?.source}}};const z=["Fullscreen","Phone"];export{r as Fullscreen,s as Phone,z as __namedExportsOrder,P as default};
