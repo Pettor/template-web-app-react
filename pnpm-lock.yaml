@@ -40,8 +40,8 @@ importers:
         specifier: 2.13.1
         version: 2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.12)(react@19.1.1)
       jotai-effect:
-        specifier: 2.0.5
-        version: 2.0.5(jotai@2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.12)(react@19.1.1))
+        specifier: 2.1.0
+        version: 2.1.0(jotai@2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.12)(react@19.1.1))
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -3905,8 +3905,8 @@ packages:
   joi@17.13.3:
     resolution: {integrity: sha512-otDA4ldcIx+ZXsKHWmp0YizCweVRZG96J10b0FevjfuncLO1oX59THoAmHkNubYJ+9gWsYsp5k8v4ib6oDv1fA==}
 
-  jotai-effect@2.0.5:
-    resolution: {integrity: sha512-SUCStiMDWMQIV5Wh95Dq0qvl3tsI1vKDSRHFBQg2bHS5BCIyDB6ykFpIFYhX+d2yYk3dJjOgNKZaTJEUmFFcdA==}
+  jotai-effect@2.1.0:
+    resolution: {integrity: sha512-1nD6D4JizwCH3z2kun71ZUkxeeE5PknUkuP98NqQdCanidct2BHIhSwRxnfA0C2CPAn9H+5NF0EHU6gPkdhh7Q==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       jotai: '>=2.12.1'
@@ -10319,7 +10319,7 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  jotai-effect@2.0.5(jotai@2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.12)(react@19.1.1)):
+  jotai-effect@2.1.0(jotai@2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.12)(react@19.1.1)):
     dependencies:
       jotai: 2.13.1(@babel/core@7.27.4)(@babel/template@7.27.2)(@types/react@19.1.12)(react@19.1.1)
 
