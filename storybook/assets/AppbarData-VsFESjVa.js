@@ -1,0 +1,1 @@
+import{A as n}from"./AppSessionData-B3yjjJpG.js";const o={title:"Some Title",mode:"light",...n,onSwitch:()=>console.log("onToggle"),onGithubClick:()=>console.log("onGithubClick"),onLinkedInClick:()=>console.log("onLinkedInClick")},a=o,e=o;export{e as A,a};
