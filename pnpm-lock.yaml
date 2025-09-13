@@ -302,11 +302,11 @@ importers:
   packages/api:
     dependencies:
       axios:
-        specifier: 1.11.0
-        version: 1.11.0
+        specifier: 1.12.0
+        version: 1.12.0
       axios-auth-refresh:
         specifier: 3.3.6
-        version: 3.3.6(axios@1.11.0)
+        version: 3.3.6(axios@1.12.0)
     devDependencies:
       eslint-config:
         specifier: workspace:*
@@ -2355,6 +2355,9 @@ packages:
 
   axios@1.11.0:
     resolution: {integrity: sha512-1Lx3WLFQWm3ooKDYZD1eXmoGO9fxYQjrycfHFC8P0sCfQVXyROp0p9PFWBehewBOdCwHc+f/b8I0fMto5eSfwA==}
+
+  axios@1.12.0:
+    resolution: {integrity: sha512-oXTDccv8PcfjZmPGlWsPSwtOJCZ/b6W5jAMCNcfwJbCzDckwG0jrYJFaWH1yvivfCXjVzV/SPDEhMB3Q+DSurg==}
 
   axios@1.8.3:
     resolution: {integrity: sha512-iP4DebzoNlP/YN2dpwCgb8zoCmhtkajzS48JvwmkSkXvPI3DHc7m+XYL5tGnSlJtR6nImXZmdCuN5aP8dh1d8A==}
@@ -8458,11 +8461,19 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.1.0
 
-  axios-auth-refresh@3.3.6(axios@1.11.0):
+  axios-auth-refresh@3.3.6(axios@1.12.0):
     dependencies:
-      axios: 1.11.0
+      axios: 1.12.0
 
   axios@1.11.0:
+    dependencies:
+      follow-redirects: 1.15.9(debug@4.4.0)
+      form-data: 4.0.4
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.12.0:
     dependencies:
       follow-redirects: 1.15.9(debug@4.4.0)
       form-data: 4.0.4
@@ -11775,7 +11786,7 @@ snapshots:
       cookiejar: 2.1.4
       debug: 4.4.1
       fast-safe-stringify: 2.1.1
-      form-data: 4.0.2
+      form-data: 4.0.4
       formidable: 2.1.2
       methods: 1.1.2
       mime: 2.6.0
