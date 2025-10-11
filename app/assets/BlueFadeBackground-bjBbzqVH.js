@@ -1,0 +1,1 @@
+import{c as t,j as l}from"./index-IXPZLadX.js";function s(){const a=t.c(1);let e;return a[0]===Symbol.for("react.memo_cache_sentinel")?(e=l.jsx("div",{className:"bg-base-100 absolute top-0 z-[-2] h-full w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"}),a[0]=e):e=a[0],e}export{s as B};
