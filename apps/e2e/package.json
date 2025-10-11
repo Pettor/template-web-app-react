@@ -8,7 +8,7 @@
     "test:e2e": "cross-env PLAYWRIGHT_JUNIT_OUTPUT_NAME=\"./.test-results/results.xml\" pnpm playwright test --reporter=junit"
   },
   "devDependencies": {
-    "@playwright/test": "1.55.0",
+    "@playwright/test": "1.55.1",
     "eslint-config": "workspace:*",
     "mocks-package": "workspace:*",
     "typescript-config": "workspace:*"

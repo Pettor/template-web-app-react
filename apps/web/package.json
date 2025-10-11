@@ -37,8 +37,8 @@
     "tailwind-config": "workspace:*"
   },
   "devDependencies": {
-    "@formatjs/cli": "6.7.2",
-    "@vitejs/plugin-react": "5.0.2",
+    "@formatjs/cli": "6.7.3",
+    "@vitejs/plugin-react": "5.0.4",
     "eslint-config": "workspace:*",
     "http-server": "14.1.1",
     "storybook-config": "workspace:*",
